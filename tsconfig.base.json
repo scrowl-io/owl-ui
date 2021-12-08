@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "./dist",
+        "target": "ESNEXT",
+        "jsx": "react",
+        "module": "commonjs",
+        "allowJs": true,
+        "sourceMap": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "typeRoots": [
+            "node_modules/@types",
+            "./typings"
+        ],
+        "baseUrl": ".",
+        "paths": {}
+    },
+    "exclude": [
+        "node_modules"
+    ]
+  }
