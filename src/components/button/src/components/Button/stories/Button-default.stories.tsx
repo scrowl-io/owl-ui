@@ -3,8 +3,7 @@ import { Button } from '../index'
 
 export const Default = () => {
     return <Button
-                label="Hello World"
-                size="medium"
+                size="large"
                 appearance="primary"
-            />
+            >Hello World</Button>
 }

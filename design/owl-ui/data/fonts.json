@@ -6,31 +6,65 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "c628b2af-4848-43a3-9229-cb8a97e386dd",
-      "name": "title",
+      "id": "de2eac9b-1fa0-4757-8f8d-05fb96de0ea5",
+      "name": "owl.ref.typeface.brand-large",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
         "source": "https://shared-assets.adobe.com/link/2ef0c8a8-5408-4daa-75e9-60a8bd52e955",
-        "id": "b2289cac-f057-4149-894c-03c1db99e265",
-        "last_sync": "2021-12-08T16:19:55.484Z",
+        "id": "01bc2531-6e26-45f7-b236-b3bfc35dc1a9",
+        "last_sync": "2021-12-09T16:53:06.350Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "c628b2af-4848-43a3-9229-cb8a97e386dd",
+          "id": "de2eac9b-1fa0-4757-8f8d-05fb96de0ea5",
           "type": "custom",
           "value": "Roboto",
           "key": "family"
         },
         {
-          "id": "c628b2af-4848-43a3-9229-cb8a97e386dd",
+          "id": "de2eac9b-1fa0-4757-8f8d-05fb96de0ea5",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "c628b2af-4848-43a3-9229-cb8a97e386dd",
+          "id": "de2eac9b-1fa0-4757-8f8d-05fb96de0ea5",
+          "type": "size",
+          "value": "30",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "e6b211ac-16de-4a11-8daa-17940acd7c36",
+      "name": "owl.ref.typeface.title-large",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/2ef0c8a8-5408-4daa-75e9-60a8bd52e955",
+        "id": "b2289cac-f057-4149-894c-03c1db99e265",
+        "last_sync": "2021-12-09T16:53:06.350Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "e6b211ac-16de-4a11-8daa-17940acd7c36",
+          "type": "custom",
+          "value": "Roboto",
+          "key": "family"
+        },
+        {
+          "id": "e6b211ac-16de-4a11-8daa-17940acd7c36",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "e6b211ac-16de-4a11-8daa-17940acd7c36",
           "type": "size",
           "value": "80",
           "key": "size"
@@ -40,69 +74,33 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "d79a1b0f-6a55-485d-94ab-04ec4db8f089",
-      "name": "sub-title",
+      "id": "b1d00ae7-6ec4-41c7-b694-4a92d17865a8",
+      "name": "owl.ref.typeface.title-small",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
         "source": "https://shared-assets.adobe.com/link/2ef0c8a8-5408-4daa-75e9-60a8bd52e955",
         "id": "f2eeed53-3a20-4d97-80ed-1524df7b485c",
-        "last_sync": "2021-12-08T16:19:55.484Z",
+        "last_sync": "2021-12-09T16:53:06.350Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "d79a1b0f-6a55-485d-94ab-04ec4db8f089",
+          "id": "b1d00ae7-6ec4-41c7-b694-4a92d17865a8",
           "type": "custom",
           "value": "Roboto",
           "key": "family"
         },
         {
-          "id": "d79a1b0f-6a55-485d-94ab-04ec4db8f089",
+          "id": "b1d00ae7-6ec4-41c7-b694-4a92d17865a8",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "d79a1b0f-6a55-485d-94ab-04ec4db8f089",
+          "id": "b1d00ae7-6ec4-41c7-b694-4a92d17865a8",
           "type": "size",
           "value": "40",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "de259ff7-9ac7-4e2c-84a9-e4d19071a7a2",
-      "name": "owl.ref.typeface.brand",
-      "last_updated": "2021-12-08T19:58:29.939Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/2ef0c8a8-5408-4daa-75e9-60a8bd52e955",
-        "id": "01bc2531-6e26-45f7-b236-b3bfc35dc1a9",
-        "last_sync": "2021-12-08T16:19:55.484Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "owl.ref.typeface.brand-family",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "owl.ref.typeface.brand-weight",
-          "type": "custom",
-          "value": "400",
-          "key": "weight"
-        },
-        {
-          "id": "owl.ref.typeface.brand-size",
-          "type": "size",
-          "value": "16",
           "key": "size"
         }
       ]

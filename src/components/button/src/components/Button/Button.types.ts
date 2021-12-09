@@ -1,7 +1,7 @@
 export type ButtonCommons = {
     appearance?: 'primary' | 'outline'
     size: 'small' | 'medium' | 'large'
-    label: string
+    children: any
 }
 
 export type ButtonProps = Partial<ButtonCommons>
