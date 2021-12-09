@@ -1,0 +1,30 @@
+{
+  "dsp_spec_version": "0.0.1",
+  "last_updated_by": "",
+  "last_updated": "2021-12-08T16:19:55.485Z",
+  "entities": [
+    {
+      "class": "component",
+      "type": "page",
+      "tags": [],
+      "id": "e7ff50a3-8c5e-4002-8447-c181d2b54dee",
+      "related_entity_ids": [
+        "2b15ef28-f3d1-4c94-84b0-369d3007fb77",
+        "04a66ece-3a83-4321-96c6-edfca58ab1fe"
+      ],
+      "snippets": {
+        "trigger": "",
+        "languages": {}
+      },
+      "name": "cta-primary",
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/2ef0c8a8-5408-4daa-75e9-60a8bd52e955",
+        "id": "07aee753-ded2-4d1f-bb3a-ba51ed60f938",
+        "last_sync": "2021-12-08T16:19:55.484Z",
+        "sync": true
+      },
+      "last_updated": "2021-12-09T14:04:37.876Z",
+      "last_updated_by": ""
+    }
+  ]
+}
