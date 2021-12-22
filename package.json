@@ -5,6 +5,7 @@
   "author": "aubeOSG <caube@osg.ca>",
   "license": "MIT",
   "source": "src/renderer/index.html",
+  "description": "Reusable React components.",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
