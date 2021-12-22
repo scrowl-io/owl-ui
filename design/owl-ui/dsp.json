@@ -81,7 +81,7 @@
       },
       {
         "label": "JavaScript",
-        "export_tokens": true,
+        "export_tokens": false,
         "snippet_id": "javascript",
         "syntax": "text/javascript",
         "ext-com_adobe_xd-styledictionary_id": "js"

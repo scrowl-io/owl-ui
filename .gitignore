@@ -105,3 +105,6 @@ dist
 
 # parcel dev files
 .parcel-cache
+
+# design files
+!design/**/*
