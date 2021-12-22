@@ -2,13 +2,18 @@ import React from 'react'
 import * as styles from './styles.module.scss'
 import { Button } from '../../../components/button/src/components/Button/index'
 
-const Page = () => {
+export const route = '/'
+
+export const Page = () => {
     return (
         <div className={styles.container}>
-            <header>Hello World</header>
-            <Button label="Goodbye" appearance="primary" size="medium" />
+            <header>Owl UI Components</header>
+            <Button appearance="primary" size="large">Default Button</Button>
         </div>
     )
 }
 
-export default Page
+export default {
+    route,
+    Page
+}

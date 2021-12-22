@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from './components/_app/index'
+import App from './app'
+import './index.scss'
 
 render(<App />, document.getElementById('root'))
