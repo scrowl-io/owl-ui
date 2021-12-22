@@ -7,8 +7,8 @@ export const Button = (props: ButtonProps) => {
 
   return <button className={[
             styles.button,
-            styles['button_' + props.appearance],
-            styles['button--' + props.size]
+            styles[`button_${props.appearance}`],
+            styles[`button--${props.size}`]
         ].join(' ')}>{children}</button>;
 }
 
