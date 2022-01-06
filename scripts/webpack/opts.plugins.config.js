@@ -1,11 +1,15 @@
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCss = require('mini-css-extract-plugin')
-
-const BUNDLE_NAME = 'owlui'
+const locations = require('../utls/locations')
 
 module.exports = [
     new ForkTsCheckerWebpackPlugin(),
     new MiniCss({
-        filename: `${BUNDLE_NAME}.[contenthash].css`
+        filename: ({ chunk }) => {
+            return locations.filename
+                .replace('[id]', chunk.id)
+                .replace('[name]', chunk.name)
+                .replace(/js$/, 'css')
+        }
     })
 ]
