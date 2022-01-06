@@ -19,6 +19,7 @@ const config = {
     output: {
         path: path.resolve('./', 'packages'),
         library: '@owlui',
+        libraryTarget: 'commonjs2',
         chunkFilename: locations.filename
     }
 }
