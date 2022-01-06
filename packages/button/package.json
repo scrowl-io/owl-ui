@@ -1,0 +1,21 @@
+{
+    "name": "@owlui/button",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
+    "license": "MIT",
+    "main": "dist/owl.button.js",
+    "module": "index.js",
+    "sideEffects": false,
+    "files": [
+        "dist"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EEBOS/owl-ui.git",
+        "directory": "packages/button"
+    },
+    "scripts": {
+        "tsc": "tsc"
+    }
+}

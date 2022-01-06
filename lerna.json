@@ -1,0 +1,20 @@
+{
+  "version": "0.0.0",
+  "packages": [
+    "packages/*",
+    "typings"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "version": {
+      "conventionalCommits": true
+    },
+    "publish": {
+      "ignoreChanges": [
+        "*.md",
+        "*.test.*"
+      ]
+    }
+  }
+}

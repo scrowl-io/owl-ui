@@ -1,22 +1,26 @@
 {
     "compilerOptions": {
-        "rootDir": ".",
-        "outDir": "./dist",
+        "declaration": true,
         "target": "ESNEXT",
         "jsx": "react",
-        "module": "commonjs",
+        "module": "CommonJS",
         "allowJs": true,
         "sourceMap": true,
         "strict": true,
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
+        "preserveConstEnums": true,
+        "pretty": true,
+        "stripInternal": true,
         "typeRoots": [
             "node_modules/@types",
-            "./typings"
+            "typings"
         ],
-        "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@owlui/button": ["./packages/button/index.ts"],
+            "@owlui/textfield": ["./packages/textfield/index.ts"]
+        }
     },
     "exclude": [
         "node_modules"

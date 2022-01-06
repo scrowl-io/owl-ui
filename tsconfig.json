@@ -1,3 +1,10 @@
 {
-  "extends": "./tsconfig.base.json"
+  "extends": "./tsconfig.base.json",
+  "exclude": [
+    "scripts",
+    "design",
+    "**.config.**",
+    "packages/**/**/*.stories.ts",
+    "packages/**/**/*.stories.tsx"
+  ]
 }
