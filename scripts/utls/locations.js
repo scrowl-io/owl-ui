@@ -2,7 +2,10 @@ const fs = require('fs')
 const path = require('path')
 const exec = require('child_process').execSync;
 
+const filename = '[id]/dist/owl.[name].js'
+
 module.exports = {
+    filename: filename,
     get: () => {
         const packages = JSON.parse(
             exec('yarn workspaces info --json')
@@ -12,7 +15,7 @@ module.exports = {
         const entries = {}
     
         for (let pkg in packages) {
-            let pkgDef = JSON.parse(
+            const pkgDef = JSON.parse(
                             fs.readFileSync(
                                 path.join(
                                     __dirname,
@@ -25,14 +28,19 @@ module.exports = {
                         )
 
             if (pkgDef.module) {
-                entries[packages[pkg].location.replace('packages/', '')] = path.join(
+                const filepath = path.join(
                     '.',
                     packages[pkg].location,
                     pkgDef.module.replace(/js$/, 'ts')
                 )
+                
+                entries[packages[pkg].location.replace('packages/', '')] = {
+                    import: './' + filepath,
+                    filename: filename
+                }
             }
         }
-    
+        
         return entries
     }
 };
