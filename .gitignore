@@ -9,14 +9,11 @@ lerna-debug.log*
 # Dependency directories
 node_modules/
 
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional npm cache directory
+# caches
 .npm
-
-# Optional eslint cache
+*.tsbuildinfo
 .eslintcache
+.parcel-cache
 
 # Output of 'npm pack'
 *.tgz

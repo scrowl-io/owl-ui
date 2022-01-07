@@ -1,8 +1,22 @@
 {
-    "name": "typings",
-    "version": "0.0.1",
-    "private": true,
+    "name": "@owlui/typings",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/typings#readme",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EEBOS/owl-ui.git",
+        "directory": "typings"
+    },
+    "types": "src/index.d.ts",
     "scripts": {
-      "type-check": "tsc -b ./tsconfig.json"
+        "type-check": "tsc -b ./tsconfig.json"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2"
+    },
+    "publishConfig": {
+        "access": "public"
     }
-  }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "@owlui/web",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/web#readme",
+    "license": "MIT",
+    "source": "src/index.html",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EEBOS/owl-ui.git",
+        "directory": "web"
+    },
+    "dependencies": {
+        "@owlui/button": "^0.0.0"
+    },
+    "peerDependencies": {
+        "parcel": "^2.1.1",
+        "react": "^17.0.2"
+    }
+}

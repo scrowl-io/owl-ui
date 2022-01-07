@@ -10,17 +10,16 @@
   "license": "MIT",
   "description": "Reusable React components.",
   "scripts": {
-    "build:modules": "tsc --project ./tsconfig.json --module esnext --outDir ./packages --importHelpers",
-    "build:dist": "node ./scripts/webpack/cmd.dist.config.js",
+    "build:dist": "node ./scripts/parcel/cmd.dist.config.js",
     "build:storybook": "build-storybook",
-    "start": "start-storybook -p 6006"
+    "build:web": "cd ./web && yarn parcel build",
+    "start:storybook": "start-storybook -p 6006",
+    "start:web": "cd ./web && yarn parcel"
   },
   "workspaces": [
     "packages/*",
-    "typings"
-  ],
-  "files": [
-    "dist"
+    "typings",
+    "web"
   ],
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -28,6 +27,9 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
     "@babel/plugin-proposal-private-methods": "^7.16.7",
     "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@parcel/packager-ts": "^2.1.1",
+    "@parcel/transformer-sass": "^2.1.1",
+    "@parcel/transformer-typescript-types": "^2.1.1",
     "@storybook/addon-actions": "^6.4.8",
     "@storybook/addon-essentials": "^6.4.8",
     "@storybook/addon-links": "^6.4.8",
@@ -43,6 +45,7 @@
     "fork-ts-checker-webpack-plugin": "^6.5.0",
     "lerna": "^4.0.0",
     "mini-css-extract-plugin": "^2.4.5",
+    "parcel": "^2.1.1",
     "postcss": "^8.4.4",
     "postcss-import": "^14.0.2",
     "postcss-loader": "^6.2.1",
@@ -63,7 +66,6 @@
     "url": "https://github.com/EEBOS/owl-ui/issues"
   },
   "homepage": "https://github.com/EEBOS/owl-ui#readme",
-  "main": "lib/index.js",
   "keywords": [
     "osg",
     "owl",

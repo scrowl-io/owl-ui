@@ -4,7 +4,7 @@ const plugins = require('./opts.plugins.config')
 const rules = require('./opts.rules.config')
 const locations = require('../utls/locations')
 
-const entries = locations.get();
+const entries = locations.entries();
 
 const config = {
     mode: 'development',

@@ -3,6 +3,7 @@
   "exclude": [
     "scripts",
     "design",
+    "dist",
     "**.config.**",
     "packages/**/**/dist",
     "packages/**/**/*.stories.ts",
