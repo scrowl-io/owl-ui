@@ -4,6 +4,7 @@
     "scripts",
     "design",
     "**.config.**",
+    "packages/**/**/dist",
     "packages/**/**/*.stories.ts",
     "packages/**/**/*.stories.tsx"
   ]
