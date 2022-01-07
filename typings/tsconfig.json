@@ -8,10 +8,5 @@
         "types": []
     },
     "include": [],
-    "files": [],
-    "references": [
-        {
-            "path": "./custom-global/tsconfig.json"
-        }
-    ]
+    "files": []
 }
