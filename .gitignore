@@ -30,6 +30,6 @@ node_modules/
 /dist/
 packages/*/dist
 packages/**/*.js
-packages/**/*.d.ts
 packages/**/*.map
 packages/**/test/**.css
+web/dist

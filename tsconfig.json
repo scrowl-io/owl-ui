@@ -7,6 +7,7 @@
     "**.config.**",
     "packages/**/**/dist",
     "packages/**/**/*.stories.ts",
-    "packages/**/**/*.stories.tsx"
+    "packages/**/**/*.stories.tsx",
+    "web/dist"
   ]
 }
