@@ -1,17 +1,17 @@
-function toCamelCase(dashedName) {
-    return dashedName.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase());
+exports.toCamelCase = (dashedName) => {
+    return dashedName.replace(/-([a-z])/g, (_, letter) => {
+        letter.toUpperCase()
+    })
 }
 
-function prettyJson(obj) {
+exports.prettyJson = (obj) => {
     return JSON.stringify(obj, null, 4)
 }
 
-function outJson(obj) {
-    console.log(prettyJson(obj))
+exports.toLower = (str) => {
+    return str.trim().toLowerCase()
 }
 
-module.exports = {
-    toCamelCase: toCamelCase,
-    prettyJson: prettyJson,
-    outJson: outJson
+exports.toCapitalize = (str) => {
+    return str.replace(/^[A-Z|a-z]/g, (letter) => letter.toUpperCase())
 }

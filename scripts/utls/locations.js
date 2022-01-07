@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const exec = require('child_process').execSync;
-const strs = require('./strings')
+const { print } = require('./console')
 
 const filename = '[id]/dist/owl.[name].js'
 
@@ -48,8 +48,8 @@ function getEntries() {
                 path: pkgPath
             }
         } else {
-            console.warn('[WARN] Package not defined correctly: skipping')
-            strs.outJson(pkg)
+            print('[WARN] Package not defined correctly: skipping', 'warn')
+            print(pkg)
         }
     })
     
