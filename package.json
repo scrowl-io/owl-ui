@@ -12,14 +12,14 @@
   "scripts": {
     "build:dist": "node ./scripts/parcel/cmd.dist.config.js",
     "build:storybook": "build-storybook",
-    "start": "start-storybook -p 6006"
+    "build:web": "cd ./web && yarn parcel build",
+    "start:storybook": "start-storybook -p 6006",
+    "start:web": "cd ./web && yarn parcel"
   },
   "workspaces": [
     "packages/*",
-    "typings"
-  ],
-  "files": [
-    "dist"
+    "typings",
+    "web"
   ],
   "devDependencies": {
     "@babel/core": "^7.16.7",
