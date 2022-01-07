@@ -1,6 +1,6 @@
 {
     "name": "@owlui/button",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
     "license": "MIT",
@@ -28,6 +28,6 @@
         "react": "^17.0.2"
     },
     "dependencies": {
-        "@owlui/typings": "^0.0.0"
+        "@owlui/typings": "^0.0.1"
     }
 }
