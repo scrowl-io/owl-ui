@@ -14,7 +14,7 @@ function getPackagePaths() {
 
     for (let pkg in pkgs) {
 
-        if (pkgs[pkg].location.indexOf('packages/') !== -1) {
+        if (/packages\//.test(pkgs[pkg].location)) {
             const pkgPath = path.join(
                 __dirname,
                 '../..',

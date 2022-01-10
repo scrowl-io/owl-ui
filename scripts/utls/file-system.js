@@ -35,7 +35,7 @@ fs.getFile = (pathName, media) => {
 
         file = fs.readFileSync(filename, media)
 
-        if (filename.indexOf('json') !== -1) {
+        if (/.json$/.test(filename)) {
             return JSON.parse(file)
         } else {
             return file
@@ -51,8 +51,8 @@ fs.setFile = (pathName, contents) => {
 
     try {
 
-        if (pathName.indexOf('.json') !== -1) {
-            contents = strs.prettyJson(contents)
+        if (/.json$/.test(pathName)) {
+            contents = strs.prettyJson(JSON.parse(contents))
         }
 
         fs.outputFileSync(filename, contents)

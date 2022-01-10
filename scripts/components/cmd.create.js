@@ -54,10 +54,8 @@ function createBoilerplate(componentName) {
     
     for (let filename in fileList) {
         fileList[filename].contents = compile(fileList[filename].template, templateVars)
+        fs.setFile(fileList[filename].path, fileList[filename].contents)
     }
-
-    print('files list:')
-    console.log(fileList)
 }
 
 function processArgs() {
