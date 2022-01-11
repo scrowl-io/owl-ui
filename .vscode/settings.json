@@ -1,4 +1,12 @@
 {
     "xd.lastPackage": "/Users/chrisaube/Documents/GitHub/owl-ui/design/owl-ui",
-    "xd.globalEditor": true
+    "xd.globalEditor": true,
+    "cSpell.words": [
+        "npmignore",
+        "owlui",
+        "postcssrc",
+        "strs",
+        "templater",
+        "utls"
+    ]
 }
