@@ -15,7 +15,10 @@
     "build:web": "cd ./web && yarn parcel build",
     "start:storybook": "start-storybook -p 6006",
     "start:web": "cd ./web && yarn parcel",
-    "create:component": "node ./scripts/components/cmd.create.js"
+    "create:component": "node ./scripts/components/cmd.create.js",
+    "prepublish:lerna": "yarn run build:dist",
+    "publish:lerna": "lerna publish",
+    "republish:lerna": "yarn run prepublish && lerna publish from-package"
   },
   "workspaces": [
     "packages/*",
