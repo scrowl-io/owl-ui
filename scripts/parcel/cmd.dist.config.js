@@ -11,7 +11,7 @@ function build() {
     const pkgs = locations.entries()
     
     for (let pkg in pkgs) {
-        const pkgFolder = fs.normalize(`./packages/${pkg}`)
+        const pkgFolder = fs.normalize(`packages/${pkg}`)
         const pkgEntry = 'src/index.ts'
         
         run(pkgFolder, pkgEntry)
