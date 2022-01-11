@@ -1,6 +1,5 @@
 const engine = require('handlebars')
 const beautify = require('js-beautify')
-const { print } = require('../utls/console')
 
 engine.registerHelper('raw', (options) => {
     return options.fn()

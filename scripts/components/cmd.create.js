@@ -1,6 +1,6 @@
 const argv = require('yargs-parser')(process.argv.slice(2))
 const strs = require('../utls/strings')
-const { print, clear } = require('../utls/console')
+const { clear } = require('../utls/console')
 const fs = require('../utls/file-system')
 const { compile } = require('./templater')
 
