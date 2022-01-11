@@ -39,6 +39,7 @@ function createBoilerplate(componentName) {
             npmignore: createDef('npmignore', '.npmignore'),
             readme: createDef('readme', 'README.md'),
             tsconfig: createDef('tsconfig', 'tsconfig.json'),
+            postcss: createDef('postcss', 'postcssrc.json'),
             index: createDef('index', 'index.ts', 'src'),
             defaultIndex: createDef('default-index', 'index.ts', 'default'),
             defaultStyles: createDef('default-styles', 'styles.scss', 'default'),

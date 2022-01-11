@@ -2,7 +2,7 @@ const exec = require('child_process').execSync;
 const locations = require('../utls/locations')
 
 function run(pkgPath) {
-    console.log(`${pkgPath}`)
+    console.log(`building: ${pkgPath}`)
     exec(`cd ${pkgPath} && yarn parcel build`)
 }
 
@@ -11,7 +11,7 @@ function build() {
     
     for (let pkg in pkgs) {
         const pkgPath = `./packages/${pkg}`
-
+        
         run(pkgPath)
     }
 
