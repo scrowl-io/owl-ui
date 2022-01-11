@@ -3,7 +3,7 @@ const path = require('path')
 const strs = require('./strings')
 const { print } = require('./console')
 
-function normalize(pathName) {
+fs.normalize = (pathName) => {
     return path.normalize(
         path.join(
             process.cwd(),

@@ -1,18 +1,20 @@
-const exec = require('child_process').execSync;
+const exec = require('child_process').execSync
 const locations = require('../utls/locations')
+const fs = require('../utls/file-system')
 
-function run(pkgPath) {
-    console.log(`building: ${pkgPath}`)
-    exec(`cd ${pkgPath} && yarn parcel build`)
+function run(folder, entry) {
+    console.log(`building: ${folder}, ${entry}`)
+    exec(`cd ${folder} && parcel build ${entry}`)
 }
 
 function build() {
     const pkgs = locations.entries()
     
     for (let pkg in pkgs) {
-        const pkgPath = `./packages/${pkg}`
+        const pkgFolder = fs.normalize(`./packages/${pkg}`)
+        const pkgEntry = 'src/index.ts'
         
-        run(pkgPath)
+        run(pkgFolder, pkgEntry)
     }
 
     console.log(`\n`)
