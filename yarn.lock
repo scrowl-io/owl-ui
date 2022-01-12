@@ -2478,6 +2478,11 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
+"@owlui/typings@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.1.tgz#713a45a5eef4d9ba10c8d3963079da40f2f4c127"
+  integrity sha512-BruOjZvXTTSUOr/+uA2OnU73yjsvpjTB/O971uTqbx77HONI52d8dSEv5xDqxrMM2+mxZOUjb4hRkAqJhQXylw==
+
 "@parcel/babel-ast-utils@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@parcel/babel-ast-utils/-/babel-ast-utils-2.1.1.tgz#4d8e0d0f86a4e278b4f97efbcca46ed7a13eb147"

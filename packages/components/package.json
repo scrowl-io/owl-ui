@@ -1,0 +1,36 @@
+{
+    "name": "@owlui/components",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
+    "license": "MIT",
+    "source": "src/index.ts",
+    "main": "dist/owl.components.js",
+    "module": "dist/index.js",
+    "types": "dist/types.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "sideEffects": [
+        "*.css"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EEBOS/owl-ui.git",
+        "directory": "packages/components"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "isLibrary": true,
+    "outputFormat": "commonjs",
+    "peerDependencies": {
+        "react": "^17.0.2"
+    },
+    "dependencies": {
+        "@owlui/button": "^0.0.2",
+        "@owlui/textfield": "^0.0.2",
+        "@owlui/typings": "^0.0.1"
+    }
+}
