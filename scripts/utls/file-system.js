@@ -13,7 +13,7 @@ fs.normalize = (pathName) => {
 }
 
 fs.getFile = (pathName, media) => {
-    const filename = normalize(pathName)
+    const filename = fs.normalize(pathName)
 
     try {
 
@@ -47,7 +47,7 @@ fs.getFile = (pathName, media) => {
 }
 
 fs.setFile = (pathName, contents) => {
-    const filename = normalize(pathName)
+    const filename = fs.normalize(pathName)
 
     try {
 
