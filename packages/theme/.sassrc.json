@@ -1,0 +1,7 @@
+{
+    "outFile": "./dist/owl.theme.css",
+    "includePaths": [
+        "node_modules",
+        "src/"
+    ]
+}

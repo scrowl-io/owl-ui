@@ -1,6 +1,6 @@
 const argv = require('yargs-parser')(process.argv.slice(2))
 const strs = require('../utls/strings')
-const { clear } = require('../utls/console')
+const { print, clear } = require('../utls/console')
 const fs = require('../utls/file-system')
 const { compile } = require('./templater')
 
@@ -70,6 +70,14 @@ function processArgs() {
         const many = argv.m.split(',')
 
         componentNames = componentNames.concat(many.map(strs.toLower))
+    }
+
+    if (componentNames.length === 0) {
+        print('No component names submitted', 'warn')
+        print('Use flag -n with a non-spaced string to create a single component', 'info')
+        print('Use flag -m with comma separated non-spaced string to create multiple components', 'info')
+        process.exit(1)
+        return
     }
 
     componentNames.forEach(createBoilerplate)

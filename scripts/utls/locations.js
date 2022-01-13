@@ -34,16 +34,21 @@ function getEntries() {
 
     packages.forEach((pkgPath) => {
         const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
+        const entry = pkg.source ? pkg.source : (pkg.sass ? pkg.sass : undefined)
 
-        if (pkg.source && pkg.repository && pkg.repository.directory) {
+        if (
+            entry
+            && pkg.repository
+            && pkg.repository.directory) {
             const filepath = path.join(
                 './',
                 pkg.repository.directory,
-                pkg.source
+                entry
             )
             
             entries[pkg.name.replace('@owlui/', '')] = {
                 import: './' + filepath,
+                entry: entry,
                 filename: filename,
                 path: pkgPath
             }

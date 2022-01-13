@@ -26,7 +26,7 @@ exports.print = (msg, clr) => {
         clr = 'data'
     }
 
-    console.log(printable[clr])
+    console.log(`[${clr.toUpperCase()}] ${printable}`[clr])
 }
 
 exports.clear = () => {
