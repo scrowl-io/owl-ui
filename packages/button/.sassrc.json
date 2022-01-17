@@ -1,0 +1,8 @@
+{
+    "outFile": "dist/owl.button.css",
+    "includePaths": [
+        "node_modules/",
+        "src/",
+        "../"
+    ]
+}

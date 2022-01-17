@@ -29,6 +29,7 @@
         "react": "^17.0.2"
     },
     "dependencies": {
+        "@owlui/theme": "^0.0.0",
         "@owlui/typings": "^0.0.2"
     },
     "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"

@@ -4,7 +4,7 @@ const fs = require('../utls/file-system')
 
 function run(folder, entry) {
     console.log(`building: ${folder}, ${entry}`)
-    exec(`cd ${folder} && parcel build ${entry}`)
+    exec(`cd ${folder} && parcel build ${entry} --no-cache`)
 }
 
 function build() {
