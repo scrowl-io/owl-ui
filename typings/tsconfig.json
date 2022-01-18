@@ -1,12 +1,20 @@
 {
     "extends": "../tsconfig.base.json",
     "compilerOptions": {
-        "isolatedModules": true,
-        "allowSyntheticDefaultImports": true,
-        "skipLibCheck": false,
-        "noEmit": true,
-        "types": []
+      "isolatedModules": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": false,
+      "noEmit": true,
+      "types": []
     },
     "include": [],
-    "files": []
-}
+    "files": [],
+    "references": [
+      {
+        "path": "./static-assets/tsconfig.json"
+      },
+      {
+        "path": "./custom-global/tsconfig.json"
+      }
+    ]
+  }
