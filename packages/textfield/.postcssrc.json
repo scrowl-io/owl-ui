@@ -5,6 +5,9 @@
         "postcss-url": true,
         "autoprefixer": {
             "grid": true
+        },
+        "postcss-modules": {
+            "generateScopedName": "owlui-[local]__[hash:base64:7]"
         }
     }
 }

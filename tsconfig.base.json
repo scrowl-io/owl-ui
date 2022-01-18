@@ -11,16 +11,7 @@
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
         "preserveConstEnums": true,
-        "pretty": true,
-        "stripInternal": true,
-        "typeRoots": [
-            "node_modules/@types",
-            "typings"
-        ],
-        "paths": {
-            "@owlui/button": ["./packages/button/index.ts"],
-            "@owlui/textfield": ["./packages/textfield/index.ts"]
-        }
+        "stripInternal": true
     },
     "exclude": [
         "node_modules"

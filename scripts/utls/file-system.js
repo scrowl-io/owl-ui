@@ -3,6 +3,14 @@ const path = require('path')
 const strs = require('./strings')
 const { print } = require('./console')
 
+fs.join = (...paths) => {
+    return path.join.apply(null, paths)
+}
+
+fs.resolve = (...paths) => {
+    return path.resolve.apply(null, paths)
+}
+
 fs.normalize = (pathName) => {
     return path.normalize(
         path.join(
@@ -22,7 +30,7 @@ fs.getFile = (pathName, media) => {
             return
         }
     } catch (err) {
-        print(err.stack, 'error')
+        print(err.message, 'error')
         return
     }
 
@@ -41,7 +49,7 @@ fs.getFile = (pathName, media) => {
             return file
         }
     } catch (err) {
-        print(err.stack, 'error')
+        print(err.message, 'error')
         return
     }
 }
@@ -51,13 +59,13 @@ fs.setFile = (pathName, contents) => {
 
     try {
 
-        if (/.json$/.test(pathName)) {
+        if (/.json$/.test(pathName) && typeof contents !== 'string') {
             contents = strs.prettyJson(JSON.parse(contents))
         }
 
         fs.outputFileSync(filename, contents)
-    } catch {
-        print(err.stack, 'error')
+    } catch (err) {
+        print(err.message, 'error')
         return
     }
 }

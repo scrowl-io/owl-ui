@@ -1,11 +1,17 @@
 {
     "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "types": [
+            "custom-globals",
+            "static-assets",
+        ],
+        "typeRoots": [
+            "../../node_modules/@types",
+            "../../typings"
+        ]
+    },
     "exclude": [
         "**/*.stories.ts",
         "**/*.stories.tsx"
-    ],
-    "include": [
-        "**/*.ts",
-        "**/*.tsx"
     ]
 }

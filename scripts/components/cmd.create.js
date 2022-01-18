@@ -42,7 +42,7 @@ function createBoilerplate(componentName) {
             postcss: createDef('postcss', 'postcssrc.json'),
             index: createDef('index', 'index.ts', 'src'),
             defaultIndex: createDef('default-index', 'index.ts', 'default'),
-            defaultStyles: createDef('default-styles', 'styles.scss', 'default'),
+            defaultStyles: createDef('default-styles', 'styles.module.scss', 'default'),
             defaultDescription: createDef('default-description', 'Description.md', 'default'),
             defaultComponent: createDef('default-component', `${componentCap}.tsx`, 'default'),
             defaultStory: createDef('default-story', `${componentCap}.stories.tsx`, 'default'),
