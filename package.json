@@ -10,8 +10,9 @@
   "license": "MIT",
   "description": "Reusable React components.",
   "scripts": {
+    "setup": "node ./scripts/pipeline/cmd.setup.js",
     "install:lerna": "lerna bootstrap --hoist",
-    "build:dist": "node ./scripts/parcel/cmd.dist.config.js",
+    "build:dist": "yarn run setup && node ./scripts/pipeline/cmd.dist.js",
     "build:storybook": "build-storybook",
     "build:web": "cd ./web && yarn parcel build",
     "start:storybook": "start-storybook -p 6006",
