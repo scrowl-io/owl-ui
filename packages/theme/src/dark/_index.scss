@@ -1,0 +1,6 @@
+@use '../global';
+
+@mixin branding {
+    background-color: global.$owl-ref-palette-dark;
+    color: global.$owl-sys-color-on-dark;
+}

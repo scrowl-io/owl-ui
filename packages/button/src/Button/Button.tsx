@@ -12,11 +12,13 @@ export const Button = (props: ButtonProps) => {
     if (props.size === undefined) {
         props.size = 'medium'
     }
-    
+
     return <button
         className={[
             styles.default.button,
-            styles.default[`button_${props.appearance}`],
+            styles.default[
+                `button_${props.theme ? (props.appearance + '--' + props.theme) : props.appearance}`
+            ],
             styles.default[`button--${props.size}`]
         ].join(' ')}
     >{children}</button>

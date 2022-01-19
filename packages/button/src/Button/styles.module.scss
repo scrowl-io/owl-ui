@@ -1,32 +1,26 @@
-@import '@owlui/theme';
+@use '@owlui/theme' as theme;
 
 .button {
+    
+    /* Appearances */
+    &_primary {
+        @include theme.default-branding;
 
-  /* Appearances */
-  &_primary {
-    background-color: $owl-sys-color-primary;
-    color: $owl-sys-color-on-primary;
-  }
+        &--dark {
+            @include theme.dark-branding;
+        }
+    }
 
-  /* Sizes */
-  &--large {
-    font: $owl-sys-typescale-display-large-font;
-    font-size: $owl-sys-typescale-display-large-size;
-    line-height: $owl-sys-typescale-display-large-line-height;
-    font-weight: $owl-sys-typescale-display-large-weight;
-  }
+    /* Sizes */
+    &--large {
+        @include theme.default-typeface--large;
+    }
 
-  &--medium {
-    font: $owl-sys-typescale-display-large-font;
-    font-size: $owl-sys-typescale-display-large-size;
-    line-height: $owl-sys-typescale-display-large-line-height;
-    font-weight: $owl-sys-typescale-display-large-weight;
-  }
+    &--medium {
+        @include theme.default-typeface--medium;
+    }
 
-  &--small {
-    font: $owl-sys-typescale-display-large-font;
-    font-size: $owl-sys-typescale-display-large-size;
-    line-height: $owl-sys-typescale-display-large-line-height;
-    font-weight: $owl-sys-typescale-display-large-weight;
-  }
+    &--small {
+        @include theme.default-typeface--small;
+    }
 }

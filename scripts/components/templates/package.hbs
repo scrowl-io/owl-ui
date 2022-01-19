@@ -1,13 +1,15 @@
 {
-    "name": "@owlui/{{{componentName}}}",
+    "name": "@owlui/{{{name}}}",
     "version": "0.0.0",
     "description": "",
-    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/{{{componentName}}}#readme",
+    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/{{{name}}}#readme",
     "license": "MIT",
     "source": "src/index.ts",
-    "main": "dist/owl.{{{componentName}}}.js",
+    "main": "dist/owl.{{{name}}}.js",
     "module": "dist/index.js",
     "types": "dist/types.d.ts",
+    "sass": "src/index.scss",
+    "style": "dist/index.css",
     "files": [
         "dist",
         "src"
@@ -18,7 +20,7 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/EEBOS/owl-ui.git",
-        "directory": "packages/{{{componentName}}}"
+        "directory": "packages/{{{name}}}"
     },
     "publishConfig": {
         "access": "public"

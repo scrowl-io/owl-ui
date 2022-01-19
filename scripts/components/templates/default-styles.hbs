@@ -1,5 +1,26 @@
-@import '../../../index.scss';
+@use '@owlui/theme' as theme;
 
-.{{{componentName}}} {
+.{{{name}}} {
 
+    /* Appearances */
+    &_primary {
+        @include theme.default-branding;
+
+        &--dark {
+            @include theme.dark-branding;
+        }
+    }
+
+    /* Sizes */
+    &--large {
+        @include theme.default-typeface--large;
+    }
+
+    &--medium {
+        @include theme.default-typeface--medium;
+    }
+
+    &--small {
+        @include theme.default-typeface--small;
+    }
 }

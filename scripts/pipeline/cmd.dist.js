@@ -5,8 +5,7 @@ const fixes = require('../node-module-fixes/module-fixes')
 
 function run(folder, entry) {
     console.log(`building: ${folder}, ${entry}`)
-    // exec(`cd ${folder} && yarn parcel build ${entry} --log-level verbose`)
-    exec(`cd ${folder} && yarn parcel build ${entry}`)
+    exec(`cd ${folder} && yarn parcel build ${entry} --log-level warn`)
 }
 
 function build() {

@@ -3,23 +3,25 @@ import { TextfieldProps } from './Textfield.types';
 import * as styles from './styles.module.scss';
 
 export const Textfield = (props: TextfieldProps) => {
-  const { children } = props;
+    const { children } = props;
+    
+    if (props.appearance === undefined) {
+        props.appearance = 'primary'
+    }
 
-  if (props.appearance === undefined) {
-    props.appearance = 'primary'
-  }
+    if (props.size === undefined) {
+        props.size = 'medium'
+    }
 
-  if (props.size === undefined) {
-      props.size = 'medium'
-  }
-
-  return <button
+    return <input type="text"
         className={[
             styles.default.textfield,
-            styles.default[`textfield_${props.appearance}`],
+            styles.default[
+                `textfield_${props.theme ? (props.appearance + '--' + props.theme) : props.appearance}`
+            ],
             styles.default[`textfield--${props.size}`]
         ].join(' ')}
-    >{children}</button>
+    />
 }
 
 export default Textfield;

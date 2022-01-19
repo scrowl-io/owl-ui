@@ -5,5 +5,6 @@ export const Default = () => {
     return <Button
                 size="large"
                 appearance="primary"
+                theme="dark"
             >Hello World</Button>
 }

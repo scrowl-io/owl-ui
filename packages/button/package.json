@@ -8,6 +8,8 @@
     "main": "dist/owl.button.js",
     "module": "dist/index.js",
     "types": "dist/types.d.ts",
+    "sass": "src/index.scss",
+    "style": "dist/index.css",
     "files": [
         "dist",
         "src"

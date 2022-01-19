@@ -1,13 +1,26 @@
 import * as React from 'react'
+import { {{{cap}}}Props } from './{{{cap}}}.types'
 import * as styles from './styles.module.scss'
 
-export const {{{componentCap}}} = () => {
-    
+export const {{{cap}}} = (props: {{{cap}}}Props) => {
+    const { children } = props
+
+    if (props.appearance === undefined) {
+        props.appearance = 'primary'
+    }
+
+    if (props.size === undefined) {
+        props.size = 'medium'
+    }
+
     return <div
         className={[
-            styles.default.{{{componentCap}}}
+            styles.default.{{{name}}},
+            styles.default[
+                `{{{name}}}_${props.theme ? (props.appearance + '--' + props.theme) : props.appearance}`
+            ]
         ].join(' ')}
     >{children}</div>
 }
 
-export default {{{componentCap}}};
+export default {{{cap}}};

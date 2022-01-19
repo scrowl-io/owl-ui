@@ -5,5 +5,6 @@ export const Default = () => {
     return <Textfield
                 size="large"
                 appearance="primary"
+                theme="dark"
             />
 }
