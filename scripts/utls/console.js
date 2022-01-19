@@ -10,7 +10,7 @@ const clrTheme = {
     help: 'blue',
     warn: 'brightYellow',
     debug: 'brightMagenta',
-    error: 'error',
+    error: 'red',
     info: 'brightMagenta'
 }
 
