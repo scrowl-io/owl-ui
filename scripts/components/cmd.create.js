@@ -14,7 +14,7 @@ function createBoilerplate(component) {
     }
 
     function getTemplateFile(filename) {
-        return fs.getFile(`scripts/components/templates/${filename}.hbs`)
+        return fs.getFile(`scripts/components/templates/new/${filename}.hbs`)
     }
 
     function createDef(template, file, folder) {
