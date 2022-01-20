@@ -5,21 +5,24 @@ import * as styles from './styles.module.scss'
 export const Button = (props: ButtonProps) => {
     const { children } = props
 
-    if (props.appearance === undefined) {
-        props.appearance = 'primary'
+    let appearance = props.appearance
+    let size = props.size
+
+    if (appearance === undefined) {
+        appearance = 'primary'
     }
 
-    if (props.size === undefined) {
-        props.size = 'medium'
+    if (size === undefined) {
+        size = 'medium'
     }
 
     return <button
         className={[
             styles.default.button,
             styles.default[
-                `button_${props.theme ? (props.appearance + '--' + props.theme) : props.appearance}`
+                `button_${props.theme ? (appearance + '--' + props.theme) : appearance}`
             ],
-            styles.default[`button--${props.size}`]
+            styles.default[`button--${size}`]
         ].join(' ')}
     >{children}</button>
 }

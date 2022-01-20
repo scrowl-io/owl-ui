@@ -47,7 +47,10 @@ function createBoilerplate(component) {
             defaultComponent: createDef('default-component', `${component.cap}.tsx`, 'default'),
             defaultTypes: createDef('default-types', `${component.cap}.types.ts`, 'default'),
             defaultStory: createDef('default-story', `${component.cap}.stories.tsx`, 'default'),
-            defaultStories: createDef('default-stories', `${component.cap}-default.stories.tsx`, 'stories')
+            defaultStories: createDef('default-stories', `${component.cap}-default.stories.tsx`, 'stories'),
+            defaultStoriesAppearance: createDef('default-stories-appearance', `${component.cap}-appearance.stories.tsx`, 'stories'),
+            defaultStoriesSize: createDef('default-stories-size', `${component.cap}-size.stories.tsx`, 'stories'),
+            defaultStoriesTheme: createDef('default-stories-theme', `${component.cap}-theme.stories.tsx`, 'stories')
         }
     
     for (let filename in fileList) {

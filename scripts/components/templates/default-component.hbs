@@ -5,20 +5,24 @@ import * as styles from './styles.module.scss'
 export const {{{cap}}} = (props: {{{cap}}}Props) => {
     const { children } = props
 
-    if (props.appearance === undefined) {
-        props.appearance = 'primary'
+    let appearance = props.appearance
+    let size = props.size
+
+    if (appearance === undefined) {
+        appearance = 'primary'
     }
 
-    if (props.size === undefined) {
-        props.size = 'medium'
+    if (size === undefined) {
+        size = 'medium'
     }
 
     return <div
         className={[
             styles.default.{{{name}}},
             styles.default[
-                `{{{name}}}_${props.theme ? (props.appearance + '--' + props.theme) : props.appearance}`
-            ]
+                `{{{name}}}_${props.theme ? (appearance + '--' + props.theme) : appearance}`
+            ],
+            styles.default[`{{{name}}}--${size}`]
         ].join(' ')}
     >{children}</div>
 }
