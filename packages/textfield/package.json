@@ -1,6 +1,6 @@
 {
     "name": "@owlui/textfield",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/textfield#readme",
     "license": "MIT",
@@ -31,8 +31,8 @@
         "react": "^17.0.2"
     },
     "dependencies": {
-        "@owlui/theme": "^0.0.4",
-        "@owlui/typings": "^0.0.4"
+        "@owlui/theme": "^0.0.5",
+        "@owlui/typings": "^0.0.5"
     },
     "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }
