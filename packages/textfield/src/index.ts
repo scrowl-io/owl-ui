@@ -1,8 +1,7 @@
-import * as defaultTextfield from './Textfield/index'
+import * as textfield from './Textfield/index'
 
-export const Default = defaultTextfield
+export const Default = textfield
 
 export default {
     Default
 }
-

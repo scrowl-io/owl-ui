@@ -1,7 +1,7 @@
-import * as defaultBtn from './Button/index'
+import * as button from './Button/index'
 
-export const Button = defaultBtn
+export const Default = button
 
 export default {
-    Button
+    Default
 }
