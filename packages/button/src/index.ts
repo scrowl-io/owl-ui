@@ -1,7 +1,9 @@
 import * as button from './Button/index'
 
-export const Default = button
+export const Default = button.component
+export const DefaultTypes = button.types
 
 export default {
-    Default
+    Default,
+    DefaultTypes
 }
