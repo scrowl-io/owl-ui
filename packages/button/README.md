@@ -1,4 +1,4 @@
-# `@owlui/Button`
+# `@owlui/button`
 
 > TODO: description
 

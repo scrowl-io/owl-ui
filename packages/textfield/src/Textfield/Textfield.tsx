@@ -27,4 +27,6 @@ export const Textfield = (props: TextfieldProps) => {
     />
 }
 
-export default Textfield;
+export default {
+    Textfield
+};

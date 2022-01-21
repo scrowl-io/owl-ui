@@ -1,7 +1,7 @@
-import * as Component from './Button'
+import { Button } from './Button'
 import * as Types from './Button.types'
 
-export const component = Component
+export const component = Button
 export const types = Types
 
 export default {

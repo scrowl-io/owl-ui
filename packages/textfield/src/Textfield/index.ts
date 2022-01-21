@@ -1,7 +1,7 @@
-import * as Component from './Textfield'
+import { Textfield } from './Textfield'
 import * as Types from './Textfield'
 
-export const component = Component
+export const component = Textfield
 export const types = Types
 
 export default {

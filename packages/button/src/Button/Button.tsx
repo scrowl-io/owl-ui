@@ -27,4 +27,6 @@ export const Button = (props: ButtonProps) => {
     >{children}</button>
 }
 
-export default Button;
+export default {
+    Button
+};
