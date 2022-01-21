@@ -1,3 +1,10 @@
 {{#each components}}
-export * from '{{this}}'
+import * as {{cap}} from '{{pkg}}'
+export const {{name}} = {{cap}}
+
 {{/each}}
+export default {
+{{#each components}}
+    {{name}},
+{{/each}}
+}

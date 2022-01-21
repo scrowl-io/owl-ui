@@ -1,6 +1,7 @@
 const exec = require('child_process').execSync
 const fs = require('../utls/file-system')
 const locations = require('../utls/locations')
+const strs = require('../utls/strings');
 const { compile } = require('./templater')
 
 function update() {
@@ -17,12 +18,14 @@ function update() {
             const component = `@owlui/${pkg}`
 
             if (pkg !== 'theme') {
-                names.push(component)
+                names.push({
+                    name: pkg,
+                    cap: strs.toCapitalize(pkg),
+                    pkg: component
+                })
             }
 
-            if (!deps.hasOwnProperty(component)) {
-                exec(`lerna add ${component} --scope=@owlui/components`)
-            }
+            exec(`lerna add ${component} --scope=@owlui/components`)
         }
     }
     
