@@ -1,7 +1,7 @@
-import * as button from './Button/index'
+import * as DefaultButton from './Default/index'
 
-export const Default = button.component
-export const DefaultTypes = button.types
+export const Default = DefaultButton.component
+export const DefaultTypes = DefaultButton.types
 
 export default {
     Default,

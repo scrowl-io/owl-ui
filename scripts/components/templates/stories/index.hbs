@@ -1,0 +1,20 @@
+import * as React from 'react'
+import { component as {{{cap}}} } from '../index'
+
+import { appearance } from './{{{optionCap}}}-appearance.stories'
+import { size } from './{{{optionCap}}}-size.stories'
+import { theme } from './{{{optionCap}}}-theme.stories'
+
+export const {{{optionCap}}} = (args) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>
+
+Default.args = {
+    appearance: 'primary',
+    size: 'large',
+    theme: 'default'
+}
+
+Default.argTypes = {
+    appearance,
+    size,
+    theme
+}

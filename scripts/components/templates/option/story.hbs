@@ -1,0 +1,32 @@
+import * as React from 'react'
+import { Meta } from '@storybook/react'
+import { Component } from './{{{optionCap}}}'
+import descriptionMd from './Description.md'
+
+export { {{{optionCap}}} } from './stories/{{{optionCap}}}-index.stories'
+
+export default {
+    title: 'Components/{{{cap}}}/{{{optionCap}}}',
+    component: Component,
+    parameters: {
+        docs: {
+            description: {
+                component: [
+                    descriptionMd
+                ].join('/n')
+            }
+        }
+    },
+    decorators: [
+        {{{{raw}}}}
+        Story => (
+            <div style={{
+                display: 'flex',
+                justifyContent: 'space-evenly'
+            }}>
+                <Story />
+            </div>
+        )
+        {{{{/raw}}}}
+    ]
+} as Meta

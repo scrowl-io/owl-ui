@@ -1,14 +1,23 @@
 const fs = require('../utls/file-system')
 
 const fileMap = {
-    'design/owl-ui/dist/styledictionary/scss/variables.scss': 'packages/theme/src/global/variables.scss'
+    'design/owl-ui/dist/styledictionary/scss/variables.scss': {
+        dest: 'packages/theme/src/global/_variables.scss',
+        transformer: (contents) => {
+            return contents.replace(/;/g, () => { return ' !default;' })
+        }
+    }
 }
 
 function copy() {
 
     for (let file in fileMap) {
-        const contents = fs.getFile(file)
-        const dest = fileMap[file]
+        let contents = fs.getFile(file)
+        const dest = fileMap[file].dest
+        
+        if (fileMap[file].transformer) {
+            contents = fileMap[file].transformer(contents)
+        }
         
         fs.setFile(dest, contents)
     }

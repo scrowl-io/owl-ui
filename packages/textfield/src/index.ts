@@ -1,7 +1,7 @@
-import * as textfield from './Textfield/index'
+import * as DefaultTextfield from './Default/index'
 
-export const Default = textfield.component
-export const DefaultTypes = textfield.types
+export const Default = DefaultTextfield.component
+export const DefaultTypes = DefaultTextfield.types
 
 export default {
     Default,

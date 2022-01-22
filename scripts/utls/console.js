@@ -19,7 +19,10 @@ colors.setTheme(clrTheme)
 exports.print = (msg, clr) => {
     clr = clr || 'data'
 
-    const printable = (typeof msg !== 'string') ? strs.prettyJson(msg) : msg
+    const printable = (typeof msg === 'string' || typeof msg === 'number' || typeof msg === 'boolean') ? msg : (
+        (msg instanceof Error) ? msg.message + '\n' + msg.stack :
+        strs.prettyJson(msg)
+    )
 
     if (!clrTheme.hasOwnProperty(clr)) {
         console.warn(`color not supported: ${clr}`.warn)

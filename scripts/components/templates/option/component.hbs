@@ -1,0 +1,36 @@
+import * as React from 'react'
+import { {{{optionCap}}}{{{cap}}}Props } from './{{{optionCap}}}.types'
+import * as styles from './styles.module.scss'
+
+export const Component = (props: {{{optionCap}}}{{{cap}}}Props) => {
+    const { children } = props
+
+    let appearance = props.appearance
+    let theme = props.theme
+    let size = props.size
+
+    if (appearance === undefined) {
+        appearance = 'primary'
+    }
+
+    if (theme === undefined) {
+        theme = 'default'
+    }
+
+    if (size === undefined) {
+        size = 'medium'
+    }
+
+    return <div
+        className={[
+            styles.default.{{{name}}},
+            styles.default[`{{{name}}}_${appearance}`],
+            styles.default[`{{{name}}}_${theme}`],
+            styles.default[`{{{name}}}--${size}`]
+        ].join(' ')}
+    >{children}</div>
+}
+
+export default {
+    Component
+};

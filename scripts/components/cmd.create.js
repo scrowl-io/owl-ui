@@ -2,26 +2,17 @@ const argv = require('yargs-parser')(process.argv.slice(2))
 const strs = require('../utls/strings')
 const { print, clear } = require('../utls/console')
 const fs = require('../utls/file-system')
-const { compile } = require('./templater')
+const { compile, definePaths } = require('./templater')
+const tempOption = require('./create-option')
 
 function createBoilerplate(component) {
 
-    function setFilePath(filename, subPath) {
-        subPath = subPath || 'base'
-        const basePath = folders[subPath]
-
-        return `${basePath}/${filename}`
+    function packagePath(template, filename) {
+        return definePaths(template, 'package', filename, folders.base)
     }
 
-    function getTemplateFile(filename) {
-        return fs.getFile(`scripts/components/templates/new/${filename}.hbs`)
-    }
-
-    function createDef(template, file, folder) {
-        return {
-            template: getTemplateFile(template),
-            path: setFilePath(file, folder)
-        }
+    function sourcePath(template, filename) {
+        return definePaths(template, 'source', filename, folders.src)
     }
 
     const folders = {
@@ -29,38 +20,29 @@ function createBoilerplate(component) {
         }
 
     folders.src = `${folders.base}/src`
-    folders.default = `${folders.src}/${component.cap}`
-    folders.stories = `${folders.default}/stories`
     
     const fileList = {
-            package: createDef('package', 'package.json'),
-            license: createDef('license', 'LICENSE'),
-            npmignore: createDef('npmignore', '.npmignore'),
-            readme: createDef('readme', 'README.md'),
-            tsconfig: createDef('tsconfig', 'tsconfig.json'),
-            postcss: createDef('postcss', 'postcssrc.json'),
-            index: createDef('index', 'index.ts', 'src'),
-            styles: createDef('styles', 'index.scss', 'src'),
-            defaultIndex: createDef('default-index', 'index.ts', 'default'),
-            defaultStyles: createDef('default-styles', 'styles.module.scss', 'default'),
-            defaultDescription: createDef('default-description', 'Description.md', 'default'),
-            defaultComponent: createDef('default-component', `${component.cap}.tsx`, 'default'),
-            defaultTypes: createDef('default-types', `${component.cap}.types.ts`, 'default'),
-            defaultStory: createDef('default-story', `${component.cap}.stories.tsx`, 'default'),
-            defaultStories: createDef('default-stories', `${component.cap}-default.stories.tsx`, 'stories'),
-            defaultStoriesAppearance: createDef('default-stories-appearance', `${component.cap}-appearance.stories.tsx`, 'stories'),
-            defaultStoriesSize: createDef('default-stories-size', `${component.cap}-size.stories.tsx`, 'stories'),
-            defaultStoriesTheme: createDef('default-stories-theme', `${component.cap}-theme.stories.tsx`, 'stories')
+            package: packagePath('package', 'package.json'),
+            license: packagePath('license', 'LICENSE'),
+            npmignore: packagePath('npmignore', '.npmignore'),
+            readme: packagePath('readme', 'README.md'),
+            tsconfig: packagePath('tsconfig', 'tsconfig.json'),
+            postcss: packagePath('postcss', 'postcssrc.json'),
+            index: sourcePath('index', 'index.ts'),
+            styles: sourcePath('styles', 'index.scss')
         }
     
     for (let filename in fileList) {
         fileList[filename].contents = compile(fileList[filename].template, component)
         fs.setFile(fileList[filename].path, fileList[filename].contents)
     }
+
+    tempOption.create(component, folders)
 }
 
 function getParts(component) {
     const parts = component.split('@')
+    const option = 'default'
 
     if (!parts.length) {
         throw Error('Component name missing')
@@ -72,16 +54,21 @@ function getParts(component) {
         throw Error('Component abbreviation missing: [name]@[abv]')
     }
 
+    const abv = strs.toLower(parts[1])
+
     return {
         name: name,
-        abv: strs.toLower(parts[1]),
-        cap: strs.toCapitalize(name)
+        cap: strs.toCapitalize(name),
+        abv: abv,
+        abvCap: strs.toCapitalize(abv),
+        option: option,
+        optionCap: strs.toCapitalize(option)
     }
 }
 
 function processArgs() {
     const components = []
-
+    
     try {
         if (argv.hasOwnProperty('n')) {
             components.push(getParts(argv.n))
@@ -94,12 +81,12 @@ function processArgs() {
         }
     
         if (components.length === 0) {
-            throw Error('No component names submitted \n Use flag -n with a non-spaced string to create a single component \n Use flag -m with comma separated non-spaced string to create multiple components')
+            throw Error(`No component names submitted \n Use flag -n with a non-spaced string to create a single component \n Use flag -m with comma separated non-spaced string to create multiple components`)
         }
     
         components.forEach(createBoilerplate)
     } catch (err) {
-        print(err.message, 'error')
+        print(err, 'error')
         process.exit(1)
     }
 }

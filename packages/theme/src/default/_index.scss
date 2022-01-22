@@ -1,27 +1,27 @@
-@use '../global';
+@use '../global/variables' as vars;
 
 @mixin branding {
-    background-color: global.$owl-sys-color-primary;
-    color: global.$owl-sys-color-on-primary;
+    background-color: vars.$owl-sys-color-primary;
+    color: vars.$owl-sys-color-on-primary;
 }
 
 @mixin typeface--large {
-    font: global.$owl-sys-typescale-display-large-font;
-    font-size: global.$owl-sys-typescale-display-large-size;
-    line-height: global.$owl-sys-typescale-display-large-line-height;
-    font-weight: global.$owl-sys-typescale-display-large-weight;
+    font: vars.$owl-sys-typescale-display-large-font;
+    font-size: vars.$owl-sys-typescale-display-large-size;
+    line-height: vars.$owl-sys-typescale-display-large-line-height;
+    font-weight: vars.$owl-sys-typescale-display-large-weight;
 }
 
 @mixin typeface--medium {
-    font: global.$owl-sys-typescale-display-large-font;
-    font-size: global.$owl-sys-typescale-display-large-size;
-    line-height: global.$owl-sys-typescale-display-large-line-height;
-    font-weight: global.$owl-sys-typescale-display-large-weight;
+    font: vars.$owl-sys-typescale-display-large-font;
+    font-size: vars.$owl-sys-typescale-display-large-size;
+    line-height: vars.$owl-sys-typescale-display-large-line-height;
+    font-weight: vars.$owl-sys-typescale-display-large-weight;
 }
 
 @mixin typeface--small {
-    font: global.$owl-sys-typescale-display-large-font;
-    font-size: global.$owl-sys-typescale-display-large-size;
-    line-height: global.$owl-sys-typescale-display-large-line-height;
-    font-weight: global.$owl-sys-typescale-display-large-weight;
+    font: vars.$owl-sys-typescale-display-large-font;
+    font-size: vars.$owl-sys-typescale-display-large-size;
+    line-height: vars.$owl-sys-typescale-display-large-line-height;
+    font-weight: vars.$owl-sys-typescale-display-large-weight;
 }

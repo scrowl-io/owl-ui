@@ -1,0 +1,26 @@
+@use '@owlui/theme' as theme;
+
+.textfield {
+
+    /* themes */
+    &_default {
+        @include theme.defaultTheme-branding;
+    }
+
+    &_dark {
+        @include theme.darkTheme-branding;
+    }
+
+    /* Sizes */
+    &--large {
+        @include theme.defaultTheme-typeface--large;
+    }
+
+    &--medium {
+        @include theme.defaultTheme-typeface--medium;
+    }
+
+    &--small {
+        @include theme.defaultTheme-typeface--small;
+    }
+}

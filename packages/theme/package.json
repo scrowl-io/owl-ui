@@ -4,7 +4,7 @@
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/theme#readme",
     "license": "MIT",
-    "sass": "src/index.scss",
+    "sass": "src/_index.scss",
     "style": "dist/index.css",
     "files": [
         "dist",
