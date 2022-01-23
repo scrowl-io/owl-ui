@@ -7,7 +7,7 @@
             "grid": true
         },
         "postcss-modules": {
-            "generateScopedName": "owlui-[folder]_[local]"
+            "generateScopedName": "owlui-[local]"
         }
     }
 }
