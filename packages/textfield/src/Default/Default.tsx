@@ -2,6 +2,8 @@ import * as React from 'react';
 import { DefaultTextfieldProps } from './Default.types';
 import * as styles from './styles.module.scss';
 
+const baseClass = 'owlui-textfield-default'
+
 export const Component = (props: DefaultTextfieldProps) => {
     const { children } = props;
     
@@ -23,10 +25,10 @@ export const Component = (props: DefaultTextfieldProps) => {
 
     return <input type="text"
         className={[
-            styles.default.textfield,
-            styles.default[`textfield_${appearance}`],
-            styles.default[`textfield_${theme}`],
-            styles.default[`textfield--${size}`]
+            styles.default[baseClass],
+            styles.default[`${baseClass}_${appearance}`],
+            styles.default[`${baseClass}_${theme}`],
+            styles.default[`${baseClass}--${size}`]
         ].join(' ')}
     />
 }
