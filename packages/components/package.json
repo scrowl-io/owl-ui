@@ -1,6 +1,6 @@
 {
     "name": "@owlui/components",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
     "license": "MIT",
@@ -29,9 +29,9 @@
         "react": "^17.0.2"
     },
     "dependencies": {
-        "@owlui/button": "^0.0.11",
-        "@owlui/textfield": "^0.0.11",
-        "@owlui/theme": "^0.0.11",
+        "@owlui/button": "^0.0.12",
+        "@owlui/textfield": "^0.0.12",
+        "@owlui/theme": "^0.0.12",
         "@owlui/typings": "^0.0.1"
     }
 }
