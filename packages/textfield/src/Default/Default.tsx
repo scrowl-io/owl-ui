@@ -7,32 +7,32 @@ const baseClass = 'owlui-textfield-default'
 export const Component = (props: DefaultTextfieldProps) => {
     const { children } = props;
     
-    let appearance = props.appearance
     let theme = props.theme
+    let appearance = props.appearance
     let size = props.size
     let modulePrefix = props.prefix
 
-    if (appearance === undefined) {
-        appearance = 'primary'
+    if (props.prefix === undefined) {
+        modulePrefix = ''
     }
 
     if (theme === undefined) {
         theme = 'default'
     }
 
-    if (size === undefined) {
-        size = 'medium'
+    if (appearance === undefined) {
+        appearance = 'primary'
     }
 
-    if (props.modulePrefix === undefined) {
-        modulePrefix = ''
+    if (size === undefined) {
+        size = 'medium'
     }
 
     return <input type="text"
         className={[
             modulePrefix + styles.default[baseClass],
-            modulePrefix + styles.default[`${baseClass}_${appearance}`],
             modulePrefix + styles.default[`${baseClass}_${theme}`],
+            modulePrefix + styles.default[`${baseClass}_${theme}--${appearance}`],
             modulePrefix + styles.default[`${baseClass}--${size}`]
         ].join(' ')}
     />

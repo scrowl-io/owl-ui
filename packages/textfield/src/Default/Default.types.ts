@@ -1,7 +1,7 @@
 export type DefaultTextfieldCommons = {
     appearance?: 'primary' | 'outline'
     theme?: 'default' | 'dark'
-    size: 'small' | 'medium' | 'large'
+    size?: 'small' | 'medium' | 'large'
     prefix?: string
     children: any
 }

@@ -1,14 +1,22 @@
 @use '@owlui/theme' as theme;
 
 .owlui-button-default {
-    
+
     /* themes */
     &_default {
-        @include theme.defaultTheme-branding;
+
+        /* appearances */
+        &--primary {
+            @include theme.defaultTheme-branding;
+        }
     }
 
     &_dark {
-        @include theme.darkTheme-branding;
+
+        /* appearances */
+        &--primary {
+            @include theme.darkTheme-branding;
+        }
     }
 
     /* Sizes */
