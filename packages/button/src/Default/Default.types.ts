@@ -2,7 +2,7 @@ export type DefaultButtonCommons = {
     appearance?: 'primary' | 'outline'
     theme?: 'default' | 'dark'
     size?: 'small' | 'medium' | 'large'
-    scope?: string
+    prefix?: string
     children: any
 }
 

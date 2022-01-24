@@ -2,7 +2,7 @@ import * as React from 'react'
 import { DefaultButtonProps } from './Default.types'
 import * as styles from './styles.module.scss'
 
-let scope = 'owlui-button-default'
+const baseClass = 'owlui-button-default'
 
 export const Component = (props: DefaultButtonProps) => {
     const { children } = props
@@ -10,10 +10,7 @@ export const Component = (props: DefaultButtonProps) => {
     let appearance = props.appearance
     let theme = props.theme
     let size = props.size
-
-    if (props.scope !== undefined) {
-        scope = props.scope + scope
-    }
+    let modulePrefix = props.prefix
 
     if (appearance === undefined) {
         appearance = 'primary'
@@ -27,12 +24,16 @@ export const Component = (props: DefaultButtonProps) => {
         size = 'medium'
     }
 
+    if (modulePrefix === undefined) {
+        modulePrefix = ''
+    }
+
     return <button
         className={[
-            styles.default[scope],
-            styles.default[`${scope}_${appearance}`],
-            styles.default[`${scope}_${theme}`],
-            styles.default[`${scope}--${size}`]
+            modulePrefix + styles.default[baseClass],
+            modulePrefix + styles.default[`${baseClass}_${appearance}`],
+            modulePrefix + styles.default[`${baseClass}_${theme}`],
+            modulePrefix + styles.default[`${baseClass}--${size}`]
         ].join(' ')}
     >{children}</button>
 }
