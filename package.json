@@ -12,7 +12,8 @@
   "scripts": {
     "setup": "node ./scripts/pipeline/cmd.setup.js",
     "update:component": "node ./scripts/components/cmd.update-lib.js",
-    "create:component": "node ./scripts/components/cmd.create.js && yarn run update:component",
+    "create:component": "node ./scripts/components/cmd.create.js",
+    "postcreate:component": "yarn run update:component",
     "install:lerna": "lerna bootstrap --hoist",
     "build:dist": "yarn run setup && yarn run update:component && node ./scripts/pipeline/cmd.dist.js",
     "build:storybook": "yarn run setup && build-storybook",

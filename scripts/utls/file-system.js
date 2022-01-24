@@ -20,6 +20,40 @@ fs.normalize = (pathName) => {
     )
 }
 
+fs.dirExists = (pathName) => {
+    
+    try {
+        return fs.existsSync(fs.normalize(pathName))
+    } catch (err) {
+        print(err, 'error')
+        return err
+    }
+}
+
+fs.getStats = (pathName) => {
+
+    try {
+        return fs.statSync(fs.normalize(pathName))
+    } catch (err) {
+        print(err, 'error')
+        return err
+    }
+}
+
+fs.dirList = (pathName) => {
+
+    try {
+        const dirPaths = fs.readdirSync(fs.normalize(pathName))
+
+        return dirPaths.filter((url) => {
+            return fs.getStats(`${pathName}/${url}`).isDirectory()
+        })
+    } catch (err) {
+        print(err, 'error')
+        return err
+    }
+}
+
 fs.getFile = (pathName, media) => {
     const filename = fs.normalize(pathName)
 
