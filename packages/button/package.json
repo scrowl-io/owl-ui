@@ -1,6 +1,6 @@
 {
     "name": "@owlui/button",
-    "version": "0.0.13",
+    "version": "0.0.14",
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
     "license": "MIT",
@@ -31,8 +31,8 @@
         "react": "^17.0.2"
     },
     "dependencies": {
-        "@owlui/theme": "^0.0.13",
-        "@owlui/typings": "^0.0.13"
+        "@owlui/theme": "^0.0.14",
+        "@owlui/typings": "^0.0.14"
     },
     "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }
