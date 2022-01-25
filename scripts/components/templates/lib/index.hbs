@@ -1,10 +1,15 @@
-{{#each components}}
-import * as {{cap}} from '{{pkg}}'
-export const {{name}} = {{cap}}
-
+{{#with . as | data |}}
+{{#each data.components as | comp |}}
+import * as {{comp.cap}} from '{{comp.pkg}}'
 {{/each}}
+
+{{#each data.components as | comp |}}
+export const {{comp.name}} = {{comp.cap}}
+{{/each}}
+
 export default {
-{{#each components}}
-    {{name}},
+{{#each data.components as | comp |}}
+    {{comp.name}},
 {{/each}}
 }
+{{/with}}

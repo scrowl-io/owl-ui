@@ -24,7 +24,7 @@ function updateSource(folders, component) {
     const options = fs.dirList(folders.src)
     const fileList = {
         index: sourcePath('index', 'index.ts'),
-        styles: sourcePath('styles', 'index.scss')
+        styles: sourcePath('styles', '_index.scss')
     }
 
     component.options = options.sort().map((opt) => {

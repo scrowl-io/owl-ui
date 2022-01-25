@@ -4,13 +4,25 @@ const locations = require('../utls/locations')
 const strs = require('../utls/strings');
 const { compile } = require('./templater')
 
+function setDest(filename) {
+    return `packages/components/src/${filename}`
+}
+
 function update() {
     const pkgs = locations.entries()
-    const names = []
-    const template = fs.getFile(`scripts/components/templates/lib/index.hbs`)
-    const dest = 'packages/components/src/index.ts'
-    const config  = fs.getFile('packages/components/package.json')
-    const deps = config.dependencies
+    const data = {
+        components: []
+    }
+    const templates = {
+        lib: {
+            file: fs.getFile(`scripts/components/templates/lib/index.hbs`),
+            dest: setDest('index.ts')
+        },
+        style: {
+            file: fs.getFile(`scripts/components/templates/lib/style.hbs`),
+            dest: setDest('_index.scss')
+        },
+    }
 
     for (let pkg in pkgs) {
         
@@ -18,7 +30,7 @@ function update() {
             const component = `@owlui/${pkg}`
 
             if (pkg !== 'theme') {
-                names.push({
+                data.components.push({
                     name: pkg,
                     cap: strs.toCapitalize(pkg),
                     pkg: component
@@ -29,9 +41,13 @@ function update() {
         }
     }
     
-    const contents = compile(template, { components: names.sort() })
-    fs.setFile(dest, contents)
+    data.components = data.components.sort()
 
+    for (let temp in templates) {
+        const contents = compile(templates[temp].file, data)
+        
+        fs.setFile(templates[temp].dest, contents)
+    }
 }
 
 update()

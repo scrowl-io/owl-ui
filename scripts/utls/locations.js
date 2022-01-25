@@ -31,14 +31,17 @@ function getPackagePaths() {
 function getEntries() {
     const entries = {}
     const packages = getPackagePaths()
+    const libPrefix = '@owlui/'
 
     packages.forEach((pkgPath) => {
         const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
-        const entry = pkg.source ? pkg.source : (pkg.sass ? pkg.sass : undefined)
 
-        if (entry) {
-            entries[pkg.name.replace('@owlui/', '')] = {
-                entry: entry,
+        if (pkg.source) {
+            const name = pkg.name.replace(libPrefix, '')
+
+            entries[name] = {
+                entries: (name !== `components`) ? [pkg.source] : [pkg.source],
+                dists: (name !== `components`) ? [pkg.main] : [pkg.main],
                 filename: filename,
                 path: pkgPath
             }

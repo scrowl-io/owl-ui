@@ -3,12 +3,14 @@ const fs = require('../utls/file-system')
 const locations = require('../utls/locations')
 const fixes = require('../node-module-fixes/module-fixes')
 
-function run(folder, entry) {
-    console.log(`building: ${folder}, ${entry}`)
-    exec(`cd ${folder} && yarn parcel build ${entry} --log-level warn`)
+function build(entry) {
+    const self = this
+    console.log(`building: ${self.folder}, ${entry}`)
+    
+    exec(`cd ${self.folder} && yarn parcel build ${entry} --log-level warn`)
 }
 
-function build() {
+function process() {
     const pkgs = locations.entries()
 
     fs.removeSync('.parcel-cache')
@@ -16,14 +18,14 @@ function build() {
     
     for (let pkg in pkgs) {
         const pkgFolder = fs.normalize(`packages/${pkg}`)
-        const pkgEntry = pkgs[pkg].entry
+        const pkgEntries = pkgs[pkg].entries
         const pkgDist = `packages/${pkg}/dist`
-        
+
         fs.removeSync(pkgDist)
-        run(pkgFolder, pkgEntry)
+        pkgEntries.forEach.apply(pkgEntries, [build, { folder: pkgFolder }])
     }
 
     console.log(`\n`)
 }
 
-build()
+process()

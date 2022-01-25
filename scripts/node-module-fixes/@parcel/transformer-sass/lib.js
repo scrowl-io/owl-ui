@@ -203,7 +203,7 @@ function resolvePathImporter({
       See also: https://github.com/sass/dart-sass/blob/006e6aa62f2417b5267ad5cdb5ba050226fab511/lib/src/importer/node/implementation.dart
     */
     let paths = [_path().default.dirname(prev)];
-
+    
     if (includePaths) {
       paths.push(...includePaths);
     }
@@ -213,16 +213,16 @@ function resolvePathImporter({
     if (options.env.SASS_PATH) {
       paths.push(...options.env.SASS_PATH.split(process.platform === 'win32' ? ';' : ':').map(p => _path().default.resolve(options.projectRoot, p)));
     }
-
+    
     const urls = [url];
     const urlFileName = _path().default.basename(url);
+    const resolutionErrs = []
 
     if (urlFileName[0] !== '_') {
         urls.push(_path().default.join(_path().default.dirname(url), `_${urlFileName}`));
     }
     
     if (url[0] !== '~') {
-        const resolutionErrs = []
         
         for (let p of paths) {
             for (let u of urls) {
@@ -263,39 +263,50 @@ function resolvePathImporter({
      *          ]
      *      }
      */
-    if (url[0] === '@' && !_path().default.extname(url[0])) {
-        const resolutionErrs = []
+    
+    if (NODE_MODULE_ALIAS_RE.test(url) && !_path().default.extname(url)) {
 
         for (let p of paths) {
+            
             for (let u of urls) {
                 const fileDir = u.split('/').pop()
-                const configPath = _path().default.resolve(p, fileDir, 'package.json')
+                const componentPath  = _path().default.resolve(process.cwd().split('packages')[0], 'packages', fileDir)
+                const configPath = _path().default.resolve(componentPath, 'package.json')
                 
                 try {
                     const pkgFile = await asset.fs.readFile(configPath, 'utf8')
                     const pkgConfig = JSON.parse(pkgFile)
                     const filePath = pkgConfig.hasOwnProperty('sass') ? 
-                        _path().default.resolve(p, fileDir, pkgConfig.sass) :
+                        _path().default.resolve(componentPath, pkgConfig.sass) :
                         (
                             pkgConfig.hasOwnProperty('style') ?
-                                _path().default.resolve(p, fileDir, pkgConfig.style) :
+                                _path().default.resolve(componentPath, pkgConfig.style) :
                                 null
                         )
                     const contents = await asset.fs.readFile(filePath, 'utf8')
-                    
                     return {
                         filePath,
                         contents
                     }
                 } catch (err) {
-                    resolutionErrs.push(err.message)
+                    const errMsg = {
+                        url: url,
+                        u: u,
+                        p: p,
+                        file: fileDir,
+                        comp: componentPath,
+                        config: configPath,
+                        message: err.message,
+                        stack: err.stack
+                    }
+                    resolutionErrs.push(JSON.stringify(errMsg, null, 4))
                     continue
                 }
             }
         }
     }
     // FIX END
-
+    
     // If none of the default sass rules apply, try Parcel's resolver.
     for (let u of urls) {
         
@@ -322,9 +333,10 @@ function resolvePathImporter({
 
     // FIX
     // Produce an error if no resolution method was successful
+    // throw Error(`\n\n${resolutionErrs.join(`\n`)}\n\n\n`)
     asset.invalidateOnFileCreate({url});
   }
-
+  
   return function (rawUrl, prev, done) {
     const url = rawUrl.replace(/^file:\/\//, '');
     

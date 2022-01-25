@@ -6,8 +6,11 @@
     "license": "MIT",
     "source": "src/index.ts",
     "main": "dist/owl.components.js",
-    "module": "dist/index.js",
-    "types": "dist/types.d.ts",
+    "sass": "src/_index.scss",
+    "style": "dist/index.css",
+    "targets": {
+        "main": false
+    },
     "files": [
         "dist",
         "src"
