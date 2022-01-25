@@ -81,23 +81,15 @@ function getParts(component, getOpt) {
 
     const name = strs.toLower(parts[0])
 
-    if (!parts[1]) {
-        throw Error('Component abbreviation missing: [name]@[abv]')
+    if (getOpt && !parts[1]) {
+        throw Error('Component option missing: [name]@[option]')
     }
 
-    const abv = strs.toLower(parts[1])
-
-    if (getOpt && !parts[2]) {
-        throw Error('Component option missing: [name]@[abv]@[option]')
-    }
-
-    const option = getOpt || parts[2] ? parts[2] : 'default'
+    const option = getOpt || parts[1] ? parts[1] : 'default'
 
     return {
         name: name,
         cap: strs.toCapitalize(name),
-        abv: abv,
-        abvCap: strs.toCapitalize(abv),
         option: option,
         optionCap: strs.toCapitalize(option)
     }

@@ -1,5 +1,5 @@
 {{#with . as | component |}}
 {{#each component.options as | opt |}}
-@forward './{{{opt.cap}}}/styles.module.scss' as {{{opt.name}}}{{{component.abvCap}}}-*;
+@forward './{{{opt.cap}}}/styles.module.scss' as {{{opt.name}}}{{{component.cap}}}-*;
 {{/each}}
 {{/with}}
