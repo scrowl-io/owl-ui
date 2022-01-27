@@ -10,21 +10,30 @@ function build(entry) {
     exec(`cd ${self.folder} && yarn parcel build ${entry} --log-level warn`)
 }
 
+function prebuild(name, config) {
+    const folder = fs.normalize(`packages/${name}`)
+    const entries = config.entries
+    const dist = `packages/${name}/dist`
+
+    fs.removeSync(dist)
+    entries.forEach.apply(entries, [build, { folder: folder }])
+}
+
 function process() {
     const pkgs = locations.entries()
+    const componentsPkg = 'components'
 
     fs.removeSync('.parcel-cache')
     fixes.apply()
     
     for (let pkg in pkgs) {
-        const pkgFolder = fs.normalize(`packages/${pkg}`)
-        const pkgEntries = pkgs[pkg].entries
-        const pkgDist = `packages/${pkg}/dist`
 
-        fs.removeSync(pkgDist)
-        pkgEntries.forEach.apply(pkgEntries, [build, { folder: pkgFolder }])
+        if (pkg !== componentsPkg) {
+            prebuild(pkg, pkgs[pkg])
+        }
     }
 
+    prebuild(componentsPkg, pkgs[componentsPkg])
     console.log(`\n`)
 }
 
