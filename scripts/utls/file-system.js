@@ -20,6 +20,10 @@ fs.normalize = (pathName) => {
     )
 }
 
+fs.getExt = (pathName) => {
+    return path.extname(pathName)
+}
+
 fs.dirExists = (pathName) => {
     
     try {
@@ -101,6 +105,18 @@ fs.setFile = (pathName, contents) => {
     } catch (err) {
         print(err.message, 'error')
         return
+    }
+}
+
+fs.renameFile = (oldPath, newPath) => {
+    const oldFile = fs.normalize(oldPath)
+    const newFile = fs.normalize(newPath)
+
+    try {
+        fs.renameSync(oldFile, newFile)
+    } catch (er) {
+        print(err, 'error')
+        return err
     }
 }
 

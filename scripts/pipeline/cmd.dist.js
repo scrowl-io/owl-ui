@@ -3,25 +3,81 @@ const fs = require('../utls/file-system')
 const locations = require('../utls/locations')
 const fixes = require('../node-module-fixes/module-fixes')
 
+const logLevel = '--log-level warn'
+
 function build(entry) {
-    const self = this
-    console.log(`building: ${self.folder}, ${entry}`)
-    
-    exec(`cd ${self.folder} && yarn parcel build ${entry} --log-level warn`)
+    console.log(`building: ${entry}`)
+    exec(`parcel build ${entry} ${logLevel}`)
 }
 
-function prebuild(name, config) {
-    const folder = fs.normalize(`packages/${name}`)
-    const entries = config.entries
-    const dist = `packages/${name}/dist`
+function buildTargets(pkg, entries) {
+    entries.forEach((entry) => {
+        console.log(`building: ${pkg} ${entry}`)
+        
+        let target
 
+        if (fs.getExt(entry)) {
+            target = `${pkg}/${entry} --dist-dir ${pkg}/dist`
+        } else {
+            target = `${pkg} --target ${entry}`
+        }
+        
+        exec(`parcel build ${target} ${logLevel}`)
+    })
+}
+
+function preBuild(name, config) {
+    const pkg = fs.normalize(`packages/${name}`)
+
+    const dist = `packages/${name}/dist`
     fs.removeSync(dist)
-    entries.forEach.apply(entries, [build, { folder: folder }])
+
+    if (config.entries instanceof Array) {
+        buildTargets(pkg, config.entries)
+    } else {
+        build(pkg)
+    }
+}
+
+function postBuild(files) {
+    
+    function getDistPath(package, filename) {
+        return `packages/${package}/dist/${filename}`
+    }
+
+    function replaceMapNames(path, lookup, replacer) {
+        const contents = fs.getFile(path)
+
+        return contents.replace(new RegExp(lookup, 'g'), () => {
+            return replacer
+        })
+    }
+
+    files.forEach((file) => {
+        const buildName = file.source.replace('src/', '').replace('.scss', '.css')
+        const buildPath = getDistPath(file.package, buildName)
+        const buildMapName = buildName + '.map';
+        const buildMapPath = buildPath + '.map';
+        const distName = file.dist.replace('dist/', '')
+        const distPath = getDistPath(file.package, file.dist.replace('dist/', ''))
+        const distMapName = distName + '.map'
+        const distMapPath = distPath + '.map'
+
+        fs.renameFile(buildPath, distPath)
+        fs.renameFile(buildMapPath, distMapPath)
+
+        const buildContents = replaceMapNames(distPath, buildMapName, distMapName)
+        const mapContents = replaceMapNames(distMapPath, buildMapName, distMapName)
+
+        fs.setFile(distPath, buildContents)
+        fs.setFile(distMapPath, mapContents)
+    })
 }
 
 function process() {
     const pkgs = locations.entries()
     const componentsPkg = 'components'
+    const themePkg = 'theme'
 
     fs.removeSync('.parcel-cache')
     fixes.apply()
@@ -29,11 +85,23 @@ function process() {
     for (let pkg in pkgs) {
 
         if (pkg !== componentsPkg) {
-            prebuild(pkg, pkgs[pkg])
+            preBuild(pkg, pkgs[pkg])
         }
     }
 
-    prebuild(componentsPkg, pkgs[componentsPkg])
+    preBuild(componentsPkg, pkgs[componentsPkg])
+    postBuild([
+        {
+            package: themePkg,
+            source: pkgs[themePkg].config.source,
+            dist: pkgs[themePkg].config.style
+        },
+        {
+            package: componentsPkg,
+            source: pkgs[componentsPkg].config.targets.style.source,
+            dist: pkgs[componentsPkg].config.style
+        }
+    ])
     console.log(`\n`)
 }
 

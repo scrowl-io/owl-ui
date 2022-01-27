@@ -30,10 +30,10 @@ export const Component = (props: {{{optionCap}}}{{{cap}}}Props) => {
 
     return <div
         className={[
-            modulePrefix + styles.default[baseClass],
-            modulePrefix + styles.default[`${baseClass}_${theme}`],
-            modulePrefix + styles.default[`${baseClass}_${theme}--${appearance}`],
-            modulePrefix + styles.default[`${baseClass}--${size}`]
+            modulePrefix + styles[baseClass],
+            modulePrefix + styles[`${baseClass}_${theme}`],
+            modulePrefix + styles[`${baseClass}_${theme}--${appearance}`],
+            modulePrefix + styles[`${baseClass}--${size}`]
         ].join(' ')}
     >{children}</div>
 }
