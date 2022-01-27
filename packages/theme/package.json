@@ -5,9 +5,9 @@
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/theme#readme",
     "license": "MIT",
     "source": "src/_index.scss",
-    "main": "dist/index.css",
+    "main": "dist/_index.css",
     "sass": "src/_index.scss",
-    "style": "dist/index.css",
+    "style": "dist/_index.css",
     "targets": {
         "main": false
     },

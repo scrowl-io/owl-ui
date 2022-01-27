@@ -60,7 +60,8 @@ function createBoilerplate(component) {
             npmignore: packagePath('npmignore', '.npmignore'),
             readme: packagePath('readme', 'README.md'),
             tsconfig: packagePath('tsconfig', 'tsconfig.json'),
-            postcss: packagePath('postcss', 'postcssrc.json')
+            postcss: packagePath('postcss', 'postcssrc.json'),
+            sass: packagePath('sass', '.sassrc.json')
         }
     
     for (let filename in fileList) {

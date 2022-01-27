@@ -9,7 +9,7 @@
     "module": "dist/index.js",
     "types": "dist/types.d.ts",
     "sass": "src/_index.scss",
-    "style": "dist/index.css",
+    "style": "dist/owl.button.css",
     "files": [
         "dist",
         "src"
