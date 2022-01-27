@@ -23,6 +23,9 @@ function update() {
             dest: setDest('_index.scss')
         },
     }
+    const types = fs.getFile('typings/package.json')
+
+    exec(`lerna add ${types.name} --scope=@owlui/components`)
 
     for (let pkg in pkgs) {
         

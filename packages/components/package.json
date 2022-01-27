@@ -35,6 +35,6 @@
         "@owlui/button": "^0.0.14",
         "@owlui/textfield": "^0.0.14",
         "@owlui/theme": "^0.0.14",
-        "@owlui/typings": "^0.0.1"
+        "@owlui/typings": "^0.0.14"
     }
 }
