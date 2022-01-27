@@ -3,6 +3,6 @@
     "includePaths": [
         "node_modules/",
         "src/",
-        "../"
+        "../.."
     ]
 }
