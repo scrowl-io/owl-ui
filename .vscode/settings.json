@@ -5,6 +5,7 @@
         "npmignore",
         "owlui",
         "postcssrc",
+        "Scrowl",
         "strs",
         "templater",
         "utls"
