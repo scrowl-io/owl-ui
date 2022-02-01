@@ -1,0 +1,34 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-ciceroonboardingcomponent-default {
+
+    /* themes */
+    &_default {
+
+        /* appearances */
+        &--primary {
+            @include theme.defaultTheme-branding;
+        }
+    }
+
+    &_dark {
+
+        /* appearances */
+        &--primary {
+            @include theme.darkTheme-branding;
+        }
+    }
+
+    /* Sizes */
+    &--large {
+        @include theme.defaultTheme-typeface--large;
+    }
+
+    &--medium {
+        @include theme.defaultTheme-typeface--medium;
+    }
+
+    &--small {
+        @include theme.defaultTheme-typeface--small;
+    }
+}

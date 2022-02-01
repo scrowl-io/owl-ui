@@ -1,0 +1,8 @@
+{
+    "outFile": "dist/owl.ciceroonboardingcomponent.css",
+    "includePaths": [
+        "node_modules/",
+        "src/",
+        "../.."
+    ]
+}
