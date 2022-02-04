@@ -52,6 +52,7 @@ To create a new component requires a lot of boilerplate. To make things a little
 For example:
 
 `yarn run create:component -n newComponentName`
+
 #### Multiple Components
 To create multiple components you should use the `-m` flag followed by the component names separated by `,`:
 
@@ -67,7 +68,7 @@ If you want to add a new option to an existing component run the following comma
 
 `yarn run create:component -o [COMPONENT_NAME]@[OPTION_NAME]`
 
-for example:
+For example:
 
 `yarn run create:component -o button@tertiary`
 
@@ -75,7 +76,7 @@ If you are creating a component that makes use of another, you can add it as a d
 
 `lerna add @owlui/[COMPONENT_DEPENDENCY] --scope=@owlui/[COMPONENT]`
 
-for example, the command below adds the `button` component as a dependency in the `newcomponent`:
+For example, the command below adds the `button` component as a dependency in the `newcomponent`:
 
 `lerna add @owlui/button --scope=@owlui/newcomponent`
 
