@@ -7,6 +7,10 @@ This project makes use of a few packages that should be installed globally, so l
 
 `npm install yarn lerna parcel -g`
 
+In case you get the error `Error: EACCES: permission denied` try to install the packages using `sudo` permissions, your user's password may be requested:
+
+`sudo npm install yarn lerna parcel -g`
+
 ---
 
 ### [Yarn](https://yarnpkg.com/)
@@ -38,11 +42,15 @@ After you install but before you begin any development you should run the setup 
 This command will initialize Lerna and move the design variables/tokens into the theme component.
 
 ### Creating Components
+The name of the your component *will need to be in camel case*, as we implement this [rule](https://www.typescriptlang.org/tsconfig#forceConsistentCasingInFileNames) in our TS config.
+
 To create a new component requires a lot of boilerplate. To make things a little easier, run the following command:
 
 `yarn run create:component -n [COMPONENT_NAME]`
 
-The name of the your component will need to be in camel case, as we implement this [rule](https://www.typescriptlang.org/tsconfig#forceConsistentCasingInFileNames) in our TS config.
+For example:
+
+`yarn run create:component -n newComponentName`
 
 The component will be created under the packages folder and have an initial view option of “Default”. If you wish to have the component be initialized with a different option, you can follow this format when passing the component name [COMPONENT_NAME]@[OPTION_NAME].
 
@@ -50,9 +58,17 @@ If you want to add a new option to an existing component run the following comma
 
 `yarn run create:component -o [COMPONENT_NAME]@[OPTION_NAME]`
 
+for example:
+
+`yarn run create:component -o button@tertiary`
+
 If you are creating a component that makes use of another, you can add it as a dependency with the following [Lerna](https://github.com/lerna/lerna/tree/main/commands/add) command:
 
-`lerna add [COMPONENT_DEPENDENCY] --scope=[COMPONENT]`
+`lerna add @owlui/[COMPONENT_DEPENDENCY] --scope=@owlui/[COMPONENT]`
+
+for example, the command below adds the `button` component as a dependency in the `newcomponent`:
+
+`lerna add @owlui/button --scope=@owlui/newcomponent`
 
 ### Development
 We make use of Storybook to create components in isolation. To start storybook, run this command:
