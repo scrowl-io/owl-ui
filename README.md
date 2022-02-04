@@ -42,7 +42,8 @@ After you install but before you begin any development you should run the setup 
 This command will initialize Lerna and move the design variables/tokens into the theme component.
 
 ### Creating Components
-The name of the your component *will need to be in camel case*, as we implement this [rule](https://www.typescriptlang.org/tsconfig#forceConsistentCasingInFileNames) in our TS config.
+#### Single Components
+The name of the your component must contain only letters and no special characters or numbers, as we implement this [rule](https://www.typescriptlang.org/tsconfig#forceConsistentCasingInFileNames) in our TS config.
 
 To create a new component requires a lot of boilerplate. To make things a little easier, run the following command:
 
@@ -51,6 +52,14 @@ To create a new component requires a lot of boilerplate. To make things a little
 For example:
 
 `yarn run create:component -n newComponentName`
+#### Multiple Components
+To create multiple components you should use the `-m` flag followed by the component names separated by `,`:
+
+`yarn run create:component -m [COMPONENT_NAME],[COMPONENT_NAME],[COMPONENT_NAME]`
+
+For example:
+
+`yarn run create:component -m form,button,tooltip`
 
 The component will be created under the packages folder and have an initial view option of “Default”. If you wish to have the component be initialized with a different option, you can follow this format when passing the component name [COMPONENT_NAME]@[OPTION_NAME].
 
