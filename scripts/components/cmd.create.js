@@ -6,6 +6,10 @@ const { compile, definePaths } = require('./templater')
 const tempOption = require('./create-option')
 
 function createFolderMap(component) {
+    if (!(/^[a-zA-Z]+$/.test(component.name))) {
+      throw Error('Component name must not contain special characters or numbers.')
+    }
+
     const folders = {
         base: `packages/${component.name}`
     }
@@ -119,26 +123,39 @@ function processArgs() {
             
             if (!componentExists(component)) {
                 print('Component does not exist: creating it', 'warn')
+                
                 createBoilerplate(component)
             } else {
-
                 if (optionExists(component)) {
-                    print('Option already exists for component: exiting', 'warn')
+                    throw Error('Option already exists for component.')
                 } else {
                     addOption(component)
                 }
             }
         } else {
             // create one or many new components
-
             if (argv.hasOwnProperty('n')) {
+                let component = getParts(argv.n, false)
+
+                if (componentExists(component)) {
+                  throw Error('Component already exists.')
+                }
+
                 components.push(getParts(argv.n))
             }
         
             if (argv.hasOwnProperty('m')) {
                 const many = argv.m.split(',')
-        
-                components = components.concat(many.map(getParts))
+
+                many.map(component => {
+                  let tempComponent = getParts(component, false)
+
+                  if (componentExists(tempComponent)) {
+                    throw Error(`Component '${component}' already exists.`)
+                  }
+
+                  components.push(tempComponent)
+                })
             }
 
             if (components.length === 0) {
