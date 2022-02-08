@@ -1,17 +1,23 @@
-exports.toCamelCase = (dashedName) => {
-    return dashedName.replace(/-([a-z])/g, (_, letter) => {
-        letter.toUpperCase()
-    })
-}
+exports.toCamelCase = str => {
+  let replacedStr = str.replace(/[-_]+(.)?/g, (_, letter) => {
+    return letter ? letter.toUpperCase() : '';
+  });
 
-exports.prettyJson = (obj) => {
-    return JSON.stringify(obj, null, 4)
-}
+  return replacedStr.substr(0, 1).toLowerCase() + replacedStr.substr(1);
+};
 
-exports.toLower = (str) => {
-    return str.trim().toLowerCase()
-}
+exports.prettyJson = obj => {
+  return JSON.stringify(obj, null, 4);
+};
 
-exports.toCapitalize = (str) => {
-    return str.replace(/^[A-Z|a-z]/g, (letter) => letter.toUpperCase())
-}
+exports.toLower = str => {
+  return str.trim().toLowerCase();
+};
+
+exports.toCapitalize = str => {
+  return str.replace(/^[A-Z|a-z]/g, letter => letter.toUpperCase());
+};
+
+exports.hasLettersOnly = str => {
+  return /^[a-zA-Z]+$/.test(str);
+};
