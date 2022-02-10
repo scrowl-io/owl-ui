@@ -4,17 +4,16 @@ const { print, clear } = require('../utls/console');
 const fs = require('../utls/file-system');
 const { compile, definePaths } = require('./templater');
 const tempOption = require('./create-option');
-let componentName;
 
 function createFolderMap(component) {
-  if (!strs.hasLettersOnly(componentName)) {
+  if (!strs.hasLettersOnly(component.name)) {
     throw Error(
       'Component name must not contain special characters or numbers.'
     );
   }
 
   const folders = {
-    base: `packages/${componentName}`,
+    base: `packages/${component.name}`,
   };
 
   folders.src = `${folders.base}/src`;
@@ -56,31 +55,36 @@ function addOption(component) {
   updateSource(folders, component);
 }
 
-function createBoilerplate(component) {
-  function packagePath(template, filename) {
+function createBoilerplate(components) {
+  function packagePath(template, filename, folders) {
     return definePaths(template, 'package', filename, folders.base);
   }
 
-  const folders = createFolderMap(component);
-  const fileList = {
-    package: packagePath('package', 'package.json'),
-    license: packagePath('license', 'LICENSE'),
-    npmignore: packagePath('npmignore', '.npmignore'),
-    readme: packagePath('readme', 'README.md'),
-    tsconfig: packagePath('tsconfig', 'tsconfig.json'),
-    postcss: packagePath('postcss', 'postcssrc.json'),
-    sass: packagePath('sass', '.sassrc.json'),
-  };
+  components.map(component => {
+    if (componentExists(component)) {
+      throw Error(`Component '${component.name}' already exists.`);
+    } else {
+      const folders = createFolderMap(component);
+      const fileList = {
+        package: packagePath('package', 'package.json', folders),
+        license: packagePath('license', 'LICENSE', folders),
+        npmignore: packagePath('npmignore', '.npmignore', folders),
+        readme: packagePath('readme', 'README.md', folders),
+        tsconfig: packagePath('tsconfig', 'tsconfig.json', folders),
+        postcss: packagePath('postcss', 'postcssrc.json', folders),
+      };
 
-  for (let filename in fileList) {
-    fileList[filename].contents = compile(
-      fileList[filename].template,
-      component
-    );
-    fs.setFile(fileList[filename].path, fileList[filename].contents);
-  }
+      for (let filename in fileList) {
+        fileList[filename].contents = compile(
+          fileList[filename].template,
+          component
+        );
+        fs.setFile(fileList[filename].path, fileList[filename].contents);
+      }
 
-  addOption(component);
+      addOption(component);
+    }
+  });
 }
 
 function getParts(component, getOpt) {
@@ -91,7 +95,9 @@ function getParts(component, getOpt) {
     throw Error('Component name missing');
   }
 
-  componentName = strs.toCamelCase(parts[0]);
+  let componentName = strs.hasLettersOnly(parts[0])
+    ? parts[0]
+    : strs.toCamelCase(parts[0]);
 
   if (getOpt && !parts[1]) {
     throw Error('Component option missing: [name]@[option]');
@@ -100,8 +106,9 @@ function getParts(component, getOpt) {
   const option = getOpt || parts[1] ? parts[1] : 'default';
 
   return {
-    name: strs.toLower(componentName),
+    name: componentName,
     cap: strs.toCapitalize(componentName),
+    low: strs.toLower(componentName),
     option: option,
     optionCap: strs.toCapitalize(option),
   };
@@ -128,9 +135,11 @@ function processArgs() {
       let component = getParts(argv.o, true);
 
       if (!componentExists(component)) {
+        components.push(component);
+
         print('Component does not exist: creating it', 'warn');
 
-        createBoilerplate(component);
+        createBoilerplate(components);
       } else {
         if (optionExists(component)) {
           throw Error('Option already exists for component.');
@@ -143,10 +152,6 @@ function processArgs() {
       if (argv.hasOwnProperty('n')) {
         let component = getParts(argv.n, false);
 
-        if (componentExists(component)) {
-          throw Error('Component already exists.');
-        }
-
         components.push(component);
       }
 
@@ -155,10 +160,6 @@ function processArgs() {
 
         many.map(componentName => {
           let component = getParts(componentName, false);
-
-          if (componentExists(component)) {
-            throw Error(`Component '${componentName}' already exists.`);
-          }
 
           components.push(component);
         });
@@ -170,7 +171,7 @@ function processArgs() {
         );
       }
 
-      components.forEach(createBoilerplate);
+      createBoilerplate(components);
     }
   } catch (err) {
     print(err, 'error');
