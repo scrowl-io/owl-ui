@@ -1,157 +1,188 @@
-const argv = require('yargs-parser')(process.argv.slice(2))
-const strs = require('../utls/strings')
-const { print, clear } = require('../utls/console')
-const fs = require('../utls/file-system')
-const { compile, definePaths } = require('./templater')
-const tempOption = require('./create-option')
+const argv = require('yargs-parser')(process.argv.slice(2));
+const strs = require('../utls/strings');
+const { print, clear } = require('../utls/console');
+const fs = require('../utls/file-system');
+const { compile, definePaths } = require('./templater');
+const tempOption = require('./create-option');
 
 function createFolderMap(component) {
-    const folders = {
-        base: `packages/${component.name}`
-    }
+  if (!strs.hasLettersOnly(component.name)) {
+    throw Error(
+      'Component name must not contain special characters or numbers.'
+    );
+  }
 
-    folders.src = `${folders.base}/src`
+  const folders = {
+    base: `packages/${component.name}`,
+  };
 
-    return folders
+  folders.src = `${folders.base}/src`;
+
+  return folders;
 }
 
 function updateSource(folders, component) {
+  function sourcePath(template, filename) {
+    return definePaths(template, 'source', filename, folders.src);
+  }
 
-    function sourcePath(template, filename) {
-        return definePaths(template, 'source', filename, folders.src)
-    }
+  const options = fs.dirList(folders.src);
+  const fileList = {
+    index: sourcePath('index', 'index.ts'),
+    styles: sourcePath('styles', '_index.scss'),
+  };
 
-    const options = fs.dirList(folders.src)
-    const fileList = {
-        index: sourcePath('index', 'index.ts'),
-        styles: sourcePath('styles', '_index.scss')
-    }
+  component.options = options.sort().map(opt => {
+    return {
+      name: strs.toLower(opt),
+      cap: strs.toCapitalize(opt),
+    };
+  });
 
-    component.options = options.sort().map((opt) => {
-        return {
-            name: strs.toLower(opt),
-            cap: strs.toCapitalize(opt)
-        }
-    })
-    
-    for (let filename in fileList) {
-        fileList[filename].contents = compile(fileList[filename].template, component)
-        fs.setFile(fileList[filename].path, fileList[filename].contents)
-    }
+  for (let filename in fileList) {
+    fileList[filename].contents = compile(
+      fileList[filename].template,
+      component
+    );
+    fs.setFile(fileList[filename].path, fileList[filename].contents);
+  }
 }
 
 function addOption(component) {
-    const folders = createFolderMap(component)
+  const folders = createFolderMap(component);
 
-    tempOption.create(component, folders)
-    updateSource(folders, component)
+  tempOption.create(component, folders);
+  updateSource(folders, component);
 }
 
-function createBoilerplate(component) {
+function createBoilerplate(components) {
+  function packagePath(template, filename, folders) {
+    return definePaths(template, 'package', filename, folders.base);
+  }
 
-    function packagePath(template, filename) {
-        return definePaths(template, 'package', filename, folders.base)
+  components.map(component => {
+    if (componentExists(component)) {
+      throw Error(`Component '${component.name}' already exists.`);
+    } else {
+      const folders = createFolderMap(component);
+      const fileList = {
+        package: packagePath('package', 'package.json', folders),
+        license: packagePath('license', 'LICENSE', folders),
+        npmignore: packagePath('npmignore', '.npmignore', folders),
+        readme: packagePath('readme', 'README.md', folders),
+        tsconfig: packagePath('tsconfig', 'tsconfig.json', folders),
+        postcss: packagePath('postcss', 'postcssrc.json', folders),
+      };
+
+      for (let filename in fileList) {
+        fileList[filename].contents = compile(
+          fileList[filename].template,
+          component
+        );
+        fs.setFile(fileList[filename].path, fileList[filename].contents);
+      }
+
+      addOption(component);
     }
-
-    const folders = createFolderMap(component)
-    const fileList = {
-            package: packagePath('package', 'package.json'),
-            license: packagePath('license', 'LICENSE'),
-            npmignore: packagePath('npmignore', '.npmignore'),
-            readme: packagePath('readme', 'README.md'),
-            tsconfig: packagePath('tsconfig', 'tsconfig.json'),
-            postcss: packagePath('postcss', 'postcssrc.json'),
-            sass: packagePath('sass', '.sassrc.json')
-        }
-    
-    for (let filename in fileList) {
-        fileList[filename].contents = compile(fileList[filename].template, component)
-        fs.setFile(fileList[filename].path, fileList[filename].contents)
-    }
-
-    addOption(component)
+  });
 }
 
 function getParts(component, getOpt) {
-    getOpt = getOpt || false
-    const parts = component.split('@')
+  getOpt = getOpt || false;
+  const parts = component.split('@');
 
-    if (!parts.length) {
-        throw Error('Component name missing')
-    }
+  if (!parts.length) {
+    throw Error('Component name missing');
+  }
 
-    const name = strs.toLower(parts[0])
+  if (!strs.isValidComponentInputName(parts[0])) {
+    throw Error(`Component name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`);
+  }
 
-    if (getOpt && !parts[1]) {
-        throw Error('Component option missing: [name]@[option]')
-    }
+  const componentName = strs.toLower(strs.toCamelCase(parts[0]));
+  const packageName = strs.isValidPackageName(componentName)
+  
+  if (!packageName.valid) {
+    throw Error(`Component name must be equal to or less than ${packageName.maxLn} characters.\nCurrent name is ${packageName.over} characters above maximum`);
+  }
 
-    const option = getOpt || parts[1] ? parts[1] : 'default'
+  if (getOpt && !parts[1]) {
+    throw Error('Component option missing: [name]@[option]');
+  }
 
-    return {
-        name: name,
-        cap: strs.toCapitalize(name),
-        option: option,
-        optionCap: strs.toCapitalize(option)
-    }
+  const option = getOpt || parts[1] ? parts[1] : 'default';
+
+  if (!strs.isValidComponentInputName(option)) {
+    throw Error(`Component option name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`);
+  }
+
+  return {
+    name: componentName,
+    cap: strs.toCapitalize(componentName),
+    low: strs.toLower(componentName),
+    option: option,
+    optionCap: strs.toCapitalize(option),
+  };
 }
 
 function componentExists(component) {
-    const folders = createFolderMap(component)
+  const folders = createFolderMap(component);
 
-    return fs.dirExists(folders.base)
+  return fs.dirExists(folders.base);
 }
 
 function optionExists(component) {
-    const folders = createFolderMap(component)
+  const folders = createFolderMap(component);
 
-    return fs.dirExists(`${folders.src}/${component.optionCap}`)
+  return fs.dirExists(`${folders.src}/${component.optionCap}`);
 }
 
 function processArgs() {
-    const components = []
-    
-    try {
-        
-        if (argv.hasOwnProperty('o')) {
-            // create an option for an existing component
-            let component = getParts(argv.o, true)
-            
-            if (!componentExists(component)) {
-                print('Component does not exist: creating it', 'warn')
-                createBoilerplate(component)
-            } else {
+  const components = [];
 
-                if (optionExists(component)) {
-                    print('Option already exists for component: exiting', 'warn')
-                } else {
-                    addOption(component)
-                }
-            }
+  try {
+
+    if (argv.hasOwnProperty('o')) {
+      // create an option for an existing component
+      const component = getParts(argv.o, true);
+
+      if (!componentExists(component)) {
+        components.push(component);
+
+        print('Component does not exist: creating it', 'warn');
+      } else {
+
+        if (optionExists(component)) {
+          throw Error('Option already exists for component.');
         } else {
-            // create one or many new components
-
-            if (argv.hasOwnProperty('n')) {
-                components.push(getParts(argv.n))
-            }
-        
-            if (argv.hasOwnProperty('m')) {
-                const many = argv.m.split(',')
-        
-                components = components.concat(many.map(getParts))
-            }
-
-            if (components.length === 0) {
-                throw Error(`No component names submitted \n Use flag -n with a non-spaced string to create a single component \n Use flag -m with comma separated non-spaced string to create multiple components`)
-            }
-
-            components.forEach(createBoilerplate)
+          addOption(component);
         }
-    } catch (err) {
-        print(err, 'error')
-        process.exit(1)
+      }
+    } else {
+      // create one or many new components
+      if (argv.hasOwnProperty('n')) {
+        components.push(getParts(argv.n));
+      }
+
+      if (argv.hasOwnProperty('m')) {
+        const many = argv.m.split(',');
+
+        components = many.map(getParts);
+      }
+
+      if (components.length === 0) {
+        throw Error(
+          `No component names submitted \n Use flag -n with a non-spaced string to create a single component \n Use flag -m with comma separated non-spaced string to create multiple components`
+        );
+      }
+
+      createBoilerplate(components);
     }
+  } catch (err) {
+    print(err, 'error');
+    process.exit(1);
+  }
 }
 
-clear()
-processArgs()
+clear();
+processArgs();
