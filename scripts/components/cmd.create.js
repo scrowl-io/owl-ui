@@ -95,15 +95,26 @@ function getParts(component, getOpt) {
     throw Error('Component name missing');
   }
 
-  let componentName = strs.hasLettersOnly(parts[0])
-    ? parts[0]
-    : strs.toCamelCase(parts[0]);
+  if (!strs.isValidComponentInputName(parts[0])) {
+    throw Error(`Component name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`);
+  }
+
+  const componentName = strs.toLower(strs.toCamelCase(parts[0]));
+  const packageName = strs.isValidPackageName(componentName)
+  
+  if (!packageName.valid) {
+    throw Error(`Component name must be equal to or less than ${packageName.maxLn} characters.\nCurrent name is ${packageName.over} characters above maximum`);
+  }
 
   if (getOpt && !parts[1]) {
     throw Error('Component option missing: [name]@[option]');
   }
 
   const option = getOpt || parts[1] ? parts[1] : 'default';
+
+  if (!strs.isValidComponentInputName(option)) {
+    throw Error(`Component option name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`);
+  }
 
   return {
     name: componentName,
@@ -130,17 +141,17 @@ function processArgs() {
   const components = [];
 
   try {
+
     if (argv.hasOwnProperty('o')) {
       // create an option for an existing component
-      let component = getParts(argv.o, true);
+      const component = getParts(argv.o, true);
 
       if (!componentExists(component)) {
         components.push(component);
 
         print('Component does not exist: creating it', 'warn');
-
-        createBoilerplate(components);
       } else {
+
         if (optionExists(component)) {
           throw Error('Option already exists for component.');
         } else {
@@ -150,19 +161,13 @@ function processArgs() {
     } else {
       // create one or many new components
       if (argv.hasOwnProperty('n')) {
-        let component = getParts(argv.n, false);
-
-        components.push(component);
+        components.push(getParts(argv.n));
       }
 
       if (argv.hasOwnProperty('m')) {
         const many = argv.m.split(',');
 
-        many.map(componentName => {
-          let component = getParts(componentName, false);
-
-          components.push(component);
-        });
+        components = many.map(getParts);
       }
 
       if (components.length === 0) {

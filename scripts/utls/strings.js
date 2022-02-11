@@ -21,3 +21,25 @@ exports.toCapitalize = str => {
 exports.hasLettersOnly = str => {
   return /^[a-zA-Z]+$/.test(str);
 };
+
+exports.isValidComponentInputName = str => {
+  return /^([a-zA-Z]+(-|_)*)+/g.test(str);
+};
+
+exports.isValidPackageName = str => {
+  const maxLn = 214;
+  const scope = '@owlui/';
+  const scopedMaxLn = maxLn - scope.length
+  const ln = str.length;
+  const valid = ln <= scopedMaxLn;
+  const remain = scopedMaxLn - ln;
+  const over = remain * -1;
+
+  return {
+    valid,
+    maxLn: scopedMaxLn,
+    ln,
+    remain,
+    over
+  };
+};
