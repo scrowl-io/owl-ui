@@ -2,6 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import { execSync as exec } from 'child_process'
 import { print } from './console.js'
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export const filename = '[id]/dist/owl.[name].js'
 
@@ -21,6 +24,7 @@ export const getPackagePaths = () => {
                 pkgs[pkg].location,
                 'package.json'
             )
+            
             pkgPaths.push(pkgPath)
         }
     }

@@ -1,9 +1,9 @@
 import parser from 'yargs-parser'
-import strs from '../utls/strings'
-import { print, clear } from '../utls/console'
-import fs  from '../utls/file-system'
-import { compile, definePaths }  from './templater'
-import tempOption  from './create-option'
+import strs from '../utls/strings.js'
+import { print, clear } from '../utls/console.js'
+import fs  from '../utls/file-system.js'
+import { compile, definePaths }  from './templater.js'
+import tempOption  from './create-option.js'
 
 const argv = parser(process.argv.slice(2))
 
