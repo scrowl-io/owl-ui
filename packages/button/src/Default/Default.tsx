@@ -25,15 +25,15 @@ export const Component = (props: DefaultButtonProps) => {
   }
 
   if (size === undefined) {
-    size = 'Medium'
+    size = 'Md'
   }
   
   return <button
     className={[
       modulePrefix + styles[baseClass],
-      modulePrefix + styles[`${baseClass}${theme}`],
-      modulePrefix + styles[`${baseClass}${theme}${appearance}`],
-      modulePrefix + styles[`${baseClass}${size}`]
+      modulePrefix + styles[`${baseClass}Theme${theme}`],
+      modulePrefix + styles[`${baseClass}Theme${theme}${appearance}`],
+      modulePrefix + styles[`${baseClass}Size${size}`]
     ].join(' ')}
   >{children}</button>
 }
