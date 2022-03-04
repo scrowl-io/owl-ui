@@ -4,6 +4,7 @@
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/textfield#readme",
     "license": "MIT",
+    "type": "module",
     "source": "src/index.ts",
     "main": "dist/owl.textfield.js",
     "module": "dist/index.js",

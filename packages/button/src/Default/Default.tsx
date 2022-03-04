@@ -2,42 +2,42 @@ import * as React from 'react'
 import { DefaultButtonProps } from './Default.types'
 import * as styles from './styles.module.scss'
 
-const baseClass = 'owlui-button-default'
+const baseClass = 'owluiButtonDefault'
 
 export const Component = (props: DefaultButtonProps) => {
-    const { children } = props
+  const { children } = props
 
-    let modulePrefix = props.prefix
-    let theme = props.theme
-    let appearance = props.appearance
-    let size = props.size
+  let modulePrefix = props.prefix
+  let theme = props.theme
+  let appearance = props.appearance
+  let size = props.size
+
+  if (modulePrefix === undefined) {
+    modulePrefix = ''
+  }
+
+  if (theme === undefined) {
+    theme = 'Default'
+  }
+
+  if (appearance === undefined) {
+    appearance = 'Primary'
+  }
+
+  if (size === undefined) {
+    size = 'Medium'
+  }
   
-    if (modulePrefix === undefined) {
-        modulePrefix = ''
-    }
-
-    if (theme === undefined) {
-        theme = 'default'
-    }
-
-    if (appearance === undefined) {
-        appearance = 'primary'
-    }
-
-    if (size === undefined) {
-        size = 'medium'
-    }
-
-    return <button
-        className={[
-            modulePrefix + styles[baseClass],
-            modulePrefix + styles[`${baseClass}_${theme}`],
-            modulePrefix + styles[`${baseClass}_${theme}--${appearance}`],
-            modulePrefix + styles[`${baseClass}--${size}`]
-        ].join(' ')}
-    >{children}</button>
+  return <button
+    className={[
+      modulePrefix + styles[baseClass],
+      modulePrefix + styles[`${baseClass}${theme}`],
+      modulePrefix + styles[`${baseClass}${theme}${appearance}`],
+      modulePrefix + styles[`${baseClass}${size}`]
+    ].join(' ')}
+  >{children}</button>
 }
 
 export default {
-    Component
+  Component
 };

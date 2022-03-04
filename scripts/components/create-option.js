@@ -1,7 +1,7 @@
-const fs = require('../utls/file-system')
-const { compile, definePaths } = require('./templater')
+import fs from '../utls/file-system.js'
+import { compile, definePaths } from './templater.js'
 
-exports.create = function createOptionBoilerplate(component, folders) {
+export const create = (component, folders) => {
 
     function optionPath(template, filename) {
         return definePaths(template, 'option', filename, folders.option)
@@ -31,4 +31,8 @@ exports.create = function createOptionBoilerplate(component, folders) {
         fileList[filename].contents = compile(fileList[filename].template, component)
         fs.setFile(fileList[filename].path, fileList[filename].contents)
     }
+}
+
+export default {
+  create
 }

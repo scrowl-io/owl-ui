@@ -8,9 +8,9 @@ import { theme } from './Default-theme.stories'
 export const Default = (args) => <Button {...args}>Hello World</Button>
 
 Default.args = {
-    appearance: 'primary',
-    size: 'large',
-    theme: 'default'
+    appearance: 'Primary',
+    size: 'Large',
+    theme: 'Default'
 }
 
 Default.argTypes = {

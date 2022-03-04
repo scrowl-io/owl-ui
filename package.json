@@ -9,6 +9,7 @@
   "author": "aubeOSG <caube@osg.ca>",
   "license": "MIT",
   "description": "Reusable React components.",
+  "type": "module",
   "scripts": {
     "fix": "node ./scripts/pipeline/cmd.fixes.js",
     "presetup": "node ./scripts/pipeline/cmd.setup.js",

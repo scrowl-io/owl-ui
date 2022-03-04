@@ -1,4 +1,4 @@
-exports.toCamelCase = str => {
+export const toCamelCase = str => {
   let replacedStr = str.replace(/[-_]+(.)?/g, (_, letter) => {
     return letter ? letter.toUpperCase() : '';
   });
@@ -6,27 +6,27 @@ exports.toCamelCase = str => {
   return replacedStr.substr(0, 1).toLowerCase() + replacedStr.substr(1);
 };
 
-exports.prettyJson = obj => {
+export const prettyJson = obj => {
   return JSON.stringify(obj, null, 4);
 };
 
-exports.toLower = str => {
+export const toLower = str => {
   return str.trim().toLowerCase();
 };
 
-exports.toCapitalize = str => {
+export const toCapitalize = str => {
   return str.replace(/^[A-Z|a-z]/g, letter => letter.toUpperCase());
 };
 
-exports.hasLettersOnly = str => {
+export const hasLettersOnly = str => {
   return /^[a-zA-Z]+$/.test(str);
 };
 
-exports.isValidComponentInputName = str => {
+export const isValidComponentInputName = str => {
   return /^([a-zA-Z]+(-|_)*)+/g.test(str);
 };
 
-exports.isValidPackageName = str => {
+export const isValidPackageName = str => {
   const maxLn = 214;
   const scope = '@owlui/';
   const scopedMaxLn = maxLn - scope.length
@@ -43,3 +43,13 @@ exports.isValidPackageName = str => {
     over
   };
 };
+
+export default {
+  toCamelCase,
+  prettyJson,
+  toLower,
+  toCapitalize,
+  hasLettersOnly,
+  isValidComponentInputName,
+  isValidPackageName
+}

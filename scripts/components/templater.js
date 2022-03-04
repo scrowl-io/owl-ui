@@ -1,13 +1,13 @@
-const engine = require('handlebars')
-const beautify = require('js-beautify')
-const fs = require('../utls/file-system')
-const { print } = require('../utls/console')
+import engine from 'handlebars'
+import beautify from 'js-beautify'
+import fs from '../utls/file-system.js'
+import { print } from '../utls/console.js'
 
 engine.registerHelper('raw', (options) => {
     return options.fn()
 })
 
-exports.compile = (contents, data) => {
+export const compile = (contents, data) => {
     
     try {
         return engine.compile(contents)(data)
@@ -17,7 +17,7 @@ exports.compile = (contents, data) => {
     }
 }
 
-exports.pretty = (contents) => {
+export const pretty = (contents) => {
 
     try {
         return beautify(contents)
@@ -27,7 +27,7 @@ exports.pretty = (contents) => {
     }
 }
 
-exports.definePaths = (template, templateFolder, filename, fileFolder) => {
+export const definePaths = (template, templateFolder, filename, fileFolder) => {
     
     function setFilePath(filename, folder) {
         return `${folder}/${filename}`
@@ -48,4 +48,10 @@ exports.definePaths = (template, templateFolder, filename, fileFolder) => {
         template: getTemplateFile(template, templateFolder),
         path: setFilePath(filename, fileFolder)
     }
+}
+
+export default {
+  compile,
+  pretty,
+  definePaths
 }

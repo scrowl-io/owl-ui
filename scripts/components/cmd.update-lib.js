@@ -1,8 +1,8 @@
-const exec = require('child_process').execSync
-const fs = require('../utls/file-system')
-const locations = require('../utls/locations')
-const strs = require('../utls/strings');
-const { compile } = require('./templater')
+import { execSync as exec } from 'child_process'
+import fs from '../utls/file-system.js'
+import locations from '../utls/locations.js'
+import strs from '../utls/strings.js'
+import { compile } from './templater.js'
 
 function setDest(filename) {
     return `packages/components/src/${filename}`

@@ -1,9 +1,11 @@
-const argv = require('yargs-parser')(process.argv.slice(2));
-const strs = require('../utls/strings');
-const { print, clear } = require('../utls/console');
-const fs = require('../utls/file-system');
-const { compile, definePaths } = require('./templater');
-const tempOption = require('./create-option');
+import parser from 'yargs-parser'
+import strs from '../utls/strings'
+import { print, clear } from '../utls/console'
+import fs  from '../utls/file-system'
+import { compile, definePaths }  from './templater'
+import tempOption  from './create-option'
+
+const argv = parser(process.argv.slice(2))
 
 function createFolderMap(component) {
   if (!strs.hasLettersOnly(component.name)) {
