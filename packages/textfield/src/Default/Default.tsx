@@ -25,15 +25,15 @@ export const Component = (props: DefaultTextfieldProps) => {
     }
 
     if (size === undefined) {
-        size = 'Medium'
+        size = 'Md'
     }
 
     return <input type="text"
         className={[
             modulePrefix + styles[baseClass],
-            modulePrefix + styles[`${baseClass}${theme}`],
-            modulePrefix + styles[`${baseClass}${theme}${appearance}`],
-            modulePrefix + styles[`${baseClass}${size}`]
+            modulePrefix + styles[`${baseClass}Theme${theme}`],
+            modulePrefix + styles[`${baseClass}Theme${theme}${appearance}`],
+            modulePrefix + styles[`${baseClass}Size${size}`]
         ].join(' ')}
     />
 }

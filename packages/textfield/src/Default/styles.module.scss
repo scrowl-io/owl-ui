@@ -1,34 +1,35 @@
 @use '~@owlui/theme' as theme;
 
-.owlui-textfield-default {
+.owlui-textfield {
+  &--default {
+    &--theme {
+      &-default {
+        /* appearances */
+        &-primary {
+          @include theme.defaultTheme-branding;
+        }
+      }
 
-    /* themes */
-    &_default {
-
+      &-dark {
         /* appearances */
         &--primary {
-            @include theme.defaultTheme-branding;
+          @include theme.darkTheme-branding;
         }
+      }
     }
 
-    &_dark {
-
-        /* appearances */
-        &--primary {
-            @include theme.darkTheme-branding;
-        }
-    }
-
-    /* Sizes */
-    &--large {
+    &--size {
+      &-lg {
         @include theme.defaultTheme-typeface--large;
-    }
+      }
 
-    &--medium {
+      &-md {
         @include theme.defaultTheme-typeface--medium;
-    }
+      }
 
-    &--small {
+      &-sm {
         @include theme.defaultTheme-typeface--small;
+      }
     }
+  }
 }
