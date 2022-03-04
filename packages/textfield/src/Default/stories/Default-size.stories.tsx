@@ -1,13 +1,13 @@
 export const size = {
     options: [
-        'large',
-        'medium',
-        'small'
+        'Large',
+        'Medium',
+        'Small'
     ],
     control: {
         type: 'select'
     },
-    defaultValue: 'large'
+    defaultValue: 'Large'
 }
 
 export default {
