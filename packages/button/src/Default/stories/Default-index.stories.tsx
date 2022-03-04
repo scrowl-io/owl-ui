@@ -9,7 +9,7 @@ export const Default = (args) => <Button {...args}>Hello World</Button>
 
 Default.args = {
     appearance: 'Primary',
-    size: 'Large',
+    size: 'Lg',
     theme: 'Default'
 }
 

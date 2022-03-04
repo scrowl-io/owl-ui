@@ -9,7 +9,7 @@ export const Default = (args) => <Textfield {...args} />
 
 Default.args = {
     appearance: 'Primary',
-    size: 'Large',
+    size: 'Lg',
     theme: 'Default'
 }
 
