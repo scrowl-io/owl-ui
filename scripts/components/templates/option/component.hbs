@@ -2,7 +2,7 @@ import * as React from 'react'
 import { {{{optionCap}}}{{{cap}}}Props } from './{{{optionCap}}}.types'
 import * as styles from './styles.module.scss'
 
-const baseClass = 'owlui-{{{name}}}-{{{option}}}'
+const baseClass = 'owlui{{{cap}}}{{{optionCap}}}'
 
 export const Component = (props: {{{optionCap}}}{{{cap}}}Props) => {
     const { children } = props
@@ -17,23 +17,23 @@ export const Component = (props: {{{optionCap}}}{{{cap}}}Props) => {
     }
 
     if (theme === undefined) {
-        theme = 'default'
+        theme = 'Default'
     }
 
     if (appearance === undefined) {
-        appearance = 'primary'
+        appearance = 'Primary'
     }
 
     if (size === undefined) {
-        size = 'medium'
+        size = 'Medium'
     }
 
     return <div
         className={[
             modulePrefix + styles[baseClass],
-            modulePrefix + styles[`${baseClass}_${theme}`],
-            modulePrefix + styles[`${baseClass}_${theme}--${appearance}`],
-            modulePrefix + styles[`${baseClass}--${size}`]
+            modulePrefix + styles[`${baseClass}${theme}`],
+            modulePrefix + styles[`${baseClass}${theme}${appearance}`],
+            modulePrefix + styles[`${baseClass}${size}`]
         ].join(' ')}
     >{children}</div>
 }

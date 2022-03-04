@@ -1,12 +1,12 @@
 export const theme = {
     options: [
-        'default',
-        'dark'
+        'Default',
+        'Dark'
     ],
     control: {
         type: 'select'
     },
-    defaultValue: 'default'
+    defaultValue: 'Default'
 }
 
 export default {
