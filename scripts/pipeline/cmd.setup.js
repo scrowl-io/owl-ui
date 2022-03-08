@@ -1,7 +1,7 @@
 import fs from '../utls/file-system.js'
 
 const fileMap = {
-    'design/owl-ui/dist/styledictionary/scss/variables.scss': {
+    'design/dist/styledictionary/scss/variables.scss': {
         dest: 'packages/theme/src/global/_variables.scss',
         transformer: (contents) => {
             return contents.replace(/;/g, () => { return ' !default;' })

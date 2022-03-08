@@ -1,13 +1,13 @@
 @use './variables.scss' as *;
 
 html {
-    font-size: 1px;
+  font-size: 1px;
 }
 
 body {
-    font-size: 16rem;
+  font-size: $owl-sys-typeface-body-size;
 }
 
 h1 {
-    font-size: $owl-ref-typeface-title-large-size;
+  font-size: $owl-sys-typeface-heading-1-size;
 }

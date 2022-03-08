@@ -8,16 +8,6 @@ module.exports = {
     "properties/sizes.json"
   ],
   "platforms": {
-    "js": {
-      "files": [
-        {
-          "destination": "tokens.js",
-          "format": "javascript/es6"
-        }
-      ],
-      "transformGroup": "js",
-      "buildPath": "js/"
-    },
     "scss": {
       "files": [
         {

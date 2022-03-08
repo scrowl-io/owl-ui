@@ -3,14 +3,23 @@
     "owl_sys_color_on-light": {
       "value": "{color.owl_ref_palette_dark.value}"
     },
-    "owl_sys_color_on-primary": {
-      "value": "{color.owl_ref_palette_light.value}"
-    },
     "owl_sys_color_on-dark": {
       "value": "{color.owl_ref_palette_light.value}"
     },
     "owl_sys_color_primary": {
       "value": "{color.owl_ref_palette_primary.value}"
+    },
+    "owl_sys_color_on-primary": {
+      "value": "{color.owl_ref_palette_light.value}"
+    },
+    "owl_sys_bg_primary": {
+      "value": "{color.owl_ref_palette_primary.value}"
+    },
+    "owl_sys_bg_dark": {
+      "value": "{color.owl_ref_palette_dark.value}"
+    },
+    "owl_sys_bg_light": {
+      "value": "{color.owl_ref_palette_light.value}"
     },
     "owl_ref_palette_primary": {
       "value": "#0B7B25ff"
