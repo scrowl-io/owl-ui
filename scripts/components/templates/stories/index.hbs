@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { component as {{{cap}}} } from '../index'
+import { {{{optionCap}}}{{{cap}}}Props } from '../{{{optionCap}}}.types'
 
 import { appearance } from './{{{optionCap}}}-appearance.stories'
 import { size } from './{{{optionCap}}}-size.stories'
 import { theme } from './{{{optionCap}}}-theme.stories'
 
-export const {{{optionCap}}} = (args) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>
+export const {{{optionCap}}} = (args: {{{optionCap}}}{{{cap}}}Props) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>
 
 {{{optionCap}}}.args = {
     appearance: 'Primary',

@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { component as Button } from '../index'
+import { DefaultButtonProps } from '../Default.types'
 
 import { appearance } from './Default-appearance.stories'
 import { size } from './Default-size.stories'
 import { theme } from './Default-theme.stories'
 
-export const Default = (args) => <Button {...args}>Hello World</Button>
+export const Default = (args: DefaultButtonProps) => <Button {...args}><>Hello World</></Button>
 
 Default.args = {
     appearance: 'Primary',
