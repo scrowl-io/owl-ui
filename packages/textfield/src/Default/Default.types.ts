@@ -3,7 +3,7 @@ export type DefaultTextfieldCommons = {
     theme?: 'Default' | 'Dark'
     size?: 'Sm' | 'Md' | 'Lg'
     prefix?: string
-    children: any
+    children: JSX.Element | JSX.Element[]
 }
 
 export type DefaultTextfieldProps = Partial<DefaultTextfieldCommons>
