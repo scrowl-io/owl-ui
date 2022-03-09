@@ -4,6 +4,7 @@
     "description": "",
     "homepage": "https://github.com/EEBOS/owl-ui/tree/main/web#readme",
     "license": "MIT",
+    "type": "module",
     "source": "src/index.html",
     "private": true,
     "repository": {

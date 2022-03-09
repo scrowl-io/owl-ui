@@ -1,27 +1,24 @@
 @use '../global/variables' as vars;
 
 @mixin branding {
-    background-color: vars.$owl-sys-color-primary;
-    color: vars.$owl-sys-color-on-primary;
+  background-color: vars.$owl-sys-color-primary;
+  color: vars.$owl-sys-color-on-primary;
 }
 
 @mixin typeface--large {
-    font: vars.$owl-sys-typescale-display-large-font;
-    font-size: vars.$owl-sys-typescale-display-large-size;
-    line-height: vars.$owl-sys-typescale-display-large-line-height;
-    font-weight: vars.$owl-sys-typescale-display-large-weight;
+  font: vars.$owl-sys-typeface-body-lg-family;
+  font-size: vars.$owl-sys-typeface-body-lg-size;
+  font-weight: vars.$owl-sys-typeface-body-lg-weight;
 }
 
 @mixin typeface--medium {
-    font: vars.$owl-sys-typescale-display-large-font;
-    font-size: vars.$owl-sys-typescale-display-large-size;
-    line-height: vars.$owl-sys-typescale-display-large-line-height;
-    font-weight: vars.$owl-sys-typescale-display-large-weight;
+  font: vars.$owl-sys-typeface-body-md-family;
+  font-size: vars.$owl-sys-typeface-body-md-size;
+  font-weight: vars.$owl-sys-typeface-body-md-weight;
 }
 
 @mixin typeface--small {
-    font: vars.$owl-sys-typescale-display-large-font;
-    font-size: vars.$owl-sys-typescale-display-large-size;
-    line-height: vars.$owl-sys-typescale-display-large-line-height;
-    font-weight: vars.$owl-sys-typescale-display-large-weight;
+  font: vars.$owl-sys-typeface-body-sm-family;
+  font-size: vars.$owl-sys-typeface-body-sm-size;
+  font-weight: vars.$owl-sys-typeface-body-sm-weight;
 }

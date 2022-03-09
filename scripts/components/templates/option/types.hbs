@@ -1,9 +1,11 @@
+import React from 'react'
+
 export type {{{optionCap}}}{{{cap}}}Commons = {
-    appearance?: 'primary' | 'outline'
-    theme?: 'default' | 'dark'
-    size?: 'small' | 'medium' | 'large'
-    prefix?: string
-    children: any
+  appearance?: 'Primary' | 'Outline'
+  theme?: 'Default' | 'Dark'
+  size?: 'Sm' | 'Md' | 'Lg'
+  prefix?: string
+  children: React.ReactNode
 }
 
 export type {{{optionCap}}}{{{cap}}}Props = Partial<{{{optionCap}}}{{{cap}}}Commons>

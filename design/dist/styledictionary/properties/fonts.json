@@ -1,0 +1,140 @@
+{
+  "font": {
+    "owl_sys_typeface_heading-1": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_body-lg": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_body": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_heading-4": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_heading-5": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_body-xs": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_heading-6": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_body-md": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_body-sm": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_title": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_heading-3": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    },
+    "owl_sys_typeface_heading-2": {
+      "family": {
+        "value": "Roboto"
+      },
+      "weight": {
+        "value": "Regular"
+      }
+    }
+  },
+  "size": {
+    "font": {
+      "owl_sys_typeface_heading-1": {
+        "value": "60"
+      },
+      "owl_sys_typeface_body-lg": {
+        "value": "24"
+      },
+      "owl_sys_typeface_body": {
+        "value": "16"
+      },
+      "owl_sys_typeface_heading-4": {
+        "value": "28"
+      },
+      "owl_sys_typeface_heading-5": {
+        "value": "32"
+      },
+      "owl_sys_typeface_body-xs": {
+        "value": "10"
+      },
+      "owl_sys_typeface_heading-6": {
+        "value": "26"
+      },
+      "owl_sys_typeface_body-md": {
+        "value": "20"
+      },
+      "owl_sys_typeface_body-sm": {
+        "value": "14"
+      },
+      "owl_sys_typeface_title": {
+        "value": "80"
+      },
+      "owl_sys_typeface_heading-3": {
+        "value": "40"
+      },
+      "owl_sys_typeface_heading-2": {
+        "value": "50"
+      }
+    }
+  }
+}

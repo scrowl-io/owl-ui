@@ -1,11 +1,14 @@
-const fs = require('fs')
-const path = require('path')
-const exec = require('child_process').execSync;
-const { print } = require('./console')
+import fs from 'fs'
+import path from 'path'
+import { execSync as exec } from 'child_process'
+import { print } from './console.js'
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const filename = '[id]/dist/owl.[name].js'
+export const filename = '[id]/dist/owl.[name].js'
 
-function getPackagePaths() {
+export const getPackagePaths = () => {
     const pkgPaths = []
     const pkgs = JSON.parse(
         exec('yarn workspaces info --json')
@@ -21,6 +24,7 @@ function getPackagePaths() {
                 pkgs[pkg].location,
                 'package.json'
             )
+            
             pkgPaths.push(pkgPath)
         }
     }
@@ -28,7 +32,7 @@ function getPackagePaths() {
     return pkgPaths
 }
 
-function setTargets(entry, pkg) {
+export const setTargets = (entry, pkg) => {
     entry.entries = []
     entry.dists = []
 
@@ -44,7 +48,7 @@ function setTargets(entry, pkg) {
     }
 }
 
-function getEntries() {
+export const getEntries = () => {
     const entries = {}
     const packages = getPackagePaths()
     const libPrefix = '@owlui/'
@@ -72,8 +76,8 @@ function getEntries() {
     return entries
 }
 
-module.exports = {
-    filename: filename,
-    packagePaths: getPackagePaths,
-    entries: getEntries
-};
+export default {
+  filename,
+  packagePaths: getPackagePaths,
+  entries: getEntries
+}

@@ -1,11 +1,11 @@
 export const appearance = {
     options: [
-        'primary'
+        'Primary'
     ],
     control: {
         type: 'select'
     },
-    defaultValue: 'primary'
+    defaultValue: 'Primary'
 }
 
 export default {

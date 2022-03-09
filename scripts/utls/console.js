@@ -1,5 +1,5 @@
-const colors = require('colors')
-const strs = require('./strings')
+import colors from 'colors'
+import strs from './strings.js'
 
 const clrTheme = {
     input: 'grey',
@@ -16,7 +16,7 @@ const clrTheme = {
 
 colors.setTheme(clrTheme)
 
-exports.print = (msg, clr) => {
+export const print = (msg, clr) => {
     clr = clr || 'data'
 
     const printable = (typeof msg === 'string' || typeof msg === 'number' || typeof msg === 'boolean') ? msg : (
@@ -32,6 +32,11 @@ exports.print = (msg, clr) => {
     console.log(`[${clr.toUpperCase()}] ${printable}`[clr])
 }
 
-exports.clear = () => {
+export const clear = () => {
     process.stdout.write('\x1b[2J')
+}
+
+export default {
+  print,
+  clear
 }

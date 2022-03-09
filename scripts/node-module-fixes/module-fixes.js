@@ -1,10 +1,10 @@
-const fs = require('../utls/file-system')
+import fs from '../utls/file-system.js'
 
 const moduleMap = {
     '@parcel/transformer-sass/lib.js': '@parcel/transformer-sass/lib/SassTransformer.js'
 }
 
-exports.apply = () => {
+export const apply = () => {
 
     for (let fix in moduleMap) {
         const fixPath = fs.join('scripts', 'node-module-fixes', fix)
@@ -13,4 +13,8 @@ exports.apply = () => {
         
         fs.setFile(modulePath, contents)
     }
+}
+
+export default {
+  apply
 }

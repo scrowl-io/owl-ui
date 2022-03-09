@@ -33,3 +33,5 @@ packages/**/*.js
 packages/**/*.map
 packages/**/test/**.css
 web/dist/
+.DS_Store
+**/.DS_Store

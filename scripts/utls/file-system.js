@@ -1,7 +1,7 @@
-const fs = require('fs-extra')
-const path = require('path')
-const strs = require('./strings')
-const { print } = require('./console')
+import fs from 'fs-extra'
+import path from 'path'
+import strs from './strings.js'
+import { print } from './console.js'
 
 fs.join = (...paths) => {
     return path.join.apply(null, paths)
@@ -120,4 +120,4 @@ fs.renameFile = (oldPath, newPath) => {
     }
 }
 
-Object.assign(exports, fs)
+export default fs

@@ -2,40 +2,38 @@ import * as React from 'react'
 import { {{{optionCap}}}{{{cap}}}Props } from './{{{optionCap}}}.types'
 import * as styles from './styles.module.scss'
 
-const baseClass = 'owlui-{{{name}}}-{{{option}}}'
+const baseClass = 'owlui{{{cap}}}{{{optionCap}}}'
 
 export const Component = (props: {{{optionCap}}}{{{cap}}}Props) => {
-    const { children } = props
+  const { children } = props
 
-    let modulePrefix = props.prefix
-    let theme = props.theme
-    let appearance = props.appearance
-    let size = props.size
+  let modulePrefix = props.prefix
+  let theme = props.theme || 'Default'
+  let appearance = props.appearance || 'Primary'
+  let size = props.size || 'Md'
 
-    if (modulePrefix === undefined) {
-        modulePrefix = ''
-    }
+  let localStyles = {
+    base: styles[baseClass],
+    theme: styles[`${baseClass}Theme${theme}`],
+    appearance: styles[`${baseClass}Theme${theme}${appearance}`],
+    size: styles[`${baseClass}Size${size}`]
+  }
 
-    if (theme === undefined) {
-        theme = 'default'
-    }
+  if (modulePrefix !== undefined && modulePrefix !== null) {
+    localStyles.base = `${modulePrefix}-${localStyles.base}`
+    localStyles.theme = `${modulePrefix}-${localStyles.theme}`
+    localStyles.appearance = `${modulePrefix}-${localStyles.appearance}`
+    localStyles.size = `${modulePrefix}-${localStyles.size}`
+  }
 
-    if (appearance === undefined) {
-        appearance = 'primary'
-    }
-
-    if (size === undefined) {
-        size = 'medium'
-    }
-
-    return <div
-        className={[
-            modulePrefix + styles[baseClass],
-            modulePrefix + styles[`${baseClass}_${theme}`],
-            modulePrefix + styles[`${baseClass}_${theme}--${appearance}`],
-            modulePrefix + styles[`${baseClass}--${size}`]
-        ].join(' ')}
-    >{children}</div>
+  return <div
+    className={[
+      localStyles.base,
+      localStyles.theme,
+      localStyles.appearance,
+      localStyles.size
+    ].join(' ')}
+  >{children}</div>
 }
 
 export default {

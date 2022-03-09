@@ -1,43 +1,41 @@
-import * as React from 'react';
-import { DefaultTextfieldProps } from './Default.types';
-import * as styles from './styles.module.scss';
+import * as React from 'react'
+import { DefaultTextfieldProps } from './Default.types'
+import * as styles from './styles.module.scss'
 
-const baseClass = 'owlui-textfield-default'
+const baseClass = 'owluiTextfieldDefault'
 
 export const Component = (props: DefaultTextfieldProps) => {
-    const { children } = props;
+  const { children } = props
     
-    let theme = props.theme
-    let appearance = props.appearance
-    let size = props.size
-    let modulePrefix = props.prefix
+  let modulePrefix = props.prefix
+  let theme = props.theme || 'Default'
+  let appearance = props.appearance || 'Primary'
+  let size = props.size || 'Md'
 
-    if (props.prefix === undefined) {
-        modulePrefix = ''
-    }
+  let localStyles = {
+    base: styles[baseClass],
+    theme: styles[`${baseClass}Theme${theme}`],
+    appearance: styles[`${baseClass}Theme${theme}${appearance}`],
+    size: styles[`${baseClass}Size${size}`]
+  }
 
-    if (theme === undefined) {
-        theme = 'default'
-    }
-
-    if (appearance === undefined) {
-        appearance = 'primary'
-    }
-
-    if (size === undefined) {
-        size = 'medium'
-    }
-
-    return <input type="text"
-        className={[
-            modulePrefix + styles[baseClass],
-            modulePrefix + styles[`${baseClass}_${theme}`],
-            modulePrefix + styles[`${baseClass}_${theme}--${appearance}`],
-            modulePrefix + styles[`${baseClass}--${size}`]
-        ].join(' ')}
-    />
+  if (modulePrefix !== undefined && modulePrefix !== null) {
+    localStyles.base = `${modulePrefix}-${localStyles.base}`
+    localStyles.theme = `${modulePrefix}-${localStyles.theme}`
+    localStyles.appearance = `${modulePrefix}-${localStyles.appearance}`
+    localStyles.size = `${modulePrefix}-${localStyles.size}`
+  }
+  
+  return <input type="text"
+    className={[
+      localStyles.base,
+      localStyles.theme,
+      localStyles.appearance,
+      localStyles.size
+    ].join(' ')}
+  />
 }
 
 export default {
-    Component
-};
+  Component
+}

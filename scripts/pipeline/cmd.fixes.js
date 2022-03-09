@@ -1,3 +1,3 @@
-const fixes = require('../node-module-fixes/module-fixes')
+import fixes from '../node-module-fixes/module-fixes.js'
 
 fixes.apply()

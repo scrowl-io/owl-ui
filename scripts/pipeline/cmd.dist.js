@@ -1,7 +1,7 @@
-const exec = require('child_process').execSync
-const fs = require('../utls/file-system')
-const locations = require('../utls/locations')
-const fixes = require('../node-module-fixes/module-fixes')
+import { execSync as exec } from 'child_process'
+import fs from '../utls/file-system.js'
+import locations from '../utls/locations.js'
+import fixes from '../node-module-fixes/module-fixes.js'
 
 const logLevel = '--log-level warn'
 
@@ -41,8 +41,8 @@ function preBuild(name, config) {
 
 function postBuild(files) {
     
-    function getDistPath(package, filename) {
-        return `packages/${package}/dist/${filename}`
+    function getDistPath(pkg, filename) {
+        return `packages/${pkg}/dist/${filename}`
     }
 
     function replaceMapNames(path, lookup, replacer) {
