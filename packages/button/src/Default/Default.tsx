@@ -8,32 +8,30 @@ export const Component = (props: DefaultButtonProps) => {
   const { children } = props
 
   let modulePrefix = props.prefix
-  let theme = props.theme
-  let appearance = props.appearance
-  let size = props.size
+  let theme = props.theme || 'Default'
+  let appearance = props.appearance || 'Primary'
+  let size = props.size || 'Md'
 
-  if (modulePrefix === undefined) {
-    modulePrefix = ''
+  let localStyles = {
+    base: styles[baseClass],
+    theme: styles[`${baseClass}Theme${theme}`],
+    appearance: styles[`${baseClass}Theme${theme}${appearance}`],
+    size: styles[`${baseClass}Size${size}`]
   }
 
-  if (theme === undefined) {
-    theme = 'Default'
-  }
-
-  if (appearance === undefined) {
-    appearance = 'Primary'
-  }
-
-  if (size === undefined) {
-    size = 'Md'
+  if (modulePrefix !== undefined && modulePrefix !== null) {
+    localStyles.base = `${modulePrefix}-${localStyles.base}`
+    localStyles.theme = `${modulePrefix}-${localStyles.theme}`
+    localStyles.appearance = `${modulePrefix}-${localStyles.appearance}`
+    localStyles.size = `${modulePrefix}-${localStyles.size}`
   }
   
   return <button
     className={[
-      modulePrefix + styles[baseClass],
-      modulePrefix + styles[`${baseClass}Theme${theme}`],
-      modulePrefix + styles[`${baseClass}Theme${theme}${appearance}`],
-      modulePrefix + styles[`${baseClass}Size${size}`]
+      localStyles.base,
+      localStyles.theme,
+      localStyles.appearance,
+      localStyles.size
     ].join(' ')}
   >{children}</button>
 }
