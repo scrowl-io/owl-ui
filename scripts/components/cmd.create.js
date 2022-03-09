@@ -173,6 +173,8 @@ function processArgs() {
           defaultOption.option = 'default'
           defaultOption.optionCap = strs.toCapitalize(defaultOption.option)
           components.push(defaultOption)
+        } else {
+          components.push(newComponent)
         }
       }
 
