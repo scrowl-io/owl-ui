@@ -18,8 +18,12 @@ export const create = (component, folders) => {
             index: optionPath('index', 'index.ts'),
             styles: optionPath('styles', 'styles.module.scss'),
             description: optionPath('description', 'Description.md'),
-            component: optionPath('component', `${component.optionCap}.tsx`),
-            types: optionPath('types', `${component.optionCap}.types.ts`),
+            component: (component.option === 'default') ?
+              optionPath('component-default', `${component.optionCap}.tsx`) :
+              optionPath('component', `${component.optionCap}.tsx`),
+            types: (component.option === 'default') ? 
+              optionPath('types-default', `${component.optionCap}.types.ts`) :
+              optionPath('types', `${component.optionCap}.types.ts`),
             story: optionPath('story', `${component.optionCap}.stories.tsx`),
             stories: storyPath('index', `${component.optionCap}-index.stories.tsx`),
             storiesAppearance: storyPath('appearance', `${component.optionCap}-appearance.stories.tsx`),
