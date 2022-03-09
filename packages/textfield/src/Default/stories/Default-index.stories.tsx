@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { component as Textfield } from '../index'
-import { DefaultTextfieldProps } from '../Default.types';
+import { TextfieldDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories'
 import { size } from './Default-size.stories'
 import { theme } from './Default-theme.stories'
 
-export const Default = (args: DefaultTextfieldProps) => <Textfield {...args} />
+export const Default = (args: TextfieldDefaultProps) => <Textfield {...args} />
 
 Default.args = {
     appearance: 'Primary',

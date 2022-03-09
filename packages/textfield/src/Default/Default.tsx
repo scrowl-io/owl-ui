@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { DefaultTextfieldProps } from './Default.types'
+import { TextfieldDefaultProps } from './Default.types'
 import * as styles from './styles.module.scss'
 
 const baseClass = 'owluiTextfieldDefault'
 
-export const Component = (props: DefaultTextfieldProps) => {
+export const Component = (props: TextfieldDefaultProps) => {
   const { children } = props
     
   let modulePrefix = props.prefix

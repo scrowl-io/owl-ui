@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type DefaultButtonCommons = {
+export type ButtonDefaultCommons = {
     appearance?: 'Primary' | 'Outline'
     theme?: 'Default' | 'Dark'
     size?: 'Sm' | 'Md' | 'Lg'
@@ -8,4 +8,4 @@ export type DefaultButtonCommons = {
     children: React.ReactNode
 }
 
-export type DefaultButtonProps = Partial<DefaultButtonCommons>
+export type ButtonDefaultProps = Partial<ButtonDefaultCommons>

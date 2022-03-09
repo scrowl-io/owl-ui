@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { DefaultButtonProps } from './Default.types'
+import { ButtonDefaultProps } from './Default.types'
 import * as styles from './styles.module.scss'
 
 const baseClass = 'owluiButtonDefault'
 
-export const Component = (props: DefaultButtonProps) => {
+export const Component = (props: ButtonDefaultProps) => {
   const { children } = props
 
   let modulePrefix = props.prefix

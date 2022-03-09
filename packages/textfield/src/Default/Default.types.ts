@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type DefaultTextfieldCommons = {
+export type TextfieldDefaultCommons = {
     appearance?: 'Primary' | 'Outline'
     theme?: 'Default' | 'Dark'
     size?: 'Sm' | 'Md' | 'Lg'
@@ -8,4 +8,4 @@ export type DefaultTextfieldCommons = {
     children: React.ReactNode
 }
 
-export type DefaultTextfieldProps = Partial<DefaultTextfieldCommons>
+export type TextfieldDefaultProps = Partial<TextfieldDefaultCommons>
