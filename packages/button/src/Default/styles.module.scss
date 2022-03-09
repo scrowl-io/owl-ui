@@ -1,20 +1,20 @@
 @use '~@owlui/theme' as theme;
 
 .owlui-button {
-  &--default {
+  &-default {
     padding: theme.$owl-sys-layout-spacer;
 
     &--theme {
-      &-default {
+      &--default {
         /* appearances */
         &-primary {
           @include theme.defaultTheme-branding;
         }
       }
 
-      &-dark {
+      &--dark {
         /* appearances */
-        &--primary {
+        &-primary {
           @include theme.darkTheme-branding;
         }
       }

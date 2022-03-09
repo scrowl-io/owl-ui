@@ -1,18 +1,18 @@
 @use '~@owlui/theme' as theme;
 
 .owlui-{{{name}}} {
-  &--{{{option}}} {
+  &-{{{option}}} {
     padding: theme.$owl-sys-layout-spacer;
     
     &--theme {
-      &-default {
+      &--default {
         /* appearances */
         &-primary {
           @include theme.defaultTheme-branding;
         }
       }
 
-      &-dark {
+      &--dark {
         /* appearances */
         &-primary {
           @include theme.darkTheme-branding;
