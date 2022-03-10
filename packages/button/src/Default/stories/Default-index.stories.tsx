@@ -9,13 +9,13 @@ import { theme } from './Default-theme.stories'
 export const Default = (args: ButtonDefaultProps) => <Button {...args}><>Hello World</></Button>
 
 Default.args = {
-    appearance: 'Primary',
-    size: 'Lg',
-    theme: 'Default'
+  appearance: 'Primary',
+  size: 'Lg',
+  theme: 'Default'
 }
 
 Default.argTypes = {
-    appearance,
-    size,
-    theme
+  appearance,
+  size,
+  theme
 }
