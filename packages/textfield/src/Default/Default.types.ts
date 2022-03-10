@@ -8,4 +8,4 @@ export type TextfieldDefaultCommons = {
     children: React.ReactNode
 }
 
-export type TextfieldDefaultProps = Partial<TextfieldDefaultCommons>
+export type TextfieldDefaultProps = Partial<TextfieldDefaultCommons> & React.InputHTMLAttributes<HTMLInputElement>
