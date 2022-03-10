@@ -26,11 +26,11 @@ export const create = (component, folders) => {
         }
 
     if (component.option === defaultOpt) {
-      fileList.styles = optionPath(`styles-${defaultOpt}`, `${component.optionCap}.types.ts`)
+      fileList.styles = optionPath(`styles-${defaultOpt}`, `styles.module.scss`)
       fileList.component = optionPath(`component-${defaultOpt}`, `${component.optionCap}.tsx`)
       fileList.types = optionPath(`types-${defaultOpt}`, `${component.optionCap}.types.ts`)
     } else {
-      fileList.styles = optionPath('styles', `${component.optionCap}.tsx`)
+      fileList.styles = optionPath('styles', `styles.module.scss`)
       fileList.component = optionPath('component', `${component.optionCap}.tsx`)
       fileList.types = optionPath('types', `${component.optionCap}.types.ts`)
     }
