@@ -7,9 +7,12 @@ const baseClass = 'owlui{{{cap}}}'
 
 export const Component = (props: {{{cap}}}{{{optionCap}}}Props) => {
   const { children } = props
+  const localProps = Object.assign({}, props)
+  
+  localProps.className = localProps.hasOwnProperty('className') ? `${styles[baseClass]} ${localProps.className}` : styles[baseClass]
 
   return <Default
-    {...props}
+    {...localProps}
   >{children}</Default>
 }
 

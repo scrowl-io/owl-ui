@@ -5,7 +5,7 @@ import * as styles from './styles.module.scss'
 const baseClass = 'owluiButton'
 
 export const Component = (props: ButtonDefaultProps) => {
-  const { children } = props
+  const { children, className } = props
 
   let modulePrefix = props.prefix
   let theme = props.theme || 'Default'
@@ -25,9 +25,10 @@ export const Component = (props: ButtonDefaultProps) => {
     localStyles.appearance = `${modulePrefix}-${localStyles.appearance}`
     localStyles.size = `${modulePrefix}-${localStyles.size}`
   }
-
+  
   return <button
     className={[
+      className,
       localStyles.base,
       localStyles.theme,
       localStyles.appearance,

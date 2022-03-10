@@ -5,7 +5,7 @@ import * as styles from './styles.module.scss'
 const baseClass = 'owlui{{{cap}}}{{{optionCap}}}'
 
 export const Component = (props: {{{cap}}}{{{optionCap}}}Props) => {
-  const { children } = props
+  const { children, className } = props
 
   let modulePrefix = props.prefix
   let theme = props.theme || 'Default'
@@ -28,6 +28,7 @@ export const Component = (props: {{{cap}}}{{{optionCap}}}Props) => {
 
   return <div
     className={[
+      className,
       localStyles.base,
       localStyles.theme,
       localStyles.appearance,

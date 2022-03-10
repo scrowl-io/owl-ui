@@ -8,4 +8,4 @@ export type ButtonDefaultCommons = {
     children: React.ReactNode
 }
 
-export type ButtonDefaultProps = Partial<ButtonDefaultCommons>
+export type ButtonDefaultProps = Partial<ButtonDefaultCommons> & React.ButtonHTMLAttributes<HTMLButtonElement>

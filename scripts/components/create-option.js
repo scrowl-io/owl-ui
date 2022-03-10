@@ -14,22 +14,26 @@ export const create = (component, folders) => {
     folders.option = `${folders.src}/${component.optionCap}`
     folders.stories = `${folders.option}/stories`
     
+    const defaultOpt = 'default'
     const fileList = {
             index: optionPath('index', 'index.ts'),
-            styles: optionPath('styles', 'styles.module.scss'),
             description: optionPath('description', 'Description.md'),
-            component: (component.option === 'default') ?
-              optionPath('component-default', `${component.optionCap}.tsx`) :
-              optionPath('component', `${component.optionCap}.tsx`),
-            types: (component.option === 'default') ? 
-              optionPath('types-default', `${component.optionCap}.types.ts`) :
-              optionPath('types', `${component.optionCap}.types.ts`),
             story: optionPath('story', `${component.optionCap}.stories.tsx`),
             stories: storyPath('index', `${component.optionCap}-index.stories.tsx`),
             storiesAppearance: storyPath('appearance', `${component.optionCap}-appearance.stories.tsx`),
             storiesSize: storyPath('size', `${component.optionCap}-size.stories.tsx`),
             storiesTheme: storyPath('theme', `${component.optionCap}-theme.stories.tsx`)
         }
+
+    if (component.option === defaultOpt) {
+      fileList.styles = optionPath(`styles-${defaultOpt}`, `${component.optionCap}.types.ts`)
+      fileList.component = optionPath(`component-${defaultOpt}`, `${component.optionCap}.tsx`)
+      fileList.types = optionPath(`types-${defaultOpt}`, `${component.optionCap}.types.ts`)
+    } else {
+      fileList.styles = optionPath('styles', `${component.optionCap}.tsx`)
+      fileList.component = optionPath('component', `${component.optionCap}.tsx`)
+      fileList.types = optionPath('types', `${component.optionCap}.types.ts`)
+    }
     
     for (let filename in fileList) {
         fileList[filename].contents = compile(fileList[filename].template, component)
