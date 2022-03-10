@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ButtonDefaultProps } from './Default.types'
 import * as styles from './styles.module.scss'
 
-const baseClass = 'owluiButtonDefault'
+const baseClass = 'owluiButton'
 
 export const Component = (props: ButtonDefaultProps) => {
   const { children } = props
@@ -25,7 +25,7 @@ export const Component = (props: ButtonDefaultProps) => {
     localStyles.appearance = `${modulePrefix}-${localStyles.appearance}`
     localStyles.size = `${modulePrefix}-${localStyles.size}`
   }
-  
+
   return <button
     className={[
       localStyles.base,
