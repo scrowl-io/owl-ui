@@ -24,5 +24,10 @@
         "functions": "never"
       }
     ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
