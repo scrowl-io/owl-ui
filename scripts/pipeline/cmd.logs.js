@@ -56,6 +56,11 @@ const processArgs = () => {
 
     const filepath = argv.f;
     const file = fs.getFile(filepath);
+
+    if (!file) {
+      return;
+    }
+
     const report = formatReport(file);
     let issuesNum = '';
 
