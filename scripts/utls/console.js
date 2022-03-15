@@ -120,5 +120,5 @@ export default {
   clear,
   color,
   highlight,
-  log
-}
+  log,
+};
