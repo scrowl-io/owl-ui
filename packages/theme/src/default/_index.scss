@@ -6,19 +6,19 @@
 }
 
 @mixin typeface--large {
-  font: vars.$owl-sys-typeface-body-lg-family;
+  font-family: vars.$owl-sys-typeface-body-lg-family;
   font-size: vars.$owl-sys-typeface-body-lg-size;
   font-weight: vars.$owl-sys-typeface-body-lg-weight;
 }
 
 @mixin typeface--medium {
-  font: vars.$owl-sys-typeface-body-md-family;
+  font-family: vars.$owl-sys-typeface-body-md-family;
   font-size: vars.$owl-sys-typeface-body-md-size;
   font-weight: vars.$owl-sys-typeface-body-md-weight;
 }
 
 @mixin typeface--small {
-  font: vars.$owl-sys-typeface-body-sm-family;
+  font-family: vars.$owl-sys-typeface-body-sm-family;
   font-size: vars.$owl-sys-typeface-body-sm-size;
   font-weight: vars.$owl-sys-typeface-body-sm-weight;
 }
