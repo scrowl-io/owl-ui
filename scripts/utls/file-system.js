@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import path from 'path'
 import strs from './strings.js'
-import { print } from './console.js'
+import { log } from './console.js'
 
 fs.join = (...paths) => {
     return path.join.apply(null, paths)
@@ -29,7 +29,7 @@ fs.dirExists = (pathName) => {
     try {
         return fs.existsSync(fs.normalize(pathName))
     } catch (err) {
-        print(err, 'error')
+        log(err)
         return err
     }
 }
@@ -39,7 +39,7 @@ fs.getStats = (pathName) => {
     try {
         return fs.statSync(fs.normalize(pathName))
     } catch (err) {
-        print(err, 'error')
+        log(err)
         return err
     }
 }
@@ -53,7 +53,7 @@ fs.dirList = (pathName) => {
             return fs.getStats(`${pathName}/${url}`).isDirectory()
         })
     } catch (err) {
-        print(err, 'error')
+        log(err)
         return err
     }
 }
@@ -64,11 +64,11 @@ fs.getFile = (pathName, media) => {
     try {
 
         if (!fs.pathExistsSync(filename)) {
-            print(`file does not exist: ${filename}`, 'warn')
+            log(`file does not exist: ${filename}`, 'warn')
             return
         }
     } catch (err) {
-        print(err.message, 'error')
+        log(err)
         return
     }
 
@@ -87,7 +87,7 @@ fs.getFile = (pathName, media) => {
             return file
         }
     } catch (err) {
-        print(err.message, 'error')
+        log(err)
         return
     }
 }
@@ -103,7 +103,7 @@ fs.setFile = (pathName, contents) => {
 
         fs.outputFileSync(filename, contents)
     } catch (err) {
-        print(err.message, 'error')
+        log(err)
         return
     }
 }
@@ -115,7 +115,7 @@ fs.renameFile = (oldPath, newPath) => {
     try {
         fs.renameSync(oldFile, newFile)
     } catch (er) {
-        print(err, 'error')
+        log(err)
         return err
     }
 }

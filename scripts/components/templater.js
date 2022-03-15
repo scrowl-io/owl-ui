@@ -1,7 +1,7 @@
 import engine from 'handlebars'
 import beautify from 'js-beautify'
 import fs from '../utls/file-system.js'
-import { print } from '../utls/console.js'
+import { log } from '../utls/console.js'
 
 engine.registerHelper('raw', (options) => {
     return options.fn()
@@ -12,7 +12,7 @@ export const compile = (contents, data) => {
     try {
         return engine.compile(contents)(data)
     } catch (err) {
-        print(err, 'error')
+        log(err)
         process.exit(1)
     }
 }
@@ -22,7 +22,7 @@ export const pretty = (contents) => {
     try {
         return beautify(contents)
     } catch (err) {
-        print(err, 'error')
+        log(err)
         process.exit(1)
     }
 }
@@ -39,7 +39,7 @@ export const definePaths = (template, templateFolder, filename, fileFolder) => {
         try {
             return fs.getFile(`scripts/components/templates/${folder}/${filename}.hbs`)
         } catch (err) {
-            print(err, 'error')
+            log(err)
             process.exit(1)
         }
     }

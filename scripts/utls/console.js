@@ -1,42 +1,124 @@
-import colors from 'colors'
+import chalk from 'chalk'
 import strs from './strings.js'
 
-const clrTheme = {
-    input: 'grey',
-    verbose: 'cyan',
-    prompt: 'white',
-    success: 'green',
-    data: 'grey',
-    help: 'blue',
-    warn: 'brightYellow',
-    debug: 'brightMagenta',
-    error: 'red',
-    info: 'brightMagenta'
+const COLORS = {
+  black: 'black',
+  red: 'red',
+  green: 'green',
+  yellow: 'yellow',
+  blue: 'blue',
+  purple: 'magenta',
+  cyan: 'cyan',
+  white: 'white',
+  grey: 'grey',
+  redBright: 'redBright',
+  greenBright: 'greenBright',
+  yellowBright: 'yellowBright',
+  blueBright: 'blueBright',
+  purpleBright: 'magentaBright',
+  cyanBright: 'cyanBright',
+  whiteBright: 'whiteBright'
 }
 
-colors.setTheme(clrTheme)
+const HIGHLIGHTS = {
+  black: 'bgBlack',
+  red: 'bgRed',
+  green: 'bgGreen',
+  yellow: 'bgYellow',
+  blue: 'bgBlue',
+  purple: 'bgMagenta',
+  cyan: 'bgCyan',
+  white: 'bgWhite',
+  grey: 'bgGrey',
+  redBright: 'bgRedBright',
+  greenBright: 'bgGreenBright',
+  yellowBright: 'bgYellowBright',
+  blueBright: 'bgBlueBright',
+  purpleBright: 'bgMagentaBright',
+  cyanBright: 'bgCyanBright',
+  whiteBright: 'bgWhiteBright'
+}
 
-export const print = (msg, clr) => {
-    clr = clr || 'data'
+const theme = {
+  info: COLORS.white,
+  warn: COLORS.yellow,
+  debug: COLORS.purpleBright,
+  log: COLORS.grey,
+  error: COLORS.redBright,
+  success: COLORS.green,
+  failure: COLORS.red
+}
 
-    const printable = (typeof msg === 'string' || typeof msg === 'number' || typeof msg === 'boolean') ? msg : (
-        (msg instanceof Error) ? msg.message + '\n' + msg.stack :
-        strs.prettyJson(msg)
-    )
+const print = (msg, color, noPrint) => {
+  noPrint = (noPrint !== undefined || noPrint !== null) ? noPrint : false
 
-    if (!clrTheme.hasOwnProperty(clr)) {
-        console.warn(`color not supported: ${clr}`.warn)
-        clr = 'data'
-    }
+  let printable
 
-    console.log(`[${clr.toUpperCase()}] ${printable}`[clr])
+  if (msg instanceof Error) {
+      printable = `${chalk[theme.error](msg.message)}\n${chalk[theme.error](msg.stack)}`
+  } else if (msg instanceof Object) {
+      printable = `${chalk[color](strs.prettyJson(msg))}`
+  } else {
+      printable = chalk[color](msg)
+  }
+
+  if (!noPrint) {
+      console.log(printable)
+  }
+
+  return printable
+}
+
+const style = (msg, color, palette, noPrint) => {
+    
+  if (msg === undefined || msg === null) {
+      console.log(chalk[theme.error]('Message must be defined'))
+      return
+  }
+
+  if (color === undefined || color === null) {
+      console.log(chalk[theme.error]('Color must be defined'))
+      return
+  }
+
+  if (!palette.hasOwnProperty(color)) {
+      console.log(chalk[theme.error](`Color not supported, must be one of these: ${Object.keys(palette).join(', ')}`))
+      return
+  }
+
+  return print(msg, palette[color], noPrint)
 }
 
 export const clear = () => {
     process.stdout.write('\x1b[2J')
 }
 
+export const color = (msg, color, noPrint) => {
+  return style(msg, color, COLORS, noPrint)
+}
+
+export const highlight = (msg, color, noPrint) => {
+  style(msg, color, HIGHLIGHTS, noPrint)
+}
+
+export const log = (msg, type) => {
+  type = type || 'log';
+
+  if (msg === undefined || msg === null) {
+      console.log(chalk[theme.error]('Log message must be defined'))
+      return
+  }
+
+  if (!theme.hasOwnProperty(type)) {
+      console.log(chalk[theme.warn](`Log type not supported: ${type}`))
+  }
+
+  print(msg, theme[type])
+}
+
 export default {
-  print,
-  clear
+  clear,
+  color,
+  highlight,
+  log
 }
