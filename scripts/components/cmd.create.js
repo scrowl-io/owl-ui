@@ -11,62 +11,62 @@ function createFolderMap(component) {
   if (!strs.hasLettersOnly(component.name)) {
     throw Error(
       'Component name must not contain special characters or numbers.'
-    );
+    )
   }
 
   const folders = {
     base: `packages/${component.name}`,
-  };
+  }
 
-  folders.src = `${folders.base}/src`;
+  folders.src = `${folders.base}/src`
 
-  return folders;
+  return folders
 }
 
 function updateSource(folders, component) {
   function sourcePath(template, filename) {
-    return definePaths(template, 'source', filename, folders.src);
+    return definePaths(template, 'source', filename, folders.src)
   }
 
-  const options = fs.dirList(folders.src);
+  const options = fs.dirList(folders.src)
   const fileList = {
     index: sourcePath('index', 'index.ts'),
     styles: sourcePath('styles', '_index.scss'),
-  };
+  }
 
   component.options = options.sort().map(opt => {
     return {
       name: strs.toLower(opt),
       cap: strs.toCapitalize(opt),
-    };
-  });
+    }
+  })
 
   for (let filename in fileList) {
     fileList[filename].contents = compile(
       fileList[filename].template,
       component
-    );
-    fs.setFile(fileList[filename].path, fileList[filename].contents);
+    )
+    fs.setFile(fileList[filename].path, fileList[filename].contents)
   }
 }
 
 function addOption(component) {
-  const folders = createFolderMap(component);
+  const folders = createFolderMap(component)
 
-  tempOption.create(component, folders);
-  updateSource(folders, component);
+  tempOption.create(component, folders)
+  updateSource(folders, component)
 }
 
 function createBoilerplate(components) {
   function packagePath(template, filename, folders) {
-    return definePaths(template, 'package', filename, folders.base);
+    return definePaths(template, 'package', filename, folders.base)
   }
 
   components.map(component => {
     if (componentExists(component)) {
-      throw Error(`Component '${component.name}' already exists.`);
+      throw Error(`Component '${component.name}' already exists.`)
     } else {
-      const folders = createFolderMap(component);
+      const folders = createFolderMap(component)
       const fileList = {
         package: packagePath('package', 'package.json', folders),
         license: packagePath('license', 'LICENSE', folders),
@@ -74,48 +74,48 @@ function createBoilerplate(components) {
         readme: packagePath('readme', 'README.md', folders),
         tsconfig: packagePath('tsconfig', 'tsconfig.json', folders),
         postcss: packagePath('postcss', 'postcssrc.json', folders),
-      };
+      }
 
       for (let filename in fileList) {
         fileList[filename].contents = compile(
           fileList[filename].template,
           component
-        );
-        fs.setFile(fileList[filename].path, fileList[filename].contents);
+        )
+        fs.setFile(fileList[filename].path, fileList[filename].contents)
       }
 
-      addOption(component);
+      addOption(component)
     }
-  });
+  })
 }
 
 function getParts(component, getOpt) {
-  getOpt = getOpt || false;
-  const parts = component.split('@');
+  getOpt = getOpt || false
+  const parts = component.split('@')
 
   if (!parts.length) {
-    throw Error('Component name missing');
+    throw Error('Component name missing')
   }
 
   if (!strs.isValidComponentInputName(parts[0])) {
-    throw Error(`Component name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`);
+    throw Error(`Component name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`)
   }
 
-  const componentName = strs.toLower(strs.toCamelCase(parts[0]));
+  const componentName = strs.toLower(strs.toCamelCase(parts[0]))
   const packageName = strs.isValidPackageName(componentName)
   
   if (!packageName.valid) {
-    throw Error(`Component name must be equal to or less than ${packageName.maxLn} characters.\nCurrent name is ${packageName.over} characters above maximum`);
+    throw Error(`Component name must be equal to or less than ${packageName.maxLn} characters.\nCurrent name is ${packageName.over} characters above maximum`)
   }
 
   if (getOpt && !parts[1]) {
-    throw Error('Component option missing: [name]@[option]');
+    throw Error('Component option missing: [name]@[option]')
   }
 
-  const option = getOpt || parts[1] ? parts[1] : 'default';
+  const option = getOpt || parts[1] ? parts[1] : 'default'
 
   if (!strs.isValidComponentInputName(option)) {
-    throw Error(`Component option name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`);
+    throw Error(`Component option name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`)
   }
 
   return {
@@ -124,61 +124,77 @@ function getParts(component, getOpt) {
     low: strs.toLower(componentName),
     option: option,
     optionCap: strs.toCapitalize(option),
-  };
+  }
 }
 
 function componentExists(component) {
-  const folders = createFolderMap(component);
+  const folders = createFolderMap(component)
 
-  return fs.dirExists(folders.base);
+  return fs.dirExists(folders.base)
 }
 
 function optionExists(component) {
-  const folders = createFolderMap(component);
+  const folders = createFolderMap(component)
 
-  return fs.dirExists(`${folders.src}/${component.optionCap}`);
+  return fs.dirExists(`${folders.src}/${component.optionCap}`)
 }
 
 function processArgs() {
-  const components = [];
+  const components = []
 
   try {
 
     if (argv.hasOwnProperty('o')) {
       // create an option for an existing component
-      const component = getParts(argv.o, true);
+      const component = getParts(argv.o, true)
 
       if (!componentExists(component)) {
-        components.push(component);
+        components.push(component)
 
         log('Component does not exist: creating it', 'warn');
       } else {
 
         if (optionExists(component)) {
-          throw Error('Option already exists for component.');
+          throw Error('Option already exists for component.')
         } else {
-          addOption(component);
+          addOption(component)
         }
       }
     } else {
       // create one or many new components
+      let newComponent
+
       if (argv.hasOwnProperty('n')) {
-        components.push(getParts(argv.n));
+        newComponent = getParts(argv.n)
+        
+        if (newComponent.option !== 'default') {
+          const defaultOption = JSON.parse(JSON.stringify(newComponent))
+
+          defaultOption.option = 'default'
+          defaultOption.optionCap = strs.toCapitalize(defaultOption.option)
+          components.push(defaultOption)
+        } else {
+          components.push(newComponent)
+        }
       }
 
       if (argv.hasOwnProperty('m')) {
-        const many = argv.m.split(',');
+        const many = argv.m.split(',')
 
-        components = many.map(getParts);
+        components = many.map(getParts)
       }
 
       if (components.length === 0) {
         throw Error(
           `No component names submitted \n Use flag -n with a non-spaced string to create a single component \n Use flag -m with comma separated non-spaced string to create multiple components`
-        );
+        )
       }
 
-      createBoilerplate(components);
+      createBoilerplate(components)
+
+      if (newComponent.option !== 'default') {
+        addOption(newComponent)
+      }
     }
   } catch (err) {
     log(err);
@@ -186,5 +202,5 @@ function processArgs() {
   }
 }
 
-clear();
-processArgs();
+clear()
+processArgs()

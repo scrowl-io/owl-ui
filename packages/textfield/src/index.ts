@@ -1,9 +1,9 @@
-import * as DefaultTextfield from './Default/index'
+import * as DefaultTextfield from './Default/index';
 
-export const Default = DefaultTextfield.component
-export const DefaultTypes = DefaultTextfield.types
+export const Default = DefaultTextfield.component;
+export const DefaultTypes = DefaultTextfield.types;
 
 export default {
-    Default,
-    DefaultTypes
-}
+  Default,
+  DefaultTypes,
+};

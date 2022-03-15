@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-export type DefaultButtonCommons = {
-    appearance?: 'Primary' | 'Outline'
-    theme?: 'Default' | 'Dark'
-    size?: 'Sm' | 'Md' | 'Lg'
-    prefix?: string
-    children: React.ReactNode
-}
+export type ButtonDefaultCommons = {
+  appearance?: 'Primary' | 'Outline';
+  theme?: 'Default' | 'Dark';
+  size?: 'Sm' | 'Md' | 'Lg';
+  prefix?: string;
+  children: React.ReactNode;
+};
 
-export type DefaultButtonProps = Partial<DefaultButtonCommons>
+export type ButtonDefaultProps = Partial<ButtonDefaultCommons> &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;

@@ -1,11 +1,7 @@
-import React from 'react'
+import type { {{{cap}}}DefaultProps } from '../Default/Default.types'
 
-export type {{{optionCap}}}{{{cap}}}Commons = {
-  appearance?: 'Primary' | 'Outline'
-  theme?: 'Default' | 'Dark'
-  size?: 'Sm' | 'Md' | 'Lg'
-  prefix?: string
-  children: React.ReactNode
+export type {{{cap}}}{{{optionCap}}}Commons = {{{cap}}}DefaultProps & {
+  
 }
 
-export type {{{optionCap}}}{{{cap}}}Props = Partial<{{{optionCap}}}{{{cap}}}Commons>
+export type {{{cap}}}{{{optionCap}}}Props = Partial<{{{cap}}}{{{optionCap}}}Commons>
