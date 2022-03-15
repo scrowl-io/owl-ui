@@ -1,10 +1,27 @@
 @use '~@owlui/theme' as theme;
 
 .owlui-button {
+  display: inline-block;
+  margin: 0;
   padding: theme.$owl-sys-layout-spacer;
+  text-align: center;
+  white-space: nowrap;
+  touch-action: manipulation;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
 
   &--theme {
     &--default {
+      @include theme.defaultTheme-branding;
+
+      &:hover,
+      &:focus {
+        @include theme.defaultTheme-branding-hover;
+      }
+
       /* appearances */
       &-primary {
         @include theme.defaultTheme-branding;
@@ -12,6 +29,13 @@
     }
 
     &--dark {
+      @include theme.darkTheme-branding;
+
+      &:hover,
+      &:focus {
+        @include theme.darkTheme-branding-hover;
+      }
+
       /* appearances */
       &-primary {
         @include theme.darkTheme-branding;

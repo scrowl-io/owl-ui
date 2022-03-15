@@ -1,8 +1,15 @@
 @use '../global/variables' as vars;
 
 @mixin branding {
+  background-color: transparent;
+  color: vars.$owl-sys-color-primary;
+  border-color: vars.$owl-sys-color-primary;
+}
+
+@mixin branding-hover {
   background-color: vars.$owl-sys-color-primary;
   color: vars.$owl-sys-color-on-primary;
+  border-color: vars.$owl-sys-color-primary;
 }
 
 @mixin typeface--large {
