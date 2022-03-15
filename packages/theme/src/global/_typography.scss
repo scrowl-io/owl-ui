@@ -1,9 +1,5 @@
 @use './variables.scss' as *;
 
-html {
-  font-size: 1px;
-}
-
 body {
   font-size: $owl-sys-typeface-body-size;
 }

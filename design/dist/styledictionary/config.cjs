@@ -297,7 +297,7 @@ StyleDictionary.registerTransformGroup({
         'name/dsp/kebab', //replaces 'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'size/rem',
+        'size/px',
         'color/css'
     ]
 });
@@ -309,7 +309,7 @@ StyleDictionary.registerTransformGroup({
         'name/dsp/kebab', //replaces 'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'size/rem',
+        'size/px',
         'color/css',
     ]
 });
@@ -356,7 +356,7 @@ StyleDictionary.registerTransformGroup({
     transforms: [
         'attribute/cti',
         'name/dsp/pascal', //replaces 'name/cti/pascal',
-        'size/rem',
+        'size/px',
         'color/hex',
     ]
 });
