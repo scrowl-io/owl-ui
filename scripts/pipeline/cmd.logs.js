@@ -1,6 +1,11 @@
 import fs from '../utls/file-system.js';
 import parser from 'yargs-parser';
 import { log, clear, color } from '../utls/console.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.join(path.dirname(`${__filename}`), '../..') + '/';
 
 const formatReport = rawFile => {
   const lines = rawFile.split(/\r|\n/g);
@@ -18,10 +23,7 @@ const formatReport = rawFile => {
       const parts = line.split(regex.log);
       const rawPath = parts[0].trim();
       const filepath = `${rawPath}${lineNum}:${colNum}`;
-      const localPath = rawPath.replace(
-        '/Users/chrisaube/Documents/GitHub/owl-ui/',
-        ''
-      );
+      const localPath = rawPath.replace(__dirname, '');
       const msg = parts[1].trim();
 
       if (!Object.prototype.hasOwnProperty.call(report, localPath)) {
