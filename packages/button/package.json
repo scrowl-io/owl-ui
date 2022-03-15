@@ -1,39 +1,39 @@
 {
-    "name": "@owlui/button",
-    "version": "0.0.15",
-    "description": "",
-    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
-    "license": "MIT",
-    "type": "module",
-    "source": "src/index.ts",
-    "main": "dist/owl.button.js",
-    "module": "dist/index.js",
-    "types": "dist/types.d.ts",
-    "sass": "src/_index.scss",
-    "style": "dist/owl.button.css",
-    "files": [
-        "dist",
-        "src"
-    ],
-    "sideEffects": [
-        "*.css"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/EEBOS/owl-ui.git",
-        "directory": "packages/button"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "isLibrary": true,
-    "outputFormat": "commonjs",
-    "peerDependencies": {
-        "react": "^17.0.2"
-    },
-    "dependencies": {
-        "@owlui/theme": "^0.0.15",
-        "@owlui/typings": "^0.0.15"
-    },
-    "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
+  "name": "@owlui/button",
+  "version": "0.0.15",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
+  "license": "MIT",
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "dist/owl.button.js",
+  "module": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "sass": "src/_index.scss",
+  "style": "dist/owl.button.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/button"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@owlui/theme": "^0.0.15",
+    "@owlui/typings": "^0.0.15"
+  },
+  "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }

@@ -1,8 +1,4 @@
 {
-    "outFile": "dist/owl.textfield.css",
-    "includePaths": [
-        "node_modules/",
-        "src/",
-        "../.."
-    ]
+  "outFile": "dist/owl.textfield.css",
+  "includePaths": ["node_modules/", "src/", "../.."]
 }

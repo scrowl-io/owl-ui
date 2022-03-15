@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 export type TextfieldDefaultCommons = {
-    appearance?: 'Primary' | 'Outline'
-    theme?: 'Default' | 'Dark'
-    size?: 'Sm' | 'Md' | 'Lg'
-    prefix?: string
-    children: React.ReactNode
-}
+  appearance?: 'Primary' | 'Outline';
+  theme?: 'Default' | 'Dark';
+  size?: 'Sm' | 'Md' | 'Lg';
+  prefix?: string;
+  children: React.ReactNode;
+};
 
-export type TextfieldDefaultProps = Partial<TextfieldDefaultCommons> & React.InputHTMLAttributes<HTMLInputElement>
+export type TextfieldDefaultProps = Partial<TextfieldDefaultCommons> &
+  React.InputHTMLAttributes<HTMLInputElement>;
