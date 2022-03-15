@@ -8,6 +8,7 @@
     "packages/**/**/dist",
     "packages/**/**/*.stories.ts",
     "packages/**/**/*.stories.tsx",
-    "web/dist"
+    "web/dist",
+    "logs"
   ]
 }

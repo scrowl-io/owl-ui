@@ -1,6 +1,6 @@
 import parser from 'yargs-parser'
 import strs from '../utls/strings.js'
-import { print, clear } from '../utls/console.js'
+import { log, clear } from '../utls/console.js'
 import fs  from '../utls/file-system.js'
 import { compile, definePaths }  from './templater.js'
 import tempOption  from './create-option.js'
@@ -151,7 +151,7 @@ function processArgs() {
       if (!componentExists(component)) {
         components.push(component)
 
-        print('Component does not exist: creating it', 'warn')
+        log('Component does not exist: creating it', 'warn');
       } else {
 
         if (optionExists(component)) {
@@ -197,8 +197,8 @@ function processArgs() {
       }
     }
   } catch (err) {
-    print(err, 'error')
-    process.exit(1)
+    log(err);
+    process.exit(1);
   }
 }
 

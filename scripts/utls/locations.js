@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { execSync as exec } from 'child_process'
-import { print } from './console.js'
+import { log } from './console.js'
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -68,7 +68,7 @@ export const getEntries = () => {
         } else if (pkg.targets) {
             setTargets(entries[name], pkg)
         } else {
-            print('[WARN] Package not defined correctly: skipping', 'warn')
+            log('[WARN] Package not defined correctly: skipping', 'warn')
             print(pkg)
         }
     })

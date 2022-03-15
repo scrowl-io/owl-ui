@@ -35,3 +35,4 @@ packages/**/test/**.css
 web/dist/
 .DS_Store
 **/.DS_Store
+logs/
