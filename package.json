@@ -23,7 +23,7 @@
     "lint:check:prettier": "prettier --check \"packages/**/*.{json,ts,tsx,js,jsx}\"",
     "presetup": "node ./scripts/pipeline/cmd.setup.js",
     "setup": "lerna bootstrap --use-workspaces",
-    "prebuild:dist": "yarn run presetup && yarn run update:component",
+    "prebuild:dist": "yarn run presetup && yarn run update:component && yarn run lint:fix",
     "build:dist": "node ./scripts/pipeline/cmd.dist.js",
     "prepublish:lerna": "yarn run build:dist",
     "publish:lerna": "lerna publish",
