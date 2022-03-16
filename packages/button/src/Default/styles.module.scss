@@ -1,9 +1,10 @@
 @use '~@owlui/theme' as theme;
 
-@mixin link {
+@mixin owlui-button-link {
   border-color: transparent;
   background-color: transparent;
   color: theme.$owl-sys-color-primary;
+  text-decoration: none;
 
   &:hover,
   &:focus {
@@ -42,7 +43,7 @@
       }
 
       &-link {
-        @include link;
+        @include owlui-button-link;
       }
     }
 
@@ -54,7 +55,7 @@
       }
 
       &-link {
-        @include link;
+        @include owlui-button-link;
       }
     }
   }
