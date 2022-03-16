@@ -1,9 +1,11 @@
 import React from 'react';
 
 export type ButtonDefaultCommons = {
-  appearance?: 'Default' | 'Primary' | 'Link';
+  appearance?: 'Default' | 'Primary';
+  ariadescribedby?: string;
+  arialabel?: string;
   children: React.ReactNode;
-  onClick: () => void;
+  disabled?: boolean;
   prefix?: string;
   size?: 'Sm' | 'Md' | 'Lg';
   theme?: 'Default' | 'Dark';

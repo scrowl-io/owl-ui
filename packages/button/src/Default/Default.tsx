@@ -5,11 +5,12 @@ import * as styleMod from './styles.module.scss';
 const baseClass = 'owluiButton';
 
 export const Component = (props: ButtonDefaultProps) => {
-  const { children, className, style } = props;
+  const { children, className, onClick, style, arialabel, ariadescribedby } =
+    props;
 
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
-  const appearance = props.appearance || 'Primary';
+  const appearance = props.appearance || 'Default';
   const size = props.size || 'Md';
 
   const styleLocal = {
@@ -36,6 +37,9 @@ export const Component = (props: ButtonDefaultProps) => {
         styleLocal.appearance,
         styleLocal.size,
       ].join(' ')}
+      onClick={onClick}
+      aria-label={arialabel}
+      aria-describedby={ariadescribedby}
     >
       {children}
     </button>
