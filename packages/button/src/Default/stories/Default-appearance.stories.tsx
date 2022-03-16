@@ -1,5 +1,5 @@
 export const appearance = {
-  options: ['Default', 'Primary', 'Link'],
+  options: ['Default', 'Primary'],
   control: {
     type: 'select',
   },
