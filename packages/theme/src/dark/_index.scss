@@ -5,9 +5,3 @@
   color: vars.$owl-sys-color-on-dark;
   border-color: vars.$owl-ref-palette-dark;
 }
-
-@mixin branding-hover {
-  background-color: vars.$owl-sys-color-on-dark;
-  color: vars.$owl-ref-palette-dark;
-  border-color: vars.$owl-ref-palette-dark;
-}

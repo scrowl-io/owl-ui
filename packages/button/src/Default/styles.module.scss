@@ -1,5 +1,16 @@
 @use '~@owlui/theme' as theme;
 
+@mixin link {
+  border-color: transparent;
+  background-color: transparent;
+  color: theme.$owl-sys-color-primary;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 .owlui-button {
   display: inline-block;
   margin: 0;
@@ -13,32 +24,37 @@
   cursor: pointer;
   user-select: none;
 
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+  }
+
   &--theme {
     &--default {
-      @include theme.defaultTheme-branding;
-
-      &:hover,
-      &:focus {
-        @include theme.defaultTheme-branding-hover;
-      }
-
-      /* appearances */
       &-primary {
         @include theme.defaultTheme-branding;
+      }
+
+      &-link {
+        @include link;
       }
     }
 
     &--dark {
       @include theme.darkTheme-branding;
 
-      &:hover,
-      &:focus {
-        @include theme.darkTheme-branding-hover;
-      }
-
-      /* appearances */
       &-primary {
         @include theme.darkTheme-branding;
+      }
+
+      &-link {
+        @include link;
       }
     }
   }
