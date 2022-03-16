@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 export type CardDefaultCommons = {
-  appearance?: 'Primary' | 'Outline'
-  theme?: 'Default' | 'Dark'
-  size?: 'Sm' | 'Md' | 'Lg'
-  prefix?: string
-  children: React.ReactNode
-}
+  appearance?: 'Primary' | 'Outline';
+  theme?: 'Default' | 'Dark';
+  size?: 'Sm' | 'Md' | 'Lg';
+  prefix?: string;
+  children: React.ReactNode;
+};
 
-export type CardDefaultProps = Partial<CardDefaultCommons> & React.DivHTMLAttributes<HTMLDivElement>
+export type CardDefaultProps = Partial<CardDefaultCommons> &
+  React.DivHTMLAttributes<HTMLDivElement>;
