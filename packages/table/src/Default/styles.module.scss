@@ -1,0 +1,35 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-table {
+  padding: theme.$owl-sys-layout-spacer;
+
+  &--theme {
+    &--default {
+      /* appearances */
+      &-primary {
+        @include theme.defaultTheme-branding;
+      }
+    }
+
+    &--dark {
+      /* appearances */
+      &-primary {
+        @include theme.darkTheme-branding;
+      }
+    }
+  }
+
+  &--size {
+    &-lg {
+      @include theme.defaultTheme-typeface--large;
+    }
+
+    &-md {
+      @include theme.defaultTheme-typeface--medium;
+    }
+
+    &-sm {
+      @include theme.defaultTheme-typeface--small;
+    }
+  }
+}
