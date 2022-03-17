@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { CardCardHeaderProps } from './CardHeader.types';
+import { CardCardFooterProps } from './CardFooter.types';
 import * as styles from './styles.module.scss';
 
-const baseClass = 'owluiCardHeader';
+const baseClass = 'owluiCardFooter';
 
-export const Component = (props: CardCardHeaderProps) => {
+export const Component = (props: CardCardFooterProps) => {
   const { children } = props;
   const localProps = Object.assign({}, props);
 
