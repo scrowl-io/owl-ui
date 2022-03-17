@@ -1,7 +1,7 @@
 import React from 'react';
 
 export type CardDefaultCommons = {
-  appearance?: 'Default';
+  appearance?: 'Default' | 'Primary' | 'Outline';
   children: React.ReactNode;
   prefix?: string;
   theme?: 'Default' | 'Dark';
