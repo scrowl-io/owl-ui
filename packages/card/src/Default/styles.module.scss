@@ -1,35 +1,34 @@
 @use '~@owlui/theme' as theme;
 
 .owlui-card {
-  padding: theme.$owl-sys-layout-spacer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  word-wrap: break-word;
+  background-color: theme.$owl-sys-bg-light;
+  border: 1px solid theme.$owl-sys-bg-dark;
 
   &--theme {
     &--default {
-      /* appearances */
       &-primary {
         @include theme.defaultTheme-branding;
+      }
+
+      &-outline {
+        color: theme.$owl-sys-color-primary;
+        background-color: theme.$owl-sys-color-on-primary;
+        border-color: theme.$owl-sys-color-primary;
       }
     }
 
     &--dark {
-      /* appearances */
-      &-primary {
-        @include theme.darkTheme-branding;
+      @include theme.darkTheme-branding;
+
+      &-outline {
+        color: theme.$owl-sys-color-on-light;
+        background-color: theme.$owl-sys-bg-light;
       }
-    }
-  }
-
-  &--size {
-    &-lg {
-      @include theme.defaultTheme-typeface--large;
-    }
-
-    &-md {
-      @include theme.defaultTheme-typeface--medium;
-    }
-
-    &-sm {
-      @include theme.defaultTheme-typeface--small;
     }
   }
 }
