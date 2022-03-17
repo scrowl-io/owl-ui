@@ -1,2 +1,3 @@
+@forward './CardBody/styles.module.scss' as cardbodyCard-*;
 @forward './CardHeader/styles.module.scss' as cardheaderCard-*;
 @forward './Default/styles.module.scss' as defaultCard-*;
