@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { component as Card } from '../index';
-import { component as CardHeader } from '../../CardHeader/index';
-import { component as CardBody } from '../../CardBody/index';
+import { component as CardHeader } from '../../CardHeader';
+import { component as CardBody } from '../../CardBody';
+import { component as CardFooter } from '../../CardFooter';
+import { Default as Button } from '../../../../button/src/index';
 import { CardDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
@@ -15,6 +17,9 @@ export const Default = (args: CardDefaultProps) => (
     <CardBody>
       <p>Some quick example text to build on the card content</p>
     </CardBody>
+    <CardFooter>
+      <Button>Submit</Button>
+    </CardFooter>
   </Card>
 );
 
