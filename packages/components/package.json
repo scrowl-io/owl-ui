@@ -1,44 +1,44 @@
 {
-    "name": "@owlui/components",
-    "version": "0.0.15",
-    "description": "",
-    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
-    "license": "MIT",
-    "main": "dist/owl.components.js",
-    "sass": "src/_index.scss",
-    "style": "dist/owl.components.css",
-    "targets": {
-        "main": {
-            "source": "src/index.ts"
-        },
-        "style": {
-            "source": "src/_index.scss"
-        }
+  "name": "@owlui/components",
+  "version": "0.0.15",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
+  "license": "MIT",
+  "main": "dist/owl.components.js",
+  "sass": "src/_index.scss",
+  "style": "dist/owl.components.css",
+  "targets": {
+    "main": {
+      "source": "src/index.ts"
     },
-    "files": [
-        "dist",
-        "src"
-    ],
-    "sideEffects": [
-        "*.css"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/EEBOS/owl-ui.git",
-        "directory": "packages/components"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "isLibrary": true,
-    "outputFormat": "commonjs",
-    "peerDependencies": {
-        "react": "^17.0.2"
-    },
-    "dependencies": {
-        "@owlui/button": "^0.0.15",
-        "@owlui/textfield": "^0.0.15",
-        "@owlui/theme": "^0.0.15",
-        "@owlui/typings": "^0.0.15"
+    "style": {
+      "source": "src/_index.scss"
     }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/components"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@owlui/button": "^0.0.15",
+    "@owlui/textfield": "^0.0.15",
+    "@owlui/theme": "^0.0.15",
+    "@owlui/typings": "^0.0.15"
+  }
 }

@@ -1,14 +1,6 @@
 {
   "eslint.format.enable": true,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-    "source.fixAll.tslint": true
-  },
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
   "xd.lastPackage": "/Users/chrisaube/Documents/GitHub/owl-ui/design",
   "xd.globalEditor": true,
   "cSpell.words": [

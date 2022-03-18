@@ -8,5 +8,5 @@
     "types": ["custom-globals", "static-assets"],
     "typeRoots": ["../../node_modules/@types", "../../typings"]
   },
-  "exclude": ["dist/*", "**/*.stories.ts", "**/*.stories.tsx"]
+  "exclude": ["dist/*"]
 }
