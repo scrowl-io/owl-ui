@@ -5,13 +5,20 @@ import * as styleMod from './styles.module.scss';
 const baseClass = 'owluiButton';
 
 export const Component = (props: ButtonDefaultProps) => {
-  const { children, className, style } = props;
+  const {
+    children,
+    className,
+    style,
+    arialabel,
+    ariadescribedby,
+    onClick,
+    href,
+  } = props;
 
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
-  const appearance = props.appearance || 'Primary';
+  const appearance = props.appearance || 'Default';
   const size = props.size || 'Md';
-
   const styleLocal = {
     base: styleMod[baseClass],
     theme: styleMod[`${baseClass}Theme${theme}`],
@@ -26,20 +33,33 @@ export const Component = (props: ButtonDefaultProps) => {
     styleLocal.size = `${modulePrefix}-${styleLocal.size}`;
   }
 
-  return (
-    <button
-      style={style}
-      className={[
-        className,
-        styleLocal.base,
-        styleLocal.theme,
-        styleLocal.appearance,
-        styleLocal.size,
-      ].join(' ')}
-    >
-      {children}
-    </button>
-  );
+  const buttonRenderer = () => {
+    const Element = href ? 'a' : 'button';
+    const elementClass = [
+      className,
+      styleLocal.base,
+      styleLocal.theme,
+      styleLocal.appearance,
+      styleLocal.size,
+    ]
+      .join(' ')
+      .trim();
+
+    return (
+      <Element
+        href={href}
+        onClick={onClick}
+        style={style}
+        className={elementClass}
+        aria-label={arialabel}
+        aria-describedby={ariadescribedby}
+      >
+        {children}
+      </Element>
+    );
+  };
+
+  return <>{buttonRenderer()}</>;
 };
 
 export default {

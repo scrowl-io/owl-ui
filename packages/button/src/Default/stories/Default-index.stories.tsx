@@ -13,8 +13,8 @@ export const Default = (args: ButtonDefaultProps) => (
 );
 
 Default.args = {
-  appearance: 'Primary',
-  size: 'Lg',
+  appearance: 'Default',
+  size: 'Md',
   theme: 'Default',
 };
 
