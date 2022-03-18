@@ -6,35 +6,33 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "84900662-09e9-4866-8a1b-01a88b10258a",
-      "name": "owl.sys.typeface.heading-1",
-      "last_updated": "2022-03-07T22:41:41.902Z",
-      "last_updated_by": "",
+      "id": "13880970-4d6f-4367-b5b6-6841d4314006",
+      "name": "owl.sys.typeface.heading-2",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "4e99de65-8a8e-4a4f-a7be-b2191f0bb1d9",
-        "last_sync": "2022-03-07T22:33:39.753Z",
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "937ecab0-5cc2-48f3-8d1b-21e52e6f4681",
+        "last_sync": "2022-03-15T20:34:44.045Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "ff239715-e807-4a34-b056-9e6109ee9606",
+          "id": "13880970-4d6f-4367-b5b6-6841d4314006",
           "type": "custom",
-          "value": "Roboto",
+          "value": "Inter",
           "key": "family"
         },
         {
-          "id": "ff239715-e807-4a34-b056-9e6109ee9606",
+          "id": "13880970-4d6f-4367-b5b6-6841d4314006",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "ff239715-e807-4a34-b056-9e6109ee9606",
+          "id": "13880970-4d6f-4367-b5b6-6841d4314006",
           "type": "size",
-          "value": "60",
+          "value": "50",
           "key": "size"
         }
       ]
@@ -42,141 +40,31 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "a3e0be47-c14b-4cff-87fe-d47d174c9ac1",
-      "name": "owl.sys.typeface.body-lg",
-      "last_updated": "2022-03-07T22:41:06.158Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "cf5bdf85-1bec-4407-95d7-738f3eb1c342",
-        "last_sync": "2022-03-07T22:33:39.753Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "907b4cdc-8b93-4d23-8500-ff0819394b5b",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "907b4cdc-8b93-4d23-8500-ff0819394b5b",
-          "type": "custom",
-          "value": "Regular",
-          "key": "weight"
-        },
-        {
-          "id": "907b4cdc-8b93-4d23-8500-ff0819394b5b",
-          "type": "size",
-          "value": "24",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "afcdf8f9-8109-4961-a297-8a19068d059e",
-      "name": "owl.sys.typeface.body",
-      "last_updated": "2022-03-07T22:43:35.253Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "46e0cfbd-7b1c-4641-b273-16258804cd20",
-        "last_sync": "2022-03-07T22:33:39.753Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "902e4966-5f09-4ef7-9064-1ebc8d251e0e",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "902e4966-5f09-4ef7-9064-1ebc8d251e0e",
-          "type": "custom",
-          "value": "Regular",
-          "key": "weight"
-        },
-        {
-          "id": "902e4966-5f09-4ef7-9064-1ebc8d251e0e",
-          "type": "size",
-          "value": "16",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "50260fa5-c089-42ab-9bb9-0eee3cfcb569",
-      "name": "owl.sys.typeface.heading-4",
-      "last_updated": "2022-03-07T22:41:58.673Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "936c7375-2812-4bd9-b671-9437ef9dfc19",
-        "last_sync": "2022-03-07T22:33:39.753Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "e47d4e7b-2a1b-4c68-920a-ae2befeb7475",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "e47d4e7b-2a1b-4c68-920a-ae2befeb7475",
-          "type": "custom",
-          "value": "Regular",
-          "key": "weight"
-        },
-        {
-          "id": "e47d4e7b-2a1b-4c68-920a-ae2befeb7475",
-          "type": "size",
-          "value": "28",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "84be0d43-7359-445c-9066-c4ad13afb9ef",
+      "id": "aa21cd1d-1ce8-4723-a855-31156ecad30a",
       "name": "owl.sys.typeface.heading-5",
-      "last_updated": "2022-03-07T22:42:05.509Z",
-      "last_updated_by": "",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "244fd020-75c2-49eb-9a94-15a639947451",
-        "last_sync": "2022-03-07T22:33:39.753Z",
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "72e1b5f0-e0fd-4df0-a2ad-4e91b66dc1ba",
+        "last_sync": "2022-03-15T20:34:44.045Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "7db4c753-d898-48b3-8bdf-880a2c9a58c4",
+          "id": "aa21cd1d-1ce8-4723-a855-31156ecad30a",
           "type": "custom",
-          "value": "Roboto",
+          "value": "Inter",
           "key": "family"
         },
         {
-          "id": "7db4c753-d898-48b3-8bdf-880a2c9a58c4",
+          "id": "aa21cd1d-1ce8-4723-a855-31156ecad30a",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "7db4c753-d898-48b3-8bdf-880a2c9a58c4",
+          "id": "aa21cd1d-1ce8-4723-a855-31156ecad30a",
           "type": "size",
           "value": "32",
           "key": "size"
@@ -186,105 +74,31 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "fffe156a-7d9e-4b78-9767-40f87851a6ce",
-      "name": "owl.sys.typeface.body-xs",
-      "last_updated": "2022-03-07T22:41:36.455Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "81177c51-74a9-487f-bd27-de90d436d785",
-        "last_sync": "2022-03-07T22:33:39.753Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "4abcf15d-1289-44af-a844-7923fd3d3345",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "4abcf15d-1289-44af-a844-7923fd3d3345",
-          "type": "custom",
-          "value": "Regular",
-          "key": "weight"
-        },
-        {
-          "id": "4abcf15d-1289-44af-a844-7923fd3d3345",
-          "type": "size",
-          "value": "10",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "23ff5f61-7409-4cb7-88db-20cc48d128b8",
-      "name": "owl.sys.typeface.heading-6",
-      "last_updated": "2022-03-07T22:42:11.289Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "c86138eb-4961-429a-a242-6a404ce3257c",
-        "last_sync": "2022-03-07T22:33:39.753Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "e78897e0-0648-4ed2-b9a5-12441d9b9003",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "e78897e0-0648-4ed2-b9a5-12441d9b9003",
-          "type": "custom",
-          "value": "Regular",
-          "key": "weight"
-        },
-        {
-          "id": "e78897e0-0648-4ed2-b9a5-12441d9b9003",
-          "type": "size",
-          "value": "26",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "064a24ab-33cf-4f2e-be34-9be64e977e68",
+      "id": "50708323-3f8a-4ff2-8fe4-6b75587a56de",
       "name": "owl.sys.typeface.body-md",
-      "last_updated": "2022-03-07T22:41:16.880Z",
-      "last_updated_by": "",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "30deed41-c101-4fa5-9f0f-586b61bf847e",
-        "last_sync": "2022-03-07T22:33:39.753Z",
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "54040c98-8b39-4078-a54b-6c12dbc51287",
+        "last_sync": "2022-03-15T20:34:44.045Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "9da305fe-5c21-4552-a5a4-1320521d3ec0",
+          "id": "50708323-3f8a-4ff2-8fe4-6b75587a56de",
           "type": "custom",
-          "value": "Roboto",
+          "value": "Inter",
           "key": "family"
         },
         {
-          "id": "9da305fe-5c21-4552-a5a4-1320521d3ec0",
+          "id": "50708323-3f8a-4ff2-8fe4-6b75587a56de",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "9da305fe-5c21-4552-a5a4-1320521d3ec0",
+          "id": "50708323-3f8a-4ff2-8fe4-6b75587a56de",
           "type": "size",
           "value": "20",
           "key": "size"
@@ -294,35 +108,33 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "a986fcd9-af9f-4423-96dc-97eae708537f",
-      "name": "owl.sys.typeface.body-sm",
-      "last_updated": "2022-03-07T22:41:29.530Z",
-      "last_updated_by": "",
+      "id": "4e86c9f9-c3ad-4ad0-bd4e-1db56cf39df8",
+      "name": "owl.sys.typeface.body-xs",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "2348d89f-158b-470c-a11f-9023aaff6cfa",
-        "last_sync": "2022-03-07T22:33:39.753Z",
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "997e2383-fbf6-460c-bb73-85129bcc4f53",
+        "last_sync": "2022-03-15T20:34:44.045Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "f9779966-f7b8-42d9-959e-942483815e07",
+          "id": "4e86c9f9-c3ad-4ad0-bd4e-1db56cf39df8",
           "type": "custom",
-          "value": "Roboto",
+          "value": "Inter",
           "key": "family"
         },
         {
-          "id": "f9779966-f7b8-42d9-959e-942483815e07",
+          "id": "4e86c9f9-c3ad-4ad0-bd4e-1db56cf39df8",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "f9779966-f7b8-42d9-959e-942483815e07",
+          "id": "4e86c9f9-c3ad-4ad0-bd4e-1db56cf39df8",
           "type": "size",
-          "value": "14",
+          "value": "10",
           "key": "size"
         }
       ]
@@ -330,69 +142,31 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "71db32a0-06e4-4f9b-ada4-070b7c1e6c50",
-      "name": "owl.sys.typeface.title",
-      "last_updated": "2022-03-07T22:42:16.659Z",
-      "last_updated_by": "",
-      "tags": [],
-      "related_entity_ids": [],
-      "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "f083c9b0-01c6-4bba-8490-e6280dc96e14",
-        "last_sync": "2022-03-07T22:33:39.753Z",
-        "sync": true
-      },
-      "tokens": [
-        {
-          "id": "e723e171-9057-4e46-bfac-39c5296fbfce",
-          "type": "custom",
-          "value": "Roboto",
-          "key": "family"
-        },
-        {
-          "id": "e723e171-9057-4e46-bfac-39c5296fbfce",
-          "type": "custom",
-          "value": "Regular",
-          "key": "weight"
-        },
-        {
-          "id": "e723e171-9057-4e46-bfac-39c5296fbfce",
-          "type": "size",
-          "value": "80",
-          "key": "size"
-        }
-      ]
-    },
-    {
-      "class": "collection",
-      "type": "font",
-      "id": "785a4f23-8305-495c-9224-8268d1217e98",
+      "id": "80213e00-aeb6-4a2b-a7ad-f9ab815dc334",
       "name": "owl.sys.typeface.heading-3",
-      "last_updated": "2022-03-07T22:41:53.584Z",
-      "last_updated_by": "",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "629f28f8-331b-4a13-9c25-25254edf7591",
-        "last_sync": "2022-03-07T22:33:39.753Z",
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "a2f82e10-2d9c-4f80-917c-11d84df17efe",
+        "last_sync": "2022-03-15T20:34:44.045Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "f2b8b2a8-3d9d-4b77-b9c5-436c6c77817b",
+          "id": "80213e00-aeb6-4a2b-a7ad-f9ab815dc334",
           "type": "custom",
-          "value": "Roboto",
+          "value": "Inter",
           "key": "family"
         },
         {
-          "id": "f2b8b2a8-3d9d-4b77-b9c5-436c6c77817b",
+          "id": "80213e00-aeb6-4a2b-a7ad-f9ab815dc334",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "f2b8b2a8-3d9d-4b77-b9c5-436c6c77817b",
+          "id": "80213e00-aeb6-4a2b-a7ad-f9ab815dc334",
           "type": "size",
           "value": "40",
           "key": "size"
@@ -402,35 +176,237 @@
     {
       "class": "collection",
       "type": "font",
-      "id": "3257f5d0-942d-42e8-9d9a-1dde88a2b5dc",
-      "name": "owl.sys.typeface.heading-2",
-      "last_updated": "2022-03-07T22:41:47.688Z",
-      "last_updated_by": "",
+      "id": "c3ead388-091c-4e48-aa95-f0892fb6bd21",
+      "name": "owl.sys.typeface.heading-4",
       "tags": [],
       "related_entity_ids": [],
       "ext-com_adobe-cclib": {
-        "source": "https://shared-assets.adobe.com/link/e1842ed4-79e6-43bb-5964-fca8b2263046",
-        "id": "e45f2299-f8da-4338-8ded-4f67a6dbb58c",
-        "last_sync": "2022-03-07T22:33:39.753Z",
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "b01d5384-487d-4a7d-84ee-d3fb15eaf18c",
+        "last_sync": "2022-03-15T20:34:44.045Z",
         "sync": true
       },
       "tokens": [
         {
-          "id": "6016dd75-62d4-463f-9d72-7da8a0ec0014",
+          "id": "c3ead388-091c-4e48-aa95-f0892fb6bd21",
           "type": "custom",
-          "value": "Roboto",
+          "value": "Inter",
           "key": "family"
         },
         {
-          "id": "6016dd75-62d4-463f-9d72-7da8a0ec0014",
+          "id": "c3ead388-091c-4e48-aa95-f0892fb6bd21",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "6016dd75-62d4-463f-9d72-7da8a0ec0014",
+          "id": "c3ead388-091c-4e48-aa95-f0892fb6bd21",
           "type": "size",
-          "value": "50",
+          "value": "28",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "94931af4-8c0b-46a8-af7a-7beffd25b6b9",
+      "name": "owl.sys.typeface.body-sm",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "8af907df-2611-4a90-9c78-0401577492ba",
+        "last_sync": "2022-03-15T20:34:44.045Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "94931af4-8c0b-46a8-af7a-7beffd25b6b9",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "94931af4-8c0b-46a8-af7a-7beffd25b6b9",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "94931af4-8c0b-46a8-af7a-7beffd25b6b9",
+          "type": "size",
+          "value": "14",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "f4e6a54b-faca-4d34-9b9d-123040c3d660",
+      "name": "owl.sys.typeface.title",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "89014e4d-ab04-4049-9881-9288d3beada8",
+        "last_sync": "2022-03-15T20:34:44.045Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "f4e6a54b-faca-4d34-9b9d-123040c3d660",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "f4e6a54b-faca-4d34-9b9d-123040c3d660",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "f4e6a54b-faca-4d34-9b9d-123040c3d660",
+          "type": "size",
+          "value": "80",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "391188b2-4ef6-4f1e-a736-59a530268911",
+      "name": "owl.sys.typeface.heading-6",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "1963ae8b-70b5-4c04-af29-18585ab87371",
+        "last_sync": "2022-03-15T20:34:44.045Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "391188b2-4ef6-4f1e-a736-59a530268911",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "391188b2-4ef6-4f1e-a736-59a530268911",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "391188b2-4ef6-4f1e-a736-59a530268911",
+          "type": "size",
+          "value": "26",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "e3df1f27-8186-4750-93f9-eebf4e2aa87f",
+      "name": "owl.sys.typeface.body",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "3c435966-1d98-485a-99d0-ed707da64014",
+        "last_sync": "2022-03-15T20:34:44.045Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "e3df1f27-8186-4750-93f9-eebf4e2aa87f",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "e3df1f27-8186-4750-93f9-eebf4e2aa87f",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "e3df1f27-8186-4750-93f9-eebf4e2aa87f",
+          "type": "size",
+          "value": "16",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "fb50f3c6-c081-4c85-b7ec-8c07c46ef587",
+      "name": "owl.sys.typeface.heading-1",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "62bd8ea4-99f8-4405-9ff6-f0aeff36ebd4",
+        "last_sync": "2022-03-15T20:34:44.045Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "fb50f3c6-c081-4c85-b7ec-8c07c46ef587",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "fb50f3c6-c081-4c85-b7ec-8c07c46ef587",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "fb50f3c6-c081-4c85-b7ec-8c07c46ef587",
+          "type": "size",
+          "value": "60",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "5fb1b4c7-de6b-4cb4-8092-aae48369ccfb",
+      "name": "owl.sys.typeface.body-lg",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "94486d68-0e17-46a3-a97f-e53fa6d2f0cf",
+        "last_sync": "2022-03-15T20:34:44.045Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "5fb1b4c7-de6b-4cb4-8092-aae48369ccfb",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "5fb1b4c7-de6b-4cb4-8092-aae48369ccfb",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "5fb1b4c7-de6b-4cb4-8092-aae48369ccfb",
+          "type": "size",
+          "value": "24",
           "key": "size"
         }
       ]
