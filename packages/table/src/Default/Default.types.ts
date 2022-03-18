@@ -1,12 +1,11 @@
 import React from 'react';
 
 export type TableDefaultCommons = {
-  appearance?: 'Primary' | 'Outline';
+  appearance?: 'Default' | 'Primary';
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   children: React.ReactNode;
 };
 
 export type TableDefaultProps = Partial<TableDefaultCommons> &
-  React.DivHTMLAttributes<HTMLDivElement>;
+  React.TableHTMLAttributes<HTMLTableElement>;

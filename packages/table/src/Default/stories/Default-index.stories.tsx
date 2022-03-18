@@ -3,7 +3,6 @@ import { component as Table } from '../index';
 import { TableDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: TableDefaultProps) => (
@@ -39,13 +38,11 @@ export const Default = (args: TableDefaultProps) => (
 );
 
 Default.args = {
-  appearance: 'Primary',
-  size: 'Lg',
+  appearance: 'Default',
   theme: 'Default',
 };
 
 Default.argTypes = {
   appearance,
-  size,
   theme,
 };
