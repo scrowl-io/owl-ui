@@ -5,6 +5,8 @@ const moduleMap = {
     '@parcel/transformer-sass/lib/SassTransformer.js',
   '@parcel/node-resolver-core/lib.js':
     '@parcel/node-resolver-core/lib/NodeResolver.js',
+  'parcel-reporter-static-files-copy/index.js':
+    'parcel-reporter-static-files-copy/index.js',
 };
 
 export const apply = () => {
