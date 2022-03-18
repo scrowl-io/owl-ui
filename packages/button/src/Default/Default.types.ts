@@ -1,12 +1,18 @@
 import React from 'react';
 
 export type ButtonDefaultCommons = {
-  appearance?: 'Primary' | 'Outline';
-  theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
-  prefix?: string;
+  appearance?: 'Default' | 'Primary' | 'Link';
+  ariadescribedby?: string;
+  arialabel?: string;
+  onClick?: () => void;
   children: React.ReactNode;
+  disabled?: boolean;
+  href?: string;
+  prefix?: string;
+  size?: 'Sm' | 'Md' | 'Lg';
+  theme?: 'Default' | 'Dark';
 };
 
 export type ButtonDefaultProps = Partial<ButtonDefaultCommons> &
-  React.ButtonHTMLAttributes<HTMLButtonElement>;
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;

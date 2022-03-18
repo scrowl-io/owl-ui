@@ -1,20 +1,61 @@
 @use '~@owlui/theme' as theme;
 
+@mixin owlui-button-link {
+  border-color: transparent;
+  background-color: transparent;
+  color: theme.$owl-sys-color-primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 .owlui-button {
+  display: inline-block;
+  margin: 0;
   padding: theme.$owl-sys-layout-spacer;
+  text-align: center;
+  white-space: nowrap;
+  touch-action: manipulation;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+  }
 
   &--theme {
     &--default {
-      /* appearances */
       &-primary {
         @include theme.defaultTheme-branding;
+      }
+
+      &-link {
+        @include owlui-button-link;
       }
     }
 
     &--dark {
-      /* appearances */
+      @include theme.darkTheme-branding;
+
       &-primary {
         @include theme.darkTheme-branding;
+      }
+
+      &-link {
+        @include owlui-button-link;
       }
     }
   }

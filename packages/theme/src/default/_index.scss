@@ -4,6 +4,7 @@
 @mixin branding {
   background-color: vars.$owl-sys-color-primary;
   color: vars.$owl-sys-color-on-primary;
+  border-color: vars.$owl-sys-color-primary;
 }
 
 @mixin typeface--large {
