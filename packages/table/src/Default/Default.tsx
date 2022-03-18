@@ -10,11 +10,13 @@ export const Component = (props: TableDefaultProps) => {
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
   const appearance = props.appearance || 'Primary';
+  const outline = props.outline ? 'Outline' : '';
 
   const styleLocal = {
     base: styleMod[baseClass],
     theme: styleMod[`${baseClass}Theme${theme}`],
     appearance: styleMod[`${baseClass}Theme${theme}${appearance}`],
+    outline: styleMod[`${baseClass}${outline}`],
   };
 
   if (modulePrefix !== undefined && modulePrefix !== null) {
@@ -29,9 +31,12 @@ export const Component = (props: TableDefaultProps) => {
       className={[
         className,
         styleLocal.base,
+        styleLocal.outline,
         styleLocal.theme,
         styleLocal.appearance,
-      ].join(' ')}
+      ]
+        .join(' ')
+        .trim()}
     >
       {children}
     </table>
