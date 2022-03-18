@@ -34,5 +34,13 @@
   },
   "dependencies": {
     "@owlui/typings": "^0.0.1"
+  },
+  "parcelrc": {
+    "--config": "./packages/theme/.parcelrc",
+    "--no-cache": ""
+  },
+  "staticFiles": {
+    "staticPath": "src/global/assets",
+    "staticOutPath": "assets"
   }
 }

@@ -1,13 +1,12 @@
 @use './variables.scss' as *;
-
-html {
-  font-size: 1px;
-}
+@use './font-brand' as *;
 
 body {
   font-size: $owl-sys-typeface-body-size;
+  font-family: $owl-sys-typeface-body-family, sans-serif, sans-serif;
 }
 
 h1 {
   font-size: $owl-sys-typeface-heading-1-size;
+  font-family: $owl-sys-typeface-heading-1-family, sans-serif, sans-serif;
 }
