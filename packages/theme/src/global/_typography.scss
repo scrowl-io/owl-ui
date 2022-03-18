@@ -1,5 +1,6 @@
 @use './variables.scss' as *;
 @use './font-brand' as *;
+@use './font-icons' as *;
 
 body {
   font-size: $owl-sys-typeface-body-size;

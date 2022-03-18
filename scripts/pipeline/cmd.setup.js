@@ -26,6 +26,34 @@ const fileMap = {
       return contents;
     },
   },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.eot',
+  },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.ttf',
+  },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff',
+  },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff2',
+  },
+  'node_modules/material-design-icons/iconfont/material-icons.css': {
+    dest: 'packages/theme/src/global/_font-icons.scss',
+    transformer: raw => {
+      let contents = raw
+        .replace(/url\(/g, () => {
+          return 'url(./assets/icons/';
+        })
+        .replace(/font-size: [\d]*px/g, () => {
+          return 'font-size: $owl-sys-typeface-body-size';
+        });
+      const scssImports = `@use './variables.scss' as *;`;
+
+      contents = `${scssImports}\n\n${contents}`;
+      return contents;
+    },
+  },
 };
 
 function copy() {
