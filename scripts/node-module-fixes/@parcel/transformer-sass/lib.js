@@ -1,16 +1,16 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
+Object.defineProperty(exports, '__esModule', {
+  value: true,
 });
 exports.default = void 0;
 
 function debug(log) {
-    throw Error(JSON.stringify(log))
+  throw Error(JSON.stringify(log));
 }
 
 function _plugin() {
-  const data = require("@parcel/plugin");
+  const data = require('@parcel/plugin');
 
   _plugin = function () {
     return data;
@@ -20,7 +20,7 @@ function _plugin() {
 }
 
 function _path() {
-  const data = _interopRequireDefault(require("path"));
+  const data = _interopRequireDefault(require('path'));
 
   _path = function () {
     return data;
@@ -30,17 +30,17 @@ function _path() {
 }
 
 function _fs() {
-    const data = _interopRequireDefault(require("fs-extra"));
-  
-    _fs = function () {
-      return data;
-    };
-  
+  const data = _interopRequireDefault(require('fs-extra'));
+
+  _fs = function () {
     return data;
-  }
+  };
+
+  return data;
+}
 
 function _os() {
-  const data = require("os");
+  const data = require('os');
 
   _os = function () {
     return data;
@@ -50,7 +50,7 @@ function _os() {
 }
 
 function _sourceMap() {
-  const data = _interopRequireDefault(require("@parcel/source-map"));
+  const data = _interopRequireDefault(require('@parcel/source-map'));
 
   _sourceMap = function () {
     return data;
@@ -60,7 +60,7 @@ function _sourceMap() {
 }
 
 function _sass() {
-  const data = _interopRequireDefault(require("sass"));
+  const data = _interopRequireDefault(require('sass'));
 
   _sass = function () {
     return data;
@@ -70,7 +70,7 @@ function _sass() {
 }
 
 function _util() {
-  const data = require("util");
+  const data = require('util');
 
   _util = function () {
     return data;
@@ -79,34 +79,43 @@ function _util() {
   return data;
 }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 // E.g: ~library/file.sass
 const NODE_MODULE_ALIAS_RE = /^~[^/\\]/;
 
 var _default = new (_plugin().Transformer)({
-  async loadConfig({
-    config,
-    options
-  }) {
-    let configFile = await config.getConfig(['.sassrc', '.sassrc.json', '.sassrc.js'], {
-      packageKey: 'sass'
-    });
+  async loadConfig({ config, options }) {
+    let configFile = await config.getConfig(
+      ['.sassrc', '.sassrc.json', '.sassrc.js'],
+      {
+        packageKey: 'sass',
+      }
+    );
 
     // FIX START
     // the sass property may point to a source sass file and not be a config object
-    if (configFile
-        && configFile.contents
-        && typeof configFile.contents === 'string'
+    if (
+      configFile &&
+      configFile.contents &&
+      typeof configFile.contents === 'string'
     ) {
-        configFile = await config.getConfig(['.sassrc', '.sassrc.json', '.sassrc.js'])
+      configFile = await config.getConfig([
+        '.sassrc',
+        '.sassrc.json',
+        '.sassrc.js',
+      ]);
     }
     // FIX END
-    
+
     let configResult = configFile ? configFile.contents : {}; // Resolve relative paths from config file
 
     if (configFile && configResult.includePaths) {
-      configResult.includePaths = configResult.includePaths.map(p => _path().default.resolve(_path().default.dirname(configFile.filePath), p));
+      configResult.includePaths = configResult.includePaths.map(p =>
+        _path().default.resolve(_path().default.dirname(configFile.filePath), p)
+      );
     }
 
     if (configFile && _path().default.extname(configFile.filePath) === '.js') {
@@ -119,37 +128,43 @@ var _default = new (_plugin().Transformer)({
       configResult.importer = [configResult.importer];
     } // Always emit sourcemap
 
-
     configResult.sourceMap = true; // sources are created relative to the directory of outFile
 
-    configResult.outFile = _path().default.join(options.projectRoot, 'style.css.map');
+    configResult.outFile = _path().default.join(
+      options.projectRoot,
+      'style.css.map'
+    );
     configResult.omitSourceMapUrl = true;
     configResult.sourceMapContents = false;
     return configResult;
   },
 
-  async transform({
-    asset,
-    options,
-    config,
-    resolve
-  }) {
+  async transform({ asset, options, config, resolve }) {
     let rawConfig = config !== null && config !== void 0 ? config : {};
-    let sassRender = (0, _util().promisify)(_sass().default.render.bind(_sass().default));
+    let sassRender = (0, _util().promisify)(
+      _sass().default.render.bind(_sass().default)
+    );
     let css;
 
     try {
       let code = await asset.getCode();
-      let result = await sassRender({ ...rawConfig,
+      let result = await sassRender({
+        ...rawConfig,
         file: asset.filePath,
         data: rawConfig.data ? rawConfig.data + _os().EOL + code : code,
-        importer: [...rawConfig.importer, resolvePathImporter({
-          asset,
-          resolve,
-          includePaths: rawConfig.includePaths,
-          options
-        })],
-        indentedSyntax: typeof rawConfig.indentedSyntax === 'boolean' ? rawConfig.indentedSyntax : asset.type === 'sass'
+        importer: [
+          ...rawConfig.importer,
+          resolvePathImporter({
+            asset,
+            resolve,
+            includePaths: rawConfig.includePaths,
+            options,
+          }),
+        ],
+        indentedSyntax:
+          typeof rawConfig.indentedSyntax === 'boolean'
+            ? rawConfig.indentedSyntax
+            : asset.type === 'sass',
       });
       css = result.css;
 
@@ -169,7 +184,7 @@ var _default = new (_plugin().Transformer)({
       err.fileName = err.file;
       err.loc = {
         line: err.line,
-        column: err.column
+        column: err.column,
       };
       throw err;
     }
@@ -177,18 +192,12 @@ var _default = new (_plugin().Transformer)({
     asset.type = 'css';
     asset.setCode(css);
     return [asset];
-  }
-
+  },
 });
 
 exports.default = _default;
 
-function resolvePathImporter({
-  asset,
-  resolve,
-  includePaths,
-  options
-}) {
+function resolvePathImporter({ asset, resolve, includePaths, options }) {
   // This is a reimplementation of the Sass resolution algorithm that uses Parcel's
   // FS and tracks all tried files so they are watched for creation.
   async function resolvePath(url, prev) {
@@ -203,7 +212,7 @@ function resolvePathImporter({
       See also: https://github.com/sass/dart-sass/blob/006e6aa62f2417b5267ad5cdb5ba050226fab511/lib/src/importer/node/implementation.dart
     */
     let paths = [_path().default.dirname(prev)];
-    
+
     if (includePaths) {
       paths.push(...includePaths);
     }
@@ -211,40 +220,45 @@ function resolvePathImporter({
     asset.invalidateOnEnvChange('SASS_PATH');
 
     if (options.env.SASS_PATH) {
-      paths.push(...options.env.SASS_PATH.split(process.platform === 'win32' ? ';' : ':').map(p => _path().default.resolve(options.projectRoot, p)));
+      paths.push(
+        ...options.env.SASS_PATH.split(
+          process.platform === 'win32' ? ';' : ':'
+        ).map(p => _path().default.resolve(options.projectRoot, p))
+      );
     }
-    
+
     const urls = [url];
     const urlFileName = _path().default.basename(url);
-    const resolutionErrs = []
+    const resolutionErrs = [];
 
     if (urlFileName[0] !== '_') {
-        urls.push(_path().default.join(_path().default.dirname(url), `_${urlFileName}`));
+      urls.push(
+        _path().default.join(_path().default.dirname(url), `_${urlFileName}`)
+      );
     }
-    
+
     if (url[0] !== '~') {
-        
-        for (let p of paths) {
-            for (let u of urls) {
-                const filePath = _path().default.resolve(p, u);
-                
-                try {
-                    const contents = await asset.fs.readFile(filePath, 'utf8');
-                    
-                    return {
-                        filePath,
-                        contents
-                    };
-                } catch (err) {
-                    // FIX
-                    // If the file cannot be found, try another resolution method
-                    resolutionErrs.push(err.message)
-                    continue
-                }
-            }
+      for (let p of paths) {
+        for (let u of urls) {
+          const filePath = _path().default.resolve(p, u);
+
+          try {
+            const contents = await asset.fs.readFile(filePath, 'utf8');
+
+            return {
+              filePath,
+              contents,
+            };
+          } catch (err) {
+            // FIX
+            // If the file cannot be found, try another resolution method
+            resolutionErrs.push(err.message);
+            continue;
+          }
         }
+      }
     }
-    
+
     // FIX START
     /*
      * Problem:
@@ -255,7 +269,7 @@ function resolvePathImporter({
      *      3. Resolve the path and contents of the import
      * Additional Info:
      *      .sassrc.json will need to include the parent directory with "includedPaths"
-     *      
+     *
      *      {
      *          "includePaths": [
      *              "node_modules/",
@@ -263,67 +277,67 @@ function resolvePathImporter({
      *          ]
      *      }
      */
-    
-    if (NODE_MODULE_ALIAS_RE.test(url) && !_path().default.extname(url)) {
 
-        for (let p of paths) {
-            
-            for (let u of urls) {
-                const fileDir = u.split('/').pop()
-                const componentPath  = _path().default.resolve(process.cwd().split('packages')[0], 'packages', fileDir)
-                const configPath = _path().default.resolve(componentPath, 'package.json')
-                
-                try {
-                    const pkgFile = await asset.fs.readFile(configPath, 'utf8')
-                    const pkgConfig = JSON.parse(pkgFile)
-                    const filePath = pkgConfig.hasOwnProperty('sass') ? 
-                        _path().default.resolve(componentPath, pkgConfig.sass) :
-                        (
-                            pkgConfig.hasOwnProperty('style') ?
-                                _path().default.resolve(componentPath, pkgConfig.style) :
-                                null
-                        )
-                    const contents = await asset.fs.readFile(filePath, 'utf8')
-                    return {
-                        filePath,
-                        contents
-                    }
-                } catch (err) {
-                    const errMsg = {
-                        url: url,
-                        u: u,
-                        p: p,
-                        file: fileDir,
-                        comp: componentPath,
-                        config: configPath,
-                        message: err.message,
-                        stack: err.stack
-                    }
-                    resolutionErrs.push(JSON.stringify(errMsg, null, 4))
-                    continue
-                }
-            }
+    if (NODE_MODULE_ALIAS_RE.test(url) && !_path().default.extname(url)) {
+      for (let p of paths) {
+        for (let u of urls) {
+          const fileDir = u.split('/').pop();
+          const componentPath = _path().default.resolve(
+            process.cwd().split('packages')[0],
+            'packages',
+            fileDir
+          );
+          const configPath = _path().default.resolve(
+            componentPath,
+            'package.json'
+          );
+
+          try {
+            const pkgFile = await asset.fs.readFile(configPath, 'utf8');
+            const pkgConfig = JSON.parse(pkgFile);
+            const filePath = pkgConfig.hasOwnProperty('sass')
+              ? _path().default.resolve(componentPath, pkgConfig.sass)
+              : pkgConfig.hasOwnProperty('style')
+              ? _path().default.resolve(componentPath, pkgConfig.style)
+              : null;
+            const contents = await asset.fs.readFile(filePath, 'utf8');
+            return {
+              filePath,
+              contents,
+            };
+          } catch (err) {
+            const errMsg = {
+              url: url,
+              u: u,
+              p: p,
+              file: fileDir,
+              comp: componentPath,
+              config: configPath,
+              message: err.message,
+              stack: err.stack,
+            };
+            resolutionErrs.push(JSON.stringify(errMsg, null, 4));
+            continue;
+          }
         }
+      }
     }
     // FIX END
-    
+
     // If none of the default sass rules apply, try Parcel's resolver.
     for (let u of urls) {
-        
       if (NODE_MODULE_ALIAS_RE.test(u)) {
         u = u.slice(1);
       }
 
       try {
-         
         const filePath = await resolve(prev, u);
-        
 
         if (filePath) {
           const contents = await asset.fs.readFile(filePath, 'utf8');
           return {
             filePath,
-            contents
+            contents,
           };
         }
       } catch (err) {
@@ -334,21 +348,23 @@ function resolvePathImporter({
     // FIX
     // Produce an error if no resolution method was successful
     // throw Error(`\n\n${resolutionErrs.join(`\n`)}\n\n\n`)
-    asset.invalidateOnFileCreate({url});
+    asset.invalidateOnFileCreate({ url });
   }
-  
+
   return function (rawUrl, prev, done) {
     const url = rawUrl.replace(/^file:\/\//, '');
-    
-    resolvePath(url, prev).then(resolved => {
-      if (resolved) {
-        done({
-          file: resolved.filePath,
-          contents: resolved.contents
-        });
-      } else {
-        done();
-      }
-    }).catch(done);
+
+    resolvePath(url, prev)
+      .then(resolved => {
+        if (resolved) {
+          done({
+            file: resolved.filePath,
+            contents: resolved.contents,
+          });
+        } else {
+          done();
+        }
+      })
+      .catch(done);
   };
 }

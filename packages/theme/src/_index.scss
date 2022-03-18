@@ -1,5 +1,6 @@
 @forward './global/reset';
 @forward './global/variables';
 @forward './global/typography';
+@forward './global/font-brand';
 @forward './default' as defaultTheme-*;
 @forward './dark' as darkTheme-*;
