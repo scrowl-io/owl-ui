@@ -33,6 +33,7 @@
         "react": "^17.0.2"
     },
     "dependencies": {
+        "@owlui/parcel-transformer-relative-asset-urls": "^0.0.0",
         "@owlui/typings": "^0.0.1"
     },
     "parcelrc": {

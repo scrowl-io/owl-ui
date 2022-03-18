@@ -33,6 +33,7 @@
   },
   "workspaces": [
     "packages/*",
+    "parcel-transformer-relative-asset-urls",
     "typings",
     "web"
   ],
