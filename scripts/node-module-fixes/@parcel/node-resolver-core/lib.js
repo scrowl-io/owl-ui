@@ -696,9 +696,12 @@ class NodeResolver {
      * Solution:
      *
      */
+    // ctx.loc.filePath
     if (!resolvedFile) {
+      const baseFilename = _path().default.basename(ctx.loc.filePath);
+      const basePath = ctx.loc.filePath.replace(baseFilename, '');
       let relativeFilename = _path().default.resolve(
-        ctx.loc.filePath,
+        basePath,
         (0, _utils().relativePath)(parentdir, filename)
       );
       let relativePkg = await this.findPackage(relativeFilename, ctx);
@@ -716,8 +719,9 @@ class NodeResolver {
       resolvedFile = await this.loadAsFile(fileConfig);
 
       // if (!resolvedFile) {
+      //   const configStr = JSON.stringify(fileConfig, null, 2);
       //   throw new Error(
-      //     `Cannot find relative file:\n${JSON.stringify(fileConfig, null, 2)}`
+      //     `Cannot find relative file:\n${filename}\n${parentdir}\n${ctx.loc.filePath}\n${relativeFilename}\n`
       //   );
       // }
     }
