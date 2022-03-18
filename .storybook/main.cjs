@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     "framework": "@storybook/react",
+    "staticDirs": ['../packages/theme/src/global'],
     "stories": [
         "../packages/**/*.stories.mdx",
         "../packages/**/*.stories.@(js|jsx|ts|tsx)"
