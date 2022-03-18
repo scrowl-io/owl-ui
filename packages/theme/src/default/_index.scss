@@ -1,8 +1,21 @@
 @use '../global/variables' as vars;
 
+@mixin default {
+  background-color: vars.$owl-sys-bg-light;
+  color: vars.$owl-sys-bg-dark;
+  border-color: vars.$owl-sys-bg-dark;
+}
+
 @mixin branding {
+  background-color: vars.$owl-sys-color-on-primary;
+  color: vars.$owl-sys-color-primary;
+  border-color: vars.$owl-sys-color-primary;
+}
+
+@mixin branding--secondary {
   background-color: vars.$owl-sys-color-primary;
   color: vars.$owl-sys-color-on-primary;
+  border-color: vars.$owl-sys-color-on-primary;
 }
 
 @mixin typeface--large {

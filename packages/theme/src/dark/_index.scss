@@ -1,6 +1,7 @@
 @use '../global/variables' as vars;
 
 @mixin branding {
-    background-color: vars.$owl-ref-palette-dark;
-    color: vars.$owl-sys-color-on-dark;
+  background-color: vars.$owl-ref-palette-dark;
+  color: vars.$owl-sys-color-on-dark;
+  border-color: vars.$owl-sys-color-on-dark;
 }
