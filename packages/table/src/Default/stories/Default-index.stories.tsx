@@ -7,7 +7,35 @@ import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: TableDefaultProps) => (
-  <Table {...args}>Hello World</Table>
+  <Table {...args}>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Cicero</td>
+        <td>Fonseca</td>
+        <td>cfonseca</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Christopher</td>
+        <td>Aube</td>
+        <td>caube</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td colSpan={2}>Sezar Gantous</td>
+        <td>sgantous</td>
+      </tr>
+    </tbody>
+  </Table>
 );
 
 Default.args = {

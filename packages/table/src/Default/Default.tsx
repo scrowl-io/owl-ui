@@ -27,7 +27,7 @@ export const Component = (props: TableDefaultProps) => {
   }
 
   return (
-    <div
+    <table
       style={style}
       className={[
         className,
@@ -38,7 +38,7 @@ export const Component = (props: TableDefaultProps) => {
       ].join(' ')}
     >
       {children}
-    </div>
+    </table>
   );
 };
 
