@@ -689,6 +689,40 @@ class NodeResolver {
       ctx,
     }); // Don't load as a directory if this is a URL dependency.
 
+    // FIX START
+    /*
+     * Problem:
+     *
+     * Solution:
+     *
+     */
+    if (!resolvedFile) {
+      let relativeFilename = _path().default.resolve(
+        ctx.loc.filePath,
+        (0, _utils().relativePath)(parentdir, filename)
+      );
+      let relativePkg = await this.findPackage(relativeFilename, ctx);
+      let relativeCtx = Object.assign({}, ctx);
+      const fileConfig = {
+        file: relativeFilename,
+        extensions,
+        env,
+        pkg: relativePkg,
+        ctx: relativeCtx,
+      };
+
+      relativeCtx.invalidateOnFileCreate = [];
+      relativeCtx.invalidateOnFileChange = {};
+      resolvedFile = await this.loadAsFile(fileConfig);
+
+      // if (!resolvedFile) {
+      //   throw new Error(
+      //     `Cannot find relative file:\n${JSON.stringify(fileConfig, null, 2)}`
+      //   );
+      // }
+    }
+    // FIX END
+
     if (!resolvedFile && ctx.specifierType !== 'url') {
       resolvedFile = await this.loadDirectory({
         dir: filename,
