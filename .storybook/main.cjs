@@ -1,5 +1,8 @@
+const path = require('path');
+
 module.exports = {
     "framework": "@storybook/react",
+    "staticDirs": ['../packages/theme/src/global'],
     "stories": [
         "../packages/**/*.stories.mdx",
         "../packages/**/*.stories.@(js|jsx|ts|tsx)"
@@ -71,6 +74,12 @@ module.exports = {
           implementation: require('sass')
         }
       }
+      const fileLoader = {
+        loader: 'file-loader',
+        query: {
+          name: '[name].[ext]'
+        }
+      }
 
       if (ruleIdxStyle !== undefined && ruleIdxStyle > -1) {
         config.module.rules[ruleIdxStyle].use = [
@@ -79,6 +88,14 @@ module.exports = {
             sassLoader
         ]
       }
+
+      config.module.rules.push({
+        test: /\.(png|woff|woff2|eot|ttf|svg|jpeg)&/,
+        use: [
+          fileLoader
+        ],
+        include: path.resolve(__dirname, '../')
+      })
       
       return config;
     }
