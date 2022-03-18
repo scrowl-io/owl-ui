@@ -1,0 +1,8 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-card {
+  &-cardbody {
+    flex: 1 1 auto;
+    padding: theme.$owl-sys-layout-spacer;
+  }
+}

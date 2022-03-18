@@ -1,0 +1,7 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-card {
+  &-footer {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+}
