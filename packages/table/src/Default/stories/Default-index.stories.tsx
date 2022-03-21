@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { component as Table } from '../index';
+import { component as TableHeader } from '../../Header/index';
 import { TableDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
@@ -8,14 +9,7 @@ import { theme } from './Default-theme.stories';
 
 export const Default = (args: TableDefaultProps) => (
   <Table {...args}>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
+    <TableHeader columns={columns} />
     <tbody>
       <tr>
         <td>1</td>
@@ -49,3 +43,45 @@ Default.argTypes = {
   outline,
   theme,
 };
+
+const columns = [
+  {
+    label: '#',
+  },
+  {
+    label: 'First Name',
+  },
+  {
+    label: 'Last Name',
+  },
+  {
+    label: 'Username',
+  },
+];
+
+const items = [
+  {
+    id: 1,
+    firstName: 'Cicero',
+    lastName: 'Fonseca',
+    userName: 'cfonseca',
+  },
+  {
+    id: 2,
+    firstName: 'Scott',
+    lastName: 'Vincent',
+    userName: 'svincent',
+  },
+  {
+    id: 3,
+    firstName: 'Chris',
+    lastName: 'Aube',
+    userName: 'caube',
+  },
+  {
+    id: 4,
+    firstName: 'Sezar',
+    lastName: 'Gantous',
+    userName: 'sgantous',
+  },
+];
