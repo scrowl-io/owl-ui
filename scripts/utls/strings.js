@@ -32,6 +32,10 @@ export const isValidComponentInputName = str => {
   return /^([a-zA-Z]+(-|_)*)+/g.test(str);
 };
 
+export const isValidOptionInputName = str => {
+  return /^([a-zA-Z\d\D]+(-|_)*)+/g.test(str);
+};
+
 export const isValidPackageName = str => {
   const maxLn = 214;
   const scope = '@owlui/';
@@ -58,4 +62,5 @@ export default {
   hasLettersOnly,
   isValidComponentInputName,
   isValidPackageName,
+  isValidOptionInputName,
 };

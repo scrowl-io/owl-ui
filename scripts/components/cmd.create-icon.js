@@ -4,7 +4,7 @@ import {
   toLower,
   toCapitalize,
   toPascalCase,
-  isValidComponentInputName,
+  isValidOptionInputName,
 } from '../utls/strings.js';
 import { log, clear } from '../utls/console.js';
 import fs from '../utls/file-system.js';
@@ -17,7 +17,7 @@ const componentName = 'icons';
 function createFolderMap(component) {
   if (!hasLettersOnly(component.name)) {
     throw new Error(
-      'Component name must not contain special characters or numbers.'
+      `Component name must not contain special characters or numbers: ${component.name}`
     );
   }
 
@@ -75,9 +75,9 @@ function addOption(component) {
 function defineIcon(name) {
   let optName = toLower(name);
 
-  if (!isValidComponentInputName(optName)) {
+  if (!isValidOptionInputName(optName)) {
     throw new Error(
-      `Icon name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`
+      `Icon name must NOT include any special characters (except for underscores [_] or dashes [-]): ${optName}`
     );
   }
 
@@ -122,6 +122,19 @@ function processArgs() {
       } else {
         addOption(definition);
       }
+    } else if (argv.hasOwnProperty('a')) {
+      const iconsPath =
+        'node_modules/material-design-icons/iconfont/codepoints';
+      const iconsRaw = fs.getFile(iconsPath);
+      const iconList = iconsRaw
+        .trim()
+        .replace(/([a-zA-Z]*(_*[a-zA-z]*)) ([a-z|\d]{4,})/g, (match, icon) => {
+          return icon.trim();
+        })
+        .split(/\n/g);
+      const definitions = iconList.map(defineIcon);
+
+      definitions.forEach(addOption);
     }
   } catch (err) {
     log(err);
