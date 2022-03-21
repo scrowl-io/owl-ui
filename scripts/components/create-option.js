@@ -57,6 +57,21 @@ export const create = (component, folders) => {
       `${component.optionPas}.types.ts`,
       folders
     );
+    fileList.storiesAppearance = storyPath(
+      `appearance-${defaultOpt}`,
+      `${component.optionPas}-appearance.stories.tsx`,
+      folders
+    );
+    fileList.storiesSize = storyPath(
+      `size-${defaultOpt}`,
+      `${component.optionPas}-size.stories.tsx`,
+      folders
+    );
+    fileList.storiesTheme = storyPath(
+      `theme-${defaultOpt}`,
+      `${component.optionPas}-theme.stories.tsx`,
+      folders
+    );
   } else if (component.name === iconOpt) {
     fileList.component = optionPath(
       `component-${iconOpt}`,
