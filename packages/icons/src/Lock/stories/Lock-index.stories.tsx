@@ -1,21 +1,26 @@
-import * as React from 'react'
-import { component as Icons } from '../index'
-import { IconsLockProps } from '../Lock.types'
+import * as React from 'react';
+import { component as Icon } from '../index';
+import { IconsLockProps } from '../Lock.types';
 
-import { appearance } from './Lock-appearance.stories'
-import { size } from './Lock-size.stories'
-import { theme } from './Lock-theme.stories'
+import { display } from './Lock-display.stories';
+import { appearance } from './Lock-appearance.stories';
+import { size } from './Lock-size.stories';
+import { theme } from './Lock-theme.stories';
 
-export const Lock = (args: IconsLockProps) => <Icons {...args}>Hello World</Icons>
+export const Lock = (args: IconsLockProps) => (
+  <Icon {...args}></Icon>
+);
 
 Lock.args = {
-    appearance: 'Primary',
-    size: 'Lg',
-    theme: 'Default'
-}
+  display: display.defaultValue,
+  appearance: 'Primary',
+  size: 'Lg',
+  theme: 'Default',
+};
 
 Lock.argTypes = {
-    appearance,
-    size,
-    theme
-}
+  display,
+  appearance,
+  size,
+  theme,
+};

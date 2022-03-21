@@ -1,21 +1,26 @@
-import * as React from 'react'
-import { component as Icons } from '../index'
-import { IconsDoneProps } from '../Done.types'
+import * as React from 'react';
+import { component as Icon } from '../index';
+import { IconsDoneProps } from '../Done.types';
 
-import { appearance } from './Done-appearance.stories'
-import { size } from './Done-size.stories'
-import { theme } from './Done-theme.stories'
+import { display } from './Done-display.stories';
+import { appearance } from './Done-appearance.stories';
+import { size } from './Done-size.stories';
+import { theme } from './Done-theme.stories';
 
-export const Done = (args: IconsDoneProps) => <Icons {...args}>Hello World</Icons>
+export const Done = (args: IconsDoneProps) => (
+  <Icon {...args}></Icon>
+);
 
 Done.args = {
-    appearance: 'Primary',
-    size: 'Lg',
-    theme: 'Default'
-}
+  display: display.defaultValue,
+  appearance: 'Primary',
+  size: 'Lg',
+  theme: 'Default',
+};
 
 Done.argTypes = {
-    appearance,
-    size,
-    theme
-}
+  display,
+  appearance,
+  size,
+  theme,
+};

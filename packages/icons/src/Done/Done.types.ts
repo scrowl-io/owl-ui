@@ -1,7 +1,5 @@
-import type { IconsDefaultProps } from '../Default/Default.types'
+import type { IconsDefaultProps } from '../Default/Default.types';
 
-export type IconsDoneCommons = IconsDefaultProps & {
-  
-}
+export type IconsDoneCommons = IconsDefaultProps;
 
-export type IconsDoneProps = Partial<IconsDoneCommons>
+export type IconsDoneProps = Partial<IconsDoneCommons>;

@@ -1,21 +1,26 @@
-import * as React from 'react'
-import { component as Icons } from '../index'
-import { IconsDeleteProps } from '../Delete.types'
+import * as React from 'react';
+import { component as Icon } from '../index';
+import { IconsDeleteProps } from '../Delete.types';
 
-import { appearance } from './Delete-appearance.stories'
-import { size } from './Delete-size.stories'
-import { theme } from './Delete-theme.stories'
+import { display } from './Delete-display.stories';
+import { appearance } from './Delete-appearance.stories';
+import { size } from './Delete-size.stories';
+import { theme } from './Delete-theme.stories';
 
-export const Delete = (args: IconsDeleteProps) => <Icons {...args}>Hello World</Icons>
+export const Delete = (args: IconsDeleteProps) => (
+  <Icon {...args}></Icon>
+);
 
 Delete.args = {
-    appearance: 'Primary',
-    size: 'Lg',
-    theme: 'Default'
-}
+  display: display.defaultValue,
+  appearance: 'Primary',
+  size: 'Lg',
+  theme: 'Default',
+};
 
 Delete.argTypes = {
-    appearance,
-    size,
-    theme
-}
+  display,
+  appearance,
+  size,
+  theme,
+};
