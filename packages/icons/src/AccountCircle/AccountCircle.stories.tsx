@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
-import { Component } from './{{{optionPas}}}';
+import { Component } from './AccountCircle';
 import descriptionMd from './Description.md';
 
-export { {{{optionPas}}} } from './stories/{{{optionPas}}}-index.stories';
+export { AccountCircle } from './stories/AccountCircle-index.stories';
 
 export default {
-  title: 'Components/{{{cap}}}/{{{optionPas}}}',
+  title: 'Components/Icons/AccountCircle',
   component: Component,
   parameters: {
     docs: {
@@ -16,12 +16,10 @@ export default {
     },
   },
   decorators: [
-    {{{{raw}}}}
     Story => (
       <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         <Story />
       </div>
     ),
-    {{{{/raw}}}}
   ],
 } as Meta;

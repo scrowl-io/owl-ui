@@ -10,7 +10,7 @@ export const storyPath = (template, filename, folders) => {
 };
 
 export const create = (component, folders) => {
-  folders.option = `${folders.src}/${component.optionCap}`;
+  folders.option = `${folders.src}/${component.optionPas}`;
   folders.stories = `${folders.option}/stories`;
 
   const defaultOpt = 'default';
@@ -18,25 +18,25 @@ export const create = (component, folders) => {
   const fileList = {
     index: optionPath('index', 'index.ts', folders),
     description: optionPath('description', 'Description.md', folders),
-    story: optionPath('story', `${component.optionCap}.stories.tsx`, folders),
+    story: optionPath('story', `${component.optionPas}.stories.tsx`, folders),
     stories: storyPath(
       'index',
-      `${component.optionCap}-index.stories.tsx`,
+      `${component.optionPas}-index.stories.tsx`,
       folders
     ),
     storiesAppearance: storyPath(
       'appearance',
-      `${component.optionCap}-appearance.stories.tsx`,
+      `${component.optionPas}-appearance.stories.tsx`,
       folders
     ),
     storiesSize: storyPath(
       'size',
-      `${component.optionCap}-size.stories.tsx`,
+      `${component.optionPas}-size.stories.tsx`,
       folders
     ),
     storiesTheme: storyPath(
       'theme',
-      `${component.optionCap}-theme.stories.tsx`,
+      `${component.optionPas}-theme.stories.tsx`,
       folders
     ),
   };
@@ -49,35 +49,40 @@ export const create = (component, folders) => {
     );
     fileList.component = optionPath(
       `component-${defaultOpt}`,
-      `${component.optionCap}.tsx`,
+      `${component.optionPas}.tsx`,
       folders
     );
     fileList.types = optionPath(
       `types-${defaultOpt}`,
-      `${component.optionCap}.types.ts`,
+      `${component.optionPas}.types.ts`,
       folders
     );
   } else if (component.name === iconOpt) {
     fileList.component = optionPath(
       `component-${iconOpt}`,
-      `${component.optionCap}.tsx`,
+      `${component.optionPas}.tsx`,
       folders
     );
     fileList.types = optionPath(
-      'types',
-      `${component.optionCap}.types.ts`,
+      `types-${iconOpt}`,
+      `${component.optionPas}.types.ts`,
+      folders
+    );
+    fileList.stories = storyPath(
+      `index-${iconOpt}`,
+      `${component.optionPas}-index.stories.tsx`,
       folders
     );
   } else {
     fileList.styles = optionPath('styles', `styles.module.scss`, folders);
     fileList.component = optionPath(
       'component',
-      `${component.optionCap}.tsx`,
+      `${component.optionPas}.tsx`,
       folders
     );
     fileList.types = optionPath(
       'types',
-      `${component.optionCap}.types.ts`,
+      `${component.optionPas}.types.ts`,
       folders
     );
   }

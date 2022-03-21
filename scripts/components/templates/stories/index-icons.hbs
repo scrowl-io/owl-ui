@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { component as {{{cap}}} } from '../index';
+import { component as Icon } from '../index';
 import { {{{cap}}}{{{optionPas}}}Props } from '../{{{optionPas}}}.types';
 
 import { appearance } from './{{{optionPas}}}-appearance.stories';
 import { size } from './{{{optionPas}}}-size.stories';
 import { theme } from './{{{optionPas}}}-theme.stories';
 
-export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>;
+export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => (
+  <Icon {...args}></Icon>
+);
 
 {{{optionPas}}}.args = {
   appearance: 'Primary',

@@ -12,8 +12,6 @@ export const Component = (props: IconsDefaultProps) => {
   const appearance = props.appearance || '';
   const size = props.size || 'Md';
 
-  console.log('styleMod', styleMod);
-
   const styleLocal = {
     base: styleMod[baseClass],
     theme: styleMod[`${baseClass}Theme${theme}`],
@@ -27,7 +25,7 @@ export const Component = (props: IconsDefaultProps) => {
     styleLocal.appearance = `${modulePrefix}-${styleLocal.appearance}`;
     styleLocal.size = `${modulePrefix}-${styleLocal.size}`;
   }
-  console.log('locals', styleLocal);
+
   return (
     <span
       style={style}

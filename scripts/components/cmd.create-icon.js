@@ -3,6 +3,7 @@ import {
   hasLettersOnly,
   toLower,
   toCapitalize,
+  toPascalCase,
   isValidComponentInputName,
 } from '../utls/strings.js';
 import { log, clear } from '../utls/console.js';
@@ -39,10 +40,18 @@ function updateSource(folders, component) {
     index: sourcePath(`index-${componentName}`, 'index.ts'),
   };
 
+  let name = '';
+  let cap = '';
+  let pas = '';
+
   component.options = options.sort().map(opt => {
+    name = opt;
+    cap = toCapitalize(name);
+    pas = toPascalCase(name);
     return {
-      name: toLower(opt),
-      cap: toCapitalize(opt),
+      name,
+      cap,
+      pas,
     };
   });
 
@@ -74,12 +83,17 @@ function getParts(icon) {
     );
   }
 
+  let optName = toLower(icon);
+  let optCap = toCapitalize(optName);
+  let optPas = toPascalCase(optName);
+
   return {
     name: componentName,
     cap: toCapitalize(componentName),
     low: toLower(componentName),
-    option: icon,
-    optionCap: toCapitalize(icon),
+    option: optName,
+    optionCap: optCap,
+    optionPas: optPas,
   };
 }
 
