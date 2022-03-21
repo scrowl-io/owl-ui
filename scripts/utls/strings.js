@@ -29,7 +29,7 @@ export const isValidComponentInputName = str => {
 export const isValidPackageName = str => {
   const maxLn = 214;
   const scope = '@owlui/';
-  const scopedMaxLn = maxLn - scope.length
+  const scopedMaxLn = maxLn - scope.length;
   const ln = str.length;
   const valid = ln <= scopedMaxLn;
   const remain = scopedMaxLn - ln;
@@ -40,7 +40,7 @@ export const isValidPackageName = str => {
     maxLn: scopedMaxLn,
     ln,
     remain,
-    over
+    over,
   };
 };
 
@@ -51,5 +51,5 @@ export default {
   toCapitalize,
   hasLettersOnly,
   isValidComponentInputName,
-  isValidPackageName
-}
+  isValidPackageName,
+};
