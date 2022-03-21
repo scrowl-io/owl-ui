@@ -73,6 +73,11 @@ export const create = (component, folders) => {
       `${component.optionPas}-index.stories.tsx`,
       folders
     );
+    fileList.storiesDisplay = storyPath(
+      'display',
+      `${component.optionPas}-display.stories.tsx`,
+      folders
+    );
   } else {
     fileList.styles = optionPath('styles', `styles.module.scss`, folders);
     fileList.component = optionPath(
