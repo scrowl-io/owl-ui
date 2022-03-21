@@ -25,8 +25,6 @@ export const Component = (props: TableDefaultProps) => {
     styleLocal.appearance = `${modulePrefix}-${styleLocal.appearance}`;
   }
 
-  // TODO: populate table from props items and headers with prop column names
-
   return (
     <table
       style={style}

@@ -15,7 +15,7 @@ export const Component = (props: TableHeaderProps) => {
     ? `${styles[baseClass]} ${localProps.className}`
     : styles[baseClass];
 
-  const renderedColumns = () => {
+  const renderColumns = () => {
     if (columns) {
       return columns.map(column => <th key={column.label}>{column.label}</th>);
     }
@@ -23,7 +23,7 @@ export const Component = (props: TableHeaderProps) => {
 
   return (
     <thead className={localProps.className}>
-      <tr>{renderedColumns()}</tr>
+      <tr>{renderColumns()}</tr>
     </thead>
   );
 };
