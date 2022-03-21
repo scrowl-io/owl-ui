@@ -1,49 +1,85 @@
 import fs from '../utls/file-system.js';
 import { compile, definePaths } from './templater.js';
 
+export const optionPath = (template, filename, folders) => {
+  return definePaths(template, 'option', filename, folders.option);
+};
+
+export const storyPath = (template, filename, folders) => {
+  return definePaths(template, 'stories', filename, folders.stories);
+};
+
 export const create = (component, folders) => {
-  function optionPath(template, filename) {
-    return definePaths(template, 'option', filename, folders.option);
-  }
-
-  function storyPath(template, filename) {
-    return definePaths(template, 'stories', filename, folders.stories);
-  }
-
   folders.option = `${folders.src}/${component.optionCap}`;
   folders.stories = `${folders.option}/stories`;
 
   const defaultOpt = 'default';
+  const iconOpt = 'icons';
   const fileList = {
-    index: optionPath('index', 'index.ts'),
-    description: optionPath('description', 'Description.md'),
-    story: optionPath('story', `${component.optionCap}.stories.tsx`),
-    stories: storyPath('index', `${component.optionCap}-index.stories.tsx`),
+    index: optionPath('index', 'index.ts', folders),
+    description: optionPath('description', 'Description.md', folders),
+    story: optionPath('story', `${component.optionCap}.stories.tsx`, folders),
+    stories: storyPath(
+      'index',
+      `${component.optionCap}-index.stories.tsx`,
+      folders
+    ),
     storiesAppearance: storyPath(
       'appearance',
-      `${component.optionCap}-appearance.stories.tsx`
+      `${component.optionCap}-appearance.stories.tsx`,
+      folders
     ),
-    storiesSize: storyPath('size', `${component.optionCap}-size.stories.tsx`),
+    storiesSize: storyPath(
+      'size',
+      `${component.optionCap}-size.stories.tsx`,
+      folders
+    ),
     storiesTheme: storyPath(
       'theme',
-      `${component.optionCap}-theme.stories.tsx`
+      `${component.optionCap}-theme.stories.tsx`,
+      folders
     ),
   };
 
   if (component.option === defaultOpt) {
-    fileList.styles = optionPath(`styles-${defaultOpt}`, `styles.module.scss`);
+    fileList.styles = optionPath(
+      `styles-${defaultOpt}`,
+      `styles.module.scss`,
+      folders
+    );
     fileList.component = optionPath(
       `component-${defaultOpt}`,
-      `${component.optionCap}.tsx`
+      `${component.optionCap}.tsx`,
+      folders
     );
     fileList.types = optionPath(
       `types-${defaultOpt}`,
-      `${component.optionCap}.types.ts`
+      `${component.optionCap}.types.ts`,
+      folders
+    );
+  } else if (component.name === iconOpt) {
+    fileList.component = optionPath(
+      `component-${iconOpt}`,
+      `${component.optionCap}.tsx`,
+      folders
+    );
+    fileList.types = optionPath(
+      'types',
+      `${component.optionCap}.types.ts`,
+      folders
     );
   } else {
-    fileList.styles = optionPath('styles', `styles.module.scss`);
-    fileList.component = optionPath('component', `${component.optionCap}.tsx`);
-    fileList.types = optionPath('types', `${component.optionCap}.types.ts`);
+    fileList.styles = optionPath('styles', `styles.module.scss`, folders);
+    fileList.component = optionPath(
+      'component',
+      `${component.optionCap}.tsx`,
+      folders
+    );
+    fileList.types = optionPath(
+      'types',
+      `${component.optionCap}.types.ts`,
+      folders
+    );
   }
 
   for (let filename in fileList) {

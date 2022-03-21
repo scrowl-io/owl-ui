@@ -1,17 +1,17 @@
 {{#with . as | component |}}
-{{#each component.options as | opt |}}
-import * as {{{opt.cap}}}{{{component.cap}}} from './{{{opt.cap}}}/index'
+{{#each component.options as | opt |}};
+import * as {{{opt.cap}}}{{{component.cap}}} from './{{{opt.cap}}}/index';
 {{/each}}
 
 {{#each component.options as | opt |}}
-export const {{{opt.cap}}} = {{{opt.cap}}}{{{component.cap}}}.component
-export const {{{opt.cap}}}Types = {{{opt.cap}}}{{{component.cap}}}.types
+export const {{{opt.cap}}} = {{{opt.cap}}}{{{component.cap}}}.component;
+export const {{{opt.cap}}}Types = {{{opt.cap}}}{{{component.cap}}}.types;
 {{/each}}
 
 export default {
-    {{#each component.options as | opt |}}
-    {{{opt.cap}}},
-    {{{opt.cap}}}Types,
-    {{/each}}
-}
+  {{#each component.options as | opt |}}
+  {{{opt.cap}}},
+  {{{opt.cap}}}Types,
+  {{/each}},
+};
 {{/with}}

@@ -1,0 +1,17 @@
+{{#with . as | component |}}
+{{#each component.options as | opt |}}
+import * as {{{opt.cap}}}{{{component.cap}}} from './{{{opt.cap}}}/index';
+{{/each}}
+
+{{#each component.options as | opt |}}
+export const {{{opt.cap}}}Icon = {{{opt.cap}}}{{{component.cap}}}.component;
+export const {{{opt.cap}}}IconTypes = {{{opt.cap}}}{{{component.cap}}}.types;
+{{/each}}
+
+export default {
+  {{#each component.options as | opt |}}
+  {{{opt.cap}}}Icon,
+  {{{opt.cap}}}IconTypes,
+  {{/each}}
+};
+{{/with}}

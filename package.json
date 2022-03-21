@@ -13,6 +13,7 @@
   "scripts": {
     "update:component": "node ./scripts/components/cmd.update-lib.js",
     "create:component": "node ./scripts/components/cmd.create.js",
+    "create:icon": "node ./scripts/components/cmd.create-icon.js",
     "postcreate:component": "yarn run update:component",
     "fix": "node ./scripts/pipeline/cmd.fixes.js",
     "logs:print": "node ./scripts/pipeline/cmd.logs.js",
