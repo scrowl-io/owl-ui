@@ -1,0 +1,7 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-table {
+  &-header {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+}
