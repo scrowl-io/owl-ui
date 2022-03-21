@@ -8,9 +8,11 @@ export const Component = (props: IconsDefaultProps) => {
   const { children, className, style } = props;
 
   const modulePrefix = props.prefix;
+  const display = props.display || 'Filled';
   const theme = props.theme || '';
   const appearance = props.appearance || '';
   const size = props.size || 'Md';
+  let iconClass = '';
 
   const styleLocal = {
     base: styleMod[baseClass],
@@ -26,11 +28,20 @@ export const Component = (props: IconsDefaultProps) => {
     styleLocal.size = `${modulePrefix}-${styleLocal.size}`;
   }
 
+  switch (display) {
+    case 'Filled':
+      iconClass = 'material-icons';
+      break;
+    case 'Outlined':
+      iconClass = 'material-icons-outlined';
+      break;
+  }
+
   return (
     <span
       style={style}
       className={[
-        'material-icons',
+        iconClass,
         className?.trim(),
         styleLocal.base,
         styleLocal.theme,

@@ -1,6 +1,7 @@
 import React from 'react';
 
 export type IconsDefaultCommons = {
+  display?: 'Filled' | 'Outlined';
   appearance?: 'Primary' | 'Alt';
   theme?: 'Default' | 'Dark' | 'Light';
   size?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';

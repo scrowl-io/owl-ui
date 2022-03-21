@@ -38,9 +38,15 @@ const fileMap = {
   'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2': {
     dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff2',
   },
+  'scripts/pipeline/assets/MaterialIcons-Outlined.woff2': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Outlined.woff2',
+  },
   'node_modules/material-design-icons/iconfont/material-icons.css': {
     dest: 'packages/theme/src/global/_font-icons.scss',
     transformer: raw => {
+      let outlinedScss = fs.getFile(
+        'scripts/pipeline/assets/MaterialIcons-Outlined.scss'
+      );
       let contents = raw
         .replace(/url\(/g, () => {
           return 'url(./assets/icons/';
@@ -50,7 +56,7 @@ const fileMap = {
         });
       const scssImports = `@use './variables.scss' as *;`;
 
-      contents = `${scssImports}\n\n${contents}`;
+      contents = `${scssImports}\n\n${contents}\n${outlinedScss}`;
       return contents;
     },
   },
