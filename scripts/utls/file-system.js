@@ -98,6 +98,18 @@ fs.setFile = (pathName, contents) => {
   }
 };
 
+fs.copyFile = (source, dest) => {
+  const sourcePath = fs.normalize(source);
+  const destPath = fs.normalize(dest);
+
+  try {
+    fs.copySync(sourcePath, destPath);
+  } catch (err) {
+    log(err);
+    return;
+  }
+};
+
 fs.renameFile = (oldPath, newPath) => {
   const oldFile = fs.normalize(oldPath);
   const newFile = fs.normalize(newPath);

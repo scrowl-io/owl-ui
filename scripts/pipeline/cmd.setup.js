@@ -63,9 +63,10 @@ function copy() {
 
     if (fileMap[file].transformer) {
       contents = fileMap[file].transformer(contents);
+      fs.setFile(dest, contents);
+    } else {
+      fs.copyFile(file, dest);
     }
-
-    fs.setFile(dest, contents);
   }
 }
 
