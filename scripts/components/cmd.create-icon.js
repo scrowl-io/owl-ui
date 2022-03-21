@@ -16,7 +16,7 @@ const componentName = 'icons';
 
 function createFolderMap(component) {
   if (!hasLettersOnly(component.name)) {
-    throw Error(
+    throw new Error(
       'Component name must not contain special characters or numbers.'
     );
   }
@@ -72,18 +72,15 @@ function addOption(component) {
   updateSource(folders, component);
 }
 
-function getParts(icon) {
-  if (!icon.length) {
-    throw Error('Icon name missing');
-  }
+function defineIcon(name) {
+  let optName = toLower(name);
 
-  if (!isValidComponentInputName(icon)) {
-    throw Error(
+  if (!isValidComponentInputName(optName)) {
+    throw new Error(
       `Icon name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`
     );
   }
 
-  let optName = toLower(icon);
   let optCap = toCapitalize(optName);
   let optPas = toPascalCase(optName);
 
@@ -97,12 +94,34 @@ function getParts(icon) {
   };
 }
 
+function createDefinition(name) {
+  if (!name.length) {
+    throw new Error('Icon name missing');
+  }
+
+  try {
+    if (name.indexOf(',') === -1) {
+      return defineIcon(name);
+    } else {
+      const icons = name.split(',');
+
+      return icons.map(defineIcon);
+    }
+  } catch (err) {
+    return err;
+  }
+}
+
 function processArgs() {
   try {
     if (argv.hasOwnProperty('n')) {
-      const newComponent = getParts(argv.n);
+      const definition = createDefinition(argv.n);
 
-      addOption(newComponent);
+      if (Array.isArray(definition)) {
+        definition.forEach(addOption);
+      } else {
+        addOption(definition);
+      }
     }
   } catch (err) {
     log(err);
