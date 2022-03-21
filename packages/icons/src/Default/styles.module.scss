@@ -1,0 +1,75 @@
+@use '~@owlui/theme' as theme;
+
+.material-icons.owlui-icons {
+  font-size: theme.$owl-sys-typeface-body-size;
+  color: theme.$owl-sys-color-on-light;
+
+  &--theme {
+    &--default {
+      &-primary {
+        color: theme.$owl-sys-color-primary;
+      }
+
+      &-alt {
+        color: theme.$owl-sys-color-on-primary;
+        background-color: theme.$owl-sys-bg-primary;
+      }
+    }
+
+    &--dark {
+      &-primary {
+        color: theme.$owl-sys-color-on-dark;
+        background-color: theme.$owl-sys-bg-dark;
+      }
+    }
+
+    &--light {
+      &-primary {
+        color: theme.$owl-sys-color-on-light;
+        background-color: theme.$owl-sys-bg-light;
+      }
+    }
+  }
+
+  &--size {
+    &-h1 {
+      font-size: theme.$owl-sys-typeface-heading-1-size;
+    }
+
+    &-h2 {
+      font-size: theme.$owl-sys-typeface-heading-2-size;
+    }
+
+    &-h3 {
+      font-size: theme.$owl-sys-typeface-heading-3-size;
+    }
+
+    &-h4 {
+      font-size: theme.$owl-sys-typeface-heading-4-size;
+    }
+
+    &-h5 {
+      font-size: theme.$owl-sys-typeface-heading-5-size;
+    }
+
+    &-h6 {
+      font-size: theme.$owl-sys-typeface-heading-6-size;
+    }
+
+    &-lg {
+      font-size: theme.$owl-sys-typeface-body-lg-size;
+    }
+
+    &-md {
+      font-size: theme.$owl-sys-typeface-body-md-size;
+    }
+
+    &-sm {
+      font-size: theme.$owl-sys-typeface-body-sm-size;
+    }
+
+    &-xs {
+      font-size: theme.$owl-sys-typeface-body-xs-size;
+    }
+  }
+}
