@@ -38,7 +38,6 @@ export const Component = (props: TableDefaultProps) => {
         .join(' ')
         .trim()}
     >
-      <caption>Caption</caption>
       {children}
     </table>
   );

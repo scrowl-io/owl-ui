@@ -45,26 +45,26 @@ const columns = [
 const items = [
   {
     id: 1,
-    firstName: 'Cicero',
-    lastName: 'Fonseca',
-    userName: 'cfonseca',
+    firstName: 'Michael',
+    lastName: 'Scott',
+    userName: 'mscott',
   },
   {
     id: 2,
-    firstName: 'Scott',
-    lastName: 'Vincent',
-    userName: 'svincent',
+    firstName: 'Oscar',
+    lastName: 'Martinez',
+    userName: 'omartinez',
   },
   {
     id: 3,
-    firstName: 'Chris',
-    lastName: 'Aube',
-    userName: 'caube',
+    firstName: 'Meredith',
+    lastName: 'Palmer',
+    userName: 'mpalmer',
   },
   {
     id: 4,
-    firstName: 'Sezar',
-    lastName: 'Gantous',
-    userName: 'sgantous',
+    firstName: 'Jan',
+    lastName: 'Levinson',
+    userName: 'jlevinson',
   },
 ];
