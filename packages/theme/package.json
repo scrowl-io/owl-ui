@@ -19,6 +19,9 @@
   "sideEffects": [
     "*.css"
   ],
+  "owlrc": {
+    "ignoreComponentLib": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
