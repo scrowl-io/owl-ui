@@ -8,6 +8,7 @@
   "type": "module",
   "main": "dist/index.js",
   "source": "src/index.ts",
+  "types": "dist/types.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
