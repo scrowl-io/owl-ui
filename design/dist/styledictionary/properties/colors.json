@@ -21,17 +21,20 @@
     "owl_sys_bg_light": {
       "value": "{color.owl_ref_palette_light.value}"
     },
-    "owl_ref_palette_primary": {
-      "value": "#0083C3ff"
+    "owl_ref_palette_warn-highlight": {
+      "value": "#FFD61Eff"
     },
-    "owl_ref_palette_dark": {
-      "value": "#2C3137ff"
-    },
-    "owl_ref_palette_light": {
-      "value": "#FFFFFFff"
+    "owl_ref_palette_alert": {
+      "value": "#C54E00ff"
     },
     "owl_ref_palette_alert-highlight": {
       "value": "#E66F00ff"
+    },
+    "owl_ref_palette_success": {
+      "value": "#178622ff"
+    },
+    "owl_ref_palette_success-highlight": {
+      "value": "#31A03Cff"
     },
     "owl_ref_palette_secondary": {
       "value": "#9624FEff"
@@ -54,20 +57,17 @@
     "owl_ref_palette_warn": {
       "value": "#966D00ff"
     },
-    "owl_ref_palette_warn-highlight": {
-      "value": "#FFD61Eff"
+    "owl_ref_palette_primary": {
+      "value": "#0083C3ff"
     },
-    "owl_ref_palette_alert": {
-      "value": "#C54E00ff"
+    "owl_ref_palette_dark": {
+      "value": "#2C3137ff"
+    },
+    "owl_ref_palette_light": {
+      "value": "#FFFFFFff"
     },
     "owl_ref_palette_primary-highlight": {
       "value": "#0D90D0ff"
-    },
-    "owl_ref_palette_success": {
-      "value": "#178622ff"
-    },
-    "owl_ref_palette_success-highlight": {
-      "value": "#31A03Cff"
     }
   }
 }

@@ -1,4 +1,5 @@
 @use '../global/variables' as vars;
+@use '../global/font-brand' as *;
 
 @mixin default {
   background-color: vars.$owl-sys-bg-light;
@@ -15,23 +16,23 @@
 @mixin branding--secondary {
   background-color: vars.$owl-sys-color-primary;
   color: vars.$owl-sys-color-on-primary;
-  border-color: vars.$owl-sys-color-on-primary;
+  border-color: vars.$owl-sys-color-primary;
 }
 
 @mixin typeface--large {
-  font: vars.$owl-sys-typeface-body-lg-family;
+  font-family: vars.$owl-sys-typeface-body-lg-family;
   font-size: vars.$owl-sys-typeface-body-lg-size;
-  font-weight: vars.$owl-sys-typeface-body-lg-weight;
+  font-style: vars.$owl-sys-typeface-body-lg-weight;
 }
 
 @mixin typeface--medium {
-  font: vars.$owl-sys-typeface-body-md-family;
+  font-family: vars.$owl-sys-typeface-body-md-family;
   font-size: vars.$owl-sys-typeface-body-md-size;
-  font-weight: vars.$owl-sys-typeface-body-md-weight;
+  font-style: vars.$owl-sys-typeface-body-md-weight;
 }
 
 @mixin typeface--small {
-  font: vars.$owl-sys-typeface-body-sm-family;
+  font-family: vars.$owl-sys-typeface-body-sm-family;
   font-size: vars.$owl-sys-typeface-body-sm-size;
-  font-weight: vars.$owl-sys-typeface-body-sm-weight;
+  font-style: vars.$owl-sys-typeface-body-sm-weight;
 }
