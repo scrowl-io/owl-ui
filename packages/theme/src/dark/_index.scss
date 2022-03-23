@@ -4,5 +4,5 @@
 @mixin branding {
   background-color: vars.$owl-ref-palette-dark;
   color: vars.$owl-sys-color-on-dark;
-  border-color: vars.$owl-ref-palette-dark;
+  border-color: vars.$owl-sys-color-on-dark;
 }

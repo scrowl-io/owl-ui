@@ -16,7 +16,7 @@
 @mixin branding--secondary {
   background-color: vars.$owl-sys-color-primary;
   color: vars.$owl-sys-color-on-primary;
-  border-color: vars.$owl-sys-color-primary;
+  border-color: vars.$owl-sys-color-on-primary;
 }
 
 @mixin typeface--large {
