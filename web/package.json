@@ -1,22 +1,29 @@
 {
-    "name": "@owlui/web",
-    "version": "0.0.15",
-    "description": "",
-    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/web#readme",
-    "license": "MIT",
-    "type": "module",
-    "source": "src/index.html",
-    "private": true,
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/EEBOS/owl-ui.git",
-        "directory": "web"
-    },
-    "dependencies": {
-        "@owlui/components": "^0.0.15"
-    },
-    "peerDependencies": {
-        "parcel": "^2.1.1",
-        "react": "^17.0.2"
-    }
+  "name": "@owlui/web",
+  "version": "0.0.15",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/web#readme",
+  "license": "MIT",
+  "type": "module",
+  "source": "src/index.html",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "web"
+  },
+  "dependencies": {
+    "@owlui/components": "^0.0.15"
+  },
+  "peerDependencies": {
+    "parcel": "^2.1.1",
+    "react": "^17.0.2"
+  },
+  "outputFormat": "commonjs",
+  "sideEffects": [
+    "*.css"
+  ],
+  "@parcel/transformer-css": {
+    "cssModules": true
+  }
 }
