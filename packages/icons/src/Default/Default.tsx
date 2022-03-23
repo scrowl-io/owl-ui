@@ -8,6 +8,7 @@ export const Component = (props: IconsDefaultProps) => {
   const { children, className, style } = props;
 
   const modulePrefix = props.prefix;
+  const icon = props.icon;
   const display = props.display || 'Filled';
   const theme = props.theme || '';
   const appearance = props.appearance || '';
@@ -49,7 +50,7 @@ export const Component = (props: IconsDefaultProps) => {
         styleLocal.size,
       ].join(' ')}
     >
-      {children}
+      {icon}
     </span>
   );
 };
