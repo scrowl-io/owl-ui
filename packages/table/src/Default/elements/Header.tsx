@@ -3,7 +3,7 @@ import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiTableHeader';
 
-type HeaderColumn = {
+export type HeaderColumn = {
   label: string;
 };
 
