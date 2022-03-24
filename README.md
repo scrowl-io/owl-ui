@@ -36,6 +36,8 @@ Once those global packages have been installed, you can install the remaining de
 
 This project is built with: [Typescript](https://www.typescriptlang.org/), [React](https://reactjs.org/), and [Sass](https://sass-lang.com/). It uses [Storybook](https://storybook.js.org/) to visualize components and provide documentation. Additionally, we make use of the [VS Code](https://code.visualstudio.com/) extension [Adobe XD](https://marketplace.visualstudio.com/items?itemName=Adobe.xd) to help translate designs into code. This extension is optional to install.
 
+> You can find more information about how we use the XD pipeline [here](./design/README.md).
+
 ## Commands
 
 There are a number of custom commands to help facilitate development and publishing.
@@ -86,6 +88,8 @@ If you are creating a component that makes use of another, you can add it as a d
 
 `lerna add @owlui/[COMPONENT_DEPENDENCY] --scope=@owlui/[COMPONENT]`
 
+---
+
 ### Development
 
 We make use of Storybook to create components in isolation. To start storybook, run this command:
@@ -95,6 +99,8 @@ We make use of Storybook to create components in isolation. To start storybook, 
 Additionally, there is a simple web service that you can use to test out importing/consuming your component. Run this command to start the web service:
 
 `yarn run start:web`
+
+---
 
 ### Building
 
@@ -110,6 +116,8 @@ You can also create a build of the web service with:
 
 `yarn run build:web`
 
+---
+
 ### Publishing
 
 Publishing should only occur once your code has been tested, reviewed, and merged. To publish to npm, run the following command:
@@ -121,6 +129,12 @@ In order to publish to npm, you will need to have an [npm](https://www.npmjs.com
 There might arise a scenario where Lerna wasn’t able to completely publish. In that case, after you make the necessary corrections, run this command to complete it:
 
 `yarn run republish:lerna`
+
+---
+
+## Addition Command Information
+
+> You can find more information on commands [here](./scripts/README.md).
 
 ## Contributing
 
