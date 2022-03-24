@@ -1,21 +1,21 @@
-import * as React from 'react'
-import { component as {{{cap}}} } from '../index'
-import { {{{cap}}}{{{optionCap}}}Props } from '../{{{optionCap}}}.types'
+import * as React from 'react';
+import { component as {{{cap}}} } from '../index';
+import { {{{cap}}}{{{optionPas}}}Props } from '../{{{optionPas}}}.types';
 
-import { appearance } from './{{{optionCap}}}-appearance.stories'
-import { size } from './{{{optionCap}}}-size.stories'
-import { theme } from './{{{optionCap}}}-theme.stories'
+import { appearance } from './{{{optionPas}}}-appearance.stories';
+import { size } from './{{{optionPas}}}-size.stories';
+import { theme } from './{{{optionPas}}}-theme.stories';
 
-export const {{{optionCap}}} = (args: {{{cap}}}{{{optionCap}}}Props) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>
+export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>;
 
-{{{optionCap}}}.args = {
-    appearance: 'Primary',
-    size: 'Lg',
-    theme: 'Default'
-}
+{{{optionPas}}}.args = {
+  appearance: 'Primary',
+  size: 'Lg',
+  theme: 'Default',
+};
 
-{{{optionCap}}}.argTypes = {
-    appearance,
-    size,
-    theme
-}
+{{{optionPas}}}.argTypes = {
+  appearance,
+  size,
+  theme,
+};

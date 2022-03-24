@@ -18,6 +18,12 @@ export const toCapitalize = str => {
   return str.replace(/^[A-Z|a-z]/g, letter => letter.toUpperCase());
 };
 
+export const toPascalCase = str => {
+  return toCapitalize(str).replace(/[-_]+(.)?/g, (_, letter) => {
+    return letter ? letter.toUpperCase() : '';
+  });
+};
+
 export const hasLettersOnly = str => {
   return /^[a-zA-Z]+$/.test(str);
 };
@@ -26,10 +32,14 @@ export const isValidComponentInputName = str => {
   return /^([a-zA-Z]+(-|_)*)+/g.test(str);
 };
 
+export const isValidOptionInputName = str => {
+  return /^([a-zA-Z\d\D]+(-|_)*)+/g.test(str);
+};
+
 export const isValidPackageName = str => {
   const maxLn = 214;
   const scope = '@owlui/';
-  const scopedMaxLn = maxLn - scope.length
+  const scopedMaxLn = maxLn - scope.length;
   const ln = str.length;
   const valid = ln <= scopedMaxLn;
   const remain = scopedMaxLn - ln;
@@ -40,7 +50,7 @@ export const isValidPackageName = str => {
     maxLn: scopedMaxLn,
     ln,
     remain,
-    over
+    over,
   };
 };
 
@@ -51,5 +61,6 @@ export default {
   toCapitalize,
   hasLettersOnly,
   isValidComponentInputName,
-  isValidPackageName
-}
+  isValidPackageName,
+  isValidOptionInputName,
+};

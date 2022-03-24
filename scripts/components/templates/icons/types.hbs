@@ -1,0 +1,20 @@
+{{#with . as | data |}}
+// Do not edit directly
+// Generated on {{{data.datetime}}} by `yarn update:icons`
+
+import React from 'react';
+
+export type Icon = {{{data.icons}}};
+
+export type IconsDefaultCommons = {
+  display?: 'Filled' | 'Outlined';
+  appearance?: 'Primary' | 'Alt';
+  theme?: 'Default' | 'Dark' | 'Light';
+  size?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
+  prefix?: string;
+  icon: Icon;
+};
+
+export type IconsDefaultProps = Partial<IconsDefaultCommons> &
+  React.AllHTMLAttributes<HTMLSpanElement>;
+{{/with}}

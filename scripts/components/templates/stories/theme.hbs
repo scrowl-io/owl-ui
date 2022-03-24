@@ -1,14 +1,7 @@
-export const theme = {
-    options: [
-        'Default',
-        'Dark'
-    ],
-    control: {
-        type: 'select'
-    },
-    defaultValue: 'Default'
-}
+import { theme as Default } from '../../Default/stories/Default-theme.stories';
+
+export const theme = Default;
 
 export default {
-    theme
-}
+  theme,
+};
