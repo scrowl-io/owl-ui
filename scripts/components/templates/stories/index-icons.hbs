@@ -1,0 +1,26 @@
+import * as React from 'react';
+import { component as Icon } from '../index';
+import { {{{cap}}}{{{optionPas}}}Props } from '../{{{optionPas}}}.types';
+
+import { display } from './{{{optionPas}}}-display.stories';
+import { appearance } from './{{{optionPas}}}-appearance.stories';
+import { size } from './{{{optionPas}}}-size.stories';
+import { theme } from './{{{optionPas}}}-theme.stories';
+
+export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => (
+  <Icon {...args}></Icon>
+);
+
+{{{optionPas}}}.args = {
+  display: display.defaultValue,
+  appearance: 'Primary',
+  size: 'Lg',
+  theme: 'Default',
+};
+
+{{{optionPas}}}.argTypes = {
+  display,
+  appearance,
+  size,
+  theme,
+};

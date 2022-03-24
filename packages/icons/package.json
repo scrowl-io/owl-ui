@@ -1,0 +1,36 @@
+{
+  "name": "@owlui/icons",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icons#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.icons.js",
+  "module": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "sass": "src/_index.scss",
+  "style": "dist/owl.icons.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/icons"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@owlui/typings": "^0.0.1"
+  }
+}

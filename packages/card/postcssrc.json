@@ -7,7 +7,8 @@
       "grid": true
     },
     "postcss-modules": {
-      "generateScopedName": "owlui-[local]"
+      "generateScopedName": "owlui-[local]",
+      "localsConvention": "camelCase"
     }
   }
 }

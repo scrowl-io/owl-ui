@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { hasObjProp } from '@owlui/utils';
+// import { getCssModClass } from '@owlui/utils';
 
 const baseClass = 'owluiButton';
 
@@ -59,7 +59,6 @@ export const Component = (props: ButtonDefaultProps) => {
       </Element>
     );
   };
-  hasObjProp({ msg: 'hello' });
   return <>{buttonRenderer()}</>;
 };
 

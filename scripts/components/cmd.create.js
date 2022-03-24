@@ -101,7 +101,7 @@ function getParts(component, getOpt) {
     throw Error(`Component name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`)
   }
 
-  const componentName = strs.toLower(strs.toCamelCase(parts[0]))
+  const componentName = strs.toLower(strs.toPaselCase(parts[0]))
   const packageName = strs.isValidPackageName(componentName)
   
   if (!packageName.valid) {
