@@ -30,3 +30,13 @@ To use the design we need to import the design file from XD then create a Design
 - Click `Save`
 - Click `Start Editing` then `Finish Editing`
 - Use your terminal apply changes to the [Theme](../packages/theme/README.md) component `yarn run presetup`
+
+## Design Tokens
+
+The DSP makes use of reference and contextual tokens. Reference tokens are hard values taken from import of the XD file. The contextual tokens are custom to the DSP and use the reference tokens as a value. This methodology has been directly inspired from [material design](https://m3.material.io/foundations/design-tokens/overview).
+
+#### Example
+
+> `owl.ref.palette.dark` is used as the value for `owl.sys.color.on.light` and `owl.sys.bg.dark`.
+
+This approach allows the developer to be concerned with only having to implement the appropriate context to element styling and leaves the designer free to make changes to references without having to worry about breaking code.
