@@ -5,7 +5,7 @@ import * as styleMod from './styles.module.scss';
 const baseClass = 'owluiIcons';
 
 export const Component = (props: IconsDefaultProps) => {
-  const { children, className, style } = props;
+  const { className, style } = props;
 
   const modulePrefix = props.prefix;
   const icon = props.icon;
