@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { TableDefaultProps } from '../Default.types';
 import Row, { RowItem } from './Row';
 import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiTableBody';
 
-type BodyProps = TableDefaultProps & {
-  items: RowItem[] | undefined;
+type BodyProps = React.TableHTMLAttributes<HTMLTableElement> & {
+  items: RowItem[];
 };
 
 const Body = (props: BodyProps) => {

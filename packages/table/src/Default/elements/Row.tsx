@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TableDefaultProps } from '../Default.types';
 import Cell from './Cell';
 import * as styles from './styles.module.scss';
 
@@ -9,7 +8,7 @@ export type RowItem = {
   [key: string]: string | number | boolean;
 };
 
-type RowProps = TableDefaultProps & {
+type RowProps = React.TableHTMLAttributes<HTMLTableElement> & {
   item: RowItem;
 };
 
@@ -24,7 +23,7 @@ const Row = (props: RowProps) => {
     ? `${styles[baseClass]} ${localProps.className}`
     : styles[baseClass];
 
-  const renderColums = (item: RowItem | undefined) => {
+  const renderColums = (item: RowItem) => {
     const columns = [];
 
     for (const key in item) {

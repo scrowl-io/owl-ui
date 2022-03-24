@@ -3,13 +3,12 @@ import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiTableHeader';
 
-export type HeaderColumn = HTMLTableElement & {
+type HeaderColumn = {
   label: string;
 };
 
-type HeaderProps = {
-  columns: HeaderColumn[] | undefined;
-  className?: string;
+type HeaderProps = React.TableHTMLAttributes<HTMLTableElement> & {
+  columns: HeaderColumn[];
 };
 
 const Header = (props: HeaderProps) => {
