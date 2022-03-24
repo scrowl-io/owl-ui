@@ -4,6 +4,7 @@ import {
   toLower,
   toCapitalize,
   isValidComponentInputName,
+  toCamelCase,
   toPascalCase,
   isValidPackageName,
 } from '../utls/strings.js';
@@ -110,7 +111,7 @@ function getParts(component, getOpt) {
     );
   }
 
-  const componentName = toPascalCase(parts[0]);
+  const componentName = toCamelCase(parts[0]);
   const packageName = isValidPackageName(componentName);
 
   if (!packageName.valid) {
@@ -137,6 +138,7 @@ function getParts(component, getOpt) {
     low: toLower(componentName),
     option: option,
     optionCap: toCapitalize(option),
+    optionPas: toPascalCase(option),
   };
 }
 
@@ -179,10 +181,11 @@ function processArgs() {
         newComponent = getParts(argv.n);
 
         if (newComponent.option !== 'default') {
-          const defaultOption = JSON.parse(JSON.stringify(newComponent));
+          const defaultOption = Object.assign({}, newComponent);
 
           defaultOption.option = 'default';
           defaultOption.optionCap = toCapitalize(defaultOption.option);
+          defaultOption.optionPas = toPascalCase(defaultOption.option);
           components.push(defaultOption);
         } else {
           components.push(newComponent);
