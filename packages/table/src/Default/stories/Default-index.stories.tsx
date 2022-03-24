@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { component as Table } from '../index';
-import { component as TableHeader } from '../../Header/index';
 import { component as TableBody } from '../../Body/index';
 import { TableDefaultProps } from '../Default.types';
 
@@ -10,7 +9,6 @@ import { theme } from './Default-theme.stories';
 
 export const Default = (args: TableDefaultProps) => (
   <Table {...args}>
-    <TableHeader columns={columns} />
     <TableBody items={items} />
   </Table>
 );
@@ -19,6 +17,20 @@ Default.args = {
   appearance: 'Default',
   outline: true,
   theme: 'Default',
+  columns: [
+    {
+      label: '#',
+    },
+    {
+      label: 'First Name',
+    },
+    {
+      label: 'Last Name',
+    },
+    {
+      label: 'Username',
+    },
+  ],
 };
 
 Default.argTypes = {
@@ -26,21 +38,6 @@ Default.argTypes = {
   outline,
   theme,
 };
-
-const columns = [
-  {
-    label: '#',
-  },
-  {
-    label: 'First Name',
-  },
-  {
-    label: 'Last Name',
-  },
-  {
-    label: 'Username',
-  },
-];
 
 const items = [
   {

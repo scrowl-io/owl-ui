@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { TableDefaultProps } from './Default.types';
+import Header from './elements/Header';
 import * as styleMod from './styles.module.scss';
 
 const baseClass = 'owluiTable';
 
 export const Component = (props: TableDefaultProps) => {
-  const { children, className, style } = props;
+  const { columns, className, style } = props;
 
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
@@ -38,7 +39,7 @@ export const Component = (props: TableDefaultProps) => {
         .join(' ')
         .trim()}
     >
-      {children}
+      <Header columns={columns} />
     </table>
   );
 };

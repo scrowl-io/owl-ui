@@ -1,10 +1,18 @@
 import * as React from 'react';
-import { TableHeaderProps } from './Header.types';
 import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiTableHeader';
 
-export const Component = (props: TableHeaderProps) => {
+export type HeaderColumn = HTMLTableElement & {
+  label: string;
+};
+
+type HeaderProps = {
+  columns: HeaderColumn[] | undefined;
+  className?: string;
+};
+
+const Header = (props: HeaderProps) => {
   const { columns } = props;
   const localProps = Object.assign({}, props);
 
@@ -28,6 +36,4 @@ export const Component = (props: TableHeaderProps) => {
   );
 };
 
-export default {
-  Component,
-};
+export default Header;
