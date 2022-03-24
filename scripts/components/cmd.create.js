@@ -1,14 +1,21 @@
 import parser from 'yargs-parser';
-import strs from '../utls/strings.js';
+import {
+  hasLettersOnly,
+  toLower,
+  toCapitalize,
+  isValidComponentInputName,
+  toPascalCase,
+  isValidPackageName,
+} from '../utls/strings.js';
 import { log, clear } from '../utls/console.js';
 import fs from '../utls/file-system.js';
 import { compile, definePaths } from './templater.js';
-import tempOption from './create-option.js';
+import { create as createTmpl } from './create-option.js';
 
 const argv = parser(process.argv.slice(2));
 
 function createFolderMap(component) {
-  if (!strs.hasLettersOnly(component.name)) {
+  if (!hasLettersOnly(component.name)) {
     throw Error(
       'Component name must not contain special characters or numbers.'
     );
@@ -36,8 +43,8 @@ function updateSource(folders, component) {
 
   component.options = options.sort().map(opt => {
     return {
-      name: strs.toLower(opt),
-      cap: strs.toCapitalize(opt),
+      name: toLower(opt),
+      cap: toCapitalize(opt),
     };
   });
 
@@ -53,7 +60,7 @@ function updateSource(folders, component) {
 function addOption(component) {
   const folders = createFolderMap(component);
 
-  tempOption.create(component, folders);
+  createTmpl(component, folders);
   updateSource(folders, component);
 }
 
@@ -97,14 +104,14 @@ function getParts(component, getOpt) {
     throw Error('Component name missing');
   }
 
-  if (!strs.isValidComponentInputName(parts[0])) {
+  if (!isValidComponentInputName(parts[0])) {
     throw Error(
       `Component name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`
     );
   }
 
-  const componentName = strs.toLower(strs.toPaselCase(parts[0]));
-  const packageName = strs.isValidPackageName(componentName);
+  const componentName = toPascalCase(parts[0]);
+  const packageName = isValidPackageName(componentName);
 
   if (!packageName.valid) {
     throw Error(
@@ -118,7 +125,7 @@ function getParts(component, getOpt) {
 
   const option = getOpt || parts[1] ? parts[1] : 'default';
 
-  if (!strs.isValidComponentInputName(option)) {
+  if (!isValidComponentInputName(option)) {
     throw Error(
       `Component option name must NOT include any numbers or special characters (except for underscores [_] or dashes [-])`
     );
@@ -126,10 +133,10 @@ function getParts(component, getOpt) {
 
   return {
     name: componentName,
-    cap: strs.toCapitalize(componentName),
-    low: strs.toLower(componentName),
+    cap: toCapitalize(componentName),
+    low: toLower(componentName),
     option: option,
-    optionCap: strs.toCapitalize(option),
+    optionCap: toCapitalize(option),
   };
 }
 
@@ -146,7 +153,7 @@ function optionExists(component) {
 }
 
 function processArgs() {
-  const components = [];
+  let components = [];
 
   try {
     if (argv.hasOwnProperty('o')) {
@@ -175,7 +182,7 @@ function processArgs() {
           const defaultOption = JSON.parse(JSON.stringify(newComponent));
 
           defaultOption.option = 'default';
-          defaultOption.optionCap = strs.toCapitalize(defaultOption.option);
+          defaultOption.optionCap = toCapitalize(defaultOption.option);
           components.push(defaultOption);
         } else {
           components.push(newComponent);
