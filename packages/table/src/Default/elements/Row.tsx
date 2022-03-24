@@ -1,11 +1,19 @@
 import * as React from 'react';
-import { RowItem, TableRowProps } from './Row.types';
-import { component as Cell } from '../Cell/index';
+import { TableDefaultProps } from '../Default.types';
+import Cell from './Cell';
 import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiTableRow';
 
-export const Component = (props: TableRowProps) => {
+export type RowItem = {
+  [key: string]: string | number | boolean;
+};
+
+type RowProps = TableDefaultProps & {
+  item: RowItem;
+};
+
+const Row = (props: RowProps) => {
   const { item } = props;
   const localProps = Object.assign({}, props);
 
@@ -31,6 +39,4 @@ export const Component = (props: TableRowProps) => {
   return <tr className={localProps.className}>{renderColums(item)}</tr>;
 };
 
-export default {
-  Component,
-};
+export default Row;

@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { TableCellProps } from './Cell.types';
+import type { TableDefaultProps } from '../Default.types';
 import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiTableCell';
 
-export const Component = (props: TableCellProps) => {
+type CellProps = TableDefaultProps & {
+  children: React.ReactNode;
+};
+
+const Cell = (props: CellProps) => {
   const { children } = props;
   const localProps = Object.assign({}, props);
 
@@ -18,6 +22,4 @@ export const Component = (props: TableCellProps) => {
   return <td className={localProps.className}>{children}</td>;
 };
 
-export default {
-  Component,
-};
+export default Cell;

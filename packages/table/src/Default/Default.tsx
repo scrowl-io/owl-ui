@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { TableDefaultProps } from './Default.types';
 import Header from './elements/Header';
+import Body from './elements/Body';
 import * as styleMod from './styles.module.scss';
 
 const baseClass = 'owluiTable';
 
 export const Component = (props: TableDefaultProps) => {
-  const { columns, className, style } = props;
+  const { columns, items, className, style } = props;
 
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
@@ -40,6 +41,7 @@ export const Component = (props: TableDefaultProps) => {
         .trim()}
     >
       <Header columns={columns} />
+      <Body items={items} />
     </table>
   );
 };
