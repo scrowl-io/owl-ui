@@ -1,0 +1,65 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-table {
+  @include theme.defaultTheme-default;
+  width: 100%;
+  border-collapse: collapse;
+  caption-side: top;
+
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
+    border: 0 solid;
+    border-color: inherit;
+  }
+
+  > :not(:first-child) {
+    border-top: 2px solid;
+  }
+
+  > :not(caption) {
+    > * > * {
+      padding: 0.5rem;
+      border-bottom-width: 1px;
+    }
+  }
+
+  th {
+    text-align: inherit;
+  }
+
+  tbody {
+    vertical-align: inherit;
+  }
+
+  &--outline {
+    > :not(caption) {
+      > * {
+        border-width: 1px 0;
+
+        > * {
+          border-width: 0 1px;
+        }
+      }
+    }
+  }
+
+  &--theme {
+    &--default {
+      &-primary {
+        @include theme.defaultTheme-branding;
+      }
+
+      &-secondary {
+        @include theme.defaultTheme-branding--secondary;
+      }
+    }
+
+    &--dark {
+      @include theme.darkTheme-branding;
+    }
+  }
+}

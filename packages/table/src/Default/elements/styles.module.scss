@@ -1,0 +1,19 @@
+@use '~@owlui/theme' as theme;
+
+.owlui-table {
+  &-header {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+
+  &-body {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+
+  &-row {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+
+  &-cell {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+}
