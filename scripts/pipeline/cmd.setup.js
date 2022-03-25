@@ -26,6 +26,40 @@ const fileMap = {
       return contents;
     },
   },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.eot',
+  },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.ttf',
+  },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff',
+  },
+  'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff2',
+  },
+  'scripts/pipeline/assets/MaterialIcons-Outlined.woff2': {
+    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Outlined.woff2',
+  },
+  'node_modules/material-design-icons/iconfont/material-icons.css': {
+    dest: 'packages/theme/src/global/_font-icons.scss',
+    transformer: raw => {
+      let outlinedScss = fs.getFile(
+        'scripts/pipeline/assets/MaterialIcons-Outlined.scss'
+      );
+      let contents = raw
+        .replace(/url\(/g, () => {
+          return 'url(./assets/icons/';
+        })
+        .replace(/font-size: [\d]*px/g, () => {
+          return 'font-size: $owl-sys-typeface-body-size';
+        });
+      const scssImports = `@use './variables.scss' as *;`;
+
+      contents = `${scssImports}\n\n${contents}\n${outlinedScss}`;
+      return contents;
+    },
+  },
 };
 
 function copy() {
@@ -35,9 +69,10 @@ function copy() {
 
     if (fileMap[file].transformer) {
       contents = fileMap[file].transformer(contents);
+      fs.setFile(dest, contents);
+    } else {
+      fs.copyFile(file, dest);
     }
-
-    fs.setFile(dest, contents);
   }
 }
 

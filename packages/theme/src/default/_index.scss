@@ -1,5 +1,6 @@
 @use '../global/variables' as vars;
 @use '../global/font-brand' as *;
+@use '../global/font-icons' as *;
 
 @mixin default {
   background-color: vars.$owl-sys-bg-light;

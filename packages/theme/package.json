@@ -33,7 +33,8 @@
     "react": "^17.0.2"
   },
   "dependencies": {
-    "@owlui/typings": "^0.0.1"
+    "@owlui/typings": "^0.0.1",
+    "material-design-icons": "^3.0.1"
   },
   "parcelrc": {
     "--config": "./packages/theme/.parcelrc",
