@@ -15,15 +15,19 @@ Default.args = {
   columns: [
     {
       label: '#',
+      field: 'id',
     },
     {
       label: 'First Name',
+      field: 'firstName',
     },
     {
       label: 'Last Name',
+      field: 'lastName',
     },
     {
       label: 'Username',
+      field: 'userName',
     },
   ],
   items: [

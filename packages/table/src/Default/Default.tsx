@@ -9,6 +9,9 @@ const baseClass = 'owluiTable';
 export const Component = (props: TableDefaultProps) => {
   const { columns, items, className, style } = props;
 
+  const tableColumns = columns || [];
+  const tableItems = items || [];
+
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
   const appearance = props.appearance || 'Primary';
@@ -40,8 +43,8 @@ export const Component = (props: TableDefaultProps) => {
         .join(' ')
         .trim()}
     >
-      <Header columns={columns} />
-      <Body items={items} />
+      <Header columns={tableColumns} />
+      <Body columns={tableColumns} items={tableItems} />
     </table>
   );
 };

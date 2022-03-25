@@ -1,15 +1,12 @@
 import * as React from 'react';
-import Row, { RowItem } from './Row';
 import * as styles from './styles.module.scss';
+import { TableBodyProps } from '../Default.types';
+import Row from './Row';
 
 const baseClass = 'owluiTableBody';
 
-type BodyProps = React.TableHTMLAttributes<HTMLTableElement> & {
-  items: RowItem[];
-};
-
-const Body = (props: BodyProps) => {
-  const { items } = props;
+const Body = (props: TableBodyProps) => {
+  const { items, columns } = props;
   const localProps = Object.assign({}, props);
 
   localProps.className = Object.prototype.hasOwnProperty.call(
@@ -21,7 +18,10 @@ const Body = (props: BodyProps) => {
 
   return (
     <tbody className={localProps.className}>
-      {items && items.map((item, index) => <Row key={index} item={item} />)}
+      {items &&
+        items.map((item, index) => (
+          <Row key={index} item={item} columns={columns} />
+        ))}
     </tbody>
   );
 };

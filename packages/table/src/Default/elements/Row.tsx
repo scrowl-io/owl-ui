@@ -1,19 +1,12 @@
 import * as React from 'react';
 import Cell from './Cell';
 import * as styles from './styles.module.scss';
+import { TableRowProps, TableRowItem, TableColumnItem } from '../Default.types';
 
 const baseClass = 'owluiTableRow';
 
-export type RowItem = {
-  [key: string]: string | number | boolean;
-};
-
-type RowProps = React.TableHTMLAttributes<HTMLTableElement> & {
-  item: RowItem;
-};
-
-const Row = (props: RowProps) => {
-  const { item } = props;
+const Row = (props: TableRowProps) => {
+  const { item, columns } = props;
   const localProps = Object.assign({}, props);
 
   localProps.className = Object.prototype.hasOwnProperty.call(
@@ -23,16 +16,14 @@ const Row = (props: RowProps) => {
     ? `${styles[baseClass]} ${localProps.className}`
     : styles[baseClass];
 
-  const renderColums = (item: RowItem) => {
-    const columns = [];
+  const renderColums = (item: TableRowItem) => {
+    let key = '';
 
-    for (const key in item) {
-      if (Object.prototype.hasOwnProperty.call(item, key)) {
-        columns.push(<Cell key={key}>{item[key]}</Cell>);
-      }
-    }
+    return columns.map((column: TableColumnItem, index: number) => {
+      key = `${column.field}-${index}`;
 
-    return columns;
+      return <Cell key={key}>{item[column.field]}</Cell>;
+    });
   };
 
   return <tr className={localProps.className}>{renderColums(item)}</tr>;

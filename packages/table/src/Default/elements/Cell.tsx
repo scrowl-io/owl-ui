@@ -1,13 +1,10 @@
 import * as React from 'react';
 import * as styles from './styles.module.scss';
+import { TableCellProps } from '../Default.types';
 
 const baseClass = 'owluiTableCell';
 
-type CellProps = React.TableHTMLAttributes<HTMLTableElement> & {
-  children: React.ReactNode;
-};
-
-const Cell = (props: CellProps) => {
+const Cell = (props: TableCellProps) => {
   const { children } = props;
   const localProps = Object.assign({}, props);
 

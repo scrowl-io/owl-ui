@@ -1,17 +1,10 @@
 import * as React from 'react';
 import * as styles from './styles.module.scss';
+import { TableHeaderProps } from '../Default.types';
 
 const baseClass = 'owluiTableHeader';
 
-export type HeaderColumn = {
-  label: string;
-};
-
-type HeaderProps = React.TableHTMLAttributes<HTMLTableElement> & {
-  columns: HeaderColumn[];
-};
-
-const Header = (props: HeaderProps) => {
+const Header = (props: TableHeaderProps) => {
   const { columns } = props;
   const localProps = Object.assign({}, props);
 
