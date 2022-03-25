@@ -1,6 +1,8 @@
 # Owl UI
 
-This repository is a Design System intended to act as the foundational UI layer for all OSG projects. The [Scrowl](https://github.com/EEBOS/SCROWL) project will be the first to utilize it, with the hope that we will incorporate this system into the existing projects.
+This repository is a **React Component Design System** intended to act as the foundational UI layer for all OSG projects. The [Scrowl](https://github.com/EEBOS/SCROWL) project will be the first to utilize it, with the hope that we will incorporate this system into the existing projects.
+
+This document explains the what, how, and why of the project. Details on how to best implement this Design System in your project can be found [here](./packages/components/README.md).
 
 ## Getting Started
 
@@ -25,6 +27,10 @@ Being a monorepo, this project uses Lerna to manage interdependencies as well as
 ### [Parcel](https://parceljs.org/)
 
 This project uses Parcel to build the packages for distribution to npm.
+
+### [React](https://reactjs.org/)
+
+This project is built with functional react components.
 
 ---
 
