@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-// import { getCssModClass } from '@owlui/utils';
 
 const baseClass = 'owluiButton';
 
