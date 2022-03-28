@@ -2,6 +2,7 @@ import * as React from 'react';
 import Cell from './Cell';
 import * as styles from './styles.module.scss';
 import { TableRowProps, TableRowItem, TableColumnItem } from '../Default.types';
+import { getCssModClass } from '@owlui/utils';
 
 const baseClass = 'owluiTableRow';
 
@@ -9,12 +10,7 @@ const Row = (props: TableRowProps) => {
   const { item, columns } = props;
   const localProps = Object.assign({}, props);
 
-  localProps.className = Object.prototype.hasOwnProperty.call(
-    localProps,
-    'className'
-  )
-    ? `${styles[baseClass]} ${localProps.className}`
-    : styles[baseClass];
+  localProps.className = getCssModClass({ localProps, baseClass, styles });
 
   const renderColums = (item: TableRowItem) => {
     let key = '';
