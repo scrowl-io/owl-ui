@@ -1,6 +1,7 @@
 import fs from '../utls/file-system.js';
 import parser from 'yargs-parser';
 import { log, clear, color } from '../utls/console.js';
+import { hasProp } from '../utls/objects.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -26,7 +27,7 @@ const formatReport = rawFile => {
       const localPath = rawPath.replace(__dirname, '');
       const msg = parts[1].trim();
 
-      if (!Object.prototype.hasOwnProperty.call(report, localPath)) {
+      if (!hasProp(report, localPath)) {
         report[localPath] = [];
       }
 
@@ -50,7 +51,7 @@ const processArgs = () => {
   try {
     const argv = parser(process.argv.slice(2));
 
-    if (!Object.prototype.hasOwnProperty.call(argv, 'f')) {
+    if (!hasProp(argv, 'f')) {
       throw Error('No file name supplied, use -f to specify a file');
     }
 

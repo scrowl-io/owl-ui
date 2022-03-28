@@ -1,4 +1,5 @@
 import { CSSModClass } from './types';
+import { hasProp } from '../../../scripts/utls/objects';
 
 /**
  * Method used to create classes for sub components based on the CSS Module object
@@ -8,10 +9,7 @@ export const getCssModClass = ({
   styles,
   baseClass,
 }: CSSModClass): string => {
-  localProps.className = Object.prototype.hasOwnProperty.call(
-    localProps,
-    'className'
-  )
+  localProps.className = hasProp(localProps, 'className')
     ? `${styles[baseClass]} ${localProps.className}`
     : styles[baseClass];
 
@@ -19,5 +17,6 @@ export const getCssModClass = ({
 };
 
 export default {
+  hasProp,
   getCssModClass,
 };
