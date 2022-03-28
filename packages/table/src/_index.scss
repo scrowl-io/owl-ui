@@ -1,5 +1,2 @@
-@forward './Body/styles.module.scss' as bodyTable-*;
-@forward './Cell/styles.module.scss' as cellTable-*;
 @forward './Default/styles.module.scss' as defaultTable-*;
-@forward './Default/elements/styles.module.scss' as tableHeader-*;
-@forward './Row/styles.module.scss' as rowTable-*;
+@forward './Default/elements/styles.module.scss' as tableElements-*;
