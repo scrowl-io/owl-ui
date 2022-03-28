@@ -6,7 +6,9 @@ import { appearance } from './Default-appearance.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-export const Default = (args: NavigationDrawerDefaultProps) => <NavigationDrawer {...args}>Hello World</NavigationDrawer>;
+export const Default = (args: NavigationDrawerDefaultProps) => (
+  <NavigationDrawer {...args}>Hello World</NavigationDrawer>
+);
 
 Default.args = {
   appearance: 'Primary',

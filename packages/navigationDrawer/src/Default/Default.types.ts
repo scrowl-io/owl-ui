@@ -8,4 +8,6 @@ export type NavigationDrawerDefaultCommons = {
   children: React.ReactNode;
 };
 
-export type NavigationDrawerDefaultProps = Partial<NavigationDrawerDefaultCommons> & React.AllHTMLAttributes<HTMLDivElement>;
+export type NavigationDrawerDefaultProps =
+  Partial<NavigationDrawerDefaultCommons> &
+    React.AllHTMLAttributes<HTMLDivElement>;
