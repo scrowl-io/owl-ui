@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Component as Default } from '../Default/Default'
 import { {{{cap}}}{{{optionPas}}}Props } from './{{{optionPas}}}.types'
+import { getCssModClass } from '@owlui/utils'
 import * as styles from './styles.module.scss'
 
 const baseClass = 'owlui{{{cap}}}{{{optionPas}}}'
@@ -9,7 +10,7 @@ export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
   const { children } = props
   const localProps = Object.assign({}, props)
   
-  localProps.className = localProps.hasOwnProperty('className') ? `${styles[baseClass]} ${localProps.className}` : styles[baseClass]
+  localProps.className = getCssModClass({ localProps, baseClass, styles })
 
   return <Default
     {...localProps}
