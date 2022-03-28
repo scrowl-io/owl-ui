@@ -4,14 +4,14 @@ export type TableRowItem = {
   [key: string]: string | number | boolean;
 };
 
-export type TableItems = Array<TableRowItem>;
+export type TableItems = Array<TableRowItem> | [];
 
 export type TableColumnItem = {
   label: string;
   field: string;
 };
 
-export type TableColumns = Array<TableColumnItem>;
+export type TableColumns = Array<TableColumnItem> | [];
 
 export type TableHeaderProps =
   React.TableHTMLAttributes<HTMLTableCellElement> & {
