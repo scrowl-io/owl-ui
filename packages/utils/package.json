@@ -5,7 +5,6 @@
   "author": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/utils#readme",
   "license": "MIT",
-  "type": "module",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "types": "dist/types.d.ts",
@@ -30,10 +29,7 @@
   },
   "isLibrary": true,
   "outputFormat": "commonjs",
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/EEBOS/owl-ui/issues"
+  "peerDependencies": {
+    "react": "^17.0.2"
   }
 }
