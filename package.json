@@ -40,7 +40,7 @@
     "start:storybook": "start-storybook -p 6006",
     "prebuild:web": "yarn run presetup",
     "build:web": "parcel build web --log-level warn",
-    "prestart:web": "yarn run fix",
+    "prestart:web": "yarn run fix && yarn run presetup",
     "start:web": "parcel serve web"
   },
   "workspaces": [

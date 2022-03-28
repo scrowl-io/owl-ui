@@ -1,3 +1,3 @@
-import fixes from '../node-module-fixes/module-fixes.js'
+import { apply as nodeFixes } from '../node-module-fixes/module-fixes.js';
 
-fixes.apply()
+nodeFixes();

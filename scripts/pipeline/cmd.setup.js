@@ -51,8 +51,11 @@ const fileMap = {
         .replace(/url\(/g, () => {
           return 'url(./assets/icons/';
         })
-        .replace(/font-size: [\d]*px/g, () => {
-          return 'font-size: $owl-sys-typeface-body-size';
+        .replace(/font-size: [\d]*px;/g, () => {
+          return '';
+        })
+        .replace(/.material-icons/g, () => {
+          return '.owlui-icons';
         });
       const scssImports = `@use './variables.scss' as *;`;
 
