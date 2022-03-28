@@ -60,6 +60,7 @@ export default {
   prettyJson,
   toLower,
   toCapitalize,
+  toPascalCase,
   hasLettersOnly,
   isValidComponentInputName,
   isValidPackageName,

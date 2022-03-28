@@ -4,13 +4,14 @@ import {
   toLower,
   toCapitalize,
   isValidComponentInputName,
+  toCamelCase,
   toPascalCase,
   isValidPackageName,
 } from '../utls/strings.js';
 import { log, clear } from '../utls/console.js';
 import fs from '../utls/file-system.js';
 import { compile, definePaths } from './templater.js';
-import { create as createTemp } from './create-option.js';
+import { create as createTmpl } from './create-option.js';
 
 const argv = parser(process.argv.slice(2));
 
@@ -60,7 +61,7 @@ function updateSource(folders, component) {
 function addOption(component) {
   const folders = createFolderMap(component);
 
-  createTemp(component, folders);
+  createTmpl(component, folders);
   updateSource(folders, component);
 }
 
@@ -110,7 +111,7 @@ function getParts(component, getOpt) {
     );
   }
 
-  const componentName = toLower(toPascalCase(parts[0]));
+  const componentName = toCamelCase(parts[0]);
   const packageName = isValidPackageName(componentName);
 
   if (!packageName.valid) {
@@ -137,6 +138,7 @@ function getParts(component, getOpt) {
     low: toLower(componentName),
     option: option,
     optionCap: toCapitalize(option),
+    optionPas: toPascalCase(option),
   };
 }
 
@@ -179,10 +181,11 @@ function processArgs() {
         newComponent = getParts(argv.n);
 
         if (newComponent.option !== 'default') {
-          const defaultOption = JSON.parse(JSON.stringify(newComponent));
+          const defaultOption = Object.assign({}, newComponent);
 
           defaultOption.option = 'default';
           defaultOption.optionCap = toCapitalize(defaultOption.option);
+          defaultOption.optionPas = toPascalCase(defaultOption.option);
           components.push(defaultOption);
         } else {
           components.push(newComponent);
