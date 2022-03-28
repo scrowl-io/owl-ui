@@ -153,7 +153,7 @@ function optionExists(component) {
 }
 
 function processArgs() {
-  const components = [];
+  let components = [];
 
   try {
     if (argv.hasOwnProperty('o')) {
