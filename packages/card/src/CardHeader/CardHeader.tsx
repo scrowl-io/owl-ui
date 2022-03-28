@@ -8,9 +8,10 @@ const baseClass = 'owluiCardHeader';
 export const Component = (props: CardCardHeaderProps) => {
   const { children } = props;
   const localProps = Object.assign({}, props);
-  const className = getCssModClass({ localProps, baseClass, styles });
 
-  return <div className={className}>{children}</div>;
+  localProps.className = getCssModClass({ localProps, baseClass, styles });
+
+  return <div className={localProps.className}>{children}</div>;
 };
 
 export default {
