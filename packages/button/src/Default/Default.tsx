@@ -58,7 +58,6 @@ export const Component = (props: ButtonDefaultProps) => {
       </Element>
     );
   };
-
   return <>{buttonRenderer()}</>;
 };
 
