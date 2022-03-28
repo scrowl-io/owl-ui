@@ -56,6 +56,7 @@ export const isValidPackageName = str => {
 
 export default {
   toCamelCase,
+  toPascalCase,
   prettyJson,
   toLower,
   toCapitalize,
