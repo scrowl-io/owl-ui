@@ -1,0 +1,36 @@
+{
+    "name": "@owlui/navigationdrawer",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/navigationDrawer#readme",
+    "license": "MIT",
+    "source": "src/index.ts",
+    "main": "dist/owl.navigationDrawer.js",
+    "module": "dist/index.js",
+    "types": "dist/types.d.ts",
+    "sass": "src/_index.scss",
+    "style": "dist/owl.navigationDrawer.css",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "sideEffects": [
+        "*.css"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EEBOS/owl-ui.git",
+        "directory": "packages/navigationDrawer"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "isLibrary": true,
+    "outputFormat": "commonjs",
+    "peerDependencies": {
+        "react": "^17.0.2"
+    },
+    "dependencies": {
+        "@owlui/typings": "^0.0.1"
+    }
+}
