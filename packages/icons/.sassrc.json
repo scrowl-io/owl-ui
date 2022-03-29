@@ -1,0 +1,4 @@
+{
+  "outFile": "dist/owl.icons.css",
+  "includePaths": ["node_modules", "src/", "../.."]
+}
