@@ -97,12 +97,15 @@ function process() {
   const pkgs = locations.entries();
   const componentsPkg = 'components';
   const themePkg = 'theme';
+  const utilsPkg = 'utils';
 
   fs.removeSync('.parcel-cache');
   applyFixes();
 
+  preBuild(utilsPkg, pkgs[utilsPkg]);
+
   for (let pkg in pkgs) {
-    if (pkg !== componentsPkg) {
+    if (pkg !== componentsPkg && pkg !== utilsPkg) {
       preBuild(pkg, pkgs[pkg]);
     }
   }

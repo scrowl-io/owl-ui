@@ -1,20 +1,24 @@
 import * as React from 'react';
 import { NavigationDrawerDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
+import { findModClass } from '@owlui/utils';
+import { Component as NavHeader } from './elements/Header';
+import { Component as NavContent } from './elements/Content';
 
 const baseClass = 'owluiNavigationDrawer';
+const getClassName = findModClass(styleMod, baseClass);
 
 export const Component = (props: NavigationDrawerDefaultProps) => {
-  const { children, className, style } = props;
+  const { className, style, header, items } = props;
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
-  const appearance = props.appearance || 'Primary';
-  const size = props.size || 'Md';
+  const appearance = props.appearance || '';
+  const size = props.size || 'Sm';
   const styleLocal = {
     base: styleMod[baseClass],
-    theme: styleMod[`${baseClass}Theme${theme}`],
-    appearance: styleMod[`${baseClass}Theme${theme}${appearance}`],
-    size: styleMod[`${baseClass}Size${size}`],
+    theme: getClassName(`Theme${theme}`),
+    appearance: getClassName(`Theme${theme}${appearance}`),
+    size: getClassName(`Size${size}`),
   };
 
   if (modulePrefix !== undefined && modulePrefix !== null) {
@@ -24,8 +28,11 @@ export const Component = (props: NavigationDrawerDefaultProps) => {
     styleLocal.size = `${modulePrefix}-${styleLocal.size}`;
   }
 
+  const Header = header ? <NavHeader>{header}</NavHeader> : '';
+  const Content = items ? <NavContent items={items} /> : '';
+
   return (
-    <div
+    <aside
       style={style}
       className={[
         className,
@@ -35,8 +42,9 @@ export const Component = (props: NavigationDrawerDefaultProps) => {
         styleLocal.size,
       ].join(' ')}
     >
-      {children}
-    </div>
+      {Header}
+      {Content}
+    </aside>
   );
 };
 
