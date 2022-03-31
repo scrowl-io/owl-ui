@@ -48,8 +48,8 @@ const fileMap = {
         'scripts/pipeline/assets/MaterialIcons-Outlined.scss'
       );
       let contents = raw
-        .replace(/url\(/g, () => {
-          return 'url(./assets/icons/';
+        .replace(/url\((\w*(\.|-|\w)*)\)/g, (match, url) => {
+          return `url('./assets/icons/${url}')`;
         })
         .replace(/font-size: [\d]*px;/g, () => {
           return '';

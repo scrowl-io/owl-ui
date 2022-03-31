@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-standard-scss"
+  ],
+  "plugins": ["stylelint-prettier"],
+  "rules": {
+    "color-hex-length": "long",
+    "declaration-block-no-redundant-longhand-properties": null,
+    "declaration-colon-newline-after": null,
+    "font-family-no-missing-generic-family-keyword": [
+      true,
+      {
+        "ignoreFontFamilies": ["Material Icons", "Material Icons Outlined"]
+      }
+    ],
+    "function-no-unknown": [
+      true,
+      { "ignoreFunctions": ["math.div", "math.percentage"] }
+    ],
+    "no-descending-specificity": null,
+    "prettier/prettier": true,
+    "scss/at-mixin-pattern": null,
+    "string-quotes": "single",
+    "value-list-comma-newline-after": null,
+    "value-keyword-case": null
+  }
+}

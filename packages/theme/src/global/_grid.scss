@@ -6,14 +6,12 @@ $gutter: $owl-sys-layout-spacer;
 $gutter-half: ($gutter * 0.5);
 $gutter-comp: ($gutter-half * -1);
 $margin-outer: ($gutter * 2);
-
-$breakpoint-xs: 0rem;
+$breakpoint-xs: 0;
 $breakpoint-sm: 30rem;
 $breakpoint-md: 40rem;
 $breakpoint-lg: 64rem;
 $breakpoint-xl: 75rem;
 $breakpoint-hd: 100rem;
-
 $column-size-1: math.percentage(math.div(1, math.div(12, 1)));
 $column-size-2: math.percentage(math.div(1, math.div(12, 2)));
 $column-size-3: math.percentage(math.div(1, math.div(12, 3)));
