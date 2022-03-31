@@ -33,7 +33,8 @@
   },
   "dependencies": {
     "@owlui/theme": "^0.0.15",
-    "@owlui/typings": "^0.0.15"
+    "@owlui/typings": "^0.0.15",
+    "@owlui/utils": "^0.0.0"
   },
   "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }

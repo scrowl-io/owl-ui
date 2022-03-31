@@ -31,7 +31,10 @@ function update() {
     if (pkg !== 'components') {
       const component = `@owlui/${pkg}`;
 
-      if (pkg !== 'theme') {
+      if (
+        !pkgs[pkg].config.owlrc ||
+        !pkgs[pkg].config.owlrc.ignoreComponentLib
+      ) {
         data.components.push({
           name: pkg,
           cap: strs.toCapitalize(pkg),
