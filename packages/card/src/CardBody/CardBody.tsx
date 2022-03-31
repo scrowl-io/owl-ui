@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { CardCardBodyProps } from './CardBody.types';
+import { getCssModClass } from '@owlui/utils';
 import * as styles from './styles.module.scss';
 
 const baseClass = 'owluiCardCardbody';
@@ -8,12 +9,7 @@ export const Component = (props: CardCardBodyProps) => {
   const { children } = props;
   const localProps = Object.assign({}, props);
 
-  localProps.className = Object.prototype.hasOwnProperty.call(
-    localProps,
-    'className'
-  )
-    ? `${styles[baseClass]} ${localProps.className}`
-    : styles[baseClass];
+  localProps.className = getCssModClass({ localProps, baseClass, styles });
 
   return <div className={localProps.className}>{children}</div>;
 };
