@@ -23,6 +23,7 @@
     "prettier/prettier": true,
     "scss/at-mixin-pattern": null,
     "string-quotes": "single",
+    "value-list-comma-newline-after": null,
     "value-keyword-case": null
   }
 }
