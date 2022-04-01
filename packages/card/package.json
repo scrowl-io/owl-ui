@@ -4,6 +4,7 @@
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/card#readme",
   "license": "MIT",
+  "type": "module",
   "source": "src/index.ts",
   "main": "dist/owl.card.js",
   "module": "dist/index.js",

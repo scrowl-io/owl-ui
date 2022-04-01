@@ -25,7 +25,7 @@ $column-size-10: math.percentage(math.div(1, math.div(12, 10)));
 $column-size-11: math.percentage(math.div(1, math.div(12, 11)));
 $column-size-12: math.percentage(math.div(1, math.div(12, 12)));
 
-.owl {
+.grid {
   &-container {
     margin: 0 auto;
     width: calc(100% - $gutter);
@@ -62,7 +62,7 @@ $column-size-12: math.percentage(math.div(1, math.div(12, 12)));
 @mixin grid-system($args...) {
   @each $name, $value in meta.keywords($args) {
     @media only screen and (min-width: $value) {
-      .owl {
+      .grid {
         &-container {
           width: ($value - 1);
         }

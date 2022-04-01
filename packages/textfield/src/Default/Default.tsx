@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TextfieldDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 
-const baseClass = 'owluiTextfield';
+const baseClass = 'textfield';
 
 export const Component = (props: TextfieldDefaultProps) => {
   const { className, style } = props;

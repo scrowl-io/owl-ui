@@ -7,6 +7,7 @@ import {
   toCamelCase,
   toPascalCase,
   isValidPackageName,
+  toKebabCase,
 } from '../utls/strings.js';
 import { hasProp } from '../utls/objects.js';
 import { log, clear } from '../utls/console.js';
@@ -82,7 +83,7 @@ function createBoilerplate(components) {
         npmignore: packagePath('npmignore', '.npmignore', folders),
         readme: packagePath('readme', 'README.md', folders),
         tsconfig: packagePath('tsconfig', 'tsconfig.json', folders),
-        postcss: packagePath('postcss', 'postcssrc.json', folders),
+        postcss: packagePath('postcss', '.postcssrc.json', folders),
       };
 
       for (let filename in fileList) {
@@ -137,9 +138,11 @@ function getParts(component, getOpt) {
     name: componentName,
     cap: toCapitalize(componentName),
     low: toLower(componentName),
+    keb: toKebabCase(componentName),
     option: option,
     optionCap: toCapitalize(option),
     optionPas: toPascalCase(option),
+    optionKeb: toKebabCase(option),
   };
 }
 

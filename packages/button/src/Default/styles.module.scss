@@ -1,6 +1,6 @@
 @use '~@owlui/theme' as theme;
 
-@mixin owlui-button-link {
+@mixin button-link {
   border-color: transparent;
   background-color: transparent;
   color: theme.$owl-sys-color-primary;
@@ -12,7 +12,7 @@
   }
 }
 
-.owlui-button {
+.button {
   display: inline-block;
   margin: 0;
   padding: theme.$owl-sys-layout-spacer;
@@ -43,7 +43,7 @@
       }
 
       &-link {
-        @include owlui-button-link;
+        @include button-link;
       }
     }
 
@@ -55,7 +55,7 @@
       }
 
       &-link {
-        @include owlui-button-link;
+        @include button-link;
       }
     }
   }

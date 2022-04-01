@@ -1,0 +1,4 @@
+{
+  "outFile": "dist/owl.table.css",
+  "includePaths": ["node_modules", "src/", "../.."]
+}

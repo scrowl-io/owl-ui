@@ -2,66 +2,64 @@
 
 $border-clr: #dadada;
 
-.owlui {
-  &--navigation-drawer {
-    $ref: &;
+.navigation-drawer {
+  $ref: &;
 
-    min-width: 200px;
-    box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
+  min-width: 200px;
+  box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
 
-    @include theme.defaultTheme-typeface--small;
+  @include theme.defaultTheme-typeface--small;
 
-    &--theme {
-      &--default {
-        @include theme.defaultTheme-default;
+  &--theme {
+    &--default {
+      @include theme.defaultTheme-default;
 
-        border: 1px solid $border-clr;
+      border: 1px solid $border-clr;
+
+      & #{$ref}__content-subheader {
+        color: theme.$owl-ref-palette-disabled;
+      }
+
+      /* appearances */
+      &-primary {
+        @include theme.defaultTheme-branding;
+
+        border-color: $border-clr;
 
         & #{$ref}__content-subheader {
-          color: theme.$owl-ref-palette-disabled;
-        }
-
-        /* appearances */
-        &-primary {
-          @include theme.defaultTheme-branding;
-
-          border-color: $border-clr;
-
-          & #{$ref}__content-subheader {
-            color: theme.$owl-ref-palette-primary-highlight;
-          }
-        }
-      }
-
-      &--dark {
-        @include theme.darkTheme-branding;
-
-        & #{$ref}__content-subheader {
-          color: theme.$owl-sys-color-on-dark;
+          color: theme.$owl-ref-palette-primary-highlight;
         }
       }
     }
 
-    &__header {
-      padding: theme.$owl-sys-layout-spacer;
-    }
+    &--dark {
+      @include theme.darkTheme-branding;
 
-    &__content {
-      padding: 0 0.5rem;
-
-      &-subheader {
-        font-size: theme.$owl-sys-typeface-body-xs-size;
-        margin: theme.$owl-sys-layout-spacer 0 0 0;
-        padding: 0.25rem 0.5rem;
-      }
-
-      &-group {
-        margin-bottom: theme.$owl-sys-layout-spacer;
+      & #{$ref}__content-subheader {
+        color: theme.$owl-sys-color-on-dark;
       }
     }
+  }
 
-    &__item {
-      padding: 0.5rem 4rem 0.5rem 0.5rem;
+  &__header {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+
+  &__content {
+    padding: 0 0.5rem;
+
+    &-subheader {
+      font-size: theme.$owl-sys-typeface-body-xs-size;
+      margin: theme.$owl-sys-layout-spacer 0 0 0;
+      padding: 0.25rem 0.5rem;
     }
+
+    &-group {
+      margin-bottom: theme.$owl-sys-layout-spacer;
+    }
+  }
+
+  &__item {
+    padding: 0.5rem 4rem 0.5rem 0.5rem;
   }
 }

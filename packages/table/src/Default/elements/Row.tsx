@@ -4,7 +4,7 @@ import * as styles from './styles.module.scss';
 import { TableRowProps, TableRowItem, TableColumnItem } from '../Default.types';
 import { getCssModClass } from '@owlui/utils';
 
-const baseClass = 'owluiTableRow';
+const baseClass = 'tableRow';
 
 const Row = (props: TableRowProps) => {
   const { item, columns } = props;

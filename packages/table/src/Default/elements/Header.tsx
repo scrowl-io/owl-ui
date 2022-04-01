@@ -3,7 +3,7 @@ import * as styles from './styles.module.scss';
 import { TableHeaderProps } from '../Default.types';
 import { getCssModClass } from '@owlui/utils';
 
-const baseClass = 'owluiTableHeader';
+const baseClass = 'tableHeader';
 
 const Header = (props: TableHeaderProps) => {
   const { columns } = props;

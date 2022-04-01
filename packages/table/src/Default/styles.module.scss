@@ -1,6 +1,6 @@
 @use '~@owlui/theme' as theme;
 
-.owlui-table {
+.table {
   @include theme.defaultTheme-default;
 
   width: 100%;

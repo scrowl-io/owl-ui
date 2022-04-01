@@ -3,7 +3,7 @@ import * as styles from './styles.module.scss';
 import { TableCellProps } from '../Default.types';
 import { getCssModClass } from '@owlui/utils';
 
-const baseClass = 'owluiTableCell';
+const baseClass = 'tableCell';
 
 const Cell = (props: TableCellProps) => {
   const { children } = props;

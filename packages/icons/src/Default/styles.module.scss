@@ -1,7 +1,7 @@
 @use '~@owlui/theme' as theme;
 
-.owlui-icons,
-.owlui-icons-outlined {
+.icons,
+.icons-outlined {
   font-size: theme.$owl-sys-typeface-body-size;
   color: theme.$owl-sys-color-on-light;
 
