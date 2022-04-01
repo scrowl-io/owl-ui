@@ -7,6 +7,7 @@ import {
   toCamelCase,
   toPascalCase,
   isValidPackageName,
+  toKebabCase,
 } from '../utls/strings.js';
 import { log, clear } from '../utls/console.js';
 import fs from '../utls/file-system.js';
@@ -136,9 +137,11 @@ function getParts(component, getOpt) {
     name: componentName,
     cap: toCapitalize(componentName),
     low: toLower(componentName),
+    className: toKebabCase(componentName),
     option: option,
     optionCap: toCapitalize(option),
     optionPas: toPascalCase(option),
+    optionClassName: toKebabCase(option),
   };
 }
 

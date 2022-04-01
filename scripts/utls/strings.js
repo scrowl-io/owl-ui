@@ -24,6 +24,13 @@ export const toPascalCase = str => {
   });
 };
 
+export const toKebabCase = str => {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/[\s_]+/g, '-')
+    .toLowerCase();
+};
+
 export const hasLettersOnly = str => {
   return /^[a-zA-Z]+$/.test(str);
 };
