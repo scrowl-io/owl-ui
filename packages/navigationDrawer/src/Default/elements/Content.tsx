@@ -3,7 +3,7 @@ import {
   NavigationDrawerContentItemProps,
   NavigationDrawerContentItemGroupProps,
   NavigationDrawerContentTypes,
-  NavigationDrawerContentProps,
+  NavigationDrawerElementProps,
 } from '../Default.types';
 import * as styles from '../styles.module.scss';
 import { Component as NavItem } from './Item';
@@ -54,7 +54,7 @@ const formatItems = (items: Array<NavigationDrawerContentTypes>) => {
   return elements;
 };
 
-export const Component = (props: NavigationDrawerContentProps) => {
+export const Component = (props: NavigationDrawerElementProps) => {
   let { items } = props;
   items = items || [];
 

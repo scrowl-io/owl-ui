@@ -23,14 +23,6 @@ export type NavigationDrawerDefaultCommons = {
   items: Array<NavigationDrawerContentTypes>;
 };
 
-export type NavigationDrawerDefaultProps =
-  Partial<NavigationDrawerDefaultCommons> &
-    React.AllHTMLAttributes<HTMLDivElement>;
-
-export type NavigationDrawerHeaderProps =
-  Partial<NavigationDrawerDefaultCommons> &
-    React.AllHTMLAttributes<HTMLDivElement>;
-
-export type NavigationDrawerContentProps =
+export type NavigationDrawerElementProps =
   Partial<NavigationDrawerDefaultCommons> &
     React.AllHTMLAttributes<HTMLDivElement>;

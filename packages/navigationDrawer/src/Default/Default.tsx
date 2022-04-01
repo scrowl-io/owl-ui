@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { NavigationDrawerDefaultProps } from './Default.types';
+import { NavigationDrawerElementProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { findModClass } from '@owlui/utils';
 import { Component as NavHeader } from './elements/Header';
@@ -8,7 +8,7 @@ import { Component as NavContent } from './elements/Content';
 const baseClass = 'owluiNavigationDrawer';
 const getClassName = findModClass(styleMod, baseClass);
 
-export const Component = (props: NavigationDrawerDefaultProps) => {
+export const Component = (props: NavigationDrawerElementProps) => {
   const { className, style, header, items } = props;
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
