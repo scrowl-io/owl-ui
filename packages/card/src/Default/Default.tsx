@@ -2,7 +2,7 @@ import * as React from 'react';
 import { CardDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 
-const baseClass = 'owluiCard';
+const baseClass = 'card';
 
 export const Component = (props: CardDefaultProps) => {
   const { children, className, style } = props;

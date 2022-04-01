@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 
-const baseClass = 'owluiButton';
+const baseClass = 'button';
 
 export const Component = (props: ButtonDefaultProps) => {
   const {

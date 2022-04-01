@@ -3,7 +3,7 @@ import { CardCardHeaderProps } from './CardHeader.types';
 import * as styles from './styles.module.scss';
 import { getCssModClass } from '@owlui/utils';
 
-const baseClass = 'owluiCardHeader';
+const baseClass = 'cardHeader';
 
 export const Component = (props: CardCardHeaderProps) => {
   const { children } = props;

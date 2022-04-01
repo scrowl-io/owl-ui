@@ -2,7 +2,7 @@ import * as React from 'react';
 import { IconsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 
-const baseClass = 'owluiIcons';
+const baseClass = 'icons';
 
 export const Component = (props: IconsDefaultProps) => {
   const { className, style } = props;

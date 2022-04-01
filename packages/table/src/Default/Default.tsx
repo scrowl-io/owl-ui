@@ -4,7 +4,7 @@ import Header from './elements/Header';
 import Body from './elements/Body';
 import * as styleMod from './styles.module.scss';
 
-const baseClass = 'owluiTable';
+const baseClass = 'table';
 
 export const Component = (props: TableDefaultProps) => {
   const { columns, items, className, style } = props;

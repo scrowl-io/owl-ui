@@ -3,7 +3,7 @@ import { CardCardFooterProps } from './CardFooter.types';
 import * as styles from './styles.module.scss';
 import { getCssModClass } from '@owlui/utils';
 
-const baseClass = 'owluiCardFooter';
+const baseClass = 'cardFooter';
 
 export const Component = (props: CardCardFooterProps) => {
   const { children } = props;
