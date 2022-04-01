@@ -55,7 +55,7 @@ const fileMap = {
           return '';
         })
         .replace(/.material-icons/g, () => {
-          return '.owlui-icons';
+          return '.icons';
         });
       const scssImports = `@use './variables.scss' as *;`;
 
