@@ -1,6 +1,6 @@
 {
   "name": "@owlui/card",
-  "version": "0.0.0",
+  "version": "0.0.16",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/card#readme",
   "license": "MIT",
@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "@owlui/typings": "^0.0.1",
-    "@owlui/utils": "0.0.0"
+    "@owlui/utils": "^0.0.16"
   }
 }
