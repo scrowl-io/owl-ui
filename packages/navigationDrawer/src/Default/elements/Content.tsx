@@ -39,7 +39,7 @@ const isItemGroup = (
 };
 
 const formatItems = (items: Array<NavigationDrawerContentTypes>) => {
-  const elements: JSX.Element[] = [];
+  const elements: React.ReactChild[] = [];
 
   items.forEach(item => {
     const [checkedRes, checkedItem] = isItemGroup(item);
