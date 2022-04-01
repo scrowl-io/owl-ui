@@ -81,7 +81,7 @@ function createBoilerplate(components) {
         npmignore: packagePath('npmignore', '.npmignore', folders),
         readme: packagePath('readme', 'README.md', folders),
         tsconfig: packagePath('tsconfig', 'tsconfig.json', folders),
-        postcss: packagePath('postcss', 'postcssrc.json', folders),
+        postcss: packagePath('postcss', '.postcssrc.json', folders),
       };
 
       for (let filename in fileList) {
