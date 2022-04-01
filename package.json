@@ -19,7 +19,7 @@
     "fix": "node ./scripts/pipeline/cmd.fixes.js",
     "logs:print": "node ./scripts/pipeline/cmd.logs.js",
     "logs:clean": "node ./scripts/pipeline/cmd.logs-clean.js",
-    "lint:fix": "yarn lint:fix:eslint && yarn lint:fix:styles && yarn lint:fix:prettier",
+    "lint:fix": "yarn lint:fix:eslint && yarn lint:fix:prettier",
     "prelint:fix:eslint": "yarn run logs:clean",
     "lint:fix:eslint": "eslint --fix \"packages/**/*.{ts,tsx,js,jsx}\" --format compact --output-file ./logs/eslint.txt || yarn run logs:print -f ./logs/eslint.txt",
     "lint:fix:prettier": "prettier --write \"packages/**/*.{json,ts,tsx,js,jsx}\"",
