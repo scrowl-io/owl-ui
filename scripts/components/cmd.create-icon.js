@@ -6,6 +6,7 @@ import {
   toPascalCase,
   isValidOptionInputName,
 } from '../utls/strings.js';
+import { hasProp } from '../utls/objects.js';
 import { log, clear } from '../utls/console.js';
 import fs from '../utls/file-system.js';
 import { compile, definePaths } from './templater.js';
@@ -114,7 +115,7 @@ function createDefinition(name) {
 
 function processArgs() {
   try {
-    if (argv.hasOwnProperty('n')) {
+    if (hasProp(argv, 'n')) {
       const definition = createDefinition(argv.n);
 
       if (Array.isArray(definition)) {
@@ -122,7 +123,7 @@ function processArgs() {
       } else {
         addOption(definition);
       }
-    } else if (argv.hasOwnProperty('a')) {
+    } else if (hasProp(argv, 'a')) {
       const iconsPath =
         'node_modules/material-design-icons/iconfont/codepoints';
       const iconsRaw = fs.getFile(iconsPath);
