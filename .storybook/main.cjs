@@ -32,7 +32,8 @@ module.exports = {
                       "grid": true
                     },
                     "postcss-modules": {
-                      "generateScopedName": "[local]"
+                      "generateScopedName": "owlui-[local]",
+                      "localsConvention": "camelCase"
                     }
                   }
                 }
@@ -61,7 +62,7 @@ module.exports = {
           url: false,
           modules: {
             namedExport: true,
-            localIdentName: '[local]'
+            localIdentName: 'owlui-[local]'
           },
           sourceMap: true,
           importLoaders: 1
