@@ -1,6 +1,6 @@
 @use '~@owlui/theme' as theme;
 
-$borderClr: #dadada;
+$border-clr: #dadada;
 
 .owlui {
   &--navigation-drawer {
@@ -9,11 +9,13 @@ $borderClr: #dadada;
     min-width: 200px;
     box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
 
+    @include theme.defaultTheme-typeface--small;
+
     &--theme {
       &--default {
         @include theme.defaultTheme-default;
 
-        border: 1px solid $borderClr;
+        border: 1px solid $border-clr;
 
         & #{$ref}__content-subheader {
           color: theme.$owl-ref-palette-disabled;
@@ -23,7 +25,7 @@ $borderClr: #dadada;
         &-primary {
           @include theme.defaultTheme-branding;
 
-          border-color: $borderClr;
+          border-color: $border-clr;
 
           & #{$ref}__content-subheader {
             color: theme.$owl-ref-palette-primary-highlight;
@@ -37,20 +39,6 @@ $borderClr: #dadada;
         & #{$ref}__content-subheader {
           color: theme.$owl-sys-color-on-dark;
         }
-      }
-    }
-
-    &--size {
-      &-lg {
-        @include theme.defaultTheme-typeface--large;
-      }
-
-      &-md {
-        @include theme.defaultTheme-typeface--medium;
-      }
-
-      &-sm {
-        @include theme.defaultTheme-typeface--small;
       }
     }
 

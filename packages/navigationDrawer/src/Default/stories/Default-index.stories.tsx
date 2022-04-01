@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { component as NavigationDrawer } from '../index';
 import {
-  NavigationDrawerDefaultProps,
+  NavigationDrawerElementProps,
   NavigationDrawerContentTypes,
 } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 const Header = <div>Header</div>;
@@ -17,13 +16,12 @@ const items: Array<NavigationDrawerContentTypes> = [
   { heading: 'CATEGORY 2', items: [{ label: 'Link 5' }, { label: 'Link 6' }] },
 ];
 
-export const Default = (args: NavigationDrawerDefaultProps) => (
+export const Default = (args: NavigationDrawerElementProps) => (
   <NavigationDrawer {...args}>Hello World</NavigationDrawer>
 );
 
 Default.args = {
   appearance: appearance.defaultValue,
-  size: size.defaultValue,
   theme: theme.defaultValue,
   header: Header,
   items: items,
@@ -31,6 +29,5 @@ Default.args = {
 
 Default.argTypes = {
   appearance,
-  size,
   theme,
 };

@@ -13,19 +13,16 @@ export const Component = (props: NavigationDrawerElementProps) => {
   const modulePrefix = props.prefix;
   const theme = props.theme || 'Default';
   const appearance = props.appearance || '';
-  const size = props.size || 'Sm';
   const styleLocal = {
     base: styleMod[baseClass],
     theme: getClassName(`Theme${theme}`),
     appearance: getClassName(`Theme${theme}${appearance}`),
-    size: getClassName(`Size${size}`),
   };
 
   if (modulePrefix !== undefined && modulePrefix !== null) {
     styleLocal.base = `${modulePrefix}-${styleLocal.base}`;
     styleLocal.theme = `${modulePrefix}-${styleLocal.theme}`;
     styleLocal.appearance = `${modulePrefix}-${styleLocal.appearance}`;
-    styleLocal.size = `${modulePrefix}-${styleLocal.size}`;
   }
 
   const Header = header ? <NavHeader>{header}</NavHeader> : '';
@@ -39,7 +36,6 @@ export const Component = (props: NavigationDrawerElementProps) => {
         styleLocal.base,
         styleLocal.theme,
         styleLocal.appearance,
-        styleLocal.size,
       ].join(' ')}
     >
       {Header}
