@@ -5,12 +5,14 @@ $borderClr: #dadada;
 .owlui {
   &--navigation-drawer {
     $ref: &;
+
     min-width: 200px;
     box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
 
     &--theme {
       &--default {
         @include theme.defaultTheme-default;
+
         border: 1px solid $borderClr;
 
         & #{$ref}__content-subheader {
@@ -20,6 +22,7 @@ $borderClr: #dadada;
         /* appearances */
         &-primary {
           @include theme.defaultTheme-branding;
+
           border-color: $borderClr;
 
           & #{$ref}__content-subheader {
