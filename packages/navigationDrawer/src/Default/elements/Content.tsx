@@ -55,10 +55,10 @@ const formatItems = (items: Array<NavigationDrawerContentTypes>) => {
 };
 
 export const Component = (props: NavigationDrawerElementProps) => {
-  let { items } = props;
-  items = items || [];
+  const { items } = props;
+  let content: React.ReactNode = [];
 
-  const content = formatItems(items);
+  if (items && items.length) content = formatItems(items);
 
   return <nav className={styles[baseClass]}>{content}</nav>;
 };
