@@ -9,6 +9,7 @@ import {
   isValidPackageName,
   toKebabCase,
 } from '../utls/strings.js';
+import { hasProp } from '../utls/objects.js';
 import { log, clear } from '../utls/console.js';
 import fs from '../utls/file-system.js';
 import { compile, definePaths } from './templater.js';
@@ -161,7 +162,7 @@ function processArgs() {
   let components = [];
 
   try {
-    if (argv.hasOwnProperty('o')) {
+    if (hasProp(argv, 'o')) {
       // create an option for an existing component
       const component = getParts(argv.o, true);
 
@@ -180,7 +181,7 @@ function processArgs() {
       // create one or many new components
       let newComponent;
 
-      if (argv.hasOwnProperty('n')) {
+      if (hasProp(argv, 'n')) {
         newComponent = getParts(argv.n);
 
         if (newComponent.option !== 'default') {
@@ -195,7 +196,7 @@ function processArgs() {
         }
       }
 
-      if (argv.hasOwnProperty('m')) {
+      if (hasProp(argv, 'm')) {
         const many = argv.m.split(',');
 
         components = many.map(getParts);

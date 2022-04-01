@@ -4,12 +4,12 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(./assets/icons/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: url('./assets/icons/MaterialIcons-Regular.eot'); /* For IE6-8 */
   src: local('Material Icons'),
        local('MaterialIcons-Regular'),
-       url(./assets/icons/MaterialIcons-Regular.woff2) format('woff2'),
-       url(./assets/icons/MaterialIcons-Regular.woff) format('woff'),
-       url(./assets/icons/MaterialIcons-Regular.ttf) format('truetype');
+       url('./assets/icons/MaterialIcons-Regular.woff2') format('woff2'),
+       url('./assets/icons/MaterialIcons-Regular.woff') format('woff'),
+       url('./assets/icons/MaterialIcons-Regular.ttf') format('truetype');
 }
 
 .owlui-icons {
@@ -41,7 +41,7 @@
   font-family: 'Material Icons Outlined';
   font-style: normal;
   font-weight: 400;
-  src: url(./assets/icons/MaterialIcons-Outlined.woff2) format('woff2');
+  src: url('./assets/icons/MaterialIcons-Outlined.woff2') format('woff2');
 }
 
 .material-icons-outlined {

@@ -2,6 +2,7 @@
 
 .table {
   @include theme.defaultTheme-default;
+
   width: 100%;
   border-collapse: collapse;
   caption-side: top;
