@@ -137,11 +137,11 @@ function getParts(component, getOpt) {
     name: componentName,
     cap: toCapitalize(componentName),
     low: toLower(componentName),
-    className: toKebabCase(componentName),
+    keb: toKebabCase(componentName),
     option: option,
     optionCap: toCapitalize(option),
     optionPas: toPascalCase(option),
-    optionClassName: toKebabCase(option),
+    optionKeb: toKebabCase(option),
   };
 }
 
