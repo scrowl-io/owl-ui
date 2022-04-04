@@ -13,7 +13,7 @@ export type NavigationDrawerContentTypes =
   | NavigationDrawerContentItemProps
   | NavigationDrawerContentItemGroupProps;
 
-export type NavigationDrawerDefaultCommons = {
+export interface NavigationDrawerDefaultCommons {
   appearance?: 'Primary' | 'Outline';
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
@@ -21,7 +21,7 @@ export type NavigationDrawerDefaultCommons = {
   children: React.ReactNode;
   header?: React.ReactNode;
   items: Array<NavigationDrawerContentTypes>;
-};
+}
 
 export type NavigationDrawerElementProps =
   Partial<NavigationDrawerDefaultCommons> &

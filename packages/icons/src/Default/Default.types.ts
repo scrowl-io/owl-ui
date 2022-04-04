@@ -937,14 +937,14 @@ export type Icon =
   | 'zoom_out'
   | 'zoom_out_map';
 
-export type IconsDefaultCommons = {
+export interface IconsDefaultCommons {
   display?: 'Filled' | 'Outlined';
   appearance?: 'Primary' | 'Alt';
   theme?: 'Default' | 'Dark' | 'Light';
   size?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
   prefix?: string;
   icon: Icon;
-};
+}
 
 export type IconsDefaultProps = Partial<IconsDefaultCommons> &
   React.AllHTMLAttributes<HTMLSpanElement>;

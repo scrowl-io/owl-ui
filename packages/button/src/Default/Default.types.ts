@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ButtonDefaultCommons = {
+export interface ButtonDefaultCommons {
   appearance?: 'Default' | 'Primary' | 'Link';
   ariadescribedby?: string;
   arialabel?: string;
@@ -11,7 +11,7 @@ export type ButtonDefaultCommons = {
   prefix?: string;
   size?: 'Sm' | 'Md' | 'Lg';
   theme?: 'Default' | 'Dark';
-};
+}
 
 export type ButtonDefaultProps = Partial<ButtonDefaultCommons> &
   React.ButtonHTMLAttributes<HTMLButtonElement> &
