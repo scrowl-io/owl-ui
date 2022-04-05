@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icons#readme",
   "license": "MIT",
-  "type": "module",
+  "type": "commonjs",
   "source": "src/index.ts",
   "main": "dist/owl.icons.js",
   "module": "dist/index.js",

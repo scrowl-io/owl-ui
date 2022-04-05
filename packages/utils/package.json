@@ -5,7 +5,7 @@
   "author": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/utils#readme",
   "license": "MIT",
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/index.js",
   "source": "src/index.ts",
   "types": "dist/types.d.ts",
