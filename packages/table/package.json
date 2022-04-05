@@ -1,6 +1,6 @@
 {
   "name": "@owlui/table",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/table#readme",
   "license": "MIT",
@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "@owlui/typings": "^0.0.1",
-    "@owlui/utils": "^0.0.16"
+    "@owlui/utils": "^0.0.17"
   }
 }
