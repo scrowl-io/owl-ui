@@ -4,7 +4,7 @@
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/navigationDrawer#readme",
   "license": "MIT",
-  "type": "module",
+  "type": "commonjs",
   "source": "src/index.ts",
   "main": "dist/owl.navigationDrawer.js",
   "module": "dist/index.js",
