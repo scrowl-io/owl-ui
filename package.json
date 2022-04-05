@@ -36,7 +36,7 @@
     "postbuild:dist": "yarn run lint:fix",
     "prepublish:lerna": "yarn run build:dist",
     "publish:lerna": "lerna publish",
-    "republish:lerna": "yarn run prepublish && lerna publish from-package",
+    "republish:lerna": "yarn run prepublish:lerna && lerna publish from-package",
     "prebuild:storybook": "yarn run setup",
     "prestart:storybook": "yarn run setup",
     "build:storybook": "build-storybook",
