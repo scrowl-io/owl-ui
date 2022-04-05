@@ -4,13 +4,11 @@
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
   "license": "MIT",
-  "type": "commonjs",
-  "source": "src/index.ts",
-  "main": "dist/owl.button.js",
-  "module": "dist/index.js",
-  "types": "dist/types.d.ts",
-  "sass": "src/_index.scss",
-  "style": "dist/owl.button.css",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/types.d.ts",
+  "sass": "./src/_index.scss",
+  "style": "./dist/owl.button.css",
   "files": [
     "dist",
     "src"

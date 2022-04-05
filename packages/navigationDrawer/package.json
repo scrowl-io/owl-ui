@@ -4,13 +4,11 @@
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/navigationDrawer#readme",
   "license": "MIT",
-  "type": "commonjs",
-  "source": "src/index.ts",
-  "main": "dist/owl.navigationDrawer.js",
-  "module": "dist/index.js",
-  "types": "dist/types.d.ts",
-  "sass": "src/_index.scss",
-  "style": "dist/owl.navigationDrawer.css",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/types.d.ts",
+  "sass": "./src/_index.scss",
+  "style": "./dist/owl.navigationDrawer.css",
   "files": [
     "dist",
     "src"
