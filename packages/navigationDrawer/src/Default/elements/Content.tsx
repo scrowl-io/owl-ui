@@ -8,18 +8,21 @@ import {
 import * as styles from '../styles.module.scss';
 import { Component as NavItem } from './Item';
 
-const baseClass = 'owluiNavigationDrawerContent';
+const baseClass = 'navigationDrawerContent';
 
-const createItem = (item: NavigationDrawerContentItemProps) => {
-  return <NavItem label={item.label} />;
+const createItem = (item: NavigationDrawerContentItemProps, key: number) => {
+  return <NavItem key={key} label={item.label} />;
 };
 
-const createGroup = (item: NavigationDrawerContentItemGroupProps) => {
+const createGroup = (
+  item: NavigationDrawerContentItemGroupProps,
+  key: number
+) => {
   const subheadingClass = `${baseClass}Subheader`;
   const groupClass = `${baseClass}Group`;
   const content = formatItems(item.items);
   return (
-    <div className={styles[groupClass]}>
+    <div key={key} className={styles[groupClass]}>
       <h6 className={styles[subheadingClass]}>{item.heading}</h6>
       {content}
     </div>
@@ -41,13 +44,13 @@ const isItemGroup = (
 const formatItems = (items: Array<NavigationDrawerContentTypes>) => {
   const elements: React.ReactChild[] = [];
 
-  items.forEach(item => {
+  items.forEach((item, index) => {
     const [checkedRes, checkedItem] = isItemGroup(item);
 
     if (checkedRes) {
-      elements.push(createGroup(checkedItem));
+      elements.push(createGroup(checkedItem, index));
     } else {
-      elements.push(createItem(checkedItem));
+      elements.push(createItem(checkedItem, index));
     }
   });
 
