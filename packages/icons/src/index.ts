@@ -1,7 +1,9 @@
 import * as DefaultIcon from './Default/index';
-import * as DefaultIconTypes from './Default/Default.types';
+
+export const Default = DefaultIcon.component;
+export const DefaultTypes = DefaultIcon.types;
 
 export default {
-  DefaultIcon,
-  DefaultIconTypes,
+  Default,
+  DefaultTypes,
 };
