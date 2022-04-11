@@ -5,7 +5,7 @@ import { findModClass } from '@owlui/utils';
 import { Component as NavHeader } from './elements/Header';
 import { Component as NavContent } from './elements/Content';
 
-const baseClass = 'owluiNavigationDrawer';
+const baseClass = 'navigationDrawer';
 const getClassName = findModClass(styleMod, baseClass);
 
 export const Component = (props: NavigationDrawerElementProps) => {
