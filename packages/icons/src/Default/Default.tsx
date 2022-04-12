@@ -5,7 +5,7 @@ import * as styleMod from './styles.module.scss';
 const baseClass = 'icons';
 
 export const Component = (props: IconsDefaultProps) => {
-  const { className, style } = props;
+  const { className, style, ariaHidden } = props;
 
   const modulePrefix = props.prefix;
   const icon = props.icon;
@@ -51,6 +51,8 @@ export const Component = (props: IconsDefaultProps) => {
         styleLocal.appearance,
         styleLocal.size,
       ].join(' ')}
+      role="img"
+      aria-hidden={ariaHidden}
     >
       {icon}
     </span>

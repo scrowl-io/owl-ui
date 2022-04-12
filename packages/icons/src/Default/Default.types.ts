@@ -938,6 +938,7 @@ export type Icon =
   | 'zoom_out_map';
 
 export interface IconsDefaultCommons {
+  ariaHidden?: boolean;
   display?: 'Filled' | 'Outlined';
   appearance?: 'Primary' | 'Alt';
   theme?: 'Default' | 'Dark' | 'Light';
