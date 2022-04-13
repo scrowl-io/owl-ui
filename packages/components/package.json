@@ -1,6 +1,6 @@
 {
   "name": "@owlui/components",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
   "license": "MIT",
@@ -36,14 +36,14 @@
     "react": "^17.0.2"
   },
   "dependencies": {
-    "@owlui/button": "^0.0.18",
-    "@owlui/card": "^0.0.18",
-    "@owlui/icons": "^0.0.18",
-    "@owlui/navigationdrawer": "^0.0.18",
-    "@owlui/table": "^0.0.18",
-    "@owlui/textfield": "^0.0.18",
-    "@owlui/theme": "^0.0.18",
-    "@owlui/typings": "^0.0.18",
-    "@owlui/utils": "^0.0.18"
+    "@owlui/button": "^0.0.19",
+    "@owlui/card": "^0.0.19",
+    "@owlui/icons": "^0.0.19",
+    "@owlui/navigationdrawer": "^0.0.19",
+    "@owlui/table": "^0.0.19",
+    "@owlui/textfield": "^0.0.19",
+    "@owlui/theme": "^0.0.19",
+    "@owlui/typings": "^0.0.19",
+    "@owlui/utils": "^0.0.19"
   }
 }

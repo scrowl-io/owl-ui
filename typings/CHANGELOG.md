@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.19](https://github.com/EEBOS/owl-ui/compare/v0.0.18...v0.0.19) (2022-04-11)
+
+**Note:** Version bump only for package @owlui/typings
+
+
+
+
+
 ## [0.0.18](https://github.com/EEBOS/owl-ui/compare/v0.0.17...v0.0.18) (2022-04-05)
 
 **Note:** Version bump only for package @owlui/typings
