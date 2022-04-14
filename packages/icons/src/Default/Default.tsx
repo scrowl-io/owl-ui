@@ -5,7 +5,7 @@ import * as styleMod from './styles.module.scss';
 const baseClass = 'icons';
 
 export const Component = (props: IconsDefaultProps) => {
-  const { className, style, ariaHidden } = props;
+  const { className, style, 'aria-hidden': ariaHidden } = props;
 
   const modulePrefix = props.prefix;
   const icon = props.icon;
