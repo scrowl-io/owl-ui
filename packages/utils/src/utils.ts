@@ -2,8 +2,8 @@ import {
   CSSModClass,
   stylesProp,
   localProp,
-  createStyles,
-  createLocalPropsProps,
+  localStyles,
+  localInnerProps,
 } from './types';
 
 export const hasProp = (obj: object, prop: string) => {
@@ -39,12 +39,12 @@ export const findModClass = (styles: stylesProp, baseClass: string) => {
 
 export const createLocalProps = (
   props: object,
-  styles: createStyles,
+  styles: localStyles,
   removables: string[]
 ): object => {
   const getClassName = findModClass(styles.module, styles.classes.base);
   const localClassName = [styles.module[styles.classes.base]];
-  const localProps: createLocalPropsProps = { ...props };
+  const localProps: localInnerProps = { ...props };
   const classPrefix = styles.classes.prefix;
 
   styles.classes.optionals.forEach(option => {

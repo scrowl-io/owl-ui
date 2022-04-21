@@ -4,28 +4,17 @@ export type localProp = React.HTMLAttributes<HTMLElement>;
 
 export type stylesProp = Record<string, string>;
 
-export type CSSModClass = {
+export interface CSSModClass {
   localProps: localProp;
   styles: stylesProp;
   baseClass: string;
-};
+}
 
-export type localProps = {
-  // [key: string]: unknown;
-  props: object;
-  styles: {
-    module: stylesProp;
-    classes: {
-      base: string;
-      optionals: Array<{ fields: string[]; value: string }>;
-    };
-  };
-  removables: string[];
-};
+export interface localInnerProps {
+  [key: string]: unknown;
+}
 
-export type createLocalPropsProps = Record<string, string>;
-
-export type createStyles = {
+export type localStyles = {
   module: stylesProp;
   classes: {
     base: string;
