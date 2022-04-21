@@ -38,7 +38,7 @@ export const Component = (props: IconsDefaultProps) => {
         ],
       },
     },
-    ['theme', 'appearance']
+    ['icon', 'prefix', 'display', 'theme', 'appearance', 'size']
   );
 
   return <span {...locals}>{icon}</span>;
