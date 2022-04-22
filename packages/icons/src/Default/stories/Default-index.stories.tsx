@@ -13,9 +13,9 @@ export const Default = (args: IconsDefaultProps) => <Icons {...args} />;
 Default.args = {
   icon: icon.defaultValue,
   display: display.defaultValue,
-  appearance: '',
-  size: 'Lg',
-  theme: 'Default',
+  appearance: appearance.defaultValue,
+  size: size.defaultValue,
+  theme: theme.defaultValue,
 };
 
 Default.argTypes = {

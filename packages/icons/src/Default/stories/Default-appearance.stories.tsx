@@ -1,9 +1,9 @@
 export const appearance = {
-  options: ['', 'Primary', 'Alt'],
+  options: ['Primary', 'Alt'],
   control: {
     type: 'select',
   },
-  defaultValue: '',
+  defaultValue: 'Primary',
 };
 
 export default {

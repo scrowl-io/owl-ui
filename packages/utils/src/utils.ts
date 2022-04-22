@@ -1,4 +1,10 @@
-import { CSSModClass, stylesProp, localProp } from './types';
+import {
+  CSSModClass,
+  stylesProp,
+  localProp,
+  localStyles,
+  localInnerProps,
+} from './types';
 
 export const hasProp = (obj: object, prop: string) => {
   return Object.prototype.hasOwnProperty.call(obj, prop);
@@ -31,9 +37,54 @@ export const findModClass = (styles: stylesProp, baseClass: string) => {
   };
 };
 
+export const createLocalProps = (
+  props: object,
+  styles: localStyles,
+  removables: string[]
+): object => {
+  const getClassName = findModClass(styles.module, styles.classes.base);
+  const localClassName = [styles.module[styles.classes.base]];
+  const localProps: localInnerProps = { ...props };
+  const classPrefix = styles.classes.prefix;
+
+  styles.classes.optionals.forEach(option => {
+    let classTemp = option.value;
+    let propValue = '';
+
+    option.fields.forEach(field => {
+      // as keyof type of {} is used to get the key type of an unknown property
+      propValue = props[field as keyof typeof props] || '';
+      classTemp += propValue;
+    });
+
+    if (classTemp) {
+      const classValue = getClassName(classTemp);
+
+      if (classValue) {
+        localClassName.push(
+          classPrefix ? `${classPrefix}-${classValue}` : classValue
+        );
+      }
+    }
+  });
+
+  if (removables) removables.forEach(key => delete localProps[key]);
+
+  const classNames: string | string[] = localProps.className
+    ? localProps.className + ' ' + localClassName
+    : localClassName;
+
+  if (Array.isArray(classNames)) {
+    localProps.className = classNames.join(' ');
+  }
+
+  return localProps;
+};
+
 export default {
   hasProp,
   cleanCopy,
   getCssModClass,
   findModClass,
+  createLocalProps,
 };

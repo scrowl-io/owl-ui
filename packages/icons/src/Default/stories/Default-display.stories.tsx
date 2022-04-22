@@ -1,9 +1,9 @@
 export const display = {
-  options: ['', 'Filled', 'Outlined'],
+  options: ['Filled', 'Outlined'],
   control: {
     type: 'select',
   },
-  defaultValue: '',
+  defaultValue: 'Filled',
 };
 
 export default {
