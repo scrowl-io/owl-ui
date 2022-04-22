@@ -3,46 +3,43 @@ import { TableDefaultProps } from './Default.types';
 import Header from './elements/Header';
 import Body from './elements/Body';
 import * as styleMod from './styles.module.scss';
-
-const baseClass = 'table';
+import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: TableDefaultProps) => {
-  const { columns, items, className, style } = props;
-
+  const baseClass = 'table';
+  const { columns, items } = props;
   const tableColumns = columns || [];
   const tableItems = items || [];
+  const prefix = props.prefix || '';
 
-  const modulePrefix = props.prefix;
-  const theme = props.theme || 'Default';
-  const appearance = props.appearance || 'Primary';
-  const outline = props.outline ? 'Outline' : '';
-
-  const styleLocal = {
-    base: styleMod[baseClass],
-    theme: styleMod[`${baseClass}Theme${theme}`],
-    appearance: styleMod[`${baseClass}Theme${theme}${appearance}`],
-    outline: styleMod[`${baseClass}${outline}`],
-  };
-
-  if (modulePrefix !== undefined && modulePrefix !== null) {
-    styleLocal.base = `${modulePrefix}-${styleLocal.base}`;
-    styleLocal.theme = `${modulePrefix}-${styleLocal.theme}`;
-    styleLocal.appearance = `${modulePrefix}-${styleLocal.appearance}`;
-  }
+  const locals = createLocalProps(
+    props,
+    {
+      module: styleMod,
+      classes: {
+        base: baseClass,
+        prefix: prefix,
+        optionals: [
+          {
+            fields: ['theme'],
+            value: 'Theme',
+          },
+          {
+            fields: ['theme', 'appearance'],
+            value: 'Theme',
+          },
+          {
+            fields: ['outline'],
+            value: 'Outline',
+          },
+        ],
+      },
+    },
+    ['prefix', 'theme', 'appearance', 'size', 'columns', 'items', 'outline']
+  );
 
   return (
-    <table
-      style={style}
-      className={[
-        className,
-        styleLocal.base,
-        styleLocal.outline,
-        styleLocal.theme,
-        styleLocal.appearance,
-      ]
-        .join(' ')
-        .trim()}
-    >
+    <table {...locals}>
       <Header columns={tableColumns} />
       <Body columns={tableColumns} items={tableItems} />
     </table>
