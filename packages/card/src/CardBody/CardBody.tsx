@@ -11,7 +11,7 @@ export const Component = (props: CardCardBodyProps) => {
 
   localProps.className = getCssModClass({ localProps, baseClass, styles });
 
-  return <div className={localProps.className}>{children}</div>;
+  return <div {...localProps}>{children}</div>;
 };
 
 export default {

@@ -1,43 +1,36 @@
 import * as React from 'react';
 import { CardDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-
-const baseClass = 'card';
+import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: CardDefaultProps) => {
-  const { children, className, style } = props;
+  const baseClass = 'card';
+  const { children } = props;
+  const prefix = props.prefix || '';
 
-  const modulePrefix = props.prefix;
-  const theme = props.theme || 'Default';
-  const appearance = props.appearance || 'Primary';
-
-  const styleLocal = {
-    base: styleMod[baseClass],
-    theme: styleMod[`${baseClass}Theme${theme}`],
-    appearance: styleMod[`${baseClass}Theme${theme}${appearance}`],
-  };
-
-  if (modulePrefix !== undefined && modulePrefix !== null) {
-    styleLocal.base = `${modulePrefix}-${styleLocal.base}`;
-    styleLocal.theme = `${modulePrefix}-${styleLocal.theme}`;
-    styleLocal.appearance = `${modulePrefix}-${styleLocal.appearance}`;
-  }
-
-  return (
-    <div
-      style={style}
-      className={[
-        className,
-        styleLocal.base,
-        styleLocal.theme,
-        styleLocal.appearance,
-      ]
-        .join(' ')
-        .trim()}
-    >
-      {children}
-    </div>
+  const locals = createLocalProps(
+    props,
+    {
+      module: styleMod,
+      classes: {
+        base: baseClass,
+        prefix: prefix,
+        optionals: [
+          {
+            fields: ['theme'],
+            value: 'Theme',
+          },
+          {
+            fields: ['theme', 'appearance'],
+            value: 'Theme',
+          },
+        ],
+      },
+    },
+    ['prefix', 'theme', 'appearance']
   );
+
+  return <div {...locals}>{children}</div>;
 };
 
 export default {
