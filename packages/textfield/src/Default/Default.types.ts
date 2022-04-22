@@ -5,7 +5,6 @@ export interface TextfieldDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  children: React.ReactNode;
 }
 
 export type TextfieldDefaultProps = Partial<TextfieldDefaultCommons> &
