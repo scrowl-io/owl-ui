@@ -134,6 +134,8 @@ function getParts(component, getOpt) {
     );
   }
 
+  const config = fs.getFile('lerna.json');
+
   return {
     name: componentName,
     cap: toCapitalize(componentName),
@@ -143,6 +145,7 @@ function getParts(component, getOpt) {
     optionCap: toCapitalize(option),
     optionPas: toPascalCase(option),
     optionKeb: toKebabCase(option),
+    libVersion: config.version,
   };
 }
 
