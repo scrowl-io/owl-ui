@@ -1,43 +1,46 @@
 import * as React from 'react';
 import { NavigationDrawerElementProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { findModClass } from '@owlui/utils';
+import { createLocalProps } from '@owlui/utils';
 import { Component as NavHeader } from './elements/Header';
 import { Component as NavContent } from './elements/Content';
 
-const baseClass = 'navigationDrawer';
-const getClassName = findModClass(styleMod, baseClass);
-
 export const Component = (props: NavigationDrawerElementProps) => {
-  const { className, style, header, items } = props;
-  const modulePrefix = props.prefix;
-  const theme = props.theme || 'Default';
-  const appearance = props.appearance || '';
-  const styleLocal = {
-    base: styleMod[baseClass],
-    theme: getClassName(`Theme${theme}`),
-    appearance: getClassName(`Theme${theme}${appearance}`),
-  };
+  const baseClass = 'navigationDrawer';
+  const { header, items } = props;
+  const prefix = props.prefix || '';
 
-  if (modulePrefix !== undefined && modulePrefix !== null) {
-    styleLocal.base = `${modulePrefix}-${styleLocal.base}`;
-    styleLocal.theme = `${modulePrefix}-${styleLocal.theme}`;
-    styleLocal.appearance = `${modulePrefix}-${styleLocal.appearance}`;
-  }
+  const locals = createLocalProps(
+    props,
+    {
+      module: styleMod,
+      classes: {
+        base: baseClass,
+        prefix: prefix,
+        optionals: [
+          {
+            fields: ['theme'],
+            value: 'Theme',
+          },
+          {
+            fields: ['theme', 'appearance'],
+            value: 'Theme',
+          },
+          {
+            fields: ['size'],
+            value: 'Size',
+          },
+        ],
+      },
+    },
+    ['prefix', 'appearance', 'theme', 'size', 'header', 'items']
+  );
 
   const Header = header ? <NavHeader>{header}</NavHeader> : '';
   const Content = items ? <NavContent items={items} /> : '';
 
   return (
-    <aside
-      style={style}
-      className={[
-        className,
-        styleLocal.base,
-        styleLocal.theme,
-        styleLocal.appearance,
-      ].join(' ')}
-    >
+    <aside {...locals}>
       {Header}
       {Content}
     </aside>
