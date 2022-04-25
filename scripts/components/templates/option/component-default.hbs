@@ -5,6 +5,7 @@ import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
   const baseClass = '{{{name}}}';
+  const { children } = props;
   const prefix = props.prefix;
   
   const locals = createLocalProps(
