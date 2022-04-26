@@ -27,7 +27,7 @@
   "isLibrary": true,
   "outputFormat": "commonjs",
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^18.0.0"
   },
   "dependencies": {
     "@owlui/theme": "^0.0.19",

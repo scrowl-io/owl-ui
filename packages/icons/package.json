@@ -27,10 +27,10 @@
   "isLibrary": true,
   "outputFormat": "commonjs",
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/typings": "^0.0.1",
+    "@owlui/typings": "^0.0.19",
     "@owlui/utils": "^0.0.19"
   }
 }
