@@ -34,5 +34,9 @@
   },
   "dependencies": {
     "@owlui/typings": "^0.0.19"
+  },
+  "devDependencies": {
+    "@owlui/parcel-resolver-asset-path": "^0.0.0",
+    "@owlui/parcel-transformer-asset-path": "^0.0.0"
   }
 }

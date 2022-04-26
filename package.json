@@ -48,6 +48,7 @@
   },
   "workspaces": [
     "packages/*",
+    "plugins/*",
     "typings",
     "web"
   ],
@@ -113,6 +114,7 @@
     "yargs": "^17.3.1"
   },
   "dependencies": {
+    "@parcel/validator-typescript": "^2.5.0",
     "material-design-icons": "^3.0.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"

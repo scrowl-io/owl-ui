@@ -1,10 +1,6 @@
 import fs from '../utls/file-system.js';
 
 const moduleMap = {
-  '@parcel/transformer-sass/lib.js':
-    '@parcel/transformer-sass/lib/SassTransformer.js',
-  '@parcel/node-resolver-core/lib.js':
-    '@parcel/node-resolver-core/lib/NodeResolver.js',
   'parcel-reporter-static-files-copy/index.js':
     'parcel-reporter-static-files-copy/index.js',
 };

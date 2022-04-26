@@ -46,5 +46,9 @@
   "staticFiles": {
     "staticPath": "src/global/assets",
     "staticOutPath": "assets"
+  },
+  "devDependencies": {
+    "@owlui/parcel-resolver-asset-path": "^0.0.0",
+    "@owlui/parcel-transformer-asset-path": "^0.0.0"
   }
 }
