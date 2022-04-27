@@ -7,8 +7,10 @@
   "source": "./src/index.ts",
   "main": "./dist/index.js",
   "types": "./dist/types.d.ts",
-  "sass": "./src/_index.scss",
-  "style": "./dist/owl.textfield.css",
+  "style": "dist/owl.textfield.css",
+  "parcelrc": {
+    "--config": "./packages/textfield/.parcelrc"
+  },
   "files": [
     "dist",
     "src"
@@ -31,11 +33,11 @@
   },
   "dependencies": {
     "@owlui/theme": "^0.0.19",
-    "@owlui/typings": "^0.0.19"
+    "@owlui/typings": "^0.0.19",
+    "@owlui/utils": "^0.0.19"
   },
   "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298",
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.0",
-    "@owlui/parcel-transformer-asset-path": "^0.0.0"
+    "@owlui/parcel-resolver-asset-path": "^0.0.0"
   }
 }

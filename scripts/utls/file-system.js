@@ -115,6 +115,16 @@ fs.renameFile = (oldPath, newPath) => {
   const newFile = fs.normalize(newPath);
 
   try {
+    if (!fs.pathExistsSync(oldFile)) {
+      log(`file does not exist: ${oldFile}`, 'warn');
+      return;
+    }
+  } catch (err) {
+    log(err);
+    return;
+  }
+
+  try {
     fs.renameSync(oldFile, newFile);
   } catch (err) {
     log(err);

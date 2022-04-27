@@ -49,7 +49,7 @@ const fileMap = {
       );
       let contents = raw
         .replace(/url\((\w*(\.|-|\w)*)\)/g, (match, url) => {
-          return `url('./assets/icons/${url}')`;
+          return `url('~@owlui/theme/src/assets/icons/${url}')`;
         })
         .replace(/font-size: [\d]*px;/g, () => {
           return '';

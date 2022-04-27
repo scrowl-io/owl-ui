@@ -3,9 +3,6 @@
   "plugins": {
     "postcss-import": true,
     "postcss-url": true,
-    "autoprefixer": {
-      "grid": true
-    },
     "postcss-modules": {
       "generateScopedName": "owlui-[local]"
     }

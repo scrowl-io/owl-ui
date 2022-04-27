@@ -1,7 +1,6 @@
 import { execSync as exec } from 'child_process';
 import fs from '../utls/file-system.js';
 import locations from '../utls/locations.js';
-import { apply as applyFixes } from '../node-module-fixes/module-fixes.js';
 
 const logLevel = '--log-level warn';
 
@@ -27,23 +26,17 @@ function build(entry, remoteConfig) {
 }
 
 function buildTargets(pkg, entries, remoteConfig) {
-  entries.forEach(entry => {
-    let target;
-    let remoteOpts = '';
+  const remoteOpts = remoteConfig ? getRemoteOptions(remoteConfig) : '';
+  const targets = entries
+    .map(entry => {
+      return `--target ${entry}`;
+    })
+    .join(' ');
 
-    if (fs.getExt(entry)) {
-      target = `${pkg}/${entry} --dist-dir ${pkg}/dist`;
-    } else {
-      target = `${pkg} --target ${entry}`;
-    }
-
-    if (remoteConfig) {
-      remoteOpts = getRemoteOptions(remoteConfig);
-    }
-
-    console.log(`building: ${pkg} ${entry} ${remoteOpts}`);
-    exec(`parcel build ${target} ${logLevel} ${remoteOpts}`);
-  });
+  console.log(`building: ${pkg} | ${targets} | ${remoteOpts}`);
+  exec(
+    `cd ${pkg} && yarn run parcel build ${targets} ${logLevel} ${remoteOpts}`
+  );
 }
 
 function preBuild(name, config) {
@@ -67,16 +60,21 @@ function postBuild(files) {
   function replaceMapNames(path, lookup, replacer) {
     const contents = fs.getFile(path);
 
+    if (!contents) {
+      return;
+    }
+
     return contents.replace(new RegExp(lookup, 'g'), () => {
       return replacer;
     });
   }
 
   files.forEach(file => {
-    const buildName = file.source.replace('src/', '').replace('.scss', '.css');
+    const buildName = file.source.replace('src/', '');
     const buildPath = getDistPath(file.package, buildName);
     const buildMapName = buildName + '.map';
     const buildMapPath = buildPath + '.map';
+
     const distName = file.dist.replace('dist/', '');
     const distPath = getDistPath(file.package, file.dist.replace('dist/', ''));
     const distMapName = distName + '.map';
@@ -88,8 +86,13 @@ function postBuild(files) {
     const buildContents = replaceMapNames(distPath, buildMapName, distMapName);
     const mapContents = replaceMapNames(distMapPath, buildMapName, distMapName);
 
-    fs.setFile(distPath, buildContents);
-    fs.setFile(distMapPath, mapContents);
+    if (buildContents) {
+      fs.setFile(distPath, buildContents);
+    }
+
+    if (mapContents) {
+      fs.setFile(distMapPath, mapContents);
+    }
   });
 }
 
@@ -100,7 +103,6 @@ function process() {
   const utilsPkg = 'utils';
 
   fs.removeSync('.parcel-cache');
-  applyFixes();
 
   preBuild(utilsPkg, pkgs[utilsPkg]);
 

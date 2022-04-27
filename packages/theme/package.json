@@ -7,7 +7,6 @@
   "type": "commonjs",
   "source": "src/_index.scss",
   "main": "dist/owl.theme.css",
-  "sass": "src/_index.scss",
   "style": "dist/owl.theme.css",
   "targets": {
     "main": false
@@ -43,12 +42,7 @@
     "--config": "./packages/theme/.parcelrc",
     "--no-cache": ""
   },
-  "staticFiles": {
-    "staticPath": "src/global/assets",
-    "staticOutPath": "assets"
-  },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.0",
-    "@owlui/parcel-transformer-asset-path": "^0.0.0"
+    "@owlui/parcel-resolver-asset-path": "^0.0.0"
   }
 }

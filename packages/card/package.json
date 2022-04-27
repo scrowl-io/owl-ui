@@ -7,8 +7,10 @@
   "source": "./src/index.ts",
   "main": "./dist/owl.card.js",
   "types": "./dist/types.d.ts",
-  "sass": "./src/_index.scss",
-  "style": "./dist/owl.card.css",
+  "style": "dist/owl.card.css",
+  "parcelrc": {
+    "--config": "./packages/card/.parcelrc"
+  },
   "files": [
     "dist",
     "src"
@@ -30,11 +32,11 @@
     "react": "^18.0.0"
   },
   "dependencies": {
+    "@owlui/theme": "^0.0.19",
     "@owlui/typings": "^0.0.19",
     "@owlui/utils": "^0.0.19"
   },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.0",
-    "@owlui/parcel-transformer-asset-path": "^0.0.0"
+    "@owlui/parcel-resolver-asset-path": "^0.0.0"
   }
 }

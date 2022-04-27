@@ -33,13 +33,10 @@ export const setTargets = (entry, pkg) => {
   entry.dists = [];
 
   for (let target in pkg.targets) {
-    if (target === 'style') {
-      entry.entries.push(pkg.targets[target].source);
-    } else {
+    if (pkg.targets[target] !== false) {
       entry.entries.push(target);
+      entry.dists.push(pkg[target]);
     }
-
-    entry.dists.push(pkg[target]);
   }
 };
 
