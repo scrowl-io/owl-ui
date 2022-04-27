@@ -5,8 +5,8 @@
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/button#readme",
   "license": "MIT",
   "source": "./src/index.ts",
-  "main": "./dist/index.js",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/owl.button.js",
+  "types": "./dist/owl.button.d.ts",
   "style": "dist/owl.button.css",
   "parcelrc": {
     "--config": "./packages/button/.parcelrc"

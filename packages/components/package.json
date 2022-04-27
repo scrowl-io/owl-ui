@@ -6,7 +6,7 @@
   "license": "MIT",
   "source": "./src/index.ts",
   "main": "./dist/owl.components.js",
-  "types": "./dist/types.d.ts",
+  "types": "./dist/owl.components.d.ts",
   "style": "dist/owl.components.css",
   "parcelrc": {
     "--config": "./packages/components/.parcelrc"

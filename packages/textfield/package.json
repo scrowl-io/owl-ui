@@ -5,8 +5,8 @@
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/textfield#readme",
   "license": "MIT",
   "source": "./src/index.ts",
-  "main": "./dist/index.js",
-  "types": "./dist/types.d.ts",
+  "main": "./dist/owl.textfield.js",
+  "types": "./dist/owl.textfield.d.ts",
   "style": "dist/owl.textfield.css",
   "parcelrc": {
     "--config": "./packages/textfield/.parcelrc"
