@@ -43,6 +43,6 @@
     "--no-cache": ""
   },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.0"
+    "@owlui/parcel-resolver-asset-path": "^0.0.19"
   }
 }
