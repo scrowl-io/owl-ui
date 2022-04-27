@@ -119,11 +119,6 @@ function process() {
       source: pkgs[themePkg].config.source,
       dist: pkgs[themePkg].config.style,
     },
-    {
-      package: componentsPkg,
-      source: pkgs[componentsPkg].config.targets.style.source,
-      dist: pkgs[componentsPkg].config.style,
-    },
   ]);
   console.log(`\n`);
 }

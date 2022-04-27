@@ -1,6 +1,6 @@
 {{#with . as | data |}}
-@forward '@owlui/theme/src';
+@use '@owlui/theme/src' as theme;
 {{#each data.components as | comp |}}
-@forward '{{comp.pkg}}/src';
+@use '{{comp.pkg}}/src' as {{comp.name}};
 {{/each}}
 {{/with}}

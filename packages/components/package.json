@@ -4,19 +4,12 @@
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
   "license": "MIT",
+  "source": "./src/index.ts",
   "main": "./dist/owl.components.js",
-  "components": "./dist/owl.components.js",
-  "style": "./dist/owl.components.css",
-  "targets": {
-    "main": false,
-    "components": {
-      "context": "browser",
-      "outputFormat": "commonjs",
-      "source": "./src/index.ts"
-    },
-    "style": {
-      "source": "./src/_index.scss"
-    }
+  "types": "./dist/types.d.ts",
+  "style": "dist/owl.components.css",
+  "parcelrc": {
+    "--config": "./packages/components/.parcelrc"
   },
   "files": [
     "dist",
@@ -47,6 +40,7 @@
     "@owlui/utils": "^0.0.19"
   },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.0"
+    "@owlui/parcel-resolver-asset-path": "^0.0.0",
+    "sass": "^1.51.0"
   }
 }

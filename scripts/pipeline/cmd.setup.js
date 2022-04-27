@@ -27,19 +27,19 @@ const fileMap = {
     },
   },
   'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.eot': {
-    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.eot',
+    dest: 'packages/theme/src/assets/icons/MaterialIcons-Regular.eot',
   },
   'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.ttf': {
-    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.ttf',
+    dest: 'packages/theme/src/assets/icons/MaterialIcons-Regular.ttf',
   },
   'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff': {
-    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff',
+    dest: 'packages/theme/src/assets/icons/MaterialIcons-Regular.woff',
   },
   'node_modules/material-design-icons/iconfont/MaterialIcons-Regular.woff2': {
-    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Regular.woff2',
+    dest: 'packages/theme/src/assets/icons/MaterialIcons-Regular.woff2',
   },
   'scripts/pipeline/assets/MaterialIcons-Outlined.woff2': {
-    dest: 'packages/theme/src/global/assets/icons/MaterialIcons-Outlined.woff2',
+    dest: 'packages/theme/src/assets/icons/MaterialIcons-Outlined.woff2',
   },
   'node_modules/material-design-icons/iconfont/material-icons.css': {
     dest: 'packages/theme/src/global/_font-icons.scss',

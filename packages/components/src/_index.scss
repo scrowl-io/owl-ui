@@ -1,7 +1,7 @@
-@forward '@owlui/theme/src';
-@forward '@owlui/button/src';
-@forward '@owlui/card/src';
-@forward '@owlui/icons/src';
-@forward '@owlui/navigationdrawer/src';
-@forward '@owlui/table/src';
-@forward '@owlui/textfield/src';
+@use '@owlui/theme/src' as theme;
+@use '@owlui/button/src' as button;
+@use '@owlui/card/src' as card;
+@use '@owlui/icons/src' as icons;
+@use '@owlui/navigationdrawer/src' as navigationdrawer;
+@use '@owlui/table/src' as table;
+@use '@owlui/textfield/src' as textfield;
