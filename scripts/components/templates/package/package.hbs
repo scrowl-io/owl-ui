@@ -1,38 +1,42 @@
 {
-    "name": "@owlui/{{{low}}}",
-    "version": "0.0.0",
-    "description": "",
-    "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/{{{name}}}#readme",
-    "license": "MIT",
-    "type": "module",
-    "source": "src/index.ts",
-    "main": "dist/owl.{{{name}}}.js",
-    "module": "dist/index.js",
-    "types": "dist/types.d.ts",
-    "sass": "src/_index.scss",
-    "style": "dist/owl.{{{name}}}.css",
-    "files": [
-        "dist",
-        "src"
-    ],
-    "sideEffects": [
-        "*.css"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/EEBOS/owl-ui.git",
-        "directory": "packages/{{{name}}}"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "isLibrary": true,
-    "outputFormat": "commonjs",
-    "peerDependencies": {
-        "react": "^18.0.0"
-    },
-    "dependencies": {
-        "@owlui/typings": "^{{libVersion}}",
-        "@owlui/utils": "^{{libVersion}}"
-    }
+  "name": "@owlui/{{{low}}}",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/{{{name}}}#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.{{{name}}}.js",
+  "types": "dist/owl.{{{name}}}.d.ts",
+  "style": "dist/owl.{{{name}}}.css",
+  "parcelrc": {
+    "--config": "./packages/{{{name}}}/.parcelrc"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/{{{name}}}"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/theme": "^{{libVersion}}",
+    "@owlui/typings": "^{{libVersion}}",
+    "@owlui/utils": "^{{libVersion}}"
+  },
+  "devDependencies": {
+    "@owlui/parcel-resolver-asset-path": "^{{libVersion}}"
+  }
 }

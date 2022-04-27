@@ -16,14 +16,11 @@
     "@owlui/components": "^0.0.19"
   },
   "peerDependencies": {
-    "parcel": "^2.1.1",
+    "parcel": "^2.5.0",
     "react": "^18.0.0"
   },
   "outputFormat": "commonjs",
   "sideEffects": [
     "*.css"
-  ],
-  "@parcel/transformer-css": {
-    "cssModules": true
-  }
+  ]
 }
