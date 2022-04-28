@@ -1,8 +1,8 @@
-@use '~@owlui/theme' as theme;
+@use '@owlui/theme/src' as theme;
 
 .{{{keb}}} {
   padding: theme.$owl-sys-layout-spacer;
-    
+  
   &--theme {
     &--default {
       /* appearances */
@@ -18,7 +18,7 @@
       }
     }
   }
-
+  
   &--size {
     &-lg {
       @include theme.defaultTheme-typeface--large;
@@ -27,7 +27,7 @@
     &-md {
       @include theme.defaultTheme-typeface--medium;
     }
-
+    
     &-sm {
       @include theme.defaultTheme-typeface--small;
     }

@@ -5,10 +5,12 @@
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/navigationDrawer#readme",
   "license": "MIT",
   "source": "./src/index.ts",
-  "main": "./dist/index.js",
-  "types": "./dist/types.d.ts",
-  "sass": "./src/_index.scss",
-  "style": "./dist/owl.navigationDrawer.css",
+  "main": "./dist/owl.navigationDrawer.js",
+  "types": "./dist/owl.navigationDrawer.d.ts",
+  "style": "dist/owl.navigationDrawer.css",
+  "parcelrc": {
+    "--config": "./packages/navigationDrawer/.parcelrc"
+  },
   "files": [
     "dist",
     "src"
@@ -27,10 +29,14 @@
   "isLibrary": true,
   "outputFormat": "commonjs",
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/typings": "^0.0.1",
+    "@owlui/theme": "^0.0.19",
+    "@owlui/typings": "^0.0.19",
     "@owlui/utils": "^0.0.19"
+  },
+  "devDependencies": {
+    "@owlui/parcel-resolver-asset-path": "^0.0.19"
   }
 }

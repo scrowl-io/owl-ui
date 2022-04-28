@@ -2,6 +2,7 @@
 {{#each data.components as | comp |}}
 import * as {{comp.cap}} from '{{comp.pkg}}';
 {{/each}}
+import './_index.scss';
 
 {{#each data.components as | comp |}}
 export const {{comp.name}} = {{comp.cap}};

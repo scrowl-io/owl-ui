@@ -7,7 +7,6 @@
   "type": "commonjs",
   "source": "src/_index.scss",
   "main": "dist/owl.theme.css",
-  "sass": "src/_index.scss",
   "style": "dist/owl.theme.css",
   "targets": {
     "main": false
@@ -33,18 +32,17 @@
   "isLibrary": true,
   "outputFormat": "commonjs",
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/typings": "^0.0.1",
+    "@owlui/typings": "^0.0.19",
     "material-design-icons": "^3.0.1"
   },
   "parcelrc": {
     "--config": "./packages/theme/.parcelrc",
     "--no-cache": ""
   },
-  "staticFiles": {
-    "staticPath": "src/global/assets",
-    "staticOutPath": "assets"
+  "devDependencies": {
+    "@owlui/parcel-resolver-asset-path": "^0.0.19"
   }
 }

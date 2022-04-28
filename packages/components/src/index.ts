@@ -4,6 +4,7 @@ import * as Icons from '@owlui/icons';
 import * as Navigationdrawer from '@owlui/navigationdrawer';
 import * as Table from '@owlui/table';
 import * as Textfield from '@owlui/textfield';
+import './_index.scss';
 
 export const button = Button;
 export const card = Card;
