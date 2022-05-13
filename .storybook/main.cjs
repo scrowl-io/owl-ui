@@ -2,7 +2,12 @@ const path = require('path');
 
 module.exports = {
   "framework": "@storybook/react",
-  "staticDirs": ['../packages/theme/src/global'],
+  "staticDirs": [
+    {
+      from: '../packages/theme/src/assets',
+      to: '/~@owlui/theme/src/assets'
+    }
+  ],
   "stories": ["../packages/**/*.stories.mdx", "../packages/**/*.stories.@(js|jsx|ts|tsx)"],
   "typescript": {
     "reactDocgen": "",
@@ -62,7 +67,18 @@ module.exports = {
       loader: 'sass-loader',
       options: {
         sourceMap: true,
-        implementation: require('sass')
+        implementation: require('sass'),
+        sassOptions: {
+          includePaths: [
+            "./",
+            "../",
+            "../../node_modules/",
+            "../../node_modules/@owlui/theme/src/global/",
+            "../../node_modules/@owlui/theme/src/assets/",
+            "../@owlui/theme/src/global/",
+            "./node_modules/"
+          ]
+        }
       }
     };
     const fileLoader = {
