@@ -1,6 +1,6 @@
 {
   "name": "@owlui/web",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/web#readme",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "directory": "web"
   },
   "dependencies": {
-    "@owlui/components": "^0.0.19"
+    "@owlui/components": "^0.0.20"
   },
   "peerDependencies": {
     "parcel": "^2.5.0",

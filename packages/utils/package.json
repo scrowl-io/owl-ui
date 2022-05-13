@@ -1,6 +1,6 @@
 {
   "name": "@owlui/utils",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "",
   "author": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/utils#readme",
@@ -33,9 +33,9 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/typings": "^0.0.19"
+    "@owlui/typings": "^0.0.20"
   },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.19"
+    "@owlui/parcel-resolver-asset-path": "^0.0.20"
   }
 }
