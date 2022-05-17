@@ -56,6 +56,10 @@ After you install but before you begin any development you should run the setup 
 
 This command will initialize Lerna and move the design variables/tokens into the theme component.
 
+`yarn run build:dist`
+
+This command will compile and build the distribuition files of existing component and the `Utils` package.
+
 ### Creating Components
 
 To create a new component requires a lot of boilerplate. To make things a little easier, run the following command:
