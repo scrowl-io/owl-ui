@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import * as React from 'react';
@@ -12,8 +13,10 @@ export const Component = (props: DropdownMenuDefaultProps) => {
   const baseClass = 'dropdownMenu';
   const { dropdown } = props;
   const prefix = props.prefix || '';
+  const [selectedItem, setSelectedItem] = React.useState<string>('');
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
-  console.log(props);
+  dropdown ? (dropdown.selectedItem = selectedItem) : '';
 
   const locals = createLocalProps(
     props,
@@ -41,41 +44,92 @@ export const Component = (props: DropdownMenuDefaultProps) => {
     ['prefix', 'theme', 'appearance', 'size']
   );
 
-  const dropdownWrapperClass = `${baseClass}wrapperHidden`;
-  const itemBaseClass = `${baseClass}dropdownMenuItem`;
-  const selectedItemClass = `${baseClass}-selectedMenuItem`;
-
-  const expandDropdown = () => {
+  const toggleDropdown = () => {
+    dropdownOpen ? setDropdownOpen(false) : setDropdownOpen(true);
     const dropdown = document.querySelector('#dropdown-wrapper');
     dropdown?.classList.toggle('owlui-dropdown-menuwrapperHidden');
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const selectItem = (e: { target: any }) => {
+    const previouslySelected = document.querySelector(
+      '.owlui-dropdown-menu-selectedMenuItem'
+    );
+    previouslySelected?.classList.remove(
+      'owlui-dropdown-menu-selectedMenuItem'
+    );
     const selectedItem = e.target;
-    selectedItem.classList.toggle(selectedItemClass);
-    console.log(styleMod[itemBaseClass]);
+    selectedItem.classList.add('owlui-dropdown-menu-selectedMenuItem');
+    setSelectedItem(selectedItem.innerText);
   };
 
-  // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-  const dropdownLabel = <div onClick={expandDropdown}>{dropdown['label']}</div>;
-  // const renderItems = () => {
-  //   dropDown.items.map((item: DropDownContentItemProps) => {
-  //     return <div key={item.id}>{item.label}</div>;
-  //   });
-  // };
+  const selectWithArrows = target => {
+    const previouslySelected = document.querySelector(
+      '.owlui-dropdown-menu-selectedMenuItem'
+    );
+    previouslySelected?.classList.remove(
+      'owlui-dropdown-menu-selectedMenuItem'
+    );
+    const selectedItem = target;
+    selectedItem.classList.add('owlui-dropdown-menu-selectedMenuItem');
+    setSelectedItem(selectedItem.innerText);
+  };
+
+  const stripString = (string) => {
+    const thenum = string.replace(/^\D+/g, '');
+    return thenum;
+  };
+
+  const handleKeypress = e => {
+    switch (e.code) {
+      case 'Enter':
+        selectItem(e);
+        break;
+      case 'Escape':
+        toggleDropdown();
+        break;
+      case 'ArrowDown':
+        if (e.target.id === 'select-button' && !dropdownOpen) {
+          toggleDropdown();
+          const firstLi = document.querySelector('#list-item-1');
+          selectWithArrows(firstLi);
+        } else if (dropdownOpen) {
+          const currentlySelected = document.querySelector('.owlui-dropdown-menu-selectedMenuItem');
+          const prevId = stripString(currentlySelected.id);
+          const targetId = parseInt(prevId) + 1;
+          const target = document.querySelector(`#list-item-${targetId}`);
+
+          selectWithArrows(target);
+        }
+        break;
+      case 'ArrowUp':
+        console.log('up');
+        break;
+    }
+  };
+
+  const dropdownWrapperClass = `${baseClass}wrapperHidden`;
 
   return (
     <div {...locals}>
-      {dropdownLabel}
-      <ul id="dropdown-wrapper" className={styleMod[dropdownWrapperClass]}>
+      <div onKeyDown={handleKeypress}>{dropdown && dropdown['label']}</div>
+      <button id="select-button" onKeyDown={handleKeypress} onClick={toggleDropdown}>
+        <span>{selectedItem ? selectedItem : 'Item 1'}</span>
+        {/* <span className="icon">&#8595;</span> */}
+      </button>
+      <ul
+        onKeyDown={handleKeypress}
+        id="dropdown-wrapper"
+        className={styleMod[dropdownWrapperClass]}
+      >
         {dropdown &&
           dropdown.items.map((item: DropDownContentItemProps) => {
             return (
               <li
+                id={`list-item-${item.id}`}
                 onClick={selectItem}
-                className={styleMod[itemBaseClass]}
                 key={item.id}
+                onKeyDown={handleKeypress}
               >
                 {item.label}
               </li>

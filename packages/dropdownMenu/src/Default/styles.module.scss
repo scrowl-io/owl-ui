@@ -4,21 +4,43 @@
   padding: theme.$owl-sys-layout-spacer;
   text-align: center;
 
+  span.icon {
+    position: absolute;
+    right: 1em;
+  }
+
   &wrapperHidden {
     display: none;
   }
 
-  &dropdownMenuItem {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+  &-selectedMenuItem {
+    background-color: theme.$owl-sys-bg-primary;
+    color: white;
   }
 
-  &selectedMenuItem {
-    background-color: #0083c3;
+  :focus:not(:focus-visible) {
+    outline: none;
   }
 
   ul {
     border: 1px solid black;
+    max-height: 8em;
+    overflow-y: scroll;
+    cursor: pointer;
+  }
+
+  li:focus-visible, li:focus {
+    outline: 3px solid theme.$owl-sys-bg-primary;
+    border-right: 3px solid theme.$owl-sys-bg-primary;
+    border-left: 3px solid theme.$owl-sys-bg-primary;
+  }
+
+  button {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    cursor: pointer;
   }
 
   &--theme {
@@ -26,19 +48,26 @@
       /* appearances */
       background-color: theme.$owl-sys-bg-light;
 
+      // li:hover {
+      //   background-color: theme.$owl-sys-bg-primary;
+      //   color: white;
+      // }
+
       &-primary {
         @include theme.defaultTheme-branding;
-        
-
-        li {
-          background-color: theme.$owl-sys-bg-primary !important;
-        }
-
       }
     }
 
     &--dark {
       /* appearances */
+      background-color: theme.$owl-sys-bg-dark;
+      color: white;
+
+      // li:hover {
+      //   background-color: theme.$owl-sys-bg-light;
+      //   color: black;
+      // }
+
       &-primary {
         @include theme.darkTheme-branding;
       }

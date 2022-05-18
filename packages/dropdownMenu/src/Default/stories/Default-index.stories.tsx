@@ -32,6 +32,26 @@ const items = [
     label: 'Item 5',
     value: undefined,
   },
+  {
+    id: '6',
+    label: 'Item 6',
+    value: undefined,
+  },
+  {
+    id: '7',
+    label: 'Item 7',
+    value: undefined,
+  },
+  {
+    id: '8',
+    label: 'Item 8',
+    value: undefined,
+  },
+  {
+    id: '9',
+    label: 'Item 9',
+    value: undefined,
+  },
 ];
 
 const dropdown = {

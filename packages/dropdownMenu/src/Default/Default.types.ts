@@ -2,10 +2,10 @@ import React from 'react';
 
 export interface DropDownContentItemProps {
   map(arg0: (item: DropDownContentItemProps) => JSX.Element): React.ReactNode;
-  id: string;
+  id: string | number | undefined;
   label: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value: any;
+  value: any | undefined;
 }
 
 export interface DropDownContentContainerProps {
@@ -21,6 +21,7 @@ export interface DropdownMenuDefaultCommons {
   prefix?: string;
   children?: JSX.Element | JSX.Element[];
   dropdown: DropDownContentContainerProps;
+  items: DropDownContentItemProps;
 }
 
 export type DropdownMenuDefaultProps = Partial<DropdownMenuDefaultCommons> &
