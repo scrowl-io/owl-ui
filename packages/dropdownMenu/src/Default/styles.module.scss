@@ -1,0 +1,62 @@
+@use '@owlui/theme/src' as theme;
+
+.dropdown-menu {
+  padding: theme.$owl-sys-layout-spacer;
+  text-align: center;
+
+  &wrapperHidden {
+    display: none;
+  }
+
+  &dropdownMenuItem {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  &selectedMenuItem {
+    background-color: #0083c3;
+  }
+
+  ul {
+    border: 1px solid black;
+  }
+
+  &--theme {
+    &--default {
+      /* appearances */
+      background-color: theme.$owl-sys-bg-light;
+
+      &-primary {
+        @include theme.defaultTheme-branding;
+        
+
+        li {
+          background-color: theme.$owl-sys-bg-primary !important;
+        }
+
+      }
+    }
+
+    &--dark {
+      /* appearances */
+      &-primary {
+        @include theme.darkTheme-branding;
+      }
+    }
+  }
+  
+  &--size {
+    &-lg {
+      @include theme.defaultTheme-typeface--large;
+    }
+
+    &-md {
+      @include theme.defaultTheme-typeface--medium;
+    }
+    
+    &-sm {
+      @include theme.defaultTheme-typeface--small;
+    }
+  }
+}
+

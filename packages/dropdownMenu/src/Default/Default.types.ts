@@ -1,0 +1,27 @@
+import React from 'react';
+
+export interface DropDownContentItemProps {
+  map(arg0: (item: DropDownContentItemProps) => JSX.Element): React.ReactNode;
+  id: string;
+  label: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: any;
+}
+
+export interface DropDownContentContainerProps {
+  label: string;
+  selectedItem: string;
+  items: DropDownContentItemProps;
+}
+
+export interface DropdownMenuDefaultCommons {
+  appearance?: 'Primary' | 'Outline';
+  theme?: 'Default' | 'Dark';
+  size?: 'Sm' | 'Md' | 'Lg';
+  prefix?: string;
+  children?: JSX.Element | JSX.Element[];
+  dropdown: DropDownContentContainerProps;
+}
+
+export type DropdownMenuDefaultProps = Partial<DropdownMenuDefaultCommons> &
+  React.AllHTMLAttributes<HTMLDivElement>;
