@@ -1,0 +1,46 @@
+@use '@owlui/theme/src' as theme;
+
+.tab {
+  &-button{
+    box-shadow:0px 0px 3px 1px rgba(0,0,0,0.4)
+    ;
+    margin-right: .5rem;
+    border: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: theme.$owl-ref-palette-disabled;
+    color: theme.$owl-sys-bg-light;
+    border-top: 4px solid theme.$owl-ref-palette-disabled;
+    
+    
+    &:hover, &:focus{
+      border-top: 4px solid red;
+      background-color: theme.$owl-sys-bg-light;
+      color: black;
+      margin-bottom: -2px;
+      border-bottom: 2px solid white;
+      border-left: .5px solid grey;
+      border-right: .5px solid grey;
+      box-shadow:0px 0px 0px 0px rgba(0,0,0,0.4)
+    ;
+    }
+  }
+
+  .active{
+    border-top: 3px solid blue;
+  }
+}
+
+
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}

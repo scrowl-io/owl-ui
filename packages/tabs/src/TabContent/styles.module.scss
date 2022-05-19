@@ -1,0 +1,22 @@
+@use '@owlui/theme/src' as theme;
+
+.tab {
+  &-content {
+    background-color: theme.$owl-sys-bg-light;
+    border: .5px solid grey;
+    padding: 1rem;
+    width: auto;
+
+  }
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
+}

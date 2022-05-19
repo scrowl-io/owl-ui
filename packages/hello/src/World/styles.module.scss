@@ -1,0 +1,8 @@
+@use '@owlui/theme/src' as theme;
+
+.hello {
+
+  &-world {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+}
