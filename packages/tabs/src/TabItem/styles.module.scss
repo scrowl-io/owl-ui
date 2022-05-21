@@ -2,28 +2,11 @@
 
 .tab {
   &-item {
-    
     display: inline-block;
     list-style: none;
-    
-   
-   
   }
 }
 
 li {
   list-style-type: none;
-}
-
-.tab-list-item {
-  display: inline-block;
-  list-style: none;
-  
-  padding: 0.5rem 0.75rem;
-}
-
-.tab-list-active {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
 }

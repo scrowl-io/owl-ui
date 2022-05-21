@@ -1,22 +1,22 @@
 @use '@owlui/theme/src' as theme;
 
+@mixin tab-content-common {
+  border: .5px solid grey;
+  padding: 1rem;
+}
+
 .tab {
   &-content {
-    background-color: theme.$owl-sys-bg-light;
-    border: .5px solid grey;
-    padding: 1rem;
+    background-color: theme.$owl-sys-bg-light;  
     width: auto;
+    color: black;
+    @include tab-content-common;
 
+    &-dark {
+        background-color: theme.$owl-ref-palette-dark;
+        color: white; 
+        @include tab-content-common;
+    }
   }
 }
 
-.tab-list-item {
-  display: inline-block;
-  list-style: none;
-}
-
-.tab-list-active {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
-}

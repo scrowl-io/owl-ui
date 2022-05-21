@@ -38,7 +38,7 @@ export const Component = (props: TabTabWrapperProps) => {
   localProps.className = getCssModClass({ localProps, baseClass, styles });
 
   const TabWrapperRenderer = () => {
-    const Element = 'ul';
+    const Element = 'div';
 
     return <Element {...locals}>{children}</Element>;
   };

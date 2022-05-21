@@ -1,5 +1,28 @@
 @use '@owlui/theme/src' as theme;
 
+// Mixins
+@mixin tab-button-general {
+  border-left: .5px solid grey;
+  border-right: .5px solid grey;
+  box-shadow:0px 0px 0px 0px rgba(0,0,0,0.4);
+  margin-bottom: -2px;
+}
+
+@mixin tab-button-common {
+  background-color: theme.$owl-sys-bg-light;
+  color: black;
+  border-bottom: 2px solid white;
+  @include tab-button-general
+}
+
+@mixin tab-button-dark-common {
+  background-color: theme.$owl-ref-palette-dark;
+  color: white;
+  border-bottom: 2px solid theme.$owl-ref-palette-dark;
+  @include tab-button-general
+}
+
+// Tab button styles
 .tab {
   &-button{
     box-shadow:0px 0px 3px 1px rgba(0,0,0,0.4)
@@ -11,36 +34,31 @@
     background-color: theme.$owl-ref-palette-disabled;
     color: theme.$owl-sys-bg-light;
     border-top: 4px solid theme.$owl-ref-palette-disabled;
-    
-    
-    &:hover, &:focus{
+    padding: 0.3rem 1.25rem;
+
+    &-active{
+      border-top: 4px solid blue;
+      @include tab-button-common;
+    }
+
+    &:hover, &:focus, &:active{
       border-top: 4px solid red;
-      background-color: theme.$owl-sys-bg-light;
-      color: black;
-      margin-bottom: -2px;
-      border-bottom: 2px solid white;
-      border-left: .5px solid grey;
-      border-right: .5px solid grey;
-      box-shadow:0px 0px 0px 0px rgba(0,0,0,0.4)
-    ;
+      @include tab-button-common;
+    }
+
+    &-dark {
+      background-color: theme.$owl-ref-palette-disabled;
+      padding: 0.3rem 1.25rem;
+
+      &-active{
+        border-top: 4px solid blue;
+        @include tab-button-dark-common
+      }
+
+      &:hover, &:focus, &:active{
+        border-top: 4px solid red;
+        @include tab-button-dark-common
+      }
     }
   }
-
-  .active{
-    border-top: 3px solid blue;
-  }
-}
-
-
-
-.tab-list-item {
-  display: inline-block;
-  list-style: none;
-
-}
-
-.tab-list-active {
-  background-color: white;
-  border: solid #ccc;
-  border-width: 1px 1px 0 1px;
 }

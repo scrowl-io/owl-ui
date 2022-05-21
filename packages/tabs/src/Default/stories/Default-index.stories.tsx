@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { component as Tabs } from '../index';
-import { component as TabItem } from '../../TabItem';
 import { component as TabWrapper } from '../../TabWrapper';
 import { component as TabContent } from '../../TabContent';
 import { component as TabButton } from '../../TabButton';
 import { TabsDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: TabsDefaultProps) => {
@@ -33,39 +31,38 @@ export const Default = (args: TabsDefaultProps) => {
 
   return (
     <Tabs {...args}>
-      <TabWrapper>
+      <TabWrapper aria-label="Tabbed Navigation">
         {items.map((tabItem, index) => {
           return (
-            <TabItem key={tabItem.id}>
               <TabButton
+                key={tabItem.id}
+                aria-selected={index === selectedItem}
                 className={`owlui-tab-button ${
-                  index === selectedItem ? 'active' : 'owlui-tab-button'
+                  index === selectedItem
+                    ? 'owlui-tab-button-active'
+                    : 'owlui-tab-button'
                 }`}
                 onClick={() => setSelectedItem(index)}
               >
                 {tabItem.label}
               </TabButton>
-            </TabItem>
           );
         })}
+        </TabWrapper>
         <TabContent>
           <h3>{items[selectedItem].label}</h3>
-
           <p>{items[selectedItem] && items[selectedItem].view}</p>
         </TabContent>
-      </TabWrapper>
     </Tabs>
   );
 };
 
 Default.args = {
-  appearance: 'Primary',
-  size: 'Lg',
+  appearance: 'Default',
   theme: 'Default',
 };
 
 Default.argTypes = {
   appearance,
-  size,
   theme,
 };
