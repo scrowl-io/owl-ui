@@ -1,0 +1,11 @@
+{
+  "modules": true,
+  "plugins": {
+    "postcss-import": true,
+    "postcss-url": true,
+    "postcss-modules": {
+      "generateScopedName": "owlui-[local]",
+      "localsConvention": "camelCase"
+    }
+  }
+}

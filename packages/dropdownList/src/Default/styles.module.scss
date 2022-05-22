@@ -1,0 +1,67 @@
+@use '@owlui/theme/src' as theme;
+
+.dropdown-list {
+  padding: theme.$owl-sys-layout-spacer;
+  width: 20em;
+  justify-content: center;
+  display: flex;
+
+  &-selectedMenuItem {
+    background-color: theme.$owl-sys-bg-primary;
+    color: white;
+  }
+
+  .active {
+    background-color: yellow;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    max-height: 8em;
+    overflow-y: scroll;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  li {
+    padding-top: 0.25em;
+  }
+  
+  &--theme {
+    &--default {
+      /* appearances */
+      &-primary {
+        @include theme.defaultTheme-branding;
+      }
+    }
+
+    &--dark {
+      /* appearances */
+      &-primary {
+        @include theme.darkTheme-branding;
+      }
+    }
+  }
+  
+  &--size {
+    &-lg {
+      @include theme.defaultTheme-typeface--large;
+    }
+
+    &-md {
+      @include theme.defaultTheme-typeface--medium;
+    }
+    
+    &-sm {
+      @include theme.defaultTheme-typeface--small;
+    }
+  }
+}
