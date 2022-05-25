@@ -3,12 +3,12 @@
 @mixin tab-content-common {
   border: .5px solid grey;
   padding: 1rem;
+  width: 400px;
 }
 
 .tab {
   &-content {
     background-color: theme.$owl-sys-bg-light;  
-    width: auto;
     color: black;
     @include tab-content-common;
 
