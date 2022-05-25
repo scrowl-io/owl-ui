@@ -31,7 +31,6 @@
   "dependencies": {
     "@owlui/button": "^0.0.20",
     "@owlui/card": "^0.0.20",
-    "@owlui/hello": "^0.0.0",
     "@owlui/icons": "^0.0.20",
     "@owlui/navigationdrawer": "^0.0.20",
     "@owlui/table": "^0.0.20",
