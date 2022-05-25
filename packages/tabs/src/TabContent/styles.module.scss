@@ -1,0 +1,22 @@
+@use '@owlui/theme/src' as theme;
+
+@mixin tab-content-common {
+  border: .5px solid grey;
+  padding: 1rem;
+  width: 400px;
+}
+
+.tab {
+  &-content {
+    background-color: theme.$owl-sys-bg-light;  
+    color: black;
+    @include tab-content-common;
+
+    &-dark {
+        background-color: theme.$owl-ref-palette-dark;
+        color: white; 
+        @include tab-content-common;
+    }
+  }
+}
+

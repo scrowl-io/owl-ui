@@ -1,0 +1,39 @@
+@use '@owlui/theme/src' as theme;
+
+.tabs {
+  padding: theme.$owl-sys-layout-spacer;
+
+  &--theme {
+    &--default {
+      /* appearances */
+      &-primary {
+        @include theme.defaultTheme-branding;
+      }
+    }
+
+    &--dark {
+      /* appearances */
+      &-primary {
+        @include theme.darkTheme-branding;
+      }
+    }
+  }
+  
+  &--size {
+    &-lg {
+      @include theme.defaultTheme-typeface--large;
+    }
+
+    &-md {
+      @include theme.defaultTheme-typeface--medium;
+    }
+    
+    &-sm {
+      @include theme.defaultTheme-typeface--small;
+    }
+  }
+}
+
+.active{
+  background-color: red;
+}

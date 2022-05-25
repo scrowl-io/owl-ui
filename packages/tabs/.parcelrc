@@ -1,0 +1,12 @@
+{
+  "extends": "@parcel/config-default",
+  "resolvers": [
+    "@owlui/parcel-resolver-asset-path",
+    "..."
+  ],
+  "validators": {
+    "*.{ts,tsx}": [
+      "@parcel/validator-typescript"
+    ]
+  }
+}

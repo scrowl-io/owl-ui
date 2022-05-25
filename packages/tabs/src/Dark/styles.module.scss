@@ -1,0 +1,13 @@
+@use '@owlui/theme/src' as theme;
+
+.tabs {
+
+  &-dark {
+    padding: theme.$owl-sys-layout-spacer;
+  }
+}
+
+.active{
+  background-color: red;
+}
+
