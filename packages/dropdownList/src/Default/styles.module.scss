@@ -45,6 +45,13 @@
 
     &--dark {
       /* appearances */
+      background-color: theme.$owl-sys-bg-dark;
+      color: white;
+
+      li {
+        border: 1px solid white;
+      }
+      
       &-primary {
         @include theme.darkTheme-branding;
       }

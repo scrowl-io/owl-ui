@@ -1,8 +1,9 @@
 import React from 'react';
 
 export interface DropDownContentItemProps {
-  length: number;
-  id: string | number | undefined;
+  map: (item: DropDownContentItemProps, i: number) => Array<React.ReactNode>;
+  length?: number;
+  id: string;
   label: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: any | undefined;
