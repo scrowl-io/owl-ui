@@ -1,6 +1,6 @@
 {
   "name": "@owlui/theme",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/theme#readme",
   "license": "MIT",
@@ -35,7 +35,7 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/typings": "^0.0.19",
+    "@owlui/typings": "^0.0.20",
     "material-design-icons": "^3.0.1"
   },
   "parcelrc": {
@@ -43,6 +43,6 @@
     "--no-cache": ""
   },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.19"
+    "@owlui/parcel-resolver-asset-path": "^0.0.20"
   }
 }
