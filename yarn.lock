@@ -2192,14 +2192,6 @@
     "@owlui/typings" "^0.0.20"
     "@owlui/utils" "^0.0.20"
 
-"@owlui/theme@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@owlui/theme/-/theme-0.0.20.tgz#4a2e77dbd7898691f7e11445ca90dd8673d12b02"
-  integrity sha512-YQdjA2cGSyzpkOg2hqCIQLScvCrl/t8m+bJ+Psh/ORCTYVE3S/2UHpZ/NFj7k47eNeYRez/izfuu7nK9N0u/CA==
-  dependencies:
-    "@owlui/typings" "^0.0.20"
-    material-design-icons "^3.0.1"
-
 "@owlui/utils@^0.0.20":
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/@owlui/utils/-/utils-0.0.20.tgz#b695c46243748e0b8450d9fce3e519536f94cf9f"
@@ -13347,7 +13339,7 @@ strong-log-transformer@^2.1.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-style-dictionary@^3.0.3:
+style-dictionary@^3.0.3, style-dictionary@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/style-dictionary/-/style-dictionary-3.7.0.tgz#02f4b17232cbb1142a3fdc09a17dfb08aafde3b0"
   integrity sha512-BL4AQS5kNDBXbFHWJhlCve6+ojnHgHkiwhf2nNByU698elXWdyK5b27OprphT4q0/tJ52zB+lodhqxIxbNOajQ==
