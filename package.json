@@ -32,7 +32,7 @@
     "setup": "lerna bootstrap --use-workspaces",
     "build:theme": "sass --load-path=node_modules theme/src/_index.scss theme/dist/owlui.theme.css",
     "postbuild:theme": "postcss theme/dist/owlui.theme.css -r",
-    "prebuild": "yarn run build:theme",
+    "prebuild:dist": "yarn run build:theme",
     "build:dist": "parcel build packages/* --no-cache",
     "prepublish:lerna": "yarn run build:dist",
     "publish:lerna": "lerna publish",
