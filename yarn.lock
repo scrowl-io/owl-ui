@@ -2177,21 +2177,6 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
-"@owlui/components@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@owlui/components/-/components-0.0.20.tgz#bf4c3a9e108c2bd43cbab3ff4ab520223f270381"
-  integrity sha512-qCEex3iqlO1coc/NyYxqOclVmS1rZKhFFSIsfDX6GOmtO7lPktGbjxN0gikJs6KN1VIvuI5xj7E8/GQpo+JYTw==
-  dependencies:
-    "@owlui/button" "^0.0.20"
-    "@owlui/card" "^0.0.20"
-    "@owlui/icons" "^0.0.20"
-    "@owlui/navigationdrawer" "^0.0.20"
-    "@owlui/table" "^0.0.20"
-    "@owlui/textfield" "^0.0.20"
-    "@owlui/theme" "^0.0.20"
-    "@owlui/typings" "^0.0.20"
-    "@owlui/utils" "^0.0.20"
-
 "@owlui/utils@^0.0.20":
   version "0.0.20"
   resolved "https://registry.yarnpkg.com/@owlui/utils/-/utils-0.0.20.tgz#b695c46243748e0b8450d9fce3e519536f94cf9f"

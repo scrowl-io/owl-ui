@@ -5,7 +5,7 @@ import strs from '../utls/strings.js';
 import { compile } from './templater.js';
 
 function setDest(filename) {
-  return `packages/components/src/${filename}`;
+  return `lib/src/${filename}`;
 }
 
 function update() {
@@ -25,25 +25,18 @@ function update() {
   };
   const types = fs.getFile('typings/package.json');
 
-  exec(`lerna add ${types.name} --scope=@owlui/components`);
+  exec(`lerna add ${types.name} --scope=@owlui/lib`);
 
   for (let pkg in pkgs) {
-    if (pkg !== 'components') {
-      const component = `@owlui/${pkg}`;
+    const component = `@owlui/${pkg}`;
 
-      if (
-        !pkgs[pkg].config.owlrc ||
-        !pkgs[pkg].config.owlrc.ignoreComponentLib
-      ) {
-        data.components.push({
-          name: pkg,
-          cap: strs.toCapitalize(pkg),
-          pkg: component,
-        });
-      }
+    data.components.push({
+      name: pkg,
+      cap: strs.toCapitalize(pkg),
+      pkg: component,
+    });
 
-      exec(`lerna add ${component} --scope=@owlui/components`);
-    }
+    exec(`lerna add ${component} --scope=@owlui/lib`);
   }
 
   data.components = data.components.sort();

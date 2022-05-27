@@ -8,16 +8,16 @@ Once this package is installed it can be used directly or on a individual compon
 
 **Installation:**
 
-> `npm i @owlui/components`
+> `npm i @owlui/lib`
 >
-> `yarn add @owlui/components`
+> `yarn add @owlui/lib`
 
 ### Examples
 
 #### Importing All Components
 
 ```jsx
-import * as owlui from '@owlui/components';
+import * as owlui from '@owlui/lib';
 
 const DefaultBtn = owlui.button.Default;
 
