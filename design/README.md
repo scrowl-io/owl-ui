@@ -21,7 +21,7 @@ To use the design we need to import the design file from XD then create a Design
 - Paste the link into the `CC LIBRARY LINK` field and click import
 - Click `Save`
 - Click `Start Editing` then `Finish Editing`
-- Use your terminal apply changes to the [Theme](../packages/theme/README.md) component: `yarn run presetup`
+- Use your terminal apply changes to the [Theme](../theme/README.md) component: `yarn run presetup`
 
 ### Updating the DSP
 
@@ -29,7 +29,7 @@ To use the design we need to import the design file from XD then create a Design
 - Click the `Re-import` button of `CC LIBRARY LINK` field
 - Click `Save`
 - Click `Start Editing` then `Finish Editing`
-- Use your terminal apply changes to the [Theme](../packages/theme/README.md) component `yarn run presetup`
+- Use your terminal apply changes to the [Theme](../theme/README.md) component `yarn run presetup`
 
 ## Design Tokens
 
