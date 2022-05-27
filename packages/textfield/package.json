@@ -8,9 +8,6 @@
   "main": "./dist/owl.textfield.js",
   "types": "./dist/owl.textfield.d.ts",
   "style": "dist/owl.textfield.css",
-  "parcelrc": {
-    "--config": "./packages/textfield/.parcelrc"
-  },
   "files": [
     "dist",
     "src"
@@ -36,8 +33,5 @@
     "@owlui/typings": "^0.0.20",
     "@owlui/utils": "^0.0.20"
   },
-  "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298",
-  "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.20"
-  }
+  "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }

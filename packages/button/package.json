@@ -8,9 +8,6 @@
   "main": "./dist/owl.button.js",
   "types": "./dist/owl.button.d.ts",
   "style": "dist/owl.button.css",
-  "parcelrc": {
-    "--config": "./packages/button/.parcelrc"
-  },
   "files": [
     "dist",
     "src"
@@ -36,8 +33,5 @@
     "@owlui/typings": "^0.0.20",
     "@owlui/utils": "^0.0.20"
   },
-  "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298",
-  "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.20"
-  }
+  "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }
