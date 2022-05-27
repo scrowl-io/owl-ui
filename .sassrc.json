@@ -1,0 +1,8 @@
+{
+  "outFile": "./dist/owl.[folder].css",
+  "includePaths": [
+    "./node_modules/",
+    "./packages/",
+    "./"
+  ]
+}

@@ -14,7 +14,7 @@ module.exports = new Resolver({
       (isNodeModule || isThemePackage)
     ) {
       const url = isThemePackage
-        ? `${specifier.replace('~@owlui', 'packages')}`
+        ? `${specifier.replace('~@owlui', '.')}`
         : specifier;
       return {
         filePath: `${pathToFileURL(`${url}`).pathname}`,

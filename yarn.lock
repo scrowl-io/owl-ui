@@ -2177,6 +2177,36 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
+"@owlui/components@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@owlui/components/-/components-0.0.20.tgz#bf4c3a9e108c2bd43cbab3ff4ab520223f270381"
+  integrity sha512-qCEex3iqlO1coc/NyYxqOclVmS1rZKhFFSIsfDX6GOmtO7lPktGbjxN0gikJs6KN1VIvuI5xj7E8/GQpo+JYTw==
+  dependencies:
+    "@owlui/button" "^0.0.20"
+    "@owlui/card" "^0.0.20"
+    "@owlui/icons" "^0.0.20"
+    "@owlui/navigationdrawer" "^0.0.20"
+    "@owlui/table" "^0.0.20"
+    "@owlui/textfield" "^0.0.20"
+    "@owlui/theme" "^0.0.20"
+    "@owlui/typings" "^0.0.20"
+    "@owlui/utils" "^0.0.20"
+
+"@owlui/theme@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@owlui/theme/-/theme-0.0.20.tgz#4a2e77dbd7898691f7e11445ca90dd8673d12b02"
+  integrity sha512-YQdjA2cGSyzpkOg2hqCIQLScvCrl/t8m+bJ+Psh/ORCTYVE3S/2UHpZ/NFj7k47eNeYRez/izfuu7nK9N0u/CA==
+  dependencies:
+    "@owlui/typings" "^0.0.20"
+    material-design-icons "^3.0.1"
+
+"@owlui/utils@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@owlui/utils/-/utils-0.0.20.tgz#b695c46243748e0b8450d9fce3e519536f94cf9f"
+  integrity sha512-KASXoNyAnwT+h60N/UULcoR/DaL80tVGub7M4erZYu9dp4B1icfZxS26o0Rw7ANmecjMG15DGXP1ZCAO/5mEog==
+  dependencies:
+    "@owlui/typings" "^0.0.20"
+
 "@parcel/bundler-default@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@parcel/bundler-default/-/bundler-default-2.5.0.tgz#1f0b6d4893bb1a24f49fc7254a423134fb03741e"
