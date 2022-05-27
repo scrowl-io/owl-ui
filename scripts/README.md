@@ -8,7 +8,7 @@
 
 This command updates the [packages/components](../packages/components/README.md) component. It adds all other UI components to its [index](../packages/components/src/index.ts) and exports them. It does the same for the [stylings](../packages/components/src/_index.scss) of the UI components. Additionally, in ensures that all components under packages are added as dependencies.
 
-This command runs as a pre-step in the `build:dist` command(s).
+This command runs as a pre-step in the `build:system` command(s).
 
 This command runs as a post-step in the `create:component` command(s).
 
@@ -73,7 +73,7 @@ This command runs as a pre-step in the `start:web` script(s).
 
 #### [Build - Distribution](./pipeline/cmd.dist.js)
 
-`yarn run build:dist`
+`yarn run build:system`
 
 This command uses parcel to build distribution files for npm packages.
 
@@ -109,6 +109,6 @@ This command copies files into a new location. Additionally, the command can app
 
 This command runs as a pre-step in the `setup`, `build:storybook`, `start:storybook`, `build:web`, `start:web` script(s).
 
-This command runs as a pre-step in the `build:dist` command(s).
+This command runs as a pre-step in the `build:system` command(s).
 
 ---

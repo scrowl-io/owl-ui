@@ -4,7 +4,7 @@ This package contains all of the **root** styling of Owl UI. You do not need to 
 
 The `global/variables` file is copied from the DSP output, you can read more about what that is [here](../../design/README.md). The naming convention of the variables are based on a reference/contextual methodology as described by [material design](https://m3.material.io/foundations/design-tokens/overview). Many of the values are derived directly from [OSG's branding site](https://stage.osg.ca/brand/).
 
-This file, as well as other assets, are copied into the Theme with the [setup pipeline command](../../scripts/pipeline/cmd.setup.js). It runs whenever you `build:dist`, `start:storybook`, `start:web`, or `publish:lerna`. **DO NOT** edit this file directly as it will be overwritten.
+This file, as well as other assets, are copied into the Theme with the [setup pipeline command](../../scripts/pipeline/cmd.setup.js). It runs whenever you `build:system`, `start:storybook`, `start:web`, or `publish:lerna`. **DO NOT** edit this file directly as it will be overwritten.
 
 Any styling placed under `global` is required to be universal across all themes. Any specific styling needs to be isolated to a specific theme folder.
 
