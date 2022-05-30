@@ -2,6 +2,6 @@
 
 .card {
   &-header {
-    padding: theme.$owl-sys-layout-spacer;
+    padding: var(--spacer);
   }
 }

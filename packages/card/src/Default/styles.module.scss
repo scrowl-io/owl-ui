@@ -6,28 +6,22 @@
   flex-direction: column;
   width: 100%;
   word-wrap: break-word;
-  background-color: theme.$owl-sys-bg-light;
-  border: 1px solid theme.$owl-sys-bg-dark;
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg-dark);
 
   &--theme {
     &--default {
-      &-primary {
-        @include theme.defaultTheme-branding;
-      }
-
       &-outline {
-        color: theme.$owl-sys-color-primary;
-        background-color: theme.$owl-sys-color-on-primary;
-        border-color: theme.$owl-sys-color-primary;
+        color: var(--clr-primary);
+        background-color: var(--clr-light);
+        border-color: var(--clr-primary);
       }
     }
 
     &--dark {
-      @include theme.darkTheme-branding;
-
       &-outline {
-        color: theme.$owl-sys-color-on-light;
-        background-color: theme.$owl-sys-bg-light;
+        color: var(--clr-dark);
+        background-color: var(--bg-light);
       }
     }
   }

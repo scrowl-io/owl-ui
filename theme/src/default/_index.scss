@@ -2,38 +2,39 @@
 @use '../global/font-brand' as *;
 @use '../global/font-icons' as *;
 
-@mixin default {
-  background-color: vars.$owl-sys-bg-light;
-  color: vars.$owl-sys-bg-dark;
-  border-color: vars.$owl-sys-bg-dark;
+.theme--default {
+  --bg-primary: #{vars.$owl-ref-palette-blue-500};
+  --bg-secondary: #{vars.$owl-ref-palette-blue-200};
+  --bg-success: #{vars.$owl-ref-palette-green-500};
+  --bg-info: #{vars.$owl-ref-palette-blue-600};
+  --bg-warning: #{vars.$owl-ref-palette-yellow-500};
+  --bg-danger: #{vars.$owl-ref-palette-red-500};
+  --bg-light: #{vars.$owl-ref-palette-white};
+  --bg-dark: #{vars.$owl-ref-palette-grey-800};
+  --clr-primary: #{vars.$owl-ref-palette-blue-500};
+  --clr-secondary: #{vars.$owl-ref-palette-blue-200};
+  --clr-success: #{vars.$owl-ref-palette-green-500};
+  --clr-info: #{vars.$owl-ref-palette-blue-600};
+  --clr-warning: #{vars.$owl-ref-palette-yellow-500};
+  --clr-danger: #{vars.$owl-ref-palette-red-500};
+  --clr-light: #{vars.$owl-ref-palette-white};
+  --clr-dark: #{vars.$owl-ref-palette-grey-800};
 }
 
 @mixin branding {
-  background-color: vars.$owl-sys-color-on-primary;
-  color: vars.$owl-sys-color-primary;
-  border-color: vars.$owl-sys-color-primary;
+  background-color: var(--bg-light);
+  color: var(--clr-dark);
+  border-color: var(--bg-dark);
 }
 
-@mixin branding--secondary {
-  background-color: vars.$owl-sys-color-primary;
-  color: vars.$owl-sys-color-on-primary;
-  border-color: vars.$owl-sys-color-on-primary;
+@mixin branding-primary {
+  background-color: var(--bg-light);
+  color: var(--clr-primary);
+  border-color: var(--bg-primary);
 }
 
-@mixin typeface--large {
-  font-family: vars.$owl-sys-typeface-body-lg-family;
-  font-size: vars.$owl-sys-typeface-body-lg-size;
-  font-style: vars.$owl-sys-typeface-body-lg-weight;
-}
-
-@mixin typeface--medium {
-  font-family: vars.$owl-sys-typeface-body-md-family;
-  font-size: vars.$owl-sys-typeface-body-md-size;
-  font-style: vars.$owl-sys-typeface-body-md-weight;
-}
-
-@mixin typeface--small {
-  font-family: vars.$owl-sys-typeface-body-sm-family;
-  font-size: vars.$owl-sys-typeface-body-sm-size;
-  font-style: vars.$owl-sys-typeface-body-sm-weight;
+@mixin branding-primary-alt {
+  background-color: var(--bg-primary);
+  color: var(--clr-light);
+  border-color: var(--bg-primary);
 }

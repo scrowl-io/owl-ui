@@ -3,7 +3,6 @@
 @mixin button-link {
   border-color: transparent;
   background-color: transparent;
-  color: theme.$owl-sys-color-primary;
   text-decoration: none;
 
   &:hover,
@@ -15,7 +14,7 @@
 .button {
   display: inline-block;
   margin: 0;
-  padding: theme.$owl-sys-layout-spacer;
+  padding: var(--spacer);
   text-align: center;
   white-space: nowrap;
   touch-action: manipulation;
@@ -24,6 +23,8 @@
   border-radius: 4px;
   cursor: pointer;
   user-select: none;
+  background-color: var(--bg-light);
+  color: var(--clr-dark);
 
   &:hover,
   &:focus,
@@ -36,41 +37,17 @@
     cursor: not-allowed;
   }
 
-  &--theme {
-    &--default {
-      &-primary {
-        @include theme.defaultTheme-branding;
-      }
-
-      &-link {
-        @include button-link;
-      }
-    }
-
-    &--dark {
-      @include theme.darkTheme-branding;
-
-      &-primary {
-        @include theme.darkTheme-branding;
-      }
-
-      &-link {
-        @include button-link;
-      }
-    }
-  }
-
   &--size {
     &-lg {
-      @include theme.defaultTheme-typeface--large;
+      @include theme.typeface-lg;
     }
 
     &-md {
-      @include theme.defaultTheme-typeface--medium;
+      @include theme.typeface-md;
     }
 
     &-sm {
-      @include theme.defaultTheme-typeface--small;
+      @include theme.typeface-sm;
     }
   }
 }

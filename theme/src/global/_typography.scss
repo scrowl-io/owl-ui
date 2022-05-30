@@ -2,14 +2,56 @@
 @use './font-brand' as *;
 @use './font-icons' as *;
 
-body {
-  font-size: var(--typeface-body-sm-size);
-  font-family: var(--typeface-body-sm-family), sans-serif;
-  font-weight: var(--typeface-body-sm-weight);
+@mixin typeface-lg {
+  font-family: var(--typeface-body-lg-family), sans-serif;
+  font-size: var(--typeface-body-lg-size);
+  font-style: var(--typeface-body-lg-weight);
 }
 
-h1 {
+@mixin typeface-md {
+  font-family: var(--typeface-body-md-family), sans-serif;
+  font-size: var(--typeface-body-md-size);
+  font-style: var(--typeface-body-md-weight);
+}
+
+@mixin typeface-sm {
+  font-family: var(--typeface-body-sm-family), sans-serif;
+  font-size: var(--typeface-body-sm-size);
+  font-style: var(--typeface-body-sm-weight);
+}
+
+@mixin typeface-h1 {
   font-size: var(--typeface-heading-1-size);
   font-family: var(--typeface-heading-1-family), sans-serif;
   font-weight: var(--typeface-heading-1-weight);
+}
+
+@mixin typeface-h2 {
+  font-size: var(--typeface-heading-2-size);
+  font-family: var(--typeface-heading-2-family), sans-serif;
+  font-weight: var(--typeface-heading-2-weight);
+}
+
+@mixin typeface-h3 {
+  font-size: var(--typeface-heading-3-size);
+  font-family: var(--typeface-heading-3-family), sans-serif;
+  font-weight: var(--typeface-heading-3-weight);
+}
+
+@mixin typeface-h4 {
+  font-size: var(--typeface-heading-4-size);
+  font-family: var(--typeface-heading-4-family), sans-serif;
+  font-weight: var(--typeface-heading-4-weight);
+}
+
+@mixin typeface-h5 {
+  font-size: var(--typeface-heading-5-size);
+  font-family: var(--typeface-heading-5-family), sans-serif;
+  font-weight: var(--typeface-heading-5-weight);
+}
+
+@mixin typeface-h6 {
+  font-size: var(--typeface-heading-6-size);
+  font-family: var(--typeface-heading-6-family), sans-serif;
+  font-weight: var(--typeface-heading-6-weight);
 }

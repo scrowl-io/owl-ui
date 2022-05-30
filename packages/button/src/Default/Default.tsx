@@ -21,8 +21,8 @@ export const Component = (props: ButtonDefaultProps) => {
             value: 'Theme',
           },
           {
-            fields: ['theme', 'appearance'],
-            value: 'Theme',
+            fields: ['appearance'],
+            value: 'Appearance',
           },
           {
             fields: ['size'],

@@ -2,7 +2,7 @@
 @use 'sass:meta';
 @use './variables.scss' as *;
 
-$gutter: $owl-sys-layout-spacer;
+$gutter: $owl-ref-layout-spacer;
 $gutter-half: ($gutter * 0.5);
 $gutter-comp: ($gutter-half * -1);
 $margin-outer: ($gutter * 2);
