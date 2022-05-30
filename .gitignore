@@ -32,6 +32,9 @@ packages/*/dist
 packages/**/*.js
 packages/**/*.map
 packages/**/test/**.css
+lib/dist/
+theme/dist/
+utils/dist/
 web/dist/
 .DS_Store
 **/.DS_Store

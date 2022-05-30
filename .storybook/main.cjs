@@ -4,7 +4,7 @@ module.exports = {
   "framework": "@storybook/react",
   "staticDirs": [
     {
-      from: '../packages/theme/src/assets',
+      from: '../theme/src/assets',
       to: '/~@owlui/theme/src/assets'
     }
   ],

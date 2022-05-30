@@ -1,16 +1,13 @@
 {
-  "name": "@owlui/components",
+  "name": "@owlui/lib",
   "version": "0.0.20",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/components#readme",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/lib#readme",
   "license": "MIT",
   "source": "./src/index.ts",
-  "main": "./dist/owl.components.js",
-  "types": "./dist/owl.components.d.ts",
-  "style": "dist/owl.components.css",
-  "parcelrc": {
-    "--config": "./packages/components/.parcelrc"
-  },
+  "main": "./dist/owl.lib.js",
+  "types": "./dist/owl.lib.d.ts",
+  "style": "dist/owl.lib.css",
   "files": [
     "dist",
     "src"
@@ -18,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
-    "directory": "packages/components"
+    "directory": "packages/lib"
   },
   "publishConfig": {
     "access": "public"
@@ -38,8 +35,5 @@
     "@owlui/theme": "^0.0.20",
     "@owlui/typings": "^0.0.20",
     "@owlui/utils": "^0.0.20"
-  },
-  "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.20"
   }
 }

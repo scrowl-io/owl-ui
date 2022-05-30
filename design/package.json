@@ -1,0 +1,29 @@
+{
+  "name": "@owlui/design",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./dist/styledictionary/scss/variables.css",
+  "sass": "./dist/styledictionary/scss/variables.scss",
+  "style": "./dist/styledictionary/scss/variables.css",
+  "files": [
+    "dist",
+    "data",
+    "assets"
+  ],
+  "isLibrary": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "design"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/design#readme",
+  "devDependencies": {
+    "style-dictionary": "^3.7.0"
+  }
+}

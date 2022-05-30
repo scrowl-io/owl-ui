@@ -13,7 +13,7 @@
     "directory": "web"
   },
   "dependencies": {
-    "@owlui/components": "^0.0.20"
+    "@owlui/lib": "^0.0.20"
   },
   "peerDependencies": {
     "parcel": "^2.5.0",

@@ -56,7 +56,7 @@ After you install but before you begin any development you should run the setup 
 
 This command will initialize Lerna and move the design variables/tokens into the theme component.
 
-`yarn run build:dist`
+`yarn run build:system`
 
 This command will compile and build the distribuition files of existing component and the `Utils` package.
 
@@ -116,7 +116,7 @@ Additionally, there is a simple web service that you can use to test out importi
 
 You can create a distribution build using the following command:
 
-`yarn run build:dist`
+`yarn run build:system`
 
 You can create a storybook build with:
 
@@ -170,4 +170,4 @@ When adding a new feature or fixing a bug, make sure to branch from main and nam
 
 ### Submitting Pull Requests
 
-Before submitting a PR make sure to run `build:dist`, this will ensure linting and prettifying, as well as catch any typescript or general build errors.
+Before submitting a PR make sure to run `build:system`, this will ensure linting and prettifying, as well as catch any typescript or general build errors.

@@ -8,10 +8,20 @@ module.exports = {
     "properties/sizes.json"
   ],
   "platforms": {
+    "css": {
+      "files": [
+        {
+          "destination": "variables.css",
+          "format": "css/variables"
+        }
+      ],
+      "transformGroup": "css",
+      "buildPath": "css/"
+    },
     "scss": {
       "files": [
         {
-          "destination": "variables.scss",
+          "destination": "_index.scss",
           "format": "scss/variables"
         }
       ],
@@ -297,7 +307,7 @@ StyleDictionary.registerTransformGroup({
         'name/dsp/kebab', //replaces 'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'size/px',
+        'size/rem',
         'color/css'
     ]
 });
@@ -309,7 +319,7 @@ StyleDictionary.registerTransformGroup({
         'name/dsp/kebab', //replaces 'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'size/px',
+        'size/rem',
         'color/css',
     ]
 });
@@ -356,7 +366,7 @@ StyleDictionary.registerTransformGroup({
     transforms: [
         'attribute/cti',
         'name/dsp/pascal', //replaces 'name/cti/pascal',
-        'size/px',
+        'size/rem',
         'color/hex',
     ]
 });

@@ -8,9 +8,6 @@
   "main": "./dist/owl.navigationDrawer.js",
   "types": "./dist/owl.navigationDrawer.d.ts",
   "style": "dist/owl.navigationDrawer.css",
-  "parcelrc": {
-    "--config": "./packages/navigationDrawer/.parcelrc"
-  },
   "files": [
     "dist",
     "src"
@@ -35,8 +32,5 @@
     "@owlui/theme": "^0.0.20",
     "@owlui/typings": "^0.0.20",
     "@owlui/utils": "^0.0.20"
-  },
-  "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.20"
   }
 }
