@@ -12,9 +12,9 @@
   "type": "module",
   "scripts": {
     "create:component": "node ./scripts/components/cmd.create.js",
+    "postcreate:component": "yarn run update:lib",
     "create:icon": "node ./scripts/components/cmd.create-icon.js",
     "update:icons": "node ./scripts/components/cmd.update-icons.js",
-    "postcreate:component": "yarn run update:lib",
     "logs:print": "node ./scripts/pipeline/cmd.logs.js",
     "logs:clean": "node ./scripts/pipeline/cmd.logs-clean.js",
     "lint:fix": "yarn lint:fix:eslint && yarn lint:fix:prettier",
