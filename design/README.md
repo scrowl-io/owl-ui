@@ -12,6 +12,10 @@
 
 To use the design we need to import the design file from XD then create a Design System Package (DSP).
 
+**CC Lib Link**
+
+> https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14
+
 ### Importing to VS Code
 
 - Install the Adobe VS Code extension

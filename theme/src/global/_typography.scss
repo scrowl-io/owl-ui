@@ -3,11 +3,13 @@
 @use './font-icons' as *;
 
 body {
-  font-size: $owl-sys-typeface-body-size;
-  font-family: $owl-sys-typeface-body-family, sans-serif;
+  font-size: var(--typeface-body-sm-size);
+  font-family: var(--typeface-body-sm-family), sans-serif;
+  font-weight: var(--typeface-body-sm-weight);
 }
 
 h1 {
-  font-size: $owl-sys-typeface-heading-1-size;
-  font-family: $owl-sys-typeface-heading-1-family, sans-serif;
+  font-size: var(--typeface-heading-1-size);
+  font-family: var(--typeface-heading-1-family), sans-serif;
+  font-weight: var(--typeface-heading-1-weight);
 }

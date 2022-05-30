@@ -1,73 +1,307 @@
 {
   "color": {
-    "owl_sys_color_on-light": {
-      "value": "{color.owl_ref_palette_dark.value}"
+    "owl_ref_palette_grey_300": {
+      "value": "#DEE2E6ff"
     },
-    "owl_sys_color_on-dark": {
-      "value": "{color.owl_ref_palette_light.value}"
+    "owl_ref_palette_grey_400": {
+      "value": "#CED4DAff"
     },
-    "owl_sys_color_primary": {
-      "value": "{color.owl_ref_palette_primary.value}"
+    "owl_ref_palette_grey_500": {
+      "value": "#ADB5BDff"
     },
-    "owl_sys_color_on-primary": {
-      "value": "{color.owl_ref_palette_light.value}"
+    "owl_ref_palette_grey_600": {
+      "value": "#6C757Dff"
     },
-    "owl_sys_bg_primary": {
-      "value": "{color.owl_ref_palette_primary.value}"
+    "owl_ref_palette_grey_700": {
+      "value": "#495057ff"
     },
-    "owl_sys_bg_dark": {
-      "value": "{color.owl_ref_palette_dark.value}"
+    "owl_ref_palette_grey_800": {
+      "value": "#343A40ff"
     },
-    "owl_sys_bg_light": {
-      "value": "{color.owl_ref_palette_light.value}"
+    "owl_ref_palette_grey_900": {
+      "value": "#212529ff"
     },
-    "owl_ref_palette_warn-highlight": {
-      "value": "#FFD61Eff"
-    },
-    "owl_ref_palette_alert": {
-      "value": "#C54E00ff"
-    },
-    "owl_ref_palette_alert-highlight": {
-      "value": "#E66F00ff"
-    },
-    "owl_ref_palette_success": {
-      "value": "#178622ff"
-    },
-    "owl_ref_palette_success-highlight": {
-      "value": "#31A03Cff"
-    },
-    "owl_ref_palette_secondary": {
-      "value": "#9624FEff"
-    },
-    "owl_ref_palette_secondary-highlight": {
-      "value": "#C250FFff"
-    },
-    "owl_ref_palette_error": {
-      "value": "#DD1700ff"
-    },
-    "owl_ref_palette_error-highlight": {
-      "value": "#FF3A23ff"
-    },
-    "owl_ref_palette_disabled": {
-      "value": "#6F747Aff"
-    },
-    "owl_ref_palette_disabled-highlight": {
-      "value": "#8D9298ff"
-    },
-    "owl_ref_palette_warn": {
-      "value": "#966D00ff"
-    },
-    "owl_ref_palette_primary": {
-      "value": "#0083C3ff"
-    },
-    "owl_ref_palette_dark": {
-      "value": "#2C3137ff"
-    },
-    "owl_ref_palette_light": {
+    "owl_ref_palette_white": {
       "value": "#FFFFFFff"
     },
-    "owl_ref_palette_primary-highlight": {
-      "value": "#0D90D0ff"
+    "owl_ref_palette_black": {
+      "value": "#000000ff"
+    },
+    "owl_ref_palette_cyan_100": {
+      "value": "#CFF4FCff"
+    },
+    "owl_ref_palette_cyan_200": {
+      "value": "#9EEAF9ff"
+    },
+    "owl_ref_palette_cyan_300": {
+      "value": "#6EDFF6ff"
+    },
+    "owl_ref_palette_cyan_400": {
+      "value": "#3DD5F3ff"
+    },
+    "owl_ref_palette_cyan_500": {
+      "value": "#0DCAF0ff"
+    },
+    "owl_ref_palette_cyan_600": {
+      "value": "#0AA2C0ff"
+    },
+    "owl_ref_palette_cyan_700": {
+      "value": "#087990ff"
+    },
+    "owl_ref_palette_cyan_800": {
+      "value": "#055160ff"
+    },
+    "owl_ref_palette_cyan_900": {
+      "value": "#032830ff"
+    },
+    "owl_ref_palette_grey_100": {
+      "value": "#F8F9FAff"
+    },
+    "owl_ref_palette_grey_200": {
+      "value": "#E9ECEFff"
+    },
+    "owl_ref_palette_green_800": {
+      "value": "#0A3622ff"
+    },
+    "owl_ref_palette_green_900": {
+      "value": "#051B11ff"
+    },
+    "owl_ref_palette_teal_100": {
+      "value": "#D2F4EAff"
+    },
+    "owl_ref_palette_teal_200": {
+      "value": "#A6E9D5ff"
+    },
+    "owl_ref_palette_teal_300": {
+      "value": "#79DFC1ff"
+    },
+    "owl_ref_palette_teal_400": {
+      "value": "#4DD4ACff"
+    },
+    "owl_ref_palette_teal_500": {
+      "value": "#20C997ff"
+    },
+    "owl_ref_palette_teal_600": {
+      "value": "#1AA179ff"
+    },
+    "owl_ref_palette_teal_700": {
+      "value": "#13795Bff"
+    },
+    "owl_ref_palette_teal_800": {
+      "value": "#0D503Cff"
+    },
+    "owl_ref_palette_teal_900": {
+      "value": "#06281Eff"
+    },
+    "owl_ref_palette_yellow_700": {
+      "value": "#997404ff"
+    },
+    "owl_ref_palette_yellow_800": {
+      "value": "#664D03ff"
+    },
+    "owl_ref_palette_yellow_900": {
+      "value": "#332701ff"
+    },
+    "owl_ref_palette_green_100": {
+      "value": "#D1E7DDff"
+    },
+    "owl_ref_palette_green_200": {
+      "value": "#A3CFBBff"
+    },
+    "owl_ref_palette_green_300": {
+      "value": "#75B798ff"
+    },
+    "owl_ref_palette_green_400": {
+      "value": "#479F76ff"
+    },
+    "owl_ref_palette_green_500": {
+      "value": "#198754ff"
+    },
+    "owl_ref_palette_green_600": {
+      "value": "#146C43ff"
+    },
+    "owl_ref_palette_green_700": {
+      "value": "#0F5132ff"
+    },
+    "owl_ref_palette_orange_700": {
+      "value": "#984C0Cff"
+    },
+    "owl_ref_palette_orange_800": {
+      "value": "#653208ff"
+    },
+    "owl_ref_palette_orange_900": {
+      "value": "#331904ff"
+    },
+    "owl_ref_palette_yellow_100": {
+      "value": "#FFF3CDff"
+    },
+    "owl_ref_palette_yellow_200": {
+      "value": "#FFE69Cff"
+    },
+    "owl_ref_palette_yellow_300": {
+      "value": "#FFDA6Aff"
+    },
+    "owl_ref_palette_yellow_400": {
+      "value": "#FFCD39ff"
+    },
+    "owl_ref_palette_yellow_500": {
+      "value": "#FFC107ff"
+    },
+    "owl_ref_palette_yellow_600": {
+      "value": "#CC9A06ff"
+    },
+    "owl_ref_palette_red_600": {
+      "value": "#B02A37ff"
+    },
+    "owl_ref_palette_red_700": {
+      "value": "#842029ff"
+    },
+    "owl_ref_palette_red_800": {
+      "value": "#58151Cff"
+    },
+    "owl_ref_palette_red_900": {
+      "value": "#2C0B0Eff"
+    },
+    "owl_ref_palette_orange_100": {
+      "value": "#FFE5D0ff"
+    },
+    "owl_ref_palette_orange_200": {
+      "value": "#FECBA1ff"
+    },
+    "owl_ref_palette_orange_300": {
+      "value": "#FEB272ff"
+    },
+    "owl_ref_palette_orange_400": {
+      "value": "#FD9843ff"
+    },
+    "owl_ref_palette_orange_500": {
+      "value": "#FD7E14ff"
+    },
+    "owl_ref_palette_orange_600": {
+      "value": "#CA6510ff"
+    },
+    "owl_ref_palette_pink_500": {
+      "value": "#D63384ff"
+    },
+    "owl_ref_palette_pink_600": {
+      "value": "#AB296Aff"
+    },
+    "owl_ref_palette_pink_700": {
+      "value": "#801F4Fff"
+    },
+    "owl_ref_palette_pink_800": {
+      "value": "#561435ff"
+    },
+    "owl_ref_palette_pink_900": {
+      "value": "#2B0A1Aff"
+    },
+    "owl_ref_palette_red_100": {
+      "value": "#F8D7DAff"
+    },
+    "owl_ref_palette_red_200": {
+      "value": "#F1AEB5ff"
+    },
+    "owl_ref_palette_red_300": {
+      "value": "#EA868Fff"
+    },
+    "owl_ref_palette_red_400": {
+      "value": "#E35D6Aff"
+    },
+    "owl_ref_palette_red_500": {
+      "value": "#DC3545ff"
+    },
+    "owl_ref_palette_purple_300": {
+      "value": "#A98EDAff"
+    },
+    "owl_ref_palette_purple_400": {
+      "value": "#8C68CDff"
+    },
+    "owl_ref_palette_purple_500": {
+      "value": "#6F42C1ff"
+    },
+    "owl_ref_palette_purple_600": {
+      "value": "#59359Aff"
+    },
+    "owl_ref_palette_purple_700": {
+      "value": "#432874ff"
+    },
+    "owl_ref_palette_purple_800": {
+      "value": "#2C1A4Dff"
+    },
+    "owl_ref_palette_purple_900": {
+      "value": "#160D27ff"
+    },
+    "owl_ref_palette_pink_100": {
+      "value": "#F7D6E6ff"
+    },
+    "owl_ref_palette_pink_200": {
+      "value": "#EFADCEff"
+    },
+    "owl_ref_palette_pink_300": {
+      "value": "#E685B5ff"
+    },
+    "owl_ref_palette_pink_400": {
+      "value": "#DE5C9Dff"
+    },
+    "owl_ref_palette_indigo_200": {
+      "value": "#C29FFAff"
+    },
+    "owl_ref_palette_indigo_300": {
+      "value": "#A370F7ff"
+    },
+    "owl_ref_palette_indigo_400": {
+      "value": "#8540F5ff"
+    },
+    "owl_ref_palette_indigo_500": {
+      "value": "#6610F2ff"
+    },
+    "owl_ref_palette_indigo_600": {
+      "value": "#520DC2ff"
+    },
+    "owl_ref_palette_indigo_700": {
+      "value": "#3D0A91ff"
+    },
+    "owl_ref_palette_indigo_800": {
+      "value": "#290661ff"
+    },
+    "owl_ref_palette_indigo_900": {
+      "value": "#140330ff"
+    },
+    "owl_ref_palette_purple_100": {
+      "value": "#E2D9F3ff"
+    },
+    "owl_ref_palette_purple_200": {
+      "value": "#C5B3E6ff"
+    },
+    "owl_ref_palette_blue_200": {
+      "value": "#9EC5FEff"
+    },
+    "owl_ref_palette_blue_300": {
+      "value": "#6EA8FEff"
+    },
+    "owl_ref_palette_blue_400": {
+      "value": "#3D8BFDff"
+    },
+    "owl_ref_palette_blue_500": {
+      "value": "#0D6EFDff"
+    },
+    "owl_ref_palette_blue_600": {
+      "value": "#0A58CAff"
+    },
+    "owl_ref_palette_blue_700": {
+      "value": "#084298ff"
+    },
+    "owl_ref_palette_blue_800": {
+      "value": "#052C65ff"
+    },
+    "owl_ref_palette_blue_900": {
+      "value": "#031633ff"
+    },
+    "owl_ref_palette_indigo_100": {
+      "value": "#E0CFFCff"
+    },
+    "owl_ref_palette_blue_100": {
+      "value": "#CFE2FFff"
     }
   }
 }
