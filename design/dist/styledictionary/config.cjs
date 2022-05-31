@@ -1,4 +1,7 @@
 const StyleDictionary = require('style-dictionary');
+const sizePtToRem = require('../../transformers/size-pt-to-rem.cjs');
+
+StyleDictionary.registerTransform(sizePtToRem);
 
 module.exports = {
   "source": [
@@ -307,7 +310,7 @@ StyleDictionary.registerTransformGroup({
         'name/dsp/kebab', //replaces 'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'size/rem',
+        sizePtToRem.name,
         'color/css'
     ]
 });
@@ -319,7 +322,7 @@ StyleDictionary.registerTransformGroup({
         'name/dsp/kebab', //replaces 'name/cti/kebab',
         'time/seconds',
         'content/icon',
-        'size/rem',
+        sizePtToRem.name,
         'color/css',
     ]
 });
