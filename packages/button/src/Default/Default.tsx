@@ -18,7 +18,7 @@ export const Component = (props: ButtonDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
             fields: ['appearance'],

@@ -18,11 +18,11 @@ export const Component = (props: CardDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
-            fields: ['theme', 'appearance'],
-            value: 'Theme',
+            fields: ['appearance'],
+            value: 'Appearance',
           },
         ],
       },
