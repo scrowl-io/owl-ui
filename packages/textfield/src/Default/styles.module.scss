@@ -1,35 +1,37 @@
 @use '@owlui/theme/src' as theme;
 
 .textfield {
-  padding: theme.$owl-sys-layout-spacer;
+  padding: var(--spacer);
+  color: var(--clr-dark);
+  border: 1px solid currentColor;
 
-  &--theme {
-    &--default {
-      /* appearances */
-      &-primary {
-        @include theme.defaultTheme-branding;
+  &.theme--dark {
+    background-color: var(--bg-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        color: var(--clr-primary);
       }
-    }
 
-    &--dark {
-      /* appearances */
-      &-primary {
-        @include theme.darkTheme-branding;
+      &.theme--dark {
+        color: var(--clr-dark);
       }
     }
   }
 
   &--size {
     &-lg {
-      @include theme.defaultTheme-typeface--large;
+      @include theme.typeface-lg;
     }
 
     &-md {
-      @include theme.defaultTheme-typeface--medium;
+      @include theme.typeface-md;
     }
 
     &-sm {
-      @include theme.defaultTheme-typeface--small;
+      @include theme.typeface-sm;
     }
   }
 }

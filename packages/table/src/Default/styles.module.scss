@@ -1,8 +1,6 @@
 @use '@owlui/theme/src' as theme;
 
 .table {
-  @include theme.defaultTheme-default;
-
   width: 100%;
   border-collapse: collapse;
   caption-side: top;
@@ -36,6 +34,27 @@
     vertical-align: inherit;
   }
 
+  &.theme--dark {
+    background-color: var(--bg-dark);
+    color: var(--clr-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        background-color: var(--bg-light);
+        color: var(--clr-primary);
+        border-color: var(--clr-primary);
+      }
+
+      &.theme--dark {
+        background-color: var(--bg-primary);
+        color: var(--clr-dark);
+        border-color: var(--clr-dark);
+      }
+    }
+  }
+
   &--outline {
     > :not(caption) {
       > * {
@@ -45,22 +64,6 @@
           border-width: 0 1px;
         }
       }
-    }
-  }
-
-  &--theme {
-    &--default {
-      &-primary {
-        @include theme.defaultTheme-branding;
-      }
-
-      &-secondary {
-        @include theme.defaultTheme-branding--secondary;
-      }
-    }
-
-    &--dark {
-      @include theme.darkTheme-branding;
     }
   }
 }

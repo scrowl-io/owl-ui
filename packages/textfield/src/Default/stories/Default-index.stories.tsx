@@ -9,7 +9,7 @@ import { theme } from './Default-theme.stories';
 export const Default = (args: TextfieldDefaultProps) => <Textfield {...args} />;
 
 Default.args = {
-  appearance: 'Primary',
+  appearance: 'Default',
   size: 'Lg',
   theme: 'Default',
 };

@@ -2,18 +2,18 @@
 
 .table {
   &-header {
-    padding: theme.$owl-sys-layout-spacer;
+    padding: var(--spacer);
   }
 
   &-body {
-    padding: theme.$owl-sys-layout-spacer;
+    padding: var(--spacer);
   }
 
   &-row {
-    padding: theme.$owl-sys-layout-spacer;
+    padding: var(--spacer);
   }
 
   &-cell {
-    padding: theme.$owl-sys-layout-spacer;
+    padding: var(--spacer);
   }
 }

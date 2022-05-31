@@ -5,6 +5,7 @@ import {
   localStyles,
   localInnerProps,
 } from './types';
+import * as styleMod from '@owlui/theme/src/_index.scss';
 
 export const hasProp = (obj: object, prop: string) => {
   return Object.prototype.hasOwnProperty.call(obj, prop);
@@ -29,9 +30,12 @@ export const getCssModClass = ({
   return localProps.className || '';
 };
 
-export const findModClass = (styles: stylesProp, baseClass: string) => {
+export const findModClass = (
+  styles: stylesProp,
+  baseClass?: string | undefined
+) => {
   return (classLookup: string): string => {
-    const modName = `${baseClass}${classLookup}`;
+    const modName = baseClass ? `${baseClass}${classLookup}` : `${classLookup}`;
 
     return hasProp(styles, modName) ? styles[modName] : '';
   };
@@ -42,7 +46,8 @@ export const createLocalProps = (
   styles: localStyles,
   removables: string[]
 ): object => {
-  const getClassName = findModClass(styles.module, styles.classes.base);
+  const getComponentClasses = findModClass(styles.module, styles.classes.base);
+  const getGlobalClasses = findModClass(styleMod);
   const localClassName = [styles.module[styles.classes.base]];
   const localProps: localInnerProps = { ...props };
   const classPrefix = styles.classes.prefix;
@@ -58,7 +63,11 @@ export const createLocalProps = (
     });
 
     if (classTemp) {
-      const classValue = getClassName(classTemp);
+      let classValue = getComponentClasses(classTemp);
+
+      if (!classValue) {
+        classValue = getGlobalClasses(classTemp);
+      }
 
       if (classValue) {
         localClassName.push(

@@ -1,9 +1,21 @@
 @use '../global/variables' as vars;
-@use '../global/font-brand' as *;
-@use '../global/font-icons' as *;
 
-@mixin branding {
-  background-color: vars.$owl-ref-palette-dark;
-  color: vars.$owl-sys-color-on-dark;
-  border-color: vars.$owl-sys-color-on-dark;
+.theme--dark {
+  --bg-primary: #{vars.$owl-ref-palette-grey-500};
+  --bg-secondary: #{vars.$owl-ref-palette-grey-200};
+  --bg-success: #{vars.$owl-ref-palette-green-500};
+  --bg-info: #{vars.$owl-ref-palette-blue-600};
+  --bg-warning: #{vars.$owl-ref-palette-yellow-500};
+  --bg-danger: #{vars.$owl-ref-palette-red-500};
+  --bg-light: #{vars.$owl-ref-palette-grey-100};
+  --bg-dark: #{vars.$owl-ref-palette-grey-800};
+  --clr-primary: #{vars.$owl-ref-palette-blue-500};
+  --clr-secondary: #{vars.$owl-ref-palette-blue-200};
+  --clr-success: #{vars.$owl-ref-palette-green-500};
+  --clr-info: #{vars.$owl-ref-palette-blue-600};
+  --clr-warning: #{vars.$owl-ref-palette-yellow-500};
+  --clr-danger: #{vars.$owl-ref-palette-red-500};
+  --clr-light: #{vars.$owl-ref-palette-white};
+  --clr-dark: #{vars.$owl-ref-palette-grey-800};
+  --clr-dark-highlight: #{vars.$owl-ref-palette-grey-600};
 }

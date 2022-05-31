@@ -14,7 +14,15 @@ In case you get the error `Error: EACCES: permission denied` try to install the 
 
 `sudo npm install yarn lerna parcel -g`
 
----
+Once those global packages have been installed, you can install the remaining dependencies.
+
+`yarn install`
+
+## Noteworthy Technologies
+
+This project is built with: [Typescript](https://www.typescriptlang.org/), [React](https://reactjs.org/), and [Sass](https://sass-lang.com/). It uses [Storybook](https://storybook.js.org/) to visualize components and provide documentation. Additionally, we make use of the [VS Code](https://code.visualstudio.com/) extension [Adobe XD](https://marketplace.visualstudio.com/items?itemName=Adobe.xd) to help translate designs into code. This extension is optional to install.
+
+> You can find more information about how we use the XD pipeline [here](./design/README.md).
 
 ### [Yarn](https://yarnpkg.com/)
 
@@ -32,17 +40,11 @@ This project uses Parcel to build the packages for distribution to npm.
 
 This project is built with functional react components.
 
+### [React Bootstrap](https://react-bootstrap.github.io/)
+
+The React version of the front-end Framework Bootstrap userd to build OwlUI components.
+
 ---
-
-Once those global packages have been installed, you can install the remaining dependencies.
-
-`yarn install`
-
-## Noteworthy Technologies
-
-This project is built with: [Typescript](https://www.typescriptlang.org/), [React](https://reactjs.org/), and [Sass](https://sass-lang.com/). It uses [Storybook](https://storybook.js.org/) to visualize components and provide documentation. Additionally, we make use of the [VS Code](https://code.visualstudio.com/) extension [Adobe XD](https://marketplace.visualstudio.com/items?itemName=Adobe.xd) to help translate designs into code. This extension is optional to install.
-
-> You can find more information about how we use the XD pipeline [here](./design/README.md).
 
 ## Commands
 

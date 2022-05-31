@@ -8,16 +8,6 @@ module.exports = {
     "properties/sizes.json"
   ],
   "platforms": {
-    "css": {
-      "files": [
-        {
-          "destination": "variables.css",
-          "format": "css/variables"
-        }
-      ],
-      "transformGroup": "css",
-      "buildPath": "css/"
-    },
     "scss": {
       "files": [
         {

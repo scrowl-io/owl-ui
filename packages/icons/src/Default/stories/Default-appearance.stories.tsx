@@ -1,5 +1,5 @@
 export const appearance = {
-  options: ['Primary', 'Alt'],
+  options: ['Default', 'Primary', 'Alt'],
   control: {
     type: 'select',
   },

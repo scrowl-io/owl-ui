@@ -6,28 +6,34 @@
   flex-direction: column;
   width: 100%;
   word-wrap: break-word;
-  background-color: theme.$owl-sys-bg-light;
-  border: 1px solid theme.$owl-sys-bg-dark;
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg-dark);
 
-  &--theme {
-    &--default {
-      &-primary {
-        @include theme.defaultTheme-branding;
+  &.theme--dark {
+    background-color: var(--bg-dark);
+    color: var(--clr-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        background-color: var(--bg-light);
+        color: var(--clr-primary);
+        border-color: var(--clr-primary);
       }
 
-      &-outline {
-        color: theme.$owl-sys-color-primary;
-        background-color: theme.$owl-sys-color-on-primary;
-        border-color: theme.$owl-sys-color-primary;
+      &.theme--dark {
+        background-color: var(--clr-primary);
+        color: var(--clr-light);
+        border-color: var(--clr-primary);
       }
     }
 
-    &--dark {
-      @include theme.darkTheme-branding;
-
-      &-outline {
-        color: theme.$owl-sys-color-on-light;
-        background-color: theme.$owl-sys-bg-light;
+    &-outline {
+      &.theme--dark {
+        background-color: var(--bg-dark);
+        color: var(--clr-light);
+        border-color: var(--clr-light);
       }
     }
   }

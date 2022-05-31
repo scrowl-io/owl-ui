@@ -18,7 +18,9 @@ export const Default = (args: CardDefaultProps) => (
       <p>Some quick example text to build on the card content</p>
     </CardBody>
     <CardFooter>
-      <Button>Submit</Button>
+      <Button appearance="Default" size="Sm" theme="Default">
+        Submit
+      </Button>
     </CardFooter>
   </Card>
 );

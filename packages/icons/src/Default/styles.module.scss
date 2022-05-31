@@ -2,74 +2,64 @@
 
 .icons,
 .icons-outlined {
-  color: theme.$owl-sys-color-on-light;
+  color: var(--clr-dark);
 
-  &--theme {
-    &--default {
-      &-primary {
-        color: theme.$owl-sys-color-primary;
+  &.theme--dark {
+    color: var(--clr-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        color: var(--clr-primary);
       }
 
-      &-alt {
-        color: theme.$owl-sys-color-on-primary;
-        background-color: theme.$owl-sys-bg-primary;
-      }
-    }
-
-    &--dark {
-      &-primary {
-        color: theme.$owl-sys-color-on-dark;
-        background-color: theme.$owl-sys-bg-dark;
+      &.theme--dark {
+        color: var(--clr-light);
       }
     }
 
-    &--light {
-      &-primary {
-        color: theme.$owl-sys-color-on-light;
-        background-color: theme.$owl-sys-bg-light;
-      }
+    &-alt {
+      color: var(--clr-light);
+      background-color: var(--bg-primary);
     }
   }
 
   &--size {
     &-h1 {
-      font-size: theme.$owl-sys-typeface-heading-1-size;
+      font-size: var(--typeface-heading-1-size);
     }
 
     &-h2 {
-      font-size: theme.$owl-sys-typeface-heading-2-size;
+      font-size: var(--typeface-heading-2-size);
     }
 
     &-h3 {
-      font-size: theme.$owl-sys-typeface-heading-3-size;
+      font-size: var(--typeface-heading-3-size);
     }
 
     &-h4 {
-      font-size: theme.$owl-sys-typeface-heading-4-size;
+      font-size: var(--typeface-heading-4-size);
     }
 
     &-h5 {
-      font-size: theme.$owl-sys-typeface-heading-5-size;
+      font-size: var(--typeface-heading-5-size);
     }
 
     &-h6 {
-      font-size: theme.$owl-sys-typeface-heading-6-size;
+      font-size: var(--typeface-heading-6-size);
     }
 
     &-lg {
-      font-size: theme.$owl-sys-typeface-body-lg-size;
+      font-size: var(--typeface-body-lg-size);
     }
 
     &-md {
-      font-size: theme.$owl-sys-typeface-body-md-size;
+      font-size: var(--typeface-body-md-size);
     }
 
     &-sm {
-      font-size: theme.$owl-sys-typeface-body-sm-size;
-    }
-
-    &-xs {
-      font-size: theme.$owl-sys-typeface-body-xs-size;
+      font-size: var(--typeface-body-sm-size);
     }
   }
 }
