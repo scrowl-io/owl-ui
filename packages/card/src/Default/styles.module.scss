@@ -9,19 +9,31 @@
   background-color: var(--bg-light);
   border: 1px solid var(--bg-dark);
 
-  &--theme {
-    &--default {
-      &-outline {
+  &.theme--dark {
+    background-color: var(--bg-dark);
+    color: var(--clr-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        background-color: var(--bg-light);
         color: var(--clr-primary);
-        background-color: var(--clr-light);
+        border-color: var(--clr-primary);
+      }
+
+      &.theme--dark {
+        background-color: var(--clr-primary);
+        color: var(--clr-light);
         border-color: var(--clr-primary);
       }
     }
 
-    &--dark {
-      &-outline {
-        color: var(--clr-dark);
-        background-color: var(--bg-light);
+    &-outline {
+      &.theme--dark {
+        background-color: var(--bg-dark);
+        color: var(--clr-light);
+        border-color: var(--clr-light);
       }
     }
   }
