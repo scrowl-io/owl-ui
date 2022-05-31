@@ -71,6 +71,14 @@
       "weight": {
         "value": "Regular"
       }
+    },
+    "owl_ref_typeface_body-xs": {
+      "family": {
+        "value": "Inter"
+      },
+      "weight": {
+        "value": "Regular"
+      }
     }
   },
   "size": {
@@ -101,6 +109,9 @@
       },
       "owl_ref_typeface_body-lg": {
         "value": "24"
+      },
+      "owl_ref_typeface_body-xs": {
+        "value": "10"
       }
     }
   }

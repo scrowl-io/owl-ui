@@ -3,47 +3,26 @@
 $border-clr: #dadada;
 
 .navigation-drawer {
-  $ref: &;
-
-  min-width: 200px;
-  box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
+  $ref-subheader: &;
 
   @include theme.typeface-sm;
-
-  &--theme {
-    &--default {
-      border: 1px solid $border-clr;
-
-      & #{$ref}__content-subheader {
-        color: theme.$owl-ref-palette-grey-300;
-      }
-
-      /* appearances */
-      &-primary {
-        border-color: $border-clr;
-
-        & #{$ref}__content-subheader {
-          color: var(--clr-secondary);
-        }
-      }
-    }
-
-    &--dark {
-      & #{$ref}__content-subheader {
-        color: var(--clr-light);
-      }
-    }
-  }
+  min-width: 200px;
+  box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
+  border: 1px solid $border-clr;
 
   &__header {
-    padding: var(--spacer);
+    @include theme.typeface-md;
+    padding: var(--spacer) 1rem;
   }
 
   &__content {
     padding: 0 0.5rem;
 
     &-subheader {
-      font-size: theme.$owl-ref-typeface-body-sm-size;
+      $ref-subheader: &;
+
+      @include theme.typeface-xs;
+      color: var(--clr-dark-highlight);
       margin: var(--spacer) 0 0 0;
       padding: 0.25rem 0.5rem;
     }
@@ -55,5 +34,27 @@ $border-clr: #dadada;
 
   &__item {
     padding: 0.5rem 4rem 0.5rem 0.5rem;
+  }
+
+  &.theme--dark {
+    background-color: var(--bg-light);
+  }
+
+  &--appearance {
+    &-primary {
+      color: var(--clr-light);
+
+      &.theme--default {
+        background-color: var(--bg-primary);
+
+        & #{$ref-subheader} {
+          color: var(--clr-light);
+        }
+      }
+
+      &.theme--dark {
+        background-color: var(--bg-dark);
+      }
+    }
   }
 }

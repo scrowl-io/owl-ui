@@ -20,19 +20,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.heading-2-family",
+          "id": "8bd5ab84-9419-4ed1-bbed-3f015ea202af",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.heading-2-weight",
+          "id": "8bd5ab84-9419-4ed1-bbed-3f015ea202af",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.heading-2-size",
+          "id": "8bd5ab84-9419-4ed1-bbed-3f015ea202af",
           "type": "size",
           "value": "50",
           "key": "size"
@@ -56,19 +56,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.heading-5-family",
+          "id": "724c4d1f-0e6c-4436-9bd7-22be9b52495a",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.heading-5-weight",
+          "id": "724c4d1f-0e6c-4436-9bd7-22be9b52495a",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.heading-5-size",
+          "id": "724c4d1f-0e6c-4436-9bd7-22be9b52495a",
           "type": "size",
           "value": "32",
           "key": "size"
@@ -92,19 +92,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.body-md-family",
+          "id": "6f924b17-714d-477e-8e01-b0c3510d10e8",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.body-md-weight",
+          "id": "6f924b17-714d-477e-8e01-b0c3510d10e8",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.body-md-size",
+          "id": "6f924b17-714d-477e-8e01-b0c3510d10e8",
           "type": "size",
           "value": "20",
           "key": "size"
@@ -128,19 +128,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.heading-3-family",
+          "id": "0e6959b2-567d-4995-8f61-b58a85f32db5",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.heading-3-weight",
+          "id": "0e6959b2-567d-4995-8f61-b58a85f32db5",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.heading-3-size",
+          "id": "0e6959b2-567d-4995-8f61-b58a85f32db5",
           "type": "size",
           "value": "40",
           "key": "size"
@@ -164,19 +164,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.heading-4-family",
+          "id": "92312ba2-cf33-442b-8d77-c1d15c48dbb0",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.heading-4-weight",
+          "id": "92312ba2-cf33-442b-8d77-c1d15c48dbb0",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.heading-4-size",
+          "id": "92312ba2-cf33-442b-8d77-c1d15c48dbb0",
           "type": "size",
           "value": "28",
           "key": "size"
@@ -200,19 +200,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.body-sm-family",
+          "id": "79f56730-1c25-4ebc-a4c5-b786adfe0cb9",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.body-sm-weight",
+          "id": "79f56730-1c25-4ebc-a4c5-b786adfe0cb9",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.body-sm-size",
+          "id": "79f56730-1c25-4ebc-a4c5-b786adfe0cb9",
           "type": "size",
           "value": "14",
           "key": "size"
@@ -236,19 +236,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.heading-6-family",
+          "id": "8c478323-542c-430e-9a7a-8c1975006a7e",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.heading-6-weight",
+          "id": "8c478323-542c-430e-9a7a-8c1975006a7e",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.heading-6-size",
+          "id": "8c478323-542c-430e-9a7a-8c1975006a7e",
           "type": "size",
           "value": "26",
           "key": "size"
@@ -272,19 +272,19 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.heading-1-family",
+          "id": "1d110ff7-ff39-461b-9510-df5f265ce9b7",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.heading-1-weight",
+          "id": "1d110ff7-ff39-461b-9510-df5f265ce9b7",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.heading-1-size",
+          "id": "1d110ff7-ff39-461b-9510-df5f265ce9b7",
           "type": "size",
           "value": "60",
           "key": "size"
@@ -308,21 +308,55 @@
       },
       "tokens": [
         {
-          "id": "owl.sys.typeface.body-lg-family",
+          "id": "f8be5b0c-e15d-4a26-bac0-8d222b1d2dbf",
           "type": "custom",
           "value": "Inter",
           "key": "family"
         },
         {
-          "id": "owl.sys.typeface.body-lg-weight",
+          "id": "f8be5b0c-e15d-4a26-bac0-8d222b1d2dbf",
           "type": "custom",
           "value": "Regular",
           "key": "weight"
         },
         {
-          "id": "owl.sys.typeface.body-lg-size",
+          "id": "f8be5b0c-e15d-4a26-bac0-8d222b1d2dbf",
           "type": "size",
           "value": "24",
+          "key": "size"
+        }
+      ]
+    },
+    {
+      "class": "collection",
+      "type": "font",
+      "id": "dade04f5-9677-467d-98db-1cb3aa805c6e",
+      "name": "owl.ref.typeface.body-xs",
+      "tags": [],
+      "related_entity_ids": [],
+      "ext-com_adobe-cclib": {
+        "source": "https://shared-assets.adobe.com/link/bf505209-e2bf-4af5-6378-307f3338bd14",
+        "id": "61ccc1af-5d4f-428f-b875-b79c26fa8900",
+        "last_sync": "2022-05-31T16:50:14.675Z",
+        "sync": true
+      },
+      "tokens": [
+        {
+          "id": "dade04f5-9677-467d-98db-1cb3aa805c6e",
+          "type": "custom",
+          "value": "Inter",
+          "key": "family"
+        },
+        {
+          "id": "dade04f5-9677-467d-98db-1cb3aa805c6e",
+          "type": "custom",
+          "value": "Regular",
+          "key": "weight"
+        },
+        {
+          "id": "dade04f5-9677-467d-98db-1cb3aa805c6e",
+          "type": "size",
+          "value": "10",
           "key": "size"
         }
       ]

@@ -14,7 +14,7 @@ export type NavigationDrawerContentTypes =
   | NavigationDrawerContentItemGroupProps;
 
 export interface NavigationDrawerDefaultCommons {
-  appearance?: 'Primary' | 'Outline';
+  appearance?: 'Default' | 'Primary';
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;

@@ -20,6 +20,12 @@
   font-style: var(--typeface-body-sm-weight);
 }
 
+@mixin typeface-xs {
+  font-family: var(--typeface-body-xs-family), sans-serif;
+  font-size: var(--typeface-body-xs-size);
+  font-style: var(--typeface-body-xs-weight);
+}
+
 @mixin typeface-h1 {
   font-size: var(--typeface-heading-1-size);
   font-family: var(--typeface-heading-1-family), sans-serif;
