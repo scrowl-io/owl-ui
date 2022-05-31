@@ -4,30 +4,24 @@
 .icons-outlined {
   color: var(--clr-dark);
 
-  &--theme {
-    &--default {
-      &-primary {
+  &.theme--dark {
+    color: var(--clr-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
         color: var(--clr-primary);
       }
 
-      &-alt {
+      &.theme--dark {
         color: var(--clr-light);
-        background-color: var(--bg-primary);
       }
     }
 
-    &--dark {
-      &-primary {
-        color: var(--clr-light);
-        background-color: var(--bg-dark);
-      }
-    }
-
-    &--light {
-      &-primary {
-        color: var(--clr-dark);
-        background-color: var(--bg-light);
-      }
+    &-alt {
+      color: var(--clr-light);
+      background-color: var(--bg-primary);
     }
   }
 
