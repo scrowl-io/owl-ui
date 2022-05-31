@@ -1,11 +1,11 @@
 import * as React from 'react';
+import { Button } from 'react-bootstrap';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: ButtonDefaultProps) => {
-  const baseClass = 'button';
-  const { href, children } = props;
+  const baseClass = 'btn';
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -20,26 +20,19 @@ export const Component = (props: ButtonDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['size'],
-            value: 'Size',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size']
+    ['prefix', 'theme']
   );
 
-  const buttonRenderer = () => {
-    const Element = href ? 'a' : 'button';
-
-    return <Element {...locals}>{children}</Element>;
-  };
-  return <>{buttonRenderer()}</>;
+  return (
+    <>
+      <Button bsPrefix="owlui-btn" {...locals}>
+        {props.children}
+      </Button>
+    </>
+  );
 };
 
 export default {

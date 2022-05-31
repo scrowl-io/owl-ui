@@ -2,24 +2,22 @@ import * as React from 'react';
 import { component as Button } from '../index';
 import { ButtonDefaultProps } from '../Default.types';
 
-import { appearance } from './Default-appearance.stories';
+import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: ButtonDefaultProps) => (
-  <Button {...args}>
-    <>Hello World</>
-  </Button>
+  <Button {...args}>Hello World</Button>
 );
 
 Default.args = {
-  appearance: 'Default',
-  size: 'Md',
+  variant: 'primary',
+  size: 'md',
   theme: 'Default',
 };
 
 Default.argTypes = {
-  appearance,
+  variant,
   size,
   theme,
 };
