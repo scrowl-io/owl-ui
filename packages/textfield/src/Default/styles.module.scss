@@ -2,6 +2,24 @@
 
 .textfield {
   padding: var(--spacer);
+  color: var(--clr-dark);
+  border: 1px solid currentColor;
+
+  &.theme--dark {
+    background-color: var(--bg-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        color: var(--clr-primary);
+      }
+
+      &.theme--dark {
+        color: var(--clr-dark);
+      }
+    }
+  }
 
   &--size {
     &-lg {
