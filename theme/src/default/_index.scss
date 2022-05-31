@@ -1,6 +1,4 @@
 @use '../global/variables' as vars;
-@use '../global/font-brand' as *;
-@use '../global/font-icons' as *;
 
 .theme--default {
   --bg-primary: #{vars.$owl-ref-palette-blue-500};
@@ -19,22 +17,4 @@
   --clr-danger: #{vars.$owl-ref-palette-red-500};
   --clr-light: #{vars.$owl-ref-palette-white};
   --clr-dark: #{vars.$owl-ref-palette-grey-800};
-}
-
-@mixin branding {
-  background-color: var(--bg-light);
-  color: var(--clr-dark);
-  border-color: var(--bg-dark);
-}
-
-@mixin branding-primary {
-  background-color: var(--bg-light);
-  color: var(--clr-primary);
-  border-color: var(--bg-primary);
-}
-
-@mixin branding-primary-alt {
-  background-color: var(--bg-primary);
-  color: var(--clr-light);
-  border-color: var(--bg-primary);
 }
