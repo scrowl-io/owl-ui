@@ -26,6 +26,10 @@
   background-color: var(--bg-light);
   color: var(--clr-dark);
 
+  &.theme--dark {
+    background-color: var(--bg-primary);
+  }
+
   &:hover,
   &:focus,
   &:active {
@@ -48,6 +52,20 @@
 
     &-sm {
       @include theme.typeface-sm;
+    }
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        background-color: var(--bg-primary);
+        color: var(--clr-light);
+      }
+
+      &.theme--dark {
+        background-color: var(--bg-dark);
+        color: var(--clr-light);
+      }
     }
   }
 }
