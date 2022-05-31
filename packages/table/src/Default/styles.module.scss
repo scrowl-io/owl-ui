@@ -34,6 +34,27 @@
     vertical-align: inherit;
   }
 
+  &.theme--dark {
+    background-color: var(--bg-dark);
+    color: var(--clr-light);
+  }
+
+  &--appearance {
+    &-primary {
+      &.theme--default {
+        background-color: var(--bg-light);
+        color: var(--clr-primary);
+        border-color: var(--clr-primary);
+      }
+
+      &.theme--dark {
+        background-color: var(--bg-primary);
+        color: var(--clr-dark);
+        border-color: var(--clr-dark);
+      }
+    }
+  }
+
   &--outline {
     > :not(caption) {
       > * {
