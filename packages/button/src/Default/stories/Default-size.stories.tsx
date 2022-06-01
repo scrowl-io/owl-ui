@@ -1,9 +1,16 @@
+const sizes = {
+  Lg: 'Large',
+  Md: 'Medium',
+  Sm: 'Small',
+};
+
 export const size = {
-  options: { Large: 'lg', Medium: 'md', Small: 'sm' },
+  options: Object.keys(sizes),
   control: {
     type: 'select',
+    labels: sizes,
   },
-  defaultValue: 'md',
+  defaultValue: 'Md',
 };
 
 export default {

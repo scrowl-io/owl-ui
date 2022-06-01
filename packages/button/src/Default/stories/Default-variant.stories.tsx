@@ -1,15 +1,18 @@
+const variants = {
+  primary: 'Primary',
+  secondary: 'Secondary',
+  success: 'Success',
+  warning: 'Warning',
+  danger: 'Danger',
+  light: 'Light',
+  link: 'Link',
+};
+
 export const variant = {
-  options: {
-    Primary: 'primary',
-    Secondary: 'secondary',
-    Success: 'success',
-    Warning: 'warning',
-    Danger: 'danger',
-    Light: 'light',
-    Link: 'link',
-  },
+  options: Object.keys(variants),
   control: {
     type: 'select',
+    labels: variants,
   },
   defaultValue: 'primary',
 };

@@ -11,9 +11,9 @@ export const Default = (args: ButtonDefaultProps) => (
 );
 
 Default.args = {
-  variant: 'primary',
-  size: 'md',
-  theme: 'Default',
+  variant: variant.defaultValue,
+  size: size.defaultValue,
+  theme: theme.defaultValue,
 };
 
 Default.argTypes = {

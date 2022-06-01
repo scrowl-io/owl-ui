@@ -20,10 +20,14 @@ export const Component = (props: ButtonDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
+          {
+            fields: ['size'],
+            value: 'Size',
+          },
         ],
       },
     },
-    ['prefix', 'theme']
+    ['prefix', 'theme', 'Size']
   );
 
   return (

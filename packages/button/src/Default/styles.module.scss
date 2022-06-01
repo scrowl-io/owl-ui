@@ -1,9 +1,8 @@
 @use '@owlui/theme/src' as theme;
 
 .btn {
-  &.--dark {
-    background-color: var(--bg-primary);
-  }
+  $ref: &;
+  @include theme.typeface-sm;
 
   &-primary {
     &.theme--dark {
@@ -16,6 +15,20 @@
     &.theme--dark {
       background-color: var(--bg-dark);
       color: var(--clr-light);
+    }
+  }
+
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
     }
   }
 }
