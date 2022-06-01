@@ -1,47 +1,24 @@
 @use '@owlui/theme/src' as theme;
 
-@mixin button-link {
-  border-color: transparent;
-  background-color: transparent;
-  text-decoration: none;
+.btn {
+  $ref: &;
+  @include theme.typeface-sm;
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-.button {
-  display: inline-block;
-  margin: 0;
-  padding: var(--spacer);
-  text-align: center;
-  white-space: nowrap;
-  touch-action: manipulation;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
-  background-color: var(--bg-light);
-  color: var(--clr-dark);
-
-  &.theme--dark {
-    background-color: var(--bg-primary);
+  &-primary {
+    &.theme--dark {
+      background-color: var(--bg-dark);
+      color: var(--clr-light);
+    }
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    opacity: 0.85;
+  &-secondary {
+    &.theme--dark {
+      background-color: var(--bg-dark);
+      color: var(--clr-light);
+    }
   }
 
-  &:disabled {
-    opacity: 0.9;
-    cursor: not-allowed;
-  }
-
-  &--size {
+  &#{$ref}--size {
     &-lg {
       @include theme.typeface-lg;
     }
@@ -52,20 +29,6 @@
 
     &-sm {
       @include theme.typeface-sm;
-    }
-  }
-
-  &--appearance {
-    &-primary {
-      &.theme--default {
-        background-color: var(--bg-primary);
-        color: var(--clr-light);
-      }
-
-      &.theme--dark {
-        background-color: var(--bg-dark);
-        color: var(--clr-light);
-      }
     }
   }
 }

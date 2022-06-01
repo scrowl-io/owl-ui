@@ -31,7 +31,8 @@
   "dependencies": {
     "@owlui/theme": "^0.0.21",
     "@owlui/typings": "^0.0.21",
-    "@owlui/utils": "^0.0.20"
+    "@owlui/utils": "^0.0.20",
+    "react-bootstrap": "^2.4.0"
   },
   "gitHead": "d43ba1ac26c71dd0164e55b46de2412c8f000298"
 }
