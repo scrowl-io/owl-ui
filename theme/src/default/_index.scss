@@ -10,11 +10,11 @@
   --color-font-warning: #{$owl-ref-palette-yellow-500};
   --color-font-danger: #{$owl-ref-palette-red-500};
   --color-font-light: #{$owl-ref-palette-white};
-  --color-font-dark: #{$owl-ref-palette-grey-800};
-  --color-font-dark-highlight: #{$owl-ref-palette-grey-600};
+  --color-font-dark: #{$owl-ref-palette-gray-800};
+  --color-font-dark-highlight: #{$owl-ref-palette-gray-600};
   // COLORS NAMED - Bootstrap
   --bs-primary: #{$owl-ref-palette-blue-500};
-  --bs-secondary: #{$owl-ref-palette-grey-600};
+  --bs-secondary: #{$owl-ref-palette-gray-600};
   --bs-success: #{$owl-ref-palette-green-500};
   --bs-info: #{$owl-ref-palette-cyan-500};
   --bs-warning: #{$owl-ref-palette-yellow-500};
@@ -31,15 +31,15 @@
   --bs-link-hover-color: var(--color-font-primary-highlight);
   // COLORS NAMED RGB - Bootstrap
   --bs-primary-rgb: #{toRGB($owl-ref-palette-blue-500)};
-  --bs-secondary-rgb: #{toRGB($owl-ref-palette-grey-600)};
+  --bs-secondary-rgb: #{toRGB($owl-ref-palette-gray-600)};
   --bs-success-rgb: #{toRGB($owl-ref-palette-green-500)};
   --bs-info-rgb: #{toRGB($owl-ref-palette-cyan-500)};
   --bs-warning-rgb: #{toRGB($owl-ref-palette-yellow-500)};
   --bs-danger-rgb: #{toRGB($owl-ref-palette-red-500)};
   --bs-light-rgb: #{toRGB($owl-ref-palette-white)};
-  --bs-dark-rgb: #{toRGB($owl-ref-palette-grey-900)};
+  --bs-dark-rgb: #{toRGB($owl-ref-palette-gray-900)};
   --bs-white-rgb: #{toRGB($owl-ref-palette-white)};
   --bs-black-rgb: #{toRGB($owl-ref-palette-black)};
-  --bs-body-color-rgb: #{toRGB($owl-ref-palette-grey-900)};
+  --bs-body-color-rgb: #{toRGB($owl-ref-palette-gray-900)};
   --bs-body-bg-rgb: #{toRGB($owl-ref-palette-white)};
 }

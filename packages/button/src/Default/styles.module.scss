@@ -10,9 +10,9 @@
       // you can use css vars or scss vars
       --bs-btn-color: var(--color-font-light);
       --bs-btn-bg: var(--bs-gray-500);
-      --bs-btn-border-color: #{theme.$owl-ref-palette-grey-500};
+      --bs-btn-border-color: #{theme.$owl-ref-palette-gray-500};
       --bs-btn-hover-color: var(--bs-light);
-      --bs-btn-hover-bg: #{theme.$owl-ref-palette-grey-700};
+      --bs-btn-hover-bg: #{theme.$owl-ref-palette-gray-700};
       --bs-btn-hover-border-color: var(--bs-gray-800);
       --bs-btn-focus-shadow-rgb: 49, 132, 253;
       --bs-btn-active-color: #{theme.$owl-ref-palette-white};
