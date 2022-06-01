@@ -6,15 +6,15 @@
 
   &-primary {
     &.theme--dark {
-      background-color: var(--bg-dark);
-      color: var(--clr-light);
+      background-color: var(--bs-dark);
+      color: var(--color-font-light);
     }
   }
 
   &-secondary {
     &.theme--dark {
-      background-color: var(--bg-dark);
-      color: var(--clr-light);
+      background-color: var(--bs-dark);
+      color: var(--color-font-light);
     }
   }
 

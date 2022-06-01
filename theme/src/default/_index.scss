@@ -1,21 +1,45 @@
-@use '../global/variables' as vars;
+@use '../global/variables' as *;
 
 .theme--default {
-  --bg-primary: #{vars.$owl-ref-palette-blue-500};
-  --bg-secondary: #{vars.$owl-ref-palette-blue-200};
-  --bg-success: #{vars.$owl-ref-palette-green-500};
-  --bg-info: #{vars.$owl-ref-palette-blue-600};
-  --bg-warning: #{vars.$owl-ref-palette-yellow-500};
-  --bg-danger: #{vars.$owl-ref-palette-red-500};
-  --bg-light: #{vars.$owl-ref-palette-white};
-  --bg-dark: #{vars.$owl-ref-palette-grey-800};
-  --clr-primary: #{vars.$owl-ref-palette-blue-500};
-  --clr-secondary: #{vars.$owl-ref-palette-blue-200};
-  --clr-success: #{vars.$owl-ref-palette-green-500};
-  --clr-info: #{vars.$owl-ref-palette-blue-600};
-  --clr-warning: #{vars.$owl-ref-palette-yellow-500};
-  --clr-danger: #{vars.$owl-ref-palette-red-500};
-  --clr-light: #{vars.$owl-ref-palette-white};
-  --clr-dark: #{vars.$owl-ref-palette-grey-800};
-  --clr-dark-highlight: #{vars.$owl-ref-palette-grey-600};
+  // COLOR FONT
+  --color-font-primary: #{$owl-ref-palette-blue-500};
+  --color-font-primary-highlight: #{$owl-ref-palette-blue-600};
+  --color-font-secondary: #{$owl-ref-palette-blue-200};
+  --color-font-success: #{$owl-ref-palette-green-500};
+  --color-font-info: #{$owl-ref-palette-blue-600};
+  --color-font-warning: #{$owl-ref-palette-yellow-500};
+  --color-font-danger: #{$owl-ref-palette-red-500};
+  --color-font-light: #{$owl-ref-palette-white};
+  --color-font-dark: #{$owl-ref-palette-grey-800};
+  --color-font-dark-highlight: #{$owl-ref-palette-grey-600};
+  // COLORS NAMED - Bootstrap
+  --bs-primary: #{$owl-ref-palette-blue-500};
+  --bs-secondary: #{$owl-ref-palette-grey-600};
+  --bs-success: #{$owl-ref-palette-green-500};
+  --bs-info: #{$owl-ref-palette-cyan-500};
+  --bs-warning: #{$owl-ref-palette-yellow-500};
+  --bs-danger: #{$owl-ref-palette-red-500};
+  --bs-light: #{$owl-ref-palette-white};
+  --bs-code-color: #{$owl-ref-palette-pink-500};
+  --bs-highlight-bg: #{$owl-ref-palette-yellow-100};
+  --bs-dark: var(--bs-gray-900);
+  --bs-gray-dark: var(--bs-gray-900);
+  --bs-body-bg: var(--bs-light);
+  --bs-body-color: var(--bs-dark);
+  --bs-border-color: var(--bs-gray-300);
+  --bs-link-color: var(--bs-primary);
+  --bs-link-hover-color: var(--color-font-primary-highlight);
+  // COLORS NAMED RGB - Bootstrap
+  --bs-primary-rgb: toRGB($owl-ref-palette-blue-500);
+  --bs-secondary-rgb: toRGB($owl-ref-palette-grey-600);
+  --bs-success-rgb: toRGB($owl-ref-palette-green-500);
+  --bs-info-rgb: toRGB($owl-ref-palette-cyan-500);
+  --bs-warning-rgb: toRGB($owl-ref-palette-yellow-500);
+  --bs-danger-rgb: toRGB($owl-ref-palette-red-500);
+  --bs-light-rgb: toRGB($owl-ref-palette-white);
+  --bs-dark-rgb: toRGB($owl-ref-palette-grey-900);
+  --bs-white-rgb: toRGB($owl-ref-palette-white);
+  --bs-black-rgb: toRGB($owl-ref-palette-black);
+  --bs-body-color-rgb: toRGB($owl-ref-palette-grey-900);
+  --bs-body-bg-rgb: toRGB($owl-ref-palette-white);
 }

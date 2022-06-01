@@ -6,34 +6,34 @@
   flex-direction: column;
   width: 100%;
   word-wrap: break-word;
-  background-color: var(--bg-light);
-  border: 1px solid var(--bg-dark);
+  background-color: var(--bs-light);
+  border: 1px solid var(--bs-dark);
 
   &.theme--dark {
-    background-color: var(--bg-dark);
-    color: var(--clr-light);
+    background-color: var(--bs-dark);
+    color: var(--color-font-light);
   }
 
   &--appearance {
     &-primary {
       &.theme--default {
-        background-color: var(--bg-light);
-        color: var(--clr-primary);
-        border-color: var(--clr-primary);
+        background-color: var(--bs-light);
+        color: var(--color-font-primary);
+        border-color: var(--color-font-primary);
       }
 
       &.theme--dark {
-        background-color: var(--clr-primary);
-        color: var(--clr-light);
-        border-color: var(--clr-primary);
+        background-color: var(--color-font-primary);
+        color: var(--color-font-light);
+        border-color: var(--color-font-primary);
       }
     }
 
     &-outline {
       &.theme--dark {
-        background-color: var(--bg-dark);
-        color: var(--clr-light);
-        border-color: var(--clr-light);
+        background-color: var(--bs-dark);
+        color: var(--color-font-light);
+        border-color: var(--color-font-light);
       }
     }
   }

@@ -35,22 +35,22 @@
   }
 
   &.theme--dark {
-    background-color: var(--bg-dark);
-    color: var(--clr-light);
+    background-color: var(--bs-dark);
+    color: var(--color-font-light);
   }
 
   &--appearance {
     &-primary {
       &.theme--default {
-        background-color: var(--bg-light);
-        color: var(--clr-primary);
-        border-color: var(--clr-primary);
+        background-color: var(--bs-light);
+        color: var(--color-font-primary);
+        border-color: var(--color-font-primary);
       }
 
       &.theme--dark {
-        background-color: var(--bg-primary);
-        color: var(--clr-dark);
-        border-color: var(--clr-dark);
+        background-color: var(--bs-primary);
+        color: var(--color-font-dark);
+        border-color: var(--color-font-dark);
       }
     }
   }
