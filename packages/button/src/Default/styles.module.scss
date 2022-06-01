@@ -6,6 +6,8 @@
 
   &-primary {
     &.theme--dark {
+      // Example of how to implement theming to bootstrap variant
+      // you can use css vars or scss vars
       --bs-btn-color: var(--color-font-light);
       --bs-btn-bg: var(--bs-gray-500);
       --bs-btn-border-color: #{theme.$owl-ref-palette-grey-500};
