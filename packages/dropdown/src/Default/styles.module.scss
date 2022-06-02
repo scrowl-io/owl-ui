@@ -1,0 +1,44 @@
+@use '@owlui/theme/src' as theme;
+
+.dropdown {
+  padding: var(--spacer);
+
+  ul {
+    height: 12em;
+    overflow-y: scroll;
+  }
+
+  &-primary {
+    &.theme--dark {
+      background-color: var(--bg-dark);
+      color: var(--clr-light);
+    }
+  }
+
+  &-secondary {
+    &.theme--dark {
+      background-color: var(--bg-dark);
+      color: var(--clr-light);
+    }
+  }
+  
+  &-size {
+    &-lg {
+      button {
+        width: 10em;
+      }
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      button {
+        width: 8em;
+      }
+      @include theme.typeface-md;
+    }
+    
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}
