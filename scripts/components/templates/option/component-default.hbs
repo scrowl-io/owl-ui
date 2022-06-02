@@ -21,17 +21,13 @@ export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
             value: 'Theme',
           },
           {
-            fields: ['theme', 'appearance'],
-            value: 'Theme',
-          },
-          {
             fields: ['size'],
             value: 'Size',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size']
+    ['prefix', 'theme', 'size']
   );
 
   return <div {...locals}>{children}</div>;
