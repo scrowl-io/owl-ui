@@ -55,7 +55,7 @@ const items = [
 ];
 
 const dropdown = {
-  label: 'Select from Dropdown',
+  label: 'Welcome to the Dropdown',
   selectedItem: '',
   items: items,
 };

@@ -1,7 +1,8 @@
 import React from 'react';
-import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
+import * as bs from 'react-bootstrap';
 
 export interface DropDownItemProps {
+  map: (item: DropDownItemProps) => Array<React.ReactNode>;
   id: string;
   label: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -27,4 +28,4 @@ export interface DropdownDefaultCommons {
 
 export type DropdownDefaultProps = Partial<DropdownDefaultCommons> &
   React.AllHTMLAttributes<HTMLDivElement> &
-  DropdownToggle;
+  bs.DropdownButtonProps;
