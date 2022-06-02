@@ -1,4 +1,5 @@
 import React from 'react';
+import DropdownToggle from 'react-bootstrap/esm/DropdownToggle';
 
 export interface DropDownItemProps {
   id: string;
@@ -24,4 +25,6 @@ export interface DropdownDefaultCommons {
   items: DropDownItemProps;
 }
 
-export type DropdownDefaultProps = Partial<DropdownDefaultCommons> & React.AllHTMLAttributes<HTMLDivElement>;
+export type DropdownDefaultProps = Partial<DropdownDefaultCommons> &
+  React.AllHTMLAttributes<HTMLDivElement> &
+  DropdownToggle;

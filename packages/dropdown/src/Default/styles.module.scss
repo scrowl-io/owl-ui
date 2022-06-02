@@ -1,6 +1,8 @@
 @use '@owlui/theme/src' as theme;
 
 .dropdown {
+  $ref: &;
+
   padding: var(--spacer);
 
   ul {
@@ -8,15 +10,9 @@
     overflow-y: scroll;
   }
 
-  &-primary {
-    &.theme--dark {
-      background-color: var(--bg-dark);
-      color: var(--clr-light);
-    }
-  }
 
-  &-secondary {
-    &.theme--dark {
+  &.theme--dark {
+    #{$ref}-toggle.btn-primary {
       background-color: var(--bg-dark);
       color: var(--clr-light);
     }
@@ -24,17 +20,25 @@
   
   &-size {
     &-lg {
-      button {
-        width: 10em;
-      }
       @include theme.typeface-lg;
+      #{$ref}-toggle {
+        width: 10em;
+        @include theme.typeface-lg;
+      }
+      #{$ref}-item {
+        @include theme.typeface-lg;
+      }
     }
 
     &-md {
-      button {
+      @include theme.typeface-md;
+      #{$ref}-toggle {
+        @include theme.typeface-md;
         width: 8em;
       }
-      @include theme.typeface-md;
+      #{$ref}-item {
+        @include theme.typeface-md;
+      }
     }
     
     &-sm {
