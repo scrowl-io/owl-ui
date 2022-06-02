@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ThemeProvider } from 'react-bootstrap';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
@@ -31,11 +31,9 @@ export const Component = (props: ButtonDefaultProps) => {
   );
 
   return (
-    <>
-      <Button bsPrefix="owlui-btn" {...locals}>
-        {props.children}
-      </Button>
-    </>
+    <ThemeProvider prefixes={{ btn: 'owlui-btn' }}>
+      <Button {...locals}>{props.children}</Button>
+    </ThemeProvider>
   );
 };
 

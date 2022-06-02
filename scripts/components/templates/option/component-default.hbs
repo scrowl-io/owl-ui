@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ThemeProvider } from 'react-bootstrap';
 import { {{{cap}}}{{{optionPas}}}Props } from './{{{optionPas}}}.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
@@ -30,7 +31,11 @@ export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
     ['prefix', 'theme', 'size']
   );
 
-  return <div {...locals}>{children}</div>;
+  return (
+    <ThemeProvider>
+      <div {...locals}>{children}</div>
+    </ThemeProvider>
+  );
 };
 
 export default {
