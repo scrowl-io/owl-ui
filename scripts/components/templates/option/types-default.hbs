@@ -1,11 +1,9 @@
 import React from 'react';
 
 export interface {{{cap}}}{{{optionPas}}}Commons {
-  appearance?: 'Primary' | 'Outline';
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  children: React.ReactNode;
 };
 
 export type {{{cap}}}{{{optionPas}}}Props = Partial<{{{cap}}}{{{optionPas}}}Commons> & React.AllHTMLAttributes<HTMLDivElement>;

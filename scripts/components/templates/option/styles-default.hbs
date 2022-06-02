@@ -1,9 +1,24 @@
 @use '@owlui/theme/src' as theme;
 
 .{{{keb}}} {
-  padding: var(--spacer);
+  $ref: &;
+  @include theme.typeface-sm;
+
+  &-primary {
+    &.theme--dark {
+      background-color: var(--bg-dark);
+      color: var(--clr-light);
+    }
+  }
+
+  &-secondary {
+    &.theme--dark {
+      background-color: var(--bg-dark);
+      color: var(--clr-light);
+    }
+  }
   
-  &--size {
+  &#{$ref}--size {
     &-lg {
       @include theme.typeface-lg;
     }
