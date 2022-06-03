@@ -81,15 +81,13 @@ export const createLocalProps = (
 
   if (bsProps) {
     bsProps.forEach(bsProp => {
-      if (props[bsProp as keyof typeof props]) {
+      const bsPropKey = props[bsProp as keyof typeof props];
+
+      if (bsPropKey) {
         localClassName.push(
           classPrefix
-            ? `${classPrefix}-${bsPropClassesPrefix}-${String(bsProp)}-${
-                props[bsProp as keyof typeof props]
-              }`
-            : `${bsPropClassesPrefix}-${String(bsProp)}-${
-                props[bsProp as keyof typeof props]
-              }`
+            ? `${classPrefix}-${bsPropClassesPrefix}-${bsProp}-${bsPropKey}`
+            : `${bsPropClassesPrefix}-${bsProp}-${bsPropKey}`
         );
       }
     });
