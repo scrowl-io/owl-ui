@@ -103,6 +103,8 @@ export default {
 ```css
 /* confirm/styles.module.scss */
 
+@use '@owlui/switch' as form-switch;
+
 @use '@owlui/button' as btn;
 
 .container {

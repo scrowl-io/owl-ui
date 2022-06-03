@@ -30,6 +30,7 @@
     "@owlui/card": "^0.0.21",
     "@owlui/icons": "^0.0.21",
     "@owlui/navigationdrawer": "^0.0.21",
+    "@owlui/switchtoggle": "^0.0.0",
     "@owlui/table": "^0.0.21",
     "@owlui/textfield": "^0.0.21",
     "@owlui/theme": "^0.0.21",

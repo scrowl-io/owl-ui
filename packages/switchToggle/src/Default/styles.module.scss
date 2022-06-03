@@ -1,0 +1,77 @@
+@use '@owlui/theme/src' as theme;
+
+.switchToggle {
+  $ref: &;
+  width: 20%;
+  //padding: var(--spacer);
+  
+
+  &.theme--default{
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // padding: 0 .5rem;
+    border-radius: 5px;
+    border: 2px solid #005a9c;
+    background-color: var(--bg-light);
+  
+
+    &:hover {
+      border: 2px solid #005a9c;
+      background-color: #def;
+      border-radius: 5px;
+    }
+  }
+
+  &.theme--dark{
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // padding: 0 .5rem;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    border-radius: 5px;
+    border: 2px solid var(--bg-light);
+  
+
+    &:hover {
+      border: 2px solid #005a9c;
+      background-color: #def;
+      border-radius: 5px;
+      color: black;
+    }
+  }
+
+  label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5rem;
+  
+    &:focus, &:active{
+      background-color: #def;
+    }
+    // &:hover {
+    //   border: 2px solid #005a9c;
+   
+    //   border-radius: 5px;
+    // }
+  }
+
+
+
+  
+  &--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+    
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}

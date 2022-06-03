@@ -1,13 +1,13 @@
 {
-  "name": "@owlui/{{{low}}}",
+  "name": "@owlui/switchtoggle",
   "version": "0.0.0",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/{{{name}}}#readme",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/switchToggle#readme",
   "license": "MIT",
   "source": "src/index.ts",
-  "main": "dist/owl.{{{name}}}.js",
-  "types": "dist/owl.{{{name}}}.d.ts",
-  "style": "dist/owl.{{{name}}}.css",
+  "main": "dist/owl.switchToggle.js",
+  "types": "dist/owl.switchToggle.d.ts",
+  "style": "dist/owl.switchToggle.css",
   "files": [
     "dist",
     "src"
@@ -18,7 +18,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
-    "directory": "packages/{{{name}}}"
+    "directory": "packages/switchToggle"
   },
   "publishConfig": {
     "access": "public"
@@ -29,8 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/theme": "^{{libVersion}}",
-    "@owlui/typings": "^{{libVersion}}",
+    "@owlui/theme": "^0.0.21",
+    "@owlui/typings": "^0.0.21",
     "@owlui/utils": "^0.0.20"
   }
 }
