@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Button, ThemeProvider } from 'react-bootstrap';
-import { ButtonDefaultProps } from './Default.types';
+import { ButtonDefaultProps, themePrefixesProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: ButtonDefaultProps) => {
+  const themePrefixes: themePrefixesProps = {};
   const baseClass = 'btn';
   const prefix = props.prefix || '';
 
@@ -30,8 +31,10 @@ export const Component = (props: ButtonDefaultProps) => {
     ['prefix', 'theme', 'Size']
   );
 
+  themePrefixes[baseClass] = `owlui-${baseClass}`;
+
   return (
-    <ThemeProvider prefixes={{ btn: 'owlui-btn' }}>
+    <ThemeProvider prefixes={themePrefixes}>
       <Button {...locals}>{props.children}</Button>
     </ThemeProvider>
   );
