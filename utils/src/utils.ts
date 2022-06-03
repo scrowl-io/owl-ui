@@ -50,6 +50,8 @@ export const createLocalProps = (
   const getGlobalClasses = findModClass(styleMod);
   const localClassName = [styles.module[styles.classes.base]];
   const localProps: localInnerProps = { ...props };
+  const bsProps = styles.classes.bsProps;
+  const bsPropClassesPrefix = 'owlui';
   const classPrefix = styles.classes.prefix;
 
   styles.classes.optionals.forEach(option => {
@@ -76,6 +78,20 @@ export const createLocalProps = (
       }
     }
   });
+
+  if (bsProps) {
+    bsProps.forEach(bsProp => {
+      localClassName.push(
+        classPrefix
+          ? `${classPrefix}-${bsPropClassesPrefix}-${bsProp}-${
+              props[bsProp as keyof typeof props]
+            }`
+          : `${bsPropClassesPrefix}-${bsProp}-${
+              props[bsProp as keyof typeof props]
+            }`
+      );
+    });
+  }
 
   if (removables) removables.forEach(key => delete localProps[key]);
 
