@@ -1,21 +1,23 @@
 import * as React from 'react';
 import { Card } from 'react-bootstrap';
-import { CardCardBodyProps } from './CardBody.types';
-import { getCssModClass } from '@owlui/utils';
+import { CardTitleHeaderProps } from './CardTitle.types';
 import * as styles from './styles.module.scss';
+import { getCssModClass } from '@owlui/utils';
 
-const baseClass = 'cardBody';
+const baseClass = 'cardHeader';
 
-export const Component = (props: CardCardBodyProps) => {
+export const Component = (props: CardTitleHeaderProps) => {
   const { children } = props;
   const localProps = Object.assign({}, props);
 
   localProps.className = getCssModClass({ localProps, baseClass, styles });
 
+  // TODO: Refactor the title to be rendered within the body
+
   return (
-    <Card.Body {...localProps} bsPrefix="owlui-card-body">
+    <Card.Title {...localProps} bsPrefix="owlui-card-title">
       {children}
-    </Card.Body>
+    </Card.Title>
   );
 };
 

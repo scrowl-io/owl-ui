@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Card, ThemeProvider } from 'react-bootstrap';
 import { CardDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
@@ -20,17 +21,20 @@ export const Component = (props: CardDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
         ],
+        bsProps: ['bg', 'border', 'text'],
       },
     },
-    ['prefix', 'theme', 'appearance']
+    ['prefix', 'theme', 'appearance', 'bg', 'border', 'text']
   );
 
-  return <div {...locals}>{children}</div>;
+  return (
+    <ThemeProvider prefixes={{ card: 'owlui-card' }}>
+      <Card {...locals} style={{ width: '50%' }}>
+        {children}
+      </Card>
+    </ThemeProvider>
+  );
 };
 
 export default {

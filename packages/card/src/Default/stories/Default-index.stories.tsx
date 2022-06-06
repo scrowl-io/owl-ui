@@ -1,27 +1,19 @@
 import * as React from 'react';
 import { component as Card } from '../index';
-import { component as CardHeader } from '../../CardHeader';
-import { component as CardBody } from '../../CardBody';
-import { component as CardFooter } from '../../CardFooter';
-import { Default as Button } from '../../../../button/src/index';
 import { CardDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
 import { theme } from './Default-theme.stories';
+import { component as CardHeader } from '../../CardHeader';
+import { component as CardTitle } from '../../CardTitle';
+import { component as CardBody } from '../../CardBody';
 
 export const Default = (args: CardDefaultProps) => (
   <Card {...args}>
-    <CardHeader>
-      <h3>Card Title</h3>
-    </CardHeader>
+    <CardHeader>This is a header</CardHeader>
     <CardBody>
-      <p>Some quick example text to build on the card content</p>
+      <CardTitle>This is a title</CardTitle>
     </CardBody>
-    <CardFooter>
-      <Button appearance="Default" size="Sm" theme="Default">
-        Submit
-      </Button>
-    </CardFooter>
   </Card>
 );
 

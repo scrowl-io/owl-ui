@@ -5,4 +5,4 @@ export interface CardCardHeaderCommons extends CardDefaultProps {
   children: React.ReactNode;
 }
 
-export type CardCardHeaderProps = Partial<CardCardHeaderCommons>;
+export type CardHeaderProps = Partial<CardCardHeaderCommons>;
