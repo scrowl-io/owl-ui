@@ -33,23 +33,28 @@ export const Component = (props: DropdownDefaultProps) => {
     ['prefix', 'theme', 'size', 'dropdown']
   );
 
-  const handleSelect = (index: number) => {
+  const handleItemClick = (index: number) => {
     setSelectedItem(index);
     dropdown.selectedItem = dropdown?.items[index]?.label;
   };
 
-  const handleKeyDown =
+  const handleTab =
     (index: number) => (event: React.KeyboardEvent<HTMLElement>) => {
       switch (event.key) {
         case 'Tab':
           event.preventDefault();
           setSelectedItem(index);
+          dropdown.selectedItem = dropdown?.items[index]?.label;
           setShow(!show);
           break;
         default:
           break;
       }
     };
+
+  const toggleShow = () => {
+    setShow(!show);
+  };
 
   return (
     <>
@@ -64,7 +69,12 @@ export const Component = (props: DropdownDefaultProps) => {
       >
         <div className={styleMod.dropdownContainer}>
           <h2>{dropdown?.label}</h2>
-          <Dropdown onToggle={() => setShow(!show)} show={show} {...locals}>
+          <Dropdown
+            onToggle={toggleShow}
+            show={show}
+            {...locals}
+            focusFirstItemOnShow="keyboard"
+          >
             <Dropdown.Toggle variant={props.variant} id="dropdown-basic">
               {selectedItem
                 ? dropdown?.items[selectedItem]?.label
@@ -72,20 +82,19 @@ export const Component = (props: DropdownDefaultProps) => {
             </Dropdown.Toggle>
             <Dropdown.Menu
               as="ul"
-              className={`${show ? 'owlui-show' : ''}`}
-              aria-activedescendant="item-number-2"
+              className={`dropdown-item ${show ? 'owlui-show' : ''}`}
             >
               {dropdown?.items?.map((item: DropDownItemProps, index: number) => {
                   return (
                     <Dropdown.Item
                       id={`item-number-${item.id}`}
                       as="button"
-                      onKeyDown={handleKeyDown(index)}
+                      onKeyDown={handleTab(index)}
                       className={`${
                         selectedItem === index ? 'owlui-active' : ''
                       }`}
                       key={item.id}
-                      onClick={() => handleSelect(index)}
+                      onClick={() => handleItemClick(index)}
                     >
                       {item.label}
                     </Dropdown.Item>

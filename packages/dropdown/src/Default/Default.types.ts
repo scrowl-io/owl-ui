@@ -2,7 +2,6 @@ import React from 'react';
 import * as bs from 'react-bootstrap';
 
 export interface DropDownItemProps {
-  map: (item: DropDownItemProps) => Array<React.ReactNode>;
   id: string;
   label: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

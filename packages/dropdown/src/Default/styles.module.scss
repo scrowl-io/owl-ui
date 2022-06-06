@@ -2,8 +2,37 @@
 
 .dropdown {
   $ref: &;
-
   padding: 0;
+
+  .dropdown-item:focus {
+    background-color: white;
+    color: black;
+    outline-color: #0083C3;
+  }
+
+  button.active {
+    background-color: #0083C3 !important;
+    border-color: #0083C3;
+    color: white !important;
+  }
+
+  #{$ref}-toggle.btn-primary {
+    --bs-btn-color: var(--color-font-light);
+    --bs-btn-bg: #0083C3;
+    --bs-dropdown-link-active-color: #0083C3;
+    --bs-btn-border-color: #{theme.$owl-ref-palette-gray-500};
+    --bs-btn-hover-color: var(--bs-light);
+    --bs-btn-hover-bg: #{theme.$owl-ref-palette-gray-700};
+    --bs-btn-hover-border-color: var(--bs-gray-800);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #{theme.$owl-ref-palette-white};
+    --bs-btn-active-bg: var(--bs-gray-800);
+    --bs-btn-active-border-color: var(--bs-gray-800);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: var(--bs-light);
+    --bs-btn-disabled-bg: var(--bs-gray-500);
+    --bs-btn-disabled-border-color: var(--bs-gray-500);
+  }
 
   ul {
     height: 12rem;
@@ -29,9 +58,27 @@
 
 
   &.theme--dark {
+    ul {
+      background-color: var(--bs-gray-500);;
+    }
+    button {
+      color: white;
+    }
     #{$ref}-toggle.btn-primary {
-      background-color: var(--bg-dark);
-      color: var(--clr-light);
+      --bs-btn-color: var(--color-font-light);
+      --bs-btn-bg: var(--bs-gray-500);
+      --bs-btn-border-color: #{theme.$owl-ref-palette-gray-500};
+      --bs-btn-hover-color: var(--bs-light);
+      --bs-btn-hover-bg: #{theme.$owl-ref-palette-gray-700};
+      --bs-btn-hover-border-color: var(--bs-gray-800);
+      --bs-btn-focus-shadow-rgb: 49, 132, 253;
+      --bs-btn-active-color: #{theme.$owl-ref-palette-white};
+      --bs-btn-active-bg: var(--bs-gray-800);
+      --bs-btn-active-border-color: var(--bs-gray-800);
+      --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      --bs-btn-disabled-color: var(--bs-light);
+      --bs-btn-disabled-bg: var(--bs-gray-500);
+      --bs-btn-disabled-border-color: var(--bs-gray-500);
     }
   }
   
