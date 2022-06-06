@@ -40,8 +40,7 @@ export const Component = (props: CardDefaultProps) => {
     [`${baseClass}-header`]: `${basePrefixClass}-header`,
     [`${baseClass}-img`]: `${basePrefixClass}-img`,
     [`${baseClass}-img-overlay`]: `${basePrefixClass}-img-overlay`,
-    [`${baseClass}-link`]: `${basePrefixClass}-link`,
-    [`${baseClass}-sub-title`]: `${basePrefixClass}-sub-title`,
+    [`${baseClass}-subtitle`]: `${basePrefixClass}-sub-title`,
     [`${baseClass}-text`]: `${basePrefixClass}-text`,
     [`${baseClass}-title`]: `${basePrefixClass}-title`,
   };

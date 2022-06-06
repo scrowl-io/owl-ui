@@ -5,7 +5,11 @@ import { CardLinkProps } from './CardLink.types';
 export const Component = (props: CardLinkProps) => {
   const { children } = props;
 
-  return <Card.Link {...props}>{children}</Card.Link>;
+  return (
+    <Card.Link {...props} bsPrefix="owlui-card-link">
+      {children}
+    </Card.Link>
+  );
 };
 
 export default {

@@ -1,14 +1,19 @@
 import * as React from 'react';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, ThemeProvider } from 'react-bootstrap';
 import { CardListGroupProps } from './CardListGroup.types';
 
 export const Component = (props: CardListGroupProps) => {
   const { children } = props;
 
   return (
-    <ListGroup {...props} bsPrefix="owlui-list-group">
-      {children}
-    </ListGroup>
+    <ThemeProvider
+      prefixes={{
+        'list-group': 'owlui-list-group',
+        'list-group-item': 'owlui-list-group-item',
+      }}
+    >
+      <ListGroup {...props}>{children}</ListGroup>
+    </ThemeProvider>
   );
 };
 
