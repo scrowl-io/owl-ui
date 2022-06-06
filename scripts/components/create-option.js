@@ -24,9 +24,9 @@ export const create = (component, folders) => {
       `${component.optionPas}-index.stories.tsx`,
       folders
     ),
-    storiesAppearance: storyPath(
-      'appearance',
-      `${component.optionPas}-appearance.stories.tsx`,
+    storiesVariant: storyPath(
+      'variant',
+      `${component.optionPas}-variant.stories.tsx`,
       folders
     ),
     storiesSize: storyPath(
@@ -57,9 +57,9 @@ export const create = (component, folders) => {
       `${component.optionPas}.types.ts`,
       folders
     );
-    fileList.storiesAppearance = storyPath(
-      `appearance-${defaultOpt}`,
-      `${component.optionPas}-appearance.stories.tsx`,
+    fileList.storiesVariant = storyPath(
+      `variant-${defaultOpt}`,
+      `${component.optionPas}-variant.stories.tsx`,
       folders
     );
     fileList.storiesSize = storyPath(
