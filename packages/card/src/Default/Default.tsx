@@ -6,6 +6,7 @@ import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: CardDefaultProps) => {
   const baseClass = 'card';
+  const basePrefixClass = `owlui-${baseClass}`;
   const { children } = props;
   const prefix = props.prefix || '';
 
@@ -28,11 +29,24 @@ export const Component = (props: CardDefaultProps) => {
     ['prefix', 'theme', 'appearance', 'bg', 'border', 'text']
   );
 
+  const bsPrefixes = {
+    [`${baseClass}`]: `${basePrefixClass}-card`,
+    [`${baseClass}-body`]: `${basePrefixClass}-body`,
+    [`${baseClass}-footer`]: `${basePrefixClass}-footer`,
+    [`${baseClass}-header`]: `${basePrefixClass}-header`,
+    [`${baseClass}-img`]: `${basePrefixClass}-img`,
+    [`${baseClass}-img-overlay`]: `${basePrefixClass}-img-overlay`,
+    [`${baseClass}-link`]: `${basePrefixClass}-link`,
+    [`${baseClass}-list-group`]: `${basePrefixClass}-list-group`,
+    [`${baseClass}-list-group-item`]: `${basePrefixClass}-list-group-item`,
+    [`${baseClass}-sub-title`]: `${basePrefixClass}-sub-title`,
+    [`${baseClass}-text`]: `${basePrefixClass}-text`,
+    [`${baseClass}-title`]: `${basePrefixClass}-title`,
+  };
+
   return (
-    <ThemeProvider prefixes={{ card: 'owlui-card' }}>
-      <Card {...locals} style={{ width: '50%' }}>
-        {children}
-      </Card>
+    <ThemeProvider prefixes={bsPrefixes}>
+      <Card {...locals}>{children}</Card>
     </ThemeProvider>
   );
 };

@@ -5,11 +5,7 @@ import { CardHeaderProps } from './CardHeader.types';
 export const Component = (props: CardHeaderProps) => {
   const { children } = props;
 
-  return (
-    <Card.Header {...props} bsPrefix="owlui-card-header">
-      {children}
-    </Card.Header>
-  );
+  return <Card.Header {...props}>{children}</Card.Header>;
 };
 
 export default {

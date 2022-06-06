@@ -1,15 +1,11 @@
 import * as React from 'react';
 import { Card } from 'react-bootstrap';
-import { CardCardBodyProps } from './CardBody.types';
+import { CardBodyProps } from './CardBody.types';
 
-export const Component = (props: CardCardBodyProps) => {
+export const Component = (props: CardBodyProps) => {
   const { children } = props;
 
-  return (
-    <Card.Body {...props} bsPrefix="owlui-card-body">
-      {children}
-    </Card.Body>
-  );
+  return <Card.Body {...props}>{children}</Card.Body>;
 };
 
 export default {
