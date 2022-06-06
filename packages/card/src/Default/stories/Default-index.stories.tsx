@@ -1,28 +1,54 @@
 import * as React from 'react';
-import { component as Card } from '../index';
 import { CardDefaultProps } from '../Default.types';
-
-import { appearance } from './Default-appearance.stories';
-import { theme } from './Default-theme.stories';
+import { component as Card } from '../index';
 import { component as CardHeader } from '../../CardHeader';
 import { component as CardTitle } from '../../CardTitle';
 import { component as CardBody } from '../../CardBody';
+import { component as CardSubTitle } from '../../CardSubTitle';
+import { component as CardText } from '../../CardText';
+import { component as CardLink } from '../../CardLink';
+import { component as CardListGroup } from '../../CardListGroup';
+import { component as CardListItem } from '../../CardListItem';
+import { component as CardFooter } from '../../CardFooter';
+
+import { bg } from './Default-bg.stories';
+import { text } from './Default-text.stories';
+import { theme } from './Default-theme.stories';
 
 export const Default = (args: CardDefaultProps) => (
   <Card {...args}>
-    <CardHeader>This is a header</CardHeader>
+    <CardHeader>Card Header</CardHeader>
     <CardBody>
-      <CardTitle>This is a title</CardTitle>
+      <CardTitle>Card Title</CardTitle>
+      <CardSubTitle>Card Subtitle</CardSubTitle>
+      <CardText>
+        Some quick example text to build on the card title and make up the bulk
+        of the card`s content.
+      </CardText>
+      <CardListGroup>
+        <CardListItem>
+          <CardLink href="#">Card Link 1</CardLink>
+        </CardListItem>
+        <CardListItem>
+          <CardLink href="#">Card Link 2</CardLink>
+        </CardListItem>
+        <CardListItem>
+          <CardLink href="#">Card Link 3</CardLink>
+        </CardListItem>
+      </CardListGroup>
     </CardBody>
+    <CardFooter>Card Footer</CardFooter>
   </Card>
 );
 
 Default.args = {
-  appearance: 'Default',
+  bg: 'light',
+  text: 'dark',
   theme: 'Default',
 };
 
 Default.argTypes = {
-  appearance,
+  bg,
+  text,
   theme,
 };

@@ -1,19 +1,12 @@
 import * as React from 'react';
 import { Card } from 'react-bootstrap';
 import { CardCardBodyProps } from './CardBody.types';
-import { getCssModClass } from '@owlui/utils';
-import * as styles from './styles.module.scss';
-
-const baseClass = 'cardBody';
 
 export const Component = (props: CardCardBodyProps) => {
   const { children } = props;
-  const localProps = Object.assign({}, props);
-
-  localProps.className = getCssModClass({ localProps, baseClass, styles });
 
   return (
-    <Card.Body {...localProps} bsPrefix="owlui-card-body">
+    <Card.Body {...props} bsPrefix="owlui-card-body">
       {children}
     </Card.Body>
   );
