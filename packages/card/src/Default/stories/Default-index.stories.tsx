@@ -13,6 +13,7 @@ import { component as CardFooter } from '../../CardFooter';
 
 import { bg } from './Default-bg.stories';
 import { text } from './Default-text.stories';
+import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: CardDefaultProps) => (
@@ -44,11 +45,13 @@ export const Default = (args: CardDefaultProps) => (
 Default.args = {
   bg: 'light',
   text: 'dark',
+  size: 'Sm',
   theme: 'Default',
 };
 
 Default.argTypes = {
   bg,
   text,
+  size,
   theme,
 };
