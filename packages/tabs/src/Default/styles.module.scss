@@ -1,0 +1,36 @@
+@use '@owlui/theme/src' as theme;
+
+.owlui-tabs {
+  padding: var(--spacer);
+  
+  .owlui-tab-content{
+    background-color: red;
+  }
+
+  .owlui-tab-content > .owlui-tab-pane {
+    display: block !important;
+  }
+
+ 
+  &--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+    
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}
+
+.active {
+ 
+    display: block;
+    color: black;
+  
+  
+}
