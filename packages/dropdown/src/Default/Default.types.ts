@@ -12,12 +12,11 @@ export interface DropDownItemProps {
 export interface DropDownContainerProps {
   label: string;
   selectedItem: string;
-  items: DropDownItemProps;
+  items: DropDownItemProps[];
 }
 
 export interface DropdownDefaultCommons {
-  // appearance?: 'Primary' | 'Outline';
-  theme?: 'Default' | 'Dark';
+  // theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   children: React.ReactNode;
@@ -25,6 +24,4 @@ export interface DropdownDefaultCommons {
   items: DropDownItemProps;
 }
 
-export type DropdownDefaultProps = Partial<DropdownDefaultCommons> &
-  React.AllHTMLAttributes<HTMLDivElement> &
-  bs.DropdownButtonProps;
+export type DropdownDefaultProps = DropdownDefaultCommons & bs.DropdownButtonProps;

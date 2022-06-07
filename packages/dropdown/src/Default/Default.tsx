@@ -35,7 +35,6 @@ export const Component = (props: DropdownDefaultProps) => {
 
   const handleItemClick = (index: number) => {
     setSelectedItem(index);
-    dropdown.selectedItem = dropdown?.items[index]?.label;
   };
 
   const handleTab =
@@ -44,7 +43,6 @@ export const Component = (props: DropdownDefaultProps) => {
         case 'Tab':
           event.preventDefault();
           setSelectedItem(index);
-          dropdown.selectedItem = dropdown?.items[index]?.label;
           setShow(!show);
           break;
         default:
@@ -84,7 +82,8 @@ export const Component = (props: DropdownDefaultProps) => {
               as="ul"
               className={`dropdown-item ${show ? 'owlui-show' : ''}`}
             >
-              {dropdown?.items?.map((item: DropDownItemProps, index: number) => {
+              {dropdown?.items?.map(
+                (item: DropDownItemProps, index: number) => {
                   return (
                     <Dropdown.Item
                       id={`item-number-${item.id}`}
@@ -104,8 +103,8 @@ export const Component = (props: DropdownDefaultProps) => {
             </Dropdown.Menu>
           </Dropdown>
           <h4>
-            {dropdown?.selectedItem
-              ? `${dropdown?.selectedItem} is currently selected`
+            {selectedItem
+              ? `Item ${selectedItem + 1} is currently selected`
               : 'Please select an item'}
           </h4>
         </div>
