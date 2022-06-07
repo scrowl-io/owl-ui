@@ -129,7 +129,8 @@
     "material-design-icons": "^3.0.1",
     "react": "~18.1.0",
     "react-bootstrap": "2.4.0",
-    "react-dom": "~18.1.0"
+    "react-dom": "~18.1.0",
+    "stylelint-order": "^5.0.0"
   },
   "bugs": {
     "url": "https://github.com/EEBOS/owl-ui/issues"
