@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { DropdownDefaultProps, DropDownItemProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
@@ -8,8 +8,8 @@ export const Component = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
   const { dropdown } = props;
-  const [show, setShow] = React.useState(false);
-  const [selectedItem, setSelectedItem] = React.useState<number | null>(null);
+  const [show, setShow] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<number>(0);
 
   const locals = createLocalProps(
     props,
@@ -33,22 +33,23 @@ export const Component = (props: DropdownDefaultProps) => {
     ['prefix', 'theme', 'size', 'dropdown']
   );
 
-  const handleItemClick = (index: number) => {
-    setSelectedItem(index);
+  const handleItemClick = (event: React.MouseEvent<HTMLElement>) => {
+    setSelectedItem(parseInt(event.currentTarget.dataset.index as string) - 1);
   };
 
-  const handleTab =
-    (index: number) => (event: React.KeyboardEvent<HTMLElement>) => {
-      switch (event.key) {
-        case 'Tab':
-          event.preventDefault();
-          setSelectedItem(index);
-          setShow(!show);
-          break;
-        default:
-          break;
-      }
-    };
+  const handleTab = (
+    event: React.KeyboardEvent<
+      HTMLAnchorElement | HTMLButtonElement | HTMLLIElement | HTMLDivElement
+    >
+  ) => {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setSelectedItem(
+        parseInt(event.currentTarget.dataset.index as string) - 1
+      );
+      setShow(!show);
+    }
+  };
 
   const toggleShow = () => {
     setShow(!show);
@@ -75,31 +76,30 @@ export const Component = (props: DropdownDefaultProps) => {
           >
             <Dropdown.Toggle variant={props.variant} id="dropdown-basic">
               {selectedItem
-                ? dropdown?.items[selectedItem]?.label
-                : dropdown?.items[0]?.label}
+                ? dropdown.items[selectedItem].label
+                : dropdown.items[0].label}
             </Dropdown.Toggle>
             <Dropdown.Menu
-              as="ul"
-              className={`dropdown-item ${show ? 'owlui-show' : ''}`}
+              className={`${styleMod.dropdownList} dropdown-item ${
+                show ? 'owlui-show' : ''
+              }`}
             >
-              {dropdown?.items?.map(
-                (item: DropDownItemProps, index: number) => {
-                  return (
-                    <Dropdown.Item
-                      id={`item-number-${item.id}`}
-                      as="button"
-                      onKeyDown={handleTab(index)}
-                      className={`${
-                        selectedItem === index ? 'owlui-active' : ''
-                      }`}
-                      key={item.id}
-                      onClick={() => handleItemClick(index)}
-                    >
-                      {item.label}
-                    </Dropdown.Item>
-                  );
-                }
-              )}
+              {dropdown.items.map((item: DropDownItemProps) => {
+                return (
+                  <Dropdown.Item
+                    id={`item-number-${item.id}`}
+                    onKeyDown={handleTab}
+                    className={`${
+                      selectedItem === item.id - 1 ? 'owlui-active' : ''
+                    }`}
+                    data-index={item.id}
+                    key={item.id}
+                    onClick={handleItemClick}
+                  >
+                    {item.label}
+                  </Dropdown.Item>
+                );
+              })}
             </Dropdown.Menu>
           </Dropdown>
           <h4>

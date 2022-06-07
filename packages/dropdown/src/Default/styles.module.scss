@@ -10,7 +10,7 @@
     outline-color: #0083C3;
   }
 
-  button.active {
+  a.active {
     background-color: #0083C3 !important;
     border-color: #0083C3;
     color: white !important;
@@ -42,10 +42,6 @@
   }
 
   &-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
     h2, h4 {
       text-align: center;
       padding: 1rem;
@@ -53,6 +49,13 @@
 
     button {
       width: 100%;
+    }
+
+    .dropdown-list {
+      height: 15rem;
+      width: 100%;
+      overflow-y: scroll;
+      text-align: center;
     }
   }
 
