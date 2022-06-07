@@ -2,16 +2,11 @@ import * as React from 'react';
 import { component as Table } from '../index';
 import { TableDefaultProps } from '../Default.types';
 
-import { appearance } from './Default-appearance.stories';
-import { outline } from './Default-outline.stories';
+import { variant } from './Default-variant.stories';
+import { hover, striped, bordered } from './Default-table.stories';
 import { theme } from './Default-theme.stories';
 
-export const Default = (args: TableDefaultProps) => <Table {...args} />;
-
-Default.args = {
-  appearance: 'Default',
-  outline: true,
-  theme: 'Default',
+const tableData = {
   columns: [
     {
       label: '#',
@@ -58,8 +53,19 @@ Default.args = {
   ],
 };
 
+export const Default = (args: TableDefaultProps) => <Table {...args} />;
+
+Default.args = {
+  variant: variant.defaultValue,
+  striped: striped.defaultValue,
+  hover: hover.defaultValue,
+  bordered: bordered.defaultValue,
+  theme: 'Default',
+  tableData: tableData,
+};
+
 Default.argTypes = {
-  appearance,
-  outline,
+  variant,
+  hover,
   theme,
 };
