@@ -1,2 +1,3 @@
 @forward './Default/styles.module.scss' as defaultTabs-*;
+@forward './Tab/styles.module.scss' as tabTabs-*;
 @forward './Test/styles.module.scss' as testTabs-*;

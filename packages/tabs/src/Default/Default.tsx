@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeProvider } from 'react-bootstrap';
-// import { Component as Test } from '../Test/Test';
+import { Component as SingleTab } from '../Tab/Tab';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import TabContainer from 'react-bootstrap/TabContainer';
@@ -28,7 +28,7 @@ export const items = [
 ];
 
 export const Component = (props: TabsDefaultProps) => {
-  const baseClass = 'tabs';
+  const baseClass = 'owluiTabs';
   const { children } = props;
   const prefix = props.prefix || '';
 
@@ -79,9 +79,7 @@ export const Component = (props: TabsDefaultProps) => {
       prefixes={{
         nav: 'owlui-nav',
         'tab-content': 'owlui-tab-content',
-        fade: 'owlui-fade',
-        show: 'owlui-show',
-        active: 'owlui-active',
+
         'nav-tabs': 'owlui-nav-tabs',
         'nav-item': 'owlui-nav-item',
         'nav-link': 'owlui-nav-link',
@@ -90,21 +88,21 @@ export const Component = (props: TabsDefaultProps) => {
       }}
     >
       <Tabs
-        defaultActiveKey="profile"
+        activeKey="profile"
         id="uncontrolled-tab-example"
         className="mb-3"
         // onClick={handleSelect}
         {...locals}
       >
-        <Tab eventKey="home" title="Home">
+        <SingleTab eventKey="home" title="Home">
           1
-        </Tab>
-        <Tab eventKey="profile" title="Profile">
+        </SingleTab>
+        <SingleTab eventKey="profile" title="Profile">
           2
-        </Tab>
-        <Tab eventKey="contact" title="Contact">
+        </SingleTab>
+        <SingleTab eventKey="contact" title="Contact">
           3
-        </Tab>
+        </SingleTab>
       </Tabs>
 
       {/* <Tabs
