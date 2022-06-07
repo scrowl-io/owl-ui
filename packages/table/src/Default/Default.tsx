@@ -1,15 +1,13 @@
 import * as React from 'react';
+import { Table, ThemeProvider } from 'react-bootstrap';
 import { TableDefaultProps } from './Default.types';
-import Header from './elements/Header';
-import Body from './elements/Body';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: TableDefaultProps) => {
   const baseClass = 'table';
-  const { columns, items } = props;
-  const tableColumns = columns || [];
-  const tableItems = items || [];
+  const basePrefixClass = `owlui-${baseClass}`;
+  const { tableData } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -24,25 +22,35 @@ export const Component = (props: TableDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['outline'],
-            value: 'Outline',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size', 'columns', 'items', 'outline']
+    ['prefix', 'theme', 'tableData']
   );
 
   return (
-    <table {...locals}>
-      <Header columns={tableColumns} />
-      <Body columns={tableColumns} items={tableItems} />
-    </table>
+    <ThemeProvider prefixes={{ [`${baseClass}`]: `${basePrefixClass}` }}>
+      <Table {...locals}>
+        <thead>
+          <tr>
+            {tableData.columns.map(column => (
+              <th key={column.label}>{column.label}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.items.map(item => (
+            <tr key={1}>
+              {Object.entries(item).map(([key, value]) => (
+                <td key={key} colSpan={item.colSpan as number}>
+                  {value}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </ThemeProvider>
   );
 };
 
