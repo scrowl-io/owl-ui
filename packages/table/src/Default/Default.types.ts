@@ -9,37 +9,13 @@ export interface TableColumnItem {
   field: string;
 }
 
-// export type TableColumns = Array<TableColumnItem> | [];
-
-// export interface TableHeaderProps
-//   extends React.TableHTMLAttributes<HTMLTableCellElement> {
-//   columns: TableColumns;
-// }
-
-// export interface TableBodyProps
-//   extends React.TableHTMLAttributes<HTMLTableElement> {
-//   items: TableItems;
-//   columns: TableColumns;
-// }
-
-// export interface TableRowProps
-//   extends React.TableHTMLAttributes<HTMLTableRowElement> {
-//   item: TableRowItem;
-//   columns: TableColumnItem[];
-// }
-
-// export interface TableCellProps
-//   extends React.TableHTMLAttributes<HTMLTableCellElement> {
-//   children: React.ReactNode;
-// }
-
 export interface TableData {
+  caption?: string;
   columns: TableColumnItem[];
   items: TableRowItem[];
 }
 
 export interface TableDefaultCommons {
-  appearance?: 'Default' | 'Primary' | 'Secondary';
   prefix?: string;
   tableData: TableData;
   theme?: 'Default' | 'Dark';

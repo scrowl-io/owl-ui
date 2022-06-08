@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Table, ThemeProvider } from 'react-bootstrap';
-import { TableDefaultProps } from './Default.types';
+import {
+  TableColumnItem,
+  TableDefaultProps,
+  TableRowItem,
+} from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
@@ -28,27 +32,38 @@ export const Component = (props: TableDefaultProps) => {
     ['prefix', 'theme', 'tableData']
   );
 
+  const Header = ({ columns }: { columns: TableColumnItem[] }) => (
+    <thead>
+      <tr>
+        {columns.map(column => (
+          <th scope="col" id={column.field} key={column.label}>
+            {column.label}
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+
+  const Body = ({ items }: { items: TableRowItem[] }) => (
+    <tbody>
+      {items.map(item => (
+        <tr key={1}>
+          {Object.entries(item).map(([key, value]) => (
+            <td headers={key} key={key}>
+              {value}
+            </td>
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  );
+
   return (
     <ThemeProvider prefixes={{ [`${baseClass}`]: `${basePrefixClass}` }}>
       <Table {...locals}>
-        <thead>
-          <tr>
-            {tableData.columns.map(column => (
-              <th key={column.label}>{column.label}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.items.map(item => (
-            <tr key={1}>
-              {Object.entries(item).map(([key, value]) => (
-                <td key={key} colSpan={item.colSpan as number}>
-                  {value}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
+        <caption>{tableData.caption}</caption>
+        <Header columns={tableData.columns} />
+        <Body items={tableData.items} />
       </Table>
     </ThemeProvider>
   );
