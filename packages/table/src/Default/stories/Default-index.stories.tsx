@@ -7,6 +7,7 @@ import { hover, striped, bordered } from './Default-table.stories';
 import { theme } from './Default-theme.stories';
 
 const tableData = {
+  caption: 'Table 1. List of The Office characters.',
   columns: [
     {
       label: '#',
