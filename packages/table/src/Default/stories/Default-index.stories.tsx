@@ -4,6 +4,7 @@ import { TableDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
 import { hover, striped, bordered } from './Default-table.stories';
+import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 const tableData = {
@@ -61,12 +62,13 @@ Default.args = {
   striped: striped.defaultValue,
   hover: hover.defaultValue,
   bordered: bordered.defaultValue,
+  size: size.defaultValue,
   theme: 'Default',
   tableData: tableData,
 };
 
 Default.argTypes = {
   variant,
-  hover,
+  size,
   theme,
 };

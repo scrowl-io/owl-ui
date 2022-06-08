@@ -1,6 +1,8 @@
 @use '@owlui/theme/src' as theme;
 
 .table {
+  $ref: &;
+
   &-light {
     &.theme--dark {
       --bs-table-color: var(--color-font-light);
@@ -12,6 +14,20 @@
       --bs-table-active-color: var(--color-font-light);
       --bs-table-hover-bg: var(--bs-gray-300);
       --bs-table-hover-color: var(--color-font-light);
+    }
+  }
+
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
     }
   }
 }

@@ -26,10 +26,14 @@ export const Component = (props: TableDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
+          {
+            fields: ['size'],
+            value: 'Size',
+          },
         ],
       },
     },
-    ['prefix', 'theme', 'tableData']
+    ['prefix', 'theme', 'Size', 'tableData']
   );
 
   const Header = ({ columns }: { columns: TableColumnItem[] }) => (
