@@ -54,21 +54,13 @@ const items = [
   },
 ];
 
-const dropdown = {
-  label: 'Welcome to the Dropdown',
-  selectedItem: '',
-  items: items,
-};
-
-export const Default = (args: DropdownDefaultProps) => (
-  <Dropdown {...args}>Hello World</Dropdown>
-);
+export const Default = (args: DropdownDefaultProps) => <Dropdown {...args} />;
 
 Default.args = {
   variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
-  dropdown: dropdown,
+  items: items,
 };
 
 Default.argTypes = {

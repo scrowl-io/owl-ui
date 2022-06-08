@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DropdownDefaultProps, DropDownItemProps } from './Default.types';
+import { DropdownDefaultProps, DropdownItemProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 import { Dropdown, ThemeProvider } from 'react-bootstrap';
@@ -7,9 +7,11 @@ import { Dropdown, ThemeProvider } from 'react-bootstrap';
 export const Component = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
-  const { dropdown } = props;
+  const { items } = props;
   const [show, setShow] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<number>(0);
+  const [selectedItem, setSelectedItem] = useState<string | undefined>(
+    items[0].id
+  );
 
   const locals = createLocalProps(
     props,
@@ -34,7 +36,7 @@ export const Component = (props: DropdownDefaultProps) => {
   );
 
   const handleItemClick = (event: React.MouseEvent<HTMLElement>) => {
-    setSelectedItem(parseInt(event.currentTarget.dataset.index as string) - 1);
+    setSelectedItem(event.currentTarget.dataset.index);
   };
 
   const handleTab = (
@@ -44,15 +46,9 @@ export const Component = (props: DropdownDefaultProps) => {
   ) => {
     if (event.key === 'Tab') {
       event.preventDefault();
-      setSelectedItem(
-        parseInt(event.currentTarget.dataset.index as string) - 1
-      );
+      setSelectedItem(event.currentTarget.dataset.index);
       setShow(!show);
     }
-  };
-
-  const toggleShow = () => {
-    setShow(!show);
   };
 
   return (
@@ -66,48 +62,38 @@ export const Component = (props: DropdownDefaultProps) => {
           'dropdown-item': 'owlui-dropdown-item',
         }}
       >
-        <div className={styleMod.dropdownContainer}>
-          <h2>{dropdown?.label}</h2>
-          <Dropdown
-            onToggle={toggleShow}
-            show={show}
-            {...locals}
-            focusFirstItemOnShow="keyboard"
-          >
-            <Dropdown.Toggle variant={props.variant} id="dropdown-basic">
-              {selectedItem
-                ? dropdown.items[selectedItem].label
-                : dropdown.items[0].label}
-            </Dropdown.Toggle>
-            <Dropdown.Menu
-              className={`${styleMod.dropdownList} dropdown-item ${
-                show ? 'owlui-show' : ''
-              }`}
-            >
-              {dropdown.items.map((item: DropDownItemProps) => {
-                return (
-                  <Dropdown.Item
-                    id={`item-number-${item.id}`}
-                    onKeyDown={handleTab}
-                    className={`${
-                      selectedItem === item.id - 1 ? 'owlui-active' : ''
-                    }`}
-                    data-index={item.id}
-                    key={item.id}
-                    onClick={handleItemClick}
-                  >
-                    {item.label}
-                  </Dropdown.Item>
-                );
-              })}
-            </Dropdown.Menu>
-          </Dropdown>
-          <h4>
+        <Dropdown
+          onToggle={() => setShow(!show)}
+          show={show}
+          {...locals}
+          focusFirstItemOnShow="keyboard"
+        >
+          <Dropdown.Toggle variant={props.variant}>
             {selectedItem
-              ? `Item ${selectedItem + 1} is currently selected`
-              : 'Please select an item'}
-          </h4>
-        </div>
+              ? items.find(v => v.id == selectedItem)?.label
+              : items[0].label}
+          </Dropdown.Toggle>
+          <Dropdown.Menu
+            className={`${styleMod.dropdownList} ${show ? 'owlui-show' : ''}`}
+          >
+            {items.map((item: DropdownItemProps) => {
+              return (
+                <Dropdown.Item
+                  id={`item-number-${item.id}`}
+                  onKeyDown={handleTab}
+                  className={`${
+                    selectedItem === item.id ? 'owlui-active' : ''
+                  }`}
+                  data-index={item.id}
+                  key={item.id}
+                  onClick={handleItemClick}
+                >
+                  {item.label}
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown.Menu>
+        </Dropdown>
       </ThemeProvider>
     </>
   );

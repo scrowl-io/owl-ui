@@ -1,26 +1,17 @@
 import React from 'react';
 import * as bs from 'react-bootstrap';
 
-export interface DropDownItemProps {
-  id: number;
+export interface DropdownItemProps {
+  id: string;
   label: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value: any | undefined;
-  length: number;
-}
-
-export interface DropDownContainerProps {
-  label: string;
-  selectedItem: string;
-  items: DropDownItemProps[];
+  value: React.ReactNode;
 }
 
 export interface DropdownDefaultCommons {
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   children: React.ReactNode;
-  dropdown: DropDownContainerProps;
-  items: DropDownItemProps;
+  items: DropdownItemProps[];
 }
 
 export type DropdownDefaultProps = DropdownDefaultCommons &
