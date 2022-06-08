@@ -9,11 +9,10 @@ import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: SwitchToggleDefaultProps) => {
   const baseClass = 'switchToggle';
-  const { switchToggle } = props;
+  const { switchtoggle } = props;
   const prefix = props.prefix || '';
-  const testPrefix = props.testPrefix || '';
 
-  const [toggle, setToggle] = React.useState(false);
+  const [toggle, setToggle] = React.useState<boolean>(false);
 
   const locals: SwitchToggleDefaultProps = createLocalProps(
     props,
@@ -38,7 +37,16 @@ export const Component = (props: SwitchToggleDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size', 'switchToggle']
+    [
+      'prefix',
+      'theme',
+      'appearance',
+      'size',
+      'switchToggle',
+      'label',
+      'id',
+      'type',
+    ]
   );
 
   return (
@@ -71,8 +79,6 @@ export const Component = (props: SwitchToggleDefaultProps) => {
       </ThemeProvider>
     </>
   );
-
-  // return <div {...locals}>{children}</div>;
 };
 
 export default {
