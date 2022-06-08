@@ -25,7 +25,7 @@ Click on each component to visit the Bootstrap docs and check out the complete l
 ### Basic Tabs Implementation:
 
 ```jsx
-<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
+<Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
   <Tab eventKey="home" title="Home">
     <div><div>
   </Tab>
@@ -38,8 +38,4 @@ Click on each component to visit the Bootstrap docs and check out the complete l
 </Tabs>
 ```
 
-```
-const tabs = require('@owlui/tabs');
-
-// TODO: DEMONSTRATE API
 ```

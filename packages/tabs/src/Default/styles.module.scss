@@ -1,17 +1,11 @@
 @use '@owlui/theme/src' as theme;
 
-.owlui-tab-content > .owlui-tab-pane.active.show {
-  display: block;
-}
-
 .owlui-tabs {
-  padding: var(--spacer);
 
-  // &.owlui-tab-content {
-  //   &.owlui-tab-pane.active.show {
-  //     display: block !important;
-  //   }
-  // }
+  &.theme--dark {
+    background-color: var(--bg-dark);
+    color: var(--clr-light);
+  }
  
   &--size {
     &-lg {
@@ -24,7 +18,9 @@
     
     &-sm {
       @include theme.typeface-sm;
+      background-color: var(--owl-ref-palette-grey-700);;
     }
   }
 }
+
 

@@ -1,35 +1,14 @@
 import * as React from 'react';
 import { ThemeProvider } from 'react-bootstrap';
-import { Component as SingleTab } from '../Tab/Tab';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import TabContainer from 'react-bootstrap/TabContainer';
-import TabPane from 'react-bootstrap/TabPane';
 import { TabsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
-export const items = [
-  {
-    id: 1,
-    label: 'label 1',
-    view: 'content 1 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  },
-  {
-    id: 2,
-    label: 'label 2',
-    view: 'content 2 - Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.',
-  },
-  {
-    id: 3,
-    label: 'label 3',
-    view: 'content 3 - Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-  },
-];
-
 export const Component = (props: TabsDefaultProps) => {
   const baseClass = 'owluiTabs';
-  const { children } = props;
+  const { children, defaultActiveKey, items } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -58,28 +37,13 @@ export const Component = (props: TabsDefaultProps) => {
     ['prefix', 'theme', 'appearance', 'size', 'tabs']
   );
 
-  // const bsPrefixes = {
-  //   [`${baseClass}`]: `${basePrefixClass}-card`,
-  // };
-
-  // const [selected, setSelected] = React.useState(0);
-  const [key, setKey] = React.useState('home');
-
-  const tabPane = document.getElementById(
-    'uncontrolled-tab-example-tabpane-profile'
-  );
-
-  const handleSelect = () => {
-    tabPane?.classList.remove('tab-pane');
-    tabPane?.classList.add('owl-ui-tab-pane');
-  };
+  const [activeKey, setActiveKey] = React.useState<string>(defaultActiveKey);
 
   return (
     <ThemeProvider
       prefixes={{
         nav: 'owlui-nav',
         'tab-content': 'owlui-tab-content',
-
         'nav-tabs': 'owlui-nav-tabs',
         'nav-item': 'owlui-nav-item',
         'nav-link': 'owlui-nav-link',
@@ -88,47 +52,27 @@ export const Component = (props: TabsDefaultProps) => {
       }}
     >
       <Tabs
-        activeKey="profile"
-        id="uncontrolled-tab-example"
-        className="mb-3"
-        // onClick={handleSelect}
+        activeKey={activeKey}
+        onSelect={(k: string) => {
+          setActiveKey(k);
+        }}
         {...locals}
       >
-        <SingleTab eventKey="home" title="Home">
-          1
-        </SingleTab>
-        <SingleTab eventKey="profile" title="Profile">
-          2
-        </SingleTab>
-        <SingleTab eventKey="contact" title="Contact">
-          3
-        </SingleTab>
+        {items.map((item, index) => {
+          return (
+            <Tab
+              className={activeKey === item.id ? 'owlui-active' : ''}                                      
+              key={item.id}                                
+              eventKey={item.id}                                          
+              title={item.label}
+            >
+              {item.view}
+            </Tab>
+          );
+        })}
       </Tabs>
-
-      {/* <Tabs
-          defaultActiveKey={0}
-          id="uncontrolled-tab-example"
-          {...locals}
-          className="mb-3"
-        >
-          {items.map((item, index) => {
-            return (
-              <Tab
-                // className={`${item.id === selected ? 'active ' : ' '}p-3`}
-                eventKey={index}
-                title={item.label}
-                // onClick={() => setSelected(item.id)}
-                key={item.id}
-              >
-                Hello
-              </Tab>
-            );
-          })}
-        </Tabs> */}
     </ThemeProvider>
   );
-
-  // return <div {...locals}>{children}</div>;
 };
 
 export default {
