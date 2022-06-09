@@ -24,6 +24,8 @@ See the Bootstrap docs to check out the complete list of available props:
 
 Import or create an array of item objects, where each item has an id (string), a label (string), and a value (undefined--not currently being used). Pass the items to the Dropdown component as a prop.
 
+### Default Example
+
 ```jsx
 import { Default as Dropdown } from `@owlui/dropdown`;
 
@@ -49,4 +51,8 @@ const items = [
 
 ```
 
-## Variants
+### Examples with additional props (keep the list open until the user clicks outside or tabs away)
+
+```jsx
+<Dropdown items={items} autoClose="outside" />
+```
