@@ -19,34 +19,31 @@ A table component displays an structures list of content that is similar or rela
 
 The default table component is going to render a wrapper `<table>` tag for the table `<thead>` that contains one or multiple columns, and for the `<tbody>` and its children:
 
-```jsx
-<Table columns={columns} items={items} />;
+```tsx
+import { component as Table } from '@owlui/table';
 
-columns: [
-  {
-    label: 'ID',
-    field: 'user_id',
-  },
-];
+<Table tableData={tableData} />;
 
-items: [
-  {
-    user_id: '00123',
-  },
-];
+const tableData = [
+  caption: 'Table 1. List of users',
+  columns: [
+    {
+      label: 'ID',
+      field: 'user_id',
+    },
+  ];
+
+  items: [
+    {
+      user_id: '00123',
+      user_name: 'Tom'
+    },
+  ];
+]
 ```
 
 ##### Props
 
-|     Name     |                 Type                  | Default Value | Description                                                                             |
-| :----------: | :-----------------------------------: | :-----------: | :-------------------------------------------------------------------------------------- |
-| `appearence` |   `Default`, `Primary`, `Secondary`   |   `Default`   | Sets the overall appearence of the button based on pre-defined styles                   |
-|  `outline`   |               `string`                |               | An element Id which identifies the element that describes the button to screen readers. |
-|   `prefix`   |               `string`                |               | Custom class that will be added to the beggining of the `className`                     |
-|   `theme`    |           `Default`, `Dark`           |   `Default`   | Sets the theme of the button using pre-defined styles                                   |
-|  `columns`   | `[{ label: string; field: string; }]` |               | An array of objects containing a label that will be the key and name of the column      |
-|   `items`    |           `[{key: value}]`            |               | Sets the theme of the button using pre-defined styles                                   |
-
-> The `columns` field should match the `items` key in order to render the proper header/body values.
+Visit the official [React Bootstrap Table docs](https://react-bootstrap.github.io/components/table/#table-props) for a complete list of props.
 
 ## Variants

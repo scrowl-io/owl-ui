@@ -1,69 +1,33 @@
 @use '@owlui/theme/src' as theme;
 
 .table {
-  width: 100%;
-  border-collapse: collapse;
-  caption-side: top;
+  $ref: &;
 
-  tbody,
-  td,
-  tfoot,
-  th,
-  thead,
-  tr {
-    border: 0 solid;
-    border-color: inherit;
-  }
-
-  > :not(:first-child) {
-    border-top: 2px solid;
-  }
-
-  > :not(caption) {
-    > * > * {
-      padding: 0.5rem;
-      border-bottom-width: 1px;
+  &-light {
+    &.theme--dark {
+      --bs-table-color: var(--color-font-light);
+      --bs-table-bg: var(--bs-gray-600);
+      --bs-table-border-color: #{theme.$owl-ref-palette-gray-500};
+      --bs-table-striped-bg: var(--bs-gray-500);
+      --bs-table-striped-color: var(--color-font-light);
+      --bs-table-active-bg: var(--bs-gray-400);
+      --bs-table-active-color: var(--color-font-light);
+      --bs-table-hover-bg: var(--bs-gray-300);
+      --bs-table-hover-color: var(--color-font-light);
     }
   }
 
-  th {
-    text-align: inherit;
-  }
-
-  tbody {
-    vertical-align: inherit;
-  }
-
-  &.theme--dark {
-    background-color: var(--bs-dark);
-    color: var(--color-font-light);
-  }
-
-  &--appearance {
-    &-primary {
-      &.theme--default {
-        background-color: var(--bs-light);
-        color: var(--color-font-primary);
-        border-color: var(--color-font-primary);
-      }
-
-      &.theme--dark {
-        background-color: var(--bs-primary);
-        color: var(--color-font-dark);
-        border-color: var(--color-font-dark);
-      }
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
     }
-  }
 
-  &--outline {
-    > :not(caption) {
-      > * {
-        border-width: 1px 0;
+    &-md {
+      @include theme.typeface-md;
+    }
 
-        > * {
-          border-width: 0 1px;
-        }
-      }
+    &-sm {
+      @include theme.typeface-sm;
     }
   }
 }
