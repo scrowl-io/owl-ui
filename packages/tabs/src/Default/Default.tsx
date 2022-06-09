@@ -42,9 +42,10 @@ export const Component = (props: TabsDefaultProps) => {
 
   const [activeKey, setActiveKey] = React.useState<string>(defaultActiveKey);
 
-  const selectTab = function () {
-    // eslint-disable-next-line prefer-rest-params
-    console.log(arguments);
+  const selectTab = function (eventKey: string | number | null) {
+    if (eventKey) {
+      setActiveKey(eventKey.toString());
+    }
   };
 
   return (
