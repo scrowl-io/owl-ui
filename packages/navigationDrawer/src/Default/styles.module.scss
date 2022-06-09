@@ -22,7 +22,7 @@ $border-clr: #dadada;
       $ref-subheader: &;
 
       @include theme.typeface-xs;
-      color: var(--clr-dark-highlight);
+      color: var(--color-font-dark-highlight);
       margin: var(--spacer) 0 0 0;
       padding: 0.25rem 0.5rem;
     }
@@ -37,23 +37,23 @@ $border-clr: #dadada;
   }
 
   &.theme--dark {
-    background-color: var(--bg-light);
+    background-color: var(--bs-light);
   }
 
   &--appearance {
     &-primary {
-      color: var(--clr-light);
+      color: var(--color-font-light);
 
       &.theme--default {
-        background-color: var(--bg-primary);
+        background-color: var(--bs-primary);
 
         & #{$ref-subheader} {
-          color: var(--clr-light);
+          color: var(--color-font-light);
         }
       }
 
       &.theme--dark {
-        background-color: var(--bg-dark);
+        background-color: var(--bs-dark);
       }
     }
   }

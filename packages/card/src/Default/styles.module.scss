@@ -1,40 +1,33 @@
 @use '@owlui/theme/src' as theme;
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  word-wrap: break-word;
-  background-color: var(--bg-light);
-  border: 1px solid var(--bg-dark);
+  $ref: &;
 
   &.theme--dark {
-    background-color: var(--bg-dark);
-    color: var(--clr-light);
+    &.bg-light {
+      // Example of how to implement theming to bootstrap variant
+      // you can use css vars or scss vars
+      // --bs-card-color: var(--color-font-light);
+      // --bs-btn-active-color: #{theme.$owl-ref-palette-white};
+      // --bs-btn-active-bg: var(--bs-gray-800);
+      // --bs-btn-active-border-color: var(--bs-gray-800);
+      // --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      // --bs-btn-disabled-bg: var(--bs-gray-500);
+      // --bs-btn-disabled-border-color: var(--bs-gray-500);
+    }
   }
 
-  &--appearance {
-    &-primary {
-      &.theme--default {
-        background-color: var(--bg-light);
-        color: var(--clr-primary);
-        border-color: var(--clr-primary);
-      }
-
-      &.theme--dark {
-        background-color: var(--clr-primary);
-        color: var(--clr-light);
-        border-color: var(--clr-primary);
-      }
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
     }
 
-    &-outline {
-      &.theme--dark {
-        background-color: var(--bg-dark);
-        color: var(--clr-light);
-        border-color: var(--clr-light);
-      }
+    &-md {
+      @include theme.typeface-md;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
     }
   }
 }

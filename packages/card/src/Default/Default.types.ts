@@ -1,11 +1,8 @@
-import React from 'react';
+import * as bs from 'react-bootstrap';
 
 export interface CardDefaultCommons {
-  appearance?: 'Default' | 'Primary' | 'Outline';
-  children: React.ReactNode;
   prefix?: string;
   theme?: 'Default' | 'Dark';
 }
 
-export type CardDefaultProps = Partial<CardDefaultCommons> &
-  React.HTMLAttributes<HTMLDivElement>;
+export type CardDefaultProps = Partial<CardDefaultCommons> & bs.CardProps;

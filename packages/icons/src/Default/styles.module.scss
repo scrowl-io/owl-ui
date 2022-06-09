@@ -2,26 +2,26 @@
 
 .icons,
 .icons-outlined {
-  color: var(--clr-dark);
+  color: var(--color-font-dark);
 
   &.theme--dark {
-    color: var(--clr-light);
+    color: var(--color-font-light);
   }
 
   &--appearance {
     &-primary {
       &.theme--default {
-        color: var(--clr-primary);
+        color: var(--color-font-primary);
       }
 
       &.theme--dark {
-        color: var(--clr-light);
+        color: var(--color-font-light);
       }
     }
 
     &-alt {
-      color: var(--clr-light);
-      background-color: var(--bg-primary);
+      color: var(--color-font-light);
+      background-color: var(--bs-primary);
     }
   }
 

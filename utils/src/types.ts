@@ -20,5 +20,6 @@ export type localStyles = {
     base: string;
     prefix: string;
     optionals: Array<{ fields: string[]; value: string }>;
+    bsProps?: string[];
   };
 };
