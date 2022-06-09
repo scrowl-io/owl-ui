@@ -40,7 +40,7 @@ export const Component = (props: TableDefaultProps) => {
     <thead>
       <tr>
         {columns.map(column => (
-          <th scope="col" id={column.field} key={column.label}>
+          <th scope="col" id={column.field} key={column.field}>
             {column.label}
           </th>
         ))}
@@ -48,26 +48,52 @@ export const Component = (props: TableDefaultProps) => {
     </thead>
   );
 
-  const Body = ({ items }: { items: TableRowItem[] }) => (
-    <tbody>
-      {items.map(item => (
-        <tr key={1}>
-          {Object.entries(item).map(([key, value]) => (
-            <td headers={key} key={key}>
-              {value}
-            </td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  );
+  const ColElem = (
+    item: TableRowItem,
+    itemIndex: number,
+    col: TableColumnItem
+  ) => {
+    return (
+      <td headers={col.field} key={`${itemIndex} + ${col.field}`}>
+        {item[col.field]}
+      </td>
+    );
+  };
+
+  const RowElem = (
+    item: TableRowItem,
+    index: number,
+    columns: TableColumnItem[]
+  ) => {
+    let cols: React.ReactNode = [];
+
+    cols = columns.map(col => {
+      return ColElem(item, index, col);
+    });
+
+    return <tr key={index}>{cols}</tr>;
+  };
+
+  const BodyElem = (columns: TableColumnItem[], items: TableRowItem[]) => {
+    let rows: React.ReactNode = [];
+
+    if (items && items.length) {
+      rows = items.map((item, index) => {
+        return RowElem(item, index, columns);
+      });
+    }
+
+    return <tbody>{rows}</tbody>;
+  };
+
+  const body = BodyElem(tableData.columns, tableData.items);
 
   return (
     <ThemeProvider prefixes={{ [`${baseClass}`]: `${basePrefixClass}` }}>
       <Table {...locals}>
         <caption>{tableData.caption}</caption>
         <Header columns={tableData.columns} />
-        <Body items={tableData.items} />
+        {body}
       </Table>
     </ThemeProvider>
   );
