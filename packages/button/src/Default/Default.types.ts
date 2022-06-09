@@ -5,5 +5,8 @@ export interface ButtonDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Lg' | 'Md' | 'Sm';
 }
+export interface themePrefixesProps {
+  [key: string]: string;
+}
 
 export type ButtonDefaultProps = Partial<ButtonDefaultCommons> & bs.ButtonProps;
