@@ -23,7 +23,7 @@ export const Component = (props: DropdownDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Themes',
+            value: 'Theme',
           },
           {
             fields: ['size'],
@@ -80,6 +80,7 @@ export const Component = (props: DropdownDefaultProps) => {
               return (
                 <Dropdown.Item
                   id={`item-number-${item.id}`}
+                  value={item.value}
                   onKeyDown={handleTab}
                   className={`${
                     selectedItem === item.id ? 'owlui-active' : ''

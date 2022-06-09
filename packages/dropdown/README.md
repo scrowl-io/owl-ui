@@ -4,7 +4,7 @@ Toggle contextual overlays for displaying lists of links and more with the Boots
 
 ## Usage
 
-Import or create an array of item objects, where each item has an id (string), a label (string), and a value (undefined--not currently being used); pass the items to the Dropdown component as a prop.
+Import or create an array of item objects, where each item has an id (string), a label (string), and a value; pass the items to the Dropdown component as a prop.
 
 - [`<Dropdown>`](https://react-bootstrap.github.io/components/dropdowns/#dropdown-props)
 
@@ -15,7 +15,7 @@ const items = [
   {
     id: '1',
     label: 'Item 1',
-    value: undefined,
+    value: 'item1',
   },
   {
     id: '2',
