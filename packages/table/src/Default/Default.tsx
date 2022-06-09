@@ -1,15 +1,17 @@
 import * as React from 'react';
-import { TableDefaultProps } from './Default.types';
-import Header from './elements/Header';
-import Body from './elements/Body';
+import { Table, ThemeProvider } from 'react-bootstrap';
+import {
+  TableColumnItem,
+  TableDefaultProps,
+  TableRowItem,
+} from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: TableDefaultProps) => {
   const baseClass = 'table';
-  const { columns, items } = props;
-  const tableColumns = columns || [];
-  const tableItems = items || [];
+  const basePrefixClass = `owlui-${baseClass}`;
+  const { tableData } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -25,24 +27,75 @@ export const Component = (props: TableDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['outline'],
-            value: 'Outline',
+            fields: ['size'],
+            value: 'Size',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size', 'columns', 'items', 'outline']
+    ['prefix', 'theme', 'Size', 'tableData']
   );
 
+  const Header = ({ columns }: { columns: TableColumnItem[] }) => (
+    <thead>
+      <tr>
+        {columns.map(column => (
+          <th scope="col" id={column.field} key={column.field}>
+            {column.label}
+          </th>
+        ))}
+      </tr>
+    </thead>
+  );
+
+  const ColElem = (
+    item: TableRowItem,
+    itemIndex: number,
+    col: TableColumnItem
+  ) => {
+    return (
+      <td headers={col.field} key={`${itemIndex} + ${col.field}`}>
+        {item[col.field]}
+      </td>
+    );
+  };
+
+  const RowElem = (
+    item: TableRowItem,
+    index: number,
+    columns: TableColumnItem[]
+  ) => {
+    let cols: React.ReactNode = [];
+
+    cols = columns.map(col => {
+      return ColElem(item, index, col);
+    });
+
+    return <tr key={index}>{cols}</tr>;
+  };
+
+  const BodyElem = (columns: TableColumnItem[], items: TableRowItem[]) => {
+    let rows: React.ReactNode = [];
+
+    if (items && items.length) {
+      rows = items.map((item, index) => {
+        return RowElem(item, index, columns);
+      });
+    }
+
+    return <tbody>{rows}</tbody>;
+  };
+
+  const body = BodyElem(tableData.columns, tableData.items);
+
   return (
-    <table {...locals}>
-      <Header columns={tableColumns} />
-      <Body columns={tableColumns} items={tableItems} />
-    </table>
+    <ThemeProvider prefixes={{ [`${baseClass}`]: `${basePrefixClass}` }}>
+      <Table {...locals}>
+        <caption>{tableData.caption}</caption>
+        <Header columns={tableData.columns} />
+        {body}
+      </Table>
+    </ThemeProvider>
   );
 };
 
