@@ -8,8 +8,11 @@ import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: TabsDefaultProps) => {
   const baseClass = 'owluiTabs';
-  const { children, defaultActiveKey, items } = props;
+  const { children, items } = props;
   const prefix = props.prefix || '';
+  const defaultActiveKey = props.defaultActiveKey
+    ? props.defaultActiveKey.toString()
+    : items[0].id;
 
   const locals = createLocalProps(
     props,
@@ -39,6 +42,11 @@ export const Component = (props: TabsDefaultProps) => {
 
   const [activeKey, setActiveKey] = React.useState<string>(defaultActiveKey);
 
+  const selectTab = function () {
+    // eslint-disable-next-line prefer-rest-params
+    console.log(arguments);
+  };
+
   return (
     <ThemeProvider
       prefixes={{
@@ -51,19 +59,13 @@ export const Component = (props: TabsDefaultProps) => {
         'tab-pane': 'owlui-tab-pane',
       }}
     >
-      <Tabs
-        activeKey={activeKey}
-        onSelect={(k: string) => {
-          setActiveKey(k);
-        }}
-        {...locals}
-      >
+      <Tabs activeKey={activeKey} onSelect={selectTab} {...locals}>
         {items.map((item, index) => {
           return (
             <Tab
-              className={activeKey === item.id ? 'owlui-active' : ''}                                      
-              key={item.id}                                
-              eventKey={item.id}                                          
+              className={activeKey === item.id ? 'owlui-active' : ''}
+              key={item.id}
+              eventKey={item.id}
               title={item.label}
             >
               {item.view}
