@@ -14,12 +14,6 @@ See the Bootstrap docs to check out the complete list of available props:
 
 - [`<Dropdown>`](https://react-bootstrap.github.io/components/dropdowns/#dropdown-props)
 
-## Props
-
-|  Name  |  Type  | Default Value | Description |
-| :----: | :----: | :-----------: | :---------- |
-| `NAME` | `TYPE` |    `VALUE`    | DESCRIPTION |
-
 ## Usage
 
 Import or create an array of item objects, where each item has an id (string), a label (string), and a value (undefined--not currently being used). Pass the items to the Dropdown component as a prop.
@@ -54,5 +48,22 @@ const items = [
 ### Examples with additional props (keep the list open until the user clicks outside or tabs away)
 
 ```jsx
-<Dropdown items={items} autoClose="outside" />
+const items = [
+  {
+    id: '1',
+    label: 'Item 1',
+    value: undefined,
+  },
+  {
+    id: '2',
+    label: 'Item 2',
+    value: undefined,
+  },
+  {
+    id: '3',
+    label: 'Item 3',
+    value: undefined,
+  },
+];
+<Dropdown items={items} autoClose="outside" />;
 ```
