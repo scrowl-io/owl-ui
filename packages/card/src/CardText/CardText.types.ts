@@ -1,8 +1,8 @@
 import React from 'react';
 import type { CardDefaultProps } from '../Default/Default.types';
 
-export interface CardBodyCommons extends CardDefaultProps {
+export interface CardTextCommons extends CardDefaultProps {
   children: React.ReactNode;
 }
 
-export type CardBodyProps = Partial<CardBodyCommons>;
+export type CardTextProps = Partial<CardTextCommons>;
