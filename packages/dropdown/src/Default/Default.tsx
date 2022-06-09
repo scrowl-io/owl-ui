@@ -23,7 +23,7 @@ export const Component = (props: DropdownDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'theme',
+            value: 'Themes',
           },
           {
             fields: ['size'],
@@ -32,7 +32,7 @@ export const Component = (props: DropdownDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'dropdown']
+    ['prefix', 'theme', 'size', 'items']
   );
 
   const handleItemClick = (event: React.MouseEvent<HTMLElement>) => {
