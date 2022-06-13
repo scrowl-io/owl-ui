@@ -1,3 +1,4 @@
+import * as Accordion from '@owlui/accordion';
 import * as Button from '@owlui/button';
 import * as Card from '@owlui/card';
 import * as Dropdown from '@owlui/dropdown';
@@ -7,6 +8,7 @@ import * as Table from '@owlui/table';
 import * as Textfield from '@owlui/textfield';
 import './_index.scss';
 
+export const accordion = Accordion;
 export const button = Button;
 export const card = Card;
 export const dropdown = Dropdown;
@@ -16,6 +18,7 @@ export const table = Table;
 export const textfield = Textfield;
 
 export default {
+  accordion,
   button,
   card,
   dropdown,
