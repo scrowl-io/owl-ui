@@ -17,7 +17,12 @@ export default {
   },
   decorators: [
     Story => (
-      <div style={{ display: 'block', color: 'black', width: '30%' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+        }}
+      >
         <Story />
       </div>
     ),
