@@ -2,44 +2,64 @@
 
 .switchToggle {
   $ref: &;
-  width: 20%;
-  //padding: var(--spacer);
-  
+  width: auto;
 
-  &.theme--default{
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // padding: 0 .5rem;
-    border-radius: 5px;
-    border: 2px solid #005a9c;
-    background-color: var(--bg-light);
-  
-
-    &:hover {
-      border: 2px solid #005a9c;
-      background-color: #def;
+  &--appearance{
+    &-primary{
       border-radius: 5px;
+      border: 2px solid #005a9c;
+      background-color: var(--bs-primary);
+
+      &:hover {
+        border: 2px solid #005a9c;
+        background-color: #def;
+        border-radius: 5px;
+      }
+
+      &.theme--dark{
+        background-color: var(--bs-gray-500);
+        border: 2px solid #005a9c;
+        color: var(--bg-light);
+        border-radius: 5px;
+    
+        &:hover {
+          border: 2px solid #005a9c;
+          background-color: #def;
+          border-radius: 5px;
+          color: black;
+        }
+      }
+    } 
+  
+    &-default{
+      border-radius: 5px;
+      border: 2px solid #005a9c;
+      background-color: var(--bs-light);
+
+        &:hover {
+          border: 2px solid #005a9c;
+          background-color: #def;
+          border-radius: 5px;
+        }
+      
+        &.theme--dark{
+          background-color: var(--bs-dark);
+          border: 2px solid #def;
+          color: var(--color-font-light);
+          border-radius: 5px;
+
+          &:hover {
+            border: 2px solid #005a9c;
+            background-color: #def;
+            border-radius: 5px;
+            color: black;
+          }
+        }
     }
   }
 
-  &.theme--dark{
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // padding: 0 .5rem;
-    background-color: var(--bg-dark);
-    color: var(--bg-light);
-    border-radius: 5px;
-    border: 2px solid var(--bg-light);
-  
-
-    &:hover {
-      border: 2px solid #005a9c;
-      background-color: #def;
-      border-radius: 5px;
-      color: black;
-    }
+  span {
+    margin-right: 1.5rem;
   }
 
   label{
@@ -51,15 +71,7 @@
     &:focus, &:active{
       background-color: #def;
     }
-    // &:hover {
-    //   border: 2px solid #005a9c;
-   
-    //   border-radius: 5px;
-    // }
   }
-
-
-
   
   &--size {
     &-lg {

@@ -27,12 +27,12 @@ export const Component = (props: SwitchToggleDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['theme', 'appearance'],
-            value: 'theme',
+            fields: ['appearance'],
+            value: 'Appearance',
           },
           {
             fields: ['size'],
-            value: 'size',
+            value: 'Size',
           },
         ],
       },
@@ -41,7 +41,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
       'prefix',
       'theme',
       'appearance',
-      'size',
+      'Size',
       'switchToggle',
       'label',
       'id',
@@ -64,12 +64,14 @@ export const Component = (props: SwitchToggleDefaultProps) => {
             htmlFor="owlui-custom-switch"
             className={`label p-2 ${toggle ? 'active-switch' : ''}`}
           >
-            <span aria-hidden="true">Reduced Motion</span>
+            <span className="m-2" aria-hidden="true">
+              Reduced Motion
+            </span>
             <Form.Check
               onClick={() => setToggle(!toggle)}
               bsPrefix="owlui-form-check"
               checked={toggle}
-              className="owlui-form"
+              className="owlui-form ml-3"
               type="switch"
               id="owlui-custom-switch"
               label={toggle ? 'ON' : 'OFF'}
