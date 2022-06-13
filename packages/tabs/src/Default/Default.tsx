@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -8,7 +8,7 @@ import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: TabsDefaultProps) => {
   const baseClass = 'owluiTabs';
-  const { children, defaultActiveKey, items } = props;
+  const { defaultActiveKey, items } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -21,11 +21,11 @@ export const Component = (props: TabsDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
             fields: ['theme', 'appearance'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
             fields: ['size'],
@@ -34,10 +34,10 @@ export const Component = (props: TabsDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size', 'tabs']
+    ['prefix', 'theme', 'appearance', 'size', 'tabs', 'items']
   );
 
-  const [activeKey, setActiveKey] = React.useState<string>(defaultActiveKey);
+  const [activeKey, setActiveKey] = useState<string | null>(defaultActiveKey as string);
 
   return (
     <ThemeProvider
@@ -52,18 +52,18 @@ export const Component = (props: TabsDefaultProps) => {
       }}
     >
       <Tabs
-        activeKey={activeKey}
-        onSelect={(k: string) => {
+        activeKey={activeKey as string}
+        onSelect={(k: string | null) => {
           setActiveKey(k);
         }}
         {...locals}
       >
-        {items.map((item, index) => {
+        {items.map((item) => {
           return (
             <Tab
-              className={activeKey === item.id ? 'owlui-active' : ''}                                      
-              key={item.id}                                
-              eventKey={item.id}                                          
+              className={activeKey === item.id ? 'owlui-active' : ''}
+              key={item.id}
+              eventKey={item.id}
               title={item.label}
             >
               {item.view}

@@ -1,7 +1,6 @@
 @use '@owlui/theme/src' as theme;
 
 .owlui-tabs {
-
   &.theme--dark {
     background-color: var(--bg-dark);
     color: var(--clr-light);
@@ -18,7 +17,6 @@
     
     &-sm {
       @include theme.typeface-sm;
-      background-color: var(--owl-ref-palette-grey-700);;
     }
   }
 }

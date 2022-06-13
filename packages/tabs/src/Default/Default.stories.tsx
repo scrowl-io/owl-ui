@@ -17,7 +17,7 @@ export default {
   },
   decorators: [
     Story => (
-      <div style={{ display: 'block', color: 'black', width: '30%' }}>
+      <div style={{ display: 'block', width: '50%' }}>
         <Story />
       </div>
     ),
