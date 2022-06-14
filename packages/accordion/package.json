@@ -30,8 +30,8 @@
   },
   "dependencies": {
     "@owlui/theme": "^0.0.22",
-    "@owlui/typings": "^0.0.22",
-    "@owlui/utils": "^0.0.20",
+    "@owlui/typings": "^0.0.21",
+    "@owlui/utils": "^0.0.22",
     "react-bootstrap": "2.4.0"
   }
 }
