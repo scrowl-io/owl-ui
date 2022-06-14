@@ -7,7 +7,7 @@ import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: TabsDefaultProps) => {
-  const baseClass = 'owluiTabs';
+  const baseClass = 'navTabs';
   const activeClass = 'owlui-active';
   const { items } = props;
   const prefix = props.prefix || '';
