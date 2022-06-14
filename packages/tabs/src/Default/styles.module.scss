@@ -24,7 +24,6 @@
 
     &-sm {
       @include theme.typeface-sm;
-      background-color: var(--owl-ref-palette-grey-700);
     }
   }
 }

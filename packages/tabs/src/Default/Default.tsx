@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
@@ -26,7 +26,7 @@ export const Component = (props: TabsDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'theme',
+            value: 'Theme',
           },
           {
             fields: ['size'],
@@ -38,7 +38,7 @@ export const Component = (props: TabsDefaultProps) => {
     ['prefix', 'theme', 'appearance', 'size', 'items', 'selectedItemId']
   );
 
-  const [activeKey, setActiveKey] = React.useState<string>(
+  const [activeKey, setActiveKey] = useState<string>(
     selectedItemId.toString()
   );
 
@@ -57,7 +57,7 @@ export const Component = (props: TabsDefaultProps) => {
     });
   };
 
-  React.useEffect(function () {
+  useEffect(function () {
     const selector = `#${componentId} .owlui-nav-item > .active`;
     const activeTab: HTMLElement | null = document.querySelector(selector);
 
