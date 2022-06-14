@@ -34,6 +34,10 @@ export const Component = (props: AccordionDefaultProps) => {
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
+  themePrefixes['accordion-button'] = 'owlui-accordion-button';
+  themePrefixes['accordion-body'] = 'owlui-accordion-body';
+  themePrefixes['accordion-collapse'] = 'owlui-accordion-collapse';
+  themePrefixes['accordion-item'] = 'owlui-accordion-item';
 
   const toggleActive = (event: React.MouseEvent<HTMLElement>) => {
     if (!isActive.includes(event.target.parentElement.dataset.index)) {
@@ -47,7 +51,7 @@ export const Component = (props: AccordionDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Accordion {...locals}>
+      <Accordion {...locals} style={{ width: '70vw' }}>
         {items?.map(item => {
           return (
             <Accordion.Item key={item.id} eventKey={item.id as string}>

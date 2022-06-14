@@ -11,19 +11,24 @@ const items = [
     id: '1',
     label: 'Header 1',
     view: (
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non
-        diam eu enim posuere malesuada. Nullam felis nulla, tempus quis lacus
-        sed, mollis gravida orci. Nullam turpis justo, suscipit id pretium ut,
-        dictum at tellus. Sed facilisis dui nisl, quis blandit enim bibendum sit
-        amet. Vestibulum id tortor a lacus suscipit vulputate. Donec et felis
-        nisl. Proin id justo semper, venenatis nulla egestas, bibendum velit.
-        Vivamus volutpat, mi eget bibendum cursus, velit tortor pellentesque
-        ipsum, vitae maximus augue nunc at turpis. Cras vel nisi dolor. Duis mi
-        risus, malesuada a magna nec, molestie varius metus. Duis eget gravida
-        erat. Quisque hendrerit in augue at interdum. Fusce nec luctus sem, eu
-        aliquam lorem.
-      </p>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non
+          diam eu enim posuere malesuada. Nullam felis nulla, tempus quis lacus
+          sed, mollis gravida orci. Nullam turpis justo, suscipit id pretium ut,
+          dictum at tellus. Sed facilisis dui nisl, quis blandit enim bibendum
+          sit amet. Vestibulum id tortor a lacus suscipit vulputate. Donec et
+          felis nisl.
+        </p>
+        <p>
+          Proin id justo semper, venenatis nulla egestas, bibendum velit.
+          Vivamus volutpat, mi eget bibendum cursus, velit tortor pellentesque
+          ipsum, vitae maximus augue nunc at turpis. Cras vel nisi dolor. Duis
+          mi risus, malesuada a magna nec, molestie varius metus. Duis eget
+          gravida erat. Quisque hendrerit in augue at interdum. Fusce nec luctus
+          sem, eu aliquam lorem.
+        </p>
+      </div>
     ),
   },
   {
@@ -31,26 +36,17 @@ const items = [
     label: 'Header 2',
     view: (
       <form style={{ display: 'flex', flexDirection: 'column' }}>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Email
-          <input type="text" name="email" />
-        </label>
-        <label>
-          Phone:
-          <input type="text" name="phone" />
-        </label>
-        <label>
-          Country:
-          <input type="text" name="country" />
-        </label>
-        <label>
-          City:
-          <input type="text" name="city" />
-        </label>
+        <label htmlFor="name">Name:</label>
+        <input type="text" name="name" />
+
+        <label htmlFor="email">Email:</label>
+        <input type="text" name="email" />
+        <label htmlFor="phone">Phone:</label>
+        <input type="text" name="phone" />
+        <label htmlFor="country">Country:</label>
+        <input type="text" name="country" />
+        <label htmlFor="city">City:</label>
+        <input type="text" name="city" />
       </form>
     ),
   },
@@ -61,7 +57,6 @@ const items = [
       <div>
         <h2>Build out custom content</h2>
         <img
-          style={{ width: '30%' }}
           src="https://osg.ca/wp-content/uploads/2021/12/greenbook_transparent.png"
           alt="green book by OSG"
         />
