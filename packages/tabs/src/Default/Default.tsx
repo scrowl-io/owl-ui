@@ -26,7 +26,7 @@ export const Component = (props: TabsDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'theme',
+            value: 'Theme',
           },
           {
             fields: ['size'],

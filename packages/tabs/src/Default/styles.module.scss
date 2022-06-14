@@ -1,11 +1,17 @@
 @use '@owlui/theme/src' as theme;
 
 .owlui-tabs {
-  &.theme--dark {
-    background-color: var(--bg-dark);
-    color: var(--clr-light);
+
+  &--appearance{
+    &-primary{
+      &.theme--dark {
+        background-color: red;
+        color: var(--clr-light);
+      }
+    }
   }
- 
+  
+
   &--size {
     &-lg {
       @include theme.typeface-lg;
