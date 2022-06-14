@@ -35,7 +35,7 @@ export const Component = (props: AccordionDefaultProps) => {
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
 
-  const toggleActive = event => {
+  const toggleActive = (event: React.MouseEvent<HTMLElement>) => {
     if (!isActive.includes(event.target.parentElement.dataset.index)) {
       setIsActive([...isActive, event.target.parentElement.dataset.index]);
     } else {
@@ -43,7 +43,6 @@ export const Component = (props: AccordionDefaultProps) => {
         isActive.filter(e => e !== event.target.parentElement.dataset.index)
       );
     }
-    console.log(isActive);
   };
 
   return (
@@ -51,7 +50,7 @@ export const Component = (props: AccordionDefaultProps) => {
       <Accordion {...locals}>
         {items?.map(item => {
           return (
-            <Accordion.Item key={item.id} eventKey={item.id}>
+            <Accordion.Item key={item.id} eventKey={item.id as string}>
               <Accordion.Header data-index={item.id} onClick={toggleActive}>
                 {item.label}
               </Accordion.Header>
