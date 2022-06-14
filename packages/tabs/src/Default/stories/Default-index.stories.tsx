@@ -30,7 +30,6 @@ export const Default = (args: TabsDefaultProps) => (
   </Tabs>
 );
 
-
 Default.args = {
   appearance: 'Primary',
   size: 'Lg',

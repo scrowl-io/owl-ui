@@ -1,17 +1,11 @@
 import * as React from 'react';
-import { CardCardFooterProps } from './CardFooter.types';
-import * as styles from './styles.module.scss';
-import { getCssModClass } from '@owlui/utils';
+import { CardFooterProps } from './CardFooter.types';
+import { Card } from 'react-bootstrap';
 
-const baseClass = 'cardFooter';
-
-export const Component = (props: CardCardFooterProps) => {
+export const Component = (props: CardFooterProps) => {
   const { children } = props;
-  const localProps = Object.assign({}, props);
 
-  localProps.className = getCssModClass({ localProps, baseClass, styles });
-
-  return <div {...localProps}>{children}</div>;
+  return <Card.Footer {...props}>{children}</Card.Footer>;
 };
 
 export default {

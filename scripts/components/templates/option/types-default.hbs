@@ -1,11 +1,14 @@
 import React from 'react';
+import * as bs from 'react-bootstrap';
 
 export interface {{{cap}}}{{{optionPas}}}Commons {
-  appearance?: 'Primary' | 'Outline';
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  children: React.ReactNode;
 };
+
+export interface themePrefixesProps {
+  [key: string]: string;
+}
 
 export type {{{cap}}}{{{optionPas}}}Props = Partial<{{{cap}}}{{{optionPas}}}Commons> & React.AllHTMLAttributes<HTMLDivElement>;

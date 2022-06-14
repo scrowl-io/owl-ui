@@ -1,17 +1,11 @@
 import * as React from 'react';
-import { CardCardHeaderProps } from './CardHeader.types';
-import * as styles from './styles.module.scss';
-import { getCssModClass } from '@owlui/utils';
+import { Card } from 'react-bootstrap';
+import { CardHeaderProps } from './CardHeader.types';
 
-const baseClass = 'cardHeader';
-
-export const Component = (props: CardCardHeaderProps) => {
+export const Component = (props: CardHeaderProps) => {
   const { children } = props;
-  const localProps = Object.assign({}, props);
 
-  localProps.className = getCssModClass({ localProps, baseClass, styles });
-
-  return <div {...localProps}>{children}</div>;
+  return <Card.Header {...props}>{children}</Card.Header>;
 };
 
 export default {

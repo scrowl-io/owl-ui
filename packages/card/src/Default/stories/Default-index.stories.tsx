@@ -1,36 +1,57 @@
 import * as React from 'react';
+import { CardDefaultProps } from '../Default.types';
 import { component as Card } from '../index';
 import { component as CardHeader } from '../../CardHeader';
+import { component as CardTitle } from '../../CardTitle';
 import { component as CardBody } from '../../CardBody';
+import { component as CardSubTitle } from '../../CardSubTitle';
+import { component as CardText } from '../../CardText';
+import { component as CardLink } from '../../CardLink';
+import { component as CardListGroup } from '../../CardListGroup';
+import { component as CardListItem } from '../../CardListItem';
 import { component as CardFooter } from '../../CardFooter';
-import { Default as Button } from '../../../../button/src/index';
-import { CardDefaultProps } from '../Default.types';
 
-import { appearance } from './Default-appearance.stories';
+import { bg } from './Default-bg.stories';
+import { text } from './Default-text.stories';
+import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: CardDefaultProps) => (
   <Card {...args}>
-    <CardHeader>
-      <h3>Card Title</h3>
-    </CardHeader>
+    <CardHeader>Card Header</CardHeader>
     <CardBody>
-      <p>Some quick example text to build on the card content</p>
+      <CardTitle>Card Title</CardTitle>
+      <CardSubTitle>Card Subtitle</CardSubTitle>
+      <CardText>
+        Some quick example text to build on the card title and make up the bulk
+        of the card`s content.
+      </CardText>
+      <CardListGroup>
+        <CardListItem>
+          <CardLink href="#">Card Link 1</CardLink>
+        </CardListItem>
+        <CardListItem>
+          <CardLink href="#">Card Link 2</CardLink>
+        </CardListItem>
+        <CardListItem>
+          <CardLink href="#">Card Link 3</CardLink>
+        </CardListItem>
+      </CardListGroup>
     </CardBody>
-    <CardFooter>
-      <Button appearance="Default" size="Sm" theme="Default">
-        Submit
-      </Button>
-    </CardFooter>
+    <CardFooter>Card Footer</CardFooter>
   </Card>
 );
 
 Default.args = {
-  appearance: 'Default',
+  bg: 'light',
+  text: 'dark',
+  size: 'Sm',
   theme: 'Default',
 };
 
 Default.argTypes = {
-  appearance,
+  bg,
+  text,
+  size,
   theme,
 };
