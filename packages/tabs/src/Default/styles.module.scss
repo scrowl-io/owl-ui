@@ -1,12 +1,18 @@
 @use '@owlui/theme/src' as theme;
 
-.owlui-tabs {
+.nav-tabs {
+  --bs-nav-tabs-border-width: 1px;
+  --bs-nav-tabs-border-color: #dee2e6;
+  --bs-nav-tabs-border-radius: 0.375rem;
+  --bs-nav-tabs-link-hover-border-color: #e9ecef #e9ecef #dee2e6;
+  --bs-nav-tabs-link-active-color: #495057;
+  --bs-nav-tabs-link-active-bg: #fff;
+  --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
 
   &.theme--dark {
-    background-color: var(--bg-dark);
-    color: var(--clr-light);
+    --bs-nav-tabs-link-active-bg: vars(--bs-light);
   }
- 
+
   &--size {
     &-lg {
       @include theme.typeface-lg;
@@ -15,12 +21,9 @@
     &-md {
       @include theme.typeface-md;
     }
-    
+
     &-sm {
       @include theme.typeface-sm;
-      background-color: var(--owl-ref-palette-grey-700);;
     }
   }
 }
-
-
