@@ -23,7 +23,7 @@ export const Component = (props: DropdownDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
             fields: ['size'],
