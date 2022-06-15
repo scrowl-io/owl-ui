@@ -1,5 +1,6 @@
 import * as Button from '@owlui/button';
 import * as Card from '@owlui/card';
+import * as Carousel from '@owlui/carousel';
 import * as Dropdown from '@owlui/dropdown';
 import * as Icons from '@owlui/icons';
 import * as Navigationdrawer from '@owlui/navigationdrawer';
@@ -9,6 +10,7 @@ import './_index.scss';
 
 export const button = Button;
 export const card = Card;
+export const carousel = Carousel;
 export const dropdown = Dropdown;
 export const icons = Icons;
 export const navigationdrawer = Navigationdrawer;
@@ -18,6 +20,7 @@ export const textfield = Textfield;
 export default {
   button,
   card,
+  carousel,
   dropdown,
   icons,
   navigationdrawer,

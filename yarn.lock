@@ -2207,6 +2207,13 @@
   resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.21.tgz#ecd557c0211f57fc05ab6fcc043b894dc6979d25"
   integrity sha512-cK/omaNTOV77K34RA0BmyzND6AWdIaIc2Ko0lPmdoVQMV8DiAiwyKQbHI7BZ+Scf2IAc5ZqEh9dJLW4exEhOTg==
 
+"@owlui/utils@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@owlui/utils/-/utils-0.0.20.tgz#b695c46243748e0b8450d9fce3e519536f94cf9f"
+  integrity sha512-KASXoNyAnwT+h60N/UULcoR/DaL80tVGub7M4erZYu9dp4B1icfZxS26o0Rw7ANmecjMG15DGXP1ZCAO/5mEog==
+  dependencies:
+    "@owlui/typings" "^0.0.20"
+
 "@parcel/bundler-default@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@parcel/bundler-default/-/bundler-default-2.5.0.tgz#1f0b6d4893bb1a24f49fc7254a423134fb03741e"
