@@ -9,7 +9,7 @@ export const Component = (props: AccordionDefaultProps) => {
   const baseClass = 'accordion';
   const { items } = props;
   const prefix = props.prefix || '';
-  const [isActive, setIsActive] = useState([]);
+  const [isActive, setIsActive] = useState<string[]>([]);
 
   const locals = createLocalProps(
     props,
@@ -44,8 +44,8 @@ export const Component = (props: AccordionDefaultProps) => {
   themePrefixes['show'] = 'owlui-show';
 
   const toggleActive = (event: React.MouseEvent<HTMLElement>) => {
-    if (!isActive.includes(event.currentTarget.dataset.index)) {
-      setIsActive([...isActive, event.currentTarget.dataset.index]);
+    if (!isActive.includes(event.currentTarget.dataset.index as string)) {
+      setIsActive([...isActive, event.currentTarget.dataset.index as string]);
     } else {
       setIsActive(
         isActive.filter(e => e !== event.currentTarget.dataset.index)
@@ -56,9 +56,9 @@ export const Component = (props: AccordionDefaultProps) => {
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Accordion {...locals} style={{ width: '70vw' }}>
-        {items?.map(item => {
+        {items.map(item => {
           return (
-            <Accordion.Item key={item.id} eventKey={item.id as string}>
+            <Accordion.Item key={item.id} eventKey={item.id}>
               <Accordion.Button
                 className={`${
                   !isActive.includes(item.id) ? 'owlui-collapsed' : ''

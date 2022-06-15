@@ -2,7 +2,7 @@ import React from 'react';
 import * as bs from 'react-bootstrap';
 
 export interface AccordionItemProps {
-  id: string | number | undefined;
+  id: string;
   label: string;
   view: React.ReactNode;
 }
@@ -11,12 +11,12 @@ export interface AccordionDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  items?: AccordionItemProps[];
+  items: AccordionItemProps[];
 }
 
 export interface themePrefixesProps {
   [key: string]: string;
 }
 
-export type AccordionDefaultProps = Partial<AccordionDefaultCommons> &
+export type AccordionDefaultProps = AccordionDefaultCommons &
   React.AllHTMLAttributes<HTMLDivElement>;
