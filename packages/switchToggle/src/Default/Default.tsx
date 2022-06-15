@@ -1,18 +1,12 @@
 import * as React from 'react';
 import { Form, ThemeProvider } from 'react-bootstrap';
-import {
-  SwitchToggleDefaultProps,
-  SwitchToggleContainerProps,
-} from './Default.types';
+import { SwitchToggleDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: SwitchToggleDefaultProps) => {
   const baseClass = 'switchToggle';
-  const { switchtoggle } = props;
   const prefix = props.prefix || '';
-
-  const [toggle, setToggle] = React.useState<boolean>(false);
 
   const locals: SwitchToggleDefaultProps = createLocalProps(
     props,
@@ -37,16 +31,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
         ],
       },
     },
-    [
-      'prefix',
-      'theme',
-      'appearance',
-      'Size',
-      'switchToggle',
-      'label',
-      'id',
-      'type',
-    ]
+    ['prefix', 'theme', 'appearance', 'Size']
   );
 
   return (
@@ -59,25 +44,16 @@ export const Component = (props: SwitchToggleDefaultProps) => {
           label: 'owlui-label',
         }}
       >
-        <Form {...locals}>
-          <label
-            htmlFor="owlui-custom-switch"
-            className={`label p-2 ${toggle ? 'active-switch' : ''}`}
-          >
-            <span className="m-2" aria-hidden="true">
-              Reduced Motion
-            </span>
-            <Form.Check
-              onClick={() => setToggle(!toggle)}
-              bsPrefix="owlui-form-check"
-              checked={toggle}
-              className="owlui-form ml-3"
-              type="switch"
-              id="owlui-custom-switch"
-              label={toggle ? 'ON' : 'OFF'}
-            />
-          </label>
-        </Form>
+        <Form.Check
+          {...locals}
+          // onClick={() => setToggle(!toggle)}
+          // bsPrefix="owlui-form-check"
+          // checked={toggle}
+          // className="owlui-form ml-3"
+          type="switch"
+          // id="owlui-custom-switch"
+          // label={toggle ? 'ON' : 'OFF'}
+        />
       </ThemeProvider>
     </>
   );
