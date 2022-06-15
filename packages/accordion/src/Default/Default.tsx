@@ -38,13 +38,17 @@ export const Component = (props: AccordionDefaultProps) => {
   themePrefixes['accordion-body'] = 'owlui-accordion-body';
   themePrefixes['accordion-collapse'] = 'owlui-accordion-collapse';
   themePrefixes['accordion-item'] = 'owlui-accordion-item';
+  themePrefixes['accordion-collapsing'] = 'owlui-accordion-collapsing';
+  themePrefixes['collapsing'] = 'owlui-collapsing';
+  // themePrefixes['collapsed'] = 'owlui-collapsed';
+  themePrefixes['show'] = 'owlui-show';
 
   const toggleActive = (event: React.MouseEvent<HTMLElement>) => {
-    if (!isActive.includes(event.target.parentElement.dataset.index)) {
-      setIsActive([...isActive, event.target.parentElement.dataset.index]);
+    if (!isActive.includes(event.currentTarget.dataset.index)) {
+      setIsActive([...isActive, event.currentTarget.dataset.index]);
     } else {
       setIsActive(
-        isActive.filter(e => e !== event.target.parentElement.dataset.index)
+        isActive.filter(e => e !== event.currentTarget.dataset.index)
       );
     }
   };
@@ -55,10 +59,17 @@ export const Component = (props: AccordionDefaultProps) => {
         {items?.map(item => {
           return (
             <Accordion.Item key={item.id} eventKey={item.id as string}>
-              <Accordion.Header data-index={item.id} onClick={toggleActive}>
+              <Accordion.Button
+                className={`${
+                  !isActive.includes(item.id) ? 'owlui-collapsed' : ''
+                }`}
+                data-index={item.id}
+                onClick={toggleActive}
+              >
                 {item.label}
-              </Accordion.Header>
+              </Accordion.Button>
               <Accordion.Body
+                id={item.id}
                 className={`${
                   isActive.includes(item.id)
                     ? 'owlui-collapse owlui-show'
