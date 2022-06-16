@@ -5,6 +5,7 @@
     "postcss-modules": {
       "generateScopedName": "owlui-[local]",
       "localsConvention": "camelCase"
-    }
+    },
+    "@owlui/postcss-excluder": true
   }
 }
