@@ -5,19 +5,6 @@
 
   @include theme.typeface-sm;
 
-  // .collapse {
-  //   max-height: 0;
-  //   transition: max-height 2s ease;
-  //   overflow: hidden;
-  //   // visibility: hidden;
-  //   display: block;
-  // }
-
-  // .show {
-  //   max-height: 35em;
-  //   // visibility: visible;
-  // }
-
   &.theme--dark {
     h2 {
       color: var(--bs-gray-600);
