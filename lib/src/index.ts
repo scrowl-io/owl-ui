@@ -5,6 +5,7 @@ import * as Icons from '@owlui/icons';
 import * as Navigationdrawer from '@owlui/navigationdrawer';
 import * as Table from '@owlui/table';
 import * as Textfield from '@owlui/textfield';
+import * as Toast from '@owlui/toast';
 import './_index.scss';
 
 export const button = Button;
@@ -14,6 +15,7 @@ export const icons = Icons;
 export const navigationdrawer = Navigationdrawer;
 export const table = Table;
 export const textfield = Textfield;
+export const toast = Toast;
 
 export default {
   button,
@@ -23,4 +25,5 @@ export default {
   navigationdrawer,
   table,
   textfield,
+  toast,
 };
