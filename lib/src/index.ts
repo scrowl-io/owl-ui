@@ -3,6 +3,7 @@ import * as Card from '@owlui/card';
 import * as Dropdown from '@owlui/dropdown';
 import * as Icons from '@owlui/icons';
 import * as Navigationdrawer from '@owlui/navigationdrawer';
+import * as Spinner from '@owlui/spinner';
 import * as Table from '@owlui/table';
 import * as Textfield from '@owlui/textfield';
 import './_index.scss';
@@ -12,6 +13,7 @@ export const card = Card;
 export const dropdown = Dropdown;
 export const icons = Icons;
 export const navigationdrawer = Navigationdrawer;
+export const spinner = Spinner;
 export const table = Table;
 export const textfield = Textfield;
 
@@ -21,6 +23,7 @@ export default {
   dropdown,
   icons,
   navigationdrawer,
+  spinner,
   table,
   textfield,
 };
