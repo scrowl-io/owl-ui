@@ -26,7 +26,7 @@ export const Component = (props: TabsDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
             fields: ['size'],
@@ -38,9 +38,7 @@ export const Component = (props: TabsDefaultProps) => {
     ['prefix', 'theme', 'appearance', 'size', 'items', 'selectedItemId']
   );
 
-  const [activeKey, setActiveKey] = useState<string>(
-    selectedItemId.toString()
-  );
+  const [activeKey, setActiveKey] = useState<string>(selectedItemId.toString());
 
   const selectTab = function (
     eventKey: string | number | null,
