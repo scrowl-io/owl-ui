@@ -6,6 +6,10 @@
       "generateScopedName": "owlui-[local]",
       "localsConvention": "camelCase"
     },
-    "@owlui/postcss-excluder": true
+    "@owlui/postcss-renamer": {
+      "classNames": {
+        "owlui-active": "active"
+      }
+    }
   }
 }

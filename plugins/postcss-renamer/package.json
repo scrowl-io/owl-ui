@@ -1,0 +1,25 @@
+{
+  "name": "@owlui/postcss-renamer",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/SCROWL.git",
+    "directory": "plugins/postcss-renamer"
+  },
+  "isLibrary": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "postcss": "^8.4.14",
+    "postcss-selector-parser": "^6.0.10"
+  }
+}
