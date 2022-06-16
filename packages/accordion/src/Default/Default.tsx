@@ -55,7 +55,7 @@ export const Component = (props: AccordionDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Accordion {...locals} style={{ width: '70vw' }}>
+      <Accordion {...locals} style={{ width: '20em' }}>
         {items.map(item => {
           return (
             <Accordion.Item key={item.id} eventKey={item.id}>
@@ -69,7 +69,6 @@ export const Component = (props: AccordionDefaultProps) => {
                 {item.label}
               </Accordion.Button>
               <Accordion.Body
-                id={item.id}
                 className={`${
                   isActive.includes(item.id)
                     ? 'owlui-collapse owlui-show'

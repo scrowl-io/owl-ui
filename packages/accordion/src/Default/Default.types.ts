@@ -18,5 +18,4 @@ export interface themePrefixesProps {
   [key: string]: string;
 }
 
-export type AccordionDefaultProps = AccordionDefaultCommons &
-  React.AllHTMLAttributes<HTMLDivElement>;
+export type AccordionDefaultProps = AccordionDefaultCommons & bs.AccordionProps;

@@ -2,7 +2,6 @@ import * as React from 'react';
 import { component as Accordion } from '../index';
 import { AccordionDefaultProps } from '../Default.types';
 
-import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
@@ -19,14 +18,6 @@ const items = [
           dictum at tellus. Sed facilisis dui nisl, quis blandit enim bibendum
           sit amet. Vestibulum id tortor a lacus suscipit vulputate. Donec et
           felis nisl.
-        </p>
-        <p>
-          Proin id justo semper, venenatis nulla egestas, bibendum velit.
-          Vivamus volutpat, mi eget bibendum cursus, velit tortor pellentesque
-          ipsum, vitae maximus augue nunc at turpis. Cras vel nisi dolor. Duis
-          mi risus, malesuada a magna nec, molestie varius metus. Duis eget
-          gravida erat. Quisque hendrerit in augue at interdum. Fusce nec luctus
-          sem, eu aliquam lorem.
         </p>
       </div>
     ),
@@ -68,14 +59,12 @@ const items = [
 export const Default = (args: AccordionDefaultProps) => <Accordion {...args} />;
 
 Default.args = {
-  variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
   items: items,
 };
 
 Default.argTypes = {
-  variant,
   size,
   theme,
 };
