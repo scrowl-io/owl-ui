@@ -8,8 +8,8 @@ export interface CarouselCaptionProps {
 
 export interface Slide {
   id: string;
-  style: React.CSSProperties;
-  backgroundContent: React.ReactNode;
+  style?: React.CSSProperties;
+  backgroundContent?: React.ReactNode;
   caption: React.ReactNode;
   bsItemProps?: bs.CarouselItemProps;
   bsCaptionProps?: CarouselCaptionProps;
