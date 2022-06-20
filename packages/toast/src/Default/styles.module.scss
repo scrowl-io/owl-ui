@@ -4,6 +4,10 @@
   $ref: &;
   @include theme.typeface-sm;
 
+  &-header{
+    justify-content: space-between;
+  }
+
   &-primary {
     &.theme--dark {
       // Example of how to implement theming to bootstrap variant
