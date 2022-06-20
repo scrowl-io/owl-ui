@@ -2,6 +2,7 @@ import * as React from 'react';
 import { component as Tooltip } from '../index';
 import { TooltipDefaultProps } from '../Default.types';
 import { Button } from 'react-bootstrap';
+// import { component as Button } from '../../../../button/src/Default/index';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
@@ -9,23 +10,26 @@ import { theme } from './Default-theme.stories';
 
 export const Default = (args: TooltipDefaultProps) => {
   const target = React.useRef(null);
-  // const [show, setShow] = React.useState(false);
-
-  let show = true;
+  const [show, setShow] = React.useState(false);
+  const placement = 'right';
 
   return (
     <>
       <Button
         ref={target}
         onClick={() => {
-          console.log(show, target);
-          show = !show;
+          setShow(!show);
         }}
       >
         Click me!
       </Button>
-      <Tooltip {...args} target={target.current} show={show}>
-        <p>Hello World</p>
+      <Tooltip
+        {...args}
+        target={target.current}
+        show={show}
+        placement={placement}
+      >
+        <p>Inside the tooltip</p>
       </Tooltip>
     </>
   );

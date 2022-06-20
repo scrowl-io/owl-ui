@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   ThemeProvider,
   Overlay,
@@ -14,7 +14,7 @@ import { createLocalProps } from '@owlui/utils';
 export const Component = (props: TooltipDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'tooltip';
-  const { children, target, show } = props;
+  const { children, target, show, placement } = props;
   const prefix = props.prefix || '';
   // const [show, setShow] = useState(false);
   // const target = useRef(null);
@@ -38,23 +38,27 @@ export const Component = (props: TooltipDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size']
+    ['prefix', 'theme', 'size', 'target']
   );
 
-  console.log(props);
+  if (show) {
+    locals['className'] += ' owlui-show';
+  }
+
   console.log(locals);
-  console.log(target);
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['hide'] = 'owlui-hide';
   themePrefixes['show'] = 'owlui-show';
+  themePrefixes['fade'] = 'owlui-fade';
   themePrefixes['btn-primary'] = 'owlui-btn-primary';
   themePrefixes['btn'] = 'owlui-btn';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Overlay {...locals} target={target} show={show}>
-        <Tooltip id="overlay-example" {...locals}>
+      <Overlay target={target} show={show} placement={placement}>
+        <Tooltip id="overlay" {...locals}>
+          {/* <Tooltip id="overlay" {...locals} className={show ? 'owlui-show' : ''}> */}
           {children}
         </Tooltip>
       </Overlay>

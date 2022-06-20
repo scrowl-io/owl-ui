@@ -6,6 +6,7 @@ export interface TooltipDefaultCommons {
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   children: React.ReactNode;
+  placement: string;
 }
 
 export interface themePrefixesProps {
