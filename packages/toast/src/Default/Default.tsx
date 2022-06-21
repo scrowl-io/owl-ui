@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider, Toast } from 'react-bootstrap';
 import { ToastDefaultProps, themePrefixesProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: ToastDefaultProps) => {
-  const themePrefixes: themePrefixesProps = {
-    'toast-header': 'owlui-toast-header',
-    'toast-body': 'owlui-toast-body',
-    'btn-close': 'owlui-btn-close',
-  };
-  const showClass = 'owlui-show';
+  const themePrefixes: themePrefixesProps = {};
   const baseClass = 'toast';
-  const { children } = props;
+  const basePrefixClass = `owlui-${baseClass}`;
+  const { toastContent } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -32,35 +28,54 @@ export const Component = (props: ToastDefaultProps) => {
             value: 'Size',
           },
         ],
+        bsProps: ['bg'],
       },
     },
-    ['prefix', 'theme', 'size']
+    ['prefix', 'theme', 'size', 'toastContent']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
+  themePrefixes[`${baseClass}-header`] = `${basePrefixClass}-header`;
+  themePrefixes[`${baseClass}-body`] = `${basePrefixClass}-body`;
+  themePrefixes['btn-close'] = `owlui-btn-close`;
 
   useEffect(() => {
+    // Add show and btn-close classes on mount:
     const showToast: HTMLElement | null =
       document.querySelector('.owlui-toast');
     const closeBtn: HTMLElement | null = document.querySelector('.btn-close');
 
-    if (showToast instanceof Element === false) return;
+    if (
+      showToast instanceof Element === false ||
+      closeBtn instanceof Element === false
+    ) {
+      return;
+    }
 
-    if (closeBtn instanceof Element === false) return;
-
-    showToast?.classList.add(showClass);
+    showToast?.classList.add('owlui-show');
     closeBtn?.classList.add('owlui-btn-close');
+
+    const toastWrapper: HTMLElement | null =
+      document.querySelector('.owlui-toast');
+
+    const toastBody: HTMLElement | null =
+      document.querySelector('.owlui-toast-body');
+
+    // Add text white if bg is dark:
+    if (toastWrapper?.classList.contains('bg-dark')) {
+      toastBody?.classList.add('owlui-text-white');
+    }
+
+    if (!toastWrapper?.classList.contains('bg-dark')) {
+      toastBody?.classList.remove('owlui-text-white');
+    }
   });
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Toast {...locals} bg="secondary">
-        <Toast.Header>
-          {/* <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" /> */}
-          <strong className="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-        </Toast.Header>
-        <Toast.Body>Hello, world! This is a toast message.</Toast.Body>
+      <Toast {...locals}>
+        <Toast.Header>{toastContent?.header.closeLabel}</Toast.Header>
+        <Toast.Body>{toastContent?.body.bodyText}</Toast.Body>
       </Toast>
     </ThemeProvider>
   );

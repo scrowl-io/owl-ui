@@ -1,21 +1,32 @@
 import * as React from 'react';
 import { component as Toast } from '../index';
-import { ToastDefaultProps } from '../Default.types';
-
-import { variant } from './Default-variant.stories';
+import { ToastDefaultProps, ToastContentProps } from '../Default.types';
+import { bg } from './Default-bg.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-export const Default = (args: ToastDefaultProps) => <Toast {...args}>Hello World</Toast>;
+const toastContent: ToastContentProps = {
+  header: {
+    closeLabel: 'This is the close label',
+    closeVariant: 'white',
+    closeButton: true,
+  },
+  body: {
+    bodyText: 'Hello, world! This is a toast message.',
+  },
+};
+
+export const Default = (args: ToastDefaultProps) => <Toast {...args} />;
 
 Default.args = {
-  variant: variant.defaultValue,
+  bg: bg.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
+  toastContent: toastContent,
 };
 
 Default.argTypes = {
-  variant,
+  bg,
   size,
   theme,
 };

@@ -2,6 +2,7 @@
 
 .toast {
   $ref: &;
+
   @include theme.typeface-sm;
 
   &-header{
