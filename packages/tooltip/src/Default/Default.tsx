@@ -14,20 +14,10 @@ import { createLocalProps } from '@owlui/utils';
 export const Component = (props: TooltipDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'tooltip';
-  const {
-    children,
-    target,
-    show,
-    popoverShow,
-    setPopoverShow,
-    placement,
-    variant,
-    trigger,
-    rootClose,
-  } = props;
+  const { children, target, show, placement, variant, trigger, rootClose } =
+    props;
   const prefix = props.prefix || '';
-  // const [componentShow, setComponentShow] = useState(false);
-  // const target = useRef(null);
+  const [componentShow, setComponentShow] = useState(false);
 
   const locals = createLocalProps(
     props,
@@ -51,7 +41,7 @@ export const Component = (props: TooltipDefaultProps) => {
     ['prefix', 'theme', 'size', 'target']
   );
 
-  if (show || popoverShow) {
+  if (show || componentShow) {
     locals['className'] += ' owlui-show';
   }
 
@@ -69,32 +59,31 @@ export const Component = (props: TooltipDefaultProps) => {
   themePrefixes['popover-arrow'] = 'owlui-popover-arrow';
 
   const handleToggle = () => {
-    setPopoverShow(!popoverShow);
+    setComponentShow(!componentShow);
   };
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Overlay
+      {/* <Overlay
         target={target}
         show={show}
         placement={placement}
+        trigger={trigger}
         rootClose
         rootCloseEvent="click"
         rootCloseDisabled={false}
       >
         <Tooltip id="overlay" {...locals}>
-          {/* <Tooltip id="overlay" {...locals} className={show ? 'owlui-show' : ''}> */}
+          <Tooltip id="overlay" {...locals} className={show ? 'owlui-show' : ''}>
           {children}
         </Tooltip>
-      </Overlay>
+      </Overlay> */}
 
       <OverlayTrigger
         trigger={trigger}
         placement={placement}
-        show={popoverShow}
-        key="1"
-        rootClose={rootClose}
-        onHide={null}
+        show={componentShow}
+        // rootClose={rootClose}
         onToggle={handleToggle}
         overlay={
           <Popover {...locals}>
@@ -105,23 +94,10 @@ export const Component = (props: TooltipDefaultProps) => {
           </Popover>
         }
       >
-        <Button variant={variant}>Popover style</Button>
+        <Button id="popover-button" variant={variant}>
+          Popover style
+        </Button>
       </OverlayTrigger>
-
-      {/* <OverlayTrigger
-        trigger={trigger}
-        placement={placement}
-        show={componentShow}
-        rootClose={rootClose}
-        onToggle={handleToggle}
-        overlay={
-          <Tooltip {...locals}>
-            <strong>Check it out</strong> {children}
-          </Tooltip>
-        }
-      >
-        <Button variant={variant}>Tooltip style</Button>
-      </OverlayTrigger> */}
     </ThemeProvider>
   );
 };
