@@ -5,15 +5,15 @@ module.exports = (opts = {}) => {
   const { prefix, ignore } = opts;
 
   if (typeof prefix !== 'string') {
-    throw new Error('@postcss-renamer: prefix option needs to be a string');
+    throw new Error('@postcss-prefixer: prefix option needs to be a string');
   }
 
   if (prefix.length <= 0) {
-    throw new Error('@postcss-renamer: prefix option needs to have a length');
+    throw new Error('@postcss-prefixer: prefix option needs to have a length');
   }
 
   if (ignore && !Array.isArray(ignore)) {
-    throw new Error('@postcss-renamer: ignore option needs to be an array');
+    throw new Error('@postcss-prefixer: ignore option needs to be an array');
   }
 
   const ignoreLn = Array.isArray(ignore) ? ignore.length : 0;
@@ -36,7 +36,7 @@ module.exports = (opts = {}) => {
   });
 
   return {
-    postcssPlugin: '@owlui/postcss-renamer',
+    postcssPlugin: '@owlui/postcss-prefixer',
     OnceExit(root) {
       root.walkRules(async rule => {
         await transformer.process(rule);

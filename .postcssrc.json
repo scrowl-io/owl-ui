@@ -6,7 +6,7 @@
       "generateScopedName": "[local]",
       "localsConvention": "camelCase"
     },
-    "@owlui/postcss-renamer": {
+    "@owlui/postcss-prefixer": {
       "prefix": "owlui-",
       "ignore": ["active"]
     }
