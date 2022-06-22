@@ -1,4 +1,8 @@
 const path = require('path');
+const postcss = require('postcss');
+// @ts-ignore
+const postcssConfig = require('../.postcssrc.json');
+const postcssPlugins = postcssConfig.plugins;
 
 module.exports = {
   "framework": "@storybook/react",
@@ -22,19 +26,9 @@ module.exports = {
     name: '@storybook/addon-postcss',
     options: {
       postcssLoaderOptions: {
-        implementation: require('postcss'),
+        implementation: postcss,
         "modules": true,
-        "plugins": {
-          "postcss-import": true,
-          "postcss-url": true,
-          "autoprefixer": {
-            "grid": true
-          },
-          "postcss-modules": {
-            "generateScopedName": "owlui-[local]",
-            "localsConvention": "camelCase"
-          }
-        }
+        "plugins": postcssPlugins
       }
     }
   }, '@storybook/preset-scss'],
@@ -54,13 +48,17 @@ module.exports = {
     const cssLoader = {
       loader: 'css-loader',
       options: {
-        url: false,
-        modules: {
-          namedExport: true,
-          localIdentName: 'owlui-[local]'
-        },
-        sourceMap: true,
-        importLoaders: 1
+        sourceMap: true
+      }
+    };
+    const postcssLoader = {
+      loader: 'postcss-loader',
+      options: {
+        implementation: postcss,
+        postcssOptions: {
+          "modules": true,
+          "plugins": postcssPlugins
+        }
       }
     };
     const sassLoader = {
@@ -89,7 +87,7 @@ module.exports = {
     };
 
     if (ruleIdxStyle !== undefined && ruleIdxStyle > -1) {
-      config.module.rules[ruleIdxStyle].use = [styleLoader, cssLoader, sassLoader];
+      config.module.rules[ruleIdxStyle].use = [styleLoader, cssLoader, postcssLoader, sassLoader];
     }
 
     config.module.rules.push({
