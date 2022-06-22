@@ -3,13 +3,12 @@
   "plugins": {
     "postcss-import": true,
     "postcss-modules": {
-      "generateScopedName": "owlui-[local]",
+      "generateScopedName": "[local]",
       "localsConvention": "camelCase"
     },
     "@owlui/postcss-renamer": {
-      "classNames": {
-        "owlui-active": "active"
-      }
+      "prefix": "owlui-",
+      "ignore": ["active"]
     }
   }
 }
