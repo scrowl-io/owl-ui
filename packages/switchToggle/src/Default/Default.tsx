@@ -44,16 +44,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
           label: 'owlui-label',
         }}
       >
-        <Form.Check
-          {...locals}
-          // onClick={() => setToggle(!toggle)}
-          // bsPrefix="owlui-form-check"
-          // checked={toggle}
-          // className="owlui-form ml-3"
-          type="switch"
-          // id="owlui-custom-switch"
-          // label={toggle ? 'ON' : 'OFF'}
-        />
+        <Form.Check {...locals} type="switch" />
       </ThemeProvider>
     </>
   );
