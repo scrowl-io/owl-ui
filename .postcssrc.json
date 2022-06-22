@@ -8,7 +8,25 @@
     },
     "@owlui/postcss-prefixer": {
       "prefix": "owlui-",
-      "ignore": ["active"]
+      "ignore": [
+        "active",
+        "show",
+        "showing",
+        "hiding",
+        "collapse",
+        "collapsing",
+        "collapse-horizontal",
+        "fade",
+        "visible",
+        "invisible",
+        "was-validated",
+        "is-valid",
+        "valid-feedback",
+        "valid-tooltip",
+        "invalid",
+        "is-invalid",
+        "invalid-feedback"
+      ]
     }
   }
 }
