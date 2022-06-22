@@ -11,7 +11,11 @@ import { theme } from './Default-theme.stories';
 export const Default = (args: TooltipDefaultProps) => {
   const target = React.useRef(null);
   const [show, setShow] = React.useState(false);
-  const placement = 'right';
+  const [popoverShow, setPopoverShow] = React.useState(false);
+
+  const placement = 'bottom';
+  const trigger = 'click';
+  const rootClose = true;
 
   return (
     <>
@@ -27,7 +31,11 @@ export const Default = (args: TooltipDefaultProps) => {
         {...args}
         target={target.current}
         show={show}
+        popoverShow={popoverShow}
         placement={placement}
+        trigger={trigger}
+        rootClose={rootClose}
+        setPopoverShow={setPopoverShow}
       >
         <p>Inside the tooltip</p>
       </Tooltip>
