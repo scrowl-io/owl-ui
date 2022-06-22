@@ -28,6 +28,8 @@ module.exports = {
       postcssLoaderOptions: {
         implementation: postcss,
         "modules": true,
+        "sourceMap": false,
+        "map": false,
         "plugins": postcssPlugins
       }
     }
@@ -48,15 +50,18 @@ module.exports = {
     const cssLoader = {
       loader: 'css-loader',
       options: {
-        sourceMap: true
+        "sourceMap": false,
       }
     };
     const postcssLoader = {
       loader: 'postcss-loader',
       options: {
+        "sourceMap": false,
         implementation: postcss,
         postcssOptions: {
           "modules": true,
+          "sourceMap": false,
+          "map": false,
           "plugins": postcssPlugins
         }
       }
@@ -64,9 +69,10 @@ module.exports = {
     const sassLoader = {
       loader: 'sass-loader',
       options: {
-        sourceMap: true,
+        "sourceMap": false,
         implementation: require('sass'),
         sassOptions: {
+          "sourceMap": false,
           includePaths: [
             "./",
             "../",
