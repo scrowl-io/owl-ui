@@ -18,10 +18,6 @@ function update() {
       file: fs.getFile(`scripts/components/templates/lib/index.hbs`),
       dest: setDest('index.ts'),
     },
-    style: {
-      file: fs.getFile(`scripts/components/templates/lib/style.hbs`),
-      dest: setDest('_index.scss'),
-    },
   };
   const types = fs.getFile('typings/package.json');
 

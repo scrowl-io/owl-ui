@@ -48,7 +48,7 @@
     "prebuild:web": "yarn run presetup",
     "build:web": "parcel build web --log-level warn",
     "prestart:web": "yarn run presetup",
-    "start:web": "parcel serve web"
+    "start:web": "parcel serve web --open"
   },
   "workspaces": [
     "design",

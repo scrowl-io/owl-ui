@@ -1,4 +1,3 @@
-import './_index.scss';
 export * from '../../packages/button/src/index';
 export * from '../../packages/card/src/index';
 export * from '../../packages/dropdown/src/index';
