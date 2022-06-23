@@ -3,8 +3,30 @@
   "plugins": {
     "postcss-import": true,
     "postcss-modules": {
-      "generateScopedName": "owlui-[local]",
+      "generateScopedName": "[local]",
       "localsConvention": "camelCase"
+    },
+    "@owlui/postcss-prefixer": {
+      "prefix": "owlui-",
+      "ignore": [
+        "active",
+        "show",
+        "showing",
+        "hiding",
+        "collapse",
+        "collapsing",
+        "collapse-horizontal",
+        "fade",
+        "visible",
+        "invisible",
+        "was-validated",
+        "is-valid",
+        "valid-feedback",
+        "valid-tooltip",
+        "invalid",
+        "is-invalid",
+        "invalid-feedback"
+      ]
     }
   }
 }
