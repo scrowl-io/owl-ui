@@ -33,7 +33,6 @@ export const Component = (props: SpinnerDefaultProps) => {
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes['text-primary'] = 'owlui-text-primary';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>

@@ -13,5 +13,4 @@ export interface themePrefixesProps {
   [key: string]: string;
 }
 
-export type SpinnerDefaultProps = SpinnerDefaultCommons &
-  React.AllHTMLAttributes<HTMLDivElement>;
+export type SpinnerDefaultProps = SpinnerDefaultCommons & bs.SpinnerProps;
