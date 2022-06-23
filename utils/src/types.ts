@@ -13,6 +13,9 @@ export interface CSSModClass {
 export interface localInnerProps {
   [key: string]: unknown;
 }
+export interface themePrefixesProps {
+  [key: string]: string;
+}
 
 export type localStyles = {
   module: stylesProp;
