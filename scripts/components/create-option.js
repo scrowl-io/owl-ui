@@ -52,6 +52,11 @@ export const create = (component, folders) => {
       `${component.optionPas}.tsx`,
       folders
     );
+    fileList.index = optionPath(
+      `index-${defaultOpt}`,
+      `${component.optionPas}.tsx`,
+      folders
+    );
     fileList.types = optionPath(
       `types-${defaultOpt}`,
       `${component.optionPas}.types.ts`,

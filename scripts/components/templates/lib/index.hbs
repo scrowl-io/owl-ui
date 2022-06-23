@@ -1,16 +1,6 @@
+import './_index.scss';
 {{#with . as | data |}}
 {{#each data.components as | comp |}}
-import * as {{comp.cap}} from '{{comp.pkg}}';
+export * from '{{comp.path}}';
 {{/each}}
-import './_index.scss';
-
-{{#each data.components as | comp |}}
-export const {{comp.name}} = {{comp.cap}};
-{{/each}}
-
-export default {
-{{#each data.components as | comp |}}
-  {{comp.name}},
-{{/each}}
-};
 {{/with}}

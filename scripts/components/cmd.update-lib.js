@@ -29,11 +29,17 @@ function update() {
 
   for (let pkg in pkgs) {
     const component = `@owlui/${pkg}`;
+    const pkgPath = fs.join(
+      pkgs[pkg].path.split('owl-ui')[1],
+      '../',
+      pkgs[pkg].config.source.replace('.ts', '')
+    );
 
     data.components.push({
       name: pkg,
       cap: strs.toCapitalize(pkg),
       pkg: component,
+      path: `../..${pkgPath}`,
     });
 
     exec(`lerna add ${component} --scope=@owlui/lib`);

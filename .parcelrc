@@ -3,5 +3,8 @@
   "resolvers": [
     "@owlui/parcel-resolver-asset-path",
     "..."
-  ]
+  ],
+  "transformers": {
+    "*.{ts,tsx}": ["@parcel/transformer-typescript-tsc"]
+  }
 }
