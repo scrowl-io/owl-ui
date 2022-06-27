@@ -10,7 +10,9 @@ export const Component = (props: TabsDefaultProps) => {
   const baseClass = 'navTabs';
   const { items, defaultActiveKey } = props;
   const prefix = props.prefix || '';
-
+  const [activeKey, setActiveKey] = useState<string | undefined>(
+    defaultActiveKey as string
+  );
   const locals = createLocalProps(
     props,
     {
@@ -33,10 +35,6 @@ export const Component = (props: TabsDefaultProps) => {
     ['prefix', 'theme', 'appearance', 'size', 'items']
   );
 
-  const [activeKey, setActiveKey] = useState<string | undefined>(
-    defaultActiveKey as string
-  );
-
   return (
     <ThemeProvider
       prefixes={{
@@ -57,7 +55,7 @@ export const Component = (props: TabsDefaultProps) => {
           const itemKey = item.id || index;
 
           return (
-            <Tab key={itemKey} eventKey={item.id} title={item.label}>
+            <Tab key={itemKey} eventKey={item.id} title={item.title}>
               {item.view}
             </Tab>
           );

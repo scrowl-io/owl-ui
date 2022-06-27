@@ -3,7 +3,7 @@ import * as bs from 'react-bootstrap';
 
 // eslint-disable-next-line import/namespace
 export interface TabsItem extends bs.TabProps {
-  label: string;
+  title: string;
   view: React.ReactNode;
 }
 
