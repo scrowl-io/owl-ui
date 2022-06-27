@@ -1,0 +1,27 @@
+{
+  "name": "@owlui/parcel-reporter-minifier",
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "source": "src/index.js",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "engines": {
+    "parcel": "2.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/SCROWL.git",
+    "directory": "plugins/parcel-reporter-minifier"
+  },
+  "isLibrary": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.21.0"
+  }
+}
