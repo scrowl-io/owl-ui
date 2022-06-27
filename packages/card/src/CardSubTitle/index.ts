@@ -1,10 +1,2 @@
-import { Component } from './CardSubTitle';
-import * as Types from './CardSubTitle.types';
-
-export const component = Component;
-export const types = Types;
-
-export default {
-  component,
-  types,
-};
+export { Component as CardSubTitle } from './CardSubTitle';
+export * from './CardSubTitle.types';

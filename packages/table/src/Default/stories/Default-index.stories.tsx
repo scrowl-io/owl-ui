@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Table } from '../index';
+import { Table } from '../index';
 import { TableDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
