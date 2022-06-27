@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Tabs } from '../index';
+import { Tabs } from '../index';
 import { TabsDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
