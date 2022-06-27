@@ -94,6 +94,7 @@
     "babel-loader": "^8.2.3",
     "chalk": "^5.0.1",
     "css-loader": "6.7.1",
+    "cssnano": "^5.1.12",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
