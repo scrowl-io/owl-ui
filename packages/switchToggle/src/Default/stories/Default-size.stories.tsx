@@ -1,9 +1,5 @@
 export const size = {
-  options: [
-    'Lg',
-    'Md',
-    'Sm'
-  ],
+  options: ['Lg', 'Md', 'Sm'],
   control: {
     type: 'select',
   },
