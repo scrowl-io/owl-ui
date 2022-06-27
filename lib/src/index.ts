@@ -1,29 +1,9 @@
-import * as Button from '@owlui/button';
-import * as Card from '@owlui/card';
-import * as Carousel from '@owlui/carousel';
-import * as Dropdown from '@owlui/dropdown';
-import * as Icons from '@owlui/icons';
-import * as Navigationdrawer from '@owlui/navigationdrawer';
-import * as Table from '@owlui/table';
-import * as Textfield from '@owlui/textfield';
-import './_index.scss';
-
-export const button = Button;
-export const card = Card;
-export const carousel = Carousel;
-export const dropdown = Dropdown;
-export const icons = Icons;
-export const navigationdrawer = Navigationdrawer;
-export const table = Table;
-export const textfield = Textfield;
-
-export default {
-  button,
-  card,
-  carousel,
-  dropdown,
-  icons,
-  navigationdrawer,
-  table,
-  textfield,
-};
+export * from '../../packages/button/src/index';
+export * from '../../packages/card/src/index';
+export * from '../../packages/dropdown/src/index';
+export * from '../../packages/icons/src/index';
+export * from '../../packages/navigationDrawer/src/index';
+export * from '../../packages/switchToggle/src/index';
+export * from '../../packages/table/src/index';
+export * from '../../packages/tabs/src/index';
+export * from '../../packages/textfield/src/index';
