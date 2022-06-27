@@ -8,7 +8,6 @@ export const Component = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
   const { items } = props;
-  const [show, setShow] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string | undefined>(
     items[0].id
   );
@@ -23,7 +22,7 @@ export const Component = (props: DropdownDefaultProps) => {
         optionals: [
           {
             fields: ['theme'],
-            value: 'Theme',
+            value: 'theme',
           },
           {
             fields: ['size'],
@@ -47,7 +46,6 @@ export const Component = (props: DropdownDefaultProps) => {
     if (event.key === 'Tab') {
       event.preventDefault();
       setSelectedItem(event.currentTarget.dataset.index);
-      setShow(!show);
     }
   };
 
@@ -62,20 +60,13 @@ export const Component = (props: DropdownDefaultProps) => {
           'dropdown-item': 'owlui-dropdown-item',
         }}
       >
-        <Dropdown
-          onToggle={() => setShow(!show)}
-          show={show}
-          {...locals}
-          focusFirstItemOnShow="keyboard"
-        >
+        <Dropdown {...locals} focusFirstItemOnShow="keyboard">
           <Dropdown.Toggle variant={props.variant}>
             {selectedItem
               ? items.find(v => v.id == selectedItem)?.label
               : items[0].label}
           </Dropdown.Toggle>
-          <Dropdown.Menu
-            className={`${styleMod.dropdownList} ${show ? 'owlui-show' : ''}`}
-          >
+          <Dropdown.Menu>
             {items.map((item: DropdownItemProps) => {
               return (
                 <Dropdown.Item

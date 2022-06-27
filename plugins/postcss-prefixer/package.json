@@ -1,6 +1,6 @@
 {
-  "name": "@owlui/parcel-resolver-asset-path",
-  "version": "0.0.22",
+  "name": "@owlui/postcss-prefixer",
+  "version": "0.0.0",
   "description": "",
   "author": "",
   "license": "MIT",
@@ -9,19 +9,17 @@
   "files": [
     "src"
   ],
-  "engines": {
-    "parcel": "2.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/SCROWL.git",
-    "directory": "plugins/parcel-resolver-asset-path"
+    "directory": "plugins/postcss-prefixer"
   },
   "isLibrary": true,
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.21.0"
+    "postcss": "^8.4.14",
+    "postcss-selector-parser": "^6.0.10"
   }
 }
