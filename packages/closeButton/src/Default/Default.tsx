@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { ThemeProvider } from 'react-bootstrap';
+import React, { useEffect } from 'react';
+import { ThemeProvider, CloseButton } from 'react-bootstrap';
 import { CloseButtonDefaultProps, themePrefixesProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/utils';
 
 export const Component = (props: CloseButtonDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const baseClass = 'closeButton';
+  const baseClass = 'btn-close';
   const { children } = props;
   const prefix = props.prefix || '';
 
@@ -34,9 +34,20 @@ export const Component = (props: CloseButtonDefaultProps) => {
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
 
+  useEffect(() => {
+    const closebutton: HTMLElement | null =
+      document.querySelector('.btn-close');
+
+    if (closebutton instanceof Element === false) {
+      return;
+    }
+
+    closebutton?.classList.add('owlui-btn-close');
+  });
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <div {...locals}>{children}</div>
+      <CloseButton {...locals}>{children}</CloseButton>
     </ThemeProvider>
   );
 };

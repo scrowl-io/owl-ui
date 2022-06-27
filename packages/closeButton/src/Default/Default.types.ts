@@ -5,10 +5,12 @@ export interface CloseButtonDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
+  disabled: boolean;
 };
 
 export interface themePrefixesProps {
   [key: string]: string;
 }
 
-export type CloseButtonDefaultProps = Partial<CloseButtonDefaultCommons> & React.AllHTMLAttributes<HTMLDivElement>;
+export type CloseButtonDefaultProps = Partial<CloseButtonDefaultCommons> &
+  bs.CloseButtonProps;

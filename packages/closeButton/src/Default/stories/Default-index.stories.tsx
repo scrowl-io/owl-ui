@@ -6,12 +6,15 @@ import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-export const Default = (args: CloseButtonDefaultProps) => <CloseButton {...args}>Hello World</CloseButton>;
+export const Default = (args: CloseButtonDefaultProps) => (
+  <CloseButton {...args}></CloseButton>
+);
 
 Default.args = {
   variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
+  disabled: false,
 };
 
 Default.argTypes = {
