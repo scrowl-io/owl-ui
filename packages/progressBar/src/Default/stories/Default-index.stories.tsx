@@ -7,7 +7,6 @@ import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: ProgressBarDefaultProps) => (
-  // <ProgressBar {...args}>60%</ProgressBar>
   <ProgressBar {...args}></ProgressBar>
 );
 

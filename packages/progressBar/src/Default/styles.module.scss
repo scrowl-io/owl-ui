@@ -4,25 +4,6 @@
   $ref: &;
   @include theme.typeface-sm;  
   width: 100%;
-  // height: 10vh;
-
-  &#{$ref}--size {
-
-    &-lg {
-     height: 10vh;
-      @include theme.typeface-lg;
-    }
-
-    &-md {
-      height: 8vh;
-      @include theme.typeface-md;
-    }
-    
-    &-sm {
-      height: 6vh;
-      @include theme.typeface-sm;
-    }
-  }
 
 
   &.progress{

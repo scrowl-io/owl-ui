@@ -1,11 +1,8 @@
-# progressBar
+# Progress Bar
 
-> TODO: description
+More info on the progress bar can be found here [React Bootstrap Progress Bar Docs] https://react-bootstrap.github.io/components/progress/
 
-## Usage
+## Description
 
-```
-const progressBar = require('@owlui/progressBar');
+Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.
 
-// TODO: DEMONSTRATE API
-```
