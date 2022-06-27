@@ -25,15 +25,15 @@ const items = [
 ];
 
 export const Default = (args: TabsDefaultProps) => (
-  <Tabs {...args} defaultActiveKey="1">
+  <Tabs {...args} defaultActiveKey="3">
     Hello World
   </Tabs>
 );
 
 Default.args = {
-  appearance: 'Primary',
-  size: 'Lg',
-  theme: 'Default',
+  appearance: appearance.defaultValue,
+  size: size.defaultValue,
+  theme: theme.defaultValue,
   items: items,
 };
 
