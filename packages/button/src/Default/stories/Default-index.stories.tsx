@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Button } from '../index';
+import { Button } from '../index';
 import { ButtonDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';

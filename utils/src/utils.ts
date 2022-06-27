@@ -1,11 +1,4 @@
-import {
-  CSSModClass,
-  stylesProp,
-  localProp,
-  localStyles,
-  localInnerProps,
-} from './types';
-import * as styleMod from '@owlui/theme/src/_index.scss';
+import { localProp, localStyles, localInnerProps, stringMap } from './types';
 
 export const hasProp = (obj: object, prop: string) => {
   return Object.prototype.hasOwnProperty.call(obj, prop);
@@ -15,23 +8,8 @@ export const cleanCopy = (obj: object | localProp) => {
   return Object.assign({}, obj);
 };
 
-/**
- * Method used to create classes for sub components based on the CSS Module object
- */
-export const getCssModClass = ({
-  localProps,
-  styles,
-  baseClass,
-}: CSSModClass): string => {
-  localProps.className = hasProp(localProps, 'className')
-    ? `${styles[baseClass]} ${localProps.className}`
-    : styles[baseClass];
-
-  return localProps.className || '';
-};
-
 export const findModClass = (
-  styles: stylesProp,
+  styles: stringMap,
   baseClass?: string | undefined
 ) => {
   return (classLookup: string): string => {
@@ -41,14 +19,37 @@ export const findModClass = (
   };
 };
 
+const toCamelCase = (str: string) => {
+  const replacedStr = str.replace(/[-_]+(.)?/g, (_, letter) => {
+    return letter ? letter.toUpperCase() : '';
+  });
+
+  return replacedStr.substring(0, 1).toLowerCase() + replacedStr.substring(1);
+};
+
+const moduleToCamelCase = (ogMod: stringMap) => {
+  const casedMod: stringMap = {};
+
+  for (const prop in ogMod) {
+    if (prop.indexOf('owlui') !== -1) {
+      casedMod[toCamelCase(prop.replace('owlui', ''))] = `${ogMod[prop]}`;
+    } else {
+      casedMod[toCamelCase(prop)] = ogMod[prop];
+    }
+  }
+
+  return casedMod;
+};
+
 export const createLocalProps = (
   props: object,
   styles: localStyles,
   removables: string[]
 ): object => {
-  const getComponentClasses = findModClass(styles.module, styles.classes.base);
+  const styleMod = moduleToCamelCase(styles.module);
+  const getComponentClasses = findModClass(styleMod, styles.classes.base);
   const getGlobalClasses = findModClass(styleMod);
-  const localClassName = [styles.module[styles.classes.base]];
+  const localClassName = [styleMod[styles.classes.base]];
   const localProps: localInnerProps = { ...props };
   const bsProps = styles.classes.bsProps;
   const bsPropClassesPrefix = 'owlui';
@@ -109,7 +110,6 @@ export const createLocalProps = (
 export default {
   hasProp,
   cleanCopy,
-  getCssModClass,
   findModClass,
   createLocalProps,
 };
