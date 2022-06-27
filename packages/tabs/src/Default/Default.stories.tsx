@@ -1,5 +1,4 @@
 import * as React from 'react';
-// eslint-disable-next-line import/named
 import { Meta } from '@storybook/react';
 import { Component } from './Default';
 import descriptionMd from './Description.md';

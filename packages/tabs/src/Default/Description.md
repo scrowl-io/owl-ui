@@ -6,9 +6,9 @@
 
 ## Props
 
-|  Name  |  Type  | Default Value | Description |
-| :----: | :----: | :-----------: | :---------- |
-| `NAME` | `TYPE` |    `VALUE`    | DESCRIPTION |
+|     Name     |              Type               | Default Value | Description                                                         |
+| :----------: | :-----------------------------: | :-----------: | :------------------------------------------------------------------ |
+| `NAME` | `TYPE` |   `VALUE`   | DESCRIPTION |
 
 ## Usage
 
