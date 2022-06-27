@@ -2,6 +2,7 @@
 
 .accordion {
   $ref: &;
+  width: 100%;
 
   @include theme.typeface-sm;
 

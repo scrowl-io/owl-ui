@@ -50,7 +50,7 @@ export const Component = (props: AccordionDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Accordion {...locals} style={{ width: '20em' }}>
+      <Accordion {...locals}>
         {items.map(item => {
           return (
             <Accordion.Item key={item.id} eventKey={item.id}>
