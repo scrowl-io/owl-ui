@@ -46,7 +46,6 @@ export const Component = (props: CarouselDefaultProps) => {
   themePrefixes[
     `${baseClass}-control-prev-icon`
   ] = `owlui-${baseClass}-control-prev-icon`;
-  themePrefixes[`active`] = `owlui-active`;
 
   const handleSelect = (selectedIndex: number) => {
     setActiveItem(selectedIndex);
@@ -56,11 +55,10 @@ export const Component = (props: CarouselDefaultProps) => {
     <>
       <ThemeProvider prefixes={themePrefixes}>
         <Carousel {...locals} activeIndex={activeItem} onSelect={handleSelect}>
-          {slides?.map((slide, index) => (
+          {slides?.map(slide => (
             <Carousel.Item
               style={slide.style}
               key={slide.id}
-              className={index === activeItem ? 'owlui-active' : ''}
               {...slide.bsItemProps}
             >
               {slide.backgroundContent}
