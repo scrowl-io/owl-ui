@@ -31,6 +31,7 @@
     "@owlui/dropdown": "^0.0.0",
     "@owlui/icons": "^0.0.22",
     "@owlui/navigationdrawer": "^0.0.22",
+    "@owlui/progressbar": "^0.0.0",
     "@owlui/table": "^0.0.22",
     "@owlui/textfield": "^0.0.22",
     "@owlui/theme": "^0.0.22",
