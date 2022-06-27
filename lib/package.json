@@ -28,6 +28,7 @@
   "dependencies": {
     "@owlui/button": "^0.0.22",
     "@owlui/card": "^0.0.22",
+    "@owlui/closebutton": "^0.0.0",
     "@owlui/dropdown": "^0.0.0",
     "@owlui/icons": "^0.0.22",
     "@owlui/navigationdrawer": "^0.0.22",

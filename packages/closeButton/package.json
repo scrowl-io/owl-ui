@@ -1,0 +1,37 @@
+{
+  "name": "@owlui/closebutton",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/closeButton#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.closeButton.js",
+  "types": "dist/owl.closeButton.d.ts",
+  "style": "dist/owl.closeButton.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/closeButton"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/theme": "^0.0.22",
+    "@owlui/typings": "^0.0.22",
+    "@owlui/utils": "^0.0.22",
+    "react-bootstrap": "2.4.0"
+  }
+}
