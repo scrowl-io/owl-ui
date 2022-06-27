@@ -2,7 +2,6 @@ import * as React from 'react';
 import { component as Tooltip } from '../index';
 import { TooltipDefaultProps } from '../Default.types';
 import { Button } from 'react-bootstrap';
-// import { component as Button } from '../../../../button/src/Default/index';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
@@ -12,11 +11,11 @@ import { theme } from './Default-theme.stories';
 export const Default = (args: TooltipDefaultProps) => {
   const target = React.useRef(null);
   const [show, setShow] = React.useState(false);
-  // const [popoverShow, setPopoverShow] = React.useState(false);
 
-  const placement = 'bottom';
-  const trigger = ['hover'];
+  const placement = 'right';
   const rootClose = true;
+  const header = 'Test Header';
+  const trigger = ['click'];
 
   return (
     <>
@@ -30,13 +29,12 @@ export const Default = (args: TooltipDefaultProps) => {
       </Button>
       <Tooltip
         {...args}
-        target={target}
+        header={header}
+        target={target.current}
         show={show}
         placement={placement}
-        trigger={trigger}
         rootClose={rootClose}
-        // popoverShow={popoverShow}
-        // setPopoverShow={setPopoverShow}
+        trigger={trigger}
       >
         <p>Inside the tooltip</p>
       </Tooltip>

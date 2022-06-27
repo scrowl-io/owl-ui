@@ -7,8 +7,9 @@ export interface TooltipDefaultCommons {
   prefix?: string;
   children: React.ReactNode;
   placement: string;
-  trigger: string;
+  trigger: string[];
   variant: string;
+  header: string;
 }
 
 export interface themePrefixesProps {
