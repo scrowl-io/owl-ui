@@ -41,7 +41,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
           'form-check': 'owlui-form-check',
           'form-switch': 'owlui-form-switch',
           'form-check-input': 'owlui-form-check-input',
-          label: 'owlui-label',
+          'form-check-label': 'owlui-form-check-label',
         }}
       >
         <Form.Check {...locals} type="switch" />

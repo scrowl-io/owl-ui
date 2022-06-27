@@ -1,4 +1,3 @@
-import React from 'react';
 import * as bs from 'react-bootstrap';
 
 export interface SwitchToggleDefaultCommons {
