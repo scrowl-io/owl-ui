@@ -6,9 +6,9 @@
 
 ## Props
 
-|     Name     |              Type               | Default Value | Description                                                         |
-| :----------: | :-----------------------------: | :-----------: | :------------------------------------------------------------------ |
-| `NAME` | `TYPE` |   `VALUE`   | DESCRIPTION |
+|  Name  |  Type  | Default Value | Description |
+| :----: | :----: | :-----------: | :---------- |
+| `NAME` | `TYPE` |    `VALUE`    | DESCRIPTION |
 
 ## Usage
 
@@ -18,7 +18,6 @@
 import { Default as DefaultTabs } from `@owlui/tabs`;
 
 <DefaultTabs {...args}>
-    <div>Heloooooo</div>
 </DefaultTabs>
 ```
 

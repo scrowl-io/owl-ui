@@ -33,6 +33,7 @@
     "@owlui/navigationdrawer": "^0.0.22",
     "@owlui/switchtoggle": "^0.0.0",
     "@owlui/table": "^0.0.22",
+    "@owlui/tabs": "^0.0.0",
     "@owlui/textfield": "^0.0.22",
     "@owlui/theme": "^0.0.22",
     "@owlui/typings": "^0.0.22",

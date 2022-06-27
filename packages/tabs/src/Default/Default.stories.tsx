@@ -1,4 +1,5 @@
 import * as React from 'react';
+// eslint-disable-next-line import/named
 import { Meta } from '@storybook/react';
 import { Component } from './Default';
 import descriptionMd from './Description.md';
@@ -17,7 +18,7 @@ export default {
   },
   decorators: [
     Story => (
-      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+      <div>
         <Story />
       </div>
     ),

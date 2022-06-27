@@ -1,39 +1,29 @@
 @use '@owlui/theme/src' as theme;
 
-.tabs {
-  padding: theme.$owl-sys-layout-spacer;
+.nav-tabs {
+  --bs-nav-tabs-border-width: 1px;
+  --bs-nav-tabs-border-color: #dee2e6;
+  --bs-nav-tabs-border-radius: 0.375rem;
+  --bs-nav-tabs-link-hover-border-color: #e9ecef #e9ecef #dee2e6;
+  --bs-nav-tabs-link-active-color: #495057;
+  --bs-nav-tabs-link-active-bg: #fff;
+  --bs-nav-tabs-link-active-border-color: #dee2e6 #dee2e6 #fff;
 
-  &--theme {
-    &--default {
-      /* appearances */
-      &-primary {
-        @include theme.defaultTheme-branding;
-      }
-    }
-
-    &--dark {
-      /* appearances */
-      &-primary {
-        @include theme.darkTheme-branding;
-      }
-    }
+  &.theme--dark {
+    --bs-nav-tabs-link-active-bg: vars(--bs-light);
   }
-  
+
   &--size {
     &-lg {
-      @include theme.defaultTheme-typeface--large;
+      @include theme.typeface-lg;
     }
 
     &-md {
-      @include theme.defaultTheme-typeface--medium;
+      @include theme.typeface-md;
     }
-    
+
     &-sm {
-      @include theme.defaultTheme-typeface--small;
+      @include theme.typeface-sm;
     }
   }
-}
-
-.active{
-  background-color: red;
 }
