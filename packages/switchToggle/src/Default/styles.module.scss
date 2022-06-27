@@ -3,14 +3,10 @@
 .switchToggle {
   $ref: &;
 
-  &--appearance {
-    &-default {
-      &.theme--dark {
-        .form-check-input {
-          &:checked {
-            background-color: var(--bs-dark);
-          }
-        }
+  &.theme--dark {
+    .form-check-input {
+      &:checked {
+        background-color: var(--bs-dark);
       }
     }
   }
