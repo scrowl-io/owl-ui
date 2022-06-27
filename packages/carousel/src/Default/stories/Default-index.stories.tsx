@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Carousel } from '../index';
+import { Carousel } from '../index';
 import { CarouselDefaultProps, Slide } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
