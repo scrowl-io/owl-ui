@@ -6,7 +6,7 @@ export interface CloseButtonDefaultCommons {
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   disabled: boolean;
-};
+}
 
 export interface themePrefixesProps {
   [key: string]: string;
