@@ -18,10 +18,6 @@ function update() {
       file: fs.getFile(`scripts/components/templates/lib/index.hbs`),
       dest: setDest('index.ts'),
     },
-    style: {
-      file: fs.getFile(`scripts/components/templates/lib/style.hbs`),
-      dest: setDest('_index.scss'),
-    },
   };
   const types = fs.getFile('typings/package.json');
 
@@ -29,11 +25,17 @@ function update() {
 
   for (let pkg in pkgs) {
     const component = `@owlui/${pkg}`;
+    const pkgPath = fs.join(
+      pkgs[pkg].path.split('owl-ui')[1],
+      '../',
+      pkgs[pkg].config.source.replace('.ts', '')
+    );
 
     data.components.push({
       name: pkg,
       cap: strs.toCapitalize(pkg),
       pkg: component,
+      path: `../..${pkgPath}`,
     });
 
     exec(`lerna add ${component} --scope=@owlui/lib`);

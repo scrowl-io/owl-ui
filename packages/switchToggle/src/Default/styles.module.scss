@@ -1,0 +1,27 @@
+@use '@owlui/theme/src' as theme;
+
+.switchToggle {
+  $ref: &;
+
+  &.theme--dark {
+    .form-check-input {
+      &:checked {
+        background-color: var(--bs-dark);
+      }
+    }
+  }
+
+  &--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}

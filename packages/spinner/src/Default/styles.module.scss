@@ -1,0 +1,30 @@
+@use '@owlui/theme/src' as theme;
+
+.spinner {
+  $ref: &;
+
+  @include theme.typeface-sm;
+  color: var(--bs-gray-400);
+
+  &.theme--dark {
+    color: var(--bs-gray-600);
+  }
+
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
+      --bs-spinner-width: 3em;
+      --bs-spinner-height: 3em;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+      --bs-spinner-width: 2em;
+      --bs-spinner-height: 2em;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}
