@@ -8,3 +8,4 @@ export * from '../../packages/switchToggle/src/index';
 export * from '../../packages/table/src/index';
 export * from '../../packages/tabs/src/index';
 export * from '../../packages/textfield/src/index';
+export * from '../../packages/toast/src/index';

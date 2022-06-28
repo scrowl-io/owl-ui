@@ -10,23 +10,24 @@
       "prefix": "owlui-",
       "ignore": [
         "active",
-        "show",
-        "showing",
-        "hiding",
+        "btn-close",
         "collapse",
-        "collapsing",
         "collapsed",
         "collapse-horizontal",
+        "collapsing",
         "fade",
-        "visible",
+        "hiding",
         "invisible",
-        "was-validated",
         "is-valid",
+        "is-invalid",
+        "invalid",
+        "invalid-feedback",
+        "show",
+        "showing",
         "valid-feedback",
         "valid-tooltip",
-        "invalid",
-        "is-invalid",
-        "invalid-feedback"
+        "visible",
+        "was-validated"
       ]
     }
   }
