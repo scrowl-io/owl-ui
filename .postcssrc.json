@@ -3,8 +3,41 @@
   "plugins": {
     "postcss-import": true,
     "postcss-modules": {
-      "generateScopedName": "owlui-[local]",
+      "generateScopedName": "[local]",
       "localsConvention": "camelCase"
+    },
+    "@owlui/postcss-prefixer": {
+      "prefix": "owlui-",
+      "ignore": [
+        "active",
+        "btn-close",
+        "collapse",
+        "collapsed",
+        "collapse-horizontal",
+        "collapsing",
+        "fade",
+        "hiding",
+        "invisible",
+        "is-valid",
+        "is-invalid",
+        "invalid",
+        "invalid-feedback",
+        "show",
+        "showing",
+        "text-primary",
+        "text-secondary",
+        "text-success",
+        "text-danger",
+        "text-warning",
+        "text-info",
+        "text-light",
+        "text-dark",
+        "valid-feedback",
+        "valid-tooltip",
+        "visible",
+        "visually-hidden",
+        "was-validated"
+      ]
     }
   }
 }

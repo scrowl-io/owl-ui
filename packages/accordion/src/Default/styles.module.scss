@@ -1,0 +1,27 @@
+@use '@owlui/theme/src' as theme;
+
+.accordion {
+  $ref: &;
+  width: 100%;
+
+  @include theme.typeface-sm;
+
+  &.theme--dark {
+    --bs-accordion-color: var(--color-font-light);
+    --bs-accordion-bg: var(--bs-gray-500);
+  }
+
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}

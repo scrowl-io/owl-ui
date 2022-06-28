@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-export type Icon =
+export type IconType =
   | '3d_rotation'
   | 'ac_unit'
   | 'access_alarm'
@@ -943,7 +943,7 @@ export interface IconsDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
   prefix?: string;
-  icon: Icon;
+  icon: IconType;
 }
 
 export type IconsDefaultProps = Partial<IconsDefaultCommons> &

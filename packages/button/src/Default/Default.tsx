@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Button, ThemeProvider } from 'react-bootstrap';
-import { ButtonDefaultProps, themePrefixesProps } from './Default.types';
+import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/utils';
 
 export const Component = (props: ButtonDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
