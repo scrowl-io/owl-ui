@@ -11,16 +11,17 @@ export interface ToastDefaultCommons {
 export interface ToastBodyProps {
   as?: React.ElementType;
   bsPrefix?: string;
-  bodyText: React.ReactNode;
+  content: React.ReactNode;
+}
+
+// eslint-disable-next-line import/namespace
+export interface ToastHeaderProps extends bs.ToastHeaderProps {
+  content: React.ReactNode;
 }
 
 export interface ToastContentProps {
-  header: bs.ToastHeaderProps;
+  header: ToastHeaderProps;
   body: ToastBodyProps;
-}
-
-export interface themePrefixesProps {
-  [key: string]: string;
 }
 
 export type ToastDefaultProps = Partial<ToastDefaultCommons> & bs.ToastProps;

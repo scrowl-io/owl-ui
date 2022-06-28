@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Toast } from '../index';
+import { Toast } from '../index';
 import { ToastDefaultProps, ToastContentProps } from '../Default.types';
 import { bg } from './Default-bg.stories';
 import { size } from './Default-size.stories';
@@ -10,13 +10,29 @@ const toastContent: ToastContentProps = {
     closeLabel: 'This is the close label',
     closeVariant: 'white',
     closeButton: true,
+    content: (
+      <>
+        <h2>Toast Header</h2>
+      </>
+    ),
   },
   body: {
-    bodyText: 'Hello, world! This is a toast message.',
+    content: 'Hello, world! This is a toast message.',
   },
 };
 
-export const Default = (args: ToastDefaultProps) => <Toast {...args} />;
+export const Default = (args: ToastDefaultProps) => {
+  const [showToast, setShowToast] = React.useState(false);
+
+  const toggleShowToast = () => setShowToast(!showToast);
+
+  return (
+    <div style={{ width: '50%' }}>
+      <button onClick={toggleShowToast}>Toggle Toast</button>
+      <Toast {...args} show={showToast} onClose={toggleShowToast} />
+    </div>
+  );
+};
 
 Default.args = {
   bg: bg.defaultValue,

@@ -14,8 +14,4 @@ export interface AccordionDefaultCommons {
   items: AccordionItemProps[];
 }
 
-export interface themePrefixesProps {
-  [key: string]: string;
-}
-
 export type AccordionDefaultProps = AccordionDefaultCommons & bs.AccordionProps;
