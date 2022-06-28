@@ -1,0 +1,42 @@
+@use '@owlui/theme/src' as theme;
+
+.carousel {
+  $ref: &;
+  @include theme.typeface-sm;
+  height: 100%;
+  display: flex;
+
+  .carousel-item {
+    height: 100%;
+  }
+
+  &--appearance {
+    &-default {
+      &.theme--dark {
+        --bs-heading-color: var(--bs-gray-800);
+
+        p {
+          color: var(--bs-heading-color);
+        }
+
+        a[class*='carousel-control'] {
+          color: var(--bs-heading-color);
+        }
+      }
+    }
+  }
+
+  &#{$ref}--size {
+    &-lg {
+      @include theme.typeface-lg;
+    }
+
+    &-md {
+      @include theme.typeface-md;
+    }
+
+    &-sm {
+      @include theme.typeface-sm;
+    }
+  }
+}

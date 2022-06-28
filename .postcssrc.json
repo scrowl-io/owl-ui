@@ -10,7 +10,12 @@
       "prefix": "owlui-",
       "ignore": [
         "active",
+        "bg-success",
+        "bg-danger",
+        "bg-warning",
+        "bg-info",
         "btn-close",
+        "btn-close-white",
         "collapse",
         "collapsed",
         "collapse-horizontal",
@@ -24,9 +29,18 @@
         "invalid-feedback",
         "show",
         "showing",
+        "text-primary",
+        "text-secondary",
+        "text-success",
+        "text-danger",
+        "text-warning",
+        "text-info",
+        "text-light",
+        "text-dark",
         "valid-feedback",
         "valid-tooltip",
         "visible",
+        "visually-hidden",
         "was-validated"
       ]
     }
