@@ -1,24 +1,27 @@
 import * as React from 'react';
-import { component as ProgressBar } from '../index';
+import { ProgressBar } from '../index';
 import { ProgressBarDefaultProps } from '../Default.types';
 
-import { bg } from './Default-bg.stories';
+import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
+import { progress } from './Default-progress.stories';
+import { showLabel } from './Default-label.stories';
 
 export const Default = (args: ProgressBarDefaultProps) => (
-  <ProgressBar {...args}></ProgressBar>
+  <ProgressBar {...args} />
 );
 
 Default.args = {
-  bg: bg.defaultValue,
+  variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
-  now: 60,
+  now: progress.defaultValue,
+  showLabel: showLabel.defaultValue,
 };
 
 Default.argTypes = {
-  bg,
+  variant,
   size,
   theme,
 };

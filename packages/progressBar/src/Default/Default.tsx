@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ThemeProvider, ProgressBar } from 'react-bootstrap';
-import { ProgressBarDefaultProps, themePrefixesProps } from './Default.types';
+import { ProgressBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/utils';
 
 export const Component = (props: ProgressBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'progress';
-  const { now } = props;
+  const { now, variant, showLabel } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -27,34 +27,22 @@ export const Component = (props: ProgressBarDefaultProps) => {
             value: 'Size',
           },
         ],
-        bsProps: ['bg'],
       },
     },
-    ['prefix', 'theme', 'size', 'now']
+    ['prefix', 'theme', 'size']
   );
 
-  themePrefixes[baseClass] = `owlui-${baseClass}
-`;
+  themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes[`${baseClass}-bar`] = `owlui-${baseClass}-bar`;
-
-  console.log(locals);
-
-  useEffect(() => {
-    const progressWrapper: HTMLElement | null =
-      document.querySelector('#progress-wrapper');
-
-    if (progressWrapper instanceof Element === false) {
-      return;
-    }
-
-    progressWrapper?.classList.remove('owlui-bg-primary');
-  });
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <ProgressBar {...locals} id="progress-wrapper">
-        <ProgressBar {...locals} now={now} label={`${now}%`} />
-      </ProgressBar>
+      <ProgressBar
+        {...locals}
+        variant={variant}
+        label={showLabel ? `${now}%` : ''}
+        style={showLabel ? { height: 'auto' } : undefined}
+      />
     </ThemeProvider>
   );
 };
