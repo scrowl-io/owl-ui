@@ -32,6 +32,7 @@
     "@owlui/dropdown": "^0.0.0",
     "@owlui/icons": "^0.0.22",
     "@owlui/navigationdrawer": "^0.0.22",
+    "@owlui/spinner": "^0.0.0",
     "@owlui/switchtoggle": "^0.0.0",
     "@owlui/table": "^0.0.22",
     "@owlui/tabs": "^0.0.0",
