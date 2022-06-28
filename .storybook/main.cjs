@@ -28,15 +28,15 @@ module.exports = {
       postcssLoaderOptions: {
         implementation: postcss,
         "modules": true,
-        "sourceMap": false,
-        "map": false,
         "plugins": postcssPlugins
       }
     }
   }, '@storybook/preset-scss'],
+  // @ts-ignore
   'webpackFinal': config => {
     let ruleTest;
     const ruleLookup = '/\\.s[ca]ss$/';
+    // @ts-ignore
     const ruleIdxStyle = config.module.rules.findIndex(rule => {
       ruleTest = rule.test ? rule.test.toString() : '';
       return ruleTest === ruleLookup;
@@ -50,18 +50,20 @@ module.exports = {
     const cssLoader = {
       loader: 'css-loader',
       options: {
-        "sourceMap": false,
+        sourceMap: true,
+        importLoaders: 1,
+        modules: {
+          namedExport: true,
+          localIdentName: '[local]'
+        }
       }
     };
     const postcssLoader = {
       loader: 'postcss-loader',
       options: {
-        "sourceMap": false,
         implementation: postcss,
         postcssOptions: {
           "modules": true,
-          "sourceMap": false,
-          "map": false,
           "plugins": postcssPlugins
         }
       }
@@ -69,10 +71,8 @@ module.exports = {
     const sassLoader = {
       loader: 'sass-loader',
       options: {
-        "sourceMap": false,
         implementation: require('sass'),
         sassOptions: {
-          "sourceMap": false,
           includePaths: [
             "./",
             "../",

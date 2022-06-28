@@ -1,10 +1,2 @@
-import { Component } from './CardImgOverlay';
-import * as Types from './CardImgOverlay.types';
-
-export const component = Component;
-export const types = Types;
-
-export default {
-  component,
-  types,
-};
+export { Component as CardImgOverlay } from './CardImgOverlay';
+export * from './CardImgOverlay.types';

@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { CardDefaultProps } from '../Default.types';
-import { component as Card } from '../index';
-import { component as CardHeader } from '../../CardHeader';
-import { component as CardTitle } from '../../CardTitle';
-import { component as CardBody } from '../../CardBody';
-import { component as CardSubTitle } from '../../CardSubTitle';
-import { component as CardText } from '../../CardText';
-import { component as CardLink } from '../../CardLink';
-import { component as CardListGroup } from '../../CardListGroup';
-import { component as CardListItem } from '../../CardListItem';
-import { component as CardFooter } from '../../CardFooter';
+import { Card } from '../index';
+import { CardHeader } from '../../CardHeader';
+import { CardTitle } from '../../CardTitle';
+import { CardBody } from '../../CardBody';
+import { CardSubTitle } from '../../CardSubTitle';
+import { CardText } from '../../CardText';
+import { CardLink } from '../../CardLink';
+import { CardListGroup } from '../../CardListGroup';
+import { CardListItem } from '../../CardListItem';
+import { CardFooter } from '../../CardFooter';
 
 import { bg } from './Default-bg.stories';
 import { text } from './Default-text.stories';
