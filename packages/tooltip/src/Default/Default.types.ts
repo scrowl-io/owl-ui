@@ -10,8 +10,9 @@ export interface TooltipDefaultCommons {
   trigger: string[];
   variant: string;
   header: string;
-  content: React.ReactElement;
+  targetElement: (props: object) => JSX.Element;
   type?: string;
+  popoverHeader: string;
 }
 
 export interface themePrefixesProps {

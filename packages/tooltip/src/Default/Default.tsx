@@ -22,8 +22,8 @@ export const Component = (props: TooltipDefaultProps) => {
     variant,
     trigger,
     rootClose,
-    header,
-    content,
+    popoverHeader,
+    targetElement,
     type,
   } = props;
   const prefix = props.prefix || '';
@@ -64,7 +64,7 @@ export const Component = (props: TooltipDefaultProps) => {
 
   const popover = () => (
     <Popover id="popover" {...locals} {...props}>
-      <Popover.Header as="h1">{header}</Popover.Header>
+      <Popover.Header as="h1">{popoverHeader}</Popover.Header>
       <Popover.Body>
         <p>
           <strong>Check it out</strong> {children}
@@ -74,16 +74,7 @@ export const Component = (props: TooltipDefaultProps) => {
   );
 
   const tooltip = () => {
-    return (
-      <Popover {...locals}>
-        <Popover.Header as="h1">{header}</Popover.Header>
-        <Popover.Body>
-          <p>
-            <strong>Check it out</strong> {children}
-          </p>
-        </Popover.Body>
-      </Popover>
-    );
+    return <Tooltip>Tooltip {children}</Tooltip>;
   };
 
   return (
@@ -97,7 +88,7 @@ export const Component = (props: TooltipDefaultProps) => {
         overlay={
           props.type === 'popover' ? (
             <Popover id="popover" {...locals}>
-              <Popover.Header as="h1">{header}</Popover.Header>
+              <Popover.Header as="h1">{popoverHeader}</Popover.Header>
               <Popover.Body>
                 <p>
                   <strong>Check it out</strong> {children}
@@ -111,18 +102,8 @@ export const Component = (props: TooltipDefaultProps) => {
           )
         }
       >
-        {content}
+        {targetElement}
       </OverlayTrigger>
-
-      {/* <Overlay
-        trigger={trigger}
-        target={target}
-        show={show}
-        rootClose={rootClose}
-        placement="top"
-      >
-        {popover}
-      </Overlay> */}
     </ThemeProvider>
   );
 };
