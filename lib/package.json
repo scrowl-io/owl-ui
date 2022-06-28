@@ -26,6 +26,7 @@
     "react": "^18.0.0"
   },
   "dependencies": {
+    "@owlui/accordion": "^0.0.0",
     "@owlui/button": "^0.0.22",
     "@owlui/card": "^0.0.22",
     "@owlui/dropdown": "^0.0.0",
