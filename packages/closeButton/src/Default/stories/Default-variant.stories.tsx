@@ -1,11 +1,6 @@
 const variants = {
-  primary: 'Primary',
-  secondary: 'Secondary',
-  success: 'Success',
-  warning: 'Warning',
-  danger: 'Danger',
-  light: 'Light',
-  link: 'Link',
+  dark: 'Dark',
+  white: 'White',
 };
 
 export const variant = {
@@ -14,7 +9,7 @@ export const variant = {
     type: 'select',
     labels: variants,
   },
-  defaultValue: 'primary',
+  defaultValue: 'dark',
 };
 
 export default {
