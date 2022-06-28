@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { ThemeProvider, Spinner } from 'react-bootstrap';
-import { SpinnerDefaultProps, themePrefixesProps } from './Default.types';
+import { SpinnerDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/utils';
 
 export const Component = (props: SpinnerDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'spinner';
-  const { animation, variant } = props;
+  const { animation } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -36,7 +36,7 @@ export const Component = (props: SpinnerDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Spinner animation={animation} variant={variant} {...locals} />
+      <Spinner animation={animation} {...locals} />
     </ThemeProvider>
   );
 };

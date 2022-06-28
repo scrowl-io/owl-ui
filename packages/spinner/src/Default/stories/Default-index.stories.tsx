@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Spinner } from '../index';
+import { Spinner } from '../index';
 import { SpinnerDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
