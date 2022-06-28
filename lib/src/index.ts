@@ -1,6 +1,7 @@
 export * from '../../packages/accordion/src/index';
 export * from '../../packages/button/src/index';
 export * from '../../packages/card/src/index';
+export * from '../../packages/carousel/src/index';
 export * from '../../packages/dropdown/src/index';
 export * from '../../packages/icons/src/index';
 export * from '../../packages/navigationDrawer/src/index';
