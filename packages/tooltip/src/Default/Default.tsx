@@ -5,6 +5,7 @@ import {
   Popover,
   OverlayTrigger,
   Button,
+  Tooltip,
 } from 'react-bootstrap';
 import { TooltipDefaultProps, themePrefixesProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
@@ -22,6 +23,8 @@ export const Component = (props: TooltipDefaultProps) => {
     trigger,
     rootClose,
     header,
+    content,
+    type,
   } = props;
   const prefix = props.prefix || '';
   const [componentShow, setComponentShow] = useState(false);
@@ -55,11 +58,22 @@ export const Component = (props: TooltipDefaultProps) => {
   themePrefixes['bs-popover-bottom'] = 'owlui-popover-bottom';
   themePrefixes['popover-arrow'] = 'owlui-popover-arrow';
 
-  // const handleToggle = () => {
-  //   setComponentShow(!componentShow);
-  // };
+  const handleToggle = () => {
+    setComponentShow(!componentShow);
+  };
 
-  const popover = () => {
+  const popover = () => (
+    <Popover id="popover" {...locals} {...props}>
+      <Popover.Header as="h1">{header}</Popover.Header>
+      <Popover.Body>
+        <p>
+          <strong>Check it out</strong> {children}
+        </p>
+      </Popover.Body>
+    </Popover>
+  );
+
+  const tooltip = () => {
     return (
       <Popover {...locals}>
         <Popover.Header as="h1">{header}</Popover.Header>
@@ -74,38 +88,41 @@ export const Component = (props: TooltipDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      {/* <OverlayTrigger
+      <OverlayTrigger
         trigger={trigger}
         placement={placement}
         show={componentShow}
-        rootClose={rootClose}
+        // rootClose={rootClose}
         onToggle={handleToggle}
         overlay={
-          <Popover {...locals}>
-            <Popover.Header as="h1">Popover header</Popover.Header>
-            <Popover.Body>
-              <strong>Check it out</strong> {children}
-            </Popover.Body>
-          </Popover>
+          props.type === 'popover' ? (
+            <Popover id="popover" {...locals}>
+              <Popover.Header as="h1">{header}</Popover.Header>
+              <Popover.Body>
+                <p>
+                  <strong>Check it out</strong> {children}
+                </p>
+              </Popover.Body>
+            </Popover>
+          ) : (
+            <Tooltip id="tooltip" {...locals}>
+              Tooltip {children}
+            </Tooltip>
+          )
         }
       >
-        <Button
-          id="popover-button"
-          variant={variant}
-          style={{ marginTop: '10em' }}
-        >
-          Popover style
-        </Button>
-      </OverlayTrigger> */}
+        {content}
+      </OverlayTrigger>
 
-      <Overlay
+      {/* <Overlay
+        trigger={trigger}
         target={target}
         show={show}
         rootClose={rootClose}
-        placement={placement}
+        placement="top"
       >
         {popover}
-      </Overlay>
+      </Overlay> */}
     </ThemeProvider>
   );
 };

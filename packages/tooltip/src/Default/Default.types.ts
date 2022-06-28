@@ -10,6 +10,8 @@ export interface TooltipDefaultCommons {
   trigger: string[];
   variant: string;
   header: string;
+  content: React.ReactElement;
+  type?: string;
 }
 
 export interface themePrefixesProps {

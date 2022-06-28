@@ -12,10 +12,17 @@ export const Default = (args: TooltipDefaultProps) => {
   const target = React.useRef(null);
   const [show, setShow] = React.useState(false);
 
-  const placement = 'right';
+  const placement = 'left';
   const rootClose = true;
   const header = 'Test Header';
   const trigger = ['click'];
+  const type = 'tooltip';
+
+  const content = props => (
+    <button id="popover-button" variant="primary" {...props}>
+      Popover style
+    </button>
+  );
 
   return (
     <>
@@ -29,12 +36,14 @@ export const Default = (args: TooltipDefaultProps) => {
       </Button>
       <Tooltip
         {...args}
+        type={type}
         header={header}
         target={target.current}
         show={show}
         placement={placement}
         rootClose={rootClose}
         trigger={trigger}
+        content={content}
       >
         <p>Inside the tooltip</p>
       </Tooltip>
