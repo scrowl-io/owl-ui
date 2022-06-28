@@ -1,0 +1,37 @@
+{
+  "name": "@owlui/accordion",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/accordion#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.accordion.js",
+  "types": "dist/owl.accordion.d.ts",
+  "style": "dist/owl.accordion.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/accordion"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/theme": "^0.0.22",
+    "@owlui/typings": "^0.0.21",
+    "@owlui/utils": "^0.0.22",
+    "react-bootstrap": "2.4.0"
+  }
+}

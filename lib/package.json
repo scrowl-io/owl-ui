@@ -26,15 +26,19 @@
     "react": "^18.0.0"
   },
   "dependencies": {
+    "@owlui/accordion": "^0.0.0",
     "@owlui/button": "^0.0.22",
     "@owlui/card": "^0.0.22",
     "@owlui/dropdown": "^0.0.0",
     "@owlui/icons": "^0.0.22",
     "@owlui/navigationdrawer": "^0.0.22",
+    "@owlui/switchtoggle": "^0.0.0",
     "@owlui/table": "^0.0.22",
+    "@owlui/tabs": "^0.0.0",
     "@owlui/textfield": "^0.0.22",
     "@owlui/theme": "^0.0.22",
     "@owlui/tooltip": "^0.0.0",
+    "@owlui/toast": "^0.0.0",
     "@owlui/typings": "^0.0.22",
     "@owlui/utils": "^0.0.22"
   }

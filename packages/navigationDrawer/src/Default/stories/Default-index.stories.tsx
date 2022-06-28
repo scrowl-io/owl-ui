@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as NavigationDrawer } from '../index';
+import { NavigationDrawer } from '../index';
 import {
   NavigationDrawerElementProps,
   NavigationDrawerContentTypes,
