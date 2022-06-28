@@ -15,16 +15,13 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/SCROWL.git",
-    "directory": "packages/parcel-resolver-asset-path"
+    "directory": "plugins/parcel-resolver-asset-path"
   },
   "isLibrary": true,
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.21.0"
-  },
-  "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.21.0"
   }
 }
