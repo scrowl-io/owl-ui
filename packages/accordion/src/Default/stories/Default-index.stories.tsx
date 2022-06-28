@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Accordion } from '../index';
+import { Accordion } from '../index';
 import { AccordionDefaultProps } from '../Default.types';
 
 import { size } from './Default-size.stories';

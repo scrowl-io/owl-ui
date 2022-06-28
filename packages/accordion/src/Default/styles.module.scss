@@ -7,14 +7,8 @@
   @include theme.typeface-sm;
 
   &.theme--dark {
-    h2 {
-      color: var(--bs-gray-600);
-    }
-
-    input {
-      background-color: var(--bs-gray-400);
-      color: white;
-    }
+    --bs-accordion-color: var(--color-font-light);
+    --bs-accordion-bg: var(--bs-gray-500);
   }
 
   &#{$ref}--size {
