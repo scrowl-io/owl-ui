@@ -2,6 +2,10 @@ import React from 'react';
 
 export type localProp = React.HTMLAttributes<HTMLElement>;
 
+export type stringMap = {
+  [key: string]: string;
+};
+
 export type stylesProp = Record<string, string>;
 
 export interface CSSModClass {
@@ -12,6 +16,9 @@ export interface CSSModClass {
 
 export interface localInnerProps {
   [key: string]: unknown;
+}
+export interface themePrefixesProps {
+  [key: string]: string;
 }
 
 export type localStyles = {
