@@ -1,22 +1,17 @@
 import React from 'react';
 import * as bs from 'react-bootstrap';
-
+import { OverlayTriggerType } from 'react-bootstrap/cjs/OverlayTrigger';
 export interface TooltipDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  children: React.ReactNode;
+  children?: JSX.Element | JSX.Element[];
   placement: string;
-  trigger: string[];
-  variant: string;
+  trigger: OverlayTriggerType | OverlayTriggerType[] | undefined;
   header: string;
-  targetElement: (props: object) => JSX.Element;
-  type?: string;
-  popoverHeader: string;
-}
-
-export interface themePrefixesProps {
-  [key: string]: string;
+  targetElement: (props: object) => JSX.Element | JSX.Element[];
+  popover?: boolean;
+  rootClose: boolean;
 }
 
 export type TooltipDefaultProps = TooltipDefaultCommons & bs.OverlayProps;

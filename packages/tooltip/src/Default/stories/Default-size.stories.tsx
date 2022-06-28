@@ -10,7 +10,7 @@ export const size = {
     type: 'select',
     labels: sizes,
   },
-  defaultValue: 'Md',
+  defaultValue: 'Sm',
 };
 
 export default {

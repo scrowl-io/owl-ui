@@ -7,7 +7,7 @@ const triggers = {
 export const trigger = {
   options: Object.keys(triggers),
   control: {
-    type: 'select',
+    type: 'check',
     labels: triggers,
   },
   defaultValue: 'click',
