@@ -33,6 +33,7 @@
     "@owlui/closebutton": "^0.0.23",
     "@owlui/dropdown": "^0.0.23",
     "@owlui/icons": "^0.0.23",
+    "@owlui/nav": "^0.0.0",
     "@owlui/navigationdrawer": "^0.0.23",
     "@owlui/progressbar": "^0.0.23",
     "@owlui/spinner": "^0.0.23",
