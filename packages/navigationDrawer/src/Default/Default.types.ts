@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface NavigationDrawerContentItemProps {
   label: string;
+  url?: string;
 }
 
 export interface NavigationDrawerContentItemGroupProps {

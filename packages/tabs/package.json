@@ -1,6 +1,6 @@
 {
   "name": "@owlui/tabs",
-  "version": "0.0.0",
+  "version": "0.0.23",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/tabs#readme",
   "license": "MIT",
@@ -31,7 +31,7 @@
   "dependencies": {
     "@owlui/theme": "^0.0.21",
     "@owlui/typings": "^0.0.21",
-    "@owlui/utils": "^0.0.22",
+    "@owlui/utils": "^0.0.23",
     "react-bootstrap": "^2.4.0"
   }
 }
