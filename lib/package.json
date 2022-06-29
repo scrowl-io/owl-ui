@@ -42,6 +42,7 @@
     "@owlui/textfield": "^0.0.23",
     "@owlui/theme": "^0.0.23",
     "@owlui/toast": "^0.0.23",
+    "@owlui/tooltip": "^0.0.0",
     "@owlui/typings": "^0.0.23",
     "@owlui/utils": "^0.0.23"
   }
