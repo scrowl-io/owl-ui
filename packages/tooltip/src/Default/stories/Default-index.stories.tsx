@@ -6,6 +6,7 @@ import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 import { trigger } from './Default-trigger.stories';
 import { popover } from './Default-popover.stories';
+import { placement } from './Default-placement.stories';
 
 const DemoParagraphOne = () => (
   <p>This is a paragraph to demonstrate the use of the&nbsp;</p>
@@ -14,7 +15,6 @@ const DemoParagraphOne = () => (
 const DemoParagraphTwo = () => <p>. Wrap your tooltips in blocks of text.</p>;
 
 export const Default = (args: TooltipDefaultProps) => {
-  const placement = 'bottom';
   // const rootClose = true;
   const header = 'Popover Header';
 
@@ -50,7 +50,6 @@ export const Default = (args: TooltipDefaultProps) => {
       <Tooltip
         {...args}
         header={header}
-        placement={placement}
         // rootClose={rootClose}
         targetElement={targetElement}
       >
@@ -67,6 +66,7 @@ Default.args = {
   theme: theme.defaultValue,
   trigger: trigger.defaultValue,
   popover: popover.defaultValue,
+  placement: placement.defaultValue,
 };
 
 Default.argTypes = {
@@ -74,4 +74,5 @@ Default.argTypes = {
   theme,
   trigger,
   popover,
+  placement,
 };
