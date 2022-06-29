@@ -1,27 +1,46 @@
 import * as React from 'react';
 import { Drawer } from '../index';
-import { DrawerDefaultProps } from '../Default.types';
+import { DrawerDefaultProps, DrawerProps } from '../Default.types';
 
-import { variant } from './Default-variant.stories';
-import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 import { placement } from './Default-placement.stories';
 
-export const Default = (args: DrawerDefaultProps) => <Drawer {...args} />;
+const drawer: DrawerProps = {
+  header: {
+    content: <h2>Drawer Header</h2>,
+    bsProps: {
+      closeButton: true,
+    },
+  },
+  body: (
+    <p>
+      Some text as <em>placeholder</em>. In real life you can have the elements
+      you have chosen. Like, text, images, lists, etc.
+    </p>
+  ),
+};
+
+export const Default = (args: DrawerDefaultProps) => {
+  const [show, setShow] = React.useState(false);
+
+  const toggleShow = () => {
+    setShow(!show);
+  };
+
+  return (
+    <>
+      <button onClick={toggleShow}>Launch</button>
+      <Drawer {...args} show={show} onHide={toggleShow} drawer={drawer} />
+    </>
+  );
+};
 
 Default.args = {
-  variant: variant.defaultValue,
-  size: size.defaultValue,
   theme: theme.defaultValue,
   placement: placement.defaultValue,
-  headerText: `Drawer Header`,
-  bodyText: `Some text as placeholder. In real life you can have the elements you
-  have chosen. Like, text, images, lists, etc.`,
 };
 
 Default.argTypes = {
-  variant,
-  size,
   theme,
   placement,
 };

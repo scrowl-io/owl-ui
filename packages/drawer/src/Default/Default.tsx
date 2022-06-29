@@ -1,20 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ThemeProvider, Offcanvas } from 'react-bootstrap';
-import { Component as Button } from '../../../button/src/Default/Default';
-import { DrawerDefaultProps, themePrefixesProps } from './Default.types';
+import { DrawerDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/utils';
 
 export const Component = (props: DrawerDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'drawer';
-  const { headerText, bodyText, placement } = props;
+  const { drawer } = props;
   const prefix = props.prefix || '';
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const locals = createLocalProps(
     props,
@@ -28,45 +22,34 @@ export const Component = (props: DrawerDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['size'],
-            value: 'Size',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'size']
+    ['prefix', 'theme', 'drawer']
   );
-
-  useEffect(() => {
-    const closeDrawer: HTMLElement | null =
-      document.querySelector('.btn-close');
-
-    if (closeDrawer instanceof Element === false) {
-      return;
-    }
-
-    closeDrawer?.classList.add('owlui-btn-close');
-  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['offcanvas'] = 'owlui-offcanvas';
-  themePrefixes['offcanvas-start'] = 'owlui-offcanvas-start';
-  themePrefixes['offcanvas-header'] = 'owlui-offcanvas-header';
-  themePrefixes['offcanvas-body'] = 'owlui-offcanvas-body';
-  themePrefixes['offcanvas-title'] = 'owlui-offcanvas-title';
+  themePrefixes[
+    'offcanvas-start'
+  ] = `owlui-offcanvas-start owlui-${baseClass}-start`;
+  themePrefixes[
+    'offcanvas-header'
+  ] = `owlui-offcanvas-header owlui-${baseClass}-header`;
+  themePrefixes[
+    'offcanvas-body'
+  ] = `owlui-offcanvas-body owlui-${baseClass}-body`;
+  themePrefixes[
+    'offcanvas-title'
+  ] = `owlui-offcanvas-title owlui-${baseClass}-title`;
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Button {...locals} onClick={handleShow}>
-        Launch
-      </Button>
-
-      <Offcanvas placement={placement} show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>{headerText}</Offcanvas.Title>
+      <Offcanvas {...locals}>
+        <Offcanvas.Header {...drawer.header.bsProps}>
+          <Offcanvas.Title>{drawer.header.content}</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>{bodyText}</Offcanvas.Body>
+        <Offcanvas.Body>{drawer.body}</Offcanvas.Body>
       </Offcanvas>
     </ThemeProvider>
   );

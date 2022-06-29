@@ -1,16 +1,20 @@
 import React from 'react';
 import * as bs from 'react-bootstrap';
 
+// eslint-disable-next-line import/namespace
+export interface DrawerHeader {
+  content: React.ReactNode;
+  bsProps: bs.OffcanvasHeaderProps;
+}
+
+export interface DrawerProps {
+  header: DrawerHeader;
+  body: React.ReactNode;
+}
 export interface DrawerDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  children: React.ReactNode;
+  drawer: DrawerProps;
 }
 
-export interface themePrefixesProps {
-  [key: string]: string;
-}
-
-export type DrawerDefaultProps = Partial<DrawerDefaultCommons> &
-  bs.OffcanvasProps;
+export type DrawerDefaultProps = DrawerDefaultCommons & bs.OffcanvasProps;
