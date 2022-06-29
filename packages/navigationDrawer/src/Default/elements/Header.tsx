@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationDrawerElementProps } from '../Default.types';
 import * as styles from '../styles.module.scss';
 
-const baseClass = 'navigationDrawerHeader';
+const baseClass = 'owluiNavigationDrawerHeader';
 
 export const Component = (props: NavigationDrawerElementProps) => {
   const { children } = props;

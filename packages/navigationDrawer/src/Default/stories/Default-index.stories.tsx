@@ -11,7 +11,10 @@ import { theme } from './Default-theme.stories';
 const Header = <div>Header</div>;
 const items: Array<NavigationDrawerContentTypes> = [
   { label: 'Link 1' },
-  { heading: 'CATEGORY 1', items: [{ label: 'Link 2' }, { label: 'Link 3' }] },
+  {
+    heading: 'CATEGORY 1',
+    items: [{ label: 'Link 2', url: 'test' }, { label: 'Link 3' }],
+  },
   { label: 'Link 4' },
   { heading: 'CATEGORY 2', items: [{ label: 'Link 5' }, { label: 'Link 6' }] },
 ];
