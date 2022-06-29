@@ -8,10 +8,10 @@ import {
 import * as styles from '../styles.module.scss';
 import { Component as NavItem } from './Item';
 
-const baseClass = 'navigationDrawerContent';
+const baseClass = 'owluiNavigationDrawerContent';
 
 const createItem = (item: NavigationDrawerContentItemProps, key: number) => {
-  return <NavItem key={key} label={item.label} />;
+  return <NavItem key={key} label={item.label} url={item.url} />;
 };
 
 const createGroup = (
