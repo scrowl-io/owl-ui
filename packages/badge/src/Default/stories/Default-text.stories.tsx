@@ -1,4 +1,4 @@
-const variants = {
+const textColors = {
   primary: 'Primary',
   secondary: 'Secondary',
   success: 'Success',
@@ -9,15 +9,15 @@ const variants = {
   dark: 'Dark',
 };
 
-export const variant = {
-  options: Object.keys(variants),
+export const text = {
+  options: Object.keys(textColors),
   control: {
     type: 'select',
-    labels: variants,
+    labels: textColors,
   },
-  defaultValue: 'primary',
+  defaultValue: 'light',
 };
 
 export default {
-  variant,
+  text,
 };
