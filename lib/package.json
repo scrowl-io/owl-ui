@@ -34,6 +34,7 @@
     "@owlui/closebutton": "^0.0.24",
     "@owlui/dropdown": "^0.0.24",
     "@owlui/icons": "^0.0.24",
+    "@owlui/listgroup": "^0.0.0",
     "@owlui/navigationdrawer": "^0.0.24",
     "@owlui/progressbar": "^0.0.24",
     "@owlui/spinner": "^0.0.24",
