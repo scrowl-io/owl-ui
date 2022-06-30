@@ -1,4 +1,4 @@
-const variants = {
+const bgs = {
   primary: 'Primary',
   secondary: 'Secondary',
   success: 'Success',
@@ -9,15 +9,15 @@ const variants = {
   dark: 'Dark',
 };
 
-export const variant = {
-  options: Object.keys(variants),
+export const bg = {
+  options: Object.keys(bgs),
   control: {
     type: 'select',
-    labels: variants,
+    labels: bgs,
   },
   defaultValue: 'primary',
 };
 
 export default {
-  variant,
+  bg,
 };
