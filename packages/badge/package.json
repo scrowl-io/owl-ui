@@ -1,0 +1,37 @@
+{
+  "name": "@owlui/badge",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/badge#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.badge.js",
+  "types": "dist/owl.badge.d.ts",
+  "style": "dist/owl.badge.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/badge"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/theme": "^0.0.23",
+    "@owlui/typings": "^0.0.23",
+    "@owlui/utils": "^0.0.23",
+    "react-bootstrap": "2.4.0"
+  }
+}

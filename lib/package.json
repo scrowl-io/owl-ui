@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@owlui/accordion": "^0.0.24",
+    "@owlui/badge": "^0.0.0",
     "@owlui/button": "^0.0.24",
     "@owlui/card": "^0.0.24",
     "@owlui/carousel": "^0.0.24",
