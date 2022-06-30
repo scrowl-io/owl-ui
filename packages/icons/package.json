@@ -1,6 +1,6 @@
 {
   "name": "@owlui/icons",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icons#readme",
   "license": "MIT",
@@ -29,8 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/theme": "^0.0.23",
-    "@owlui/typings": "^0.0.23",
-    "@owlui/utils": "^0.0.23"
+    "@owlui/theme": "^0.0.24",
+    "@owlui/typings": "^0.0.24",
+    "@owlui/utils": "^0.0.24"
   }
 }
