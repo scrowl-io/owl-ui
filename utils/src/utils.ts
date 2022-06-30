@@ -1,3 +1,4 @@
+import * as globalMod from '../../theme/src/_index.scss';
 import { localProp, localStyles, localInnerProps, stringMap } from './types';
 
 export const hasProp = (obj: object, prop: string) => {
@@ -47,8 +48,9 @@ export const createLocalProps = (
   removables: string[]
 ): object => {
   const styleMod = moduleToCamelCase(styles.module);
+  const styleGlobal = moduleToCamelCase(globalMod);
   const getComponentClasses = findModClass(styleMod, styles.classes.base);
-  const getGlobalClasses = findModClass(styleMod);
+  const getGlobalClasses = findModClass(styleGlobal);
   const localClassName = [styleMod[styles.classes.base]];
   const localProps: localInnerProps = { ...props };
   const bsProps = styles.classes.bsProps;

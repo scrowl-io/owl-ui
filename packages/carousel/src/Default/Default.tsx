@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Carousel, ThemeProvider } from 'react-bootstrap';
-import { CarouselDefaultProps, themePrefixesProps } from './Default.types';
+import { CarouselDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/utils';
 
 export const Component = (props: CarouselDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

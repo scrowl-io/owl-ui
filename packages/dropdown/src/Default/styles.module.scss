@@ -1,4 +1,4 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/theme/src/utils' as theme;
 
 .dropdown {
   $ref: &;
@@ -27,7 +27,7 @@
       --bs-btn-disabled-border-color: var(--bs-gray-500);
     }
   }
-  
+
   &-size {
     &-lg {
       @include theme.typeface-lg;
@@ -50,7 +50,7 @@
         @include theme.typeface-md;
       }
     }
-    
+
     &-sm {
       @include theme.typeface-sm;
     }
