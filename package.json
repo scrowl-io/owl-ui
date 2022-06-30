@@ -41,13 +41,9 @@
     "prepublish:lerna": "yarn run build:system",
     "publish:lerna": "lerna publish",
     "republish:lerna": "yarn run prepublish:lerna && lerna publish from-package",
-    "prebuild:storybook": "yarn run setup",
-    "prestart:storybook": "yarn run setup && yarn run build:system",
     "build:storybook": "build-storybook",
     "start:storybook": "start-storybook -p 6006",
-    "prebuild:web": "yarn run presetup",
     "build:web": "parcel build web --log-level warn",
-    "prestart:web": "yarn run presetup",
     "start:web": "parcel serve web --open"
   },
   "workspaces": [

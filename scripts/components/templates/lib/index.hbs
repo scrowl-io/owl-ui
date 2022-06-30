@@ -1,3 +1,4 @@
+export * from '../../utils/src/index';
 {{#with . as | data |}}
 {{#each data.components as | comp |}}
 export * from '{{comp.path}}';
