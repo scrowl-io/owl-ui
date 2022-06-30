@@ -2242,12 +2242,26 @@
   resolved "https://registry.yarnpkg.com/@owlui/design/-/design-0.0.21.tgz#6fbc13705100258ea8b36977030313853abd90ff"
   integrity sha512-fMxWXd5WutRl6ujW47joZr5dVFP7JvmKq6W4IEVvnkCaHCTbD9fVrvhBPeOiSesrisleI0AKJ4VBgnT8U/jKcw==
 
+"@owlui/design@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@owlui/design/-/design-0.0.23.tgz#ef8beb0b715ca7bb909c01def05e157f388b4811"
+  integrity sha512-H5D/+0W/y1a7IQU2TaO0iYKw+6iVb58HfY9DCbbBpVB6i/EXZsLonWEdRnoA37ykrZGHU37zCwY8UJZsrUwvJg==
+
 "@owlui/theme@^0.0.21":
   version "0.0.21"
   resolved "https://registry.yarnpkg.com/@owlui/theme/-/theme-0.0.21.tgz#40c3642bbabdd67bb38387766e69a4a31aae6e7e"
   integrity sha512-icnM87c8uV1WB6xssbk3GEVLyL9NOfhFlF9FmHyWIRIAxJIuq2hML7ksMRjZKoTKoHIXLbzZSp3kSY40exKOYQ==
   dependencies:
     "@owlui/design" "^0.0.21"
+    material-design-icons "^3.0.1"
+
+"@owlui/theme@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@owlui/theme/-/theme-0.0.23.tgz#6eb3882f1a9d70421d418447ff7b59038bac1351"
+  integrity sha512-jUIQ8O0Zj1eUg3QSr8HBKM/AD5MoS+VvlUY52OgkfXN/aH9/K13srkt2ayqbMN5D7VM+P1wACbO7GmJ/7o8fGA==
+  dependencies:
+    "@owlui/design" "^0.0.23"
+    bootstrap "5.2.0-beta1"
     material-design-icons "^3.0.1"
 
 "@owlui/typings@^0.0.20":
@@ -2259,6 +2273,19 @@
   version "0.0.21"
   resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.21.tgz#ecd557c0211f57fc05ab6fcc043b894dc6979d25"
   integrity sha512-cK/omaNTOV77K34RA0BmyzND6AWdIaIc2Ko0lPmdoVQMV8DiAiwyKQbHI7BZ+Scf2IAc5ZqEh9dJLW4exEhOTg==
+
+"@owlui/typings@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.23.tgz#4bd3b7609fb3bc1c7a98d09e46d12e49d5fe39de"
+  integrity sha512-fZq333qAcP6LzHJTocgNlfWLQuhrubev0NhPLNJH7Gj1fsIvEC3zRPg5TwnHd2A+RpW0/l2qoMEGzXh1BrZRRg==
+
+"@owlui/utils@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@owlui/utils/-/utils-0.0.23.tgz#715ccb1b30a199ed3e9cc3ee07dcd716bd233bc3"
+  integrity sha512-9AwhVOh9NBYhPDyQOZTEIgfDV9GF+lCD/yzy2IU+qEa3H4IB2EjY6xq8cmZ4XG4c/12sY7h5uCgm7k7HaUX8nA==
+  dependencies:
+    "@owlui/theme" "^0.0.23"
+    "@owlui/typings" "^0.0.20"
 
 "@parcel/bundler-default@2.5.0":
   version "2.5.0"
