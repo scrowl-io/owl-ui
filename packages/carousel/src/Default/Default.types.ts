@@ -23,8 +23,4 @@ export interface CarouselDefaultCommons {
   slides: Slide[];
 }
 
-export interface themePrefixesProps {
-  [key: string]: string;
-}
-
 export type CarouselDefaultProps = CarouselDefaultCommons & bs.CarouselProps;
