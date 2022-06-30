@@ -11,7 +11,8 @@
 // };
 
 const alignments = {
-  'flex-row': 'Horizontal',
+  'flex-start': 'Start',
+  'justify-content-end': 'End',
   'justify-content-center': 'Center',
   'flex-column': 'Vertical',
 };
@@ -22,7 +23,7 @@ export const alignment = {
     type: 'select',
     labels: alignments,
   },
-  defaultValue: 'flex-row',
+  defaultValue: 'flex-start',
 };
 
 export default {

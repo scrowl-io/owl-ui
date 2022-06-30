@@ -5,6 +5,7 @@ export interface NavDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
+  alignment?: string;
   disabled?: boolean;
 }
 

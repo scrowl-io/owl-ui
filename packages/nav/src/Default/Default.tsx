@@ -28,17 +28,19 @@ export const Component = (props: NavDefaultProps) => {
           },
           {
             fields: ['alignment'],
-            value: 'Alignment',
+            value: 'alignment',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size']
+    ['prefix', 'theme', 'size', 'alignment']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['nav-link'] = 'owlui-nav-link';
-  themePrefixes['disabled'] = 'owlui-disabled';
+  // themePrefixes['flex-column'] = 'owlui-flex-column';
+  // themePrefixes['flex-end'] = 'owlui-flex-end';
+  // themePrefixes['flex-column'] = 'owlui-flex-column';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
@@ -60,7 +62,7 @@ export const Component = (props: NavDefaultProps) => {
         <Nav.Item>
           <Nav.Link
             eventKey="disabled"
-            className={disabled ? `owlui-disabled` : ''}
+            // className={disabled ? `owlui-disabled` : ''}
             disabled={disabled}
           >
             Disabled
@@ -69,7 +71,7 @@ export const Component = (props: NavDefaultProps) => {
       </Nav>
     </ThemeProvider>
   );
-};
+};;
 
 export default {
   Component,
