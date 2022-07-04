@@ -13,7 +13,7 @@ export const horizontal = {
     type: 'select',
     labels: breakpoints,
   },
-  defaultValue: 'sm',
+  defaultValue: 'null',
 };
 
 export default {

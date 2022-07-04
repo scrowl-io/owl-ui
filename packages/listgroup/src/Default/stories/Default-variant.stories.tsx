@@ -1,20 +1,15 @@
 const variants = {
-  primary: 'Primary',
-  secondary: 'Secondary',
-  success: 'Success',
-  warning: 'Warning',
-  danger: 'Danger',
-  light: 'Light',
-  link: 'Link',
+  full: '',
+  flush: 'flush',
 };
 
 export const variant = {
   options: Object.keys(variants),
   control: {
-    type: 'select',
+    type: 'radio',
     labels: variants,
   },
-  defaultValue: 'primary',
+  defaultValue: 'full',
 };
 
 export default {

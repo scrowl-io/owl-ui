@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ListGroup, ListGroupItem, ThemeProvider } from 'react-bootstrap';
+import React from 'react';
+import { ListGroup, ThemeProvider } from 'react-bootstrap';
 import { ListgroupDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/utils';
@@ -7,7 +7,7 @@ import { createLocalProps, themePrefixesProps } from '@owlui/utils';
 export const Component = (props: ListgroupDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'listgroup';
-  const { items, color } = props;
+  const { items } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -35,17 +35,14 @@ export const Component = (props: ListgroupDefaultProps) => {
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['list-group-item'] = 'owlui-list-group-item';
   themePrefixes['list-group'] = 'owlui-list-group';
+  themePrefixes['list-group-flush'] = 'owlui-list-group-flush';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <ListGroup {...locals}>
         {items.map(item => {
           return (
-            <ListGroup.Item
-              variant={color ? item.variant : ''}
-              action
-              key={item.id}
-            >
+            <ListGroup.Item {...item.bsProps} key={item.id}>
               {item.content}
             </ListGroup.Item>
           );
