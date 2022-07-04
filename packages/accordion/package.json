@@ -29,9 +29,9 @@
     "react": "^18.0.0"
   },
   "dependencies": {
+    "@owlui/lib": "^0.0.24",
     "@owlui/theme": "^0.0.24",
-    "@owlui/typings": "^0.0.21",
-    "@owlui/utils": "^0.0.24",
+    "@owlui/typings": "^0.0.24",
     "react-bootstrap": "2.4.0"
   }
 }

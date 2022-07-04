@@ -1,4 +1,4 @@
-export * from '../../utils/src/index';
+export * from './utils';
 export * from '../../packages/accordion/src/index';
 export * from '../../packages/badge/src/index';
 export * from '../../packages/button/src/index';

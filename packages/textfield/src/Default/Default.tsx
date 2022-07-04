@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TextfieldDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/utils';
+import { createLocalProps } from '@owlui/lib/src/utils';
 
 const baseClass = 'textfield';
 

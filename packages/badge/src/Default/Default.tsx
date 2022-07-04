@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Badge, ThemeProvider } from 'react-bootstrap';
 import { BadgeDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: BadgeDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, Offcanvas } from 'react-bootstrap';
 import { DrawerDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: DrawerDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
