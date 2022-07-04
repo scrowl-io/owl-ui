@@ -7,7 +7,7 @@ import descriptionMd from './Description.md';
 export { Default } from './stories/Default-index.stories';
 
 export default {
-  title: 'Components/Button/Default',
+  title: 'Components/Drawer/Default',
   component: Component,
   parameters: {
     docs: {
@@ -18,12 +18,7 @@ export default {
   },
   decorators: [
     Story => (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-        }}
-      >
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         <Story />
       </div>
     ),

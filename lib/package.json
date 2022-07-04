@@ -32,6 +32,7 @@
     "@owlui/card": "^0.0.24",
     "@owlui/carousel": "^0.0.24",
     "@owlui/closebutton": "^0.0.24",
+    "@owlui/drawer": "^0.0.0",
     "@owlui/dropdown": "^0.0.24",
     "@owlui/icons": "^0.0.24",
     "@owlui/navigationdrawer": "^0.0.24",
