@@ -2237,19 +2237,6 @@
   dependencies:
     "@octokit/openapi-types" "^12.1.0"
 
-"@owlui/typings@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.20.tgz#5459e00f13c652ca7ab90c3631762969c1fd6450"
-  integrity sha512-OU+ls5D1DtZGgn5QKpYisxiKgnOrI5GJGUNreXiQQYD2w5mLFHx//728LSobj5i+aLIMQCkVV52qi5W1pfcArg==
-
-"@owlui/utils@^0.0.24":
-  version "0.0.24"
-  resolved "https://registry.yarnpkg.com/@owlui/utils/-/utils-0.0.24.tgz#107ddc11421dc05c67be8735921bb8e977e1fe88"
-  integrity sha512-orsDg/NkXq2MD+dQt2L04T48NojtxCvwI7NYwTMdiw8VJwaPAm+b4kAoBvjYaUUXDRWquPGK+9IWIvTkv33hIA==
-  dependencies:
-    "@owlui/theme" "^0.0.24"
-    "@owlui/typings" "^0.0.20"
-
 "@parcel/bundler-default@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@parcel/bundler-default/-/bundler-default-2.5.0.tgz#1f0b6d4893bb1a24f49fc7254a423134fb03741e"
