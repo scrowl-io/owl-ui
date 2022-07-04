@@ -1,4 +1,4 @@
-import * as globalMod from '@owlui/theme/src/_index.scss';
+import * as globalMod from '@owlui/theme/dist/owlui.theme.css';
 import { localProp, localStyles, localInnerProps, stringMap } from './types';
 
 export const hasProp = (obj: object, prop: string) => {
