@@ -35,7 +35,6 @@ export const Component = (props: ListgroupDefaultProps) => {
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['list-group-item'] = 'owlui-list-group-item';
   themePrefixes['list-group'] = 'owlui-list-group';
-  themePrefixes['list-group-flush'] = 'owlui-list-group-flush';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>

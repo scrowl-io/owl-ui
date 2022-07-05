@@ -1,8 +1,5 @@
 export const theme = {
-  options: [
-    'Default',
-    'Dark',
-  ],
+  options: ['Default', 'Dark'],
   control: {
     type: 'select',
   },
