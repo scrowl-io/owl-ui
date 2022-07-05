@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, ProgressBar } from 'react-bootstrap';
 import { ProgressBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: ProgressBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

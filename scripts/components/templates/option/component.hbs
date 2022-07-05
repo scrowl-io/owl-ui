@@ -1,19 +1,38 @@
 import * as React from 'react'
 import { Component as Default } from '../Default/Default'
 import { {{{cap}}}{{{optionPas}}}Props } from './{{{optionPas}}}.types'
-import { getCssModClass } from '@owlui/utils'
-import * as styles from './styles.module.scss'
-
-const baseClass = '{{{name}}}{{{optionPas}}}';
+import * as styleMod from './styles.module.scss';
+import { createLocalProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
-  const { children } = props
-  const localProps = Object.assign({}, props)
-  
-  localProps.className = getCssModClass({ localProps, baseClass, styles })
+  const baseClass = '{{{name}}}{{{optionPas}}}';
+  const { children } = props;
+  const prefix = props.prefix || '';
+
+  const locals = createLocalProps(
+    props,
+    {
+      module: styleMod,
+      classes: {
+        base: baseClass,
+        prefix: prefix,
+        optionals: [
+          {
+            fields: ['theme'],
+            value: 'theme',
+          },
+          {
+            fields: ['size'],
+            value: 'Size',
+          },
+        ],
+      },
+    },
+    ['prefix', 'theme', 'size']
+  );
 
   return <Default
-    {...localProps}
+    {...locals}
   >{children}</Default>
 }
 

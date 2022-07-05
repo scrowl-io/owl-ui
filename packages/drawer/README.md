@@ -1,11 +1,11 @@
-# `utils`
+# drawer
 
 > TODO: description
 
 ## Usage
 
 ```
-const utils = require('utils');
+const drawer = require('@owlui/drawer');
 
 // TODO: DEMONSTRATE API
 ```

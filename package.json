@@ -35,7 +35,7 @@
     "update:lib": "node ./scripts/components/cmd.update-lib.js",
     "prebuild:lib": "yarn run update:lib",
     "build:lib": "parcel build lib",
-    "prebuild:system": "yarn run build:theme && yarn run build:utils",
+    "prebuild:system": "yarn run build:theme",
     "build:system": "parcel build packages/* --no-cache",
     "postbuild:system": "yarn run build:lib",
     "prepublish:lerna": "yarn run build:system",
