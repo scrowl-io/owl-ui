@@ -11,7 +11,7 @@
   "description": "Reusable React components.",
   "type": "module",
   "scripts": {
-    "clean": "rimraf ./lib/dist && rimraf ./web/dist && rimraf ./packages/*/*/dist && rimraf ./.parcel-cache",
+    "clean": "rimraf ./lib/dist && rimraf ./web/dist && rimraf ./packages/*/dist && rimraf ./.parcel-cache",
     "clean:deep": "yarn run clean && rimraf ./**/node_modules",
     "create:component": "node ./scripts/components/cmd.create.js",
     "postcreate:component": "yarn run update:lib",
