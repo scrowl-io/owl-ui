@@ -15,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
-    "directory": "packages/lib"
+    "directory": "lib"
   },
   "publishConfig": {
     "access": "public"
@@ -35,8 +35,19 @@
     "./scss-utils": "./src/theme/_utils.scss",
     "./src/theme/assets/*": "./src/theme/assets/*"
   },
+  "sass": {
+    "outFile": "./dist/[folder].css",
+    "includePaths": [
+      "../",
+      "../../",
+      "../node_modules/",
+      "./",
+      "./node_modules/"
+    ]
+  },
   "peerDependencies": {
-    "react": "~18.1.0"
+    "react": "~18.1.0",
+    "react-bootstrap": "2.4.0"
   },
   "dependencies": {
     "@owlui/accordion": "^0.0.26",
@@ -45,6 +56,7 @@
     "@owlui/card": "^0.0.26",
     "@owlui/carousel": "^0.0.26",
     "@owlui/closebutton": "^0.0.26",
+    "@owlui/design": "^0.0.26",
     "@owlui/drawer": "^0.0.26",
     "@owlui/dropdown": "^0.0.26",
     "@owlui/icons": "^0.0.26",
@@ -56,6 +68,7 @@
     "@owlui/tabs": "^0.0.26",
     "@owlui/textfield": "^0.0.26",
     "@owlui/toast": "^0.0.26",
-    "@owlui/typings": "^0.0.26"
+    "@owlui/typings": "^0.0.26",
+    "bootstrap": "5.2.0-beta1"
   }
 }
