@@ -1,0 +1,37 @@
+{
+  "name": "@owlui/modal",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/modal#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.modal.js",
+  "types": "dist/owl.modal.d.ts",
+  "style": "dist/owl.modal.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/modal"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/lib": "^0.0.25",
+    "@owlui/theme": "^0.0.25",
+    "@owlui/typings": "^0.0.25",
+    "react-bootstrap": "2.4.0"
+  }
+}
