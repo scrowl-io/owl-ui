@@ -9,7 +9,7 @@ module.exports = {
   "staticDirs": [
     {
       from: '../lib/src/theme/assets',
-      to: '/~@owlui/lib/src/theme/assets'
+      to: '/lib/src/theme/assets'
     }
   ],
   "stories": ["../packages/**/*.stories.mdx", "../packages/**/*.stories.@(js|jsx|ts|tsx)"],

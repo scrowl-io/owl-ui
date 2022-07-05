@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationDrawerElementProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/utils';
+import { createLocalProps } from '@owlui/lib/src/utils';
 import { Component as NavHeader } from './elements/Header';
 import { Component as NavContent } from './elements/Content';
 

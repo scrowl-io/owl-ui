@@ -2,7 +2,7 @@ import React from 'react';
 import { CloseButton } from 'react-bootstrap';
 import { CloseButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/utils';
+import { createLocalProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: CloseButtonDefaultProps) => {
   const baseClass = 'btn-close';

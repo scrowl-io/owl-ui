@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, Toast } from 'react-bootstrap';
 import { ToastDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: ToastDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

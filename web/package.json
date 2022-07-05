@@ -20,7 +20,6 @@
     "start": "parcel serve --no-cache --open"
   },
   "devDependencies": {
-    "@owlui/parcel-resolver-asset-path": "^0.0.24",
     "@owlui/typings": "^0.0.24",
     "@parcel/core": "2.5.0",
     "@parcel/packager-ts": "2.5.0",
