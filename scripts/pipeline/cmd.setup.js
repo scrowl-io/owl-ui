@@ -32,7 +32,7 @@ const fileMap = {
         .replace(/.material-icons/g, () => {
           return '.icons';
         });
-      const scssImports = `@use './variables.scss' as *;`;
+      const scssImports = `@use './global/variables' as *;`;
 
       contents = `${scssImports}\n\n${contents}\n${outlinedScss}`;
       return contents;
