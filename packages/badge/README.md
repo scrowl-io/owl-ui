@@ -1,11 +1,11 @@
-# `utils`
+# badge
 
 > TODO: description
 
 ## Usage
 
 ```
-const utils = require('utils');
+const badge = require('@owlui/badge');
 
 // TODO: DEMONSTRATE API
 ```

@@ -10,10 +10,14 @@
       "prefix": "owlui-",
       "ignore": [
         "active",
+        "bg-primary",
+        "bg-secondary",
         "bg-success",
         "bg-danger",
         "bg-warning",
         "bg-info",
+        "bg-light",
+        "bg-dark",
         "btn-close",
         "btn-close-white",
         "collapse",
@@ -29,9 +33,13 @@
         "is-invalid",
         "invalid",
         "invalid-feedback",
+<<<<<<< HEAD
         "navbar",
         "navbar-collapse",
         "navbar-nav",
+=======
+        "rounded-pill",
+>>>>>>> main
         "show",
         "showing",
         "text-primary",

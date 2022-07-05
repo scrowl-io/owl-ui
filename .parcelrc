@@ -1,9 +1,5 @@
 {
   "extends": "@parcel/config-default",
-  "reporters": [
-    "...",
-    "@owlui/parcel-reporter-minifier"
-  ],
   "resolvers": [
     "@owlui/parcel-resolver-asset-path",
     "..."

@@ -2237,29 +2237,6 @@
   dependencies:
     "@octokit/openapi-types" "^12.1.0"
 
-"@owlui/design@^0.0.21":
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/@owlui/design/-/design-0.0.21.tgz#6fbc13705100258ea8b36977030313853abd90ff"
-  integrity sha512-fMxWXd5WutRl6ujW47joZr5dVFP7JvmKq6W4IEVvnkCaHCTbD9fVrvhBPeOiSesrisleI0AKJ4VBgnT8U/jKcw==
-
-"@owlui/theme@^0.0.21":
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/@owlui/theme/-/theme-0.0.21.tgz#40c3642bbabdd67bb38387766e69a4a31aae6e7e"
-  integrity sha512-icnM87c8uV1WB6xssbk3GEVLyL9NOfhFlF9FmHyWIRIAxJIuq2hML7ksMRjZKoTKoHIXLbzZSp3kSY40exKOYQ==
-  dependencies:
-    "@owlui/design" "^0.0.21"
-    material-design-icons "^3.0.1"
-
-"@owlui/typings@^0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.20.tgz#5459e00f13c652ca7ab90c3631762969c1fd6450"
-  integrity sha512-OU+ls5D1DtZGgn5QKpYisxiKgnOrI5GJGUNreXiQQYD2w5mLFHx//728LSobj5i+aLIMQCkVV52qi5W1pfcArg==
-
-"@owlui/typings@^0.0.21":
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/@owlui/typings/-/typings-0.0.21.tgz#ecd557c0211f57fc05ab6fcc043b894dc6979d25"
-  integrity sha512-cK/omaNTOV77K34RA0BmyzND6AWdIaIc2Ko0lPmdoVQMV8DiAiwyKQbHI7BZ+Scf2IAc5ZqEh9dJLW4exEhOTg==
-
 "@parcel/bundler-default@2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@parcel/bundler-default/-/bundler-default-2.5.0.tgz#1f0b6d4893bb1a24f49fc7254a423134fb03741e"

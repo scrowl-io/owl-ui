@@ -1,12 +1,12 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "../src/*": ["./*"]
     },
     "types": ["custom-globals", "static-assets"],
-    "typeRoots": ["../node_modules/@types", "../typings"]
+    "typeRoots": ["../../node_modules/@types", "../../typings"]
   },
   "exclude": ["dist/*"]
 }

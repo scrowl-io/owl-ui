@@ -1,4 +1,4 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/theme/src/utils' as theme;
 
 .accordion {
   $ref: &;
