@@ -33,13 +33,7 @@
         "is-invalid",
         "invalid",
         "invalid-feedback",
-<<<<<<< HEAD
-        "navbar",
-        "navbar-collapse",
-        "navbar-nav",
-=======
         "rounded-pill",
->>>>>>> main
         "show",
         "showing",
         "text-primary",
