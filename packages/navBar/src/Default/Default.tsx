@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ThemeProvider,
   Navbar,
@@ -8,13 +8,14 @@ import {
 } from 'react-bootstrap';
 import { NavBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: NavBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'navbar';
-  const { children } = props;
+  const { variant, linkColor } = props;
   const prefix = props.prefix || '';
+  const [expand, setExpand] = useState(true);
 
   const locals = createLocalProps(
     props,
@@ -38,30 +39,22 @@ export const Component = (props: NavBarDefaultProps) => {
     ['prefix', 'theme', 'size']
   );
 
-  // themePrefixes[baseClass] = `owlui-${baseClass}`;
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 768) {
+        setExpand(false);
+      } else {
+        setExpand(true);
+      }
+    }
 
-  themePrefixes['navbar-expand-lg'] = `owlui-navbar-expand-lg`;
+    window.addEventListener('resize', handleResize);
+  });
 
-  themePrefixes['collapse'] = `owlui-collapse`;
-
-  themePrefixes['collapsed'] = `owlui-collapsed`;
-
-  themePrefixes['dropdown'] = `owlui-dropdown`;
-
-  themePrefixes['container'] = `owlui-container`;
-
-  themePrefixes['navbar-light'] = `owlui-navbar-light`;
-
-  themePrefixes['navbar-bg-light'] = `owlui-navbar-bg-light`;
   themePrefixes['navbar-brand'] = `owlui-navbar-brand`;
   themePrefixes['basic-navbar-nav'] = `owlui-navbar-basic-navbar-nav`;
   themePrefixes['navbar-toggler'] = 'owlui-navbar-toggler';
-  themePrefixes['collapsed'] = 'owlui-collapsed';
-
   themePrefixes['navbar-toggler-icon'] = `owlui-navbar-toggler-icon`;
-
-  themePrefixes['navbar-collapse'] = `owlui-navbar-collapse`;
-
   themePrefixes['navbar-nav'] = `owlui-navbar-nav`;
   themePrefixes['dropdown-toggle'] = `owlui-dropdown-toggle`;
   themePrefixes['nav-link'] = `owlui-nav-link`;
@@ -70,13 +63,20 @@ export const Component = (props: NavBarDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Navbar {...locals} bg="light" expand="lg">
+      <Navbar
+        bg={variant}
+        variant={linkColor}
+        bsPrefix="navbar"
+        expand={expand}
+      >
         <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand {...locals} href="#home">
+            React-Bootstrap
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             {' '}
-            <Nav className="owlui-me-auto">
+            <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">

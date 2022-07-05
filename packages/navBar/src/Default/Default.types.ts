@@ -6,6 +6,7 @@ export interface NavBarDefaultCommons {
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   bsPrefix?: string;
+  linkColor?: 'light' | 'dark' | undefined;
 }
 
 export type NavBarDefaultProps = Partial<NavBarDefaultCommons> & bs.NavbarProps;
