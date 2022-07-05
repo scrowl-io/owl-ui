@@ -22,8 +22,20 @@
   },
   "isLibrary": true,
   "outputFormat": "commonjs",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.lib.js",
+      "default": "./dist/owl.lib.js",
+      "import": "./src/index.ts"
+    },
+    "./utils": "./src/utils/index.ts",
+    "./style": "./dist/owl.lib.css",
+    "./theme": "./src/theme/_index.scss",
+    "./scss-utils": "./src/theme/_utils.scss",
+    "./src/theme/assets/*": "./src/theme/assets/*"
+  },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "~18.1.0"
   },
   "dependencies": {
     "@owlui/accordion": "^0.0.24",
@@ -42,7 +54,6 @@
     "@owlui/table": "^0.0.24",
     "@owlui/tabs": "^0.0.24",
     "@owlui/textfield": "^0.0.24",
-    "@owlui/theme": "^0.0.24",
     "@owlui/toast": "^0.0.24",
     "@owlui/typings": "^0.0.24"
   }

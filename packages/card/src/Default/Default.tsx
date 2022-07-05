@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Card, ThemeProvider } from 'react-bootstrap';
 import { CardDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/src/utils';
+import { createLocalProps } from '@owlui/lib/utils';
 
 export const Component = (props: CardDefaultProps) => {
   const baseClass = 'card';

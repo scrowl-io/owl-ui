@@ -4,16 +4,16 @@ const { pathToFileURL } = require('url');
 module.exports = new Resolver({
   async resolve({ dependency, options, specifier }) {
     const nodeModuleRegex = /node_modules\//g;
-    const themePackageRegex = /@owlui\/theme\//g;
+    const themePackageRegex = /@owlui\/lib\//g;
     const isNodeModule = specifier.match(nodeModuleRegex);
-    const isThemePackage = specifier.match(themePackageRegex);
+    const isLibPackage = specifier.match(themePackageRegex);
 
     if (
       dependency.specifierType === 'url' &&
       dependency.loc &&
-      (isNodeModule || isThemePackage)
+      (isNodeModule || isLibPackage)
     ) {
-      const url = isThemePackage
+      const url = isLibPackage
         ? `${specifier.replace('~@owlui', '.')}`
         : specifier;
       return {

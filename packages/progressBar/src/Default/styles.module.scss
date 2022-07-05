@@ -1,8 +1,8 @@
-@use '@owlui/theme/src/utils' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .progress {
   $ref: &;
-  @include theme.typeface-sm;
+  @include utils.typeface-sm;
 
   &-primary {
     &.theme--dark {
@@ -11,21 +11,21 @@
       // Storybook to check out the variables to be updated
       // --bs-btn-color: var(--color-font-light);
       // --bs-btn-bg: var(--bs-gray-500);
-      // --bs-btn-border-color: #{theme.$owl-ref-palette-gray-500};
+      // --bs-btn-border-color: #{utils.$owl-ref-palette-gray-500};
     }
   }
 
   &#{$ref}--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }

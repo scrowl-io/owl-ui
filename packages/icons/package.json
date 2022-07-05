@@ -29,8 +29,7 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/theme": "^0.0.24",
-    "@owlui/typings": "^0.0.24",
-    "@owlui/lib": "^0.0.24"
+    "@owlui/lib": "^0.0.24",
+    "@owlui/typings": "^0.0.24"
   }
 }
