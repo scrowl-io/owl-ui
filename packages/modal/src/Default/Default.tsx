@@ -39,18 +39,18 @@ export const Component = (props: ModalDefaultProps) => {
   themePrefixes['modal-content'] = 'owlui-modal-content';
   themePrefixes['modal-title'] = 'owlui-modal-title';
 
-  console.log(locals);
-
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Modal {...locals}>
+      <Modal {...locals} {...modalContent}>
         <Modal.Header {...modalContent.header}>
           <Modal.Title>{modalContent.header.content}</Modal.Title>
         </Modal.Header>
         <Modal.Body {...modalContent.body}>
           {modalContent.body.content}
         </Modal.Body>
-        <Modal.Footer>test test</Modal.Footer>
+        <Modal.Footer {...modalContent.footer}>
+          {modalContent.footer.content}
+        </Modal.Footer>
       </Modal>
     </ThemeProvider>
   );

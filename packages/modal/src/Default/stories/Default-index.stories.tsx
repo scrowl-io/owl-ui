@@ -5,8 +5,14 @@ import { ModalDefaultProps } from '../Default.types';
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
+import { fullscreen } from './Default-fullscreen.stories';
+import { centered } from './Default-centered.stories';
+import { scrollable } from './Default-scrollable.stories';
+
+import { Button } from '@owlui/lib';
 
 const modalContent = {
+  size: 'md',
   header: {
     closeButton: true,
     closeLabel: 'Close',
@@ -14,7 +20,21 @@ const modalContent = {
     content: <h2>Modal Header</h2>,
   },
   body: {
-    content: <p>Inside the modal body.</p>,
+    content: (
+      <>
+        <h6>Inside the modal body</h6>
+        <hr />
+        <p>Example of text inside the modal body.</p>
+      </>
+    ),
+  },
+  footer: {
+    content: (
+      <>
+        <Button>Save Changes</Button>
+        <Button variant="danger">Close</Button>
+      </>
+    ),
   },
 };
 
@@ -26,9 +46,7 @@ export const Default = (args: ModalDefaultProps) => {
   return (
     <div>
       <button onClick={toggleModal}>Click Me</button>
-      <Modal {...args} show={showModal} onHide={toggleModal}>
-        Hello World
-      </Modal>
+      <Modal {...args} show={showModal} onHide={toggleModal} />
     </div>
   );
 };
@@ -38,10 +56,16 @@ Default.args = {
   size: size.defaultValue,
   theme: theme.defaultValue,
   modalContent: modalContent,
+  fullscreen: fullscreen.defaultValue,
+  centered: centered.defaultValue,
+  scrollable: scrollable.defaultValue,
 };
 
 Default.argTypes = {
   variant,
   size,
   theme,
+  fullscreen,
+  centered,
+  scrollable,
 };
