@@ -2,7 +2,7 @@ import React from 'react';
 import { ListGroup, ThemeProvider } from 'react-bootstrap';
 import { ListgroupDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src';
 
 export const Component = (props: ListgroupDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

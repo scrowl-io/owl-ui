@@ -35,6 +35,7 @@
     "@owlui/drawer": "^0.0.25",
     "@owlui/dropdown": "^0.0.25",
     "@owlui/icons": "^0.0.25",
+    "@owlui/listgroup": "^0.0.0",
     "@owlui/navigationdrawer": "^0.0.25",
     "@owlui/progressbar": "^0.0.25",
     "@owlui/spinner": "^0.0.25",
