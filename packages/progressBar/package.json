@@ -1,6 +1,6 @@
 {
   "name": "@owlui/progressbar",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/progressBar#readme",
   "license": "MIT",
@@ -29,9 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.25",
-    "@owlui/theme": "^0.0.25",
-    "@owlui/typings": "^0.0.25",
+    "@owlui/lib": "^0.0.26",
+    "@owlui/typings": "^0.0.26",
     "react-bootstrap": "2.4.0"
   }
 }
