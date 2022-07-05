@@ -12,7 +12,7 @@ function setDest(filename) {
 
 function addDep(depName) {
   if (!dependencies[depName]) {
-    exec(`lerna add ${types.name} --scope=@owlui/lib`);
+    exec(`lerna add ${depName} --scope=@owlui/lib`);
   }
 }
 
