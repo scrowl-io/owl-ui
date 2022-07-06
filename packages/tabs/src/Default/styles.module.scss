@@ -1,4 +1,4 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .nav-tabs {
   --bs-nav-tabs-border-width: 1px;
@@ -15,15 +15,15 @@
 
   &--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@owlui/lib",
-  "version": "0.0.23",
+  "version": "0.0.27",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/lib#readme",
   "license": "MIT",
@@ -15,35 +15,60 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
-    "directory": "packages/lib"
+    "directory": "lib"
   },
   "publishConfig": {
     "access": "public"
   },
   "isLibrary": true,
   "outputFormat": "commonjs",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.lib.js",
+      "default": "./dist/owl.lib.js",
+      "import": "./src/index.ts"
+    },
+    "./utils": "./src/utils/index.ts",
+    "./src/utils": "./src/utils/index.ts",
+    "./style": "./dist/owl.lib.css",
+    "./theme": "./src/theme/_index.scss",
+    "./scss-utils": "./src/theme/_utils.scss",
+    "./src/theme/assets/*": "./src/theme/assets/*"
+  },
+  "sass": {
+    "outFile": "./dist/[folder].css",
+    "includePaths": [
+      "../",
+      "../../",
+      "../node_modules/",
+      "./",
+      "./node_modules/"
+    ]
+  },
   "peerDependencies": {
-    "react": "^18.0.0"
+    "react": "~18.1.0",
+    "react-bootstrap": "2.4.0"
   },
   "dependencies": {
-    "@owlui/accordion": "^0.0.23",
-    "@owlui/button": "^0.0.23",
-    "@owlui/card": "^0.0.23",
-    "@owlui/carousel": "^0.0.23",
-    "@owlui/closebutton": "^0.0.23",
-    "@owlui/dropdown": "^0.0.23",
-    "@owlui/icons": "^0.0.23",
-    "@owlui/navigationdrawer": "^0.0.23",
-    "@owlui/progressbar": "^0.0.23",
-    "@owlui/spinner": "^0.0.23",
-    "@owlui/switchtoggle": "^0.0.23",
-    "@owlui/table": "^0.0.23",
-    "@owlui/tabs": "^0.0.23",
-    "@owlui/textfield": "^0.0.23",
-    "@owlui/theme": "^0.0.23",
-    "@owlui/toast": "^0.0.23",
-    "@owlui/tooltip": "^0.0.0",
-    "@owlui/typings": "^0.0.23",
-    "@owlui/utils": "^0.0.23"
+    "@owlui/accordion": "^0.0.27",
+    "@owlui/badge": "^0.0.27",
+    "@owlui/button": "^0.0.27",
+    "@owlui/card": "^0.0.27",
+    "@owlui/carousel": "^0.0.27",
+    "@owlui/closebutton": "^0.0.27",
+    "@owlui/design": "^0.0.27",
+    "@owlui/drawer": "^0.0.27",
+    "@owlui/dropdown": "^0.0.27",
+    "@owlui/icons": "^0.0.27",
+    "@owlui/navigationdrawer": "^0.0.27",
+    "@owlui/progressbar": "^0.0.27",
+    "@owlui/spinner": "^0.0.27",
+    "@owlui/switchtoggle": "^0.0.27",
+    "@owlui/table": "^0.0.27",
+    "@owlui/tabs": "^0.0.27",
+    "@owlui/textfield": "^0.0.27",
+    "@owlui/toast": "^0.0.27",
+    "@owlui/typings": "^0.0.27",
+    "bootstrap": "5.2.0-beta1"
   }
 }

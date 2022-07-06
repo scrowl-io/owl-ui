@@ -1,17 +1,17 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 $border-clr: #dadada;
 
 .navigation-drawer {
   $ref-subheader: &;
 
-  @include theme.typeface-sm;
+  @include utils.typeface-sm;
   min-width: 200px;
   box-shadow: 5px 5px 12px 1px rgb(0 0 0 / 15%);
   border: 1px solid $border-clr;
 
   &__header {
-    @include theme.typeface-md;
+    @include utils.typeface-md;
     padding: var(--spacer) 1rem;
   }
 
@@ -21,7 +21,7 @@ $border-clr: #dadada;
     &-subheader {
       $ref-subheader: &;
 
-      @include theme.typeface-xs;
+      @include utils.typeface-xs;
       color: var(--color-font-dark-highlight);
       margin: var(--spacer) 0 0 0;
       padding: 0.25rem 0.5rem;

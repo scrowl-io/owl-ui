@@ -1,4 +1,4 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .table {
   $ref: &;
@@ -7,7 +7,7 @@
     &.theme--dark {
       --bs-table-color: var(--color-font-light);
       --bs-table-bg: var(--bs-gray-600);
-      --bs-table-border-color: #{theme.$owl-ref-palette-gray-500};
+      --bs-table-border-color: #{utils.$owl-ref-palette-gray-500};
       --bs-table-striped-bg: var(--bs-gray-500);
       --bs-table-striped-color: var(--color-font-light);
       --bs-table-active-bg: var(--bs-gray-400);
@@ -19,15 +19,15 @@
 
   &#{$ref}--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }
