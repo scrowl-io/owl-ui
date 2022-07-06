@@ -7,7 +7,7 @@ import {
 } from 'react-bootstrap';
 import { TooltipDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: TooltipDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
