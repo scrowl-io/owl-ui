@@ -9,7 +9,7 @@ import { fullscreen } from './Default-fullscreen.stories';
 import { centered } from './Default-centered.stories';
 import { scrollable } from './Default-scrollable.stories';
 
-import { Button } from '@owlui/lib';
+import { Button } from '../../../../button/src/index';
 
 const modalContent = {
   size: 'md',
@@ -32,7 +32,6 @@ const modalContent = {
     content: (
       <>
         <Button>Save Changes</Button>
-        <Button variant="danger">Close</Button>
       </>
     ),
   },

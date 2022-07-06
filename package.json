@@ -27,7 +27,7 @@
     "setup": "lerna bootstrap --use-workspaces",
     "postinstall": "yarn run setup",
     "clean": "rimraf ./lib/dist && rimraf ./web/dist && rimraf ./packages/*/dist && rimraf ./.parcel-cache",
-    "clean:deep": "yarn run clean && rimraf ./**/node_modules",
+    "clean:deep": "yarn run clean && rimraf ./**/*/node_modules",
     "create:icon": "node ./scripts/components/cmd.create-icon.js",
     "update:icons": "node ./scripts/components/cmd.update-icons.js",
     "create:component": "node ./scripts/components/cmd.create.js",
