@@ -1,9 +1,9 @@
-@use '@owlui/theme/src/utils' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .btn {
   $ref: &;
 
-  @include theme.typeface-sm;
+  @include utils.typeface-sm;
 
   &-primary {
     &.theme--dark {
@@ -11,12 +11,12 @@
       // you can use css vars or scss vars
       --bs-btn-color: var(--color-font-light);
       --bs-btn-bg: var(--bs-gray-500);
-      --bs-btn-border-color: #{theme.$owl-ref-palette-gray-500};
+      --bs-btn-border-color: #{utils.$owl-ref-palette-gray-500};
       --bs-btn-hover-color: var(--bs-light);
-      --bs-btn-hover-bg: #{theme.$owl-ref-palette-gray-700};
+      --bs-btn-hover-bg: #{utils.$owl-ref-palette-gray-700};
       --bs-btn-hover-border-color: var(--bs-gray-800);
       --bs-btn-focus-shadow-rgb: 49, 132, 253;
-      --bs-btn-active-color: #{theme.$owl-ref-palette-white};
+      --bs-btn-active-color: #{utils.$owl-ref-palette-white};
       --bs-btn-active-bg: var(--bs-gray-800);
       --bs-btn-active-border-color: var(--bs-gray-800);
       --bs-btn-active-shadow: inset 0 3px 5px rgb(0 0 0 / 12.5%);
@@ -28,15 +28,15 @@
 
   &#{$ref}--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }

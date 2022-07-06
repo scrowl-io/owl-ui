@@ -1,6 +1,6 @@
 {
   "name": "@owlui/spinner",
-  "version": "0.0.25",
+  "version": "0.0.27",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/spinner#readme",
   "license": "MIT",
@@ -29,9 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.25",
-    "@owlui/theme": "^0.0.25",
-    "@owlui/typings": "^0.0.25",
+    "@owlui/lib": "^0.0.27",
+    "@owlui/typings": "^0.0.27",
     "react-bootstrap": "2.4.0"
   }
 }
