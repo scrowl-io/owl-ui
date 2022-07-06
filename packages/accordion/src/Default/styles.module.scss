@@ -1,10 +1,10 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .accordion {
   $ref: &;
   width: 100%;
 
-  @include theme.typeface-sm;
+  @include utils.typeface-sm;
 
   &.theme--dark {
     --bs-accordion-color: var(--color-font-light);
@@ -13,15 +13,15 @@
 
   &#{$ref}--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }

@@ -1,4 +1,4 @@
-@use '@owlui/theme/src' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .textfield {
   padding: var(--spacer);
@@ -23,15 +23,15 @@
 
   &--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }

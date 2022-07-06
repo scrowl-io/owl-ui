@@ -4,8 +4,16 @@ import locations from '../utls/locations.js';
 import strs from '../utls/strings.js';
 import { compile } from './templater.js';
 
+const { dependencies } = fs.getFile('lib/package.json');
+
 function setDest(filename) {
   return `lib/src/${filename}`;
+}
+
+function addDep(depName) {
+  if (!dependencies[depName]) {
+    exec(`lerna add ${depName} --scope=@owlui/lib`);
+  }
 }
 
 function update() {
@@ -21,7 +29,7 @@ function update() {
   };
   const types = fs.getFile('typings/package.json');
 
-  exec(`lerna add ${types.name} --scope=@owlui/lib`);
+  addDep(types.name);
 
   for (let pkg in pkgs) {
     const component = `@owlui/${pkg}`;
@@ -38,7 +46,7 @@ function update() {
       path: `../..${pkgPath}`,
     });
 
-    exec(`lerna add ${component} --scope=@owlui/lib`);
+    addDep(component);
   }
 
   data.components = data.components.sort();
