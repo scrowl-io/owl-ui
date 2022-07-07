@@ -7,6 +7,8 @@ import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 import { alignment } from './Default-alignment.stories';
 
+import { navLinks } from './Default-navLinks.stories';
+
 export const Default = (args: NavDefaultProps) => (
   <Nav {...args}>Hello World</Nav>
 );
@@ -16,7 +18,7 @@ Default.args = {
   size: size.defaultValue,
   theme: theme.defaultValue,
   alignment: alignment.defaultValue,
-  disabled: true,
+  navLinks: navLinks,
 };
 
 Default.argTypes = {
@@ -24,4 +26,5 @@ Default.argTypes = {
   size,
   theme,
   alignment,
+  navLinks,
 };

@@ -1,15 +1,3 @@
-// export const alignment = {
-//   options: ['Horizontal', 'Center', 'Vertical'],
-//   control: {
-//     type: 'select',
-//   },
-//   defaultValue: 'Horizontal',
-// };
-
-// export default {
-//   alignment,
-// };
-
 const alignments = {
   'flex-start': 'Start',
   'justify-content-end': 'End',

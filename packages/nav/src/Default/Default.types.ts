@@ -6,6 +6,14 @@ export interface NavDefaultCommons {
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   alignment?: string;
+  navLinks?: Array<NavLinks>;
+  disabled?: boolean;
+}
+
+export interface NavLinks {
+  eventKey?: string;
+  label?: string;
+  href?: string;
   disabled?: boolean;
 }
 

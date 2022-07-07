@@ -27,6 +27,7 @@
         "disabled",
         "fade",
         "flex-column",
+        "flex-end",
         "flex-start",
         "hiding",
         "invisible",
@@ -34,12 +35,9 @@
         "is-invalid",
         "invalid",
         "invalid-feedback",
-<<<<<<< HEAD
         "justify-content-center",
         "justify-content-end",
-=======
         "rounded-pill",
->>>>>>> main
         "show",
         "showing",
         "text-primary",

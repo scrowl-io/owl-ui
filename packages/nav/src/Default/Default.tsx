@@ -1,13 +1,13 @@
-import * as React from 'react';
+import React from 'react';
 import { ThemeProvider, Nav } from 'react-bootstrap';
 import { NavDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: NavDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'nav';
-  const { disabled, alignment } = props;
+  const { alignment, navLinks } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -33,45 +33,37 @@ export const Component = (props: NavDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'alignment']
+    ['prefix', 'theme', 'size', 'alignment', 'navLinks']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['nav-link'] = 'owlui-nav-link';
-  // themePrefixes['flex-column'] = 'owlui-flex-column';
-  // themePrefixes['flex-end'] = 'owlui-flex-end';
-  // themePrefixes['flex-column'] = 'owlui-flex-column';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Nav
         {...locals}
         className={`${alignment}`}
-        activeKey="/home"
+        activeKey="link-5"
         onSelect={selectedKey => alert(`selected ${selectedKey}`)}
       >
-        <Nav.Item>
-          <Nav.Link href="/home">Active</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            eventKey="disabled"
-            // className={disabled ? `owlui-disabled` : ''}
-            disabled={disabled}
-          >
-            Disabled
-          </Nav.Link>
-        </Nav.Item>
+        {navLinks?.map(navLink => {
+          return (
+            <Nav.Item key={navLink.eventKey}>
+              <Nav.Link
+                disabled={navLink.disabled}
+                eventKey={navLink.eventKey}
+                href={navLink.href}
+              >
+                {navLink.label}
+              </Nav.Link>
+            </Nav.Item>
+          );
+        })}
       </Nav>
     </ThemeProvider>
   );
-};;
+};
 
 export default {
   Component,

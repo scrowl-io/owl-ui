@@ -50,27 +50,6 @@
     "react-bootstrap": "2.4.0"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@owlui/accordion": "^0.0.23",
-    "@owlui/button": "^0.0.23",
-    "@owlui/card": "^0.0.23",
-    "@owlui/carousel": "^0.0.23",
-    "@owlui/closebutton": "^0.0.23",
-    "@owlui/dropdown": "^0.0.23",
-    "@owlui/icons": "^0.0.23",
-    "@owlui/nav": "^0.0.0",
-    "@owlui/navigationdrawer": "^0.0.23",
-    "@owlui/progressbar": "^0.0.23",
-    "@owlui/spinner": "^0.0.23",
-    "@owlui/switchtoggle": "^0.0.23",
-    "@owlui/table": "^0.0.23",
-    "@owlui/tabs": "^0.0.23",
-    "@owlui/textfield": "^0.0.23",
-    "@owlui/theme": "^0.0.23",
-    "@owlui/toast": "^0.0.23",
-    "@owlui/typings": "^0.0.23",
-    "@owlui/utils": "^0.0.23"
-=======
     "@owlui/accordion": "^0.0.27",
     "@owlui/badge": "^0.0.27",
     "@owlui/button": "^0.0.27",
@@ -91,6 +70,5 @@
     "@owlui/toast": "^0.0.27",
     "@owlui/typings": "^0.0.27",
     "bootstrap": "5.2.0-beta1"
->>>>>>> main
   }
 }
