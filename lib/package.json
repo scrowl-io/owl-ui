@@ -59,6 +59,7 @@
     "@owlui/design": "^0.0.27",
     "@owlui/drawer": "^0.0.27",
     "@owlui/dropdown": "^0.0.27",
+    "@owlui/form": "^0.0.0",
     "@owlui/icons": "^0.0.27",
     "@owlui/navigationdrawer": "^0.0.27",
     "@owlui/progressbar": "^0.0.27",
