@@ -24,17 +24,25 @@
         "collapsed",
         "collapse-horizontal",
         "collapsing",
+<<<<<<< HEAD
         "container",
         "dropdown",
         "dropdown-item",
         "dropdown-menu",
+=======
+        "disabled",
+>>>>>>> sc-901-feature-create-nav
         "fade",
+        "flex-column",
+        "flex-end",
+        "flex-start",
         "hiding",
         "invisible",
         "is-valid",
         "is-invalid",
         "invalid",
         "invalid-feedback",
+<<<<<<< HEAD
         "me-auto",
         "navbar",
         "navbar-collapse",
@@ -42,6 +50,10 @@
         "navbar-light",
         "navbar-expand",
         "navbar-nav",
+=======
+        "justify-content-center",
+        "justify-content-end",
+>>>>>>> sc-901-feature-create-nav
         "rounded-pill",
         "show",
         "showing",

@@ -1,7 +1,8 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
-.nav-bar {
+.nav {
   $ref: &;
+  
   @include utils.typeface-sm;
 
   &-primary {
