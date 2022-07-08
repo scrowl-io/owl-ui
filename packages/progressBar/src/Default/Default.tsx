@@ -29,7 +29,7 @@ export const Component = (props: ProgressBarDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size']
+    ['prefix', 'theme', 'size', 'showLabel']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

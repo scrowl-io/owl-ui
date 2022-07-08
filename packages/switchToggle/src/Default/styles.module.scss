@@ -1,4 +1,4 @@
-@use '@owlui/theme/src/utils' as theme;
+@use '@owlui/lib/src/theme/utils' as utils;
 
 .switchToggle {
   $ref: &;
@@ -13,15 +13,15 @@
 
   &--size {
     &-lg {
-      @include theme.typeface-lg;
+      @include utils.typeface-lg;
     }
 
     &-md {
-      @include theme.typeface-md;
+      @include utils.typeface-md;
     }
 
     &-sm {
-      @include theme.typeface-sm;
+      @include utils.typeface-sm;
     }
   }
 }
