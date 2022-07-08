@@ -4,7 +4,6 @@ import * as styles from '../styles.module.scss';
 
 const baseClass = 'owluiNavigationDrawerItem';
 const linkClass = `${baseClass}Link`;
-
 export const Component = (props: NavigationDrawerContentItemProps) => {
   const { label, url } = props;
   const content = !url ? (
