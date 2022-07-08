@@ -8,7 +8,6 @@ export interface ListgroupItemProps {
 
 export interface ListgroupDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   items: ListgroupItemProps[];
 }
