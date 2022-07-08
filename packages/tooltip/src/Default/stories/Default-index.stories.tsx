@@ -9,24 +9,18 @@ import { popover } from './Default-popover.stories';
 import { placement } from './Default-placement.stories';
 
 const DemoParagraphOne = () => (
-  <p>This is a paragraph to demonstrate the use of the&nbsp;</p>
+  <p style={{ display: 'inline' }}>
+    This is a paragraph to demonstrate the&nbsp;
+  </p>
 );
 
-const DemoParagraphTwo = () => <p>. Wrap your tooltips in blocks of text.</p>;
+const DemoParagraphTwo = () => (
+  <p style={{ display: 'inline' }}>. Wrap your tooltips in blocks of text.</p>
+);
 
 export const Default = (args: TooltipDefaultProps) => {
   // const rootClose = true;
   const header = 'Popover Header';
-
-  // const DemoPararaph = () => {
-  //   return (
-  //     <p>
-  //       This is another paragraph. We should be able to splice tooltips into a
-  //       single paragraph, {targetElement} rather than wrap them with many p
-  //       elements.
-  //     </p>
-  //   );
-  // };
 
   const targetElement = (props: object) => {
     return (
@@ -56,7 +50,6 @@ export const Default = (args: TooltipDefaultProps) => {
         <p>Inside the tooltip</p>
       </Tooltip>
       <DemoParagraphTwo />
-      {/* <DemoPararaph /> */}
     </>
   );
 };
