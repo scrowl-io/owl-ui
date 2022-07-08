@@ -9,6 +9,7 @@ export * from '../../packages/drawer/src/index';
 export * from '../../packages/dropdown/src/index';
 export * from '../../packages/icons/src/index';
 export * from '../../packages/modal/src/index';
+export * from '../../packages/listgroup/src/index';
 export * from '../../packages/navigationDrawer/src/index';
 export * from '../../packages/progressBar/src/index';
 export * from '../../packages/spinner/src/index';

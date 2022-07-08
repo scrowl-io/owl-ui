@@ -1,13 +1,13 @@
 import React from 'react';
-import { ThemeProvider, ProgressBar } from 'react-bootstrap';
-import { ProgressBarDefaultProps } from './Default.types';
+import { ListGroup, ThemeProvider } from 'react-bootstrap';
+import { ListgroupDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
-export const Component = (props: ProgressBarDefaultProps) => {
+export const Component = (props: ListgroupDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const baseClass = 'progress';
-  const { now, variant, showLabel } = props;
+  const baseClass = 'list-group';
+  const { items } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -22,27 +22,27 @@ export const Component = (props: ProgressBarDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['size'],
-            value: 'Size',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'showLabel']
+    ['prefix', 'theme', 'items']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes[`${baseClass}-bar`] = `owlui-${baseClass}-bar`;
+  themePrefixes['list-group-item'] = `owlui-${baseClass}-item`;
+  themePrefixes['list-group'] = `owlui-${baseClass}`;
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <ProgressBar
-        {...locals}
-        variant={variant}
-        label={showLabel ? `${now}%` : ''}
-        style={showLabel ? { height: 'auto' } : undefined}
-      />
+      <ListGroup {...locals}>
+        {items.map(item => {
+          return (
+            <ListGroup.Item {...item.bsProps} key={item.id}>
+              {item.content}
+            </ListGroup.Item>
+          );
+        })}
+      </ListGroup>
     </ThemeProvider>
   );
 };
