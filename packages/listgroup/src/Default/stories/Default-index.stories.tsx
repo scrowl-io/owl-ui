@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Listgroup } from '../index';
 import { ListgroupDefaultProps, ListgroupItemProps } from '../Default.types';
 
-import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 import { numbered } from './Default-numbered.stories';
 import { horizontal } from './Default-horizontal.stories';
@@ -48,7 +47,6 @@ const items: ListgroupItemProps[] = [
 export const Default = (args: ListgroupDefaultProps) => <Listgroup {...args} />;
 
 Default.args = {
-  size: size.defaultValue,
   theme: theme.defaultValue,
   numbered: numbered.defaultValue,
   horizontal: horizontal.defaultValue,
@@ -57,7 +55,6 @@ Default.args = {
 };
 
 Default.argTypes = {
-  size,
   theme,
   numbered,
   horizontal,

@@ -22,14 +22,10 @@ export const Component = (props: ListgroupDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['size'],
-            value: 'Size',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'items']
+    ['prefix', 'theme', 'items']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
