@@ -6,7 +6,7 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: ListgroupDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const baseClass = 'listgroup';
+  const baseClass = 'list-group';
   const { items } = props;
   const prefix = props.prefix || '';
 
@@ -29,8 +29,8 @@ export const Component = (props: ListgroupDefaultProps) => {
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes['list-group-item'] = 'owlui-list-group-item';
-  themePrefixes['list-group'] = 'owlui-list-group';
+  themePrefixes['list-group-item'] = `owlui-${baseClass}-item`;
+  themePrefixes['list-group'] = `owlui-${baseClass}`;
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
