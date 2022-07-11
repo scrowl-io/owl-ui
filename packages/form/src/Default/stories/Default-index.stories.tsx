@@ -8,33 +8,35 @@ import { theme } from './Default-theme.stories';
 
 const formFields = [
   {
-    id: '1',
+    id: 1,
     label: 'Email Address',
     controlId: 'formEmail',
     type: 'email',
-    formProps: {
+    fieldProps: {
       placeholder: 'Enter your email',
       text: 'We will never share your email with anyone else',
     },
   },
   {
-    id: '2',
+    id: 2,
     label: 'Password',
     controlId: 'formPassword',
     type: 'password',
-    formProps: {
+    fieldProps: {
       placeholder: 'Password',
     },
   },
   {
+    id: 3,
     label: 'Check me out',
     controlId: 'formCheck',
     type: 'checkbox',
   },
   {
+    id: 4,
     label: 'Please Select',
     type: 'select',
-    formProps: {
+    fieldProps: {
       options: [
         {
           id: '1',
@@ -49,6 +51,15 @@ const formFields = [
           label: 'Third Option',
         },
       ],
+    },
+  },
+  {
+    id: 5,
+    label: 'Range Example',
+    type: 'range',
+    fieldProps: {
+      min: 0,
+      max: 20,
     },
   },
 ];
