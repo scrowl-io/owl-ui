@@ -8,11 +8,7 @@ export * from '../../packages/closeButton/src/index';
 export * from '../../packages/drawer/src/index';
 export * from '../../packages/dropdown/src/index';
 export * from '../../packages/icons/src/index';
-<<<<<<< HEAD
-export * from '../../packages/navBar/src/index';
-=======
 export * from '../../packages/nav/src/index';
->>>>>>> sc-901-feature-create-nav
 export * from '../../packages/navigationDrawer/src/index';
 export * from '../../packages/progressBar/src/index';
 export * from '../../packages/spinner/src/index';

@@ -20,7 +20,7 @@ const items: Array<NavigationDrawerContentTypes> = [
 ];
 
 export const Default = (args: NavigationDrawerElementProps) => (
-  <NavigationDrawer {...args}>Hello World</NavigationDrawer>
+  <NavigationDrawer {...args} />
 );
 
 Default.args = {

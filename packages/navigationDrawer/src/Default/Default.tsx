@@ -12,12 +12,13 @@ import {
   Nav,
 } from 'react-bootstrap';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/src/utils';
+import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 import { Component as NavHeader } from './elements/Header';
 import { Component as NavContent } from './elements/Content';
 
 export const Component = (props: NavigationDrawerElementProps) => {
-  const baseClass = 'navigationDrawer';
+  const themePrefixes: themePrefixesProps = {};
+  const baseClass = 'navbar';
   const { header, items } = props;
   const prefix = props.prefix || '';
 
@@ -50,21 +51,44 @@ export const Component = (props: NavigationDrawerElementProps) => {
   const Header = header ? <NavHeader>{header}</NavHeader> : '';
   const Content = items ? <NavContent items={items} /> : '';
 
+  themePrefixes['navbar-toggler'] = `owlui-navbar-toggler`;
+  themePrefixes['navbar-nav'] = `owlui-navbar-nav`;
+  themePrefixes['offcanvas-header'] = `owlui-offcanvas-header`;
+  themePrefixes['offcanvas-body'] = `owlui-offcanvas-body`;
+  themePrefixes['offcanvas'] = `owlui-offcanvas`;
+  themePrefixes['offcanvas-end'] = `owlui-offcanvas-end`;
+
+  themePrefixes['navbar-toggler-icon'] = `owlui-navbar-toggler-icon`;
+  themePrefixes['nav-link'] = 'owlui-nav-link';
+  themePrefixes['btn-outline-success'] = 'owlui-btn-outline-success';
+  themePrefixes['basic-nav-dropdown'] = `owlui-basic-nav-dropdown`;
+  themePrefixes['offcanvas-title'] = `owlui-offcanvas-title`;
+
+  themePrefixes['navbar-brand'] = `owlui-navbar-brand`;
+  themePrefixes['basic-navbar-nav'] = `owlui-navbar-basic-navbar-nav`;
+  themePrefixes['navbar-toggler'] = 'owlui-navbar-toggler';
+  themePrefixes['navbar-toggler-icon'] = `owlui-navbar-toggler-icon`;
+  themePrefixes['navbar-nav'] = `owlui-navbar-nav`;
+  themePrefixes['dropdown-toggle'] = `owlui-dropdown-toggle`;
+  themePrefixes['nav-link'] = `owlui-nav-link`;
+  themePrefixes['nav-item'] = `owlui-nav-item`;
+  themePrefixes['basic-nav-dropdown'] = `owlui-basic-nav-dropdown`;
+
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider prefixes={themePrefixes}>
         {/* {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(expand => ( */}
-        <Navbar bg="light" expand className="mb-3">
+        <Navbar {...locals} bg="light" expand="false" className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
             <Navbar.Offcanvas
-              // id={`offcanvasNavbar-expand-${expand}`}
-              // aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
+              id={`offcanvasNavbar-expand-false`}
+              aria-labelledby={`offcanvasNavbarLabel-expand-false`}
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-`}>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}>
                   Offcanvas
                 </Offcanvas.Title>
               </Offcanvas.Header>
@@ -74,7 +98,7 @@ export const Component = (props: NavigationDrawerElementProps) => {
                   <Nav.Link href="#action2">Link</Nav.Link>
                   <NavDropdown
                     title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand-$`}
+                    id={`offcanvasNavbarDropdown-expand-false`}
                   >
                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">

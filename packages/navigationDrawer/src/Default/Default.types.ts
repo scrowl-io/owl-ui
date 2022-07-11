@@ -1,4 +1,5 @@
 import React from 'react';
+import * as bs from 'react-bootstrap';
 
 export interface NavigationDrawerContentItemProps {
   label: string;
@@ -25,5 +26,4 @@ export interface NavigationDrawerDefaultCommons {
 }
 
 export type NavigationDrawerElementProps =
-  Partial<NavigationDrawerDefaultCommons> &
-    React.AllHTMLAttributes<HTMLDivElement>;
+  Partial<NavigationDrawerDefaultCommons> & bs.NavbarProps;
