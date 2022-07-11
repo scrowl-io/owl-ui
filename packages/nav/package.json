@@ -1,0 +1,36 @@
+{
+  "name": "@owlui/nav",
+  "version": "0.0.27",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/nav#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.nav.js",
+  "types": "dist/owl.nav.d.ts",
+  "style": "dist/owl.nav.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/nav"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/lib": "^0.0.27",
+    "@owlui/typings": "^0.0.27",
+    "react-bootstrap": "2.4.0"
+  }
+}

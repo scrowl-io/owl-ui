@@ -8,6 +8,7 @@ export * from '../../packages/closeButton/src/index';
 export * from '../../packages/drawer/src/index';
 export * from '../../packages/dropdown/src/index';
 export * from '../../packages/icons/src/index';
+export * from '../../packages/nav/src/index';
 export * from '../../packages/modal/src/index';
 export * from '../../packages/listgroup/src/index';
 export * from '../../packages/navigationDrawer/src/index';
