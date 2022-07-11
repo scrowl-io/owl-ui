@@ -6,18 +6,7 @@ export interface FormFieldProps {
   label: string;
   controlId: string;
   type: string;
-  fieldProps: {
-    placeholder: string;
-    text: string;
-    min: number;
-    max: number;
-    options: [
-      {
-        id: number;
-        label: string;
-      }
-    ];
-  };
+  fieldProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 export interface FormDefaultCommons {
   theme?: 'Default' | 'Dark';

@@ -7,9 +7,8 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 export const Component = (props: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'form';
-  const { variant, formFields } = props;
+  const { formFields, children } = props;
   const prefix = props.prefix || '';
-  const [rangeValue, setRangeValue] = useState(10);
 
   const locals = createLocalProps(
     props,
@@ -43,10 +42,6 @@ export const Component = (props: FormDefaultProps) => {
   themePrefixes['form-select'] = 'owlui-form-select';
   themePrefixes['form-range'] = 'owlui-form-range';
 
-  const updateRange = (e: React.BaseSyntheticEvent<HTMLInputElement>) => {
-    setRangeValue(e.target.value);
-  };
-
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form {...locals}>
@@ -57,9 +52,7 @@ export const Component = (props: FormDefaultProps) => {
               className="mb-4"
               key={field.id}
             >
-              {field.type === 'checkbox' && (
-                <Form.Check type={field.type} label={field.label} />
-              )}
+              {field.type === 'checkbox' && <Form.Check {...field} />}
               {field.type === 'select' && (
                 <>
                   <Form.Label>{field.label}</Form.Label>
@@ -73,13 +66,7 @@ export const Component = (props: FormDefaultProps) => {
               {field.type === 'range' && (
                 <>
                   <Form.Label>{field.label}</Form.Label>
-                  <Form.Range
-                    value={rangeValue}
-                    min={field.fieldProps?.min}
-                    max={field.fieldProps?.max}
-                    onChange={updateRange}
-                  />
-                  <h5>Currently selected: {rangeValue}</h5>
+                  <Form.Range {...field.fieldProps} />
                 </>
               )}
               {field.type != 'checkbox' &&
@@ -87,10 +74,7 @@ export const Component = (props: FormDefaultProps) => {
               field.type != 'range' ? (
                 <>
                   <Form.Label>{field.label}</Form.Label>
-                  <Form.Control
-                    type={field.type}
-                    placeholder={field.fieldProps?.placeholder}
-                  />
+                  <Form.Control {...field.fieldProps} />
                 </>
               ) : (
                 ''
@@ -98,13 +82,11 @@ export const Component = (props: FormDefaultProps) => {
             </Form.Group>
           );
         })}
-        <Button variant={variant} type="submit">
-          Submit
-        </Button>
+        {children}
       </Form>
     </ThemeProvider>
   );
-};
+};;;
 
 export default {
   Component,
