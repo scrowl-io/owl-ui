@@ -1,20 +1,21 @@
+/* eslint-disable import/named */
+/* eslint-disable import/namespace */
 import React from 'react';
 import * as bs from 'react-bootstrap';
+import { BsPrefixProps } from 'react-bootstrap/esm/helpers';
 
-export interface NavDefaultCommons {
+export interface NavDefaultCommons extends bs.NavProps {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  alignment?: string;
-  navLinks?: Array<NavLinks>;
-  disabled?: boolean;
+  navItems: NavItem[];
 }
 
-export interface NavLinks {
-  eventKey?: string;
-  label?: string;
-  href?: string;
-  disabled?: boolean;
+export interface NavItem extends BsPrefixProps {
+  navLink: NavLink;
 }
 
-export type NavDefaultProps = Partial<NavDefaultCommons> & bs.NavProps;
+export interface NavLink extends bs.NavLinkProps {
+  label?: React.ReactNode;
+}
+
+export type NavDefaultProps = NavDefaultCommons;
