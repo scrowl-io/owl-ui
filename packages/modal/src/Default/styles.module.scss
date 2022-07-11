@@ -1,0 +1,10 @@
+@use '@owlui/lib/src/theme/utils' as utils;
+
+.modal {
+  &.theme--dark {
+    .modal-content {
+      --bs-modal-bg: #{utils.$owl-ref-palette-black};
+      --bs-modal-color: #{utils.$owl-ref-palette-white};
+    }
+  }
+}
