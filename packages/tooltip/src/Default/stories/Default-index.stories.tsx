@@ -5,51 +5,64 @@ import { TooltipDefaultProps } from '../Default.types';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 import { trigger } from './Default-trigger.stories';
-import { popover } from './Default-popover.stories';
 import { placement } from './Default-placement.stories';
 
-const DemoParagraphOne = () => (
-  <p style={{ display: 'inline' }}>
-    This is a paragraph to demonstrate the&nbsp;
-  </p>
-);
-
-const DemoParagraphTwo = () => (
-  <p style={{ display: 'inline' }}>. Wrap your tooltips in blocks of text.</p>
-);
-
 export const Default = (args: TooltipDefaultProps) => {
-  // const rootClose = true;
-  const header = 'Popover Header';
-
-  const targetElement = (props: object) => {
+  const tooltipTrigger = (props: object) => {
     return (
       <span
-        id="popover-button"
         {...props}
         style={{
           fontWeight: '700',
-          borderBottom: '3px solid black',
-          marginBottom: '2em',
         }}
       >
-        Tooltip/Popover
+        Tooltip
       </span>
     );
   };
 
+  const tooltipContent = {
+    content: <p>Inside the tooltip.</p>,
+  };
+
+  const popoverTrigger = (props: object) => {
+    return (
+      <span
+        {...props}
+        style={{
+          fontWeight: '700',
+        }}
+      >
+        Popover
+      </span>
+    );
+  };
+
+  const popoverContent = {
+    header: <>Popover Header</>,
+    content: <p>Inside the popover.</p>,
+  };
+
   return (
     <>
-      <DemoParagraphOne />
-      <Tooltip
-        {...args}
-        header={header}
-        // rootClose={rootClose}
-        targetElement={targetElement}
-      >
-        <p>Inside the tooltip</p>
-      </Tooltip>
-      <DemoParagraphTwo />
+      <div>
+        Paragraph wrapping the{' '}
+        <Tooltip
+          {...args}
+          tooltipContent={tooltipContent}
+          tooltipTrigger={tooltipTrigger}
+        />
+        .
+      </div>
+      <div>
+        Paragraph wrapping the{' '}
+        <Tooltip
+          {...args}
+          tooltipContent={popoverContent}
+          tooltipTrigger={popoverTrigger}
+        />
+        .
+      </div>
     </>
   );
 };
@@ -58,7 +71,6 @@ Default.args = {
   size: size.defaultValue,
   theme: theme.defaultValue,
   trigger: trigger.defaultValue,
-  popover: popover.defaultValue,
   placement: placement.defaultValue,
 };
 
@@ -66,6 +78,5 @@ Default.argTypes = {
   size,
   theme,
   trigger,
-  popover,
   placement,
 };

@@ -1,17 +1,14 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
 .tooltip {
-  padding: 0;
-
   $ref: &;
 
   @include utils.typeface-sm;
 
   &.theme--dark {
-    background-color: black;
-
-    .popover-body {
-      color: white;
+    .tooltip-inner {
+      --bs-tooltip-bg: #{utils.$owl-ref-palette-black};
+      --bs-tooltip-color: #{utils.$owl-ref-palette-white};
     }
   }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ThemeProvider,
   Popover,
@@ -12,17 +12,8 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 export const Component = (props: TooltipDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'tooltip';
-  const {
-    children,
-    placement,
-    trigger,
-    popover,
-    // rootClose,
-    header,
-    targetElement,
-  } = props;
+  const { tooltipContent, tooltipTrigger } = props;
   const prefix = props.prefix || '';
-  const [componentShow, setComponentShow] = useState(false);
 
   const locals = createLocalProps(
     props,
@@ -43,7 +34,7 @@ export const Component = (props: TooltipDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'target']
+    ['prefix', 'theme', 'size', 'tooltipContent']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
@@ -51,34 +42,22 @@ export const Component = (props: TooltipDefaultProps) => {
   themePrefixes['popover-header'] = 'owlui-popover-header';
   themePrefixes['popover-body'] = 'owlui-popover-body';
 
-  const handleToggle = () => {
-    setComponentShow(!componentShow);
-  };
-
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <OverlayTrigger
-        trigger={trigger}
-        placement={placement}
-        show={componentShow}
-        // rootClose={true}
-        onToggle={handleToggle}
+        {...locals}
         overlay={
-          popover ? (
-            <Popover id="popover" {...locals}>
-              <Popover.Header as="h1">{header}</Popover.Header>
-              <Popover.Body>
-                <strong>Check it out</strong> {children}
-              </Popover.Body>
+          tooltipContent.header ? (
+            <Popover {...locals}>
+              <Popover.Header>{tooltipContent.header}</Popover.Header>
+              <Popover.Body>{tooltipContent.content}</Popover.Body>
             </Popover>
           ) : (
-            <Tooltip id="tooltip" {...locals}>
-              {children}
-            </Tooltip>
+            <Tooltip {...locals}>{tooltipContent.content}</Tooltip>
           )
         }
       >
-        {targetElement}
+        {tooltipTrigger}
       </OverlayTrigger>
     </ThemeProvider>
   );
