@@ -1,0 +1,17 @@
+@use '@owlui/lib/src/theme/utils' as utils;
+
+.listgroup {
+  $ref: &;
+  @include utils.typeface-sm;
+
+  &-primary {
+    &.theme--dark {
+      // Example of how to implement theming to bootstrap variant
+      // you can use css vars or scss vars. Inspect the element on
+      // Storybook to check out the variables to be updated
+      // --bs-btn-color: var(--color-font-light);
+      // --bs-btn-bg: var(--bs-gray-500);
+      // --bs-btn-border-color: #{theme.$owl-ref-palette-gray-500};
+    }
+  }
+}

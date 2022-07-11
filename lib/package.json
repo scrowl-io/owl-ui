@@ -60,6 +60,8 @@
     "@owlui/drawer": "^0.0.27",
     "@owlui/dropdown": "^0.0.27",
     "@owlui/icons": "^0.0.27",
+    "@owlui/modal": "^0.0.0",
+    "@owlui/listgroup": "^0.0.0",
     "@owlui/navigationdrawer": "^0.0.27",
     "@owlui/progressbar": "^0.0.27",
     "@owlui/spinner": "^0.0.27",
