@@ -1,0 +1,28 @@
+@use '@owlui/lib/src/theme/utils' as utils;
+
+.tooltip {
+  $ref: &;
+
+  @include utils.typeface-sm;
+
+  &.theme--dark {
+    .tooltip-inner {
+      --bs-tooltip-bg: #{utils.$owl-ref-palette-black};
+      --bs-tooltip-color: #{utils.$owl-ref-palette-white};
+    }
+  }
+
+  &#{$ref}--size {
+    &-lg {
+      @include utils.typeface-lg;
+    }
+
+    &-md {
+      @include utils.typeface-md;
+    }
+
+    &-sm {
+      @include utils.typeface-sm;
+    }
+  }
+}
