@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Modal } from '../index';
 import { ModalDefaultProps } from '../Default.types';
 
-import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 import { fullscreen } from './Default-fullscreen.stories';
@@ -11,12 +10,13 @@ import { scrollable } from './Default-scrollable.stories';
 
 import { Button } from '../../../../button/src/index';
 
-const modalContent = {
-  size: 'md',
+const modalContent: ModalDefaultProps = {
+  size: 'sm',
   header: {
-    closeButton: true,
-    closeLabel: 'Close',
-    closeVariant: 'black',
+    bsProps: {
+      closeButton: true,
+      closeLabel: 'Close',
+    },
     content: <h2>Modal Header</h2>,
   },
   body: {
@@ -51,17 +51,15 @@ export const Default = (args: ModalDefaultProps) => {
 };
 
 Default.args = {
-  variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
-  modalContent: modalContent,
   fullscreen: fullscreen.defaultValue,
   centered: centered.defaultValue,
   scrollable: scrollable.defaultValue,
+  modalContent: modalContent,
 };
 
 Default.argTypes = {
-  variant,
   size,
   theme,
   fullscreen,

@@ -22,14 +22,10 @@ export const Component = (props: ModalDefaultProps) => {
             fields: ['theme'],
             value: 'theme',
           },
-          {
-            fields: ['size'],
-            value: 'Size',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'modalContent']
+    ['prefix', 'theme', 'modalContent']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
@@ -41,14 +37,14 @@ export const Component = (props: ModalDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Modal {...locals} {...modalContent}>
-        <Modal.Header {...modalContent.header}>
+      <Modal {...locals}>
+        <Modal.Header {...modalContent.header.bsProps}>
           <Modal.Title>{modalContent.header.content}</Modal.Title>
         </Modal.Header>
-        <Modal.Body {...modalContent.body}>
+        <Modal.Body {...modalContent.body.bsProps}>
           {modalContent.body.content}
         </Modal.Body>
-        <Modal.Footer {...modalContent.footer}>
+        <Modal.Footer {...modalContent.footer.bsProps}>
           {modalContent.footer.content}
         </Modal.Footer>
       </Modal>

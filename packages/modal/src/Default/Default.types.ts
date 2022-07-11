@@ -1,28 +1,24 @@
+/* eslint-disable import/named */
+/* eslint-disable import/namespace */
 import React from 'react';
 import * as bs from 'react-bootstrap';
+import { BsPrefixProps } from 'react-bootstrap/esm/helpers';
 
 export interface ModalDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  modalContent: ModalContentProps;
+  header: ModalHeaderProps;
+  body: ModalContentProps;
+  footer: ModalContentProps;
 }
-
 export interface ModalHeaderProps {
-  content: React.ReactNode;
-}
-export interface ModalBodyProps {
-  content: React.ReactNode | React.ReactNode[];
-}
-
-export interface ModalFooterProps {
-  content: React.ReactNode | React.ReactNode[];
+  bsProps?: bs.ModalHeaderProps;
+  content?: React.ReactNode;
 }
 
 export interface ModalContentProps {
-  header: ModalHeaderProps;
-  body: ModalBodyProps;
-  footer: ModalFooterProps;
+  bsProps?: BsPrefixProps;
+  content?: React.ReactNode;
 }
 
 export type ModalDefaultProps = ModalDefaultCommons & bs.ModalProps;

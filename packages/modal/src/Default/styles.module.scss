@@ -1,32 +1,10 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
 .modal {
-  $ref: &;
-
-  @include utils.typeface-sm;
-
   &.theme--dark {
     .modal-content {
-      background-color: black;
-      color: white;
-    }
-
-    .btn-close {
-      filter: brightness(0) invert(1);
-    }
-  }
-
-  &#{$ref}--size {
-    &-lg {
-      @include utils.typeface-lg;
-    }
-
-    &-md {
-      @include utils.typeface-md;
-    }
-
-    &-sm {
-      @include utils.typeface-sm;
+      --bs-modal-bg: #{utils.$owl-ref-palette-black};
+      --bs-modal-color: #{utils.$owl-ref-palette-white};
     }
   }
 }
