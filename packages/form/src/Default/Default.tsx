@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ThemeProvider, Form, Button, NavItem } from 'react-bootstrap';
+import { ThemeProvider, Form } from 'react-bootstrap';
 import { FormDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
@@ -86,7 +86,7 @@ export const Component = (props: FormDefaultProps) => {
       </Form>
     </ThemeProvider>
   );
-};;;
+};
 
 export default {
   Component,

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { Form } from '../index';
 import { FormDefaultProps } from '../Default.types';
+import { Button } from '../../../../button/src/index';
+import { Textfield } from '../../../../textfield/src/index';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
@@ -68,7 +70,7 @@ export const Default = (args: FormDefaultProps) => {
       value: rangeValue,
       fieldProps: {
         min: 0,
-        max: 80,
+        max: 100,
         onChange: (e: React.ChangeEvent<HTMLFormElement>) =>
           setRangeValue(e.target.value),
       },
@@ -77,9 +79,10 @@ export const Default = (args: FormDefaultProps) => {
 
   return (
     <Form {...args} formFields={formFields}>
-      <button type="submit" onClick={handleSubmit}>
+      <Textfield />
+      <Button type="submit" onClick={handleSubmit}>
         Submit
-      </button>
+      </Button>
     </Form>
   );
 };
