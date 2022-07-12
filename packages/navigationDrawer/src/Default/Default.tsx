@@ -48,36 +48,28 @@ export const Component = (props: NavigationDrawerElementProps) => {
     ['prefix', 'appearance', 'theme', 'size', 'header', 'items']
   );
 
-  const Header = header ? <NavHeader>{header}</NavHeader> : '';
-  const Content = items ? <NavContent items={items} /> : '';
-
   themePrefixes['navbar-toggler'] = `owlui-navbar-toggler`;
   themePrefixes['navbar-nav'] = `owlui-navbar-nav`;
   themePrefixes['offcanvas-header'] = `owlui-offcanvas-header`;
   themePrefixes['offcanvas-body'] = `owlui-offcanvas-body`;
+
   themePrefixes['offcanvas'] = `owlui-offcanvas`;
   themePrefixes['offcanvas-end'] = `owlui-offcanvas-end`;
 
   themePrefixes['navbar-toggler-icon'] = `owlui-navbar-toggler-icon`;
   themePrefixes['nav-link'] = 'owlui-nav-link';
-  themePrefixes['btn-outline-success'] = 'owlui-btn-outline-success';
   themePrefixes['basic-nav-dropdown'] = `owlui-basic-nav-dropdown`;
   themePrefixes['offcanvas-title'] = `owlui-offcanvas-title`;
 
   themePrefixes['navbar-brand'] = `owlui-navbar-brand`;
-  themePrefixes['basic-navbar-nav'] = `owlui-navbar-basic-navbar-nav`;
-  themePrefixes['navbar-toggler'] = 'owlui-navbar-toggler';
-  themePrefixes['navbar-toggler-icon'] = `owlui-navbar-toggler-icon`;
-  themePrefixes['navbar-nav'] = `owlui-navbar-nav`;
+  themePrefixes['basic-navbar-nav'] = `owlui-basic-navbar-nav`;
+
   themePrefixes['dropdown-toggle'] = `owlui-dropdown-toggle`;
-  themePrefixes['nav-link'] = `owlui-nav-link`;
-  themePrefixes['nav-item'] = `owlui-nav-item`;
-  themePrefixes['basic-nav-dropdown'] = `owlui-basic-nav-dropdown`;
+  themePrefixes['dropdown'] = `owlui-dropdown`;
 
   return (
     <>
       <ThemeProvider prefixes={themePrefixes}>
-        {/* {[false, 'sm', 'md', 'lg', 'xl', 'xxl'].map(expand => ( */}
         <Navbar {...locals} bg="light" expand="false" className="mb-3">
           <Container fluid>
             <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
@@ -101,9 +93,11 @@ export const Component = (props: NavigationDrawerElementProps) => {
                     id={`offcanvasNavbarDropdown-expand-false`}
                   >
                     <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+
                     <NavDropdown.Item href="#action4">
                       Another action
                     </NavDropdown.Item>
+
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
                       Something else here
@@ -127,7 +121,7 @@ export const Component = (props: NavigationDrawerElementProps) => {
       </ThemeProvider>
     </>
   );
-};
+};;
 
 export default {
   Component,
