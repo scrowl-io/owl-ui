@@ -1,13 +1,13 @@
 import React from 'react';
 import { ThemeProvider, Nav } from 'react-bootstrap';
-import { NavDefaultProps } from './Default.types';
+import { NavDefaultProps, NavItem } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
 export const Component = (props: NavDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'nav';
-  const { alignment, navLinks } = props;
+  const { navItems } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -26,40 +26,32 @@ export const Component = (props: NavDefaultProps) => {
             fields: ['size'],
             value: 'Size',
           },
-          {
-            fields: ['alignment'],
-            value: 'alignment',
-          },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'alignment', 'navLinks']
+    ['prefix', 'theme', 'size', 'navItems']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['nav-link'] = 'owlui-nav-link';
 
+  const renderNavItem = (navItem: NavItem): React.ReactNode => {
+    const { navLink, ...navItemRest } = navItem;
+    const { label, eventKey, ...navLinkRest } = navLink;
+
+    return (
+      <Nav.Item {...navItemRest} key={eventKey}>
+        <Nav.Link eventKey={eventKey} {...navLinkRest}>
+          {label}
+        </Nav.Link>
+      </Nav.Item>
+    );
+  };
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Nav
-        {...locals}
-        className={`${alignment}`}
-        activeKey="link-5"
-        onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-      >
-        {navLinks?.map(navLink => {
-          return (
-            <Nav.Item key={navLink.eventKey}>
-              <Nav.Link
-                disabled={navLink.disabled}
-                eventKey={navLink.eventKey}
-                href={navLink.href}
-              >
-                {navLink.label}
-              </Nav.Link>
-            </Nav.Item>
-          );
-        })}
+      <Nav {...locals}>
+        {navItems.map((navItem: NavItem) => renderNavItem(navItem))}
       </Nav>
     </ThemeProvider>
   );
