@@ -45,7 +45,7 @@ export const Component = (props: FormDefaultProps) => {
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form {...locals}>
-        {formFields.map(field => {
+        {/* {formFields.map(field => {
           return (
             <Form.Group
               controlId={field.controlId}
@@ -69,19 +69,9 @@ export const Component = (props: FormDefaultProps) => {
                   <Form.Range {...field.fieldProps} />
                 </>
               )}
-              {field.type != 'checkbox' &&
-              field.type != 'select' &&
-              field.type != 'range' ? (
-                <>
-                  <Form.Label>{field.label}</Form.Label>
-                  <Form.Control {...field.fieldProps} />
-                </>
-              ) : (
-                ''
-              )}
             </Form.Group>
           );
-        })}
+        })} */}
         {children}
       </Form>
     </ThemeProvider>

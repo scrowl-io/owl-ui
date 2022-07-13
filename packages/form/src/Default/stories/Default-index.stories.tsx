@@ -2,7 +2,10 @@ import * as React from 'react';
 import { Form } from '../index';
 import { FormDefaultProps } from '../Default.types';
 import { Button } from '../../../../button/src/index';
-import { Textfield } from '../../../../textfield/src/index';
+// import { inputProps } from '../../../../input/src/Default/stories/Default-index.stories';
+
+import { FieldInput } from '../../FieldInput';
+import { Input } from '../../../../input/src/Default';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
@@ -16,73 +19,51 @@ const handleSubmit = (e: React.SyntheticEvent) => {
 export const Default = (args: FormDefaultProps) => {
   const [rangeValue, setRangeValue] = React.useState('10');
 
-  const formFields: FormDefaultProps = [
-    {
-      id: 1,
-      label: 'Email Address',
-      controlId: 'formEmail',
-      type: 'email',
-      fieldProps: {
-        placeholder: 'Enter your email',
-        text: 'We will never share your email with anyone else',
-      },
+  const emailProps = {
+    id: 'email',
+    type: 'email',
+    label: 'Email Address',
+    optionalprops: {
+      as: 'input',
+      disabled: false,
+      readOnly: false,
+      plaintext: false,
+      placeholder: 'example@email.com',
     },
-    {
-      id: 2,
-      label: 'Password',
-      controlId: 'formPassword',
-      type: 'password',
-      fieldProps: {
-        placeholder: 'Password',
-      },
+  };
+
+  const passwordProps = {
+    id: 'password',
+    type: 'password',
+    label: 'Password',
+    optionalprops: {
+      as: 'input',
+      disabled: false,
+      readOnly: false,
+      plaintext: false,
+      placeholder: 'password',
     },
-    {
-      id: 3,
-      label: 'Check me out',
-      controlId: 'formCheck',
-      type: 'checkbox',
+  };
+
+  const addressProps = {
+    id: 'address',
+    type: 'text',
+    label: 'Address',
+    optionalprops: {
+      as: 'input',
+      disabled: false,
+      readOnly: false,
+      plaintext: false,
+      placeholder: '123 Example st.',
     },
-    {
-      id: 4,
-      label: 'Please Select',
-      type: 'select',
-      fieldProps: {
-        options: [
-          {
-            id: '1',
-            label: 'First Option',
-          },
-          {
-            id: '2',
-            label: 'Second Option',
-          },
-          {
-            id: '3',
-            label: 'Third Option',
-          },
-        ],
-      },
-    },
-    {
-      id: 5,
-      label: `Range Example: ${rangeValue}`,
-      type: 'range',
-      value: rangeValue,
-      fieldProps: {
-        min: 0,
-        max: 100,
-        onChange: (e: React.ChangeEvent<HTMLFormElement>) =>
-          setRangeValue(e.target.value),
-      },
-    },
-  ];
+  };
 
   return (
-    <Form {...args} formFields={formFields}>
-      <Textfield />
-      <Button type="submit" onClick={handleSubmit}>
-        Submit
-      </Button>
+    <Form {...args}>
+      <Input inputProps={emailProps} />
+      <Input inputProps={passwordProps} />
+      <FieldInput inputProps={addressProps} />
+      <Button onClick={handleSubmit}>Submit</Button>
     </Form>
   );
 };

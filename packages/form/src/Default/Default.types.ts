@@ -4,7 +4,7 @@ import * as bs from 'react-bootstrap';
 export interface FormFieldProps {
   id: number;
   label: string;
-  controlId: string;
+  controlId?: string;
   type: string;
   fieldProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
