@@ -14,6 +14,7 @@ export * from '../../packages/listgroup/src/index';
 export * from '../../packages/modal/src/index';
 export * from '../../packages/navigationDrawer/src/index';
 export * from '../../packages/progressBar/src/index';
+export * from '../../packages/range/src/index';
 export * from '../../packages/spinner/src/index';
 export * from '../../packages/switchToggle/src/index';
 export * from '../../packages/table/src/index';

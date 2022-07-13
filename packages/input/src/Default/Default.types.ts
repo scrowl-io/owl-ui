@@ -5,7 +5,6 @@ export interface InputProps {
   type: string;
   label: string;
   optionalprops?: {
-    as: string;
     disabled: boolean;
     readOnly: boolean;
     plaintext: boolean;
@@ -17,7 +16,7 @@ export interface InputDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  inputProps: InputProps[];
+  inputProps: InputProps;
 }
 
 export type InputDefaultProps = InputDefaultCommons & bs.FormProps;

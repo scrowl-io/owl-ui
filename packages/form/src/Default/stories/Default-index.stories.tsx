@@ -6,6 +6,7 @@ import { Button } from '../../../../button/src/index';
 
 import { FieldInput } from '../../FieldInput';
 import { Input } from '../../../../input/src/Default';
+import { Range } from '../../../../range/src/Default';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
@@ -14,17 +15,15 @@ import { theme } from './Default-theme.stories';
 const handleSubmit = (e: React.SyntheticEvent) => {
   e.preventDefault();
   console.log('click');
+  alert('click');
 };
 
 export const Default = (args: FormDefaultProps) => {
-  const [rangeValue, setRangeValue] = React.useState('10');
-
   const emailProps = {
     id: 'email',
     type: 'email',
     label: 'Email Address',
     optionalprops: {
-      as: 'input',
       disabled: false,
       readOnly: false,
       plaintext: false,
@@ -37,7 +36,6 @@ export const Default = (args: FormDefaultProps) => {
     type: 'password',
     label: 'Password',
     optionalprops: {
-      as: 'input',
       disabled: false,
       readOnly: false,
       plaintext: false,
@@ -50,11 +48,20 @@ export const Default = (args: FormDefaultProps) => {
     type: 'text',
     label: 'Address',
     optionalprops: {
-      as: 'input',
       disabled: false,
       readOnly: false,
       plaintext: false,
       placeholder: '123 Example st.',
+    },
+  };
+
+  const rangeProps = {
+    id: 'range',
+    label: 'Age',
+    optionalprops: {
+      disabled: false,
+      min: 0,
+      max: 100,
     },
   };
 
@@ -63,6 +70,7 @@ export const Default = (args: FormDefaultProps) => {
       <Input inputProps={emailProps} />
       <Input inputProps={passwordProps} />
       <FieldInput inputProps={addressProps} />
+      <Range rangeProps={rangeProps} />
       <Button onClick={handleSubmit}>Submit</Button>
     </Form>
   );

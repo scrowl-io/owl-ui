@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
-import { InputDefaultProps } from './Default.types';
+import { RangeDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
-export const Component = (props: InputDefaultProps) => {
+export const Component = (props: RangeDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const baseClass = 'input';
-  const { inputProps } = props;
+  const baseClass = 'range';
+  const { rangeProps } = props;
   const prefix = props.prefix || '';
-  const [inputText, setInputText] = useState('');
+  const [rangeValue, setRangeValue] = useState('30');
 
   const locals = createLocalProps(
     props,
@@ -30,27 +30,28 @@ export const Component = (props: InputDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'inputProps']
+    ['prefix', 'theme', 'size', 'rangeProps']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
+  themePrefixes['form-range'] = 'owlui-form-range';
   themePrefixes['form-label'] = 'owlui-form-label';
-  themePrefixes['form-control'] = 'owlui-form-control';
-  themePrefixes['form-text'] = 'owlui-form-text';
 
-  const updateInputState = (e: React.BaseSyntheticEvent<KeyboardEvent>) => {
-    setInputText(e.target.value);
+  const updateRangeState = (e: React.BaseSyntheticEvent<KeyboardEvent>) => {
+    setRangeValue(e.target.value);
   };
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form.Group {...locals} className="mb-3">
-        <Form.Label htmlFor={inputProps.id}>{inputProps.label}</Form.Label>
-        <Form.Control
-          value={inputText}
-          onChange={updateInputState}
-          {...inputProps}
-          {...inputProps.optionalprops}
+      <Form.Group {...locals}>
+        <Form.Label htmlFor={rangeProps.id}>
+          {rangeProps.label} {rangeValue}
+        </Form.Label>
+        <Form.Range
+          value={rangeValue}
+          onChange={updateRangeState}
+          {...rangeProps}
+          {...rangeProps.optionalprops}
         />
       </Form.Group>
     </ThemeProvider>
