@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
 import { InputDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
@@ -7,9 +7,8 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 export const Component = (props: InputDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'input';
-  const { inputProps } = props;
+  const { label, control } = props.inputProps;
   const prefix = props.prefix || '';
-  const [inputText, setInputText] = useState('');
 
   const locals = createLocalProps(
     props,
@@ -38,20 +37,13 @@ export const Component = (props: InputDefaultProps) => {
   themePrefixes['form-control'] = 'owlui-form-control';
   themePrefixes['form-text'] = 'owlui-form-text';
 
-  const updateInputState = (e: React.BaseSyntheticEvent<KeyboardEvent>) => {
-    setInputText(e.target.value);
-  };
+  console.log('from input', props);
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form.Group {...locals} className="mb-3">
-        <Form.Label htmlFor={inputProps.id}>{inputProps.label}</Form.Label>
-        <Form.Control
-          value={inputText}
-          onChange={updateInputState}
-          {...inputProps}
-          {...inputProps.optionalprops}
-        />
+      <Form.Group {...locals}>
+        <Form.Label {...label}>{label?.content}</Form.Label>
+        <Form.Control {...control} />
       </Form.Group>
     </ThemeProvider>
   );

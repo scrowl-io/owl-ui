@@ -1,21 +1,21 @@
-import React from 'react';
+/* eslint-disable import/named */
+/* eslint-disable import/namespace */
 import * as bs from 'react-bootstrap';
-
-export interface RangeProps {
-  id: string;
-  label: string;
-  optionalprops: {
-    disabled: boolean;
-    min: number;
-    max: number;
-  };
-}
-
+import { FormRangeProps } from 'react-bootstrap/esm/FormRange';
 export interface RangeDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  rangeProps: RangeProps;
+  type?: string;
+  inputProps: RangeProps;
 }
 
-export type RangeDefaultProps = RangeDefaultCommons & bs.FormProps;
+export interface RangeProps {
+  label: RangeLabel & bs.FormLabelProps;
+  control: FormRangeProps;
+}
+export interface RangeLabel {
+  content: string;
+}
+
+export type RangeDefaultProps = RangeDefaultCommons & bs.FormGroupProps;

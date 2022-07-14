@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
 import { FormDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import { Input } from '../../../input/src';
+import { Range } from '../../../range/src';
 
 export const Component = (props: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'form';
-  const { formFields, children } = props;
+  const { formData } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -29,7 +31,7 @@ export const Component = (props: FormDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'formFields']
+    ['prefix', 'theme', 'size', 'formData']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
@@ -42,38 +44,20 @@ export const Component = (props: FormDefaultProps) => {
   themePrefixes['form-select'] = 'owlui-form-select';
   themePrefixes['form-range'] = 'owlui-form-range';
 
+  const renderFormElements = formData.map((element: any) => {
+    switch (element.type) {
+      case 'input':
+        return <Input inputProps={element.inputProps} />;
+      case 'range':
+        return <Range inputProps={element.inputProps} />;
+      default:
+        return null;
+    }
+  });
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form {...locals}>
-        {/* {formFields.map(field => {
-          return (
-            <Form.Group
-              controlId={field.controlId}
-              className="mb-4"
-              key={field.id}
-            >
-              {field.type === 'checkbox' && <Form.Check {...field} />}
-              {field.type === 'select' && (
-                <>
-                  <Form.Label>{field.label}</Form.Label>
-                  <Form.Select>
-                    {field.fieldProps?.options.map(option => {
-                      return <option key={option.id}>{option.label}</option>;
-                    })}
-                  </Form.Select>
-                </>
-              )}
-              {field.type === 'range' && (
-                <>
-                  <Form.Label>{field.label}</Form.Label>
-                  <Form.Range {...field.fieldProps} />
-                </>
-              )}
-            </Form.Group>
-          );
-        })} */}
-        {children}
-      </Form>
+      <Form {...locals}>{renderFormElements}</Form>
     </ThemeProvider>
   );
 };

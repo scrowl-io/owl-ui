@@ -1,19 +1,23 @@
 import React from 'react';
 import * as bs from 'react-bootstrap';
+import { InputDefaultProps } from '../../../input/src';
+import { RangeDefaultProps } from '../../../range/src/Default';
 
-export interface FormFieldProps {
-  id: number;
-  label: string;
-  controlId?: string;
-  type: string;
-  fieldProps?: React.InputHTMLAttributes<HTMLInputElement>;
-}
+// export interface FormFieldProps {
+//   id: number;
+//   label: string;
+//   controlId?: string;
+//   type: string;
+//   fieldProps?: React.InputHTMLAttributes<HTMLInputElement>;
+// }
+
 export interface FormDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  variant?: string;
-  formFields: FormFieldProps[];
+  children: React.ReactNode;
+  formData: FormDataProps[];
 }
+
+export type FormDataProps = InputDefaultProps | RangeDefaultProps;
 
 export type FormDefaultProps = FormDefaultCommons & bs.FormProps;

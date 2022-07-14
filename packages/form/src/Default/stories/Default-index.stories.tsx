@@ -1,77 +1,87 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Form } from '../index';
-import { FormDefaultProps } from '../Default.types';
+import { FormDefaultProps, FormDataProps } from '../Default.types';
 import { Button } from '../../../../button/src/index';
-// import { inputProps } from '../../../../input/src/Default/stories/Default-index.stories';
-
-import { FieldInput } from '../../FieldInput';
-import { Input } from '../../../../input/src/Default';
-import { Range } from '../../../../range/src/Default';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
-
-const handleSubmit = (e: React.SyntheticEvent) => {
-  e.preventDefault();
-  console.log('click');
-  alert('click');
-};
+import { formData } from './form-data';
 
 export const Default = (args: FormDefaultProps) => {
-  const emailProps = {
-    id: 'email',
-    type: 'email',
-    label: 'Email Address',
-    optionalprops: {
-      disabled: false,
-      readOnly: false,
-      plaintext: false,
-      placeholder: 'example@email.com',
-    },
+  const [studentData, setStudentData] = useState({
+    email: '',
+    firstName: '',
+    age: 30,
+  });
+
+  const handleChange = (e: React.BaseSyntheticEvent) => {
+    setStudentData({ ...studentData, [e.target.name]: e.target.value });
   };
 
-  const passwordProps = {
-    id: 'password',
-    type: 'password',
-    label: 'Password',
-    optionalprops: {
-      disabled: false,
-      readOnly: false,
-      plaintext: false,
-      placeholder: 'password',
+  const formData: FormDataProps[] = [
+    {
+      type: 'input',
+      inputProps: {
+        label: {
+          content: 'Email Address',
+          htmlFor: 'email',
+        },
+        control: {
+          onChange: handleChange,
+          id: 'email',
+          value: studentData.email,
+          name: 'email',
+          type: 'email',
+          disabled: false,
+          readOnly: false,
+          plaintext: false,
+          placeholder: 'example@email.com',
+        },
+      },
     },
-  };
+    {
+      type: 'input',
+      inputProps: {
+        label: {
+          content: 'First Name',
+          htmlFor: 'firstName',
+        },
+        control: {
+          onChange: handleChange,
+          value: studentData.firstName,
+          name: 'firstName',
+          type: 'text',
+          placeholder: 'Sean...',
+        },
+      },
+    },
+    {
+      type: 'range',
+      inputProps: {
+        label: {
+          content: 'Range',
+          htmlFor: 'age',
+        },
+        control: {
+          onChange: handleChange,
+          value: studentData.age,
+          name: 'age',
+          min: 0,
+          max: 100,
+        },
+      },
+    },
+  ];
 
-  const addressProps = {
-    id: 'address',
-    type: 'text',
-    label: 'Address',
-    optionalprops: {
-      disabled: false,
-      readOnly: false,
-      plaintext: false,
-      placeholder: '123 Example st.',
-    },
-  };
-
-  const rangeProps = {
-    id: 'range',
-    label: 'Age',
-    optionalprops: {
-      disabled: false,
-      min: 0,
-      max: 100,
-    },
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    console.log('submit');
   };
 
   return (
-    <Form {...args}>
-      <Input inputProps={emailProps} />
-      <Input inputProps={passwordProps} />
-      <FieldInput inputProps={addressProps} />
-      <Range rangeProps={rangeProps} />
-      <Button onClick={handleSubmit}>Submit</Button>
+    <Form {...args} formData={formData} onSubmit={handleSubmit}>
+      <Button type="submit">Submit</Button>
     </Form>
   );
 };
@@ -80,6 +90,7 @@ Default.args = {
   variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
+  formData: formData,
 };
 
 Default.argTypes = {

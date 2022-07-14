@@ -1,28 +1,33 @@
-import * as React from 'react';
+import React from 'react';
 import { Range } from '../index';
-import { RangeDefaultProps } from '../Default.types';
+import { RangeDefaultProps, RangeProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-export const rangeProps = {
-  id: 'range',
-  label: 'Example Range',
-  optionalprops: {
-    disabled: false,
+const inputProps: RangeProps = {
+  label: {
+    content: 'Range',
+    htmlFor: 'range',
+  },
+  control: {
+    id: 'range',
+    value: 5,
     min: 0,
-    max: 20,
+    max: 10,
   },
 };
 
-export const Default = (args: RangeDefaultProps) => <Range {...args} />;
+export const Default = (args: RangeDefaultProps) => {
+  return <Range {...args} />;
+};
 
 Default.args = {
   variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
-  rangeProps: rangeProps,
+  inputProps: inputProps,
 };
 
 Default.argTypes = {

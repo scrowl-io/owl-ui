@@ -6,11 +6,14 @@ import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-export const inputProps: InputProps = {
-  id: 'input',
-  type: 'email',
-  label: 'Email Address',
-  optionalprops: {
+const inputProps: InputProps = {
+  label: {
+    content: 'Email Address',
+    htmlFor: 'email',
+  },
+  control: {
+    id: 'email',
+    type: 'email',
     disabled: false,
     readOnly: false,
     plaintext: false,

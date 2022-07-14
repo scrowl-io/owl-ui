@@ -1,13 +1,13 @@
 import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
-import { RangeDefaultProps } from './Default.types';
+import { SelectDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
-export const Component = (props: RangeDefaultProps) => {
+export const Component = (props: SelectDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const baseClass = 'range';
-  const { label, control } = props.inputProps;
+  const baseClass = 'select';
+  const { label, id, name, selectoptions } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -29,18 +29,22 @@ export const Component = (props: RangeDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'rangeProps']
+    ['prefix', 'theme', 'size', 'selectProps']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes['form-range'] = 'owlui-form-range';
   themePrefixes['form-label'] = 'owlui-form-label';
+  themePrefixes['form-select'] = 'owlui-form-select';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form.Group {...locals} className="mb-3">
-        <Form.Label {...label}>{label.content}</Form.Label>
-        <Form.Range {...control} />
+        <Form.Label htmlFor={id}>{label}</Form.Label>
+        <Form.Select name={name}>
+          {selectoptions.map(option => {
+            return <option key={option.id}>{option.label}</option>;
+          })}
+        </Form.Select>
       </Form.Group>
     </ThemeProvider>
   );
