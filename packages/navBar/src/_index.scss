@@ -1,1 +1,4 @@
+@forward './Brand/styles.module.scss' as brandNavBar-*;
+@forward './Collapse/styles.module.scss' as collapseNavBar-*;
 @forward './Default/styles.module.scss' as defaultNavBar-*;
+@forward './Toggle/styles.module.scss' as toggleNavBar-*;

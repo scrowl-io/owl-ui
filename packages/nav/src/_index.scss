@@ -1,1 +1,5 @@
 @forward './Default/styles.module.scss' as defaultNav-*;
+@forward './Dropdown/styles.module.scss' as dropdownNav-*;
+@forward './DropdownDivider/styles.module.scss' as dropdowndividerNav-*;
+@forward './DropdownItem/styles.module.scss' as dropdownitemNav-*;
+@forward './Link/styles.module.scss' as linkNav-*;

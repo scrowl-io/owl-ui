@@ -1,9 +1,15 @@
+const themes = {
+  light: 'Light',
+  dark: 'Dark',
+};
+
 export const theme = {
-  options: ['Default', 'Dark'],
+  options: Object.keys(themes),
   control: {
     type: 'select',
+    labels: themes,
   },
-  defaultValue: 'Default',
+  defaultValue: 'light',
 };
 
 export default {
