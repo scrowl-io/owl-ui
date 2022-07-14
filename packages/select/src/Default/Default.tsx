@@ -7,7 +7,7 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 export const Component = (props: SelectDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'select';
-  const { label, id, name, selectoptions } = props;
+  const { label, control } = props.inputProps;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -39,10 +39,14 @@ export const Component = (props: SelectDefaultProps) => {
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form.Group {...locals} className="mb-3">
-        <Form.Label htmlFor={id}>{label}</Form.Label>
-        <Form.Select name={name}>
-          {selectoptions.map(option => {
-            return <option key={option.id}>{option.label}</option>;
+        <Form.Label {...label}>{label?.content}</Form.Label>
+        <Form.Select {...control}>
+          {control.options.map(option => {
+            return (
+              <option key={option.id} {...option}>
+                {option.label}
+              </option>
+            );
           })}
         </Form.Select>
       </Form.Group>

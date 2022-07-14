@@ -1,17 +1,24 @@
+/* eslint-disable import/named */
+/* eslint-disable import/namespace */
 import React from 'react';
 import * as bs from 'react-bootstrap';
-
-export interface OptionProps {
-  id: number;
-  label: string;
-}
-
 export interface SelectDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  label?: string;
-  selectoptions: OptionProps[];
+  type?: string;
+  inputProps: SelectProps;
+}
+export interface SelectProps {
+  label: SelectLabel & bs.FormLabelProps;
+  control: SelectOptions;
+}
+export interface SelectLabel {
+  content: string;
 }
 
-export type SelectDefaultProps = SelectDefaultCommons & bs.FormSelectProps;
+export interface SelectOptions extends bs.FormSelectProps {
+  options: React.OptionHTMLAttributes<HTMLOptionElement>[];
+}
+
+export type SelectDefaultProps = SelectDefaultCommons;

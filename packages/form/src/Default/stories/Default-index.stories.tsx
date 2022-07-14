@@ -6,17 +6,21 @@ import { Button } from '../../../../button/src/index';
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
-import { formData } from './form-data';
 
 export const Default = (args: FormDefaultProps) => {
   const [studentData, setStudentData] = useState({
     email: '',
     firstName: '',
+    city: '',
     age: 30,
   });
 
   const handleChange = (e: React.BaseSyntheticEvent) => {
     setStudentData({ ...studentData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
   };
 
   const formData: FormDataProps[] = [
@@ -57,6 +61,42 @@ export const Default = (args: FormDefaultProps) => {
       },
     },
     {
+      type: 'select',
+      inputProps: {
+        label: {
+          content: 'City',
+          htmlFor: 'city',
+        },
+        control: {
+          name: 'city',
+          value: studentData.city,
+          onChange: handleChange,
+          options: [
+            {
+              id: '1',
+              label: 'Toronto',
+              value: 'toronto',
+            },
+            {
+              id: '2',
+              label: 'Ottawa',
+              value: 'ottawa',
+            },
+            {
+              id: '3',
+              label: 'London',
+              value: 'london',
+            },
+            {
+              id: '4',
+              label: 'Halifax',
+              value: 'halifax',
+            },
+          ],
+        },
+      },
+    },
+    {
       type: 'range',
       inputProps: {
         label: {
@@ -74,11 +114,6 @@ export const Default = (args: FormDefaultProps) => {
     },
   ];
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    console.log('submit');
-  };
-
   return (
     <Form {...args} formData={formData} onSubmit={handleSubmit}>
       <Button type="submit">Submit</Button>
@@ -90,7 +125,6 @@ Default.args = {
   variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
-  formData: formData,
 };
 
 Default.argTypes = {

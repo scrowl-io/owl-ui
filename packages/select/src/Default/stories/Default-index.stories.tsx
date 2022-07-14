@@ -1,28 +1,29 @@
 import * as React from 'react';
 import { Select } from '../index';
-import { SelectDefaultProps } from '../Default.types';
+import { SelectDefaultProps, SelectProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-export const selectProps = {
-  id: 'select',
-  label: 'Select an Option',
-  optionalprops: {
-    disabled: false,
-    htmlSize: 1,
+const inputProps: SelectProps = {
+  label: {
+    content: 'Select',
+    htmlFor: 'select',
+  },
+  control: {
+    id: 'select',
     options: [
       {
-        id: 1,
+        id: '1',
         label: 'Option 1',
       },
       {
-        id: 2,
+        id: '2',
         label: 'Option 2',
       },
       {
-        id: 1,
+        id: '3',
         label: 'Option 3',
       },
     ],
@@ -35,7 +36,7 @@ Default.args = {
   variant: variant.defaultValue,
   size: size.defaultValue,
   theme: theme.defaultValue,
-  selectProps: selectProps,
+  inputProps: inputProps,
 };
 
 Default.argTypes = {

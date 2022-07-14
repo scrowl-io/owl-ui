@@ -5,6 +5,7 @@ import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 import { Input } from '../../../input/src';
 import { Range } from '../../../range/src';
+import { Select } from '../../../select/src';
 
 export const Component = (props: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
@@ -48,6 +49,8 @@ export const Component = (props: FormDefaultProps) => {
     switch (element.type) {
       case 'input':
         return <Input inputProps={element.inputProps} />;
+      case 'select':
+        return <Select inputProps={element.inputProps} />;
       case 'range':
         return <Range inputProps={element.inputProps} />;
       default:

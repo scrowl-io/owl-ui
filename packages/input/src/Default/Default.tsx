@@ -37,8 +37,6 @@ export const Component = (props: InputDefaultProps) => {
   themePrefixes['form-control'] = 'owlui-form-control';
   themePrefixes['form-text'] = 'owlui-form-text';
 
-  console.log('from input', props);
-
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form.Group {...locals}>
