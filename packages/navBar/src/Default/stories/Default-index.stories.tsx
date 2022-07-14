@@ -6,7 +6,13 @@ import { theme } from './Default-theme.stories';
 import { Brand } from '../../Brand';
 import { Toggle } from '../../Toggle';
 import { Collapse } from '../../Collapse';
-import { Nav, NavDropdown } from 'react-bootstrap';
+import {
+  Nav,
+  NavLink,
+  NavDropdown,
+  NavDropdownItem,
+  NavDropdownDivider,
+} from '../../../../nav/src/index';
 
 export const Default = (args: NavBarDefaultProps) => {
   return (
@@ -14,29 +20,23 @@ export const Default = (args: NavBarDefaultProps) => {
       <Brand>OwlUI</Brand>
       <Toggle />
       <Collapse>
-        {/* 
-        /* THIS WHOLE NAV SHOULD BE REPLACED BY THE OWLUI NAV COMPONENT ONCE IT GETS MERGED TO MAIN 
-        /* ALSO REMOVE UNEEDED IMPORTS
-        */}
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
+        <Nav>
+          <NavLink href="/home">Active</NavLink>
+          <NavLink eventKey="1">Link</NavLink>
+          <NavLink eventKey="2">Link</NavLink>
+          <NavLink eventKey="3" disabled>
+            Disabled
+          </NavLink>
+          <NavDropdown title="Dropdown">
+            <NavDropdownItem eventKey="4.1">Action</NavDropdownItem>
+            <NavDropdownItem eventKey="4.2">Another action</NavDropdownItem>
+            <NavDropdownItem eventKey="4.3">
+              Something else here
+            </NavDropdownItem>
+            <NavDropdownDivider />
+            <NavDropdownItem eventKey="4.4">Separated link</NavDropdownItem>
           </NavDropdown>
         </Nav>
-        {/* 
-        /* THIS WHOLE NAV SHOULD BE REPLACED BY THE OWLUI NAV COMPONENT ONCE IT GETS MERGED TO MAIN 
-        /* ALSO REMOVE UNEEDED IMPORTS
-        */}
       </Collapse>
     </NavBar>
   );

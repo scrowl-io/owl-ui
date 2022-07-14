@@ -24,9 +24,10 @@ export const Component = (props: NavBarDefaultProps) => {
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes['container'] = `owlui-${baseClass}-container`;
+  themePrefixes['container'] = `owlui-container`;
   themePrefixes[`${baseClass}-brand`] = `owlui-${baseClass}-brand`;
   themePrefixes[`${baseClass}-toggler`] = `owlui-${baseClass}-toggler`;
+  themePrefixes[`${baseClass}-collapse`] = `owlui-${baseClass}-collapse`;
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
