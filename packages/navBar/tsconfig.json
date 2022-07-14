@@ -1,20 +1,12 @@
 {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-          "../src/*": ["./*"]
-        },
-        "types": [
-            "custom-globals",
-            "static-assets",
-        ],
-        "typeRoots": [
-            "../../node_modules/@types",
-            "../../typings"
-        ]
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "../src/*": ["./*"]
     },
-    "exclude": [
-        "dist/*"
-    ]
+    "types": ["custom-globals", "static-assets"],
+    "typeRoots": ["../../node_modules/@types", "../../typings"]
+  },
+  "exclude": ["dist/*"]
 }
