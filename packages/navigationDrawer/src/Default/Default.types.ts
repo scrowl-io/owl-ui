@@ -1,3 +1,4 @@
+/* eslint-disable import/namespace */
 import React from 'react';
 import * as bs from 'react-bootstrap';
 
@@ -15,15 +16,17 @@ export type NavigationDrawerContentTypes =
   | NavigationDrawerContentItemProps
   | NavigationDrawerContentItemGroupProps;
 
+export interface NavigationDrawerHeader extends bs.OffcanvasHeaderProps {
+  content: React.ReactNode;
+}
+
 export interface NavigationDrawerDefaultCommons {
-  appearance?: 'Default' | 'Primary';
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   children: React.ReactNode;
-  header?: React.ReactNode;
+  header: NavigationDrawerHeader;
   items: Array<NavigationDrawerContentTypes>;
 }
 
 export type NavigationDrawerElementProps =
-  Partial<NavigationDrawerDefaultCommons> & bs.NavbarProps;
+  Partial<NavigationDrawerDefaultCommons> & bs.OffcanvasProps;
