@@ -43,6 +43,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
           'form-switch': 'owlui-form-switch',
           'form-check-input': 'owlui-form-check-input',
           'form-check-label': 'owlui-form-check-label',
+          'form-label': 'owlui-form-label',
         }}
       >
         <Form.Group {...locals} className="mb-3">

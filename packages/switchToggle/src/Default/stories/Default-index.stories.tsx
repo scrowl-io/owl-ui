@@ -15,6 +15,7 @@ const inputProps = {
     value: false,
     name: 'group1',
     test: 'something',
+    type: 'switch',
     // unlike other field types, 'name' is used to group multiple checkboxes. This allows for grouped radio buttons, where the user can only select one option out of a larger colleciton
   },
 };
