@@ -11,16 +11,39 @@ export const Default = (args: FormDefaultProps) => {
   const [studentData, setStudentData] = useState({
     email: '',
     firstName: '',
-    city: '',
+    city: 'toronto',
     age: 30,
+    remote: false,
+    inPerson: false,
+    alreadyEnrolled: false,
   });
 
   const handleChange = (e: React.BaseSyntheticEvent) => {
     setStudentData({ ...studentData, [e.target.name]: e.target.value });
   };
 
+  const handleCheckChange = (e: React.BaseSyntheticEvent) => {
+    if (e.target.type === 'radio') {
+      setStudentData({
+        ...studentData,
+        // for now, manually resetting any radio states back to false with the exception of the most recently-clicked
+        remote: false,
+        inPerson: false,
+        [e.target.id]: true,
+      });
+    } else {
+      // below is more of a quick fix--is it worth making an interface for the studentData object?
+      const target = studentData[e.target.id as keyof typeof studentData];
+      setStudentData({
+        ...studentData,
+        [e.target.id]: !target,
+      });
+    }
+  };
+
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    console.log(studentData);
   };
 
   const formData: FormDataProps[] = [
@@ -53,10 +76,11 @@ export const Default = (args: FormDefaultProps) => {
         },
         control: {
           onChange: handleChange,
+          id: 'firstName',
           value: studentData.firstName,
           name: 'firstName',
           type: 'text',
-          placeholder: 'Sean...',
+          placeholder: 'Please enter your name',
         },
       },
     },
@@ -69,6 +93,7 @@ export const Default = (args: FormDefaultProps) => {
         },
         control: {
           name: 'city',
+          id: 'city',
           value: studentData.city,
           onChange: handleChange,
           options: [
@@ -109,6 +134,53 @@ export const Default = (args: FormDefaultProps) => {
           name: 'age',
           min: 0,
           max: 100,
+        },
+      },
+    },
+    // Unlike the other field types, 'name' is used in Form.Check to group checkboxes. This is needed to ensure radio options are mutually exclusive when part of a group. For Form.Check, use 'Id' to link with state rather than 'name'
+    // See below for two mutually-exclusive radios, then an independant switch toggle
+    {
+      type: 'check',
+      inputProps: {
+        label: {
+          content: 'Remote',
+          htmlFor: 'remote',
+        },
+        control: {
+          id: 'remote',
+          onChange: handleCheckChange,
+          name: 'radios',
+          type: 'radio',
+        },
+      },
+    },
+    {
+      type: 'check',
+      inputProps: {
+        label: {
+          content: 'In-Person',
+          htmlFor: 'inPerson',
+        },
+        control: {
+          id: 'inPerson',
+          onChange: handleCheckChange,
+          name: 'radios',
+          type: 'radio',
+        },
+      },
+    },
+    {
+      type: 'check',
+      inputProps: {
+        label: {
+          content: 'Are you already enrolled in any other courses?',
+          htmlFor: 'alreadyEnrolled',
+        },
+        control: {
+          id: 'alreadyEnrolled',
+          onChange: handleCheckChange,
+          name: 'toggle',
+          type: 'switch',
         },
       },
     },

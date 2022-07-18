@@ -7,8 +7,9 @@ import { createLocalProps } from '@owlui/lib/src/utils';
 export const Component = (props: SwitchToggleDefaultProps) => {
   const baseClass = 'switchToggle';
   const prefix = props.prefix || '';
+  const { label, control } = props.inputProps;
 
-  const locals: SwitchToggleDefaultProps = createLocalProps(
+  const locals = createLocalProps(
     props,
     {
       module: styleMod,
@@ -31,7 +32,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'Size']
+    ['prefix', 'theme', 'appearance', 'Size', 'inputProps']
   );
 
   return (
@@ -44,7 +45,10 @@ export const Component = (props: SwitchToggleDefaultProps) => {
           'form-check-label': 'owlui-form-check-label',
         }}
       >
-        <Form.Check {...locals} type="switch" />
+        <Form.Group {...locals} className="mb-3">
+          <Form.Label {...label}>{label.content}</Form.Label>
+          <Form.Check {...control} />
+        </Form.Group>
       </ThemeProvider>
     </>
   );

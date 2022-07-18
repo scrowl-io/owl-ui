@@ -6,11 +6,12 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 import { Input } from '../../../input/src';
 import { Range } from '../../../range/src';
 import { Select } from '../../../select/src';
+import { SwitchToggle } from '../../../switchToggle/src';
 
 export const Component = (props: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'form';
-  const { formData } = props;
+  const { formData, children } = props;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -53,6 +54,8 @@ export const Component = (props: FormDefaultProps) => {
         return <Select inputProps={element.inputProps} />;
       case 'range':
         return <Range inputProps={element.inputProps} />;
+      case 'check':
+        return <SwitchToggle inputProps={element.inputProps} />;
       default:
         return null;
     }
@@ -60,7 +63,10 @@ export const Component = (props: FormDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form {...locals}>{renderFormElements}</Form>
+      <Form {...locals}>
+        {renderFormElements}
+        {children}
+      </Form>
     </ThemeProvider>
   );
 };
