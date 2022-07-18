@@ -9,7 +9,7 @@ import { Component as NavContent } from './elements/Content';
 
 export const Component = (props: NavigationDrawerElementProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const baseClass = 'navigation-drawer';
+  const baseClass = 'navigationDrawer';
   const { header, items } = props;
   const prefix = props.prefix || '';
 
