@@ -18,7 +18,7 @@ export default {
   },
   decorators: [
     Story => (
-      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+      <div>
         <Story />
       </div>
     ),

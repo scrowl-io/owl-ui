@@ -6,32 +6,14 @@ Links that share a relation can be grouped together.
 
 ## Accessibility
 
+The ARIA role for the navbar, will default to 'navigation' for Navbars whose as is something other than <nav>.
+
 ## Props
 
-|     Name     |           Type           | Default Value | Description                                                             |
-| :----------: | :----------------------: | :-----------: | :---------------------------------------------------------------------- |
-|   `theme`    |         `string`         |   `Default`   | Dictates color scheme                                                   |
-| `appearance` |         `string`         |               | Modifies the look/feel of the component                                 |
-|    `size`    |         `string`         |     `Sm`      | Modifies font sizes and spacing                                         |
-|   `header`   |        `Element`         |               | A non-scrolling element meant for titles, logos, etc.                   |
-|   `items`    | `Array<ContentItemType>` |               | An array of mixed types, can be a `contentItem` or a `contentItemGroup` |
+For more details on the available props for this component, visit the [React Bootstrap Docs Navbar]: https://react-bootstrap.github.io/components/navbar/#navbar-props
 
-#### Content Item
+More information on incorporating the offCanvas component into the navbar: https://react-bootstrap.github.io/components/navbar/#offcanvas  
 
-A `contentItem` is an object with the following properties:
-
-|  Name   |   Type   | Default Value | Description                   |
-| :-----: | :------: | :-----------: | :---------------------------- |
-| `label` | `string` |               | The display value of the item |
-
-#### Content Item Group
-
-A `contentItemGroup` is an object with the following properties:
-
-|   Name    |         Type         | Default Value | Description                         |
-| :-------: | :------------------: | :-----------: | :---------------------------------- |
-| `heading` |       `string`       |               | The display value of the subheading |
-|  `items`  | `Array<contentItem>` |               | An array of content items           |
 
 ## Basic Implementation
 
