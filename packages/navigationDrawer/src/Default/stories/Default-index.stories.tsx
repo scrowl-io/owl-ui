@@ -3,12 +3,16 @@ import { NavigationDrawer } from '../index';
 import {
   NavigationDrawerElementProps,
   NavigationDrawerContentTypes,
+  NavigationDrawerHeader,
 } from '../Default.types';
 
-import { appearance } from './Default-appearance.stories';
 import { theme } from './Default-theme.stories';
 
-const Header = <div>Header</div>;
+const Header: NavigationDrawerHeader = {
+  content: <div>Header</div>,
+  closeButton: true,
+};
+
 const items: Array<NavigationDrawerContentTypes> = [
   { label: 'Link 1' },
   {
@@ -19,18 +23,24 @@ const items: Array<NavigationDrawerContentTypes> = [
   { heading: 'CATEGORY 2', items: [{ label: 'Link 5' }, { label: 'Link 6' }] },
 ];
 
-export const Default = (args: NavigationDrawerElementProps) => (
-  <NavigationDrawer {...args}>Hello World</NavigationDrawer>
-);
+export const Default = (args: NavigationDrawerElementProps) => {
+  const [show, setShow] = React.useState(false);
+
+  return (
+    <>
+      <button onClick={() => setShow(!show)}>Launch</button>
+
+      <NavigationDrawer {...args} show={show} onHide={() => setShow(!show)} />
+    </>
+  );
+};
 
 Default.args = {
-  appearance: appearance.defaultValue,
   theme: theme.defaultValue,
   header: Header,
   items: items,
 };
 
 Default.argTypes = {
-  appearance,
   theme,
 };

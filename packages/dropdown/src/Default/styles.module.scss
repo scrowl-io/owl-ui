@@ -3,12 +3,6 @@
 .dropdown {
   $ref: &;
 
-  .dropdown-menu {
-    height: 15rem;
-    overflow-y: scroll;
-    text-align: center;
-  }
-
   &.theme--dark {
     #{$ref}-toggle.btn-primary {
       --bs-btn-color: var(--color-font-light);

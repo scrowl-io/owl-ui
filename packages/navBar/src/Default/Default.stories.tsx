@@ -7,7 +7,7 @@ import descriptionMd from './Description.md';
 export { Default } from './stories/Default-index.stories';
 
 export default {
-  title: 'Components/NavigationDrawer/Default',
+  title: 'Components/NavBar/Default',
   component: Component,
   parameters: {
     docs: {
@@ -18,7 +18,7 @@ export default {
   },
   decorators: [
     Story => (
-      <div>
+      <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
         <Story />
       </div>
     ),

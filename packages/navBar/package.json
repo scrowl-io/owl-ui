@@ -1,0 +1,36 @@
+{
+  "name": "@owlui/navbar",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/navBar#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.navBar.js",
+  "types": "dist/owl.navBar.d.ts",
+  "style": "dist/owl.navBar.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/navBar"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/lib": "^0.0.27",
+    "@owlui/typings": "^0.0.27",
+    "react-bootstrap": "2.4.0"
+  }
+}

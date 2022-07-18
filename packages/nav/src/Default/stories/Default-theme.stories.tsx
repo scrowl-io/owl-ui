@@ -1,5 +1,5 @@
-export const appearance = {
-  options: ['Default', 'Primary'],
+export const theme = {
+  options: ['Default', 'Dark'],
   control: {
     type: 'select',
   },
@@ -7,5 +7,5 @@ export const appearance = {
 };
 
 export default {
-  appearance,
+  theme,
 };

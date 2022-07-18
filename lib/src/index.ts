@@ -12,6 +12,8 @@ export * from '../../packages/icons/src/index';
 export * from '../../packages/input/src/index';
 export * from '../../packages/listgroup/src/index';
 export * from '../../packages/modal/src/index';
+export * from '../../packages/nav/src/index';
+export * from '../../packages/navBar/src/index';
 export * from '../../packages/navigationDrawer/src/index';
 export * from '../../packages/progressBar/src/index';
 export * from '../../packages/range/src/index';

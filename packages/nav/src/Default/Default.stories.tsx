@@ -1,5 +1,4 @@
 import * as React from 'react';
-// eslint-disable-next-line import/named
 import { Meta } from '@storybook/react';
 import { Component } from './Default';
 import descriptionMd from './Description.md';
@@ -7,7 +6,7 @@ import descriptionMd from './Description.md';
 export { Default } from './stories/Default-index.stories';
 
 export default {
-  title: 'Components/NavigationDrawer/Default',
+  title: 'Components/Nav/Default',
   component: Component,
   parameters: {
     docs: {

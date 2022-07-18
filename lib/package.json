@@ -64,6 +64,8 @@
     "@owlui/input": "^0.0.0",
     "@owlui/listgroup": "^0.0.0",
     "@owlui/modal": "^0.0.0",
+    "@owlui/nav": "^0.0.27",
+    "@owlui/navbar": "^0.0.0",
     "@owlui/navigationdrawer": "^0.0.27",
     "@owlui/progressbar": "^0.0.27",
     "@owlui/range": "^0.0.0",
