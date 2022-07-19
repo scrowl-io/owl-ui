@@ -1,0 +1,36 @@
+{
+  "name": "@owlui/form",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/form#readme",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/owl.form.js",
+  "types": "dist/owl.form.d.ts",
+  "style": "dist/owl.form.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EEBOS/owl-ui.git",
+    "directory": "packages/form"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "isLibrary": true,
+  "outputFormat": "commonjs",
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "dependencies": {
+    "@owlui/lib": "^0.0.27",
+    "@owlui/typings": "^0.0.27",
+    "react-bootstrap": "2.4.0"
+  }
+}
