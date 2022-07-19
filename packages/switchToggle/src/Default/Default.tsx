@@ -46,7 +46,7 @@ export const Component = (props: SwitchToggleDefaultProps) => {
           'form-label': 'owlui-form-label',
         }}
       >
-        <Form.Group {...locals} className="mb-3">
+        <Form.Group {...locals}>
           <Form.Label {...label}>{label.content}</Form.Label>
           <Form.Check {...control} />
         </Form.Group>

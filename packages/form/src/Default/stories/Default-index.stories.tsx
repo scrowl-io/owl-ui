@@ -13,32 +13,15 @@ export const Default = (args: FormDefaultProps) => {
     firstName: '',
     city: 'toronto',
     age: 30,
-    remote: false,
-    inPerson: false,
+    work: '',
     alreadyEnrolled: false,
   });
 
   const handleChange = (e: React.BaseSyntheticEvent) => {
-    setStudentData({ ...studentData, [e.target.name]: e.target.value });
-  };
+    const value =
+      e.target.type === 'checkbox' ? e.target.checked : e.target.value;
 
-  const handleCheckChange = (e: React.BaseSyntheticEvent) => {
-    if (e.target.type === 'radio') {
-      setStudentData({
-        ...studentData,
-        // for now, manually resetting any radio states back to false with the exception of the most recently-clicked
-        remote: false,
-        inPerson: false,
-        [e.target.id]: true,
-      });
-    } else {
-      // below is more of a quick fix--is it worth making an interface for the studentData object?
-      const target = studentData[e.target.id as keyof typeof studentData];
-      setStudentData({
-        ...studentData,
-        [e.target.id]: !target,
-      });
-    }
+    setStudentData({ ...studentData, [e.target.name]: value });
   };
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -137,8 +120,6 @@ export const Default = (args: FormDefaultProps) => {
         },
       },
     },
-    // Unlike the other field types, 'name' is used in Form.Check to group checkboxes. This is needed to ensure radio options are mutually exclusive when part of a group. For Form.Check, use 'Id' to link with state rather than 'name'
-    // See below for two mutually-exclusive radios, then an independant switch toggle
     {
       type: 'check',
       inputProps: {
@@ -147,9 +128,9 @@ export const Default = (args: FormDefaultProps) => {
           htmlFor: 'remote',
         },
         control: {
-          id: 'remote',
-          onChange: handleCheckChange,
-          name: 'radios',
+          onChange: handleChange,
+          name: 'work',
+          value: 'remote',
           type: 'radio',
         },
       },
@@ -162,9 +143,9 @@ export const Default = (args: FormDefaultProps) => {
           htmlFor: 'inPerson',
         },
         control: {
-          id: 'inPerson',
-          onChange: handleCheckChange,
-          name: 'radios',
+          onChange: handleChange,
+          name: 'work',
+          value: 'in-person',
           type: 'radio',
         },
       },
@@ -177,9 +158,8 @@ export const Default = (args: FormDefaultProps) => {
           htmlFor: 'alreadyEnrolled',
         },
         control: {
-          id: 'alreadyEnrolled',
-          onChange: handleCheckChange,
-          name: 'toggle',
+          onChange: handleChange,
+          name: 'alreadyEnrolled',
           type: 'switch',
         },
       },
