@@ -10,18 +10,39 @@ import { variant } from './Default-variant.stories';
 const items: ListgroupItemProps[] = [
   {
     id: '1',
-    content: 'Dapibus ac facilisis in',
+    header: 'Dapibus ac facilisis in',
     bsProps: {
       variant: 'primary',
     },
   },
   {
     id: '2',
-    content: 'Cras justo odio',
+    header: (
+      <div className="d-flex">
+        <img
+          width="30"
+          height="30"
+          src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-clipboard-512.png"
+          alt="osg logo"
+        />
+        <a href="https://osg.ca">Harassment Report.pdf</a>
+      </div>
+    ),
+    description: (
+      <p className="description">
+        Report from 2017 explaining the Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    ),
+    bsProps: {
+      variant: 'danger',
+    },
   },
   {
     id: '3',
-    content: 'Morbi leo risus',
+    header: 'Morbi leo risus',
     bsProps: {
       href: 'http://www.google.com',
       as: 'a',
@@ -30,11 +51,11 @@ const items: ListgroupItemProps[] = [
   },
   {
     id: '4',
-    content: 'Porta ac consectetur ac',
+    header: 'Porta ac consectetur ac',
   },
   {
     id: '5',
-    content:
+    header:
       'Changes the flow of the list group items from vertical to horizontal',
     bsProps: {
       href: 'http://www.osg.ca',

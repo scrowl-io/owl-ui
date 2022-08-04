@@ -1,8 +1,10 @@
+import React from 'react';
 import * as bs from 'react-bootstrap';
 
 export interface ListgroupItemProps {
   id: string;
-  content: string;
+  header: React.ReactNode | React.ReactNode[];
+  description?: React.ReactNode;
   bsProps?: bs.ListGroupItemProps;
 }
 
