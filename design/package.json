@@ -1,6 +1,6 @@
 {
   "name": "@owlui/design",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "",
   "type": "module",
   "main": "./dist/styledictionary/scss/variables.css",

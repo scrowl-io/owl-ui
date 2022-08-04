@@ -1,6 +1,6 @@
 {
   "name": "@owlui/select",
-  "version": "0.0.0",
+  "version": "0.0.28",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/select#readme",
   "license": "MIT",
@@ -29,8 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.27",
-    "@owlui/typings": "^0.0.27",
+    "@owlui/lib": "^0.0.28",
+    "@owlui/typings": "^0.0.28",
     "react-bootstrap": "2.4.0"
   }
 }
