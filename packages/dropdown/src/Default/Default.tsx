@@ -64,9 +64,6 @@ export const Component = (props: DropdownDefaultProps) => {
           <Dropdown.Toggle variant={props.variant}>
             {props.button?.element}
             {props.button?.text}
-            {/* {selectedItem
-              ? items.find(v => v.id == selectedItem)?.label
-              : items[0].label} */}
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {items.map((item: DropdownItemProps) => {

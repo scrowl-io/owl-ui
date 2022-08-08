@@ -3,7 +3,7 @@ import * as bs from 'react-bootstrap';
 
 export interface AccordionItemProps {
   id: string;
-  label: string;
+  label: React.ReactNode;
   view: React.ReactNode;
 }
 
