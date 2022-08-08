@@ -24,7 +24,12 @@ const items = [
   },
   {
     id: '2',
-    label: 'Header 2',
+    label: (
+      <div>
+        <span>Icon </span>
+        Header 1
+      </div>
+    ),
     view: (
       <form style={{ display: 'flex', flexDirection: 'column' }}>
         <label htmlFor="name">Name:</label>

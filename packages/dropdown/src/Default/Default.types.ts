@@ -12,6 +12,7 @@ export interface DropdownDefaultCommons {
   prefix?: string;
   children: React.ReactNode;
   items: DropdownItemProps[];
+  button?: React.ReactNode;
 }
 
 export type DropdownDefaultProps = DropdownDefaultCommons &

@@ -8,7 +8,7 @@ export interface InputDefaultCommons {
 }
 
 export interface InputProps {
-  label: InputLabel & bs.FormLabelProps;
+  label?: InputLabel & bs.FormLabelProps;
   control: bs.FormControlProps;
 }
 export interface InputLabel {

@@ -38,7 +38,8 @@ export const Component = (props: ListgroupDefaultProps) => {
         {items.map(item => {
           return (
             <ListGroup.Item {...item.bsProps} key={item.id}>
-              {item.content}
+              {item.header}
+              {item.description}
             </ListGroup.Item>
           );
         })}
