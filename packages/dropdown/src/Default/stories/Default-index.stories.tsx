@@ -54,10 +54,12 @@ const items = [
   },
 ];
 
-const button = {
-  element: <span>Test </span>,
-  text: 'Click me',
-};
+const button = (
+  <>
+    <span>Icon</span>
+    Click me
+  </>
+);
 
 export const Default = (args: DropdownDefaultProps) => <Dropdown {...args} />;
 
