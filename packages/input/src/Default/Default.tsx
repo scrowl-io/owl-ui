@@ -40,7 +40,7 @@ export const Component = (props: InputDefaultProps) => {
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form.Group {...locals} className="mb-3">
-        <Form.Label {...label}>{label?.content}</Form.Label>
+        {label && <Form.Label {...label}>{label?.content}</Form.Label>}
         <Form.Control {...control} />
       </Form.Group>
     </ThemeProvider>

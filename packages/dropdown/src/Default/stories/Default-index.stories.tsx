@@ -54,6 +54,11 @@ const items = [
   },
 ];
 
+const button = {
+  element: <span>Test </span>,
+  text: 'Click me',
+};
+
 export const Default = (args: DropdownDefaultProps) => <Dropdown {...args} />;
 
 Default.args = {
@@ -61,6 +66,7 @@ Default.args = {
   size: size.defaultValue,
   theme: theme.defaultValue,
   items: items,
+  button: button,
 };
 
 Default.argTypes = {
