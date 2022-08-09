@@ -1,6 +1,6 @@
 {
   "name": "@owlui/drawer",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/drawer#readme",
   "license": "MIT",
@@ -29,8 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.28",
-    "@owlui/typings": "^0.0.28",
+    "@owlui/lib": "^0.0.29",
+    "@owlui/typings": "^0.0.29",
     "react-bootstrap": "2.4.0"
   }
 }
