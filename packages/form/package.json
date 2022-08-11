@@ -1,6 +1,6 @@
 {
   "name": "@owlui/form",
-  "version": "0.0.29",
+  "version": "0.0.30",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/form#readme",
   "license": "MIT",
@@ -29,8 +29,8 @@
     "react": "^18.0.0"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.29",
-    "@owlui/typings": "^0.0.29",
+    "@owlui/lib": "^0.0.30",
+    "@owlui/typings": "^0.0.30",
     "react-bootstrap": "2.4.0"
   }
 }
