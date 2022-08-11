@@ -77,6 +77,7 @@ export const Component = (props: DropdownDefaultProps) => {
                   data-index={item.id}
                   key={item.id}
                   onClick={handleItemClick}
+                  as={item.as}
                 >
                   {item.label}
                 </Dropdown.Item>
