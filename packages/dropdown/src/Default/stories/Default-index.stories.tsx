@@ -9,13 +9,20 @@ import { theme } from './Default-theme.stories';
 const items = [
   {
     id: '1',
-    label: 'Item 1',
+    label: (
+      <div className="d-flex">
+        <span>Icon</span>
+        <p>example</p>
+      </div>
+    ),
     value: undefined,
+    as: 'button',
   },
   {
     id: '2',
     label: 'Item 2',
     value: undefined,
+    as: 'button',
   },
   {
     id: '3',
