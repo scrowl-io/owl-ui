@@ -101,6 +101,7 @@
     "handlebars": "^4.7.7",
     "js-beautify": "^1.14.0",
     "lerna": "^4.0.0",
+    "material-design-icons": "^3.0.1",
     "mini-css-extract-plugin": "^2.4.5",
     "parcel": "2.5.0",
     "postcss": "^8.4.4",
@@ -129,10 +130,9 @@
   },
   "dependencies": {
     "bootstrap": "5.2.0-beta1",
-    "material-design-icons": "^3.0.1",
-    "react": "~18.1.0",
+    "react": "^18.1.0",
     "react-bootstrap": "2.4.0",
-    "react-dom": "~18.1.0"
+    "react-dom": "^18.1.0"
   },
   "bugs": {
     "url": "https://github.com/EEBOS/owl-ui/issues"
