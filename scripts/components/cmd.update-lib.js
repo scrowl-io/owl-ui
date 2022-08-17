@@ -27,9 +27,6 @@ function update() {
       dest: setDest('index.ts'),
     },
   };
-  const types = fs.getFile('typings/package.json');
-
-  addDep(types.name);
 
   for (let pkg in pkgs) {
     const component = `@owlui/${pkg}`;
