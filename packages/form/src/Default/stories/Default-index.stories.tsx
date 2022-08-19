@@ -33,6 +33,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'input',
       inputProps: {
+        key: '1',
         label: {
           content: 'Email Address',
           htmlFor: 'email',
@@ -43,9 +44,6 @@ export const Default = (args: FormDefaultProps) => {
           value: studentData.email,
           name: 'email',
           type: 'email',
-          disabled: false,
-          readOnly: false,
-          plaintext: false,
           placeholder: 'example@email.com',
         },
       },
@@ -53,6 +51,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'input',
       inputProps: {
+        key: '2',
         label: {
           content: 'First Name',
           htmlFor: 'firstName',
@@ -70,6 +69,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'select',
       inputProps: {
+        key: '3',
         label: {
           content: 'City',
           htmlFor: 'city',
@@ -107,6 +107,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'range',
       inputProps: {
+        key: '4',
         label: {
           content: 'Range',
           htmlFor: 'age',
@@ -123,6 +124,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'check',
       inputProps: {
+        key: '5',
         label: {
           content: 'Remote',
           htmlFor: 'remote',
@@ -138,6 +140,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'check',
       inputProps: {
+        key: '6',
         label: {
           content: 'In-Person',
           htmlFor: 'inPerson',
@@ -153,6 +156,7 @@ export const Default = (args: FormDefaultProps) => {
     {
       type: 'check',
       inputProps: {
+        key: '7',
         label: {
           content: 'Are you already enrolled in any other courses?',
           htmlFor: 'alreadyEnrolled',

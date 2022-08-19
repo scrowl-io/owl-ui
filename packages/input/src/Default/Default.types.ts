@@ -1,13 +1,14 @@
 import * as bs from 'react-bootstrap';
-export interface InputDefaultCommons {
+export interface TextInputDefaultCommons {
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   type?: string;
-  inputProps: InputProps;
+  inputProps: TextInputProps;
 }
 
-export interface InputProps {
+export interface TextInputProps {
+  key: string;
   label?: InputLabel & bs.FormLabelProps;
   control: bs.FormControlProps;
 }
@@ -15,4 +16,4 @@ export interface InputLabel {
   content: string;
 }
 
-export type InputDefaultProps = InputDefaultCommons & bs.FormGroupProps;
+export type TextInputDefaultProps = TextInputDefaultCommons & bs.FormGroupProps;

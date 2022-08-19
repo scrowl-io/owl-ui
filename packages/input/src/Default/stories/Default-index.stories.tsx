@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Input } from '../index';
-import { InputDefaultProps, InputProps } from '../Default.types';
+import { TextInputDefaultProps, TextInputProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
-const inputProps: InputProps = {
+const inputProps: TextInputProps = {
+  key: '1',
   label: {
     content: 'Email Address',
     htmlFor: 'email',
@@ -21,7 +22,7 @@ const inputProps: InputProps = {
   },
 };
 
-export const Default = (args: InputDefaultProps) => <Input {...args} />;
+export const Default = (args: TextInputDefaultProps) => <Input {...args} />;
 
 Default.args = {
   variant: variant.defaultValue,

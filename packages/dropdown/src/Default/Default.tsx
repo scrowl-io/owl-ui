@@ -31,7 +31,7 @@ export const Component = (props: DropdownDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'items']
+    ['prefix', 'theme', 'size', 'items', 'button']
   );
 
   const handleItemClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -62,7 +62,7 @@ export const Component = (props: DropdownDefaultProps) => {
       >
         <Dropdown {...locals} focusFirstItemOnShow="keyboard">
           <Dropdown.Toggle variant={props.variant}>
-            {props.button}
+            {props.button ? props.button : <span>Click Me</span>}
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {items.map((item: DropdownItemProps) => {

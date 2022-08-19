@@ -29,7 +29,7 @@ export const Component = (props: SelectDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'selectProps']
+    ['prefix', 'theme', 'size', 'inputProps']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

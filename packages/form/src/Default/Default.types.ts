@@ -1,6 +1,6 @@
 import React from 'react';
 import * as bs from 'react-bootstrap';
-import { InputDefaultProps } from '../../../input/src';
+import { TextInputDefaultProps } from '../../../input/src/Default/Default.types';
 import { RangeDefaultProps } from '../../../range/src/Default';
 import { SelectDefaultProps } from '../../../select/src';
 export interface FormDefaultCommons {
@@ -11,8 +11,8 @@ export interface FormDefaultCommons {
 }
 
 export type FormDataProps =
-  | InputDefaultProps
+  | TextInputDefaultProps
   | RangeDefaultProps
   | SelectDefaultProps;
 
-export type FormDefaultProps = FormDefaultCommons & bs.FormProps;
+export type FormDefaultProps = FormDefaultCommons & Partial<bs.FormProps>;

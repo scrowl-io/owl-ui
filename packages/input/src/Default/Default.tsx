@@ -1,10 +1,10 @@
 import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
-import { InputDefaultProps } from './Default.types';
+import { TextInputDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 
-export const Component = (props: InputDefaultProps) => {
+export const Component = (props: TextInputDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'input';
   const { label, control } = props.inputProps;
