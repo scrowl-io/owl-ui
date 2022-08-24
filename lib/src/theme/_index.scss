@@ -1,8 +1,9 @@
-@forward './global/reset';
 @forward './global/variables';
 @forward './font-brand';
 @forward './font-icons';
 @forward './global/typography';
-@use 'bootstrap/dist/css/bootstrap.css';
+
+@use './global/custom-bootstrap.css';
+
 @forward './default' as defaultTheme-*;
 @forward './dark' as darkTheme-*;
