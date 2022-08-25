@@ -1,7 +1,7 @@
 const sizes = {
-  Lg: 'Large',
-  Md: 'Medium',
-  Sm: 'Small',
+  lg: 'Large',
+  '': 'Default',
+  sm: 'Small',
 };
 
 export const size = {
@@ -10,7 +10,7 @@ export const size = {
     type: 'select',
     labels: sizes,
   },
-  defaultValue: 'Md',
+  defaultValue: '',
 };
 
 export default {

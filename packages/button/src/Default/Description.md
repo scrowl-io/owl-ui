@@ -29,7 +29,7 @@ The button component should inherit the HTML props of the web button so that pro
 |    `disabled`     |      `boolean`       |               | Defines wheter the button is in an enabled or disabled state.                                                    |
 |      `href`       |       `string`       |               | The href specifies the URL of the page the link goes to. It will render an `<a>` element instead of a `<button>` |
 |     `prefix`      |       `string`       |               | Custom class that will be added to the beggining of the `className`                                              |
-|      `size`       |   `Sm`, `Md`, `Lg`   |     `Md`      | Sets the size of the button                                                                                      |
+|      `size`       |      `sm`, `lg`      |               | Sets the size of the button                                                                                      |
 |      `theme`      |  `Default`, `Dark`   |   `Default`   | Sets the theme of the button using pre-defined styles                                                            |
 
 ## Usage
@@ -62,7 +62,7 @@ import {Default as Button} from `@owlui/button`;
 <Button
   appearence='Primary'
   theme='Dark'
-  size='Lg'
+  size='lg'
   prefix='new-button custom-button'
   onClick={customOnClickFunction}
 >
@@ -86,7 +86,7 @@ import {Default as Button} from `@owlui/button`;
   ariadescribedby='#submit-form'
   onClick={customOnClickFunction}
 >
-  <span id='submit-form' className='sronly'>Click here to submit the contact form with your request.</span>
+  <span id='submit-form' className='visually-hidden'>Click here to submit the contact form with your request.</span>
   <span>Submit</span>
 </Button>
 ```
