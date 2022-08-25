@@ -3,7 +3,7 @@
 @forward './font-icons';
 @forward './global/typography';
 
-@use './global/osg';
+@use './global/bootstrap';
 
 @forward './default' as defaultTheme-*;
 @forward './dark' as darkTheme-*;
