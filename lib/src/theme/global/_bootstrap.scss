@@ -181,7 +181,7 @@ $dropdown-link-hover-color: var(--owl-dropdown-link-hover-color);
 $dropdown-link-hover-bg: var(--owl-dropdown-link-hover-bg);
 
 $dropdown-link-disabled-color: var(--owl-dropdown-link-disabled-color);
-$dropdown-header-color: var(--owl-label-color);
+$dropdown-header-color: var(--owl-typeface-label-color);
 
 $modal-content-bg: var(--owl-dropdown-bg);
 $modal-backdrop-bg: var(--owl-dropdown-color);
@@ -509,4 +509,8 @@ $all-colors: map-merge-multiple(
   --owl-typeface-heading-4-size: #{$owl-sys-typeface-heading-4-size};
   --owl-typeface-heading-5-size: #{$owl-sys-typeface-heading-5-size};
   --owl-typeface-heading-6-size: #{$owl-sys-typeface-heading-6-size};
+
+  --owl-typeface-heading-1-weight: #{$owl-sys-typeface-heading-1-weight};
+  --owl-typeface-heading-2-weight: #{$owl-sys-typeface-heading-2-weight};
+  --owl-typeface-heading-weight: #{$owl-sys-typeface-heading-weight};
 }
