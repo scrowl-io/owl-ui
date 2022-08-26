@@ -1,0 +1,172 @@
+// Reference Tokens
+
+// Palette
+
+$owl-ref-palette-primary:        #007aba; //Lochmara Blue
+$owl-ref-palette-secondary:      #002a6a; //Midnight Blue
+$owl-ref-palette-blue:           #0083c3; //Process Blue
+$owl-ref-palette-purple:         #9624fe; //Electric Violet
+$owl-ref-palette-pink:           #d361ff; //Mulberry
+$owl-ref-palette-red:            #dd1700; //Scarlet
+$owl-ref-palette-orange:         #e66f00; //Mango Tango
+$owl-ref-palette-yellow:         #ffba00; //Selective Yellow
+$owl-ref-palette-green:          #178622; //Forest Green
+$owl-ref-palette-teal:           #61e4ff; //Malibu
+$owl-ref-palette-cyan:           #3bbefe; //Dodger Blue
+$owl-ref-palette-link-blue:      #1874d0; //Link Blue
+
+// Tints and Shades
+
+$owl-ref-palette-white:          #fff;
+$owl-ref-palette-gray-100:       #fafbfc;
+$owl-ref-palette-gray-200:       #e9ecef;
+$owl-ref-palette-gray-300:       #dee2e6;
+$owl-ref-palette-gray-400:       #ced4da;
+$owl-ref-palette-gray-500:       #adb5bd;
+$owl-ref-palette-gray-600:       #6c757d;
+$owl-ref-palette-gray-700:       #495057;
+$owl-ref-palette-gray-800:       #343a40;
+$owl-ref-palette-gray-900:       #212529;
+$owl-ref-palette-black:          #000;
+
+$owl-ref-palette-primary-100:    tint-color($owl-ref-palette-primary, 80%);
+$owl-ref-palette-primary-200:    tint-color($owl-ref-palette-primary, 60%);
+$owl-ref-palette-primary-300:    tint-color($owl-ref-palette-primary, 40%);
+$owl-ref-palette-primary-400:    tint-color($owl-ref-palette-primary, 20%);
+$owl-ref-palette-primary-500:    $owl-ref-palette-primary;
+$owl-ref-palette-primary-600:    shade-color($owl-ref-palette-primary, 20%);
+$owl-ref-palette-primary-700:    shade-color($owl-ref-palette-primary, 40%);
+$owl-ref-palette-primary-800:    shade-color($owl-ref-palette-primary, 60%);
+$owl-ref-palette-primary-900:    shade-color($owl-ref-palette-primary, 80%);
+
+$owl-ref-palette-secondary-100:  tint-color($owl-ref-palette-secondary, 80%);
+$owl-ref-palette-secondary-200:  tint-color($owl-ref-palette-secondary, 60%);
+$owl-ref-palette-secondary-300:  tint-color($owl-ref-palette-secondary, 40%);
+$owl-ref-palette-secondary-400:  tint-color($owl-ref-palette-secondary, 20%);
+$owl-ref-palette-secondary-500:  $owl-ref-palette-secondary;
+$owl-ref-palette-secondary-600:  shade-color($owl-ref-palette-secondary, 20%);
+$owl-ref-palette-secondary-700:  shade-color($owl-ref-palette-secondary, 40%);
+$owl-ref-palette-secondary-800:  shade-color($owl-ref-palette-secondary, 60%);
+$owl-ref-palette-secondary-900:  shade-color($owl-ref-palette-secondary, 80%);
+
+$owl-ref-palette-blue-100:       tint-color($owl-ref-palette-blue, 80%);
+$owl-ref-palette-blue-200:       tint-color($owl-ref-palette-blue, 60%);
+$owl-ref-palette-blue-300:       tint-color($owl-ref-palette-blue, 40%);
+$owl-ref-palette-blue-400:       tint-color($owl-ref-palette-blue, 20%);
+$owl-ref-palette-blue-500:       $owl-ref-palette-blue;
+$owl-ref-palette-blue-600:       shade-color($owl-ref-palette-blue, 20%);
+$owl-ref-palette-blue-700:       shade-color($owl-ref-palette-blue, 40%);
+$owl-ref-palette-blue-800:       shade-color($owl-ref-palette-blue, 60%);
+$owl-ref-palette-blue-900:       shade-color($owl-ref-palette-blue, 80%);
+
+$owl-ref-palette-purple-100:     tint-color($owl-ref-palette-purple, 80%);
+$owl-ref-palette-purple-200:     tint-color($owl-ref-palette-purple, 60%);
+$owl-ref-palette-purple-300:     tint-color($owl-ref-palette-purple, 40%);
+$owl-ref-palette-purple-400:     tint-color($owl-ref-palette-purple, 20%);
+$owl-ref-palette-purple-500:     $owl-ref-palette-purple;
+$owl-ref-palette-purple-600:     shade-color($owl-ref-palette-purple, 20%);
+$owl-ref-palette-purple-700:     shade-color($owl-ref-palette-purple, 40%);
+$owl-ref-palette-purple-800:     shade-color($owl-ref-palette-purple, 60%);
+$owl-ref-palette-purple-900:     shade-color($owl-ref-palette-purple, 80%);
+
+$owl-ref-palette-pink-100:       tint-color($owl-ref-palette-pink, 80%);
+$owl-ref-palette-pink-200:       tint-color($owl-ref-palette-pink, 60%);
+$owl-ref-palette-pink-300:       tint-color($owl-ref-palette-pink, 40%);
+$owl-ref-palette-pink-400:       tint-color($owl-ref-palette-pink, 20%);
+$owl-ref-palette-pink-500:       $owl-ref-palette-pink;
+$owl-ref-palette-pink-600:       shade-color($owl-ref-palette-pink, 20%);
+$owl-ref-palette-pink-700:       shade-color($owl-ref-palette-pink, 40%);
+$owl-ref-palette-pink-800:       shade-color($owl-ref-palette-pink, 60%);
+$owl-ref-palette-pink-900:       shade-color($owl-ref-palette-pink, 80%);
+
+$owl-ref-palette-red-100:        tint-color($owl-ref-palette-red, 80%);
+$owl-ref-palette-red-200:        tint-color($owl-ref-palette-red, 60%);
+$owl-ref-palette-red-300:        tint-color($owl-ref-palette-red, 40%);
+$owl-ref-palette-red-400:        tint-color($owl-ref-palette-red, 20%);
+$owl-ref-palette-red-500:        $owl-ref-palette-red;
+$owl-ref-palette-red-600:        shade-color($owl-ref-palette-red, 20%);
+$owl-ref-palette-red-700:        shade-color($owl-ref-palette-red, 40%);
+$owl-ref-palette-red-800:        shade-color($owl-ref-palette-red, 60%);
+$owl-ref-palette-red-900:        shade-color($owl-ref-palette-red, 80%);
+
+$owl-ref-palette-orange-100:     tint-color($owl-ref-palette-orange, 80%);
+$owl-ref-palette-orange-200:     tint-color($owl-ref-palette-orange, 60%);
+$owl-ref-palette-orange-300:     tint-color($owl-ref-palette-orange, 40%);
+$owl-ref-palette-orange-400:     tint-color($owl-ref-palette-orange, 20%);
+$owl-ref-palette-orange-500:     $owl-ref-palette-orange;
+$owl-ref-palette-orange-600:     shade-color($owl-ref-palette-orange, 20%);
+$owl-ref-palette-orange-700:     shade-color($owl-ref-palette-orange, 40%);
+$owl-ref-palette-orange-800:     shade-color($owl-ref-palette-orange, 60%);
+$owl-ref-palette-orange-900:     shade-color($owl-ref-palette-orange, 80%);
+
+$owl-ref-palette-yellow-100:     tint-color($owl-ref-palette-yellow, 80%);
+$owl-ref-palette-yellow-200:     tint-color($owl-ref-palette-yellow, 60%);
+$owl-ref-palette-yellow-300:     tint-color($owl-ref-palette-yellow, 40%);
+$owl-ref-palette-yellow-400:     tint-color($owl-ref-palette-yellow, 20%);
+$owl-ref-palette-yellow-500:     $owl-ref-palette-yellow;
+$owl-ref-palette-yellow-600:     shade-color($owl-ref-palette-yellow, 20%);
+$owl-ref-palette-yellow-700:     shade-color($owl-ref-palette-yellow, 40%);
+$owl-ref-palette-yellow-800:     shade-color($owl-ref-palette-yellow, 60%);
+$owl-ref-palette-yellow-900:     shade-color($owl-ref-palette-yellow, 80%);
+
+$owl-ref-palette-green-100:      tint-color($owl-ref-palette-green, 80%);
+$owl-ref-palette-green-200:      tint-color($owl-ref-palette-green, 60%);
+$owl-ref-palette-green-300:      tint-color($owl-ref-palette-green, 40%);
+$owl-ref-palette-green-400:      tint-color($owl-ref-palette-green, 20%);
+$owl-ref-palette-green-500:      $owl-ref-palette-green;
+$owl-ref-palette-green-600:      shade-color($owl-ref-palette-green, 20%);
+$owl-ref-palette-green-700:      shade-color($owl-ref-palette-green, 40%);
+$owl-ref-palette-green-800:      shade-color($owl-ref-palette-green, 60%);
+$owl-ref-palette-green-900:      shade-color($owl-ref-palette-green, 80%);
+
+$owl-ref-palette-teal-100:       tint-color($owl-ref-palette-teal, 80%);
+$owl-ref-palette-teal-200:       tint-color($owl-ref-palette-teal, 60%);
+$owl-ref-palette-teal-300:       tint-color($owl-ref-palette-teal, 40%);
+$owl-ref-palette-teal-400:       tint-color($owl-ref-palette-teal, 20%);
+$owl-ref-palette-teal-500:       $owl-ref-palette-teal;
+$owl-ref-palette-teal-600:       shade-color($owl-ref-palette-teal, 20%);
+$owl-ref-palette-teal-700:       shade-color($owl-ref-palette-teal, 40%);
+$owl-ref-palette-teal-800:       shade-color($owl-ref-palette-teal, 60%);
+$owl-ref-palette-teal-900:       shade-color($owl-ref-palette-teal, 80%);
+
+$owl-ref-palette-cyan-100:       tint-color($owl-ref-palette-cyan, 80%);
+$owl-ref-palette-cyan-200:       tint-color($owl-ref-palette-cyan, 60%);
+$owl-ref-palette-cyan-300:       tint-color($owl-ref-palette-cyan, 40%);
+$owl-ref-palette-cyan-400:       tint-color($owl-ref-palette-cyan, 20%);
+$owl-ref-palette-cyan-500:       $owl-ref-palette-cyan;
+$owl-ref-palette-cyan-600:       shade-color($owl-ref-palette-cyan, 20%);
+$owl-ref-palette-cyan-700:       shade-color($owl-ref-palette-cyan, 40%);
+$owl-ref-palette-cyan-800:       shade-color($owl-ref-palette-cyan, 60%);
+$owl-ref-palette-cyan-900:       shade-color($owl-ref-palette-cyan, 80%);
+
+$owl-ref-palette-link-blue-100:  tint-color($owl-ref-palette-link-blue, 80%);
+$owl-ref-palette-link-blue-200:  tint-color($owl-ref-palette-link-blue, 60%);
+$owl-ref-palette-link-blue-300:  tint-color($owl-ref-palette-link-blue, 40%);
+$owl-ref-palette-link-blue-400:  tint-color($owl-ref-palette-link-blue, 20%);
+$owl-ref-palette-link-blue-500:  $owl-ref-palette-link-blue;
+$owl-ref-palette-link-blue-600:  shade-color($owl-ref-palette-link-blue, 20%);
+$owl-ref-palette-link-blue-700:  shade-color($owl-ref-palette-link-blue, 40%);
+$owl-ref-palette-link-blue-800:  shade-color($owl-ref-palette-link-blue, 60%);
+$owl-ref-palette-link-blue-900:  shade-color($owl-ref-palette-link-blue, 80%);
+
+
+// Type
+
+$owl-ref-typeface-font-family-sans-serif: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+$owl-ref-typeface-size-base:              1rem;
+$owl-ref-typeface-size-2xs:               0.688rem;
+$owl-ref-typeface-size-xs:                0.75rem;
+$owl-ref-typeface-size-sm:                0.875rem;
+$owl-ref-typeface-size-lg:                1.25rem;
+
+$owl-ref-typeface-lineheight-base: 1.6875;
+$owl-ref-typeface-lineheight-sm:   1.25;
+$owl-ref-typeface-lineheight-lg:   2;
+
+// Style
+
+$owl-ref-style-border-radius:     0;
+$owl-ref-style-btn-border-radius: 0.25em;
+$owl-ref-style-cubic-bezier:      cubic-bezier(0, 1, 0.5, 1);
+$owl-ref-style-box-shadow:        0.25rem 0.25rem 0 0 rgba(0, 0, 0, 0.125);

@@ -1,25 +1,25 @@
 @mixin typeface-lg {
   font-family: var(--typeface-body-lg-family), sans-serif;
   font-size: var(--typeface-body-lg-size);
-  font-style: var(--typeface-body-lg-weight);
+  font-weight: var(--typeface-body-lg-weight);
 }
 
 @mixin typeface-md {
   font-family: var(--typeface-body-md-family), sans-serif;
   font-size: var(--typeface-body-md-size);
-  font-style: var(--typeface-body-md-weight);
+  font-weight: var(--typeface-body-md-weight);
 }
 
 @mixin typeface-sm {
   font-family: var(--typeface-body-sm-family), sans-serif;
   font-size: var(--typeface-body-sm-size);
-  font-style: var(--typeface-body-sm-weight);
+  font-weight: var(--typeface-body-sm-weight);
 }
 
 @mixin typeface-xs {
   font-family: var(--typeface-body-xs-family), sans-serif;
   font-size: var(--typeface-body-xs-size);
-  font-style: var(--typeface-body-xs-weight);
+  font-weight: var(--typeface-body-xs-weight);
 }
 
 @mixin typeface-h1 {
@@ -56,4 +56,11 @@
   font-size: var(--typeface-heading-6-size);
   font-family: var(--typeface-heading-6-family), sans-serif;
   font-weight: var(--typeface-heading-6-weight);
+}
+
+@mixin typeface-label {
+  font-weight: var(--owl-label-weight);
+  letter-spacing: var(--owl-label-letterspacing);
+  text-transform: var(--owl-label-texttransform);
+  color: var(--owl-label-color);
 }

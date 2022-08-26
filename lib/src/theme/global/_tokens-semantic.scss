@@ -1,0 +1,60 @@
+@use 'tokens-reference' as *;
+
+// Semantic Tokens
+
+// Palette
+
+$owl-sem-palette-primary:         $owl-ref-palette-primary;
+$owl-sem-palette-secondary:       $owl-ref-palette-secondary;
+$owl-sem-palette-success:         $owl-ref-palette-green;
+$owl-sem-palette-info:            $owl-ref-palette-cyan;
+$owl-sem-palette-warning:         $owl-ref-palette-yellow;
+$owl-sem-palette-danger:          $owl-ref-palette-red;
+$owl-sem-palette-light:           $owl-ref-palette-gray-100;
+$owl-sem-palette-dark:            $owl-ref-palette-gray-900;
+$owl-sem-palette-link-color:      $owl-ref-palette-link-blue;
+
+// Space
+
+$owl-sem-space-grid-gutter:       2rem;
+$owl-sem-space-sidebar:           1rem;
+$owl-sem-space-workspace:         1.5rem;
+$owl-sem-space-start:             1.5rem;
+
+// Size
+
+$owl-sem-size-navbar-height:         3.125rem;
+$owl-sem-size-footer-height:         2rem;
+$owl-sem-size-sidebar-width:         19rem;
+$owl-sem-size-sidebar-minwidth:      16rem;
+$owl-sem-size-grabhandle:            1px;
+$owl-sem-size-grabhandle-hover:      5px;
+
+// Type
+
+// OSG NOTE: https://type-scale.com/ 1.25 Major Third Ratios
+$owl-sem-typeface-display-1-size:         4.768rem;
+$owl-sem-typeface-display-2-size:         3.815rem;
+
+$owl-sem-typeface-heading-1-size:         3.052rem;
+$owl-sem-typeface-heading-2-size:         2.441rem;
+$owl-sem-typeface-heading-3-size:         1.953rem;
+$owl-sem-typeface-heading-4-size:         1.563rem;
+$owl-sem-typeface-heading-5-size:         1.25rem;
+$owl-sem-typeface-heading-6-size:         1rem;
+
+$owl-sem-typeface-display-weight:         700;
+$owl-sem-typeface-display-letterspacing:  -0.025em;
+$owl-sem-typeface-display-lineheight:     1.1;
+
+$owl-sem-typeface-heading-weight:         600;
+$owl-sem-typeface-heading-letterspacing:  -0.025em;
+$owl-sem-typeface-heading-lineheight:     1.2;
+
+$owl-sem-typeface-label-letterspacing:    0.025em;
+$owl-sem-typeface-label-weight:           700;
+$owl-sem-typeface-label-texttransform:    uppercase;
+
+$owl-sem-typeface-btn-letterspacing:      0.0125em;
+
+// Style
