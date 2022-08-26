@@ -2,6 +2,10 @@
 @use '../global/tokens-reference' as *;
 @use '../global/tokens-semantic' as *;
 
+:root {
+
+}
+
 :root,
 .theme--default {
   --bs-body-bg: var(--bs-gray-100);
@@ -108,59 +112,4 @@
   --owl-selection-color: var(--bs-yellow-800);
   --owl-active-bg: var(--bs-primary);
   --owl-active-color: var(--bs-white);
-
-
-  // // COLOR FONT
-  // --color-font-primary: #{$owl-ref-palette-blue-500};
-  // --color-font-primary-highlight: #{$owl-ref-palette-blue-600};
-  // --color-font-secondary: #{$owl-ref-palette-blue-200};
-  // --color-font-success: #{$owl-ref-palette-green-500};
-  // --color-font-info: #{$owl-ref-palette-blue-600};
-  // --color-font-warning: #{$owl-ref-palette-yellow-500};
-  // --color-font-danger: #{$owl-ref-palette-red-500};
-  // --color-font-light: #{$owl-ref-palette-white};
-  // --color-font-dark: #{$owl-ref-palette-gray-800};
-  // --color-font-dark-highlight: #{$owl-ref-palette-gray-600};
-
-
-  // // LAYOUT
-  // --spacer: #{$owl-ref-layout-spacer};
-  // // TYPOGRAPHY - Bootstrap
-  // --bs-font-sans-serif: #{$owl-ref-typeface-body-md-family}, system-ui,
-  //   -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif,
-  //   'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  // --bs-body-font-size: #{$owl-ref-typeface-body-md-size};
-  // --bs-body-font-weight: #{$owl-ref-typeface-body-md-weight};
-
-  // TYPOGRAPHY
-  // --typeface-body-xs-family: #{$owl-ref-typeface-body-xs-family};
-  // --typeface-body-xs-weight: #{$owl-ref-typeface-body-xs-weight};
-  --typeface-body-xs-size: #{$owl-ref-typeface-body-xs-size};
-  // --typeface-body-sm-family: #{$owl-ref-typeface-body-sm-family};
-  // --typeface-body-sm-weight: #{$owl-ref-typeface-body-sm-weight};
-  --typeface-body-sm-size: #{$owl-ref-typeface-body-sm-size};
-  // --typeface-body-md-family: #{$owl-ref-typeface-body-md-family};
-  // --typeface-body-md-weight: #{$owl-ref-typeface-body-md-weight};
-  --typeface-body-md-size: #{$owl-ref-typeface-body-md-size};
-  // --typeface-body-lg-family: #{$owl-ref-typeface-body-lg-family};
-  // --typeface-body-lg-weight: #{$owl-ref-typeface-body-lg-weight};
-  --typeface-body-lg-size: #{$owl-ref-typeface-body-lg-size};
-  // --typeface-heading-6-family: #{$owl-ref-typeface-heading-6-family};
-  // --typeface-heading-6-weight: #{$owl-ref-typeface-heading-6-weight};
-  --typeface-heading-6-size: #{$owl-sem-typeface-heading-6-size};
-  // --typeface-heading-5-family: #{$owl-ref-typeface-heading-5-family};
-  // --typeface-heading-5-weight: #{$owl-ref-typeface-heading-5-weight};
-  --typeface-heading-5-size: #{$owl-sem-typeface-heading-5-size};
-  // --typeface-heading-4-family: #{$owl-ref-typeface-heading-4-family};
-  // --typeface-heading-4-weight: #{$owl-ref-typeface-heading-4-weight};
-  --typeface-heading-4-size: #{$owl-sem-typeface-heading-4-size};
-  // --typeface-heading-3-family: #{$owl-ref-typeface-heading-3-family};
-  // --typeface-heading-3-weight: #{$owl-ref-typeface-heading-3-weight};
-  --typeface-heading-3-size: #{$owl-sem-typeface-heading-3-size};
-  // --typeface-heading-2-family: #{$owl-ref-typeface-heading-2-family};
-  // --typeface-heading-2-weight: #{$owl-ref-typeface-heading-3-weight};
-  --typeface-heading-2-size: #{$owl-sem-typeface-heading-2-size};
-  // --typeface-heading-1-family: #{$owl-ref-typeface-heading-1-family};
-  // --typeface-heading-1-weight: #{$owl-ref-typeface-heading-1-weight};
-  --typeface-heading-1-size: #{$owl-sem-typeface-heading-1-size};
 }

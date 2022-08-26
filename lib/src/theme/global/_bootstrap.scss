@@ -27,14 +27,14 @@ $green: $owl-ref-palette-green;
 $teal: $owl-ref-palette-teal;
 $cyan: $owl-ref-palette-cyan;
 
-$primary: $owl-sem-palette-primary;
-$secondary: $owl-sem-palette-secondary;
-$success: $owl-sem-palette-success;
-$info: $owl-sem-palette-info;
-$warning: $owl-sem-palette-warning;
-$danger: $owl-sem-palette-danger;
-$light: $owl-sem-palette-light;
-$dark: $owl-sem-palette-dark;
+$primary: $owl-sys-palette-primary;
+$secondary: $owl-sys-palette-secondary;
+$success: $owl-sys-palette-success;
+$info: $owl-sys-palette-info;
+$warning: $owl-sys-palette-warning;
+$danger: $owl-sys-palette-danger;
+$light: $owl-sys-palette-light;
+$dark: $owl-sys-palette-dark;
 
 $color-contrast-dark: $gray-900;
 
@@ -43,11 +43,11 @@ $enable-caret: false;
 
 $body-bg: $gray-100;
 
-$link-color: $owl-sem-palette-link-color;
+$link-color: $owl-sys-palette-link-color;
 $link-decoration: none;
 $link-hover-decoration: underline;
 
-$grid-gutter-width: $owl-sem-space-grid-gutter;
+$grid-gutter-width: $owl-sys-space-grid-gutter;
 
 $border-radius: $owl-ref-style-border-radius;
 $border-radius-sm: $owl-ref-style-border-radius;
@@ -68,28 +68,28 @@ $line-height-base: $owl-ref-typeface-lineheight-base;
 $line-height-sm: $owl-ref-typeface-lineheight-sm;
 $line-height-lg: $owl-ref-typeface-lineheight-lg;
 
-$h1-font-size: $owl-sem-typeface-heading-1-size;
-$h2-font-size: $owl-sem-typeface-heading-2-size;
-$h3-font-size: $owl-sem-typeface-heading-3-size;
-$h4-font-size: $owl-sem-typeface-heading-4-size;
-$h5-font-size: $owl-sem-typeface-heading-5-size;
-$h6-font-size: $owl-sem-typeface-heading-6-size;
+$h1-font-size: $owl-sys-typeface-heading-1-size;
+$h2-font-size: $owl-sys-typeface-heading-2-size;
+$h3-font-size: $owl-sys-typeface-heading-3-size;
+$h4-font-size: $owl-sys-typeface-heading-4-size;
+$h5-font-size: $owl-sys-typeface-heading-5-size;
+$h6-font-size: $owl-sys-typeface-heading-6-size;
 
 $headings-margin-bottom: 0.5em;
-$headings-font-weight: $owl-sem-typeface-heading-weight;
-$headings-line-height: $owl-sem-typeface-heading-lineheight;
+$headings-font-weight: $owl-sys-typeface-heading-weight;
+$headings-line-height: $owl-sys-typeface-heading-lineheight;
 
 $display-font-sizes: (
-  1: $owl-sem-typeface-display-1-size,
-  2: $owl-sem-typeface-display-2-size,
-  3: $owl-sem-typeface-heading-1-size,
-  4: $owl-sem-typeface-heading-2-size,
-  5: $owl-sem-typeface-heading-3-size,
-  6: $owl-sem-typeface-heading-4-size
+  1: $owl-sys-typeface-display-1-size,
+  2: $owl-sys-typeface-display-2-size,
+  3: $owl-sys-typeface-heading-1-size,
+  4: $owl-sys-typeface-heading-2-size,
+  5: $owl-sys-typeface-heading-3-size,
+  6: $owl-sys-typeface-heading-4-size
 );
 
-$display-font-weight: $owl-sem-typeface-display-weight;
-$display-line-height: $owl-sem-typeface-display-lineheight;
+$display-font-weight: $owl-sys-typeface-display-weight;
+$display-line-height: $owl-sys-typeface-display-lineheight;
 
 $lead-font-size: 1.25em;
 $lead-font-weight: 400;
@@ -239,13 +239,13 @@ h2,
 .display-3,
 .display-5,
 .display-6 {
-  line-height: $owl-sem-typeface-display-lineheight;
-  letter-spacing: $owl-sem-typeface-display-letterspacing;
+  line-height: $owl-sys-typeface-display-lineheight;
+  letter-spacing: $owl-sys-typeface-display-letterspacing;
 }
 
 h1,
 .h1 {
-  font-weight: $owl-sem-typeface-display-weight;
+  font-weight: $owl-sys-typeface-display-weight;
 }
 
 h2,
@@ -292,7 +292,7 @@ h2,
     padding-right: 0;
     font-weight: 500;
     line-height: 1.1;
-    letter-spacing: $owl-sem-typeface-btn-letterspacing;
+    letter-spacing: $owl-sys-typeface-btn-letterspacing;
     color: var(--owl-nav-tab-color);
     border-radius: 0;
     border: 0;
@@ -324,7 +324,7 @@ button {
 }
 
 .btn {
-  letter-spacing: $owl-sem-typeface-btn-letterspacing;
+  letter-spacing: $owl-sys-typeface-btn-letterspacing;
 
   span[class^='material-symbols']:first-child {
     margin-right: 0.25em;
@@ -491,4 +491,22 @@ $all-colors: map-merge-multiple(
   @each $key, $value in $all-colors {
     --bs-#{$key}: #{$value};
   }
+
+  --owl-space-spacer: #{$owl-ref-space-spacer};
+
+  --owl-typeface-size-2xs: #{$owl-ref-typeface-size-2xs};
+  --owl-typeface-size-xs: #{$owl-ref-typeface-size-xs};
+  --owl-typeface-size-sm: #{$owl-ref-typeface-size-sm};
+  --owl-typeface-size-base: #{$owl-ref-typeface-size-base};
+  --owl-typeface-size-lg: #{$owl-ref-typeface-size-lg};
+
+  --owl-typeface-display-1-size: #{$owl-sys-typeface-display-1-size};
+  --owl-typeface-display-2-size: #{$owl-sys-typeface-display-2-size};
+
+  --owl-typeface-heading-1-size: #{$owl-sys-typeface-heading-1-size};
+  --owl-typeface-heading-2-size: #{$owl-sys-typeface-heading-2-size};
+  --owl-typeface-heading-3-size: #{$owl-sys-typeface-heading-3-size};
+  --owl-typeface-heading-4-size: #{$owl-sys-typeface-heading-4-size};
+  --owl-typeface-heading-5-size: #{$owl-sys-typeface-heading-5-size};
+  --owl-typeface-heading-6-size: #{$owl-sys-typeface-heading-6-size};
 }

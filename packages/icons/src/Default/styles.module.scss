@@ -2,10 +2,10 @@
 
 .icons,
 .icons-outlined {
-  color: var(--color-font-dark);
+  color: var(--bs-gray-800);
 
   &.theme--dark {
-    color: var(--color-font-light);
+    color: var(--bs-white);
   }
 
   &--appearance {
@@ -15,12 +15,12 @@
       }
 
       &.theme--dark {
-        color: var(--color-font-light);
+        color: var(--bs-white);
       }
     }
 
     &-alt {
-      color: var(--color-font-light);
+      color: var(--bs-white);
       background-color: var(--bs-primary);
     }
   }
