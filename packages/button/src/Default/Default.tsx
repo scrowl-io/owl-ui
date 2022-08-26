@@ -23,7 +23,7 @@ export const Component = (props: ButtonDefaultProps) => {
           },
           {
             fields: ['size'],
-            value: 'size',
+            value: 'Size',
           },
         ],
       },
