@@ -174,3 +174,65 @@ $owl-ref-style-box-shadow:        0.25rem 0.25rem 0 0 rgba(0, 0, 0, 0.125);
 // Space
 
 $owl-ref-space-spacer:       1rem;
+
+
+// Semantic Tokens -----------------------------------------------------------------
+
+// Palette
+
+$owl-sys-palette-primary:         $owl-ref-palette-primary;
+$owl-sys-palette-secondary:       $owl-ref-palette-secondary;
+$owl-sys-palette-success:         $owl-ref-palette-green;
+$owl-sys-palette-info:            $owl-ref-palette-cyan;
+$owl-sys-palette-warning:         $owl-ref-palette-yellow;
+$owl-sys-palette-danger:          $owl-ref-palette-red;
+$owl-sys-palette-light:           $owl-ref-palette-gray-100;
+$owl-sys-palette-dark:            $owl-ref-palette-gray-900;
+$owl-sys-palette-link-color:      $owl-ref-palette-link-blue;
+
+// Space
+
+$owl-sys-space-grid-gutter:       2rem;
+$owl-sys-space-sidebar:           1rem;
+$owl-sys-space-workspace:         1.5rem;
+$owl-sys-space-start:             1.5rem;
+
+// Size
+
+$owl-sys-size-navbar-height:         3.125rem;
+$owl-sys-size-footer-height:         2rem;
+$owl-sys-size-sidebar-width:         19rem;
+$owl-sys-size-sidebar-minwidth:      16rem;
+$owl-sys-size-grabhandle:            1px;
+$owl-sys-size-grabhandle-hover:      5px;
+
+// Type
+
+// OSG NOTE: https://type-scale.com/ 1.25 Major Third Ratios
+$owl-sys-typeface-display-1-size:         4.768rem;
+$owl-sys-typeface-display-2-size:         3.815rem;
+
+$owl-sys-typeface-heading-1-size:         3.052rem;
+$owl-sys-typeface-heading-2-size:         2.441rem;
+$owl-sys-typeface-heading-3-size:         1.953rem;
+$owl-sys-typeface-heading-4-size:         1.563rem;
+$owl-sys-typeface-heading-5-size:         1.25rem;
+$owl-sys-typeface-heading-6-size:         1rem;
+
+$owl-sys-typeface-display-weight:         700;
+$owl-sys-typeface-display-letterspacing:  -0.025em;
+$owl-sys-typeface-display-lineheight:     1.1;
+
+$owl-sys-typeface-heading-weight:         600;
+$owl-sys-typeface-heading-1-weight:       700;
+$owl-sys-typeface-heading-2-weight:       800;
+$owl-sys-typeface-heading-letterspacing:  -0.025em;
+$owl-sys-typeface-heading-lineheight:     1.2;
+
+$owl-sys-typeface-label-letterspacing:    0.025em;
+$owl-sys-typeface-label-weight:           700;
+$owl-sys-typeface-label-texttransform:    uppercase;
+
+$owl-sys-typeface-btn-letterspacing:      0.0125em;
+
+// Style

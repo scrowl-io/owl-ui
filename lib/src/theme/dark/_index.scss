@@ -1,6 +1,5 @@
 @use '../global/variables' as *;
-@use '../global/tokens-reference' as *;
-@use '../global/tokens-semantic' as *;
+@use '../global/tokens' as *;
 
 .theme--dark {
   --bs-body-bg: var(--bs-gray-700);
