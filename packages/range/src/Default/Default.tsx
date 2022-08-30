@@ -29,7 +29,7 @@ export const Component = (props: RangeDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'rangeProps']
+    ['prefix', 'theme', 'size', 'inputProps']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
