@@ -38,20 +38,20 @@ export const Component = (props: ModalDefaultProps) => {
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Modal {...locals}>
-        {header ? (
+        {header.content ? (
           <Modal.Header {...header.bsProps}>
             <Modal.Title>{header.content}</Modal.Title>
           </Modal.Header>
         ) : (
           <></>
         )}
-        {body ? (
+        {body.content ? (
           <Modal.Body {...body.bsProps}>{body.content}</Modal.Body>
         ) : (
           <></>
         )}
 
-        {footer ? (
+        {footer.content ? (
           <Modal.Footer {...footer.bsProps}>{footer.content}</Modal.Footer>
         ) : (
           <></>
