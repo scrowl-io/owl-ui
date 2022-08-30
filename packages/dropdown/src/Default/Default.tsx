@@ -62,7 +62,7 @@ export const Component = (props: DropdownDefaultProps) => {
       >
         <Dropdown {...locals} focusFirstItemOnShow="keyboard">
           <Dropdown.Toggle variant={props.variant}>
-            {props.button ? props.button : <span>Click Me</span>}
+            {props.button ? props.button : <></>}
           </Dropdown.Toggle>
           <Dropdown.Menu>
             {items.map((item: DropdownItemProps) => {

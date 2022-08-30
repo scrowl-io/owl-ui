@@ -11,7 +11,7 @@ export interface RangeDefaultCommons {
 }
 
 export interface RangeProps {
-  key: string;
+  id?: string;
   label: RangeLabel & bs.FormLabelProps;
   control: FormRangeProps;
 }

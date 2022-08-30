@@ -7,7 +7,6 @@ import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
 
 const inputProps: TextInputProps = {
-  key: '1',
   label: {
     content: 'Email Address',
     htmlFor: 'email',

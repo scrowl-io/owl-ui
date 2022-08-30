@@ -8,7 +8,7 @@ export interface TextInputDefaultCommons {
 }
 
 export interface TextInputProps {
-  key: string;
+  id?: string;
   label?: InputLabel & bs.FormLabelProps;
   control: bs.FormControlProps;
 }
