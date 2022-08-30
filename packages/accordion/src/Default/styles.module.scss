@@ -1,27 +1,25 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
 .accordion {
-  $ref: &;
+  --bs-accordion-color: var(--bs-body-color);
+  --bs-accordion-bg: var(--owl-sidebar-bg);
+  --bs-accordion-border-color: var(--owl-border-color);
+  --bs-accordion-btn-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='black'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+  --bs-accordion-btn-active-icon: var(--bs-accordion-btn-icon);
   width: 100%;
 
-  @include utils.typeface-sm;
-
   &.theme--dark {
-    --bs-accordion-color: var(--color-font-light);
-    --bs-accordion-bg: var(--bs-gray-500);
+    --bs-accordion-btn-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
   }
+}
 
-  &#{$ref}--size {
-    &-lg {
-      @include utils.typeface-lg;
-    }
+.accordion-button {
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.0125em;
 
-    &-md {
-      @include utils.typeface-md;
-    }
-
-    &-sm {
-      @include utils.typeface-sm;
-    }
+  &:hover,
+  &:focus {
+    text-decoration: underline;
   }
 }

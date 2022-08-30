@@ -2,7 +2,7 @@
 
 .textfield {
   padding: var(--spacer);
-  color: var(--color-font-dark);
+  color: var(--bs-gray-800);
   border: 1px solid currentColor;
 
   &.theme--dark {
@@ -12,11 +12,11 @@
   &--appearance {
     &-primary {
       &.theme--default {
-        color: var(--color-font-primary);
+        color: var(--bs-primary);
       }
 
       &.theme--dark {
-        color: var(--color-font-dark);
+        color: var(--bs-gray-800);
       }
     }
   }
