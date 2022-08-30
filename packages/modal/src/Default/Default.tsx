@@ -7,7 +7,7 @@ import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
 export const Component = (props: ModalDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'modal';
-  const { header, body, footer } = props;
+  const { header, body, footer } = props.modalContent;
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -34,7 +34,7 @@ export const Component = (props: ModalDefaultProps) => {
   themePrefixes['modal-footer'] = 'owlui-modal-footer';
   themePrefixes['modal-content'] = 'owlui-modal-content';
   themePrefixes['modal-title'] = 'owlui-modal-title';
-
+  console.log('modal props', body);
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Modal {...locals}>

@@ -11,7 +11,7 @@ import { scrollable } from './Default-scrollable.stories';
 import { Button } from '../../../../button/src/index';
 
 const modalContent: ModalDefaultProps = {
-  size: 'sm',
+  // size: 'sm',
   header: {
     bsProps: {
       closeButton: true,
@@ -45,7 +45,12 @@ export const Default = (args: ModalDefaultProps) => {
   return (
     <div>
       <button onClick={toggleModal}>Click Me</button>
-      <Modal {...args} show={showModal} onHide={toggleModal} />
+      <Modal
+        modalContent={modalContent}
+        {...args}
+        show={showModal}
+        onHide={toggleModal}
+      />
     </div>
   );
 };
