@@ -3,7 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.0.30](https://github.com/EEBOS/SCROWL/compare/v0.0.29...v0.0.30) (2022-08-11)
+## [0.0.32](https://github.com/EEBOS/SCROWL/compare/v0.0.31...v0.0.32) (2022-08-17)
+
+**Note:** Version bump only for package @owlui/postcss-prefixer
+
+
+
+
+
+## [0.0.31](https://github.com/EEBOS/SCROWL/compare/v0.0.29...v0.0.31) (2022-08-17)
 
 **Note:** Version bump only for package @owlui/postcss-prefixer
 

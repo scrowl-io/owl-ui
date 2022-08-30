@@ -4,7 +4,17 @@ const variants = {
   success: 'Success',
   warning: 'Warning',
   danger: 'Danger',
+  info: 'Info',
   light: 'Light',
+  dark: 'Dark',
+  'outline-primary': 'Outline-Primary',
+  'outline-secondary': 'Outline-Secondary',
+  'outline-success': 'Outline-Success',
+  'outline-warning': 'Outline-Warning',
+  'outline-danger': 'Outline-Danger',
+  'outline-info': 'Outline-Info',
+  'outline-light': 'Outline-Light',
+  'outline-dark': 'Outline-Dark',
   link: 'Link',
 };
 

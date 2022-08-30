@@ -1,6 +1,6 @@
 {
   "name": "@owlui/progressbar",
-  "version": "0.0.30",
+  "version": "0.0.32",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/progressBar#readme",
   "license": "MIT",
@@ -26,11 +26,14 @@
   "isLibrary": true,
   "outputFormat": "commonjs",
   "peerDependencies": {
-    "react": "^18.0.0"
+    "bootstrap": "5.2.0-beta1",
+    "react": "^18.1.0",
+    "react-bootstrap": "2.4.0"
+  },
+  "devDependencies": {
+    "@owlui/typings": "^0.0.32"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.30",
-    "@owlui/typings": "^0.0.30",
-    "react-bootstrap": "2.4.0"
+    "@owlui/lib": "^0.0.32"
   }
 }
