@@ -46,42 +46,20 @@ export const Component = (props: FormDefaultProps) => {
   themePrefixes['form-select'] = 'owlui-form-select';
   themePrefixes['form-range'] = 'owlui-form-range';
 
-  const renderFormElements = formData.map(
-    (element: FormDataProps, index: number) => {
-      switch (element.type) {
-        case 'input':
-          return (
-            <Input
-              inputProps={element.inputProps as TextInputProps}
-              key={element.inputProps.id ? element.inputProps.id : index}
-            />
-          );
-        case 'select':
-          return (
-            <Select
-              inputProps={element.inputProps as SelectProps}
-              key={element.inputProps.id ? element.inputProps.id : index}
-            />
-          );
-        case 'range':
-          return (
-            <Range
-              inputProps={element.inputProps as RangeProps}
-              key={element.inputProps.id ? element.inputProps.id : index}
-            />
-          );
-        case 'check':
-          return (
-            <SwitchToggle
-              inputProps={element.inputProps as SwitchProps}
-              key={element.inputProps.id ? element.inputProps.id : index}
-            />
-          );
-        default:
-          return null;
-      }
+  const renderFormElements = formData.map((element: any, index) => {
+    switch (element.type) {
+      case 'input':
+        return <Input inputProps={element.inputProps} key={index} />;
+      case 'select':
+        return <Select inputProps={element.inputProps} key={index} />;
+      case 'range':
+        return <Range inputProps={element.inputProps} key={index} />;
+      case 'check':
+        return <SwitchToggle inputProps={element.inputProps} key={index} />;
+      default:
+        return null;
     }
-  );
+  });
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
