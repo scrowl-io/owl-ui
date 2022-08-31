@@ -64,7 +64,6 @@ const items = [
 const button = (
   <>
     <span>Icon</span>
-    Click me
   </>
 );
 

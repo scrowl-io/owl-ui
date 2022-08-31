@@ -1,9 +1,90 @@
 import * as React from 'react';
 import { Accordion } from '../index';
 import { AccordionDefaultProps } from '../Default.types';
+import { Dropdown } from '../../../../dropdown/src/Default';
+import { Icon } from '../../../../icons/src';
 
 import { size } from './Default-size.stories';
 import { theme } from './Default-theme.stories';
+
+const lessonDropdownItems = [
+  {
+    id: '1',
+    label: (
+      <div className="dropdown-item-wrapper left-pane-dropdown d-flex align-items-center">
+        <Icon display="Outlined" icon="crop_square" />
+        <span>Add Slide</span>
+      </div>
+    ),
+    value: undefined,
+  },
+  {
+    id: '2',
+    label: (
+      <div className="dropdown-item-wrapper d-flex align-items-center">
+        <Icon display="Outlined" icon="edit" />
+        <span>Rename</span>
+      </div>
+    ),
+    value: undefined,
+  },
+  {
+    id: '3',
+    label: (
+      <div className="dropdown-item-wrapper d-flex align-items-center">
+        <Icon display="Outlined" icon="content_copy" />
+        <span>Duplicate</span>
+      </div>
+    ),
+    value: undefined,
+  },
+  {
+    id: '4',
+    label: (
+      <div className="dropdown-item-wrapper d-flex align-items-center">
+        <Icon display="Outlined" icon="arrow_upward" />
+        <span>Move Up</span>
+      </div>
+    ),
+    value: undefined,
+  },
+  {
+    id: '5',
+    label: (
+      <div className="dropdown-item-wrapper d-flex align-items-center">
+        <Icon display="Outlined" icon="arrow_downward" />
+        <span>Move Down</span>
+      </div>
+    ),
+    value: undefined,
+  },
+  {
+    id: '6',
+    label: (
+      <div className="dropdown-item-wrapper d-flex align-items-center">
+        <Icon display="Outlined" icon="trending_flat" />
+        <span>Move To...</span>
+      </div>
+    ),
+    value: undefined,
+  },
+  {
+    id: '7',
+    label: (
+      <div className="dropdown-item-wrapper d-flex align-items-center">
+        <Icon display="Outlined" icon="delete" />
+        <span>Delete Lesson</span>
+      </div>
+    ),
+    value: undefined,
+  },
+];
+
+const dropDownButton = (
+  <span>
+    <Icon icon="more_vert" />
+  </span>
+);
 
 const items = [
   {
@@ -20,6 +101,15 @@ const items = [
           felis nisl.
         </p>
       </div>
+    ),
+    labelAction: (
+      <Dropdown
+        align="start"
+        items={lessonDropdownItems}
+        className="resources-dropdown"
+        variant="light"
+        button={dropDownButton}
+      />
     ),
   },
   {

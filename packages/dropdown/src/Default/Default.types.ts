@@ -17,5 +17,5 @@ export interface DropdownDefaultCommons {
 }
 
 export type DropdownDefaultProps = DropdownDefaultCommons &
-  bs.DropdownButtonProps &
-  bs.DropdownProps;
+  Partial<bs.DropdownButtonProps> &
+  Partial<bs.DropdownProps>;

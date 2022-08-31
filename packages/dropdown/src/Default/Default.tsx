@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { DropdownDefaultProps, DropdownItemProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import { createLocalProps } from '@owlui/lib/src/utils';
 import { Dropdown, ThemeProvider } from 'react-bootstrap';
 
 export const Component = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
   const { items } = props;
-  const [selectedItem, setSelectedItem] = useState<string | undefined>(
-    items[0].id
-  );
+  const [selectedItemIdx, setSelectedItemIdx] = useState<number>(0);
 
   const locals = createLocalProps(
     props,
@@ -31,11 +29,43 @@ export const Component = (props: DropdownDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'items']
+    ['prefix', 'theme', 'size', 'items', 'button']
   );
 
+  const getItemIdx = (
+    ev:
+      | React.KeyboardEvent<
+          HTMLAnchorElement | HTMLButtonElement | HTMLLIElement | HTMLDivElement
+        >
+      | React.MouseEvent<HTMLElement>
+  ): number => {
+    if (!ev.currentTarget.dataset.index) {
+      console.error('dropdown item id not set', event);
+      return -1;
+    }
+
+    const idx = parseInt(ev.currentTarget.dataset.index);
+
+    if (isNaN(idx)) {
+      console.error(
+        'unable to set dropdown: malformed values',
+        idx,
+        ev.currentTarget.dataset.index
+      );
+      return -1;
+    }
+
+    return idx;
+  };
+
   const handleItemClick = (event: React.MouseEvent<HTMLElement>) => {
-    setSelectedItem(event.currentTarget.dataset.index);
+    const idx = getItemIdx(event);
+
+    if (idx === -1) {
+      return;
+    }
+
+    setSelectedItemIdx(idx);
   };
 
   const handleTab = (
@@ -45,7 +75,13 @@ export const Component = (props: DropdownDefaultProps) => {
   ) => {
     if (event.key === 'Tab') {
       event.preventDefault();
-      setSelectedItem(event.currentTarget.dataset.index);
+      const idx = getItemIdx(event);
+
+      if (idx === -1) {
+        return;
+      }
+
+      setSelectedItemIdx(idx);
     }
   };
 
@@ -62,20 +98,19 @@ export const Component = (props: DropdownDefaultProps) => {
       >
         <Dropdown {...locals} focusFirstItemOnShow="keyboard">
           <Dropdown.Toggle variant={props.variant}>
-            {props.button}
+            {props.button ? props.button : <></>}
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            {items.map((item: DropdownItemProps) => {
+            {items.map((item: DropdownItemProps, idx: number) => {
+              const key = item.id || idx;
               return (
                 <Dropdown.Item
                   id={`item-number-${item.id}`}
                   value={item.value}
                   onKeyDown={handleTab}
-                  className={`${
-                    selectedItem === item.id ? 'owlui-active' : ''
-                  }`}
-                  data-index={item.id}
-                  key={item.id}
+                  className={`${selectedItemIdx === idx ? 'active' : ''}`}
+                  data-index={idx}
+                  key={key}
                   onClick={handleItemClick}
                   as={item.as}
                 >

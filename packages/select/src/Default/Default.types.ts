@@ -10,6 +10,7 @@ export interface SelectDefaultCommons {
   inputProps: SelectProps;
 }
 export interface SelectProps {
+  id?: string;
   label: SelectLabel & bs.FormLabelProps;
   control: SelectOptions;
 }
