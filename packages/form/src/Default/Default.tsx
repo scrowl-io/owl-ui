@@ -1,12 +1,12 @@
 import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
-import { FormDefaultProps } from './Default.types';
+import { FormDataProps, FormDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
-import { Input } from '../../../input/src';
-import { Range } from '../../../range/src';
-import { Select } from '../../../select/src';
-import { SwitchToggle } from '../../../switchToggle/src';
+import { Input, TextInputProps } from '../../../input/src';
+import { Range, RangeProps } from '../../../range/src';
+import { Select, SelectProps } from '../../../select/src';
+import { SwitchProps, SwitchToggle } from '../../../switchToggle/src';
 
 export const Component = (props: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
@@ -46,20 +46,42 @@ export const Component = (props: FormDefaultProps) => {
   themePrefixes['form-select'] = 'owlui-form-select';
   themePrefixes['form-range'] = 'owlui-form-range';
 
-  const renderFormElements = formData.map((element: any, index) => {
-    switch (element.type) {
-      case 'input':
-        return <Input inputProps={element.inputProps} key={index} />;
-      case 'select':
-        return <Select inputProps={element.inputProps} key={index} />;
-      case 'range':
-        return <Range inputProps={element.inputProps} key={index} />;
-      case 'check':
-        return <SwitchToggle inputProps={element.inputProps} key={index} />;
-      default:
-        return null;
+  const renderFormElements = formData.map(
+    (element: FormDataProps, index: number) => {
+      switch (element.type) {
+        case 'input':
+          return (
+            <Input
+              inputProps={element.inputProps as TextInputProps}
+              key={element.inputProps.id ? element.inputProps.id : index}
+            />
+          );
+        case 'select':
+          return (
+            <Select
+              inputProps={element.inputProps as SelectProps}
+              key={element.inputProps.id ? element.inputProps.id : index}
+            />
+          );
+        case 'range':
+          return (
+            <Range
+              inputProps={element.inputProps as RangeProps}
+              key={element.inputProps.id ? element.inputProps.id : index}
+            />
+          );
+        case 'check':
+          return (
+            <SwitchToggle
+              inputProps={element.inputProps as SwitchProps}
+              key={element.inputProps.id ? element.inputProps.id : index}
+            />
+          );
+        default:
+          return null;
+      }
     }
-  });
+  );
 
   return (
     <ThemeProvider prefixes={themePrefixes}>

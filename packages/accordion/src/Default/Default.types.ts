@@ -5,6 +5,7 @@ export interface AccordionItemProps {
   id: string;
   label: React.ReactNode;
   view: React.ReactNode;
+  labelAction?: React.ReactNode;
 }
 
 export interface AccordionDefaultCommons {

@@ -39,7 +39,7 @@ export const Component = (props: RangeDefaultProps) => {
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form.Group {...locals} className="mb-3">
-        <Form.Label {...label}>{label.content}</Form.Label>
+        <Form.Label {...label}>{label?.content}</Form.Label>
         <Form.Range {...control} />
       </Form.Group>
     </ThemeProvider>
