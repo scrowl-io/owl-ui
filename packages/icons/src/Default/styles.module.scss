@@ -2,64 +2,64 @@
 
 .icons,
 .icons-outlined {
-  color: var(--color-font-dark);
+  color: var(--bs-gray-800);
 
   &.theme--dark {
-    color: var(--color-font-light);
+    color: var(--bs-white);
   }
 
   &--appearance {
     &-primary {
       &.theme--default {
-        color: var(--color-font-primary);
+        color: var(--bs-primary);
       }
 
       &.theme--dark {
-        color: var(--color-font-light);
+        color: var(--bs-white);
       }
     }
 
     &-alt {
-      color: var(--color-font-light);
+      color: var(--bs-white);
       background-color: var(--bs-primary);
     }
   }
 
   &--size {
     &-h1 {
-      font-size: var(--typeface-heading-1-size);
+      font-size: var(--owl-typeface-heading-1-size);
     }
 
     &-h2 {
-      font-size: var(--typeface-heading-2-size);
+      font-size: var(--owl-typeface-heading-2-size);
     }
 
     &-h3 {
-      font-size: var(--typeface-heading-3-size);
+      font-size: var(--owl-typeface-heading-3-size);
     }
 
     &-h4 {
-      font-size: var(--typeface-heading-4-size);
+      font-size: var(--owl-typeface-heading-4-size);
     }
 
     &-h5 {
-      font-size: var(--typeface-heading-5-size);
+      font-size: var(--owl-typeface-heading-5-size);
     }
 
     &-h6 {
-      font-size: var(--typeface-heading-6-size);
+      font-size: var(--owl-typeface-heading-6-size);
     }
 
     &-lg {
-      font-size: var(--typeface-body-lg-size);
+      font-size: var(--owl-typeface-size-lg);
     }
 
     &-md {
-      font-size: var(--typeface-body-md-size);
+      font-size: var(--owl-typeface-size-base);
     }
 
     &-sm {
-      font-size: var(--typeface-body-sm-size);
+      font-size: var(--owl-typeface-size-sm);
     }
   }
 }

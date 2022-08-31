@@ -22,7 +22,7 @@ $border-clr: #dadada;
       $ref-subheader: &;
 
       @include utils.typeface-xs;
-      color: var(--color-font-dark-highlight);
+      color: var(--bs-gray-600);
       margin: var(--spacer) 0 0 0;
       padding: 0.25rem 0.5rem;
     }
@@ -47,13 +47,13 @@ $border-clr: #dadada;
 
   &--appearance {
     &-primary {
-      color: var(--color-font-light);
+      color: var(--bs-white);
 
       &.theme--default {
         background-color: var(--bs-primary);
 
         & #{$ref-subheader} {
-          color: var(--color-font-light);
+          color: var(--bs-white);
         }
       }
 

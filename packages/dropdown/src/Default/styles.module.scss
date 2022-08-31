@@ -5,7 +5,7 @@
 
   &.theme--dark {
     #{$ref}-toggle.btn-primary {
-      --bs-btn-color: var(--color-font-light);
+      --bs-btn-color: var(--bs-white);
       --bs-btn-bg: var(--bs-gray-500);
       --bs-btn-border-color: #{utils.$owl-ref-palette-gray-500};
       --bs-btn-hover-color: var(--bs-light);

@@ -5,15 +5,15 @@
 
   &-light {
     &.theme--dark {
-      --bs-table-color: var(--color-font-light);
+      --bs-table-color: var(--bs-white);
       --bs-table-bg: var(--bs-gray-600);
       --bs-table-border-color: #{utils.$owl-ref-palette-gray-500};
       --bs-table-striped-bg: var(--bs-gray-500);
-      --bs-table-striped-color: var(--color-font-light);
+      --bs-table-striped-color: var(--bs-white);
       --bs-table-active-bg: var(--bs-gray-400);
-      --bs-table-active-color: var(--color-font-light);
+      --bs-table-active-color: var(--bs-white);
       --bs-table-hover-bg: var(--bs-gray-300);
-      --bs-table-hover-color: var(--color-font-light);
+      --bs-table-hover-color: var(--bs-white);
     }
   }
 
