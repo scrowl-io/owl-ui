@@ -54,13 +54,18 @@ export const Component = (props: AccordionDefaultProps) => {
         {items.map(item => {
           return (
             <Accordion.Item key={item.id} eventKey={item.id}>
-              <Accordion.Button
-                className={`${!isActive.includes(item.id) ? 'collapsed' : ''}`}
-                data-index={item.id}
-                onClick={toggleActive}
-              >
-                {item.label}
-              </Accordion.Button>
+              <div className="d-flex accordion-label-container">
+                <Accordion.Button
+                  className={`${
+                    !isActive.includes(item.id) ? 'collapsed' : ''
+                  }`}
+                  data-index={item.id}
+                  onClick={toggleActive}
+                >
+                  {item.label}
+                </Accordion.Button>
+                {item.labelAction ? item.labelAction : ''}
+              </div>
               <Accordion.Body>{item.view}</Accordion.Body>
             </Accordion.Item>
           );
