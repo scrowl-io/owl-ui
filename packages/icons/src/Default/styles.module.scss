@@ -2,26 +2,39 @@
 
 .icons,
 .icons-outlined {
-  color: var(--bs-gray-800);
-
-  &.theme--dark {
-    color: var(--bs-white);
-  }
+  color: currentColor;
 
   &--appearance {
     &-primary {
-      &.theme--default {
-        color: var(--bs-primary);
-      }
+      color: var(--bs-primary);
+    }
 
-      &.theme--dark {
-        color: var(--bs-white);
-      }
+    &-module {
+      color: var(--owl-color-module);
+    }
+
+    &-lesson {
+      color: var(--owl-color-lesson);
+    }
+
+    &-slide {
+      color: var(--owl-color-slide);
+    }
+
+    &-template {
+      color: var(--owl-color-template);
+    }
+
+    &-default {
+      color: var(--owl-color-default);
+    }
+
+    &-quiz {
+      color: var(--owl-color-quiz);
     }
 
     &-alt {
-      color: var(--bs-white);
-      background-color: var(--bs-primary);
+      color: var(--bs-body-bg);
     }
   }
 
