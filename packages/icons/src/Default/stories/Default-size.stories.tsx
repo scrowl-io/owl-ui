@@ -3,7 +3,7 @@ export const size = {
   control: {
     type: 'select',
   },
-  defaultValue: 'Md',
+  defaultValue: '',
 };
 
 export default {

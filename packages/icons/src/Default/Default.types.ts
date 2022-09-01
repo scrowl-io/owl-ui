@@ -939,7 +939,14 @@ export type IconType =
 
 export interface IconsDefaultCommons {
   display?: 'Filled' | 'Outlined';
-  appearance?: 'Primary' | 'Alt';
+  appearance?:
+    | 'Default'
+    | 'Primary'
+    | 'Module'
+    | 'Lesson'
+    | 'Slide'
+    | 'Quiz'
+    | 'Template';
   theme?: 'Default' | 'Dark';
   size?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
   prefix?: string;

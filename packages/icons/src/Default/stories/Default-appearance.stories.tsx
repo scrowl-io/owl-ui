@@ -1,9 +1,18 @@
 export const appearance = {
-  options: ['Default', 'Primary', 'Alt'],
+  options: [
+    'Default',
+    'Primary',
+    'Module',
+    'Lesson',
+    'Slide',
+    'Quiz',
+    'Template',
+    'Alt',
+  ],
   control: {
     type: 'select',
   },
-  defaultValue: 'Primary',
+  defaultValue: '',
 };
 
 export default {
