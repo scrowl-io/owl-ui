@@ -1,6 +1,6 @@
 {
   "name": "@owlui/table",
-  "version": "0.0.33",
+  "version": "0.0.34",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/table#readme",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "react-bootstrap": "2.4.0"
   },
   "devDependencies": {
-    "@owlui/typings": "^0.0.33"
+    "@owlui/typings": "^0.0.34"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.33"
+    "@owlui/lib": "^0.0.34"
   }
 }
