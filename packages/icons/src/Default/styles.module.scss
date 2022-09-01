@@ -3,6 +3,10 @@
 .icons,
 .icons-outlined {
   color: currentColor;
+  font-size: 1.2em;
+  vertical-align: text-bottom;
+  pointer-events: none;
+  user-select: none;
 
   &--appearance {
     &-primary {
