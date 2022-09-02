@@ -39,7 +39,7 @@ To use the design we need to import the design file from XD then create a Design
 
 The DSP makes use of reference and contextual tokens. Reference tokens are hard values taken from import of the XD file. The contextual tokens are custom to the DSP and use the reference tokens as a value. This methodology has been directly inspired from [material design](https://m3.material.io/foundations/design-tokens/overview).
 
-#### Example
+### Example
 
 > `owl.ref.palette.dark` is used as the value for `owl.sys.color.on.light` and `owl.sys.bg.dark`.
 

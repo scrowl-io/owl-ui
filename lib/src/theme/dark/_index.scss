@@ -16,6 +16,7 @@
 
   --owl-close-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/></svg>");
 
+  --owl-input-color: var(--bs-body-color);
   --owl-input-bg: var(--bs-gray-700);
   --owl-input-placeholder-color: var(--bs-gray-400);
   --owl-input-border-color: var(--bs-black);
@@ -74,6 +75,7 @@
   --owl-sidebar-header-bg: var(--bs-gray-800);
   --owl-sidebar-header-color: var(--bs-gray-500);
 
+  // Chatbox
   --owl-chatbox-bg: var(--bs-gray-700);
   --owl-chatbox-bg-hover: var(--bs-gray-600);
 

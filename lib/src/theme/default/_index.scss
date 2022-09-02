@@ -1,10 +1,6 @@
 @use '../global/variables' as *;
 @use '../global/tokens' as *;
 
-:root {
-
-}
-
 :root,
 .theme--default {
   --bs-body-bg: var(--bs-gray-100);
@@ -36,7 +32,6 @@
   --owl-accordion-btn-active-bg: var(--bs-gray-200);
 
   --owl-border-color: var(--bs-gray-500);
-  --owl-border-width: var(--bs-border-width);
 
   --owl-dropdown-color: var(--bs-gray-800);
   --owl-dropdown-bg: var(--bs-white);
