@@ -516,4 +516,6 @@ $all-colors: map-merge-multiple(
   --owl-typeface-label-weight: 700;
   --owl-typeface-label-letterspacing: 0.025em;
   --owl-typeface-label-texttransform: uppercase;
+
+  --owl-border-width: var(--bs-border-width);
 }
