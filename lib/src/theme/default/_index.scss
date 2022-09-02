@@ -1,10 +1,6 @@
 @use '../global/variables' as *;
 @use '../global/tokens' as *;
 
-:root {
-
-}
-
 :root,
 .theme--default {
   --bs-body-bg: var(--bs-gray-100);

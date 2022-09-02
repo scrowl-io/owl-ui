@@ -115,7 +115,7 @@ $btn-padding-x-lg: 1.25em;
 $btn-border-width: 1px;
 $btn-line-height: 1.5;
 $btn-font-weight: 600;
-$btn-box-shadow: none;
+$btn-box-shadow: null;
 
 $btn-border-radius: 0.25em;
 $btn-border-radius-sm: 0.25em;
@@ -134,7 +134,7 @@ $input-disabled-bg: var(--owl-input-border-color);
 $input-transition: $btn-transition;
 $input-bg: var(--owl-input-bg);
 $input-color: var(--owl-input-color);
-$input-box-shadow: none;
+$input-box-shadow: null;
 $input-border-color: var(--owl-input-border-color);
 $input-focus-border-color: var(--owl-active-bg);
 $input-placeholder-color: var(--owl-input-placeholder-color);
