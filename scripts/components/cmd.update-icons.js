@@ -1,3 +1,11 @@
+/*
+
+  -- WARNING --
+
+  This cli script no longer works as we have moved away from the material icons dep on npm
+
+*/
+
 import fs from '../utls/file-system.js';
 import { compile } from './templater.js';
 
