@@ -24,14 +24,14 @@ export const Component = (props: ToastDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
         bsProps: ['bg'],
       },
     },
-    ['prefix', 'theme', 'size', 'toastContent']
+    ['prefix', 'theme', 'pxScale', 'toastContent']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

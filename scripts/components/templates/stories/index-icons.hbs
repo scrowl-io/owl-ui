@@ -4,7 +4,7 @@ import { {{{cap}}}{{{optionPas}}}Props } from '../{{{optionPas}}}.types';
 
 import { display } from './{{{optionPas}}}-display.stories';
 import { appearance } from './{{{optionPas}}}-appearance.stories';
-import { size } from './{{{optionPas}}}-size.stories';
+import { pxScale } from './{{{optionPas}}}-px-scale.stories';
 import { theme } from './{{{optionPas}}}-theme.stories';
 
 export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => (
@@ -14,13 +14,13 @@ export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => (
 {{{optionPas}}}.args = {
   display: display.defaultValue,
   appearance: 'Primary',
-  size: 'Lg',
+  pxScale: 'Lg',
   theme: 'Default',
 };
 
 {{{optionPas}}}.argTypes = {
   display,
   appearance,
-  size,
+  pxScale,
   theme,
 };

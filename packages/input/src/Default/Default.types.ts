@@ -1,7 +1,7 @@
 import * as bs from 'react-bootstrap';
 export interface TextInputDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   type?: string;
   inputProps: TextInputProps;

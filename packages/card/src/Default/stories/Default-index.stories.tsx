@@ -13,7 +13,7 @@ import { CardFooter } from '../../CardFooter';
 
 import { bg } from './Default-bg.stories';
 import { text } from './Default-text.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: CardDefaultProps) => (
@@ -52,6 +52,6 @@ Default.args = {
 Default.argTypes = {
   bg,
   text,
-  size,
+  pxScale,
   theme,
 };

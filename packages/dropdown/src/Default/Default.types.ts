@@ -9,7 +9,7 @@ export interface DropdownItemProps {
 }
 
 export interface DropdownDefaultCommons {
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   children?: React.ReactNode;
   items: DropdownItemProps[];

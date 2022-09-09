@@ -2,7 +2,7 @@ import * as React from 'react';
 import { component as Tooltip } from '../index';
 import { TooltipDefaultProps } from '../Default.types';
 
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 import { trigger } from './Default-trigger.stories';
 import { placement } from './Default-placement.stories';
@@ -68,14 +68,14 @@ export const Default = (args: TooltipDefaultProps) => {
 };
 
 Default.args = {
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   trigger: trigger.defaultValue,
   placement: placement.defaultValue,
 };
 
 Default.argTypes = {
-  size,
+  pxScale,
   theme,
   trigger,
   placement,

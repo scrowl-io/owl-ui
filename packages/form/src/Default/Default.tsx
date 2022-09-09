@@ -27,13 +27,13 @@ export const Component = (props: FormDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'formData']
+    ['prefix', 'theme', 'pxScale', 'formData']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

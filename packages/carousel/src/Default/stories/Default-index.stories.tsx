@@ -3,7 +3,7 @@ import { Carousel } from '../index';
 import { CarouselDefaultProps, Slide } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const slides: Slide[] = [
@@ -45,13 +45,13 @@ export const Default = (args: CarouselDefaultProps) => <Carousel {...args} />;
 
 Default.args = {
   appearance: appearance.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   slides: slides,
 };
 
 Default.argTypes = {
   appearance,
-  size,
+  pxScale,
   theme,
 };

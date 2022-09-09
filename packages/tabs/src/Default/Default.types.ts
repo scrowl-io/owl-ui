@@ -9,7 +9,7 @@ export interface TabsItem extends bs.TabProps {
 
 export interface TabsDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   items: TabsItem[];
 }

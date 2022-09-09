@@ -7,12 +7,7 @@ const Page = () => {
       <div className="owlui-row">
         <div className="owlui-col-4">
           <Button>
-            <Icon
-              icon="settings"
-              style={{ fontSize: '2rem' }}
-              filled
-              display="sharp"
-            />
+            <Icon icon="settings" filled display="sharp" pxScale="Sm" />
             Hello
           </Button>
         </div>

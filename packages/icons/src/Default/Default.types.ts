@@ -3267,7 +3267,7 @@ export interface IconsDefaultCommons {
     | 'Quiz'
     | 'Template';
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
+  pxScale?: 'Sm' | 'Md' | 'Lg' | 'H1' | 'H2' | 'H3' | 'H4' | 'H5' | 'H6';
   prefix?: string;
 }
 
@@ -3276,7 +3276,7 @@ export interface IconsDefaultRegular extends IconsDefaultCommons {
   display: 'regular';
 }
 
-export interface IconsDefaultSymbols extends IconsDefaultCommons {
+export interface IconsDefaultSymbols extends IconsDefaultCommons, React.AllHTMLAttributes<HTMLSpanElement> {
   icon: string;
   display?: 'outlined' | 'rounded' | 'sharp';
   filled?: boolean;

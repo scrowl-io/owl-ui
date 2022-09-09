@@ -30,13 +30,13 @@ export const Component = (props: CarouselDefaultProps) => {
             value: 'Appearance',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'appearance', 'theme', 'size', 'slides']
+    ['prefix', 'appearance', 'theme', 'pxScale', 'slides']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

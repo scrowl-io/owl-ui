@@ -3,7 +3,7 @@ import * as bs from 'react-bootstrap';
 
 export interface ToastDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   toastContent?: ToastContentProps;
 }

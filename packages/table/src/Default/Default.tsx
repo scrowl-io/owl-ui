@@ -24,13 +24,13 @@ export const Component = (props: TableDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'Size', 'tableData']
+    ['prefix', 'theme', 'pxScale', 'tableData']
   );
 
   return (

@@ -4,7 +4,7 @@ import React from 'react';
 import * as bs from 'react-bootstrap';
 export interface SelectDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   type?: string;
   inputProps: SelectProps;

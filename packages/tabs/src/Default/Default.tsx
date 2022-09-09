@@ -26,13 +26,13 @@ export const Component = (props: TabsDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size', 'items']
+    ['prefix', 'theme', 'appearance', 'pxScale', 'items']
   );
 
   return (

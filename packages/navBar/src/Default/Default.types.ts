@@ -2,7 +2,7 @@ import * as bs from 'react-bootstrap';
 
 export interface NavBarDefaultCommons {
   theme?: 'light' | 'dark' | undefined;
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
 }
 

@@ -3,7 +3,7 @@ import { Textfield } from '../index';
 import { TextfieldDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: TextfieldDefaultProps) => <Textfield {...args} />;
@@ -16,6 +16,6 @@ Default.args = {
 
 Default.argTypes = {
   appearance,
-  size,
+  pxScale,
   theme,
 };

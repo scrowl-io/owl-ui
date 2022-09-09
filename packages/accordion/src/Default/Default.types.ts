@@ -10,7 +10,7 @@ export interface AccordionItemProps {
 
 export interface AccordionDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   items: AccordionItemProps[];
 }

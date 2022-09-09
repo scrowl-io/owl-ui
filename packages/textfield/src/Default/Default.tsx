@@ -25,13 +25,13 @@ export const Component = (props: TextfieldDefaultProps) => {
             value: 'Appearance',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'size']
+    ['prefix', 'theme', 'appearance', 'pxScale']
   );
 
   return <input {...locals} />;

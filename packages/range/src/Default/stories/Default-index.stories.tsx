@@ -3,7 +3,7 @@ import { Range } from '../index';
 import { RangeDefaultProps, RangeProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const inputProps: RangeProps = {
@@ -25,13 +25,13 @@ export const Default = (args: RangeDefaultProps) => {
 
 Default.args = {
   variant: variant.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   inputProps: inputProps,
 };
 
 Default.argTypes = {
   variant,
-  size,
+  pxScale,
   theme,
 };

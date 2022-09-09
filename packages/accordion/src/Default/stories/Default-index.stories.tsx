@@ -4,7 +4,7 @@ import { AccordionDefaultProps } from '../Default.types';
 import { Dropdown } from '../../../../dropdown/src/Default';
 import { Icon } from '../../../../icons/src';
 
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const lessonDropdownItems = [
@@ -12,7 +12,7 @@ const lessonDropdownItems = [
     id: '1',
     label: (
       <div className="dropdown-item-wrapper left-pane-dropdown d-flex align-items-center">
-        <Icon display="Outlined" icon="crop_square" />
+        <Icon display="outlined" icon="crop_square" />
         <span>Add Slide</span>
       </div>
     ),
@@ -22,7 +22,7 @@ const lessonDropdownItems = [
     id: '2',
     label: (
       <div className="dropdown-item-wrapper d-flex align-items-center">
-        <Icon display="Outlined" icon="edit" />
+        <Icon display="outlined" icon="edit" />
         <span>Rename</span>
       </div>
     ),
@@ -32,7 +32,7 @@ const lessonDropdownItems = [
     id: '3',
     label: (
       <div className="dropdown-item-wrapper d-flex align-items-center">
-        <Icon display="Outlined" icon="content_copy" />
+        <Icon display="outlined" icon="content_copy" />
         <span>Duplicate</span>
       </div>
     ),
@@ -42,7 +42,7 @@ const lessonDropdownItems = [
     id: '4',
     label: (
       <div className="dropdown-item-wrapper d-flex align-items-center">
-        <Icon display="Outlined" icon="arrow_upward" />
+        <Icon display="outlined" icon="arrow_upward" />
         <span>Move Up</span>
       </div>
     ),
@@ -52,7 +52,7 @@ const lessonDropdownItems = [
     id: '5',
     label: (
       <div className="dropdown-item-wrapper d-flex align-items-center">
-        <Icon display="Outlined" icon="arrow_downward" />
+        <Icon display="outlined" icon="arrow_downward" />
         <span>Move Down</span>
       </div>
     ),
@@ -62,7 +62,7 @@ const lessonDropdownItems = [
     id: '6',
     label: (
       <div className="dropdown-item-wrapper d-flex align-items-center">
-        <Icon display="Outlined" icon="trending_flat" />
+        <Icon display="outlined" icon="trending_flat" />
         <span>Move To...</span>
       </div>
     ),
@@ -72,7 +72,7 @@ const lessonDropdownItems = [
     id: '7',
     label: (
       <div className="dropdown-item-wrapper d-flex align-items-center">
-        <Icon display="Outlined" icon="delete" />
+        <Icon display="outlined" icon="delete" />
         <span>Delete Lesson</span>
       </div>
     ),
@@ -154,12 +154,12 @@ const items = [
 export const Default = (args: AccordionDefaultProps) => <Accordion {...args} />;
 
 Default.args = {
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   items: items,
 };
 
 Default.argTypes = {
-  size,
+  pxScale,
   theme,
 };

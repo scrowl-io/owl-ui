@@ -28,13 +28,13 @@ export const Component = (props: TooltipDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'tooltipContent']
+    ['prefix', 'theme', 'pxScale', 'tooltipContent']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

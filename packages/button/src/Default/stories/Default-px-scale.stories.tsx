@@ -1,18 +1,18 @@
-const sizes = {
+const pxScales = {
   lg: 'Large',
   '': 'Default',
   sm: 'Small',
 };
 
-export const size = {
-  options: Object.keys(sizes),
+export const pxScale = {
+  options: Object.keys(pxScales),
   control: {
     type: 'select',
-    labels: sizes,
+    labels: pxScales,
   },
   defaultValue: '',
 };
 
 export default {
-  size,
+  pxScale,
 };

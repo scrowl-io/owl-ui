@@ -3,7 +3,7 @@ import { Tabs } from '../index';
 import { TabsDefaultProps } from '../Default.types';
 
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const items = [
@@ -30,14 +30,14 @@ export const Default = (args: TabsDefaultProps) => (
 
 Default.args = {
   appearance: appearance.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   items: items,
 };
 
 Default.argTypes = {
   appearance,
-  size,
+  pxScale,
   theme,
   items,
 };

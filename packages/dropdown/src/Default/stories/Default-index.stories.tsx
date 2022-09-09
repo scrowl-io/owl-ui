@@ -3,7 +3,7 @@ import { Dropdown } from '../index';
 import { DropdownDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const items = [
@@ -71,7 +71,7 @@ export const Default = (args: DropdownDefaultProps) => <Dropdown {...args} />;
 
 Default.args = {
   variant: variant.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   items: items,
   button: button,
@@ -79,6 +79,6 @@ Default.args = {
 
 Default.argTypes = {
   variant,
-  size,
+  pxScale,
   theme,
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../index';
 import { ModalDefaultProps } from '../Default.types';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 import { fullscreen } from './Default-fullscreen.stories';
 import { centered } from './Default-centered.stories';
@@ -47,7 +47,7 @@ export const Default = (args: ModalDefaultProps) => {
 };
 
 Default.args = {
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   fullscreen: fullscreen.defaultValue,
   centered: centered.defaultValue,
@@ -55,7 +55,7 @@ Default.args = {
 };
 
 Default.argTypes = {
-  size,
+  pxScale,
   theme,
   fullscreen,
   centered,

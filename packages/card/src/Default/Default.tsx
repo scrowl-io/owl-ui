@@ -23,8 +23,8 @@ export const Component = (props: CardDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
         bsProps: ['bg', 'border', 'text'],

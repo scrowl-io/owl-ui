@@ -3,7 +3,7 @@ import { Input } from '../index';
 import { TextInputDefaultProps, TextInputProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const inputProps: TextInputProps = {
@@ -25,13 +25,13 @@ export const Default = (args: TextInputDefaultProps) => <Input {...args} />;
 
 Default.args = {
   variant: variant.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   inputProps: inputProps,
 };
 
 Default.argTypes = {
   variant,
-  size,
+  pxScale,
   theme,
 };

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Toast } from '../index';
 import { ToastDefaultProps, ToastContentProps } from '../Default.types';
 import { bg } from './Default-bg.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const toastContent: ToastContentProps = {
@@ -36,13 +36,13 @@ export const Default = (args: ToastDefaultProps) => {
 
 Default.args = {
   bg: bg.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   toastContent: toastContent,
 };
 
 Default.argTypes = {
   bg,
-  size,
+  pxScale,
   theme,
 };

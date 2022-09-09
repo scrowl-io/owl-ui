@@ -4,7 +4,7 @@ import { TableDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
 import { hover, striped, bordered } from './Default-table.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const tableData = {
@@ -62,13 +62,13 @@ Default.args = {
   striped: striped.defaultValue,
   hover: hover.defaultValue,
   bordered: bordered.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: 'Default',
   tableData: tableData,
 };
 
 Default.argTypes = {
   variant,
-  size,
+  pxScale,
   theme,
 };

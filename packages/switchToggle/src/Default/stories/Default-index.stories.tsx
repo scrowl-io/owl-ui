@@ -2,7 +2,7 @@ import * as React from 'react';
 import { SwitchToggle } from '../index';
 import { SwitchToggleDefaultProps } from '../Default.types';
 
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 const inputProps = {
@@ -24,13 +24,13 @@ export const Default = (args: SwitchToggleDefaultProps) => (
 );
 
 Default.args = {
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
   label: 'Label',
   inputProps: inputProps,
 };
 
 Default.argTypes = {
-  size,
+  pxScale,
   theme,
 };

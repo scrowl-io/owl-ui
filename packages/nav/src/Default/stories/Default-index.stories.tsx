@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Nav } from '../index';
 import { NavDefaultProps } from '../Default.types';
 
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 import { NavLink } from '../../NavLink';
 import { NavDropdown } from '../../NavDropdown';
@@ -28,11 +28,11 @@ export const Default = (args: NavDefaultProps) => (
 );
 
 Default.args = {
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
 };
 
 Default.argTypes = {
-  size,
+  pxScale,
   theme,
 };

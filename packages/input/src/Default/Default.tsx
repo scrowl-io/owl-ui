@@ -23,13 +23,13 @@ export const Component = (props: TextInputDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'inputProps']
+    ['prefix', 'theme', 'pxScale', 'inputProps']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

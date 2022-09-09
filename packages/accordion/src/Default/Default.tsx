@@ -24,15 +24,15 @@ export const Component = (props: AccordionDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'items']
+    ['prefix', 'theme', 'pxScale', 'items']
   );
-
+  console.log('locals', locals);
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['accordion-button'] = 'owlui-accordion-button';
   themePrefixes['accordion-body'] = 'owlui-accordion-body';

@@ -18,7 +18,7 @@ export interface Slide {
 export interface CarouselDefaultCommons {
   appearance?: 'Default' | 'Primary';
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   slides: Slide[];
 }

@@ -29,9 +29,9 @@ export const create = (component, folders) => {
       `${component.optionPas}-variant.stories.tsx`,
       folders
     ),
-    storiesSize: storyPath(
-      'size',
-      `${component.optionPas}-size.stories.tsx`,
+    storiesPxScale: storyPath(
+      'pxScale',
+      `${component.optionPas}-px-scale.stories.tsx`,
       folders
     ),
     storiesTheme: storyPath(
@@ -63,9 +63,9 @@ export const create = (component, folders) => {
       `${component.optionPas}-variant.stories.tsx`,
       folders
     );
-    fileList.storiesSize = storyPath(
-      `size-${defaultOpt}`,
-      `${component.optionPas}-size.stories.tsx`,
+    fileList.storiesPxScale = storyPath(
+      `px-scale-${defaultOpt}`,
+      `${component.optionPas}-px-scale.stories.tsx`,
       folders
     );
     fileList.storiesTheme = storyPath(

@@ -3,19 +3,19 @@ import { {{{cap}}} } from '../index';
 import { {{{cap}}}{{{optionPas}}}Props } from '../{{{optionPas}}}.types';
 
 import { variant } from './{{{optionPas}}}-variant.stories';
-import { size } from './{{{optionPas}}}-size.stories';
+import { pxScale } from './{{{optionPas}}}-px-scale.stories';
 import { theme } from './{{{optionPas}}}-theme.stories';
 
 export const {{{optionPas}}} = (args: {{{cap}}}{{{optionPas}}}Props) => <{{{cap}}} {...args}>Hello World</{{{cap}}}>;
 
 {{{optionPas}}}.args = {
   variant: variant.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
 };
 
 {{{optionPas}}}.argTypes = {
   variant,
-  size,
+  pxScale,
   theme,
 };

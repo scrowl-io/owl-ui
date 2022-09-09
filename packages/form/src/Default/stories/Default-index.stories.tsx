@@ -4,7 +4,7 @@ import { FormDefaultProps, FormDataProps } from '../Default.types';
 import { Button } from '../../../../button/src/index';
 
 import { variant } from './Default-variant.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: FormDefaultProps) => {
@@ -172,12 +172,12 @@ export const Default = (args: FormDefaultProps) => {
 
 Default.args = {
   variant: variant.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
 };
 
 Default.argTypes = {
   variant,
-  size,
+  pxScale,
   theme,
 };

@@ -6,7 +6,7 @@ import { icon } from './Default-icon.stories';
 import { display } from './Default-display.stories';
 import { filled } from './Default-filled.stories';
 import { appearance } from './Default-appearance.stories';
-import { size } from './Default-size.stories';
+import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
 export const Default = (args: IconsDefaultProps) => <Icon {...args} />;
@@ -16,7 +16,7 @@ Default.args = {
   display: display.defaultValue,
   filled: filled.defaultValue,
   appearance: appearance.defaultValue,
-  size: size.defaultValue,
+  pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
 };
 
@@ -25,6 +25,6 @@ Default.argTypes = {
   display,
   filled,
   appearance,
-  size,
+  pxScale,
   theme,
 };

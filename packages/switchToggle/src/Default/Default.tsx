@@ -26,13 +26,13 @@ export const Component = (props: SwitchToggleDefaultProps) => {
             value: 'Appearance',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'appearance', 'Size', 'inputProps']
+    ['prefix', 'theme', 'appearance', 'pxScale', 'inputProps']
   );
 
   return (

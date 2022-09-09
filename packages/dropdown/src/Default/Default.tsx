@@ -23,13 +23,13 @@ export const Component = (props: DropdownDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size', 'items', 'button']
+    ['prefix', 'theme', 'pxScale', 'items', 'button']
   );
 
   const getItemIdx = (

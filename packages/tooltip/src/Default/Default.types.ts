@@ -2,7 +2,7 @@ import React from 'react';
 import * as bs from 'react-bootstrap';
 export interface TooltipDefaultCommons {
   theme?: 'Default' | 'Dark';
-  size?: 'Sm' | 'Md' | 'Lg';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   tooltipContent: TooltipContent;
   tooltipTrigger: (props: object) => JSX.Element | JSX.Element[];

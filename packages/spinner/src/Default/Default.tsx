@@ -23,13 +23,13 @@ export const Component = (props: SpinnerDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'size']
+    ['prefix', 'theme', 'pxScale']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

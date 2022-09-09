@@ -16,7 +16,7 @@
     }
   }
 
-  &#{$ref}--size {
+  &#{$ref}--px-scale {
     &-lg {
       @include utils.typeface-lg;
     }

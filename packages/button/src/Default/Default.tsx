@@ -22,13 +22,13 @@ export const Component = (props: ButtonDefaultProps) => {
             value: 'theme',
           },
           {
-            fields: ['size'],
-            value: 'Size',
+            fields: ['pxScale'],
+            value: 'PxScale',
           },
         ],
       },
     },
-    ['prefix', 'theme', 'Size']
+    ['prefix', 'theme', 'pxScale']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;

@@ -21,7 +21,7 @@
     }
   }
 
-  &--size {
+  &--px-scale {
     &-lg {
       @include utils.typeface-lg;
     }

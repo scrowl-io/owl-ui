@@ -1,4 +1,4 @@
-export const size = {
+export const pxScale = {
   options: ['Lg', 'Md', 'Sm'],
   control: {
     type: 'select',
@@ -7,5 +7,5 @@ export const size = {
 };
 
 export default {
-  size,
+  pxScale,
 };
