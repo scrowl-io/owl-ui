@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.36](https://github.com/EEBOS/owl-ui/compare/v0.0.35...v0.0.36) (2022-09-09)
+
+**Note:** Version bump only for package @owlui/textfield
+
+
+
+
+
 ## [0.0.35](https://github.com/EEBOS/owl-ui/compare/v0.0.34...v0.0.35) (2022-09-02)
 
 **Note:** Version bump only for package @owlui/textfield

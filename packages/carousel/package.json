@@ -1,6 +1,6 @@
 {
   "name": "@owlui/carousel",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/carousel#readme",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "react-bootstrap": "2.4.0"
   },
   "devDependencies": {
-    "@owlui/typings": "^0.0.35"
+    "@owlui/typings": "^0.0.36"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.35"
+    "@owlui/lib": "^0.0.36"
   }
 }
