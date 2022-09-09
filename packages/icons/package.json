@@ -1,6 +1,6 @@
 {
   "name": "@owlui/icons",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icons#readme",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "react-bootstrap": "2.4.0"
   },
   "devDependencies": {
-    "@owlui/typings": "^0.0.38"
+    "@owlui/typings": "^0.0.39"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.38"
+    "@owlui/lib": "^0.0.39"
   }
 }
