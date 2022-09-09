@@ -3277,7 +3277,7 @@ export interface IconsDefaultRegular extends IconsDefaultCommons {
 }
 
 export interface IconsDefaultSymbols extends IconsDefaultCommons {
-  icon: IconTypeSymbol;
+  icon: string;
   display?: 'outlined' | 'rounded' | 'sharp';
   filled?: boolean;
   wght?: 100 | 200 | 300 | 400 | 500 | 600 | 700;
@@ -3285,7 +3285,5 @@ export interface IconsDefaultSymbols extends IconsDefaultCommons {
   opsz?: number;
 }
 
-export type IconsDefault = IconsDefaultRegular | IconsDefaultSymbols;
-
-export type IconsDefaultProps = IconsDefault &
+export type IconsDefaultProps = IconsDefaultSymbols &
   React.AllHTMLAttributes<HTMLSpanElement>;

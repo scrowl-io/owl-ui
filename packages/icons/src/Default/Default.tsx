@@ -3,20 +3,18 @@ import { IconsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '@owlui/lib/src/utils';
 
-export const Component = (props: IconsDefaultProps) => {
+export const Component = ({ style, ...props }: IconsDefaultProps) => {
   let baseClass = 'icons';
-  const display = props.display;
+  const localStyles = style ? JSON.parse(JSON.stringify(style)) : {};
   const icon = props.icon;
   const prefix = props.prefix || '';
 
-  switch (display) {
+  switch (props.display) {
     case 'rounded':
       baseClass += 'Rounded';
       break;
     case 'sharp':
       baseClass += 'Sharp';
-      break;
-    case 'regular':
       break;
     case 'outlined':
     default:
@@ -61,21 +59,19 @@ export const Component = (props: IconsDefaultProps) => {
     ]
   ) as IconsDefaultProps;
 
-  if (display !== 'regular') {
-    const fill = `'FILL' ${props.filled ? 1 : 0}`;
-    const wght = `'wght' ${props.wght ? props.wght : 400}`;
-    const grad = `'GRAD' ${props.grad ? props.grad : 0}`;
-    const opsz = `'opsz' ${
-      props.opsz && props.opsz >= 20 && props.opsz <= 48 ? props.opsz : 48
-    }`;
-    const displayStyle = {
-      fontVariationSettings: `${fill}, ${wght}, ${grad}, ${opsz}`.toString(),
-    };
+  const fill = `'FILL' ${props.filled ? 1 : 0}`;
+  const wght = `'wght' ${props.wght ? props.wght : 400}`;
+  const grad = `'GRAD' ${props.grad ? props.grad : 0}`;
+  const opsz = `'opsz' ${
+    props.opsz && props.opsz >= 20 && props.opsz <= 48 ? props.opsz : 48
+  }`;
+  localStyles.fontVariationSettings = `${fill}, ${wght}, ${grad}, ${opsz}`;
 
-    locals.style = Object.assign(props.style ? props.style : {}, displayStyle);
-  }
-
-  return <span {...locals}>{icon}</span>;
+  return (
+    <span {...locals} style={localStyles}>
+      {icon}
+    </span>
+  );
 };
 
 export default {
