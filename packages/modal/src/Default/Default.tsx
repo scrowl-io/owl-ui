@@ -34,7 +34,7 @@ export const Component = (props: ModalDefaultProps) => {
   themePrefixes['modal-footer'] = 'owlui-modal-footer';
   themePrefixes['modal-content'] = 'owlui-modal-content';
   themePrefixes['modal-title'] = 'owlui-modal-title';
-  console.log('modal props', body);
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Modal {...locals}>
