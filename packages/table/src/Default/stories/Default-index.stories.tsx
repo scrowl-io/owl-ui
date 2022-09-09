@@ -30,7 +30,7 @@ const tableData = {
   items: [
     {
       id: 1,
-      firstName: 'Michael',
+      firstName: <div style={{ fontSize: '2rem' }}>Michael</div>,
       lastName: 'Scott',
       userName: 'mscott',
     },
