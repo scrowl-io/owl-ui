@@ -1,7 +1,9 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
 .icons,
-.icons-outlined {
+.icons-outlined,
+.icons-rounded,
+.icons-sharp {
   color: currentColor;
   font-size: 1.2em;
   vertical-align: text-bottom;

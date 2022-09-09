@@ -7,7 +7,7 @@ const Page = () => {
       <div className="owlui-row">
         <div className="owlui-col-4">
           <Button>
-            <Icon icon="settings" />
+            <Icon icon="settings" display="outlined" />
             Hello
           </Button>
         </div>
