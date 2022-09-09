@@ -3276,7 +3276,9 @@ export interface IconsDefaultRegular extends IconsDefaultCommons {
   display: 'regular';
 }
 
-export interface IconsDefaultSymbols extends IconsDefaultCommons, React.AllHTMLAttributes<HTMLSpanElement> {
+export interface IconsDefaultSymbols
+  extends IconsDefaultCommons,
+    React.AllHTMLAttributes<HTMLSpanElement> {
   icon: string;
   display?: 'outlined' | 'rounded' | 'sharp';
   filled?: boolean;
