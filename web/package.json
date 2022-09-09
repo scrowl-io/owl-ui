@@ -40,7 +40,7 @@
     "typescript": "^4.6.3"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.38",
+    "@owlui/lib": "scrowl-io/owl-ui#sc-1410-owl-fixes",
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",
     "react-bootstrap": "2.4.0",

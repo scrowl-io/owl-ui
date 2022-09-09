@@ -1,6 +1,8 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
 .btn {
+  border: 1px solid cyan;
+
   &.theme--dark {
 
   }

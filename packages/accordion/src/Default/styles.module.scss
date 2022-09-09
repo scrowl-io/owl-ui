@@ -18,8 +18,8 @@
   font-size: 0.875rem;
   letter-spacing: 0.0125em;
 
-  &:hover,
-  &:focus {
+  &:hover {
+    border: 1px solid red;
     text-decoration: underline;
   }
 }
