@@ -14,6 +14,7 @@ export interface DropdownDefaultCommons {
   children?: React.ReactNode;
   items: DropdownItemProps[];
   button?: React.ReactNode;
+  drop?: 'up' | 'down' | 'start' | 'end';
 }
 
 export type DropdownDefaultProps = DropdownDefaultCommons &

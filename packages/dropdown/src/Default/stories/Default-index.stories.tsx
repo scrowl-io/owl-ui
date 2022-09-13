@@ -63,7 +63,7 @@ const items = [
 
 const button = (
   <>
-    <span>Icon</span>
+    <span style={{ marginTop: '10rem' }}>Icon</span>
   </>
 );
 
@@ -75,6 +75,7 @@ Default.args = {
   theme: theme.defaultValue,
   items: items,
   button: button,
+  drop: 'up',
 };
 
 Default.argTypes = {
