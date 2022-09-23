@@ -1,1 +1,1 @@
-export { Component as Toggle } from './Toggle';
+export * from './Toggle';

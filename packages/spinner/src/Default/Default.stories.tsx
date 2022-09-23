@@ -1,14 +1,14 @@
 import * as React from 'react';
 // eslint-disable-next-line import/named
 import { Meta } from '@storybook/react';
-import { Component } from './Default';
+import { Spinner } from './Default';
 import descriptionMd from './Description.md';
 
 export { Default } from './stories/Default-index.stories';
 
 export default {
   title: 'Components/Spinner/Default',
-  component: Component,
+  component: Spinner,
   parameters: {
     docs: {
       description: {

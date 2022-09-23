@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ListGroup } from 'react-bootstrap';
 import { CardListItemProps } from './CardListItem.types';
 
-export const Component = (props: CardListItemProps) => {
+export const CardListItem = (props: CardListItemProps) => {
   const { children } = props;
 
   return (
@@ -13,5 +13,5 @@ export const Component = (props: CardListItemProps) => {
 };
 
 export default {
-  Component,
+  CardListItem,
 };
