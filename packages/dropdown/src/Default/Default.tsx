@@ -8,7 +8,7 @@ export const Component = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
   const { items } = props;
-  const [selectedItemIdx, setSelectedItemIdx] = useState<number>(0);
+  const [selectedItemIdx, setSelectedItemIdx] = useState<number | null>(null);
 
   const locals = createLocalProps(
     props,
