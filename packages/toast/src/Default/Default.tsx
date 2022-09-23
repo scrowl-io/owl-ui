@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, Toast } from 'react-bootstrap';
+import { ThemeProvider, Toast as BsToast } from 'react-bootstrap';
 import { ToastDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: ToastDefaultProps) => {
+export const Toast = (props: ToastDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'toast';
   const basePrefixClass = `owlui-${baseClass}`;
@@ -43,18 +43,18 @@ export const Component = (props: ToastDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Toast {...locals}>
-        <Toast.Header {...toastContent?.header}>
+      <BsToast {...locals}>
+        <BsToast.Header {...toastContent?.header}>
           {toastContent?.header.content}
-        </Toast.Header>
-        <Toast.Body {...toastContent?.body}>
+        </BsToast.Header>
+        <BsToast.Body {...toastContent?.body}>
           {toastContent?.body.content}
-        </Toast.Body>
-      </Toast>
+        </BsToast.Body>
+      </BsToast>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Toast,
 };

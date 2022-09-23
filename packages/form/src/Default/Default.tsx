@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, Form } from 'react-bootstrap';
+import { ThemeProvider, Form as BsForm } from 'react-bootstrap';
 import { FormDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -11,7 +11,7 @@ import { Range } from '../../../range/src';
 import { Select } from '../../../select/src';
 import { SwitchToggle } from '../../../switchToggle/src';
 
-export const Component = (props: FormDefaultProps) => {
+export const Form = (props: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'form';
   const { formData, children } = props;
@@ -67,14 +67,14 @@ export const Component = (props: FormDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form {...locals}>
+      <BsForm {...locals}>
         {renderFormElements}
         {children}
-      </Form>
+      </BsForm>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Form,
 };

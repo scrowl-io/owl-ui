@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: RangeDefaultProps) => {
+export const Range = (props: RangeDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'range';
   const { label, control } = props.inputProps;
@@ -50,5 +50,5 @@ export const Component = (props: RangeDefaultProps) => {
 };
 
 export default {
-  Component,
+  Range,
 };

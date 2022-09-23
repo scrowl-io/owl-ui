@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: TextInputDefaultProps) => {
+export const Input = (props: TextInputDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'input';
   const { label, control } = props.inputProps;
@@ -51,5 +51,5 @@ export const Component = (props: TextInputDefaultProps) => {
 };
 
 export default {
-  Component,
+  Input,
 };

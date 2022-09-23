@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ThemeProvider, Modal } from 'react-bootstrap';
+import { ThemeProvider, Modal as BsModal } from 'react-bootstrap';
 import { ModalDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: ModalDefaultProps) => {
+export const Modal = (props: ModalDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'modal';
   const { header, body, footer } = props;
@@ -40,30 +40,30 @@ export const Component = (props: ModalDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Modal {...locals}>
+      <BsModal {...locals}>
         {header ? (
-          <Modal.Header {...header.bsProps}>
-            <Modal.Title>{header.content}</Modal.Title>
-          </Modal.Header>
+          <BsModal.Header {...header.bsProps}>
+            <BsModal.Title>{header.content}</BsModal.Title>
+          </BsModal.Header>
         ) : (
           <></>
         )}
         {body ? (
-          <Modal.Body {...body.bsProps}>{body.content}</Modal.Body>
+          <BsModal.Body {...body.bsProps}>{body.content}</BsModal.Body>
         ) : (
           <></>
         )}
 
         {footer ? (
-          <Modal.Footer {...footer.bsProps}>{footer.content}</Modal.Footer>
+          <BsModal.Footer {...footer.bsProps}>{footer.content}</BsModal.Footer>
         ) : (
           <></>
         )}
-      </Modal>
+      </BsModal>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Modal,
 };

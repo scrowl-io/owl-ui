@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: DrawerDefaultProps) => {
+export const Drawer = (props: DrawerDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'drawer';
   const { drawer } = props;
@@ -59,5 +59,5 @@ export const Component = (props: DrawerDefaultProps) => {
 };
 
 export default {
-  Component,
+  Drawer,
 };

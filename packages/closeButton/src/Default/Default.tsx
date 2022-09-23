@@ -1,10 +1,10 @@
 import React from 'react';
-import { CloseButton } from 'react-bootstrap';
+import { CloseButton as BsCloseButton } from 'react-bootstrap';
 import { CloseButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
 
-export const Component = (props: CloseButtonDefaultProps) => {
+export const CloseButton = (props: CloseButtonDefaultProps) => {
   const baseClass = 'btn-close';
   const prefix = props.prefix || '';
 
@@ -21,9 +21,9 @@ export const Component = (props: CloseButtonDefaultProps) => {
     ['prefix']
   );
 
-  return <CloseButton {...locals} />;
+  return <BsCloseButton {...locals} />;
 };
 
 export default {
-  Component,
+  CloseButton,
 };

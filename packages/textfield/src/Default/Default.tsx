@@ -5,7 +5,7 @@ import { createLocalProps } from '../../../../lib/src/utils';
 
 const baseClass = 'textfield';
 
-export const Component = (props: TextfieldDefaultProps) => {
+export const Textfield = (props: TextfieldDefaultProps) => {
   const prefix = props.prefix || '';
 
   const locals = createLocalProps(
@@ -38,5 +38,5 @@ export const Component = (props: TextfieldDefaultProps) => {
 };
 
 export default {
-  Component,
+  Textfield,
 };

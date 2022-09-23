@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: SelectDefaultProps) => {
+export const Select = (props: SelectDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'select';
   const { label, control } = props.inputProps;
@@ -58,5 +58,5 @@ export const Component = (props: SelectDefaultProps) => {
 };
 
 export default {
-  Component,
+  Select,
 };

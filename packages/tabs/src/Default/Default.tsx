@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { ThemeProvider } from 'react-bootstrap';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import { ThemeProvider, Tab as BsTab, Tabs as BsTabs } from 'react-bootstrap';
 import { TabsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
 
-export const Component = (props: TabsDefaultProps) => {
+export const Tabs = (props: TabsDefaultProps) => {
   const baseClass = 'navTabs';
   const { items, defaultActiveKey } = props;
   const prefix = props.prefix || '';
@@ -46,7 +44,7 @@ export const Component = (props: TabsDefaultProps) => {
         'tab-pane': 'owlui-tab-pane',
       }}
     >
-      <Tabs
+      <BsTabs
         activeKey={activeKey}
         onSelect={key => setActiveKey(key?.toString())}
         {...locals}
@@ -55,16 +53,16 @@ export const Component = (props: TabsDefaultProps) => {
           const itemKey = item.id || index;
 
           return (
-            <Tab key={itemKey} eventKey={item.id} title={item.title}>
+            <BsTab key={itemKey} eventKey={item.id} title={item.title}>
               {item.view}
-            </Tab>
+            </BsTab>
           );
         })}
-      </Tabs>
+      </BsTabs>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Tabs,
 };

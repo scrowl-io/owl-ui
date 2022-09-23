@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Table, ThemeProvider } from 'react-bootstrap';
+import { Table as BsTable, ThemeProvider } from 'react-bootstrap';
 import { TableDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
 import { Body, Header } from './elements';
 
-export const Component = (props: TableDefaultProps) => {
+export const Table = (props: TableDefaultProps) => {
   const baseClass = 'table';
   const basePrefixClass = `owlui-${baseClass}`;
   const { tableData } = props;
@@ -35,15 +35,15 @@ export const Component = (props: TableDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={{ [`${baseClass}`]: `${basePrefixClass}` }}>
-      <Table {...locals}>
+      <BsTable {...locals}>
         <caption>{tableData.caption}</caption>
         <Header columns={tableData.columns} />
         <Body items={tableData.items} columns={tableData.columns} />
-      </Table>
+      </BsTable>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Table,
 };

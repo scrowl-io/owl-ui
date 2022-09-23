@@ -3,7 +3,7 @@ import {
   ThemeProvider,
   Popover,
   OverlayTrigger,
-  Tooltip,
+  Tooltip as BsTooltip,
 } from 'react-bootstrap';
 import { TooltipDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
@@ -12,7 +12,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: TooltipDefaultProps) => {
+export const Tooltip = (props: TooltipDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'tooltip';
   const { tooltipContent, tooltipTrigger } = props;
@@ -56,7 +56,7 @@ export const Component = (props: TooltipDefaultProps) => {
               <Popover.Body>{tooltipContent.content}</Popover.Body>
             </Popover>
           ) : (
-            <Tooltip {...locals}>{tooltipContent.content}</Tooltip>
+            <BsTooltip {...locals}>{tooltipContent.content}</BsTooltip>
           )
         }
       >
@@ -67,5 +67,5 @@ export const Component = (props: TooltipDefaultProps) => {
 };
 
 export default {
-  Component,
+  Tooltip,
 };

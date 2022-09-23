@@ -6,7 +6,7 @@ import {
   NavigationDrawerElementProps,
 } from '../Default.types';
 import * as styles from '../styles.module.scss';
-import { Component as NavItem } from './Item';
+import { NavigationDrawerContentItem as NavItem } from './Item';
 
 const baseClass = 'owluiNavigationDrawerContent';
 
@@ -57,7 +57,9 @@ const formatItems = (items: Array<NavigationDrawerContentTypes>) => {
   return elements;
 };
 
-export const Component = (props: NavigationDrawerElementProps) => {
+export const NavigationDrawerContent = (
+  props: NavigationDrawerElementProps
+) => {
   const { items } = props;
   let content: React.ReactNode = [];
 
@@ -67,5 +69,5 @@ export const Component = (props: NavigationDrawerElementProps) => {
 };
 
 export default {
-  Component,
+  NavigationDrawerContent,
 };

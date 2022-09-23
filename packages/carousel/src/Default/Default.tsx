@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Carousel, ThemeProvider } from 'react-bootstrap';
+import { Carousel as BsCarousel, ThemeProvider } from 'react-bootstrap';
 import { CarouselDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: CarouselDefaultProps) => {
+export const Carousel = (props: CarouselDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const { slides, activeIndex } = props;
   const baseClass = 'carousel';
@@ -57,25 +57,29 @@ export const Component = (props: CarouselDefaultProps) => {
   return (
     <>
       <ThemeProvider prefixes={themePrefixes}>
-        <Carousel {...locals} activeIndex={activeItem} onSelect={handleSelect}>
+        <BsCarousel
+          {...locals}
+          activeIndex={activeItem}
+          onSelect={handleSelect}
+        >
           {slides?.map(slide => (
-            <Carousel.Item
+            <BsCarousel.Item
               style={slide.style}
               key={slide.id}
               {...slide.bsItemProps}
             >
               {slide.backgroundContent}
-              <Carousel.Caption {...slide.bsCaptionProps}>
+              <BsCarousel.Caption {...slide.bsCaptionProps}>
                 {slide.caption}
-              </Carousel.Caption>
-            </Carousel.Item>
+              </BsCarousel.Caption>
+            </BsCarousel.Item>
           ))}
-        </Carousel>
+        </BsCarousel>
       </ThemeProvider>
     </>
   );
 };
 
 export default {
-  Component,
+  Carousel,
 };

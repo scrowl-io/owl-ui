@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { DropdownDefaultProps, DropdownItemProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
-import { Dropdown, ThemeProvider } from 'react-bootstrap';
+import { Dropdown as BsDropdown, ThemeProvider } from 'react-bootstrap';
 
-export const Component = (props: DropdownDefaultProps) => {
+export const Dropdown = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
   const { items } = props;
@@ -96,15 +96,15 @@ export const Component = (props: DropdownDefaultProps) => {
           'dropdown-item': 'owlui-dropdown-item',
         }}
       >
-        <Dropdown {...locals} focusFirstItemOnShow="keyboard">
-          <Dropdown.Toggle variant={props.variant}>
+        <BsDropdown {...locals} focusFirstItemOnShow="keyboard">
+          <BsDropdown.Toggle variant={props.variant}>
             {props.button ? props.button : <></>}
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
+          </BsDropdown.Toggle>
+          <BsDropdown.Menu>
             {items.map((item: DropdownItemProps, idx: number) => {
               const key = item.id || idx;
               return (
-                <Dropdown.Item
+                <BsDropdown.Item
                   id={`item-number-${item.id}`}
                   value={item.value}
                   onKeyDown={handleTab}
@@ -115,16 +115,16 @@ export const Component = (props: DropdownDefaultProps) => {
                   as={item.as}
                 >
                   {item.label}
-                </Dropdown.Item>
+                </BsDropdown.Item>
               );
             })}
-          </Dropdown.Menu>
-        </Dropdown>
+          </BsDropdown.Menu>
+        </BsDropdown>
       </ThemeProvider>
     </>
   );
 };
 
 export default {
-  Component,
+  Dropdown,
 };

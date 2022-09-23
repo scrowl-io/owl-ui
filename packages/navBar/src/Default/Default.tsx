@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ThemeProvider, Navbar, Container } from 'react-bootstrap';
+import { ThemeProvider, Navbar as BsNavbar, Container } from 'react-bootstrap';
 import { NavBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: NavBarDefaultProps) => {
+export const NavBar = (props: NavBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'navbar';
   const { theme, children } = props;
@@ -34,13 +34,13 @@ export const Component = (props: NavBarDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Navbar {...locals} variant={theme}>
+      <BsNavbar {...locals} variant={theme}>
         <Container>{children}</Container>
-      </Navbar>
+      </BsNavbar>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  NavBar,
 };

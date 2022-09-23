@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, Nav } from 'react-bootstrap';
+import { ThemeProvider, Nav as BsNav } from 'react-bootstrap';
 import { NavDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: NavDefaultProps) => {
+export const Nav = (props: NavDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'nav';
   const { children } = props;
@@ -42,11 +42,11 @@ export const Component = (props: NavDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Nav {...locals}>{children}</Nav>
+      <BsNav {...locals}>{children}</BsNav>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Nav,
 };

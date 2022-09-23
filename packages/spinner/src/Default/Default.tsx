@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ThemeProvider, Spinner } from 'react-bootstrap';
+import { ThemeProvider, Spinner as BsSpinner } from 'react-bootstrap';
 import { SpinnerDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: SpinnerDefaultProps) => {
+export const Spinner = (props: SpinnerDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'spinner';
   const { animation } = props;
@@ -39,11 +39,11 @@ export const Component = (props: SpinnerDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Spinner animation={animation} {...locals} />
+      <BsSpinner animation={animation} {...locals} />
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Spinner,
 };

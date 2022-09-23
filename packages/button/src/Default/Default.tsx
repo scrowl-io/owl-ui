@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, ThemeProvider } from 'react-bootstrap';
+import { Button as BsButton, ThemeProvider } from 'react-bootstrap';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: ButtonDefaultProps) => {
+export const Button = (props: ButtonDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'btn';
   const prefix = props.prefix || '';
@@ -38,11 +38,11 @@ export const Component = (props: ButtonDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Button {...locals}>{props.children}</Button>
+      <BsButton {...locals}>{props.children}</BsButton>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Button,
 };
