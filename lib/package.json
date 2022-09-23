@@ -2,48 +2,39 @@
   "name": "@owlui/lib",
   "version": "0.0.39",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/lib#readme",
   "license": "MIT",
-  "source": "./src/index.ts",
-  "main": "./dist/owl.lib.js",
-  "types": "./dist/owl.lib.d.ts",
-  "style": "dist/owl.lib.css",
-  "files": [
-    "dist",
-    "src"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "lib"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/lib#readme",
+  "source": "./src/index.ts",
+  "main": "./dist/owl.lib.js",
+  "module": "./dist/owl.lib.module.js",
+  "types": "./dist/owl.lib.d.ts",
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "dist/",
+    "src/"
+  ],
   "exports": {
     ".": {
       "require": "./dist/owl.lib.js",
       "default": "./dist/owl.lib.js",
       "import": "./src/index.ts"
     },
+    "./package.json": "./package.json",
     "./utils": "./src/utils/index.ts",
-    "./src/utils": "./src/utils/index.ts",
     "./style": "./dist/owl.lib.css",
     "./theme": "./src/theme/_index.scss",
     "./scss-utils": "./src/theme/_utils.scss",
     "./src/theme/assets/*": "./src/theme/assets/*"
-  },
-  "sass": {
-    "outFile": "./dist/[folder].css",
-    "includePaths": [
-      "../",
-      "../../",
-      "../node_modules/",
-      "./",
-      "./node_modules/"
-    ]
   },
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
