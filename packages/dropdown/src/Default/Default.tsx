@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DropdownDefaultProps, DropdownItemProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/src/utils';
+import { createLocalProps } from '../../../../lib/src/utils';
 import { Dropdown, ThemeProvider } from 'react-bootstrap';
 
 export const Component = (props: DropdownDefaultProps) => {

@@ -2,7 +2,10 @@ import * as React from 'react';
 import { ThemeProvider, Navbar, Container } from 'react-bootstrap';
 import { NavBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import {
+  createLocalProps,
+  themePrefixesProps,
+} from '../../../../lib/src/utils';
 
 export const Component = (props: NavBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

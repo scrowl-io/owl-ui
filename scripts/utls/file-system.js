@@ -19,6 +19,19 @@ fs.getExt = pathName => {
   return path.extname(pathName);
 };
 
+fs.isDirectory = pathName => {
+  try {
+    if (!fs.existsSync(fs.normalize(pathName))) {
+      throw new Error(`Path does not exist: ${pathName}`);
+    }
+
+    return fs.lstatSync(pathName).isDirectory();
+  } catch (err) {
+    log(err);
+    return err;
+  }
+};
+
 fs.dirExists = pathName => {
   try {
     return fs.existsSync(fs.normalize(pathName));

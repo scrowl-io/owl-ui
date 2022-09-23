@@ -2,7 +2,10 @@ import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
 import { TextInputDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import {
+  createLocalProps,
+  themePrefixesProps,
+} from '../../../../lib/src/utils';
 
 export const Component = (props: TextInputDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

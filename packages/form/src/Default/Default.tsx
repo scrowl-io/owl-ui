@@ -2,7 +2,10 @@ import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
 import { FormDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import {
+  createLocalProps,
+  themePrefixesProps,
+} from '../../../../lib/src/utils';
 import { Input } from '../../../input/src';
 import { Range } from '../../../range/src';
 import { Select } from '../../../select/src';

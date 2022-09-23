@@ -4,7 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { TabsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/src/utils';
+import { createLocalProps } from '../../../../lib/src/utils';
 
 export const Component = (props: TabsDefaultProps) => {
   const baseClass = 'navTabs';
