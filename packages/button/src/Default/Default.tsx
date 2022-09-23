@@ -2,7 +2,10 @@ import * as React from 'react';
 import { Button, ThemeProvider } from 'react-bootstrap';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import {
+  createLocalProps,
+  themePrefixesProps,
+} from '../../../../lib/src/utils';
 
 export const Component = (props: ButtonDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

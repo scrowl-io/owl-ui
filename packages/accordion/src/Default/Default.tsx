@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Accordion, ThemeProvider } from 'react-bootstrap';
 import { AccordionDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import {
+  createLocalProps,
+  themePrefixesProps,
+} from '../../../../lib/src/utils';
 
 export const Component = (props: AccordionDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};

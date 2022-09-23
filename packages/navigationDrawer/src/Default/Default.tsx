@@ -3,7 +3,10 @@ import * as React from 'react';
 import { NavigationDrawerElementProps } from './Default.types';
 import { ThemeProvider, Offcanvas } from 'react-bootstrap';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps, themePrefixesProps } from '@owlui/lib/src/utils';
+import {
+  createLocalProps,
+  themePrefixesProps,
+} from '../../../../lib/src/utils';
 import { Component as NavHeader } from './elements/Header';
 import { Component as NavContent } from './elements/Content';
 

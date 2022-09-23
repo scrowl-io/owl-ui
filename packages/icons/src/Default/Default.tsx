@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IconsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/src/utils';
+import { createLocalProps } from '../../../../lib/src/utils';
 
 export const Component = ({ style, ...props }: IconsDefaultProps) => {
   let baseClass = 'icons';

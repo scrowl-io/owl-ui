@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Table, ThemeProvider } from 'react-bootstrap';
 import { TableDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '@owlui/lib/src/utils';
+import { createLocalProps } from '../../../../lib/src/utils';
 import { Body, Header } from './elements';
 
 export const Component = (props: TableDefaultProps) => {
