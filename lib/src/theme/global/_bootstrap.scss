@@ -115,7 +115,7 @@ $btn-padding-x-lg: 1.25em;
 $btn-border-width: 1px;
 $btn-line-height: 1.5;
 $btn-font-weight: 600;
-$btn-box-shadow: null;
+$btn-box-shadow: none;
 
 $btn-border-radius: 0.25em;
 $btn-border-radius-sm: 0.25em;
@@ -134,7 +134,7 @@ $input-disabled-bg: var(--owl-input-border-color);
 $input-transition: $btn-transition;
 $input-bg: var(--owl-input-bg);
 $input-color: var(--owl-input-color);
-$input-box-shadow: null;
+$input-box-shadow: none;
 $input-border-color: var(--owl-input-border-color);
 $input-focus-border-color: var(--owl-active-bg);
 $input-placeholder-color: var(--owl-input-placeholder-color);
@@ -264,7 +264,8 @@ h2,
   padding: 0 0.25em;
   line-height: 1;
 
-  span[class^='material-symbols'] {
+  span[class^='material-symbols'],
+  span[class^='icons'] {
     font-size: 1.75em;
   }
 }
@@ -325,7 +326,8 @@ button {
 .btn {
   letter-spacing: $owl-sys-typeface-btn-letterspacing;
 
-  span[class^='material-symbols']:first-child {
+  span[class^='material-symbols']:first-child,
+  span[class^='icons']:first-child {
     margin-right: 0.25em;
     font-size: 1.5em;
     line-height: 0.66;
