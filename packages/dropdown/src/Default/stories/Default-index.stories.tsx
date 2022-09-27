@@ -75,6 +75,7 @@ Default.args = {
   theme: theme.defaultValue,
   items: items,
   button: button,
+  highlightSelected: false,
 };
 
 Default.argTypes = {

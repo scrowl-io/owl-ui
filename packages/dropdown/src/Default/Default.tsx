@@ -7,7 +7,7 @@ import { Dropdown, ThemeProvider } from 'react-bootstrap';
 export const Component = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
-  const { items } = props;
+  const { items, highlightSelected } = props;
   const [selectedItemIdx, setSelectedItemIdx] = useState<number | null>(null);
 
   const locals = createLocalProps(
@@ -108,7 +108,9 @@ export const Component = (props: DropdownDefaultProps) => {
                   id={`item-number-${item.id}`}
                   value={item.value}
                   onKeyDown={handleTab}
-                  className={`${selectedItemIdx === idx ? 'active' : ''}`}
+                  className={`${
+                    selectedItemIdx === idx && highlightSelected ? 'active' : ''
+                  }`}
                   data-index={idx}
                   key={key}
                   onClick={handleItemClick}
