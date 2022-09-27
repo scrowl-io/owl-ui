@@ -7,7 +7,7 @@ import { Dropdown as BsDropdown, ThemeProvider } from 'react-bootstrap';
 export const Dropdown = (props: DropdownDefaultProps) => {
   const baseClass = 'dropdown';
   const prefix = props.prefix || '';
-  const { items, highlightSelected } = props;
+  const { items, showSelected } = props;
   const [selectedItemIdx, setSelectedItemIdx] = useState<number | null>(null);
 
   const locals = createLocalProps(
@@ -85,6 +85,45 @@ export const Dropdown = (props: DropdownDefaultProps) => {
     }
   };
 
+  const renderStatefulItem = (
+    item: DropdownItemProps,
+    key: number | string,
+    idx: number
+  ) => {
+    return (
+      <BsDropdown.Item
+        id={`item-number-${item.id}`}
+        value={item.value}
+        onKeyDown={handleTab}
+        className={`${selectedItemIdx === idx ? 'active' : ''}`}
+        data-index={idx}
+        key={key}
+        onClick={handleItemClick}
+        as={item.as}
+      >
+        {item.label}
+      </BsDropdown.Item>
+    );
+  };
+
+  const renderStatelessItem = (
+    item: DropdownItemProps,
+    key: number | string,
+    idx: number
+  ) => {
+    return (
+      <BsDropdown.Item
+        id={`item-number-${item.id}`}
+        value={item.value}
+        data-index={idx}
+        key={key}
+        as={item.as}
+      >
+        {item.label}
+      </BsDropdown.Item>
+    );
+  };
+
   return (
     <>
       <ThemeProvider
@@ -103,22 +142,11 @@ export const Dropdown = (props: DropdownDefaultProps) => {
           <BsDropdown.Menu>
             {items.map((item: DropdownItemProps, idx: number) => {
               const key = item.id || idx;
-              return (
-                <BsDropdown.Item
-                  id={`item-number-${item.id}`}
-                  value={item.value}
-                  onKeyDown={handleTab}
-                  className={`${
-                    selectedItemIdx === idx && highlightSelected ? 'active' : ''
-                  }`}
-                  data-index={idx}
-                  key={key}
-                  onClick={handleItemClick}
-                  as={item.as}
-                >
-                  {item.label}
-                </BsDropdown.Item>
-              );
+              if (showSelected) {
+                return renderStatefulItem(item, key, idx);
+              } else {
+                return renderStatelessItem(item, key, idx);
+              }
             })}
           </BsDropdown.Menu>
         </BsDropdown>

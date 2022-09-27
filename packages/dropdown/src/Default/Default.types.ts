@@ -14,7 +14,7 @@ export interface DropdownDefaultCommons {
   children?: React.ReactNode;
   items: DropdownItemProps[];
   button?: React.ReactNode;
-  highlightSelected?: boolean | undefined;
+  showSelected?: boolean | undefined;
 }
 
 export type DropdownDefaultProps = DropdownDefaultCommons &
