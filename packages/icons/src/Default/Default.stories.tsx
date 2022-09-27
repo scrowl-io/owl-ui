@@ -1,14 +1,14 @@
 import * as React from 'react';
 // eslint-disable-next-line import/named
 import { Meta } from '@storybook/react';
-import { Component } from './Default';
+import { Icon } from './Default';
 import descriptionMd from './Description.md';
 
 export { Default } from './stories/Default-index.stories';
 
 export default {
   title: 'Components/Icons/Default',
-  component: Component,
+  component: Icon,
   parameters: {
     docs: {
       description: {

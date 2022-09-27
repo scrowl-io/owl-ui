@@ -4,12 +4,12 @@ import * as styles from '../styles.module.scss';
 
 const baseClass = 'owluiNavigationDrawerHeader';
 
-export const Component = (props: NavigationDrawerElementProps) => {
+export const NavigationDrawerHeader = (props: NavigationDrawerElementProps) => {
   const { children } = props;
 
   return <div className={styles[baseClass]}>{children}</div>;
 };
 
 export default {
-  Component,
+  NavigationDrawerHeader,
 };

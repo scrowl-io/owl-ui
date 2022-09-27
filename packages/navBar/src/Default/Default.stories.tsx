@@ -1,14 +1,14 @@
 import * as React from 'react';
 // eslint-disable-next-line import/named
 import { Meta } from '@storybook/react';
-import { Component } from './Default';
+import { NavBar } from './Default';
 import descriptionMd from './Description.md';
 
 export { Default } from './stories/Default-index.stories';
 
 export default {
   title: 'Components/NavBar/Default',
-  component: Component,
+  component: NavBar,
   parameters: {
     docs: {
       description: {

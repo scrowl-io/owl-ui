@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Card } from 'react-bootstrap';
 import { CardLinkProps } from './CardLink.types';
 
-export const Component = (props: CardLinkProps) => {
+export const CardLink = (props: CardLinkProps) => {
   const { children } = props;
 
   return (
@@ -13,5 +13,5 @@ export const Component = (props: CardLinkProps) => {
 };
 
 export default {
-  Component,
+  CardLink,
 };

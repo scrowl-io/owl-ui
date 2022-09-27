@@ -1,1 +1,1 @@
-export { Component as Collapse } from './Collapse';
+export * from './Collapse';

@@ -1,1 +1,1 @@
-export { Component as NavLink } from './NavLink';
+export * from './NavLink';

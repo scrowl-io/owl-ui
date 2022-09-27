@@ -33,7 +33,7 @@ function update() {
     const pkgPath = fs.join(
       pkgs[pkg].path.split('owl-ui')[1],
       '../',
-      pkgs[pkg].config.source.replace('.ts', '')
+      pkgs[pkg].config.source.replace('/index.ts', '')
     );
 
     data.components.push({

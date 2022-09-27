@@ -1,1 +1,1 @@
-export { Component as Brand } from './Brand';
+export * from './Brand';

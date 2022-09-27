@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Accordion, ThemeProvider } from 'react-bootstrap';
+import { Accordion as BsAccordion, ThemeProvider } from 'react-bootstrap';
 import { AccordionDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: AccordionDefaultProps) => {
+export const Accordion = (props: AccordionDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'accordion';
   const { items } = props;
@@ -53,12 +53,12 @@ export const Component = (props: AccordionDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Accordion {...locals}>
+      <BsAccordion {...locals}>
         {items.map(item => {
           return (
-            <Accordion.Item key={item.id} eventKey={item.id}>
+            <BsAccordion.Item key={item.id} eventKey={item.id}>
               <div className="d-flex accordion-label-container">
-                <Accordion.Button
+                <BsAccordion.Button
                   className={`${
                     !isActive.includes(item.id) ? 'collapsed' : ''
                   }`}
@@ -66,18 +66,18 @@ export const Component = (props: AccordionDefaultProps) => {
                   onClick={toggleActive}
                 >
                   {item.label}
-                </Accordion.Button>
+                </BsAccordion.Button>
                 {item.labelAction ? item.labelAction : ''}
               </div>
-              <Accordion.Body>{item.view}</Accordion.Body>
-            </Accordion.Item>
+              <BsAccordion.Body>{item.view}</BsAccordion.Body>
+            </BsAccordion.Item>
           );
         })}
-      </Accordion>
+      </BsAccordion>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Accordion,
 };

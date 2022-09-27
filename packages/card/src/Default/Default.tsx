@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Card, ThemeProvider } from 'react-bootstrap';
+import { Card as BsCard, ThemeProvider } from 'react-bootstrap';
 import { CardDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
 
-export const Component = (props: CardDefaultProps) => {
+export const Card = (props: CardDefaultProps) => {
   const baseClass = 'card';
   const basePrefixClass = `owlui-${baseClass}`;
   const { children } = props;
@@ -47,11 +47,11 @@ export const Component = (props: CardDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={bsPrefixes}>
-      <Card {...locals}>{children}</Card>
+      <BsCard {...locals}>{children}</BsCard>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Card,
 };

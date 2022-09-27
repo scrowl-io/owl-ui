@@ -1,13 +1,16 @@
 /* eslint-disable import/named */
 import * as React from 'react';
-import { NavDropdown, NavDropdownProps } from 'react-bootstrap';
+import {
+  NavDropdown as BsNavDropdown,
+  NavDropdownProps,
+} from 'react-bootstrap';
 
-export const Component = (props: NavDropdownProps) => {
+export const NavDropdown = (props: NavDropdownProps) => {
   const { children } = props;
 
-  return <NavDropdown {...props}>{children}</NavDropdown>;
+  return <BsNavDropdown {...props}>{children}</BsNavDropdown>;
 };
 
 export default {
-  Component,
+  NavDropdown,
 };

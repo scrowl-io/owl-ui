@@ -1,1 +1,1 @@
-export { Component as NavDropdownItem } from './NavDropdownItem';
+export * from './NavDropdownItem';

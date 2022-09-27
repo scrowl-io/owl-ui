@@ -3,7 +3,7 @@ import { IconsDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
 
-export const Component = ({ style, ...props }: IconsDefaultProps) => {
+export const Icon = ({ style, ...props }: IconsDefaultProps) => {
   let baseClass = 'icons';
   const localStyles = style ? JSON.parse(JSON.stringify(style)) : {};
   const icon = props.icon;
@@ -75,5 +75,5 @@ export const Component = ({ style, ...props }: IconsDefaultProps) => {
 };
 
 export default {
-  Component,
+  Icon,
 };

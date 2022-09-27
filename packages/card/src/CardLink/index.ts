@@ -1,2 +1,2 @@
-export { Component as CardLink } from './CardLink';
 export * from './CardLink.types';
+export * from './CardLink';

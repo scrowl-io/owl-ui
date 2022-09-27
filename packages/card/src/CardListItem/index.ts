@@ -1,2 +1,2 @@
-export { Component as CardListItem } from './CardListItem';
 export * from './CardListItem.types';
+export * from './CardListItem';

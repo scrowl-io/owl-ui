@@ -1,14 +1,14 @@
 /* eslint-disable import/named */
 import * as React from 'react';
 import { Meta } from '@storybook/react';
-import { Component } from './Default';
+import { Nav } from './Default';
 import descriptionMd from './Description.md';
 
 export { Default } from './stories/Default-index.stories';
 
 export default {
   title: 'Components/Nav/Default',
-  component: Component,
+  component: Nav,
   parameters: {
     docs: {
       description: {

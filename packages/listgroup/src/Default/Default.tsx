@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListGroup, ThemeProvider } from 'react-bootstrap';
+import { ListGroup as BsListGroup, ThemeProvider } from 'react-bootstrap';
 import { ListgroupDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: ListgroupDefaultProps) => {
+export const ListGroup = (props: ListgroupDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'list-group';
   const { items } = props;
@@ -37,20 +37,20 @@ export const Component = (props: ListgroupDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <ListGroup {...locals}>
+      <BsListGroup {...locals}>
         {items.map(item => {
           return (
-            <ListGroup.Item {...item.bsProps} key={item.id}>
+            <BsListGroup.Item {...item.bsProps} key={item.id}>
               {item.header}
               {item.description}
-            </ListGroup.Item>
+            </BsListGroup.Item>
           );
         })}
-      </ListGroup>
+      </BsListGroup>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  ListGroup,
 };

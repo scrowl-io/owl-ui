@@ -4,7 +4,7 @@ import { SwitchToggleDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { createLocalProps } from '../../../../lib/src/utils';
 
-export const Component = (props: SwitchToggleDefaultProps) => {
+export const SwitchToggle = (props: SwitchToggleDefaultProps) => {
   const baseClass = 'switchToggle';
   const prefix = props.prefix || '';
   const { label, control } = props.inputProps;
@@ -56,5 +56,5 @@ export const Component = (props: SwitchToggleDefaultProps) => {
 };
 
 export default {
-  Component,
+  SwitchToggle,
 };

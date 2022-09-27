@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Badge, ThemeProvider } from 'react-bootstrap';
+import { Badge as BsBadge, ThemeProvider } from 'react-bootstrap';
 import { BadgeDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: BadgeDefaultProps) => {
+export const Badge = (props: BadgeDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'badge';
   const { children } = props;
@@ -35,11 +35,11 @@ export const Component = (props: BadgeDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Badge {...locals}>{children}</Badge>
+      <BsBadge {...locals}>{children}</BsBadge>
     </ThemeProvider>
   );
 };
 
 export default {
-  Component,
+  Badge,
 };

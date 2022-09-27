@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, ProgressBar } from 'react-bootstrap';
+import { ThemeProvider, ProgressBar as BsProgressBar } from 'react-bootstrap';
 import { ProgressBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import {
@@ -7,7 +7,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: ProgressBarDefaultProps) => {
+export const ProgressBar = (props: ProgressBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'progress';
   const { now, variant, showLabel } = props;
@@ -40,7 +40,7 @@ export const Component = (props: ProgressBarDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <ProgressBar
+      <BsProgressBar
         {...locals}
         variant={variant}
         label={showLabel ? `${now}%` : ''}
@@ -51,5 +51,5 @@ export const Component = (props: ProgressBarDefaultProps) => {
 };
 
 export default {
-  Component,
+  ProgressBar,
 };

@@ -6,7 +6,7 @@ import {
   themePrefixesProps,
 } from '../../../../lib/src/utils';
 
-export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
+export const {{{cap}}} = (props: {{{cap}}}{{{optionPas}}}Props) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = '{{{name}}}';
   const { children } = props;
@@ -42,5 +42,5 @@ export const Component = (props: {{{cap}}}{{{optionPas}}}Props) => {
 };
 
 export default {
-  Component,
+  {{{cap}}},
 };
