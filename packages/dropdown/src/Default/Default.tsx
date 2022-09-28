@@ -29,7 +29,7 @@ export const Dropdown = (props: DropdownDefaultProps) => {
         ],
       },
     },
-    ['prefix', 'theme', 'pxScale', 'items', 'button']
+    ['prefix', 'theme', 'pxScale', 'items', 'button', 'showSelected']
   );
 
   const getItemIdx = (
