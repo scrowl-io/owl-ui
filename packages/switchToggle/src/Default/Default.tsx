@@ -1,5 +1,6 @@
+/* eslint-disable import/named */
 import * as React from 'react';
-import { Form, ThemeProvider } from 'react-bootstrap';
+import { Form, ThemeProvider, FormLabelProps } from 'react-bootstrap';
 import { SwitchToggleDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
 import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
@@ -23,7 +24,8 @@ export const SwitchToggle = ({
       },
     ],
   });
-  const { content, ...labelProps } = label;
+  const lbl: { content: string } & FormLabelProps = label;
+  const { content, ...labelProps } = lbl;
 
   themePrefixes['form-switch'] = `owlui-form-${baseClass}`;
   themePrefixes['form-label'] = `owlui-form-label`;

@@ -1,5 +1,3 @@
-/* eslint-disable import/named */
-/* eslint-disable import/namespace */
 import React from 'react';
 import * as bs from 'react-bootstrap';
 
@@ -11,7 +9,7 @@ export interface SelectDefaultCommons {
   label: bs.FormLabelProps & {
     content: string;
   };
-  control: {
+  control: bs.FormSelectProps & {
     options: React.OptionHTMLAttributes<HTMLOptionElement>[];
   };
 }
