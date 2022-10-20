@@ -1,40 +1,35 @@
 import * as React from 'react';
 import { TextfieldDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '../../../../lib/src/utils';
+import { getClasses } from '../../../../lib/src/utils';
 
-const baseClass = 'textfield';
-
-export const Textfield = (props: TextfieldDefaultProps) => {
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+export const Textfield = ({
+  className,
+  pxScale,
+  appearance,
+  ...props
+}: TextfieldDefaultProps) => {
+  const baseClass = 'textfield';
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'appearance', 'pxScale']
-  );
+      {
+        base: 'Appearance',
+        value: appearance,
+      },
+    ],
+  });
 
-  return <input {...locals} />;
+  if (className) {
+    classes += ` ${className}`;
+  }
+
+  return <input className={classes} {...props} />;
 };
 
 export default {
