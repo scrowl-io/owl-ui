@@ -2,48 +2,45 @@ import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
 import { RangeDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Range = (props: RangeDefaultProps) => {
+export const Range = ({
+  className,
+  pxScale,
+  label,
+  control,
+  onChange,
+  ...props
+}: RangeDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'range';
-  const { label, control } = props.inputProps;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale', 'inputProps']
-  );
+    ],
+  });
+  const { content, ...labelProps } = label;
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['form-range'] = 'owlui-form-range';
   themePrefixes['form-label'] = 'owlui-form-label';
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
+  classes += ' mb-3';
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form.Group {...locals} className="mb-3">
-        <Form.Label {...label}>{label?.content}</Form.Label>
-        <Form.Range {...control} />
+      <Form.Group className={classes} {...props}>
+        <Form.Label {...labelProps}>{content}</Form.Label>
+        <Form.Range {...control} onChange={onChange} />
       </Form.Group>
     </ThemeProvider>
   );

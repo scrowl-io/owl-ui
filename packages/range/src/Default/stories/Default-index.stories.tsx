@@ -1,33 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Range } from '../index';
-import { RangeDefaultProps, RangeProps } from '../Default.types';
+import { RangeDefaultProps } from '../Default.types';
 
 import { variant } from './Default-variant.stories';
 import { pxScale } from './Default-px-scale.stories';
 import { theme } from './Default-theme.stories';
 
-const inputProps: RangeProps = {
-  label: {
-    content: 'Range',
-    htmlFor: 'range',
-  },
-  control: {
-    id: 'range',
-    value: 5,
-    min: 0,
-    max: 10,
-  },
+const label = {
+  content: 'Range',
+  htmlFor: 'range',
 };
 
-export const Default = (args: RangeDefaultProps) => {
-  return <Range {...args} />;
+const controlConfig = {
+  id: 'range',
+  value: 5,
+  min: 0,
+  max: 10,
+};
+
+export const Default = ({ control, ...args }: RangeDefaultProps) => {
+  const [rangeVal, setRangeVal] = useState(control.value);
+
+  const handleRangeChange = (ev: React.SyntheticEvent) => {
+    const target = ev.target as HTMLInputElement;
+
+    setRangeVal(target.value);
+  };
+
+  control.value = rangeVal;
+  return <Range {...args} control={control} onChange={handleRangeChange} />;
 };
 
 Default.args = {
   variant: variant.defaultValue,
   pxScale: pxScale.defaultValue,
   theme: theme.defaultValue,
-  inputProps: inputProps,
+  label,
+  control: controlConfig,
 };
 
 Default.argTypes = {

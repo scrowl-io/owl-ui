@@ -7,17 +7,10 @@ export interface RangeDefaultCommons {
   pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   type?: string;
-  inputProps: RangeProps;
-}
-
-export interface RangeProps {
-  id?: string;
-  label: RangeLabel & bs.FormLabelProps;
+  label: bs.FormLabelProps & {
+    content: string;
+  };
   control: FormRangeProps;
 }
-export interface RangeLabel {
-  content: string;
-}
 
-export type RangeDefaultProps = RangeDefaultCommons &
-  Partial<bs.FormGroupProps>;
+export type RangeDefaultProps = RangeDefaultCommons & bs.FormGroupProps;
