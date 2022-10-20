@@ -9,7 +9,9 @@
   vertical-align: text-bottom;
   pointer-events: none;
   user-select: none;
+}
 
+.icons {
   &--appearance {
     &-primary {
       color: var(--bs-primary);

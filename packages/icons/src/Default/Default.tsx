@@ -1,74 +1,81 @@
 import * as React from 'react';
 import { IconsDefaultProps } from './Default.types';
-import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '../../../../lib/src/utils';
+import * as css from './styles.module.scss';
 
-export const Icon = ({ style, ...props }: IconsDefaultProps) => {
-  let baseClass = 'icons';
-  const localStyles = style ? JSON.parse(JSON.stringify(style)) : {};
-  const icon = props.icon;
-  const prefix = props.prefix || '';
+export const Icon = ({
+  className,
+  style,
+  icon,
+  appearance,
+  display,
+  filled,
+  wght,
+  opsz,
+  grad,
+  pxScale,
+  ...props
+}: IconsDefaultProps) => {
+  let classes = '';
+  const fill = `'FILL' ${filled ? 1 : 0}`;
+  const styleWght = `'wght' ${wght ? wght : 400}`;
+  const styleGrad = `'GRAD' ${grad ? grad : 0}`;
+  const styleOpsz = `'opsz' ${opsz && opsz >= 20 && opsz <= 48 ? opsz : 48}`;
+  const localStyles = Object.assign(
+    {
+      fontVariationSettings: `${fill}, ${styleWght}, ${styleGrad}, ${styleOpsz}`,
+    },
+    style
+  );
 
-  switch (props.display) {
+  if (className) {
+    classes += ` ${className}`;
+  }
+
+  switch (display) {
     case 'rounded':
-      baseClass += 'Rounded';
+      classes += ` ${css.owluiIconsRounded}`;
       break;
     case 'sharp':
-      baseClass += 'Sharp';
+      classes += ` ${css.owluiIconsSharp}`;
       break;
     case 'outlined':
     default:
-      baseClass += 'Outlined';
+      classes += ` ${css.owluiIconsOutlined}`;
       break;
   }
 
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
-      },
-    },
-    [
-      'icon',
-      'prefix',
-      'display',
-      'theme',
-      'appearance',
-      'pxScale',
-      'filled',
-      'wght',
-      'grad',
-      'opsz',
-    ]
-  ) as IconsDefaultProps;
+  switch (appearance) {
+    case 'Default':
+      classes += ` ${css.owluiIconsAppearanceDefault}`;
+      break;
+    case 'Lesson':
+      classes += ` ${css.owluiIconsAppearanceLesson}`;
+      break;
+    case 'Module':
+      classes += ` ${css.owluiIconsAppearanceModule}`;
+      break;
+    case 'Primary':
+      classes += ` ${css.owluiIconsAppearancePrimary}`;
+      break;
+    case 'Quiz':
+      classes += ` ${css.owluiIconsAppearanceQuiz}`;
+      break;
+    case 'Slide':
+      classes += ` ${css.owluiIconsAppearanceSlide}`;
+      break;
+    case 'Template':
+      classes += ` ${css.owluiIconsAppearanceTemplate}`;
+      break;
+  }
 
-  const fill = `'FILL' ${props.filled ? 1 : 0}`;
-  const wght = `'wght' ${props.wght ? props.wght : 400}`;
-  const grad = `'GRAD' ${props.grad ? props.grad : 0}`;
-  const opsz = `'opsz' ${
-    props.opsz && props.opsz >= 20 && props.opsz <= 48 ? props.opsz : 48
-  }`;
-  localStyles.fontVariationSettings = `${fill}, ${wght}, ${grad}, ${opsz}`;
+  if (pxScale) {
+    const scaleClass = `owluiIconsPxScale${pxScale}`;
+
+    classes += '' + css[scaleClass];
+  }
 
   return (
-    <span {...locals} style={localStyles}>
+    <span className={classes} {...props} style={localStyles}>
       {icon}
     </span>
   );
