@@ -3,36 +3,22 @@ import * as React from 'react';
 import { NavigationDrawerElementProps } from './Default.types';
 import { ThemeProvider, Offcanvas } from 'react-bootstrap';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 import { NavigationDrawerHeader as NavHeader } from './elements/Header';
 import { NavigationDrawerContent as NavContent } from './elements/Content';
 
-export const NavigationDrawer = (props: NavigationDrawerElementProps) => {
+export const NavigationDrawer = ({
+  className,
+  header,
+  items,
+  ...props
+}: NavigationDrawerElementProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'navigationDrawer';
-  const { header, items } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-        ],
-      },
-    },
-    ['prefix', 'theme', 'header', 'items']
-  );
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+  });
 
   const Header = () => {
     if (header) {
@@ -53,9 +39,13 @@ export const NavigationDrawer = (props: NavigationDrawerElementProps) => {
   themePrefixes['offcanvas-header'] = `owlui-offcanvas-header`;
   themePrefixes['offcanvas-body'] = `owlui-offcanvas-body`;
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Offcanvas {...locals}>
+      <Offcanvas className={classes} {...props}>
         <>
           {Header()}
           <Offcanvas.Body>{Content}</Offcanvas.Body>
