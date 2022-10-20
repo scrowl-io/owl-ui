@@ -2,44 +2,37 @@ import React, { useState } from 'react';
 import { Accordion as BsAccordion, ThemeProvider } from 'react-bootstrap';
 import { AccordionDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Accordion = (props: AccordionDefaultProps) => {
+export const Accordion = ({
+  className,
+  pxScale,
+  ...props
+}: AccordionDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'accordion';
   const { items } = props;
-  const prefix = props.prefix || '';
   const [isActive, setIsActive] = useState<string[]>([]);
 
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale', 'items']
-  );
-  console.log('locals', locals);
+    ],
+  });
+
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['accordion-button'] = 'owlui-accordion-button';
   themePrefixes['accordion-body'] = 'owlui-accordion-body';
   themePrefixes['accordion-item'] = 'owlui-accordion-item';
+
+  if (className) {
+    classes += ` ${className}`;
+  }
 
   const toggleActive = (event: React.MouseEvent<HTMLElement>) => {
     if (!isActive.includes(event.currentTarget.dataset.index as string)) {
@@ -53,7 +46,7 @@ export const Accordion = (props: AccordionDefaultProps) => {
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <BsAccordion {...locals}>
+      <BsAccordion className={classes} {...props}>
         {items.map(item => {
           return (
             <BsAccordion.Item key={item.id} eventKey={item.id}>
