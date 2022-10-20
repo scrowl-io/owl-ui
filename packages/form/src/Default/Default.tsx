@@ -2,52 +2,41 @@ import React from 'react';
 import { ThemeProvider, Form as BsForm } from 'react-bootstrap';
 import { FormDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 import { Input } from '../../../input/src';
 import { Range } from '../../../range/src';
 import { Select } from '../../../select/src';
 import { SwitchToggle } from '../../../switchToggle/src';
 
-export const Form = (props: FormDefaultProps) => {
+export const Form = ({
+  className,
+  pxScale,
+  formData,
+  children,
+  ...props
+}: FormDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'form';
-  const { formData, children } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale', 'formData']
-  );
+    ],
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes['form-label'] = 'owlui-form-label';
-  themePrefixes['form-control'] = 'owlui-form-control';
-  themePrefixes['form-text'] = 'owlui-form-text';
-  themePrefixes['form-check'] = 'owlui-form-check';
-  themePrefixes['form-check-input'] = 'owlui-form-check-input';
-  themePrefixes['form-check-label'] = 'owlui-form-check-label';
-  themePrefixes['form-select'] = 'owlui-form-select';
-  themePrefixes['form-range'] = 'owlui-form-range';
+  themePrefixes['form-label'] = `owlui-${baseClass}-label`;
+  themePrefixes['form-control'] = `owlui-${baseClass}-control`;
+  themePrefixes['form-text'] = `owlui-${baseClass}-text`;
+  themePrefixes['form-check'] = `owlui-${baseClass}-check`;
+  themePrefixes['form-check-input'] = `owlui-${baseClass}-check-input`;
+  themePrefixes['form-check-label'] = `owlui-${baseClass}-check-label`;
+  themePrefixes['form-select'] = `owlui-${baseClass}-select`;
+  themePrefixes['form-range'] = `owlui-${baseClass}-range`;
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const renderFormElements = formData.map((element: any, index) => {
@@ -65,9 +54,13 @@ export const Form = (props: FormDefaultProps) => {
     }
   });
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <BsForm {...locals}>
+      <BsForm className={classes} {...props}>
         {renderFormElements}
         {children}
       </BsForm>

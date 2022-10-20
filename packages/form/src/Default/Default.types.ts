@@ -8,6 +8,7 @@ export interface FormDefaultCommons {
   prefix?: string;
   children: React.ReactNode;
   formData: FormDataProps[];
+  pxScale?: 'Sm' | 'Md' | 'Lg';
 }
 
 export type FormDataProps =
