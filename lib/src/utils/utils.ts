@@ -1,5 +1,11 @@
 import * as globalMod from '../theme/_index.scss';
-import { localProp, localStyles, localInnerProps, stringMap } from './types';
+import {
+  localProp,
+  localStyles,
+  localInnerProps,
+  stringMap,
+  LookupConfigCss,
+} from './types';
 
 export const hasProp = (obj: object, prop: string) => {
   return Object.prototype.hasOwnProperty.call(obj, prop);
@@ -40,6 +46,51 @@ const moduleToCamelCase = (ogMod: stringMap) => {
   }
 
   return casedMod;
+};
+
+export const getClasses = (config: LookupConfigCss) => {
+  const baseKey = toCamelCase(config.base);
+  const owlKey = `owlui${baseKey}`;
+
+  const lookupCSS = (className: string) => {
+    const lookup = `${baseKey}${className}`;
+    const owlLookup = `${owlKey}${className}`;
+
+    if (hasProp(config.module, lookup)) {
+      return config.module[lookup];
+    }
+
+    if (hasProp(config.module, owlLookup)) {
+      return config.module[owlLookup];
+    }
+
+    if (hasProp(globalMod, lookup)) {
+      return globalMod[lookup];
+    }
+
+    if (hasProp(globalMod, owlLookup)) {
+      return globalMod[owlLookup];
+    }
+
+    return '';
+  };
+
+  let classes = lookupCSS('');
+
+  config.modifiers.forEach(modifier => {
+    if (!modifier.value) {
+      return;
+    }
+
+    const modifierClass = `${modifier.base}${modifier.value}`;
+    const optClass = lookupCSS(modifierClass);
+
+    if (optClass) {
+      classes += ` ${optClass}`;
+    }
+  });
+
+  return classes;
 };
 
 export const createLocalProps = (
@@ -114,4 +165,5 @@ export default {
   cleanCopy,
   findModClass,
   createLocalProps,
+  getClasses,
 };
