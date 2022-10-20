@@ -2,40 +2,30 @@ import * as React from 'react';
 import { Table as BsTable, ThemeProvider } from 'react-bootstrap';
 import { TableDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 import { Body, Header } from './elements';
 
-export const Table = (props: TableDefaultProps) => {
+export const Table = ({
+  className,
+  tableData,
+  ...props
+}: TableDefaultProps) => {
+  const themePrefixes: themePrefixesProps = {};
   const baseClass = 'table';
-  const basePrefixClass = `owlui-${baseClass}`;
-  const { tableData } = props;
-  const prefix = props.prefix || '';
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+  });
 
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
-      },
-    },
-    ['prefix', 'theme', 'pxScale', 'tableData']
-  );
+  themePrefixes[baseClass] = `owlui-${baseClass}`;
+
+  if (className) {
+    classes += ` ${className}`;
+  }
 
   return (
-    <ThemeProvider prefixes={{ [`${baseClass}`]: `${basePrefixClass}` }}>
-      <BsTable {...locals}>
+    <ThemeProvider prefixes={themePrefixes}>
+      <BsTable className={classes} {...props}>
         <caption>{tableData.caption}</caption>
         <Header columns={tableData.columns} />
         <Body items={tableData.items} columns={tableData.columns} />
