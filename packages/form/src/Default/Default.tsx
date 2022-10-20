@@ -42,13 +42,13 @@ export const Form = ({
   const renderFormElements = formData.map((element: any, index) => {
     switch (element.type) {
       case 'input':
-        return <Input inputProps={element.inputProps} key={index} />;
+        return <Input {...element} key={index} />;
       case 'select':
-        return <Select inputProps={element.inputProps} key={index} />;
+        return <Select {...element} key={index} />;
       case 'range':
-        return <Range inputProps={element.inputProps} key={index} />;
+        return <Range {...element} key={index} />;
       case 'check':
-        return <SwitchToggle inputProps={element.inputProps} key={index} />;
+        return <SwitchToggle {...element} key={index} />;
       default:
         return null;
     }
