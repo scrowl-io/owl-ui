@@ -1,6 +1,6 @@
 @use '@owlui/lib/src/theme/utils' as utils;
 
-.switchToggle {
+.switch {
   $ref: &;
 
   &.theme--dark {

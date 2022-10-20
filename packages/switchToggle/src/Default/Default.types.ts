@@ -4,14 +4,10 @@ export interface SwitchToggleDefaultCommons {
   theme?: 'Default' | 'Dark';
   pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
-  inputProps: SwitchProps;
-}
-export interface SwitchProps {
-  label: SwitchLabel & bs.FormLabelProps;
+  label: bs.FormLabelProps & {
+    content: string;
+  };
   control: bs.FormCheckProps;
-}
-export interface SwitchLabel {
-  content: string;
 }
 
 export type SwitchToggleDefaultProps = SwitchToggleDefaultCommons &

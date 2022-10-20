@@ -2,52 +2,44 @@ import * as React from 'react';
 import { Form, ThemeProvider } from 'react-bootstrap';
 import { SwitchToggleDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const SwitchToggle = (props: SwitchToggleDefaultProps) => {
-  const baseClass = 'switchToggle';
-  const prefix = props.prefix || '';
-  const { label, control } = props.inputProps;
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+export const SwitchToggle = ({
+  className,
+  pxScale,
+  label,
+  control,
+  ...props
+}: SwitchToggleDefaultProps) => {
+  const themePrefixes: themePrefixesProps = {};
+  const baseClass = 'switch';
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'appearance', 'pxScale', 'inputProps']
-  );
+    ],
+  });
+  const { content, ...labelProps } = label;
+
+  themePrefixes['form-switch'] = `owlui-form-${baseClass}`;
+  themePrefixes['form-label'] = `owlui-form-label`;
+  themePrefixes['form-check'] = `owlui-form-check`;
+  themePrefixes['form-check-input'] = `owlui-form-check-input`;
+  themePrefixes['form-check-label'] = `owlui-form-check-label`;
+
+  if (className) {
+    classes += ` ${className}`;
+  }
 
   return (
     <>
-      <ThemeProvider
-        prefixes={{
-          'form-check': 'owlui-form-check',
-          'form-switch': 'owlui-form-switch',
-          'form-check-input': 'owlui-form-check-input',
-          'form-check-label': 'owlui-form-check-label',
-          'form-label': 'owlui-form-label',
-        }}
-      >
-        <Form.Group {...locals}>
-          <Form.Label {...label}>{label.content}</Form.Label>
+      <ThemeProvider prefixes={themePrefixes}>
+        <Form.Group className={classes} {...props}>
+          <Form.Label {...labelProps}>{content}</Form.Label>
           <Form.Check {...control} />
         </Form.Group>
       </ThemeProvider>
