@@ -2,44 +2,34 @@ import * as React from 'react';
 import { Carousel as BsCarousel, ThemeProvider } from 'react-bootstrap';
 import { CarouselDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Carousel = (props: CarouselDefaultProps) => {
+export const Carousel = ({
+  className,
+  appearance,
+  pxScale,
+  slides,
+  activeIndex,
+  ...props
+}: CarouselDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
-  const { slides, activeIndex } = props;
   const baseClass = 'carousel';
-  const prefix = props.prefix || '';
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'Appearance',
+        value: appearance,
+      },
+      {
+        base: 'PxScale',
+        value: pxScale,
+      },
+    ],
+  });
   const [activeItem, setActiveItem] = React.useState(
     activeIndex ? activeIndex : 0
-  );
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['appearance'],
-            value: 'Appearance',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
-      },
-    },
-    ['prefix', 'appearance', 'theme', 'pxScale', 'slides']
   );
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
@@ -54,11 +44,16 @@ export const Carousel = (props: CarouselDefaultProps) => {
     setActiveItem(selectedIndex);
   };
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <>
       <ThemeProvider prefixes={themePrefixes}>
         <BsCarousel
-          {...locals}
+          className={classes}
+          {...props}
           activeIndex={activeItem}
           onSelect={handleSelect}
         >
