@@ -14,6 +14,7 @@ export interface ModalDefaultCommons {
   header: ModelPartialProps & ModalHeaderProps;
   body: ModelPartialProps;
   footer: ModelPartialProps;
+  pxScale?: 'Sm' | 'Md' | 'Lg';
 }
 
 export type ModalDefaultProps = Partial<ModalDefaultCommons> & ModalProps;

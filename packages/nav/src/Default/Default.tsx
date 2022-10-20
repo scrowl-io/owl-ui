@@ -2,34 +2,26 @@ import React from 'react';
 import { ThemeProvider, Nav as BsNav } from 'react-bootstrap';
 import { NavDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Nav = (props: NavDefaultProps) => {
+export const Nav = ({
+  className,
+  pxScale,
+  children,
+  ...props
+}: NavDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'nav';
-  const { children } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme']
-  );
+    ],
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes[`${baseClass}-link`] = `owlui-${baseClass}-link`;
@@ -40,9 +32,15 @@ export const Nav = (props: NavDefaultProps) => {
   themePrefixes['dropdown-item'] = `owlui-dropdown-item`;
   themePrefixes['dropdown-divider'] = `owlui-dropdown-divider`;
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <BsNav {...locals}>{children}</BsNav>
+      <BsNav className={classes} {...props}>
+        {children}
+      </BsNav>
     </ThemeProvider>
   );
 };
