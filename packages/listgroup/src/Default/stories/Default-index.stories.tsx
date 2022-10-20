@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Listgroup } from '../index';
+import { ListGroup } from '../';
 import { ListgroupDefaultProps, ListgroupItemProps } from '../Default.types';
 
 import { theme } from './Default-theme.stories';
@@ -65,7 +65,7 @@ const items: ListgroupItemProps[] = [
   },
 ];
 
-export const Default = (args: ListgroupDefaultProps) => <Listgroup {...args} />;
+export const Default = (args: ListgroupDefaultProps) => <ListGroup {...args} />;
 
 Default.args = {
   theme: theme.defaultValue,
