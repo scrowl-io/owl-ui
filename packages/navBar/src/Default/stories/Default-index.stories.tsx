@@ -3,23 +3,21 @@ import { NavBar } from '../index';
 import { NavBarDefaultProps } from '../Default.types';
 
 import { theme } from './Default-theme.stories';
-import { Brand } from '../../Brand';
-import { Toggle } from '../../Toggle';
-import { Collapse } from '../../Collapse';
+import { NavbarBrand, NavbarToggle, NavbarCollapse } from '../../';
 import {
   Nav,
   NavLink,
   NavDropdown,
   NavDropdownItem,
   NavDropdownDivider,
-} from '../../../../nav/src/index';
+} from '../../../../nav/src';
 
 export const Default = (args: NavBarDefaultProps) => {
   return (
     <NavBar {...args} expand="lg">
-      <Brand>OwlUI</Brand>
-      <Toggle />
-      <Collapse>
+      <NavbarBrand>OwlUI</NavbarBrand>
+      <NavbarToggle />
+      <NavbarCollapse>
         <Nav>
           <NavLink href="/home">Active</NavLink>
           <NavLink eventKey="1">Link</NavLink>
@@ -37,7 +35,7 @@ export const Default = (args: NavBarDefaultProps) => {
             <NavDropdownItem eventKey="4.4">Separated link</NavDropdownItem>
           </NavDropdown>
         </Nav>
-      </Collapse>
+      </NavbarCollapse>
     </NavBar>
   );
 };

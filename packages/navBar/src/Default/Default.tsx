@@ -2,29 +2,20 @@ import * as React from 'react';
 import { ThemeProvider, Navbar as BsNavbar, Container } from 'react-bootstrap';
 import { NavBarDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const NavBar = (props: NavBarDefaultProps) => {
+export const NavBar = ({
+  className,
+  theme,
+  children,
+  ...props
+}: NavBarDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'navbar';
-  const { theme, children } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [],
-      },
-    },
-    ['prefix']
-  );
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['container'] = `owlui-container`;
@@ -32,9 +23,13 @@ export const NavBar = (props: NavBarDefaultProps) => {
   themePrefixes[`${baseClass}-toggler`] = `owlui-${baseClass}-toggler`;
   themePrefixes[`${baseClass}-collapse`] = `owlui-${baseClass}-collapse`;
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <BsNavbar {...locals} variant={theme}>
+      <BsNavbar className={classes} {...props} variant={theme}>
         <Container>{children}</Container>
       </BsNavbar>
     </ThemeProvider>

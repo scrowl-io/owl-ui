@@ -3,9 +3,7 @@ import * as React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { NavbarCollapseProps } from 'react-bootstrap/esm/NavbarCollapse';
 
-export const NavbarCollapse = (props: NavbarCollapseProps) => {
-  const { children } = props;
-
+export const NavbarCollapse = ({ children, ...props }: NavbarCollapseProps) => {
   return <Navbar.Collapse {...props}>{children}</Navbar.Collapse>;
 };
 

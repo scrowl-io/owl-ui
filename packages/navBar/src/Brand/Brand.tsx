@@ -2,9 +2,7 @@
 import * as React from 'react';
 import { Navbar, NavbarBrandProps } from 'react-bootstrap';
 
-export const NavbarBrand = (props: NavbarBrandProps) => {
-  const { children } = props;
-
+export const NavbarBrand = ({ children, ...props }: NavbarBrandProps) => {
   return <Navbar.Brand {...props}>{children}</Navbar.Brand>;
 };
 
