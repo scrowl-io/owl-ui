@@ -1,6 +1,6 @@
 {
   "name": "@owlui/card",
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "",
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/card#readme",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "react-bootstrap": "2.4.0"
   },
   "devDependencies": {
-    "@owlui/typings": "^0.0.43"
+    "@owlui/typings": "^0.0.44"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.43"
+    "@owlui/lib": "^0.0.44"
   }
 }
