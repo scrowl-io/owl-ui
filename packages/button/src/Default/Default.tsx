@@ -2,43 +2,38 @@ import * as React from 'react';
 import { Button as BsButton, ThemeProvider } from 'react-bootstrap';
 import { ButtonDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Button = (props: ButtonDefaultProps) => {
+export const Button = ({
+  className,
+  pxScale,
+  children,
+  ...props
+}: ButtonDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'btn';
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale']
-  );
+    ],
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <BsButton {...locals}>{props.children}</BsButton>
+      <BsButton className={classes} {...props}>
+        {children}
+      </BsButton>
     </ThemeProvider>
   );
 };
