@@ -23,6 +23,7 @@ export const Select = ({
       },
     ],
   });
+  const { content, ...labelProps } = label;
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['form-label'] = 'owlui-form-label';
@@ -37,7 +38,7 @@ export const Select = ({
   return (
     <ThemeProvider prefixes={themePrefixes}>
       <Form.Group className={classes} {...props}>
-        <Form.Label {...label}>{label?.content}</Form.Label>
+        <Form.Label {...labelProps}>{content}</Form.Label>
         <Form.Select {...control}>
           {control.options.map(option => {
             return (
