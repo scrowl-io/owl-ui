@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { IconsDefaultProps } from './Default.types';
 import * as css from './styles.module.scss';
+import { getClasses } from '../../../../lib/src/utils';
 
 export const Icon = ({
   className,
@@ -15,7 +16,7 @@ export const Icon = ({
   pxScale,
   ...props
 }: IconsDefaultProps) => {
-  let classes = '';
+  const baseClass = 'icons';
   const fill = `'FILL' ${filled ? 1 : 0}`;
   const styleWght = `'wght' ${wght ? wght : 400}`;
   const styleGrad = `'GRAD' ${grad ? grad : 0}`;
@@ -26,10 +27,20 @@ export const Icon = ({
     },
     style
   );
-
-  if (className) {
-    classes += ` ${className}`;
-  }
+  let classes = getClasses({
+    module: css,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'Appearance',
+        value: appearance,
+      },
+      {
+        base: 'PxScale',
+        value: pxScale,
+      },
+    ],
+  });
 
   switch (display) {
     case 'rounded':
@@ -44,34 +55,8 @@ export const Icon = ({
       break;
   }
 
-  switch (appearance) {
-    case 'Default':
-      classes += ` ${css.owluiIconsAppearanceDefault}`;
-      break;
-    case 'Lesson':
-      classes += ` ${css.owluiIconsAppearanceLesson}`;
-      break;
-    case 'Module':
-      classes += ` ${css.owluiIconsAppearanceModule}`;
-      break;
-    case 'Primary':
-      classes += ` ${css.owluiIconsAppearancePrimary}`;
-      break;
-    case 'Quiz':
-      classes += ` ${css.owluiIconsAppearanceQuiz}`;
-      break;
-    case 'Slide':
-      classes += ` ${css.owluiIconsAppearanceSlide}`;
-      break;
-    case 'Template':
-      classes += ` ${css.owluiIconsAppearanceTemplate}`;
-      break;
-  }
-
-  if (pxScale) {
-    const scaleClass = `owluiIconsPxScale${pxScale}`;
-
-    classes += '' + css[scaleClass];
+  if (className) {
+    classes += ` ${className}`;
   }
 
   return (

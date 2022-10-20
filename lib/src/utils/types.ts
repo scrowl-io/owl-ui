@@ -24,12 +24,10 @@ export interface themePrefixesProps {
 export type LookupConfigCss = {
   module: stylesProp;
   base: string;
-  modifiers?: [
-    {
-      base: string;
-      value?: string;
-    }
-  ];
+  modifiers?: Array<{
+    base: string;
+    value?: string;
+  }>;
 };
 
 export type localStyles = {
