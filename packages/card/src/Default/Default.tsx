@@ -2,39 +2,29 @@ import * as React from 'react';
 import { Card as BsCard, ThemeProvider } from 'react-bootstrap';
 import { CardDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '../../../../lib/src/utils';
+import { getClasses } from '../../../../lib/src/utils';
 
-export const Card = (props: CardDefaultProps) => {
+export const Card = ({
+  className,
+  pxScale,
+  children,
+  ...props
+}: CardDefaultProps) => {
   const baseClass = 'card';
-  const basePrefixClass = `owlui-${baseClass}`;
-  const { children } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
-        bsProps: ['bg', 'border', 'text'],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'appearance', 'bg', 'border', 'text']
-  );
+    ],
+  });
+  const basePrefixClass = `owlui-${baseClass}`;
 
   const bsPrefixes = {
-    [`${baseClass}`]: `${basePrefixClass}-card`,
+    [`${baseClass}`]: `${basePrefixClass}`,
     [`${baseClass}-body`]: `${basePrefixClass}-body`,
     [`${baseClass}-footer`]: `${basePrefixClass}-footer`,
     [`${baseClass}-header`]: `${basePrefixClass}-header`,
@@ -45,9 +35,15 @@ export const Card = (props: CardDefaultProps) => {
     [`${baseClass}-title`]: `${basePrefixClass}-title`,
   };
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={bsPrefixes}>
-      <BsCard {...locals}>{children}</BsCard>
+      <BsCard className={classes} {...props}>
+        {children}
+      </BsCard>
     </ThemeProvider>
   );
 };
