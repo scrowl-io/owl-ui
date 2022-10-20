@@ -3,7 +3,7 @@ import * as bs from 'react-bootstrap';
 export interface ButtonDefaultCommons {
   prefix?: string;
   theme?: 'Default' | 'Dark';
-  pxScale?: 'lg' | '' | 'sm';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
 }
 
 export type ButtonDefaultProps = Partial<ButtonDefaultCommons> & bs.ButtonProps;
