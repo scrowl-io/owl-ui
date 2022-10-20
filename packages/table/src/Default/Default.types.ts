@@ -56,6 +56,7 @@ export interface TableDefaultCommons {
   prefix?: string;
   tableData: TableData;
   theme?: 'Default' | 'Dark';
+  pxScale?: 'Sm' | 'Md' | 'Lg';
 }
 
 export type TableDefaultProps = TableDefaultCommons & bs.TableProps;

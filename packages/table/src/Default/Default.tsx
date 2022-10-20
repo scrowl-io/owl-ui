@@ -7,6 +7,7 @@ import { Body, Header } from './elements';
 
 export const Table = ({
   className,
+  pxScale,
   tableData,
   ...props
 }: TableDefaultProps) => {
@@ -15,6 +16,12 @@ export const Table = ({
   let classes = getClasses({
     module: styleMod,
     base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
+      },
+    ],
   });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
