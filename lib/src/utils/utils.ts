@@ -48,8 +48,12 @@ const moduleToCamelCase = (ogMod: stringMap) => {
   return casedMod;
 };
 
+export const toCapital = (str: string) => {
+  return str.replace(/^[A-Z|a-z]/g, letter => letter.toUpperCase());
+};
+
 export const getClasses = (config: LookupConfigCss) => {
-  const baseKey = toCamelCase(config.base);
+  const baseKey = toCapital(config.base);
   const owlKey = `owlui${baseKey}`;
 
   const lookupCSS = (className: string) => {
@@ -75,7 +79,7 @@ export const getClasses = (config: LookupConfigCss) => {
     return '';
   };
 
-  let classes = lookupCSS('');
+  let classes = '';
 
   if (!config.modifiers) {
     return classes;
