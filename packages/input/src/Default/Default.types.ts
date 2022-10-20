@@ -4,11 +4,6 @@ export interface TextInputDefaultCommons {
   pxScale?: 'Sm' | 'Md' | 'Lg';
   prefix?: string;
   type?: string;
-  inputProps: TextInputProps;
-}
-
-export interface TextInputProps {
-  id?: string;
   label?: InputLabel & bs.FormLabelProps;
   control: bs.FormControlProps;
 }

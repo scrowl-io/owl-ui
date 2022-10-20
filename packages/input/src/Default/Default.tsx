@@ -2,47 +2,42 @@ import React from 'react';
 import { ThemeProvider, Form } from 'react-bootstrap';
 import { TextInputDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Input = (props: TextInputDefaultProps) => {
+export const Input = ({
+  className,
+  pxScale,
+  label,
+  control,
+  ...props
+}: TextInputDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'input';
-  const { label, control } = props.inputProps;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale', 'inputProps']
-  );
+    ],
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['form-label'] = 'owlui-form-label';
   themePrefixes['form-control'] = 'owlui-form-control';
   themePrefixes['form-text'] = 'owlui-form-text';
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
+  classes += 'mb-3';
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Form.Group {...locals} className="mb-3">
+      <Form.Group className={classes} {...props}>
         {label && <Form.Label {...label}>{label?.content}</Form.Label>}
         <Form.Control {...control} />
       </Form.Group>
