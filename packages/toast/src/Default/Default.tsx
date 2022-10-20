@@ -2,48 +2,38 @@ import React from 'react';
 import { ThemeProvider, Toast as BsToast } from 'react-bootstrap';
 import { ToastDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Toast = (props: ToastDefaultProps) => {
+export const Toast = ({
+  className,
+  pxScale,
+  toastContent,
+  ...props
+}: ToastDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'toast';
-  const basePrefixClass = `owlui-${baseClass}`;
-  const { toastContent } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
-        bsProps: ['bg'],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale', 'toastContent']
-  );
+    ],
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
-  themePrefixes[`${baseClass}-header`] = `${basePrefixClass}-header`;
-  themePrefixes[`${baseClass}-body`] = `${basePrefixClass}-body`;
+  themePrefixes[`${baseClass}-header`] = `owlui-${baseClass}-header`;
+  themePrefixes[`${baseClass}-body`] = `owlui-${baseClass}-body`;
+
+  if (className) {
+    classes += ` ${className}`;
+  }
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <BsToast {...locals}>
+      <BsToast className={classes} {...props}>
         <BsToast.Header {...toastContent?.header}>
           {toastContent?.header.content}
         </BsToast.Header>
