@@ -32,7 +32,7 @@ export const Select = ({
     classes += ` ${className}`;
   }
 
-  classes += 'mb-3';
+  classes += ' mb-3';
 
   return (
     <ThemeProvider prefixes={themePrefixes}>
