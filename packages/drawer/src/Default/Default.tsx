@@ -2,34 +2,26 @@ import React from 'react';
 import { ThemeProvider, Offcanvas } from 'react-bootstrap';
 import { DrawerDefaultProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Drawer = (props: DrawerDefaultProps) => {
+export const Drawer = ({
+  className,
+  pxScale,
+  drawer,
+  ...props
+}: DrawerDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'drawer';
-  const { drawer } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'drawer']
-  );
+    ],
+  });
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['offcanvas'] = 'owlui-offcanvas';
@@ -46,9 +38,13 @@ export const Drawer = (props: DrawerDefaultProps) => {
     'offcanvas-title'
   ] = `owlui-offcanvas-title owlui-${baseClass}-title`;
 
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <Offcanvas {...locals}>
+      <Offcanvas className={classes} {...props}>
         <Offcanvas.Header {...drawer.header.bsProps}>
           <Offcanvas.Title>{drawer.header.content}</Offcanvas.Title>
         </Offcanvas.Header>
