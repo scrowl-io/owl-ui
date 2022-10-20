@@ -77,6 +77,10 @@ export const getClasses = (config: LookupConfigCss) => {
 
   let classes = lookupCSS('');
 
+  if (!config.modifiers) {
+    return classes;
+  }
+
   config.modifiers.forEach(modifier => {
     if (!modifier.value) {
       return;

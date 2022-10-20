@@ -24,7 +24,7 @@ export interface themePrefixesProps {
 export type LookupConfigCss = {
   module: stylesProp;
   base: string;
-  modifiers: [
+  modifiers?: [
     {
       base: string;
       value?: string;
