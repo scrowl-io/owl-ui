@@ -1,36 +1,30 @@
 import React, { useState } from 'react';
 import { DropdownDefaultProps, DropdownItemProps } from './Default.types';
 import * as styleMod from './styles.module.scss';
-import { createLocalProps } from '../../../../lib/src/utils';
+import { getClasses, themePrefixesProps } from '../../../../lib/src/utils';
 import { Dropdown as BsDropdown, ThemeProvider } from 'react-bootstrap';
 
-export const Dropdown = (props: DropdownDefaultProps) => {
+export const Dropdown = ({
+  className,
+  pxScale,
+  items,
+  button,
+  showSelected,
+  ...props
+}: DropdownDefaultProps) => {
+  const themePrefixes: themePrefixesProps = {};
   const baseClass = 'dropdown';
-  const prefix = props.prefix || '';
-  const { items, showSelected } = props;
-  const [selectedItemIdx, setSelectedItemIdx] = useState<number | null>(null);
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
+  let classes = getClasses({
+    module: styleMod,
+    base: baseClass,
+    modifiers: [
+      {
+        base: 'PxScale',
+        value: pxScale,
       },
-    },
-    ['prefix', 'theme', 'pxScale', 'items', 'button', 'showSelected']
-  );
+    ],
+  });
+  const [selectedItemIdx, setSelectedItemIdx] = useState<number | null>(null);
 
   const getItemIdx = (
     ev:
@@ -124,20 +118,26 @@ export const Dropdown = (props: DropdownDefaultProps) => {
     );
   };
 
+  themePrefixes[baseClass] = `owlui-${baseClass}`;
+  themePrefixes['btn'] = `owlui-btn`;
+  themePrefixes['dropdown-toggle'] = `owlui-${baseClass}-toggle`;
+  themePrefixes['dropdown-menu'] = `owlui-${baseClass}-menu`;
+  themePrefixes['dropdown-item'] = `owlui-${baseClass}-item`;
+
+  if (className) {
+    classes += ` ${className}`;
+  }
+
   return (
     <>
-      <ThemeProvider
-        prefixes={{
-          dropdown: 'owlui-dropdown',
-          btn: 'owlui-btn',
-          'dropdown-toggle': 'owlui-dropdown-toggle',
-          'dropdown-menu': 'owlui-dropdown-menu',
-          'dropdown-item': 'owlui-dropdown-item',
-        }}
-      >
-        <BsDropdown {...locals} focusFirstItemOnShow="keyboard">
+      <ThemeProvider prefixes={themePrefixes}>
+        <BsDropdown
+          className={classes}
+          {...props}
+          focusFirstItemOnShow="keyboard"
+        >
           <BsDropdown.Toggle variant={props.variant}>
-            {props.button ? props.button : <></>}
+            {button ? button : <></>}
           </BsDropdown.Toggle>
           <BsDropdown.Menu>
             {items.map((item: DropdownItemProps, idx: number) => {
