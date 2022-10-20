@@ -1,66 +1,49 @@
 import React from 'react';
 import {
   ThemeProvider,
-  Popover,
   OverlayTrigger,
   Tooltip as BsTooltip,
+  Popover,
 } from 'react-bootstrap';
 import { TooltipDefaultProps } from './Default.types';
-import * as styleMod from './styles.module.scss';
-import {
-  createLocalProps,
-  themePrefixesProps,
-} from '../../../../lib/src/utils';
+import { themePrefixesProps } from '../../../../lib/src/utils';
 
-export const Tooltip = (props: TooltipDefaultProps) => {
+export const Tooltip = ({
+  children,
+  tooltip,
+  popover,
+  ...props
+}: TooltipDefaultProps) => {
   const themePrefixes: themePrefixesProps = {};
   const baseClass = 'tooltip';
-  const { tooltipContent, tooltipTrigger } = props;
-  const prefix = props.prefix || '';
-
-  const locals = createLocalProps(
-    props,
-    {
-      module: styleMod,
-      classes: {
-        base: baseClass,
-        prefix: prefix,
-        optionals: [
-          {
-            fields: ['theme'],
-            value: 'theme',
-          },
-          {
-            fields: ['pxScale'],
-            value: 'PxScale',
-          },
-        ],
-      },
-    },
-    ['prefix', 'theme', 'pxScale', 'tooltipContent']
-  );
+  let content: TooltipDefaultProps['tooltip'];
 
   themePrefixes[baseClass] = `owlui-${baseClass}`;
   themePrefixes['popover'] = 'owlui-popover';
   themePrefixes['popover-header'] = 'owlui-popover-header';
   themePrefixes['popover-body'] = 'owlui-popover-body';
 
+  if (tooltip) {
+    content = <BsTooltip>{tooltip}</BsTooltip>;
+  } else if (popover) {
+    content = (
+      <Popover>
+        {!popover.header ? (
+          ''
+        ) : (
+          <Popover.Header>{popover.header}</Popover.Header>
+        )}
+        {!popover.body ? '' : <Popover.Body>{popover.body}</Popover.Body>}
+      </Popover>
+    );
+  } else {
+    content = <></>;
+  }
+
   return (
     <ThemeProvider prefixes={themePrefixes}>
-      <OverlayTrigger
-        {...locals}
-        overlay={
-          tooltipContent.header ? (
-            <Popover {...locals}>
-              <Popover.Header>{tooltipContent.header}</Popover.Header>
-              <Popover.Body>{tooltipContent.content}</Popover.Body>
-            </Popover>
-          ) : (
-            <BsTooltip {...locals}>{tooltipContent.content}</BsTooltip>
-          )
-        }
-      >
-        {tooltipTrigger}
+      <OverlayTrigger {...props} overlay={content}>
+        {children}
       </OverlayTrigger>
     </ThemeProvider>
   );

@@ -18,7 +18,13 @@ export default {
   },
   decorators: [
     Story => (
-      <div style={{ marginTop: '5em' }}>
+      <div
+        style={{
+          marginTop: '15rem',
+          display: 'flex',
+          justifyContent: 'space-evenly',
+        }}
+      >
         <Story />
       </div>
     ),

@@ -1,17 +1,12 @@
-import React from 'react';
 import * as bs from 'react-bootstrap';
-export interface TooltipDefaultCommons {
-  theme?: 'Default' | 'Dark';
-  pxScale?: 'Sm' | 'Md' | 'Lg';
-  prefix?: string;
-  tooltipContent: TooltipContent;
-  tooltipTrigger: (props: object) => JSX.Element | JSX.Element[];
-}
-
-export interface TooltipContent {
-  header?: React.ReactNode;
-  content: React.ReactNode;
-  bsProps?: bs.TooltipProps | bs.PopoverProps;
+export interface TooltipDefaultCommons
+  extends Omit<bs.OverlayTriggerProps, 'overlay'> {
+  action?: JSX.Element;
+  tooltip?: JSX.Element;
+  popover?: {
+    header?: JSX.Element;
+    body?: JSX.Element;
+  };
 }
 
 export type TooltipDefaultProps = TooltipDefaultCommons;

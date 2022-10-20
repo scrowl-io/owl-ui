@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { component as Tooltip } from '../index';
+import { Tooltip } from '../';
 import { TooltipDefaultProps } from '../Default.types';
 
 import { pxScale } from './Default-px-scale.stories';
@@ -8,61 +8,19 @@ import { trigger } from './Default-trigger.stories';
 import { placement } from './Default-placement.stories';
 
 export const Default = (args: TooltipDefaultProps) => {
-  const tooltipTrigger = (props: object) => {
-    return (
-      <span
-        {...props}
-        style={{
-          fontWeight: '700',
-        }}
-      >
-        Tooltip
-      </span>
-    );
+  const tipContent = <span>This is a tooltip</span>;
+  const popContent = {
+    header: <h3>Popover header</h3>,
+    body: <div>Popover body</div>,
   };
-
-  const tooltipContent = {
-    content: <p>Inside the tooltip.</p>,
-  };
-
-  const popoverTrigger = (props: object) => {
-    return (
-      <span
-        {...props}
-        style={{
-          fontWeight: '700',
-        }}
-      >
-        Popover
-      </span>
-    );
-  };
-
-  const popoverContent = {
-    header: <>Popover Header</>,
-    content: <p>Inside the popover.</p>,
-  };
-
   return (
     <>
-      <div>
-        Paragraph wrapping the{' '}
-        <Tooltip
-          {...args}
-          tooltipContent={tooltipContent}
-          tooltipTrigger={tooltipTrigger}
-        />
-        .
-      </div>
-      <div>
-        Paragraph wrapping the{' '}
-        <Tooltip
-          {...args}
-          tooltipContent={popoverContent}
-          tooltipTrigger={popoverTrigger}
-        />
-        .
-      </div>
+      <Tooltip tooltip={tipContent}>
+        <button>Tooltip</button>
+      </Tooltip>
+      <Tooltip popover={popContent}>
+        <button>Popover</button>
+      </Tooltip>
     </>
   );
 };
