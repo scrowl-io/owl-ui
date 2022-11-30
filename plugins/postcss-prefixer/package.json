@@ -21,5 +21,6 @@
   "dependencies": {
     "postcss": "^8.4.14",
     "postcss-selector-parser": "^6.0.10"
-  }
+  },
+  "gitHead": "9c281b878ae506bf319035fa55c23179ea634e9f"
 }
