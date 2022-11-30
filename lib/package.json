@@ -55,7 +55,7 @@
     "@owlui/drawer": "^0.0.44",
     "@owlui/dropdown": "^0.0.44",
     "@owlui/form": "^0.0.44",
-    "@owlui/icons": "^0.0.44",
+    "@owlui/icon": "^0.0.44",
     "@owlui/input": "^0.0.44",
     "@owlui/listgroup": "^0.0.44",
     "@owlui/modal": "^0.0.44",

@@ -5,12 +5,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
-    "directory": "packages/icon"
+    "directory": "packages/icons"
   },
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icon#readme",
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icons#readme",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build --no-cache"
+    "build": "parcel build --no-cache --public-url ./"
   },
   "source": "./src/index.ts",
   "main": "./dist/owl.icon.js",

@@ -10,7 +10,7 @@
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/textfield#readme",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build --no-cache"
+    "build": "parcel build --no-cache --public-url ./"
   },
   "source": "./src/index.ts",
   "main": "./dist/owl.textfield.js",
