@@ -1,19 +1,10 @@
-import { execSync as exec } from 'child_process';
 import fs from '../utls/file-system.js';
 import locations from '../utls/locations.js';
 import strs from '../utls/strings.js';
 import { compile } from './templater.js';
 
-const { dependencies } = fs.getFile('lib/package.json');
-
 function setDest(filename) {
   return `lib/src/${filename}`;
-}
-
-function addDep(depName) {
-  if (!dependencies[depName]) {
-    exec(`lerna add ${depName} --scope=@owlui/lib`);
-  }
 }
 
 function update() {
@@ -42,8 +33,6 @@ function update() {
       pkg: component,
       path: `../..${pkgPath}`,
     });
-
-    addDep(component);
   }
 
   data.components = data.components.sort();
