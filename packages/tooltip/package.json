@@ -1,6 +1,6 @@
 {
   "name": "@owlui/tooltip",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "",
   "repository": {
     "type": "git",
@@ -40,10 +40,10 @@
     "react-bootstrap": "2.4.0"
   },
   "devDependencies": {
-    "@owlui/typings": "^0.0.45"
+    "@owlui/typings": "^0.0.46"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.45"
+    "@owlui/lib": "^0.0.46"
   },
   "gitHead": "9c281b878ae506bf319035fa55c23179ea634e9f"
 }
