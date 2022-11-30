@@ -9,6 +9,9 @@
     "directory": "lib"
   },
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/lib#readme",
+  "scripts": {
+    "build": "parcel build --no-cache --public-url ./ --cache-dir ./.parcel-cache"
+  },
   "source": "./src/index.ts",
   "main": "./dist/owl.lib.js",
   "module": "./dist/owl.lib.module.js",
