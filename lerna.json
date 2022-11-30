@@ -1,6 +1,7 @@
 {
   "version": "0.0.44",
   "packages": [
+    "lib",
     "packages/*",
     "typings"
   ],
