@@ -10,7 +10,7 @@
   "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/modal#readme",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build --no-cache --public-url ./"
+    "build": "parcel build --no-cache --public-url ./ --cache-dir ./.parcel-cache"
   },
   "source": "./src/index.ts",
   "main": "./dist/owl.modal.js",
