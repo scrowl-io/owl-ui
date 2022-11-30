@@ -1,30 +1,39 @@
 {
-  "name": "@owlui/icons",
+  "name": "@owlui/icon",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icons#readme",
-  "license": "MIT",
-  "source": "./src/index.ts",
-  "main": "./dist/owl.icons.js",
-  "types": "./dist/owl.icons.d.ts",
-  "style": "dist/owl.icons.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
-    "directory": "packages/icons"
+    "directory": "packages/icon"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/icon#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.icon.js",
+  "module": "./dist/owl.icon.module.js",
+  "types": "./dist/owl.icon.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.icon.js",
+      "import": "./dist/owl.icon.module.js",
+      "default": "./dist/owl.icon.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

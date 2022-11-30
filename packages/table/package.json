@@ -2,29 +2,38 @@
   "name": "@owlui/table",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/table#readme",
-  "license": "MIT",
-  "source": "./src/index.ts",
-  "main": "./dist/owl.table.js",
-  "types": "./dist/owl.table.d.ts",
-  "style": "dist/owl.table.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/table"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/table#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.table.js",
+  "module": "./dist/owl.table.module.js",
+  "types": "./dist/owl.table.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.table.js",
+      "import": "./dist/owl.table.module.js",
+      "default": "./dist/owl.table.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

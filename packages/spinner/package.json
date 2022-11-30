@@ -2,29 +2,38 @@
   "name": "@owlui/spinner",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/spinner#readme",
-  "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/owl.spinner.js",
-  "types": "dist/owl.spinner.d.ts",
-  "style": "dist/owl.spinner.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/spinner"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/spinner#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.spinner.js",
+  "module": "./dist/owl.spinner.module.js",
+  "types": "./dist/owl.spinner.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.spinner.js",
+      "import": "./dist/owl.spinner.module.js",
+      "default": "./dist/owl.spinner.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

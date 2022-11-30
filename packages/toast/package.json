@@ -2,29 +2,38 @@
   "name": "@owlui/toast",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/toast#readme",
-  "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/owl.toast.js",
-  "types": "dist/owl.toast.d.ts",
-  "style": "dist/owl.toast.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/toast"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/toast#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.toast.js",
+  "module": "./dist/owl.toast.module.js",
+  "types": "./dist/owl.toast.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.toast.js",
+      "import": "./dist/owl.toast.module.js",
+      "default": "./dist/owl.toast.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

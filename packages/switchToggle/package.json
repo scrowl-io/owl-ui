@@ -2,29 +2,38 @@
   "name": "@owlui/switchtoggle",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/switchToggle#readme",
-  "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/owl.switchToggle.js",
-  "types": "dist/owl.switchToggle.d.ts",
-  "style": "dist/owl.switchToggle.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/switchToggle"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/switchToggle#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.switchToggle.js",
+  "module": "./dist/owl.switchToggle.module.js",
+  "types": "./dist/owl.switchToggle.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.switchToggle.js",
+      "import": "./dist/owl.switchToggle.module.js",
+      "default": "./dist/owl.switchToggle.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

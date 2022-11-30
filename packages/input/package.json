@@ -2,29 +2,38 @@
   "name": "@owlui/input",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/input#readme",
-  "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/owl.input.js",
-  "types": "dist/owl.input.d.ts",
-  "style": "dist/owl.input.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/input"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/input#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.input.js",
+  "module": "./dist/owl.input.module.js",
+  "types": "./dist/owl.input.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.input.js",
+      "import": "./dist/owl.input.module.js",
+      "default": "./dist/owl.input.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

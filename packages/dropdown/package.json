@@ -2,29 +2,38 @@
   "name": "@owlui/dropdown",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/dropdown#readme",
-  "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/owl.dropdown.js",
-  "types": "dist/owl.dropdown.d.ts",
-  "style": "dist/owl.dropdown.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/dropdown"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/dropdown#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.dropdown.js",
+  "module": "./dist/owl.dropdown.module.js",
+  "types": "./dist/owl.dropdown.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.dropdown.js",
+      "import": "./dist/owl.dropdown.module.js",
+      "default": "./dist/owl.dropdown.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",

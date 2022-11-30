@@ -2,29 +2,38 @@
   "name": "@owlui/tabs",
   "version": "0.0.44",
   "description": "",
-  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/tabs#readme",
-  "license": "MIT",
-  "source": "src/index.ts",
-  "main": "dist/owl.tabs.js",
-  "types": "dist/owl.tabs.d.ts",
-  "style": "dist/owl.tabs.css",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "sideEffects": [
-    "*.css"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EEBOS/owl-ui.git",
     "directory": "packages/tabs"
   },
+  "homepage": "https://github.com/EEBOS/owl-ui/tree/main/packages/tabs#readme",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-cache"
+  },
+  "source": "./src/index.ts",
+  "main": "./dist/owl.tabs.js",
+  "module": "./dist/owl.tabs.module.js",
+  "types": "./dist/owl.tabs.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/owl.tabs.js",
+      "import": "./dist/owl.tabs.module.js",
+      "default": "./dist/owl.tabs.module.js"
+    },
+    "./src": "./src/index.ts"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist/",
+    "src/",
+    "package.json"
+  ],
   "publishConfig": {
     "access": "public"
   },
-  "isLibrary": true,
-  "outputFormat": "commonjs",
   "peerDependencies": {
     "bootstrap": "5.2.0-beta1",
     "react": "^18.1.0",
