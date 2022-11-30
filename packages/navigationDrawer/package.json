@@ -1,6 +1,6 @@
 {
   "name": "@owlui/navigationdrawer",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "",
   "repository": {
     "type": "git",
@@ -40,9 +40,9 @@
     "react-bootstrap": "2.4.0"
   },
   "devDependencies": {
-    "@owlui/typings": "^0.0.44"
+    "@owlui/typings": "^0.0.45"
   },
   "dependencies": {
-    "@owlui/lib": "^0.0.44"
+    "@owlui/lib": "^0.0.45"
   }
 }
