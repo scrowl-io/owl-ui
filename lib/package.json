@@ -47,34 +47,5 @@
   "devDependencies": {
     "@owlui/typings": "^0.0.46"
   },
-  "dependencies": {
-    "@owlui/accordion": "^0.0.46",
-    "@owlui/badge": "^0.0.46",
-    "@owlui/button": "^0.0.46",
-    "@owlui/card": "^0.0.46",
-    "@owlui/carousel": "^0.0.46",
-    "@owlui/closebutton": "^0.0.46",
-    "@owlui/design": "^0.0.46",
-    "@owlui/drawer": "^0.0.46",
-    "@owlui/dropdown": "^0.0.46",
-    "@owlui/form": "^0.0.46",
-    "@owlui/icon": "^0.0.46",
-    "@owlui/input": "^0.0.46",
-    "@owlui/listgroup": "^0.0.46",
-    "@owlui/modal": "^0.0.46",
-    "@owlui/nav": "^0.0.46",
-    "@owlui/navbar": "^0.0.46",
-    "@owlui/navigationdrawer": "^0.0.46",
-    "@owlui/progressbar": "^0.0.46",
-    "@owlui/range": "^0.0.46",
-    "@owlui/select": "^0.0.46",
-    "@owlui/spinner": "^0.0.46",
-    "@owlui/switchtoggle": "^0.0.46",
-    "@owlui/table": "^0.0.46",
-    "@owlui/tabs": "^0.0.46",
-    "@owlui/textfield": "^0.0.46",
-    "@owlui/toast": "^0.0.46",
-    "@owlui/tooltip": "^0.0.46"
-  },
-  "gitHead": "cd8d8b812f2a5e427b9670937b1fd89b774f62dc"
+  "gitHead": "fe432cb305a2076a289f2b328077896df8d814e5"
 }
